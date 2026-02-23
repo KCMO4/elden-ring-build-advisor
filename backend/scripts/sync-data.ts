@@ -262,10 +262,32 @@ async function syncArmors(): Promise<void> {
 }
 
 function normalizeArmor(a: FanApiArmor, idx: number): Armor {
-  // fanapis usa nombres abreviados/typo: "Phy", "Strike", "Slash", "Pierce",
-  // "Magic", "Fire", "Ligt" (sic — typo de Lightning), "Holy"
-  const getDef = (name: string): number =>
-    a.dmgNegation?.find(d => d.name?.toLowerCase().includes(name))?.amount ?? 0;
+  // fanapis es MUY inconsistente con los nombres de tipos de negación.
+  // Nombres observados en la API real:
+  //   Physical : "Phy", "Physical"
+  //   Strike   : "Strike", "Str", "StrEldenike"   ← la principal causa de 0s
+  //   Slash    : "Slash"
+  //   Pierce   : "Pierce"
+  //   Magic    : "Magic", "Mag"
+  //   Fire     : "Fire", "Fire:"
+  //   Lightning: "Ligt", "Light"
+  //   Holy     : "Holy"
+  //
+  // Estrategia: por cada tipo buscamos todos los entries cuyo nombre
+  // (lowercased) comience con alguno de los prefijos conocidos.
+  // startsWith('str') cubre 'Str', 'Strike' y 'StrEldenike'.
+  // startsWith('mag') cubre 'Mag' y 'Magic'.
+  // startsWith('phy') cubre 'Phy' y 'Physical'.
+  const getDef = (prefixes: string[]): number => {
+    const items = a.dmgNegation ?? [];
+    for (const item of items) {
+      const n = (item.name ?? '').toLowerCase().trim();
+      if (prefixes.some(p => n.startsWith(p))) {
+        return item.amount ?? 0;
+      }
+    }
+    return 0;
+  };
 
   const type = normalizeArmorType(a.category ?? '');
 
@@ -275,14 +297,14 @@ function normalizeArmor(a: FanApiArmor, idx: number): Armor {
     type,
     weight: a.weight ?? 0,
     defense: {
-      physical:  getDef('phy'),    // "Phy"
-      strike:    getDef('strike'), // "Strike"
-      slash:     getDef('slash'),  // "Slash"
-      pierce:    getDef('pierce'), // "Pierce"
-      magic:     getDef('magic'),  // "Magic"
-      fire:      getDef('fire'),   // "Fire"
-      lightning: getDef('ligt'),   // "Ligt" — typo en fanapis
-      holy:      getDef('holy'),   // "Holy"
+      physical:  getDef(['phy']),           // Phy / Physical
+      strike:    getDef(['str']),           // Str / Strike / StrEldenike
+      slash:     getDef(['slash']),         // Slash
+      pierce:    getDef(['pierce']),        // Pierce
+      magic:     getDef(['mag']),           // Mag / Magic
+      fire:      getDef(['fire']),          // Fire / Fire:
+      lightning: getDef(['ligt', 'light']), // Ligt / Light
+      holy:      getDef(['holy']),          // Holy
     },
     image: a.image || fextralifeFallback(a.name),
   };
