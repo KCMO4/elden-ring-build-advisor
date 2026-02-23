@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import type { CharacterStats, EquippedItems, DamageStats, DefenseStats } from '../../types';
 import { useMountAnimation } from '../../hooks/useMountAnimation';
 import { computeTalismanBonuses } from '../../utils/talismanEffects';
+import { estimateEquippedAR, stackNegation } from '../../utils/arCalc';
 import styles from './DerivedStatsPanel.module.css';
 
 interface Props {
@@ -60,22 +61,29 @@ function equipWeight(eq: EquippedItems): number {
   return Math.round(total * 10) / 10;
 }
 
+/**
+ * Calcula la negación total de daño usando apilamiento MULTIPLICATIVO.
+ * Fórmula del juego: total% = (1 − ∏(1 − ni/100)) × 100
+ * Las 4 piezas de armadura contribuyen independientemente.
+ */
 function totalNegation(eq: EquippedItems): DefenseStats {
   const pieces = [eq.head, eq.chest, eq.hands, eq.legs];
-  const t: DefenseStats = { physical: 0, strike: 0, slash: 0, pierce: 0, magic: 0, fire: 0, lightning: 0, holy: 0 };
-  for (const p of pieces) {
-    if (!p.defense) continue;
-    t.physical  += p.defense.physical;
-    t.strike    += p.defense.strike    ?? 0;
-    t.slash     += p.defense.slash     ?? 0;
-    t.pierce    += p.defense.pierce    ?? 0;
-    t.magic     += p.defense.magic;
-    t.fire      += p.defense.fire;
-    t.lightning += p.defense.lightning;
-    t.holy      += p.defense.holy;
-  }
-  const r = (n: number) => Math.round(n * 10) / 10;
-  return { physical: r(t.physical), strike: r(t.strike), slash: r(t.slash), pierce: r(t.pierce), magic: r(t.magic), fire: r(t.fire), lightning: r(t.lightning), holy: r(t.holy) };
+
+  const collect = (key: keyof DefenseStats): number[] =>
+    pieces
+      .filter(p => p.defense != null)
+      .map(p => p.defense![key] ?? 0);
+
+  return {
+    physical:  stackNegation(collect('physical')),
+    strike:    stackNegation(collect('strike')),
+    slash:     stackNegation(collect('slash')),
+    pierce:    stackNegation(collect('pierce')),
+    magic:     stackNegation(collect('magic')),
+    fire:      stackNegation(collect('fire')),
+    lightning: stackNegation(collect('lightning')),
+    holy:      stackNegation(collect('holy')),
+  };
 }
 
 // ── Tipos de daño (para Attack) ───────────────────────────────
@@ -188,6 +196,12 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
   // Arma principal RH: primer slot con arma real
   const mainWeapon = equipped.rightHand.find(w => w.name && w.damage) ?? null;
 
+  // AR estimado (base × upgrade + escalado de atributos)
+  const arEstimate = useMemo(
+    () => mainWeapon?.damage ? estimateEquippedAR(mainWeapon, stats) : null,
+    [mainWeapon, stats],
+  );
+
   return (
     <div className={styles.panel}>
 
@@ -217,15 +231,15 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
       </div>
 
       {/* ── Attack ── */}
-      {mainWeapon && (
+      {mainWeapon && arEstimate && (
         <div className={styles.section}>
           <span className={styles.sectionTitle}>
             Attack
-            <span className={styles.sectionNote}>{mainWeapon.name}</span>
+            <span className={styles.sectionNote}>{mainWeapon.name}{mainWeapon.upgradeLevel ? ` +${mainWeapon.upgradeLevel}` : ''}</span>
           </span>
           {DMG_TYPES.map(({ key, label, color }, i) => {
-            const v = mainWeapon.damage![key];
-            if (!v) return null;
+            const v = arEstimate[key as keyof typeof arEstimate] as number;
+            if (!v || v <= 0) return null;
             return (
               <div key={key} className={styles.row}>
                 <span className={styles.rowLabel}>{label}</span>
@@ -233,13 +247,13 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
                   <div
                     className={styles.barFill}
                     style={{
-                      width: ready ? `${Math.min((v / 450) * 100, 100)}%` : '0%',
+                      width: ready ? `${Math.min((v / 650) * 100, 100)}%` : '0%',
                       background: color,
                       transitionDelay: `${320 + i * 60}ms`,
                     }}
                   />
                 </div>
-                <span className={styles.rowValue}>{v}</span>
+                <span className={styles.rowValue}>~{v}</span>
               </div>
             );
           })}
@@ -263,7 +277,7 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
       {/* ── Defense / Dmg Negation ── */}
       {hasArmor && (
         <div className={styles.section}>
-          <span className={styles.sectionTitle}>Defense / Dmg Negation</span>
+          <span className={styles.sectionTitle}>Dmg Negation %</span>
           {DEF_TYPES.map(({ key, label, color, indent }, i) => (
             <NegRow
               key={key}
