@@ -1,0 +1,103 @@
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.header {
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(201, 167, 79, 0.04);
+}
+
+.title {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.list {
+  padding: 0.2rem 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 1.8rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 1rem;
+  transition: background 0.12s;
+}
+
+.row:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.labelGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.abbr {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  min-width: 2rem;
+}
+
+.label {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.barTrack {
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 0;
+  /* easeOutExpo: arranca rápido, desacelera — da sensación de peso */
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value {
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+}
+
+/* ── Colores por stat ─────────────────────────── */
+.colVig .barFill { background: linear-gradient(to right, #8b1c18, #d4483c); }
+.colVig .abbr    { color: #d4483c; }
+
+.colMnd .barFill { background: linear-gradient(to right, #1d4f8a, #4a8fc4); }
+.colMnd .abbr    { color: #4a8fc4; }
+
+.colEnd .barFill { background: linear-gradient(to right, #2e6e1e, #6ab54a); }
+.colEnd .abbr    { color: #6ab54a; }
+
+.colStr .barFill { background: linear-gradient(to right, #7a5a1a, #c9a74f); }
+.colStr .abbr    { color: #c9a74f; }
+
+.colDex .barFill { background: linear-gradient(to right, #7a5a1a, #e8c97a); }
+.colDex .abbr    { color: #e8c97a; }
+
+.colInt .barFill { background: linear-gradient(to right, #2a3575, #6a7dc4); }
+.colInt .abbr    { color: #6a7dc4; }
+
+.colFai .barFill { background: linear-gradient(to right, #8a6a10, #e8c06a); }
+.colFai .abbr    { color: #e8c06a; }
+
+.colArc .barFill { background: linear-gradient(to right, #5c1a7a, #b06ac4); }
+.colArc .abbr    { color: #b06ac4; }

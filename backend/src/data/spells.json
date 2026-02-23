@@ -1,0 +1,2199 @@
+[
+  {
+    "id": 8000,
+    "name": "Briars Of Punishment",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69323f35l0hykrc6d1g3vajyc0n.png"
+  },
+  {
+    "id": 8001,
+    "name": "Ancient Death Rancor",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f697cbb96l0hykre66weonnfh81y.png"
+  },
+  {
+    "id": 8002,
+    "name": "Briars Of Sin",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f694c4b51l0hykrh5ekspavmcdh.png"
+  },
+  {
+    "id": 8003,
+    "name": "Cannon Of Haima",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f697763ffl0hykrjb9eqis858fj9.png"
+  },
+  {
+    "id": 8004,
+    "name": "Ambush Shard",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69548207l0hykrjxtjpw45plt0o.png"
+  },
+  {
+    "id": 8005,
+    "name": "Carian Phalanx",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69526092l0hykrkfqubdcrri5ri.png"
+  },
+  {
+    "id": 8006,
+    "name": "Adula's Moonblade",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69501669l0hykrly1hkzqhsjkgf.png"
+  },
+  {
+    "id": 8007,
+    "name": "Carian Greatsword",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f698158cbl0hykro1lrfmqwblslj.png"
+  },
+  {
+    "id": 8008,
+    "name": "Carian Piercer",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f68f67eeal0hyksqja69pmxoh3yh.png"
+  },
+  {
+    "id": 8009,
+    "name": "Carian Retaliation",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f691dc847l0hyksqn4eqkjcj7jls.png"
+  },
+  {
+    "id": 8010,
+    "name": "Carian Slicer",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69526839l0hykt29wlkzjaekmfp.png"
+  },
+  {
+    "id": 8011,
+    "name": "Crystal Barrage",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f697a3cebl0hykt5z1wd5xboo99x.png"
+  },
+  {
+    "id": 8012,
+    "name": "Collapsing Stars",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6935c00al0hykt61d5dex7ibki.png"
+  },
+  {
+    "id": 8013,
+    "name": "Comet Azur",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69383db4l0hykt8reipbquz8e6t.png"
+  },
+  {
+    "id": 8014,
+    "name": "Crystal Burst",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69246033l0hykt9k2ifr73lab5s.png"
+  },
+  {
+    "id": 8015,
+    "name": "Comet",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69173b9bl0hyktcuppfyv71lx3.png"
+  },
+  {
+    "id": 8016,
+    "name": "Crystal Torrent",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f68f97095l0hykuc91iv4akp5w4i.png"
+  },
+  {
+    "id": 8017,
+    "name": "Crystal Release",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69346f84l0hykudkkqg6v1lwpk.png"
+  },
+  {
+    "id": 8018,
+    "name": "Fia's Mist",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69402fafl0hykuks706v0mkdjbd.png"
+  },
+  {
+    "id": 8019,
+    "name": "Eternal Darkness",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f696b6eael0hykuqvnuxlujdx0r9.png"
+  },
+  {
+    "id": 8020,
+    "name": "Frozen Armament",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f698816aal0hykuwweto12afmr3.png"
+  },
+  {
+    "id": 8021,
+    "name": "Founding Rain Of Stars",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69206fd7l0hykuyci822nhe618p.png"
+  },
+  {
+    "id": 8022,
+    "name": "Explosive Ghostflame",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6989bf92l0hykv0ugfsrr1nuyy6.png"
+  },
+  {
+    "id": 8023,
+    "name": "Freezing Mist",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f698eaeabl0hykv0y1tsef3d740n.png"
+  },
+  {
+    "id": 8024,
+    "name": "Gelmir's Fury",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6970b6del0hykw6jbvxlnultl.png"
+  },
+  {
+    "id": 8025,
+    "name": "Gavel Of Haima",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f697a11c6l0hykw8gs7a4bj2bzi.png"
+  },
+  {
+    "id": 8026,
+    "name": "Glintstone Arc",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6923b831l0hykweqyar0a2aerzn.png"
+  },
+  {
+    "id": 8027,
+    "name": "Glintstone Cometshard",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6933356el0hykwkb5c4f5eue05g.png"
+  },
+  {
+    "id": 8028,
+    "name": "Glintstone Pebble",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f692eb5c4l0hykwkentckpz3y24a.png"
+  },
+  {
+    "id": 8029,
+    "name": "Glintstone Stars",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6944ddfel0hykwkrvbsv9aa4yv.png"
+  },
+  {
+    "id": 8030,
+    "name": "Glintstone Icecrag",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6964e156l0hykwlsm0jw2254jkf.png"
+  },
+  {
+    "id": 8031,
+    "name": "Glintblade Phalanx",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f694aa956l0hykwnt8t2s7k2ohg8.png"
+  },
+  {
+    "id": 8032,
+    "name": "Gravity Well",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f68fa1c72l0hykxlbrlhvbrbbyqn.png"
+  },
+  {
+    "id": 8033,
+    "name": "Great Glintstone Shard",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f696ff8b3l0hyky03xbsyxdc6ybe.png"
+  },
+  {
+    "id": 8034,
+    "name": "Lucidity",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6916d3a1l0hyky82ck5l071k7zt.png"
+  },
+  {
+    "id": 8035,
+    "name": "Greatblade Phalanx",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69580940l0hyky9z5ebz67i2kvd.png"
+  },
+  {
+    "id": 8036,
+    "name": "Great Oracular Bubble",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f695ccb66l0hykyaen5y0w0khkll.png"
+  },
+  {
+    "id": 8037,
+    "name": "Oracle Bubble",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6971b61dl0hykyaiiyblbxaeim.png"
+  },
+  {
+    "id": 8038,
+    "name": "Loretta's Greatbow",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6921c90fl0hykycr9xzxlra3r57.png"
+  },
+  {
+    "id": 8039,
+    "name": "Loretta's Mastery",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f696d8893l0hykyj6qhbawvh09t.png"
+  },
+  {
+    "id": 8040,
+    "name": "Magic Downpour",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69330670l0hykywaqrpmwdbzpyj.png"
+  },
+  {
+    "id": 8041,
+    "name": "Magic Glintblade",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69818087l0hykz26ox2vtdp84yq.png"
+  },
+  {
+    "id": 8042,
+    "name": "Magma Shot",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6985da4cl0hykzwl2ly1lk18kxg.png"
+  },
+  {
+    "id": 8043,
+    "name": "Meteorite",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6979d7f4l0hyl01q26suhho4xsd.png"
+  },
+  {
+    "id": 8044,
+    "name": "Night Comet",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69763b5dl0hyl03j39aq843i4li.png"
+  },
+  {
+    "id": 8045,
+    "name": "Meteorite Of Astel",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f68fe64del0hyl068olsfxrrts7.png"
+  },
+  {
+    "id": 8046,
+    "name": "Night Shard",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69717eddl0hyl0exs9l0a0sdw6s.png"
+  },
+  {
+    "id": 8047,
+    "name": "Night Maiden's Mist",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f690350b7l0hyl0i9t31pb2ahyzj.png"
+  },
+  {
+    "id": 8048,
+    "name": "Rancorcall",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69062ddbl0hyl0j0sh5cueid15m.png"
+  },
+  {
+    "id": 8049,
+    "name": "Oracle Bubbles",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f698db556l0hyl0jjihm0vl3xdwh.png"
+  },
+  {
+    "id": 8050,
+    "name": "Rennala's Full Moon",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f696ded8bl0hyl1chm38nbkimwj9.png"
+  },
+  {
+    "id": 8051,
+    "name": "Ranni's Dark Moon",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6933fcffl0hyl1h3yit07w1s9ta.png"
+  },
+  {
+    "id": 8052,
+    "name": "Rock Blaster",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6960508el0hyl1nhkrxurxy1oqd.png"
+  },
+  {
+    "id": 8053,
+    "name": "Roiling Magma",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f695b8eb1l0hyl1wwn8bq4hod2yh.png"
+  },
+  {
+    "id": 8054,
+    "name": "Rykard's Rancor",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6956b602l0hyl1xzxdrjbidynzq.png"
+  },
+  {
+    "id": 8055,
+    "name": "Rock Sling",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f697513fdl0hyl1yp7y0bcj3si6i.png"
+  },
+  {
+    "id": 8056,
+    "name": "Scholar's Armament",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f694eec4fl0hyl27r5xh06ckw1so.png"
+  },
+  {
+    "id": 8057,
+    "name": "Scholar's Shield",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69379d7el0hyl27xfguetq35bni.png"
+  },
+  {
+    "id": 8058,
+    "name": "Shard Spiral",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69233f99l0hyl32ixqa8cf501y.png"
+  },
+  {
+    "id": 8059,
+    "name": "Shatter Earth",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69240fcdl0hyl38ber0x0u7bv3d.png"
+  },
+  {
+    "id": 8060,
+    "name": "Starlight",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6902b989l0hyl3f6iorcnaeypi.png"
+  },
+  {
+    "id": 8061,
+    "name": "Star Shower",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f693402e5l0hyl3gzhtqb01yjf3k.png"
+  },
+  {
+    "id": 8062,
+    "name": "Stars Of Ruin",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f6974051al0hyl3kcvhpy2j6smf.png"
+  },
+  {
+    "id": 8063,
+    "name": "Shattering Crystal",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f696ec037l0hyl3ngvf00twpbcg.png"
+  },
+  {
+    "id": 8064,
+    "name": "Swift Glintstone Shard",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69183747l0hyl3o1tnkgev3q3qs.png"
+  },
+  {
+    "id": 8065,
+    "name": "Terra Magicus",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f694f65f4l0hyl3qlnj0oepap3pg.png"
+  },
+  {
+    "id": 8066,
+    "name": "Unseen Blade",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69321284l0hyl4lnndsfcv2un9k.png"
+  },
+  {
+    "id": 8067,
+    "name": "Unseen Form",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f698ec32bl0hyl4ouriysbeaoqvp.png"
+  },
+  {
+    "id": 8068,
+    "name": "Thops's Barrier",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f69332a7cl0hyl4q0ahq1rhl510s.png"
+  },
+  {
+    "id": 8069,
+    "name": "Zamor Ice Storm",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f693b4e3cl0hyl4rjaph3b2vbtk5.png"
+  },
+  {
+    "id": 8070,
+    "name": "Tibia's Summons",
+    "type": "sorcery",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/sorceries/17f692e03b8l0hyl4rlgts2b9n06wj.png"
+  },
+  {
+    "id": 9000,
+    "name": "Ancient Dragons' Lightning Strike",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f696c7ce7l0hynrwmh6d0r0rwk2.png"
+  },
+  {
+    "id": 9001,
+    "name": "Aspects Of The Crucible: Horns",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695ad891l0hynrxcposdnx7gy9h.png"
+  },
+  {
+    "id": 9002,
+    "name": "Agheel's Flame",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f690dc5ael0hynrxf3lq1w3xcjpr.png"
+  },
+  {
+    "id": 9003,
+    "name": "Aspects Of The Crucible: Tail",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f693bd4f8l0hynrzaixs0xzre1q.png"
+  },
+  {
+    "id": 9004,
+    "name": "Barrier Of Gold",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f698483c9l0hyns2v5nt60a29sd.png"
+  },
+  {
+    "id": 9005,
+    "name": "Ancient Dragons' Lightning Spear",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6911d8c2l0hyns4qd7p9pfucu26.png"
+  },
+  {
+    "id": 9006,
+    "name": "Beast Claw",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f690418f4l0hyns68vsg9zhbc6w.png"
+  },
+  {
+    "id": 9007,
+    "name": "Aspect Of The Crucible: Breath",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f693c22edl0hynsdj8fz0ddz4vni.png"
+  },
+  {
+    "id": 9008,
+    "name": "Bestial Constitution",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69691e79l0hyntbidbq75lrrjb7.png"
+  },
+  {
+    "id": 9009,
+    "name": "Bestial Sling",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f68f98778l0hynteevtb4hr6x90d.png"
+  },
+  {
+    "id": 9010,
+    "name": "Black Blade",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69160ac9l0hynthagycs7dr7gq7.png"
+  },
+  {
+    "id": 9011,
+    "name": "Black Flame Ritual",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69860befl0hyntmsoo0kq76fsvd.png"
+  },
+  {
+    "id": 9012,
+    "name": "Black Flame",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6982c810l0hyntn0pvua05sv3w.png"
+  },
+  {
+    "id": 9013,
+    "name": "Black Flame Blade",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692ee649l0hyntu1vu7cu8wxah.png"
+  },
+  {
+    "id": 9014,
+    "name": "Bestial Vitality",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6955e547l0hyntv29oe95w4kpxj.png"
+  },
+  {
+    "id": 9015,
+    "name": "Black Flame's Protection",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f694f1c32l0hynu33qh2e3un2g1.png"
+  },
+  {
+    "id": 9016,
+    "name": "Blessing's Boon",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69801f77l0hynudtg36sba9k5lr.png"
+  },
+  {
+    "id": 9017,
+    "name": "Blessing Of The Erdtree",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f690ba6e1l0hynuyuvb7sle1w35.png"
+  },
+  {
+    "id": 9018,
+    "name": "Bloodflame Blade",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f697aaf25l0hynv3bmpsnp4lpnd.png"
+  },
+  {
+    "id": 9019,
+    "name": "Bloodflame Talons",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6973c98fl0hynv5gnjf09yvy8y.png"
+  },
+  {
+    "id": 9020,
+    "name": "Bloodboon",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f68fd9537l0hynv7q0d210i53bym9.png"
+  },
+  {
+    "id": 9021,
+    "name": "Borealis's Mist",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695324del0hynv9a91iu7h3knff.png"
+  },
+  {
+    "id": 9022,
+    "name": "Cure Poison",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f694bc935l0hynvcwx4oahz00k48.png"
+  },
+  {
+    "id": 9023,
+    "name": "Burn O Flame!",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f696d3fddl0hynve32uy42tb6pip.png"
+  },
+  {
+    "id": 9024,
+    "name": "Darkness",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f690b63a9l0hynvpzqrouoa3uwo.png"
+  },
+  {
+    "id": 9025,
+    "name": "Death Lightning",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6907b527l0hynw9qj9bgu0iu0x.png"
+  },
+  {
+    "id": 9026,
+    "name": "Discus Of Light",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69836ab4l0hynwcix7z37ngspv.png"
+  },
+  {
+    "id": 9027,
+    "name": "Divine Fortification",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695c512fl0hynwmn3k7xy8866e.png"
+  },
+  {
+    "id": 9028,
+    "name": "Dragonbolt Blessing",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69850e86l0hynws5vlzzny9q7y.png"
+  },
+  {
+    "id": 9029,
+    "name": "Dragonice",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695ddd2cl0hynwt4kcvu1t0jpbh.png"
+  },
+  {
+    "id": 9030,
+    "name": "Dragonclaw",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695ee05cl0hynwvuh9iqspb3fmk.png"
+  },
+  {
+    "id": 9031,
+    "name": "Dragonfire",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6919abe5l0hynwx7opzx5u5zvs.png"
+  },
+  {
+    "id": 9032,
+    "name": "Dragonmaw",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f68f9d130l0hynx3f1brjxtzdk9j.png"
+  },
+  {
+    "id": 9033,
+    "name": "Ekzyke's Decay",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6909836cl0hynxdbh1rpx4s4xfb.png"
+  },
+  {
+    "id": 9034,
+    "name": "Ekzykes's Decay",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f693fa72dl0hynxecsuhc2twylv.png"
+  },
+  {
+    "id": 9035,
+    "name": "Fire's Deadly Sin",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f694fc4c1l0hynyj2kcaruicejdh.png"
+  },
+  {
+    "id": 9036,
+    "name": "Erdtree Heal",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f698775c6l0hynyj6kv53b13zexj.png"
+  },
+  {
+    "id": 9037,
+    "name": "Flame, Fall Upon Them",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6908edd1l0hynyjh9vrt6fwxg9g.png"
+  },
+  {
+    "id": 9038,
+    "name": "Ezykes's Decay",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692cd88cl0hynyo45u48tb1tyn.png"
+  },
+  {
+    "id": 9039,
+    "name": "Electrify Armament",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f691a5912l0hynyooe4izs5zxh3t.png"
+  },
+  {
+    "id": 9040,
+    "name": "Flame Fortification",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6985c468l0hynypycnlfmwjdzds.png"
+  },
+  {
+    "id": 9041,
+    "name": "Flame Of The Fell God",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6964ed65l0hynyrzn67dmtv89e.png"
+  },
+  {
+    "id": 9042,
+    "name": "Elden Stars",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69225db6l0hynyujjw6qxgtrbk.png"
+  },
+  {
+    "id": 9043,
+    "name": "Flame, Protect Me",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692f5b38l0hynzsnci8jsfgasx6.png"
+  },
+  {
+    "id": 9044,
+    "name": "Fortissax's Lightning Spear",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f693ad486l0hynztvo8jus81t2uf.png"
+  },
+  {
+    "id": 9045,
+    "name": "Frozen Lightning Spear",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6939dc0dl0hyo003ig3i03oy5eh.png"
+  },
+  {
+    "id": 9046,
+    "name": "Glintstone Breath",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695939cbl0hyo0116aw3hbaoca.png"
+  },
+  {
+    "id": 9047,
+    "name": "Golden Lightning Fortification",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f68ff32f6l0hyo035frl5ld6347k.png"
+  },
+  {
+    "id": 9048,
+    "name": "Frenzied Burst",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f690e9092l0hyo03nyw25bgiu4hs.png"
+  },
+  {
+    "id": 9049,
+    "name": "Giantsflame Take Thee",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695e7bcdl0hyo059aa6ajju2es.png"
+  },
+  {
+    "id": 9050,
+    "name": "Golden Vow (spell)",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69510ee3l0hyo0f0mccaj31dwhq.png"
+  },
+  {
+    "id": 9051,
+    "name": "Gurrang's Beast Claw",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69535c25l0hyo1gmmkqtdazls9.png"
+  },
+  {
+    "id": 9052,
+    "name": "Immutable Shield",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69822dd3l0hyo1hzk48p9uymlan.png"
+  },
+  {
+    "id": 9053,
+    "name": "Heal",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692dbdc9l0hyo1jah0ket283h6d.png"
+  },
+  {
+    "id": 9054,
+    "name": "Howl Of Shabriri",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69430705l0hyo1jpd17zxxmmdyl.png"
+  },
+  {
+    "id": 9055,
+    "name": "Great Heal",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6926bc7dl0hyo1ku9wh0qz4eyh6.png"
+  },
+  {
+    "id": 9056,
+    "name": "Greyoll's Roar",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f693e76abl0hyo1mzypokk5gvlz.png"
+  },
+  {
+    "id": 9057,
+    "name": "Inescapable Frenzy",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f68fa0c30l0hyo1qasgyir08s9kb.png"
+  },
+  {
+    "id": 9058,
+    "name": "Honed Bolt",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6904f3b2l0hyo1u5sqdw9zxr0g.png"
+  },
+  {
+    "id": 9059,
+    "name": "Lansseax's Glaive",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69773db5l0hyo3532itzerrsdj.png"
+  },
+  {
+    "id": 9060,
+    "name": "Lightning Fortification",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f696de88al0hyo39vlr771is6fv.png"
+  },
+  {
+    "id": 9061,
+    "name": "Lord's Aid",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69602ae3l0hyo3a6ruzolnobp3o.png"
+  },
+  {
+    "id": 9062,
+    "name": "Lightning Spear",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6908485dl0hyo3bkdtot70uk3p4.png"
+  },
+  {
+    "id": 9063,
+    "name": "Law Of Causality",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6933b1fdl0hyo3bz9d9loqhf9qh.png"
+  },
+  {
+    "id": 9064,
+    "name": "Litany Of Proper Death",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6908f509l0hyo3cd6br7iexs0ys.png"
+  },
+  {
+    "id": 9065,
+    "name": "Law Of Regression",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f693addcel0hyo3dh93zpcxbralt.png"
+  },
+  {
+    "id": 9066,
+    "name": "Lightning Strike",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69522233l0hyo3e7aqun8itt9a.png"
+  },
+  {
+    "id": 9067,
+    "name": "Lord's Divine Fortification",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6988869dl0hyo4qsblr2lchs3q7.png"
+  },
+  {
+    "id": 9068,
+    "name": "Lord's Heal",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69634f78l0hyo4s4zggpkf72qsp.png"
+  },
+  {
+    "id": 9069,
+    "name": "Order Healing",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f68fdec40l0hyo4sbk8kjcr4p6lp.png"
+  },
+  {
+    "id": 9070,
+    "name": "Noble Presence",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6962911el0hyo4s02nf0ie24nvc.png"
+  },
+  {
+    "id": 9071,
+    "name": "Order's Blade",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692fa4d2l0hyo4uc4mjru3qoaee.png"
+  },
+  {
+    "id": 9072,
+    "name": "Magic Fortification",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69295d83l0hyo4wyff4k2r6tkno.png"
+  },
+  {
+    "id": 9073,
+    "name": "O, Flame!",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6946750bl0hyo4yckgppsbgjyai.png"
+  },
+  {
+    "id": 9074,
+    "name": "Magma Breath",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6917092dl0hyo511p1ard3b4xwm.png"
+  },
+  {
+    "id": 9075,
+    "name": "Pest Threads",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6971f6b6l0hyo69cly6crooe39.png"
+  },
+  {
+    "id": 9076,
+    "name": "Protection Of The Erdtree",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": ""
+  },
+  {
+    "id": 9077,
+    "name": "Poison Armament",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6922607fl0hyo6c1nfqul6hljpg.png"
+  },
+  {
+    "id": 9078,
+    "name": "Placidusax's Ruin",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6958b760l0hyo6c41h81a4ao9ihh.png"
+  },
+  {
+    "id": 9079,
+    "name": "Poison Mist",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695abe1dl0hyo6ddrxsg47tz9j9.png"
+  },
+  {
+    "id": 9080,
+    "name": "Radagon's Rings Of Light",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69215aafl0hyo6fnokhkxl7dq4p.png"
+  },
+  {
+    "id": 9081,
+    "name": "Rotten Breath",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6968b28dl0hyo6loaay43jahfcp.png"
+  },
+  {
+    "id": 9082,
+    "name": "Rejection",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f695dd7d9l0hyo6nbzipolrbtuxg.png"
+  },
+  {
+    "id": 9083,
+    "name": "Smarag's Glintstone Breath",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f694d5050l0hyo7rhkcg4j0qaii.png"
+  },
+  {
+    "id": 9084,
+    "name": "Stone Of Gurranq",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69771088l0hyo7tmllgof77289o.png"
+  },
+  {
+    "id": 9085,
+    "name": "Surge, O Flame!",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692aa326l0hyo81f3t0bbkonkwh.png"
+  },
+  {
+    "id": 9086,
+    "name": "Shadow Bait",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f691c3d89l0hyo81xcmf8pooodpu.png"
+  },
+  {
+    "id": 9087,
+    "name": "Scouring Black Flame",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692422c4l0hyo84mlas2e4zch5.png"
+  },
+  {
+    "id": 9088,
+    "name": "Scarlet Aeonia",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6904109al0hyo84mydzpc5usap9.png"
+  },
+  {
+    "id": 9089,
+    "name": "Swarm Of Flies",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6925361el0hyo84va1dajld4erh.png"
+  },
+  {
+    "id": 9090,
+    "name": "The Flame Of Frenzy",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69632226l0hyo91iqbjmg4xbw1.png"
+  },
+  {
+    "id": 9091,
+    "name": "Theodorix's Magma",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f69603e55l0hyo92oip6kr38j99r.png"
+  },
+  {
+    "id": 9092,
+    "name": "Unendurable Frenzy",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f692da48al0hyo9dril53k44haam.png"
+  },
+  {
+    "id": 9093,
+    "name": "Triple Rings Of Light",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f6912a13el0hyo9e5e3yb9u659qs.png"
+  },
+  {
+    "id": 9094,
+    "name": "Whirl, O Flame!",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f690c2762l0hyo9glzbxuxlwc2dh.png"
+  },
+  {
+    "id": 9095,
+    "name": "Vyke's Dragonbolt",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f694ba1f5l0hyo9j21xk3iv8ws5v.png"
+  },
+  {
+    "id": 9096,
+    "name": "Urgent Heal",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f698ccf55l0hyo9juunjo3lodn1n.png"
+  },
+  {
+    "id": 9097,
+    "name": "Wrath Of Gold",
+    "type": "incantation",
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "image": "https://eldenring.fanapis.com/images/incantations/17f693ca95el0hyo9lhohewhkatfd.png"
+  }
+]

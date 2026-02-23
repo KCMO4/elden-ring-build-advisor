@@ -1,0 +1,175 @@
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* ── Sección ── */
+.section {
+  padding: 0.45rem 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.4rem;
+}
+
+.sectionNote {
+  font-size: 0.52rem;
+  color: var(--text-dim);
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+/* ── Fila body/attack (label + barra + valor) ── */
+.row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr 2.4rem;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.17rem 0;
+}
+
+.rowLabel {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.rowValue {
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+}
+
+/* ── Barra genérica ── */
+.barTrack {
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 0;
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--gold);
+}
+
+/* Colores Body */
+.barVig .barFill  { background: linear-gradient(to right, #8b1c18, #d4483c); }
+.barMnd .barFill  { background: linear-gradient(to right, #1d4f8a, #4a8fc4); }
+.barEnd .barFill  { background: linear-gradient(to right, #2e6e1e, #6ab54a); }
+.barLoad .barFill { background: linear-gradient(to right, #3a6e3a, #8fc47a); }
+.barOver .barFill { background: linear-gradient(to right, #8b1c18, #e04040); }
+
+/* ── Equip Load row (4 columnas) ── */
+.loadRow {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.17rem 0;
+}
+
+.loadTag {
+  font-size: 0.48rem;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 1px 4px;
+  white-space: nowrap;
+}
+.loadTagWarn {
+  color: #e07840;
+  border-color: #7a3818;
+}
+
+/* ── Fila de Negación (formato juego: "Label  ████  valor") ── */
+.negRow {
+  display: grid;
+  grid-template-columns: 4.8rem 1fr 3rem;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0;
+}
+
+.negLabel {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.negRowIndent {
+  padding-left: 0.6rem;
+}
+
+.negBar {
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.negFill {
+  height: 100%;
+  border-radius: 0;
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.85;
+}
+
+.negValue {
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Scaling badges ── */
+.scalingRow {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.scalingBadge {
+  display: flex;
+  gap: 0.15rem;
+  align-items: center;
+  background: var(--bg-slot);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 1px 4px;
+}
+
+.scalingStat {
+  font-size: 0.48rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.scalingGrade {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--gold);
+}

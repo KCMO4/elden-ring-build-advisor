@@ -1,0 +1,8905 @@
+[
+  {
+    "id": 1000000,
+    "name": "Hand Axe",
+    "type": "Axe",
+    "weight": 3.5,
+    "requirements": {
+      "str": 9,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 113,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c35d2cl0i1oh7zuqfb3mdvsj.png"
+  },
+  {
+    "id": 1001000,
+    "name": "Jawbone Axe",
+    "type": "Axe",
+    "weight": 5.5,
+    "requirements": {
+      "str": 14,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 124,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69667224l0i1ohar280aeoxkl6z.png"
+  },
+  {
+    "id": 1002000,
+    "name": "Forked Hatchet",
+    "type": "Axe",
+    "weight": 2.5,
+    "requirements": {
+      "str": 9,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695c42f0l0i1ohb4cao0qxackpu.png"
+  },
+  {
+    "id": 1003000,
+    "name": "Iron Cleaver",
+    "type": "Axe",
+    "weight": 6,
+    "requirements": {
+      "str": 15,
+      "dex": 7,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c6388cl0i1ohcb8denrbpuhqs.png"
+  },
+  {
+    "id": 1004000,
+    "name": "Battle Axe",
+    "type": "Axe",
+    "weight": 4.5,
+    "requirements": {
+      "str": 12,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 123,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699dbb9dl0i1ohfs2g1wqxwja74.png"
+  },
+  {
+    "id": 1005000,
+    "name": "Ripple Blade",
+    "type": "Axe",
+    "weight": 4.5,
+    "requirements": {
+      "str": 11,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 20
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "A"
+    },
+    "damage": {
+      "physical": 70,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694ef2f2l0i1ohsk3qoao9ds943.png"
+  },
+  {
+    "id": 1006000,
+    "name": "Icerind Hatchet",
+    "type": "Axe",
+    "weight": 3,
+    "requirements": {
+      "str": 11,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 111,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699235c3l0i1ohvv1u6vgzp6gxv.png"
+  },
+  {
+    "id": 1007000,
+    "name": "Sacrificial Axe",
+    "type": "Axe",
+    "weight": 5.5,
+    "requirements": {
+      "str": 16,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 128,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b32182l0i1oi3uyg5fkssmhje.png"
+  },
+  {
+    "id": 1008000,
+    "name": "Celebrant's Cleaver",
+    "type": "Axe",
+    "weight": 4.5,
+    "requirements": {
+      "str": 12,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 119,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6980f4d4l0i1oi72p2skbsycy5.png"
+  },
+  {
+    "id": 1009000,
+    "name": "Rosus' Axe",
+    "type": "Axe",
+    "weight": 5.5,
+    "requirements": {
+      "str": 18,
+      "dex": 10,
+      "int": 18,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 106,
+      "magic": 68,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6963aeael0i1oiez2moleac31tm.png"
+  },
+  {
+    "id": 1010000,
+    "name": "Highland Axe",
+    "type": "Axe",
+    "weight": 4.5,
+    "requirements": {
+      "str": 12,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 123,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aeb629l0i1oifaza9fgo5b598.png"
+  },
+  {
+    "id": 1011000,
+    "name": "Warped Axe",
+    "type": "Axe",
+    "weight": 7.5,
+    "requirements": {
+      "str": 24,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 118,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6959fcafl0i1oinkyocipl7tiwk.png"
+  },
+  {
+    "id": 1012000,
+    "name": "Stormhawk Axe",
+    "type": "Axe",
+    "weight": 5.5,
+    "requirements": {
+      "str": 19,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 130,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b8f9edl0i1oitj4z0mizqfmf7.png"
+  },
+  {
+    "id": 1013000,
+    "name": "Gargoyle's Black Axe",
+    "type": "Axe",
+    "weight": 8.5,
+    "requirements": {
+      "str": 24,
+      "dex": 8,
+      "int": 0,
+      "fai": 22,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 100,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 120
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699ef109l0i1oj1cqtn6euxicod.png"
+  },
+  {
+    "id": 1014000,
+    "name": "Hand Ballista",
+    "type": "Ballista",
+    "weight": 10,
+    "requirements": {
+      "str": 30,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 135,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698da62dl0i1oj2p6wyeh8vo0to.png"
+  },
+  {
+    "id": 1015000,
+    "name": "Jar Cannon",
+    "type": "Ballista",
+    "weight": 15,
+    "requirements": {
+      "str": 34,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 192,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69dd8093l0i1oj6x6qo6tg76q8.png"
+  },
+  {
+    "id": 1016000,
+    "name": "Longbow",
+    "type": "Bow",
+    "weight": 4,
+    "requirements": {
+      "str": 9,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 80,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d12746l0i1ojbzxzgz6gfjsi.png"
+  },
+  {
+    "id": 1017000,
+    "name": "Albinauric Bow",
+    "type": "Bow",
+    "weight": 4.5,
+    "requirements": {
+      "str": 7,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 82,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695afa44l0i1ojioyvh48q16qul.png"
+  },
+  {
+    "id": 1018000,
+    "name": "Erdtree Bow",
+    "type": "Bow",
+    "weight": 4,
+    "requirements": {
+      "str": 8,
+      "dex": 12,
+      "int": 0,
+      "fai": 14,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 40,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 50
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6968148cl0i1ojrunt1o8v6y34f.png"
+  },
+  {
+    "id": 1019000,
+    "name": "Horn Bow",
+    "type": "Bow",
+    "weight": 4.5,
+    "requirements": {
+      "str": 10,
+      "dex": 14,
+      "int": 12,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 65,
+      "magic": 30,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69dcccffl0i1ojske3hc4ernauj.png"
+  },
+  {
+    "id": 1020000,
+    "name": "Serpent Bow",
+    "type": "Bow",
+    "weight": 3.5,
+    "requirements": {
+      "str": 8,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 11
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694c87afl0i1ojvhpi9w9ttf21.png"
+  },
+  {
+    "id": 1021000,
+    "name": "Pulley Bow",
+    "type": "Bow",
+    "weight": 5,
+    "requirements": {
+      "str": 11,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694cf960l0i1ojybdeac0ffxf5.png"
+  },
+  {
+    "id": 1022000,
+    "name": "Black Bow",
+    "type": "Bow",
+    "weight": 4,
+    "requirements": {
+      "str": 9,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 70,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694bf0a0l0i1okt1ao6xjlqrmq9.png"
+  },
+  {
+    "id": 1023000,
+    "name": "Bloodhound Claws",
+    "type": "Claw",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 94,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69575d35l0i1oktqg9vbv6v8jk.png"
+  },
+  {
+    "id": 1024000,
+    "name": "Venomous Fang",
+    "type": "Claw",
+    "weight": 2.5,
+    "requirements": {
+      "str": 9,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 92,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695a80d4l0i1okukv5xwwhqcvn.png"
+  },
+  {
+    "id": 1025000,
+    "name": "Hookclaws",
+    "type": "Claw",
+    "weight": 2,
+    "requirements": {
+      "str": 8,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 89,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bb71a6l0i1okvek92tqjqy5w.png"
+  },
+  {
+    "id": 1026000,
+    "name": "Raptor Talons",
+    "type": "Claw",
+    "weight": 1.5,
+    "requirements": {
+      "str": 6,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 83,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694a2cc3l0i1okx1gdd6e5ser2.png"
+  },
+  {
+    "id": 1027000,
+    "name": "Watchdog's Greatsword",
+    "type": "Colossal Sword",
+    "weight": 22,
+    "requirements": {
+      "str": 30,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 142,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c91071l0i1olmq0iokptn3hftg.png"
+  },
+  {
+    "id": 1028000,
+    "name": "Greatsword",
+    "type": "Colossal Sword",
+    "weight": 23,
+    "requirements": {
+      "str": 31,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 164,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6974feb9l0i1olnp61dvex8ugut.png"
+  },
+  {
+    "id": 1029000,
+    "name": "Troll's Golden Sword",
+    "type": "Colossal Sword",
+    "weight": 19,
+    "requirements": {
+      "str": 29,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 155,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d62fd0l0i1olqu110xlsqhiuo.png"
+  },
+  {
+    "id": 1030000,
+    "name": "Maliketh's Black Blade",
+    "type": "Colossal Sword",
+    "weight": 22,
+    "requirements": {
+      "str": 34,
+      "dex": 12,
+      "int": 0,
+      "fai": 20,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 127,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 82
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6946481al0i1olr8v9h8hxdx439.png"
+  },
+  {
+    "id": 1031000,
+    "name": "Zweihander",
+    "type": "Colossal Sword",
+    "weight": 15.5,
+    "requirements": {
+      "str": 19,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 141,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69848f3fl0i1olspoavxf69m81b.png"
+  },
+  {
+    "id": 1032000,
+    "name": "Royal Greatsword",
+    "type": "Colossal Sword",
+    "weight": 20,
+    "requirements": {
+      "str": 26,
+      "dex": 18,
+      "int": 22,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 0,
+      "magic": 134,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695e24bel0i1omb3kpapbx2zhn.png"
+  },
+  {
+    "id": 1033000,
+    "name": "Godslayer's Greatsword",
+    "type": "Colossal Sword",
+    "weight": 17.5,
+    "requirements": {
+      "str": 20,
+      "dex": 22,
+      "int": 0,
+      "fai": 20,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 119,
+      "magic": 0,
+      "fire": 77,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69814033l0i1omfg9fbsxwonld.png"
+  },
+  {
+    "id": 1034000,
+    "name": "Grafted Blade Greatsword",
+    "type": "Colossal Sword",
+    "weight": 21,
+    "requirements": {
+      "str": 40,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 157,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ba4b74l0i1omi90yu0wdq7oxu.png"
+  },
+  {
+    "id": 1035000,
+    "name": "Ruins Greatsword",
+    "type": "Colossal Sword",
+    "weight": 23,
+    "requirements": {
+      "str": 50,
+      "dex": 0,
+      "int": 16,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "B",
+      "dex": "-",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 124,
+      "magic": 37,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69695544l0i1omj4kim8sh6j5xh.png"
+  },
+  {
+    "id": 1036000,
+    "name": "Starscourge Greatsword",
+    "type": "Colossal Sword",
+    "weight": 20,
+    "requirements": {
+      "str": 38,
+      "dex": 12,
+      "int": 15,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "E",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 129,
+      "magic": 83,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d917e2l0i1omllp8sfqfor6g.png"
+  },
+  {
+    "id": 1037000,
+    "name": "Troll Knight's Sword",
+    "type": "Colossal Sword",
+    "weight": 18,
+    "requirements": {
+      "str": 20,
+      "dex": 14,
+      "int": 18,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 124,
+      "magic": 80,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694bf77bl0i1on5kwkodf1d6fkp.png"
+  },
+  {
+    "id": 1038000,
+    "name": "Watchdog's Staff",
+    "type": "Colossal Weapon",
+    "weight": 19,
+    "requirements": {
+      "str": 34,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 165,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69573764l0i1ondtdlwail0224s.png"
+  },
+  {
+    "id": 1039000,
+    "name": "Envoy's Greathorn",
+    "type": "Colossal Weapon",
+    "weight": 19.5,
+    "requirements": {
+      "str": 28,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 121,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 78
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b35d86l0i1ongc5nz2ucwimp3.png"
+  },
+  {
+    "id": 1040000,
+    "name": "Great Club",
+    "type": "Colossal Weapon",
+    "weight": 17,
+    "requirements": {
+      "str": 35,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 154,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697c039cl0i1onh4jupgan4exzn.png"
+  },
+  {
+    "id": 1041000,
+    "name": "Prelate's Inferno Crozier",
+    "type": "Colossal Weapon",
+    "weight": 23.5,
+    "requirements": {
+      "str": 45,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 156,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a7dcc1l0i1oniofe8yzb14ixf.png"
+  },
+  {
+    "id": 1042000,
+    "name": "Duelist Greataxe",
+    "type": "Colossal Weapon",
+    "weight": 20,
+    "requirements": {
+      "str": 30,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 170,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a33564l0i1ons3nh18t7o8nt.png"
+  },
+  {
+    "id": 1043000,
+    "name": "Axe Of Godfrey",
+    "type": "Colossal Weapon",
+    "weight": 18,
+    "requirements": {
+      "str": 42,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 165,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698fbfe3l0i1onysor0mpgg5yes.png"
+  },
+  {
+    "id": 1044000,
+    "name": "Dragon Greatclaw",
+    "type": "Colossal Weapon",
+    "weight": 16,
+    "requirements": {
+      "str": 30,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 78,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69469b4bl0i1oo41w96vla79ii.png"
+  },
+  {
+    "id": 1045000,
+    "name": "Fallingstar Beast Jaw",
+    "type": "Colossal Weapon",
+    "weight": 21.5,
+    "requirements": {
+      "str": 34,
+      "dex": 12,
+      "int": 20,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "E",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 131,
+      "magic": 85,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6955e72fl0i1oo4m9kmv2xl4xyk.png"
+  },
+  {
+    "id": 1046000,
+    "name": "Staff Of The Avatar",
+    "type": "Colossal Weapon",
+    "weight": 20,
+    "requirements": {
+      "str": 34,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 113,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 73
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69dc1749l0i1ooc0npawnyrf3d.png"
+  },
+  {
+    "id": 1047000,
+    "name": "Ghiza's Wheel",
+    "type": "Colossal Weapon",
+    "weight": 19,
+    "requirements": {
+      "str": 28,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 156,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696bf334l0i1oog74vy08h3bq4g.png"
+  },
+  {
+    "id": 1048000,
+    "name": "Giant-crusher",
+    "type": "Colossal Weapon",
+    "weight": 26.5,
+    "requirements": {
+      "str": 60,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 155,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698d50ael0i1ooor7m3e3wm1ksn.png"
+  },
+  {
+    "id": 1049000,
+    "name": "Golem's Halberd",
+    "type": "Colossal Weapon",
+    "weight": 21.5,
+    "requirements": {
+      "str": 36,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 158,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bd8124l0i1oouetnbxq1rzht.png"
+  },
+  {
+    "id": 1050000,
+    "name": "Troll's Hammer",
+    "type": "Colossal Weapon",
+    "weight": 16,
+    "requirements": {
+      "str": 28,
+      "dex": 8,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 153,
+      "magic": 0,
+      "fire": 45,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699e1bc7l0i1oov82brr35n1ie4.png"
+  },
+  {
+    "id": 1051000,
+    "name": "Rotten Staff",
+    "type": "Colossal Weapon",
+    "weight": 18,
+    "requirements": {
+      "str": 34,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 165,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695f2cdal0i1oozpti2yx0wz51.png"
+  },
+  {
+    "id": 1052000,
+    "name": "Rotten Greataxe",
+    "type": "Colossal Weapon",
+    "weight": 20,
+    "requirements": {
+      "str": 30,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 162,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698e7e0dl0i1op5tj0nigfcedar.png"
+  },
+  {
+    "id": 1053000,
+    "name": "Soldier's Crossbow",
+    "type": "Crossbow",
+    "weight": 3.5,
+    "requirements": {
+      "str": 10,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 54,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a1d79cl0i1opcz0k9omitov0n.png"
+  },
+  {
+    "id": 1054000,
+    "name": "Light Crossbow",
+    "type": "Crossbow",
+    "weight": 4,
+    "requirements": {
+      "str": 12,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 58,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69832d19l0i1opiocf2s1b0z8f8.png"
+  },
+  {
+    "id": 1055000,
+    "name": "Heavy Crossbow",
+    "type": "Crossbow",
+    "weight": 5.5,
+    "requirements": {
+      "str": 14,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 64,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b95f86l0i1opjf3ra8xpdsovo.png"
+  },
+  {
+    "id": 1056000,
+    "name": "Pulley Crossbow",
+    "type": "Crossbow",
+    "weight": 4,
+    "requirements": {
+      "str": 16,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 65,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69744d27l0i1opnrem0400k2gsd.png"
+  },
+  {
+    "id": 1057000,
+    "name": "Full Moon Crossbow",
+    "type": "Crossbow",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 14,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 50,
+      "magic": 50,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ac9f84l0i1opqor2ybht92g9q.png"
+  },
+  {
+    "id": 1058000,
+    "name": "Onyx Lord's Greatsword",
+    "type": "Curved Greatsword",
+    "weight": 11.5,
+    "requirements": {
+      "str": 20,
+      "dex": 16,
+      "int": 16,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 118,
+      "magic": 76,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d4ff4fl0i1oq3u3wuk37p9n8y.png"
+  },
+  {
+    "id": 1059000,
+    "name": "Crepus's Black-key Crossbow",
+    "type": "Crossbow",
+    "weight": 5,
+    "requirements": {
+      "str": 14,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 68,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697ea1a4l0i1oq4te6lr8su01zs.png"
+  },
+  {
+    "id": 1060000,
+    "name": "Arbalest",
+    "type": "Crossbow",
+    "weight": 6,
+    "requirements": {
+      "str": 18,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 69,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d24aefl0i1oq9249e558exazo.png"
+  },
+  {
+    "id": 1061000,
+    "name": "Bloodhound's Fang",
+    "type": "Curved Greatsword",
+    "weight": 11.5,
+    "requirements": {
+      "str": 18,
+      "dex": 17,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 141,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697d9a68l0i1oqeay5e8bb4oc3g.png"
+  },
+  {
+    "id": 1062000,
+    "name": "Dismounter",
+    "type": "Curved Greatsword",
+    "weight": 10,
+    "requirements": {
+      "str": 19,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 138,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c95aedl0i1oqkej3b4sanu0ho.png"
+  },
+  {
+    "id": 1063000,
+    "name": "Magma Wyrm's Scalesword",
+    "type": "Curved Greatsword",
+    "weight": 15,
+    "requirements": {
+      "str": 24,
+      "dex": 15,
+      "int": 0,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 114,
+      "magic": 0,
+      "fire": 74,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6959a5afl0i1oqpihevj06l1n6f.png"
+  },
+  {
+    "id": 1064000,
+    "name": "Omen Cleaver",
+    "type": "Curved Greatsword",
+    "weight": 11.5,
+    "requirements": {
+      "str": 19,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 142,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699cd816l0i1oqxnpfv24k6jntj.png"
+  },
+  {
+    "id": 1065000,
+    "name": "Zamor Curved Sword",
+    "type": "Curved Greatsword",
+    "weight": 9,
+    "requirements": {
+      "str": 16,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 125,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6951db06l0i1or16gi01imzlv6v.png"
+  },
+  {
+    "id": 1066000,
+    "name": "Monk's Flameblade",
+    "type": "Curved Greatsword",
+    "weight": 9,
+    "requirements": {
+      "str": 18,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 134,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d7bd32l0i1or3zgprsj3kycze.png"
+  },
+  {
+    "id": 1067000,
+    "name": "Beastman's Cleaver",
+    "type": "Curved Greatsword",
+    "weight": 16.5,
+    "requirements": {
+      "str": 25,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 143,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695a31bbl0i1orafp8agcajnhoq.png"
+  },
+  {
+    "id": 1068000,
+    "name": "Morgott's Cursed Sword",
+    "type": "Curved Greatsword",
+    "weight": 7.5,
+    "requirements": {
+      "str": 14,
+      "dex": 35,
+      "int": 0,
+      "fai": 0,
+      "arc": 17
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695e77b1l0i1orcoyco0l9fpi6j.png"
+  },
+  {
+    "id": 1069000,
+    "name": "Falchion",
+    "type": "Curved Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 9,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 109,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ccaa4al0i1orhsuhv0ll0uko.png"
+  },
+  {
+    "id": 1070000,
+    "name": "Shamshir",
+    "type": "Curved Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 7,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 108,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69cbbed5l0i1orz2seh3xldf6b.png"
+  },
+  {
+    "id": 1071000,
+    "name": "Beastman's Curved Sword",
+    "type": "Curved Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 13,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 113,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d22df5l0i1os1vzj7jka683f.png"
+  },
+  {
+    "id": 1072000,
+    "name": "Shotel",
+    "type": "Curved Sword",
+    "weight": 2,
+    "requirements": {
+      "str": 9,
+      "dex": 19,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 96,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69498ae3l0i1os4m19u5e478yu2.png"
+  },
+  {
+    "id": 1073000,
+    "name": "Magma Blade",
+    "type": "Curved Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 9,
+      "dex": 15,
+      "int": 0,
+      "fai": 16,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 96,
+      "magic": 0,
+      "fire": 62,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69908917l0i1os577fp2a0c8n8w.png"
+  },
+  {
+    "id": 1074000,
+    "name": "Flowing Curved Sword",
+    "type": "Curved Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 9,
+      "dex": 17,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 109,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694e2077l0i1osqjan4fnttniyc.png"
+  },
+  {
+    "id": 1075000,
+    "name": "Wing Of Astel",
+    "type": "Curved Sword",
+    "weight": 2.5,
+    "requirements": {
+      "str": 7,
+      "dex": 17,
+      "int": 20,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 65,
+      "magic": 78,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695b60e8l0i1osrls9u8la9bek.png"
+  },
+  {
+    "id": 1076000,
+    "name": "Eclipse Shotel",
+    "type": "Curved Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 25,
+      "int": 0,
+      "fai": 30,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 77
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695e8a95l0i1osvuh2s392bslgf.png"
+  },
+  {
+    "id": 1077000,
+    "name": "Serpent-god's Curved Sword",
+    "type": "Curved Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 13,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 113,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6977fc1al0i1oswu20i8xjh9liqj.png"
+  },
+  {
+    "id": 1078000,
+    "name": "Scavenger's Curved Sword",
+    "type": "Curved Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 9,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 105,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d7cf23l0i1osx8dg6r5dybhck.png"
+  },
+  {
+    "id": 1079000,
+    "name": "Mantis Blade",
+    "type": "Curved Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 112,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a28357l0i1otefec4u3qjtjve.png"
+  },
+  {
+    "id": 1080000,
+    "name": "Scimitar",
+    "type": "Curved Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 7,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 106,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695c221bl0i1oti2aqelikacuj6.png"
+  },
+  {
+    "id": 1081000,
+    "name": "Nox Flowing Sword",
+    "type": "Curved Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 8,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 112,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69913ab4l0i1otlpefqm0g08exp.png"
+  },
+  {
+    "id": 1082000,
+    "name": "Dagger",
+    "type": "Dagger",
+    "weight": 1.5,
+    "requirements": {
+      "str": 5,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 74,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699693fbl0i1otqw0glcy3u6fp0k.png"
+  },
+  {
+    "id": 1083000,
+    "name": "Grossmesser",
+    "type": "Curved Sword",
+    "weight": 4.5,
+    "requirements": {
+      "str": 14,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ba85cal0i1ou17700c5cqef3i.png"
+  },
+  {
+    "id": 1084000,
+    "name": "Black Knife",
+    "type": "Dagger",
+    "weight": 2,
+    "requirements": {
+      "str": 8,
+      "dex": 12,
+      "int": 0,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 66,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 65
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bb7d32l0i1ou85ft99zwecdel.png"
+  },
+  {
+    "id": 1085000,
+    "name": "Parrying Dagger",
+    "type": "Dagger",
+    "weight": 1.5,
+    "requirements": {
+      "str": 5,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6959f1adl0i1ou9x8vs08p3u09g.png"
+  },
+  {
+    "id": 1086000,
+    "name": "Miséricorde",
+    "type": "Dagger",
+    "weight": 2,
+    "requirements": {
+      "str": 7,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 92,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aa066dl0i1ouek4e8nmlybotp.png"
+  },
+  {
+    "id": 1087000,
+    "name": "Reduvia",
+    "type": "Dagger",
+    "weight": 2.5,
+    "requirements": {
+      "str": 5,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 13
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 79,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d42419l0i1oujp0m1csaaqdanf.png"
+  },
+  {
+    "id": 1088000,
+    "name": "Crystal Knife",
+    "type": "Dagger",
+    "weight": 2,
+    "requirements": {
+      "str": 8,
+      "dex": 12,
+      "int": 9,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 82,
+      "magic": 53,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695c23a5l0i1ourjc45t3ot8y0r.png"
+  },
+  {
+    "id": 1089000,
+    "name": "Celebrant's Sickle",
+    "type": "Dagger",
+    "weight": 1.5,
+    "requirements": {
+      "str": 6,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 79,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69538376l0i1ouzstk2t2dod57i.png"
+  },
+  {
+    "id": 1090000,
+    "name": "Glintstone Kris",
+    "type": "Dagger",
+    "weight": 1.5,
+    "requirements": {
+      "str": 5,
+      "dex": 12,
+      "int": 16,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 57,
+      "magic": 68,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69756a35l0i1ov1vi3cb4201sxa.png"
+  },
+  {
+    "id": 1091000,
+    "name": "Scorpion's Stinger",
+    "type": "Dagger",
+    "weight": 2.5,
+    "requirements": {
+      "str": 6,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 79,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d58e08l0i1ovazqw2hxmxgdc.png"
+  },
+  {
+    "id": 1092000,
+    "name": "Great Knife",
+    "type": "Dagger",
+    "weight": 1.5,
+    "requirements": {
+      "str": 6,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6994d16cl0i1ovl2w2asf8hogd.png"
+  },
+  {
+    "id": 1093000,
+    "name": "Wakizashi",
+    "type": "Dagger",
+    "weight": 3,
+    "requirements": {
+      "str": 9,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 94,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a01b63l0i1ovq80hzuqcz211pn.png"
+  },
+  {
+    "id": 1094000,
+    "name": "Cinquedea",
+    "type": "Dagger",
+    "weight": 3.5,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 98,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6986cfc4l0i1ovvz1l7bcfxqjc9.png"
+  },
+  {
+    "id": 1095000,
+    "name": "Ivory Sickle",
+    "type": "Dagger",
+    "weight": 2,
+    "requirements": {
+      "str": 6,
+      "dex": 11,
+      "int": 13,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 60,
+      "magic": 60,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69dba532l0i1ow5zn175dgtjn5d.png"
+  },
+  {
+    "id": 1096000,
+    "name": "Erdsteel Dagger",
+    "type": "Dagger",
+    "weight": 2,
+    "requirements": {
+      "str": 7,
+      "dex": 12,
+      "int": 0,
+      "fai": 14,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 67,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c27224l0i1owfsl4rcc4fgbpe.png"
+  },
+  {
+    "id": 1097000,
+    "name": "Blade Of Calling",
+    "type": "Dagger",
+    "weight": 1.5,
+    "requirements": {
+      "str": 6,
+      "dex": 13,
+      "int": 0,
+      "fai": 15,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 71,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 43
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69619348l0i1owhkpnh4pq8aju.png"
+  },
+  {
+    "id": 1098000,
+    "name": "Bloodstained Dagger",
+    "type": "Dagger",
+    "weight": 2,
+    "requirements": {
+      "str": 9,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 81,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69568512l0i1owirx8rozwu94e.png"
+  },
+  {
+    "id": 1099000,
+    "name": "Spiked Caestus",
+    "type": "Fist",
+    "weight": 2,
+    "requirements": {
+      "str": 8,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 91,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69822bd8l0i1owzfs8dkv6m0tk.png"
+  },
+  {
+    "id": 1100000,
+    "name": "Caestus",
+    "type": "Fist",
+    "weight": 1.5,
+    "requirements": {
+      "str": 8,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 90,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6961de5dl0i1ox1mrfqv4sj0p5.png"
+  },
+  {
+    "id": 1101000,
+    "name": "Grafted Dragon",
+    "type": "Fist",
+    "weight": 2.5,
+    "requirements": {
+      "str": 20,
+      "dex": 14,
+      "int": 0,
+      "fai": 16,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 89,
+      "magic": 0,
+      "fire": 57,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69598b19l0i1ox85gn7f2sgqpad.png"
+  },
+  {
+    "id": 1102000,
+    "name": "Iron Ball",
+    "type": "Fist",
+    "weight": 2.5,
+    "requirements": {
+      "str": 11,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bdc512l0i1ox8z0tvmo6500lc.png"
+  },
+  {
+    "id": 1103000,
+    "name": "Star Fist",
+    "type": "Fist",
+    "weight": 3,
+    "requirements": {
+      "str": 12,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 105,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6958d2a1l0i1oxak1ho6m56edgwi.png"
+  },
+  {
+    "id": 1104000,
+    "name": "Katar",
+    "type": "Fist",
+    "weight": 2.5,
+    "requirements": {
+      "str": 8,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 97,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699730a1l0i1oxo8gfllal3rur.png"
+  },
+  {
+    "id": 1105000,
+    "name": "Clinging Bone",
+    "type": "Fist",
+    "weight": 2.5,
+    "requirements": {
+      "str": 8,
+      "dex": 22,
+      "int": 0,
+      "fai": 0,
+      "arc": 16
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 80,
+      "magic": 24,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695cc915l0i1oxrft0i2enqepoe.png"
+  },
+  {
+    "id": 1106000,
+    "name": "Cipher Pata",
+    "type": "Fist",
+    "weight": 0,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 30,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 85
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69de7e01l0i1oxypr2s4rzvhwnj.png"
+  },
+  {
+    "id": 1107000,
+    "name": "Veteran's Prosthesis",
+    "type": "Fist",
+    "weight": 4,
+    "requirements": {
+      "str": 15,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 83,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 53,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69912ed2l0i1oxzumweqnzkb2tl.png"
+  },
+  {
+    "id": 1108000,
+    "name": "Nightrider Flail",
+    "type": "Flail",
+    "weight": 6,
+    "requirements": {
+      "str": 10,
+      "dex": 24,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 112,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d96e43l0i1oy4z04zq0mvzanru.png"
+  },
+  {
+    "id": 1109000,
+    "name": "Flail",
+    "type": "Flail",
+    "weight": 5,
+    "requirements": {
+      "str": 10,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 109,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69552774l0i1oyd6lwf3vlq0nhn.png"
+  },
+  {
+    "id": 1110000,
+    "name": "Family Heads",
+    "type": "Flail",
+    "weight": 5.5,
+    "requirements": {
+      "str": 8,
+      "dex": 18,
+      "int": 16,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "E",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 87,
+      "magic": 56,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695341ecl0i1oyf1mscsd2tuuid.png"
+  },
+  {
+    "id": 1111000,
+    "name": "Bastard's Stars",
+    "type": "Flail",
+    "weight": 5.5,
+    "requirements": {
+      "str": 8,
+      "dex": 22,
+      "int": 22,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 65,
+      "magic": 78,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6992e218l0i1oykgr0udpp09p3.png"
+  },
+  {
+    "id": 1112000,
+    "name": "Glintstone Staff",
+    "type": "Glintstone Staff",
+    "weight": 3,
+    "requirements": {
+      "str": 6,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69930219l0i1oytgbre6o33dti.png"
+  },
+  {
+    "id": 1113000,
+    "name": "Crystal Staff",
+    "type": "Glintstone Staff",
+    "weight": 4.5,
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 48,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "B",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 31,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699946f4l0i1oz2nopkhsi7qz5p.png"
+  },
+  {
+    "id": 1114000,
+    "name": "Chainlink Flail",
+    "type": "Flail",
+    "weight": 8,
+    "requirements": {
+      "str": 18,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 109,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c119f0l0i1oz3m7cwvc1jqa6w.png"
+  },
+  {
+    "id": 1115000,
+    "name": "Gelmir Glintstone Staff",
+    "type": "Glintstone Staff",
+    "weight": 2.5,
+    "requirements": {
+      "str": 6,
+      "dex": 0,
+      "int": 14,
+      "fai": 14,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "D",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 29,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d7a8dcl0i1oz4x85o3hhhl069.png"
+  },
+  {
+    "id": 1116000,
+    "name": "Demi-human Queen's Staff",
+    "type": "Glintstone Staff",
+    "weight": 3,
+    "requirements": {
+      "str": 6,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 31,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6960232el0i1oz9tjni3i1ghuy.png"
+  },
+  {
+    "id": 1117000,
+    "name": "Carian Regal Scepter",
+    "type": "Glintstone Staff",
+    "weight": 3,
+    "requirements": {
+      "str": 8,
+      "dex": 10,
+      "int": 60,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "B",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 24,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6953c900l0i1ozjupz92p99yzi.png"
+  },
+  {
+    "id": 1118000,
+    "name": "Astrologer's Staff",
+    "type": "Glintstone Staff",
+    "weight": 3,
+    "requirements": {
+      "str": 7,
+      "dex": 0,
+      "int": 16,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b2786dl0i1ozt246l3i5ng1n3.png"
+  },
+  {
+    "id": 1119000,
+    "name": "Digger's Staff",
+    "type": "Glintstone Staff",
+    "weight": 4.5,
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 12,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 38,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6960a2b7l0i1ozuak6b667gyiqq.png"
+  },
+  {
+    "id": 1120000,
+    "name": "Prince Of Death's Star",
+    "type": "Glintstone Staff",
+    "weight": 3,
+    "requirements": {
+      "str": 6,
+      "dex": 0,
+      "int": 18,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697c8bb1l0i1ozxd3885l5ejmcw.png"
+  },
+  {
+    "id": 1121000,
+    "name": "Carian Glintblade Staff",
+    "type": "Glintstone Staff",
+    "weight": 2.5,
+    "requirements": {
+      "str": 6,
+      "dex": 12,
+      "int": 22,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 22,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bfdbcdl0i1ozxotkx767c6z5e.png"
+  },
+  {
+    "id": 1122000,
+    "name": "Albinauric Staff",
+    "type": "Glintstone Staff",
+    "weight": 2.5,
+    "requirements": {
+      "str": 6,
+      "dex": 0,
+      "int": 10,
+      "fai": 0,
+      "arc": 12
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "D",
+      "fai": "-",
+      "arc": "C"
+    },
+    "damage": {
+      "physical": 17,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d0ae08l0i1p06vghydco2o29u.png"
+  },
+  {
+    "id": 1123000,
+    "name": "Academy Glintstone Staff",
+    "type": "Glintstone Staff",
+    "weight": 3,
+    "requirements": {
+      "str": 6,
+      "dex": 0,
+      "int": 28,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "B",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69dea799l0i1p0jj1dc7gc9ooad.png"
+  },
+  {
+    "id": 1124000,
+    "name": "Carian Glintstone Staff",
+    "type": "Glintstone Staff",
+    "weight": 3,
+    "requirements": {
+      "str": 6,
+      "dex": 8,
+      "int": 24,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6967c49cl0i1p0mowlnjq4ufrl.png"
+  },
+  {
+    "id": 1125000,
+    "name": "Azur's Glintstone Staff",
+    "type": "Glintstone Staff",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 52,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "B",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 24,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695d9e5dl0i1p0otrlfxvt1g9n9.png"
+  },
+  {
+    "id": 1126000,
+    "name": "Lusat's Glintstone Staff",
+    "type": "Glintstone Staff",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 52,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "B",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 24,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695a0063l0i1p0qdogpnbjb7xnf.png"
+  },
+  {
+    "id": 1127000,
+    "name": "Meteorite Staff",
+    "type": "Glintstone Staff",
+    "weight": 4.5,
+    "requirements": {
+      "str": 6,
+      "dex": 0,
+      "int": 18,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "S",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 39,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6995e6eel0i1p0ujryl4uvjkiji.png"
+  },
+  {
+    "id": 1128000,
+    "name": "Staff Of The Guilty",
+    "type": "Glintstone Staff",
+    "weight": 4.5,
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 12,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 38,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698cdcd5l0i1p17cuvrv89tk1t.png"
+  },
+  {
+    "id": 1129000,
+    "name": "Rotten Crystal Staff",
+    "type": "Glintstone Staff",
+    "weight": 4.5,
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 48,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "B",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 42,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69594fd1l0i1p1ad5rxu1z3y9xt.png"
+  },
+  {
+    "id": 1130000,
+    "name": "Greataxe",
+    "type": "Greataxe",
+    "weight": 13,
+    "requirements": {
+      "str": 30,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 151,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69932567l0i1p1g57mgpbxaj4hw.png"
+  },
+  {
+    "id": 1131000,
+    "name": "Great Omenkiller Cleaver",
+    "type": "Greataxe",
+    "weight": 11,
+    "requirements": {
+      "str": 23,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 142,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c517f3l0i1p1j5gib5p31b06c.png"
+  },
+  {
+    "id": 1132000,
+    "name": "Staff Of Loss",
+    "type": "Glintstone Staff",
+    "weight": 2.5,
+    "requirements": {
+      "str": 6,
+      "dex": 12,
+      "int": 14,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 22,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c940f6l0i1p1noaxeazv2s6xo.png"
+  },
+  {
+    "id": 1133000,
+    "name": "Crescent Moon Axe",
+    "type": "Greataxe",
+    "weight": 12.5,
+    "requirements": {
+      "str": 25,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 146,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6962ddb3l0i1p1wgacx8m0mpy3c.png"
+  },
+  {
+    "id": 1134000,
+    "name": "Axe Of Godrick",
+    "type": "Greataxe",
+    "weight": 11,
+    "requirements": {
+      "str": 34,
+      "dex": 22,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 142,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a0a0del0i1p1ze2uhbxr6enmw.png"
+  },
+  {
+    "id": 1135000,
+    "name": "Longhaft Axe",
+    "type": "Greataxe",
+    "weight": 12.5,
+    "requirements": {
+      "str": 24,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 146,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69822237l0i1p270w3dlqvx3kil.png"
+  },
+  {
+    "id": 1136000,
+    "name": "Executioner's Greataxe",
+    "type": "Greataxe",
+    "weight": 15,
+    "requirements": {
+      "str": 34,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 150,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bd922al0i1p2frazvyrv41tge.png"
+  },
+  {
+    "id": 1137000,
+    "name": "Rusted Anchor",
+    "type": "Greataxe",
+    "weight": 12.5,
+    "requirements": {
+      "str": 26,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 147,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696240e3l0i1p2l8nsbm1tuf3kq.png"
+  },
+  {
+    "id": 1138000,
+    "name": "Winged Greathorn",
+    "type": "Greataxe",
+    "weight": 11,
+    "requirements": {
+      "str": 30,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 130,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699a5bafl0i1p2louzpgjcml2zi.png"
+  },
+  {
+    "id": 1139000,
+    "name": "Butchering Knife",
+    "type": "Greataxe",
+    "weight": 8.5,
+    "requirements": {
+      "str": 16,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 134,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698a1aa2l0i1p2ttzr3kqvtkrqo.png"
+  },
+  {
+    "id": 1140000,
+    "name": "Gargoyle's Great Axe",
+    "type": "Greataxe",
+    "weight": 0,
+    "requirements": {
+      "str": 24,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 123,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aff1efl0i1p2xlel2i8mhvc2o.png"
+  },
+  {
+    "id": 1141000,
+    "name": "Lion Greatbow",
+    "type": "Greatbow",
+    "weight": 9.5,
+    "requirements": {
+      "str": 22,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694ec20bl0i1p34h48fycewmkr1.png"
+  },
+  {
+    "id": 1142000,
+    "name": "Erdtree Greatbow",
+    "type": "Greatbow",
+    "weight": 11,
+    "requirements": {
+      "str": 20,
+      "dex": 14,
+      "int": 0,
+      "fai": 14,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 60,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 65
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69727d35l0i1p3af7vawzb2qx4v.png"
+  },
+  {
+    "id": 1143000,
+    "name": "Golem Greatbow",
+    "type": "Greatbow",
+    "weight": 14.5,
+    "requirements": {
+      "str": 24,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 130,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ba8511l0i1p3aular3j6um6ed.png"
+  },
+  {
+    "id": 1144000,
+    "name": "Greatbow",
+    "type": "Greatbow",
+    "weight": 10,
+    "requirements": {
+      "str": 20,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 125,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6967c4f3l0i1p3l1xull5qamw2.png"
+  },
+  {
+    "id": 1145000,
+    "name": "Mohgwyn's Sacred Spear",
+    "type": "Great Spear",
+    "weight": 10,
+    "requirements": {
+      "str": 24,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 27
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 96,
+      "magic": 0,
+      "fire": 62,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696abc5el0i1p3mxdl2nf7g3wsu.png"
+  },
+  {
+    "id": 1146000,
+    "name": "Siluria's Tree",
+    "type": "Great Spear",
+    "weight": 10,
+    "requirements": {
+      "str": 27,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 90,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 90
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6948ce42l0i1p3rnqwtrftgh5gg.png"
+  },
+  {
+    "id": 1147000,
+    "name": "Vyke's War Spear",
+    "type": "Great Spear",
+    "weight": 8,
+    "requirements": {
+      "str": 16,
+      "dex": 20,
+      "int": 0,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 103,
+      "magic": 0,
+      "fire": 66,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6949e9bbl0i1p3z882yhinlaqxj.png"
+  },
+  {
+    "id": 1148000,
+    "name": "Serpent-hunter",
+    "type": "Great Spear",
+    "weight": 12,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "B",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 111,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b0a1dcl0i1p3zvfkgywidwr2.png"
+  },
+  {
+    "id": 1149000,
+    "name": "Lance",
+    "type": "Great Spear",
+    "weight": 9,
+    "requirements": {
+      "str": 20,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 123,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6965c8c7l0i1p4ca48460ednlrf.png"
+  },
+  {
+    "id": 1150000,
+    "name": "Treespear",
+    "type": "Great Spear",
+    "weight": 9.5,
+    "requirements": {
+      "str": 15,
+      "dex": 22,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 122,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 79
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6995c642l0i1p4de8g3enadtufs.png"
+  },
+  {
+    "id": 1151000,
+    "name": "Bastard Sword",
+    "type": "Greatsword",
+    "weight": 9,
+    "requirements": {
+      "str": 16,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 138,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a8d915l0i1p4kqv889wy4d4vc.png"
+  },
+  {
+    "id": 1152000,
+    "name": "Forked Greatsword",
+    "type": "Greatsword",
+    "weight": 9,
+    "requirements": {
+      "str": 14,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 124,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6995269el0i1p4oqujogklpkccd.png"
+  },
+  {
+    "id": 1153000,
+    "name": "Iron Greatsword",
+    "type": "Greatsword",
+    "weight": 12,
+    "requirements": {
+      "str": 18,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 149,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698d80fal0i1p4tl3fnkays6xcs.png"
+  },
+  {
+    "id": 1154000,
+    "name": "Lordsworn's Greatsword",
+    "type": "Greatsword",
+    "weight": 9,
+    "requirements": {
+      "str": 16,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 136,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c84a0fl0i1p53njeg78jpm83g.png"
+  },
+  {
+    "id": 1155000,
+    "name": "Knight's Greatsword",
+    "type": "Greatsword",
+    "weight": 10,
+    "requirements": {
+      "str": 16,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 141,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696c3869l0i1p57ui4dkke1j2lb.png"
+  },
+  {
+    "id": 1156000,
+    "name": "Flamberge",
+    "type": "Greatsword",
+    "weight": 10,
+    "requirements": {
+      "str": 15,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 129,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69958ad2l0i1p5cvrojl4ty52zs.png"
+  },
+  {
+    "id": 1157000,
+    "name": "Ordovis's Greatsword",
+    "type": "Greatsword",
+    "weight": 12,
+    "requirements": {
+      "str": 25,
+      "dex": 13,
+      "int": 0,
+      "fai": 15,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 107,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 69
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69914456l0i1p5gc8d6bi642ubp.png"
+  },
+  {
+    "id": 1158000,
+    "name": "Alabaster Lord's Sword",
+    "type": "Greatsword",
+    "weight": 8,
+    "requirements": {
+      "str": 16,
+      "dex": 12,
+      "int": 18,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 128,
+      "magic": 38,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a3766al0i1p5jn27ea0xazje3.png"
+  },
+  {
+    "id": 1159000,
+    "name": "Banished Knight's Greatsword",
+    "type": "Greatsword",
+    "weight": 10,
+    "requirements": {
+      "str": 17,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 142,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6961c7efl0i1p5tbamvedpnmzx4.png"
+  },
+  {
+    "id": 1160000,
+    "name": "Dark Moon Greatsword",
+    "type": "Greatsword",
+    "weight": 10,
+    "requirements": {
+      "str": 16,
+      "dex": 11,
+      "int": 38,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 82,
+      "magic": 98,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aa76b3l0i1p5w4xa7tbhq0qit.png"
+  },
+  {
+    "id": 1161000,
+    "name": "Sacred Relic Sword",
+    "type": "Greatsword",
+    "weight": 11,
+    "requirements": {
+      "str": 14,
+      "dex": 24,
+      "int": 0,
+      "fai": 22,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 118,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 76
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6971ad09l0i1p698i6hg5fqq3ir.png"
+  },
+  {
+    "id": 1162000,
+    "name": "Helphen's Steeple",
+    "type": "Greatsword",
+    "weight": 11.5,
+    "requirements": {
+      "str": 19,
+      "dex": 10,
+      "int": 22,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 101,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a34499l0i1p69mtmqzfrxa7b.png"
+  },
+  {
+    "id": 1163000,
+    "name": "Blasphemous Blade",
+    "type": "Greatsword",
+    "weight": 13.5,
+    "requirements": {
+      "str": 22,
+      "dex": 15,
+      "int": 0,
+      "fai": 21,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 121,
+      "magic": 0,
+      "fire": 78,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a18c12l0i1p6irjv6m8ue2f5.png"
+  },
+  {
+    "id": 1164000,
+    "name": "Marais Executioner's Sword",
+    "type": "Greatsword",
+    "weight": 11.5,
+    "requirements": {
+      "str": 24,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 23
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 94,
+      "magic": 61,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69af1239l0i1p6tbsakd85i69of.png"
+  },
+  {
+    "id": 1165000,
+    "name": "Sword Of Milos",
+    "type": "Greatsword",
+    "weight": 10,
+    "requirements": {
+      "str": 15,
+      "dex": 19,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 141,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6998ff30l0i1p6uu73zw546f13u.png"
+  },
+  {
+    "id": 1166000,
+    "name": "Golden Order Greatsword",
+    "type": "Greatsword",
+    "weight": 10,
+    "requirements": {
+      "str": 16,
+      "dex": 21,
+      "int": 0,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 86,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 103
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c19b1al0i1p77ig6czaoxosd.png"
+  },
+  {
+    "id": 1167000,
+    "name": "Claymore",
+    "type": "Greatsword",
+    "weight": 9,
+    "requirements": {
+      "str": 16,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 138,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d938dal0i1p7cva71qgpwuo6w.png"
+  },
+  {
+    "id": 1168000,
+    "name": "Gargoyle's Greatsword",
+    "type": "Greatsword",
+    "weight": 11.5,
+    "requirements": {
+      "str": 18,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 133,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d64ed7l0i1p7jmmtge0ag3i4.png"
+  },
+  {
+    "id": 1169000,
+    "name": "Death's Poker",
+    "type": "Greatsword",
+    "weight": 8.5,
+    "requirements": {
+      "str": 15,
+      "dex": 17,
+      "int": 11,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "E",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 123,
+      "magic": 36,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d8a812l0i1p7s9xmq3zqql69.png"
+  },
+  {
+    "id": 1170000,
+    "name": "Gargoyle's Blackblade",
+    "type": "Greatsword",
+    "weight": 11.5,
+    "requirements": {
+      "str": 18,
+      "dex": 10,
+      "int": 0,
+      "fai": 22,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 102,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 122
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d4d41el0i1p7vs0vjortsg7oc.png"
+  },
+  {
+    "id": 1171000,
+    "name": "Pest's Glaive",
+    "type": "Halberd",
+    "weight": 7,
+    "requirements": {
+      "str": 13,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6998e2a7l0i1p8fxd6bbyw83nts.png"
+  },
+  {
+    "id": 1172000,
+    "name": "Halberd",
+    "type": "Halberd",
+    "weight": 8,
+    "requirements": {
+      "str": 14,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 125,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696b2b4al0i1p8ly2eaf2vbepd6.png"
+  },
+  {
+    "id": 1173000,
+    "name": "Lucerne",
+    "type": "Halberd",
+    "weight": 7,
+    "requirements": {
+      "str": 15,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 121,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a4b70bl0i1p8n5ha1qpziq1xg.png"
+  },
+  {
+    "id": 1174000,
+    "name": "Banished Knight's Halberd",
+    "type": "Halberd",
+    "weight": 8,
+    "requirements": {
+      "str": 14,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 125,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698a6131l0i1p8u3hufx2lc7nr.png"
+  },
+  {
+    "id": 1175000,
+    "name": "Commander's Standard",
+    "type": "Halberd",
+    "weight": 11.5,
+    "requirements": {
+      "str": 24,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 138,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6991e5c5l0i1p8vp4fgo45r89ky.png"
+  },
+  {
+    "id": 1176000,
+    "name": "Ripple Crescent Halberd",
+    "type": "Halberd",
+    "weight": 8.5,
+    "requirements": {
+      "str": 12,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "B"
+    },
+    "damage": {
+      "physical": 86,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694ee743l0i1p9ku7l29fh314nu.png"
+  },
+  {
+    "id": 1177000,
+    "name": "Nightrider Glaive",
+    "type": "Halberd",
+    "weight": 12,
+    "requirements": {
+      "str": 26,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 129,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6962a77bl0i1p9nswfravtg3kil.png"
+  },
+  {
+    "id": 1178000,
+    "name": "Vulgar Militia Saw",
+    "type": "Halberd",
+    "weight": 8,
+    "requirements": {
+      "str": 15,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 126,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6959d46el0i1p9thpf3fa8syut.png"
+  },
+  {
+    "id": 1179000,
+    "name": "Golden Halberd",
+    "type": "Halberd",
+    "weight": 13.5,
+    "requirements": {
+      "str": 30,
+      "dex": 14,
+      "int": 0,
+      "fai": 12,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 134,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 87
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6973b001l0i1p9v6qffivf6eh3.png"
+  },
+  {
+    "id": 1180000,
+    "name": "Glaive",
+    "type": "Halberd",
+    "weight": 10,
+    "requirements": {
+      "str": 18,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 132,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69afd8dcl0i1p9y9s33uzxd9fek.png"
+  },
+  {
+    "id": 1181000,
+    "name": "Loretta's War Sickle",
+    "type": "Halberd",
+    "weight": 10,
+    "requirements": {
+      "str": 20,
+      "dex": 15,
+      "int": 20,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 110,
+      "magic": 71,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69869f89l0i1panhih63470rmve.png"
+  },
+  {
+    "id": 1182000,
+    "name": "Guardian's Swordspear",
+    "type": "Halberd",
+    "weight": 9,
+    "requirements": {
+      "str": 17,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 139,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6984431bl0i1papfl53ticoff4p.png"
+  },
+  {
+    "id": 1183000,
+    "name": "Dragon Halberd",
+    "type": "Halberd",
+    "weight": 10.5,
+    "requirements": {
+      "str": 22,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 135,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c95d75l0i1paugymrcjquua4q.png"
+  },
+  {
+    "id": 1184000,
+    "name": "Vulgar Militia Shotel",
+    "type": "Curved Sword",
+    "weight": 8,
+    "requirements": {
+      "str": 14,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 121,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69884882l0i1pawmnlwtwvbmm8.png"
+  },
+  {
+    "id": 1185000,
+    "name": "Gargoyle's Halberd",
+    "type": "Halberd",
+    "weight": 12,
+    "requirements": {
+      "str": 26,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 131,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c725a8l0i1pay72k5pcw8pvc6.png"
+  },
+  {
+    "id": 1186000,
+    "name": "Mace",
+    "type": "Hammer",
+    "weight": 4.5,
+    "requirements": {
+      "str": 12,
+      "dex": 7,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a7bbbcl0i1pbo28bmzr0t6jyp.png"
+  },
+  {
+    "id": 1187000,
+    "name": "Gargoyle's Black Halberd",
+    "type": "Halberd",
+    "weight": 12,
+    "requirements": {
+      "str": 26,
+      "dex": 10,
+      "int": 0,
+      "fai": 22,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 103,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 123
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a5df3cl0i1pboo1un3fj711tg.png"
+  },
+  {
+    "id": 1188000,
+    "name": "Curved Club",
+    "type": "Hammer",
+    "weight": 5,
+    "requirements": {
+      "str": 11,
+      "dex": 7,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 114,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696774f3l0i1pbvceygv4mkw0d7.png"
+  },
+  {
+    "id": 1189000,
+    "name": "Warpick",
+    "type": "Hammer",
+    "weight": 2.5,
+    "requirements": {
+      "str": 11,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 108,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694ca651l0i1pbx2gimykg3587g.png"
+  },
+  {
+    "id": 1190000,
+    "name": "Club",
+    "type": "Hammer",
+    "weight": 3.5,
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 103,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694bb057l0i1pc726b2jy8z22n.png"
+  },
+  {
+    "id": 1191000,
+    "name": "Spiked Club",
+    "type": "Hammer",
+    "weight": 5,
+    "requirements": {
+      "str": 12,
+      "dex": 7,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 114,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699d1084l0i1pcmssd76cdlcjqk.png"
+  },
+  {
+    "id": 1192000,
+    "name": "Hammer",
+    "type": "Hammer",
+    "weight": 6.5,
+    "requirements": {
+      "str": 14,
+      "dex": 7,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 124,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a22461l0i1pcneoqys4gxbav.png"
+  },
+  {
+    "id": 1193000,
+    "name": "Varré's Bouquet",
+    "type": "Hammer",
+    "weight": 2,
+    "requirements": {
+      "str": 8,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 24
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "C"
+    },
+    "damage": {
+      "physical": 46,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aced5el0i1pcsbypcz3lxclfq.png"
+  },
+  {
+    "id": 1194000,
+    "name": "Morning Star",
+    "type": "Hammer",
+    "weight": 5,
+    "requirements": {
+      "str": 12,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 118,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d6e6e0l0i1pctcpzxxaoxt1wc.png"
+  },
+  {
+    "id": 1195000,
+    "name": "Monk's Flamemace",
+    "type": "Hammer",
+    "weight": 6,
+    "requirements": {
+      "str": 13,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 126,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b676c4l0i1pcy677icvt5r8m9.png"
+  },
+  {
+    "id": 1196000,
+    "name": "Envoy's Horn",
+    "type": "Hammer",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 96,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 62
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695571bbl0i1pdcktfpfya20p2.png"
+  },
+  {
+    "id": 1197000,
+    "name": "Scepter Of The All-knowing",
+    "type": "Hammer",
+    "weight": 4.5,
+    "requirements": {
+      "str": 12,
+      "dex": 18,
+      "int": 21,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 99,
+      "magic": 64,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6980f9d0l0i1pdddh1p7a12vqnc.png"
+  },
+  {
+    "id": 1198000,
+    "name": "Nox Flowing Hammer",
+    "type": "Hammer",
+    "weight": 6.5,
+    "requirements": {
+      "str": 17,
+      "dex": 7,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 122,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b63034l0i1pdhypowirop759.png"
+  },
+  {
+    "id": 1199000,
+    "name": "Ringed Finger",
+    "type": "Hammer",
+    "weight": 4.5,
+    "requirements": {
+      "str": 17,
+      "dex": 7,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 121,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b7f413l0i1pdlfnyqleuyg0fm.png"
+  },
+  {
+    "id": 1200000,
+    "name": "Stone Club",
+    "type": "Hammer",
+    "weight": 7,
+    "requirements": {
+      "str": 16,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 122,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6984dcccl0i1pdm4f6od648mce.png"
+  },
+  {
+    "id": 1201000,
+    "name": "Marika's Hammer",
+    "type": "Hammer",
+    "weight": 6,
+    "requirements": {
+      "str": 20,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 65
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6976dccbl0i1pdxa3y1gcjkryhw.png"
+  },
+  {
+    "id": 1202000,
+    "name": "Bloody Helice",
+    "type": "Heavy Thrusting Sword",
+    "weight": 8,
+    "requirements": {
+      "str": 16,
+      "dex": 19,
+      "int": 0,
+      "fai": 0,
+      "arc": 17
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 130,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69987c03l0i1pdyutp139wmu1sh.png"
+  },
+  {
+    "id": 1203000,
+    "name": "Great Épée",
+    "type": "Heavy Thrusting Sword",
+    "weight": 6.5,
+    "requirements": {
+      "str": 15,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 124,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696cbcb2l0i1pe89fm2alskh2df.png"
+  },
+  {
+    "id": 1204000,
+    "name": "Godskin Stitcher",
+    "type": "Heavy Thrusting Sword",
+    "weight": 7,
+    "requirements": {
+      "str": 14,
+      "dex": 17,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 127,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6969f10el0i1pecne5vzed6lx56.png"
+  },
+  {
+    "id": 1205000,
+    "name": "Dragon King's Cragblade",
+    "type": "Heavy Thrusting Sword",
+    "weight": 8,
+    "requirements": {
+      "str": 18,
+      "dex": 37,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 92,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 59,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699a14b1l0i1pekzisiwkpul53i.png"
+  },
+  {
+    "id": 1206000,
+    "name": "Uchigatana",
+    "type": "Katana",
+    "weight": 5.5,
+    "requirements": {
+      "str": 11,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69cd8a23l0i1peugvwepjdkaqh.png"
+  },
+  {
+    "id": 1207000,
+    "name": "Nagakiba",
+    "type": "Katana",
+    "weight": 7,
+    "requirements": {
+      "str": 18,
+      "dex": 22,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69728e6al0i1peyh4scwxfhl357.png"
+  },
+  {
+    "id": 1208000,
+    "name": "Hand Of Malenia",
+    "type": "Katana",
+    "weight": 7,
+    "requirements": {
+      "str": 16,
+      "dex": 48,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "B",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 117,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69667faal0i1pezui5k6y6r0fin.png"
+  },
+  {
+    "id": 1209000,
+    "name": "Meteoric Ore Blade",
+    "type": "Katana",
+    "weight": 7.5,
+    "requirements": {
+      "str": 15,
+      "dex": 14,
+      "int": 18,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 112,
+      "magic": 72,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69513a8al0i1pf3ozolljjevfk.png"
+  },
+  {
+    "id": 1210000,
+    "name": "Rivers Of Blood",
+    "type": "Katana",
+    "weight": 6.5,
+    "requirements": {
+      "str": 12,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 20
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 89,
+      "magic": 0,
+      "fire": 89,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6946d08bl0i1pfb4sevs913hvu.png"
+  },
+  {
+    "id": 1211000,
+    "name": "Moonveil",
+    "type": "Katana",
+    "weight": 6.5,
+    "requirements": {
+      "str": 12,
+      "dex": 18,
+      "int": 23,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "C",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 73,
+      "magic": 87,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a10accl0i1pfj7uwvc9kzei7d.png"
+  },
+  {
+    "id": 1212000,
+    "name": "Dragonscale Blade",
+    "type": "Katana",
+    "weight": 5.5,
+    "requirements": {
+      "str": 12,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 110,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c558e4l0i1pfn93tt9wcpo0di.png"
+  },
+  {
+    "id": 1213000,
+    "name": "Serpentbone Blade",
+    "type": "Katana",
+    "weight": 6,
+    "requirements": {
+      "str": 11,
+      "dex": 22,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d611efl0i1pfqtebu0oq2b2w4.png"
+  },
+  {
+    "id": 1214000,
+    "name": "Shortbow",
+    "type": "Light Bow",
+    "weight": 2.5,
+    "requirements": {
+      "str": 8,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 65,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6994d14el0i1pfsvoe12uhfhqnc.png"
+  },
+  {
+    "id": 1215000,
+    "name": "Misbegotten Shortbow",
+    "type": "Light Bow",
+    "weight": 3,
+    "requirements": {
+      "str": 16,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 68,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b492f2l0i1pg02g5smf5kummp.png"
+  },
+  {
+    "id": 1216000,
+    "name": "Red Branch Shortbow",
+    "type": "Light Bow",
+    "weight": 2.5,
+    "requirements": {
+      "str": 8,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 65,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6971cafal0i1pg8ls91ef3yrf8r.png"
+  },
+  {
+    "id": 1217000,
+    "name": "Harp Bow",
+    "type": "Light Bow",
+    "weight": 2,
+    "requirements": {
+      "str": 9,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 62,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69491311l0i1pgceffu5ll8sovn.png"
+  },
+  {
+    "id": 1218000,
+    "name": "Composite Bow",
+    "type": "Light Bow",
+    "weight": 3,
+    "requirements": {
+      "str": 15,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 65,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6976f477l0i1pgfgwmdenvupj5.png"
+  },
+  {
+    "id": 1219000,
+    "name": "Scythe",
+    "type": "Other",
+    "weight": 7.5,
+    "requirements": {
+      "str": 14,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 125,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69502a09l0i1pgjcmg5igz1j0mr.png"
+  },
+  {
+    "id": 1220000,
+    "name": "Grave Scythe",
+    "type": "Other",
+    "weight": 9.5,
+    "requirements": {
+      "str": 17,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 144,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69920f78l0i1pgs2yaxn0jafxk.png"
+  },
+  {
+    "id": 1221000,
+    "name": "Halo Scythe",
+    "type": "Other",
+    "weight": 8.5,
+    "requirements": {
+      "str": 13,
+      "dex": 16,
+      "int": 0,
+      "fai": 15,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "E",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 118,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 76
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697b3423l0i1pgz84q3gg342rvu.png"
+  },
+  {
+    "id": 1222000,
+    "name": "Winged Scythe",
+    "type": "Other",
+    "weight": 7.5,
+    "requirements": {
+      "str": 16,
+      "dex": 16,
+      "int": 0,
+      "fai": 24,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 87,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 104
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69abddefl0i1ph323xr196zcpc.png"
+  },
+  {
+    "id": 1223000,
+    "name": "Finger Seal",
+    "type": "Sacred Seal",
+    "weight": 1.5,
+    "requirements": {
+      "str": 4,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699368ccl0i1ph45qf42ty540od.png"
+  },
+  {
+    "id": 1224000,
+    "name": "Godslayer's Seal",
+    "type": "Sacred Seal",
+    "weight": 1.5,
+    "requirements": {
+      "str": 4,
+      "dex": 0,
+      "int": 0,
+      "fai": 27,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bbd392l0i1ph9qxgols7hl7qc.png"
+  },
+  {
+    "id": 1225000,
+    "name": "Giant's Seal",
+    "type": "Sacred Seal",
+    "weight": 1.5,
+    "requirements": {
+      "str": 4,
+      "dex": 0,
+      "int": 0,
+      "fai": 14,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6995ccbfl0i1phh558cbgycwuo.png"
+  },
+  {
+    "id": 1226000,
+    "name": "Clawmark Seal",
+    "type": "Sacred Seal",
+    "weight": 1.5,
+    "requirements": {
+      "str": 4,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 31,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697c0b2dl0i1phqrezjlqqlunoa.png"
+  },
+  {
+    "id": 1227000,
+    "name": "Golden Order Seal",
+    "type": "Sacred Seal",
+    "weight": 0,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 17,
+      "fai": 17,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "D",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 24,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d76aa8l0i1phsgjq5azzb5g1.png"
+  },
+  {
+    "id": 1228000,
+    "name": "Erdtree Seal",
+    "type": "Sacred Seal",
+    "weight": 0,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 40,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 15
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69746125l0i1phti5gxbjc1nfhx.png"
+  },
+  {
+    "id": 1229000,
+    "name": "Erdtree Seal",
+    "type": "Sacred Seal",
+    "weight": 0,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 40,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "C",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 15
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698bacafl0i1phz3om56qt5bqof.png"
+  },
+  {
+    "id": 1230000,
+    "name": "Dragon Communion Seal",
+    "type": "Sacred Seal",
+    "weight": 0,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 10
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "D",
+      "arc": "C"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697307d1l0i1pi6qvgmp5wuhmk.png"
+  },
+  {
+    "id": 1231000,
+    "name": "Frenzied Flame Seal",
+    "type": "Sacred Seal",
+    "weight": 0,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 10,
+      "arc": 10
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "E",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 25,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69885c93l0i1pihpfc550piu1x.png"
+  },
+  {
+    "id": 1232000,
+    "name": "Spear",
+    "type": "Spear",
+    "weight": 4.5,
+    "requirements": {
+      "str": 12,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 114,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697047a0l0i1pik0le4bp23xal.png"
+  },
+  {
+    "id": 1233000,
+    "name": "Short Spear",
+    "type": "Spear",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 112,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69bba35dl0i1pilsvl3r9ub4cf9.png"
+  },
+  {
+    "id": 1234000,
+    "name": "Crystal Spear",
+    "type": "Spear",
+    "weight": 5.5,
+    "requirements": {
+      "str": 10,
+      "dex": 16,
+      "int": 16,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 110,
+      "magic": 33,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a617edl0i1piq3kor6g6xs3ql.png"
+  },
+  {
+    "id": 1235000,
+    "name": "Clayman's Harpoon",
+    "type": "Spear",
+    "weight": 5.5,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 99,
+      "magic": 64,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b1e4cfl0i1piuurxtzf8019c.png"
+  },
+  {
+    "id": 1236000,
+    "name": "Partisan",
+    "type": "Spear",
+    "weight": 6.5,
+    "requirements": {
+      "str": 15,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 123,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698971dfl0i1pja9443dg722bb3.png"
+  },
+  {
+    "id": 1237000,
+    "name": "Celebrant's Rib-rake",
+    "type": "Spear",
+    "weight": 5,
+    "requirements": {
+      "str": 8,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 109,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694b74eel0i1pjc1y7lp7e97wy.png"
+  },
+  {
+    "id": 1238000,
+    "name": "Cleanrot Spear",
+    "type": "Spear",
+    "weight": 5.5,
+    "requirements": {
+      "str": 16,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 102,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 66
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698acb69l0i1pjffhe1kjzha5v.png"
+  },
+  {
+    "id": 1239000,
+    "name": "Pike",
+    "type": "Spear",
+    "weight": 7.5,
+    "requirements": {
+      "str": 20,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6975ef77l0i1pjgwds05239gwag.png"
+  },
+  {
+    "id": 1240000,
+    "name": "Torchpole",
+    "type": "Spear",
+    "weight": 6,
+    "requirements": {
+      "str": 14,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "E",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 104,
+      "magic": 0,
+      "fire": 31,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d10518l0i1pjt3166nis69mk9.png"
+  },
+  {
+    "id": 1241000,
+    "name": "Bolt Of Gransax",
+    "type": "Spear",
+    "weight": 8.5,
+    "requirements": {
+      "str": 20,
+      "dex": 40,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 98,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 63,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6993e936l0i1pjyhfk7vfpgc8ce.png"
+  },
+  {
+    "id": 1242000,
+    "name": "Cross-naginata",
+    "type": "Spear",
+    "weight": 8,
+    "requirements": {
+      "str": 16,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 122,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b7874el0i1pk0zpdda5qgjzi.png"
+  },
+  {
+    "id": 1243000,
+    "name": "Death Ritual Spear",
+    "type": "Spear",
+    "weight": 6.5,
+    "requirements": {
+      "str": 11,
+      "dex": 20,
+      "int": 18,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 99,
+      "magic": 64,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6963cc83l0i1pk36gu3e5f8fpxm.png"
+  },
+  {
+    "id": 1244000,
+    "name": "Inquisitor's Girandole",
+    "type": "Spear",
+    "weight": 7.5,
+    "requirements": {
+      "str": 18,
+      "dex": 15,
+      "int": 0,
+      "fai": 16,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 102,
+      "magic": 0,
+      "fire": 66,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ac78dcl0i1pke5of594dboffh.png"
+  },
+  {
+    "id": 1245000,
+    "name": "Spiked Spear",
+    "type": "Spear",
+    "weight": 6,
+    "requirements": {
+      "str": 14,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6975dd97l0i1pkiw33ipbj1wu2d.png"
+  },
+  {
+    "id": 1246000,
+    "name": "Rotten Crystal Spear",
+    "type": "Spear",
+    "weight": 5.5,
+    "requirements": {
+      "str": 10,
+      "dex": 16,
+      "int": 16,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 104,
+      "magic": 31,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c12977l0i1pkr6s0g1o7v5kz.png"
+  },
+  {
+    "id": 1247000,
+    "name": "Iron Spear",
+    "type": "Spear",
+    "weight": 4.5,
+    "requirements": {
+      "str": 13,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 114,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698a34afl0i1pku2sj7lswv0zy.png"
+  },
+  {
+    "id": 1248000,
+    "name": "Winged Spear",
+    "type": "Spear",
+    "weight": 4.5,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 78,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697d5fe2l0i1pkvirys2xrxe0un.png"
+  },
+  {
+    "id": 1249000,
+    "name": "Longsword",
+    "type": "Straight Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 110,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a84ec9l0i1pl7rf93vq4jlbt8.png"
+  },
+  {
+    "id": 1250000,
+    "name": "Short Sword",
+    "type": "Straight Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 8,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 102,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699b4949l0i1plb5z4sznm17g7p.png"
+  },
+  {
+    "id": 1251000,
+    "name": "Broadsword",
+    "type": "Straight Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 117,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696356b4l0i1pljd3dmbyei0rzd.png"
+  },
+  {
+    "id": 1252000,
+    "name": "Lordsworn's Straight Sword",
+    "type": "Straight Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b31ef4l0i1plkiau08p955pt5.png"
+  },
+  {
+    "id": 1253000,
+    "name": "Weathered Straight Sword",
+    "type": "Straight Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 7,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 103,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6953c2f2l0i1pltkmb7nxuvfxgo.png"
+  },
+  {
+    "id": 1254000,
+    "name": "Golden Epitaph",
+    "type": "Straight Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 12,
+      "dex": 10,
+      "int": 0,
+      "fai": 14,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 85,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 85
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697020ddl0i1pm0mkycj3pyzli7.png"
+  },
+  {
+    "id": 1255000,
+    "name": "Ornamental Straight Sword",
+    "type": "Straight Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69523142l0i1pm7iurzr5rt7vpb.png"
+  },
+  {
+    "id": 1256000,
+    "name": "Coded Sword",
+    "type": "Straight Sword",
+    "weight": 2.5,
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 20,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "B",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 85
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d1c283l0i1pm7km9k4n9hesqp.png"
+  },
+  {
+    "id": 1257000,
+    "name": "Sword Of Night And Flame",
+    "type": "Straight Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 12,
+      "dex": 12,
+      "int": 0,
+      "fai": 24,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 87,
+      "magic": 56,
+      "fire": 56,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69dcdeb9l0i1pmay6pw29q0kz9j.png"
+  },
+  {
+    "id": 1258000,
+    "name": "Carian Knight's Sword",
+    "type": "Straight Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 18,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 88,
+      "magic": 88,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b44345l0i1pmq6va882h9uvf.png"
+  },
+  {
+    "id": 1259000,
+    "name": "Crystal Sword",
+    "type": "Straight Sword",
+    "weight": 4.5,
+    "requirements": {
+      "str": 13,
+      "dex": 10,
+      "int": 15,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 106,
+      "magic": 68,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b32328l0i1pmuqj0u81mxsett.png"
+  },
+  {
+    "id": 1260000,
+    "name": "Sword Of St Trina",
+    "type": "Straight Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 107,
+      "magic": 32,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698685e3l0i1pmwzhhrnhxcf81.png"
+  },
+  {
+    "id": 1261000,
+    "name": "Miquellan Knight's Sword",
+    "type": "Straight Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 11,
+      "dex": 11,
+      "int": 0,
+      "fai": 16,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "E",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 105,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 68
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aa244al0i1pmyf54x5qm8xb1r.png"
+  },
+  {
+    "id": 1262000,
+    "name": "Cane Sword",
+    "type": "Straight Sword",
+    "weight": 2.5,
+    "requirements": {
+      "str": 8,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 96,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6997d3a3l0i1pn2970lts73cbnn.png"
+  },
+  {
+    "id": 1263000,
+    "name": "Regalia Of Eochaid",
+    "type": "Straight Sword",
+    "weight": 5.5,
+    "requirements": {
+      "str": 12,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 89,
+      "magic": 57,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d2e16cl0i1pndl0cqdeg1df40a.png"
+  },
+  {
+    "id": 1264000,
+    "name": "Noble's Slender Sword",
+    "type": "Straight Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6976fa7el0i1pnla0wdjcpf4iqvm.png"
+  },
+  {
+    "id": 1265000,
+    "name": "Warhawk's Talon",
+    "type": "Straight Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b005b3l0i1pnmcmlgow749t19.png"
+  },
+  {
+    "id": 1266000,
+    "name": "Rotten Crystal Sword",
+    "type": "Straight Sword",
+    "weight": 4.5,
+    "requirements": {
+      "str": 13,
+      "dex": 10,
+      "int": 15,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 102,
+      "magic": 66,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d445cel0i1pnsmtteechmemmd.png"
+  },
+  {
+    "id": 1267000,
+    "name": "Lazuli Glintstone Sword",
+    "type": "Straight Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 79,
+      "magic": 94,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697a64ccl0i1pnuagdt1sfmx0pk.png"
+  },
+  {
+    "id": 1268000,
+    "name": "Estoc",
+    "type": "Thrusting Sword",
+    "weight": 4.5,
+    "requirements": {
+      "str": 11,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 107,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69747395l0i1po2ze4jsp35ms3t.png"
+  },
+  {
+    "id": 1269000,
+    "name": "Rapier",
+    "type": "Thrusting Sword",
+    "weight": 2.5,
+    "requirements": {
+      "str": 7,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 96,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c6c09el0i1poegki2ecno2vw.png"
+  },
+  {
+    "id": 1270000,
+    "name": "Cleanrot Knight's Sword",
+    "type": "Thrusting Sword",
+    "weight": 4,
+    "requirements": {
+      "str": 13,
+      "dex": 11,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 109,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6990b8f9l0i1poeub82lv32r18o.png"
+  },
+  {
+    "id": 1271000,
+    "name": "Rogier's Rapier",
+    "type": "Thrusting Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 8,
+      "dex": 17,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 93,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d58854l0i1pom1ferfthsgsd.png"
+  },
+  {
+    "id": 1272000,
+    "name": "Antspur Rapier",
+    "type": "Thrusting Sword",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 98,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f697b4c08l0i1pomqr1pxcel70uf.png"
+  },
+  {
+    "id": 1273000,
+    "name": "Frozen Needle",
+    "type": "Thrusting Sword",
+    "weight": 2.5,
+    "requirements": {
+      "str": 11,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 99,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a8a231l0i1potleffsoj8ycfb.png"
+  },
+  {
+    "id": 1274000,
+    "name": "Torch",
+    "type": "Other",
+    "weight": 1.5,
+    "requirements": {
+      "str": 5,
+      "dex": 5,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 54,
+      "magic": 0,
+      "fire": 97,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a2e19cl0i1pp06n0kd7rxesjl.png"
+  },
+  {
+    "id": 1275000,
+    "name": "Noble's Estoc",
+    "type": "Thrusting Sword",
+    "weight": 3.5,
+    "requirements": {
+      "str": 9,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 104,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f6999d8b5l0i1pp5phyiipgx4eoi.png"
+  },
+  {
+    "id": 1276000,
+    "name": "Steel-wire Torch",
+    "type": "Other",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 61,
+      "magic": 0,
+      "fire": 109,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c23d73l0i1ppcoi0x9lzm1frn.png"
+  },
+  {
+    "id": 1277000,
+    "name": "St. Trina's Torch",
+    "type": "Other",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 14,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 51,
+      "magic": 0,
+      "fire": 91,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69762fd7l0i1ppfr1nudb4uz853.png"
+  },
+  {
+    "id": 1278000,
+    "name": "Ghostflame Torch",
+    "type": "Other",
+    "weight": 2.5,
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 14,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 50,
+      "magic": 90,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ca18e3l0i1pplg1qd5hx85vfgj.png"
+  },
+  {
+    "id": 1279000,
+    "name": "Beast-repellent Torch",
+    "type": "Other",
+    "weight": 2.5,
+    "requirements": {
+      "str": 12,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 58,
+      "magic": 0,
+      "fire": 104,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694a60fal0i1pprpdod0sn0veh.png"
+  },
+  {
+    "id": 1280000,
+    "name": "Sentry's Torch",
+    "type": "Other",
+    "weight": 5,
+    "requirements": {
+      "str": 15,
+      "dex": 8,
+      "int": 0,
+      "fai": 15,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 56,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 100
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69cf8934l0i1ppuzogdnseu6l7f.png"
+  },
+  {
+    "id": 1281000,
+    "name": "Godskin Peeler",
+    "type": "Twinblade",
+    "weight": 8,
+    "requirements": {
+      "str": 17,
+      "dex": 22,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 121,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69528e34l0i1pq5pn4dg3bbkmj.png"
+  },
+  {
+    "id": 1282000,
+    "name": "Twinned Knight Swords",
+    "type": "Twinblade",
+    "weight": 8,
+    "requirements": {
+      "str": 16,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 122,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a2b9c8l0i1pqbpbbyiylafnx.png"
+  },
+  {
+    "id": 1283000,
+    "name": "Eleonora's Poleblade",
+    "type": "Twinblade",
+    "weight": 6,
+    "requirements": {
+      "str": 12,
+      "dex": 21,
+      "int": 0,
+      "fai": 0,
+      "arc": 19
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "D"
+    },
+    "damage": {
+      "physical": 72,
+      "magic": 0,
+      "fire": 72,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d7ad55l0i1pqhdj20wzeg63ts.png"
+  },
+  {
+    "id": 1284000,
+    "name": "Gargoyle's Twinblade",
+    "type": "Twinblade",
+    "weight": 8.5,
+    "requirements": {
+      "str": 18,
+      "dex": 15,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 123,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f695e037bl0i1pqkyetqd7zbu8l.png"
+  },
+  {
+    "id": 1285000,
+    "name": "Gargoyle's Black Blades",
+    "type": "Twinblade",
+    "weight": 8.5,
+    "requirements": {
+      "str": 18,
+      "dex": 15,
+      "int": 0,
+      "fai": 22,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 81,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 97
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a3190el0i1pqs4x6j5c6xpye.png"
+  },
+  {
+    "id": 1286000,
+    "name": "Large Club",
+    "type": "Other",
+    "weight": 8.5,
+    "requirements": {
+      "str": 22,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 131,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f698bc778l0i1pqyr7r7agoq3o5d.png"
+  },
+  {
+    "id": 1287000,
+    "name": "Greathorn Hammer",
+    "type": "Other",
+    "weight": 10,
+    "requirements": {
+      "str": 22,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 134,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696c1ee3l0i1pr4ayhpbcwld3pn.png"
+  },
+  {
+    "id": 1288000,
+    "name": "Battle Hammer",
+    "type": "Other",
+    "weight": 10,
+    "requirements": {
+      "str": 26,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 131,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b42027l0i1prapddaur3pdili.png"
+  },
+  {
+    "id": 1289000,
+    "name": "Great Mace",
+    "type": "Other",
+    "weight": 11.5,
+    "requirements": {
+      "str": 28,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 134,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69a1045al0i1prfggf7geafalun.png"
+  },
+  {
+    "id": 1290000,
+    "name": "Curved Great Club",
+    "type": "Other",
+    "weight": 10,
+    "requirements": {
+      "str": 24,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 145,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aaf476l0i1prkfafl8jets7wh.png"
+  },
+  {
+    "id": 1291000,
+    "name": "Celebrant's Skull",
+    "type": "Other",
+    "weight": 8.5,
+    "requirements": {
+      "str": 18,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 138,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69ace310l0i1proreclwz3grgz.png"
+  },
+  {
+    "id": 1292000,
+    "name": "Beastclaw Greathammer",
+    "type": "Other",
+    "weight": 9,
+    "requirements": {
+      "str": 20,
+      "dex": 10,
+      "int": 0,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 116,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 75
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aff56dl0i1przmnvkw34pmvm.png"
+  },
+  {
+    "id": 1293000,
+    "name": "Twinblade",
+    "type": "Twinblade",
+    "weight": 7,
+    "requirements": {
+      "str": 10,
+      "dex": 18,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 119,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69afb6c2l0i1ps6dducecpwa4m.png"
+  },
+  {
+    "id": 1294000,
+    "name": "Envoy's Long Horn",
+    "type": "Other",
+    "weight": 9.5,
+    "requirements": {
+      "str": 23,
+      "dex": 11,
+      "int": 0,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 78
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c5e336l0i1ps8m2w27as1vumo.png"
+  },
+  {
+    "id": 1295000,
+    "name": "Pickaxe",
+    "type": "Other",
+    "weight": 10,
+    "requirements": {
+      "str": 22,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 144,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69aa2722l0i1ps9o8lwz4rprn29.png"
+  },
+  {
+    "id": 1296000,
+    "name": "Cranial Vessel Candlestand",
+    "type": "Other",
+    "weight": 12.5,
+    "requirements": {
+      "str": 26,
+      "dex": 8,
+      "int": 0,
+      "fai": 22,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 98,
+      "magic": 0,
+      "fire": 98,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69657dc0l0i1psc1sw2ehitb9m.png"
+  },
+  {
+    "id": 1297000,
+    "name": "Great Stars",
+    "type": "Other",
+    "weight": 10,
+    "requirements": {
+      "str": 22,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 135,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69dc134al0i1psnm7v5asqrwh7g.png"
+  },
+  {
+    "id": 1298000,
+    "name": "Devourer's Scepter",
+    "type": "Other",
+    "weight": 11.5,
+    "requirements": {
+      "str": 24,
+      "dex": 20,
+      "int": 0,
+      "fai": 25,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 107,
+      "magic": 0,
+      "fire": 69,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69b4d221l0i1psy7bxk9acqs5xv.png"
+  },
+  {
+    "id": 1299000,
+    "name": "Brick Hammer",
+    "type": "Other",
+    "weight": 12.5,
+    "requirements": {
+      "str": 31,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "B",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 122,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c5bf40l0i1pszirywq0wqy1l.png"
+  },
+  {
+    "id": 1300000,
+    "name": "Whip",
+    "type": "Whip",
+    "weight": 2,
+    "requirements": {
+      "str": 8,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 100,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69d7e396l0i1pt3tuf213zcu8u.png"
+  },
+  {
+    "id": 1301000,
+    "name": "Rotten Battle Hammer",
+    "type": "Other",
+    "weight": 10,
+    "requirements": {
+      "str": 26,
+      "dex": 8,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "C",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 126,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f699989edl0i1pt44dx2gkj49me6.png"
+  },
+  {
+    "id": 1302000,
+    "name": "Thorned Whip",
+    "type": "Whip",
+    "weight": 2.5,
+    "requirements": {
+      "str": 8,
+      "dex": 16,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 102,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69571714l0i1ptc8s1fsagr8zf.png"
+  },
+  {
+    "id": 1303000,
+    "name": "Magma Whip Candlestick",
+    "type": "Whip",
+    "weight": 2.5,
+    "requirements": {
+      "str": 8,
+      "dex": 16,
+      "int": 0,
+      "fai": 18,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 72,
+      "magic": 0,
+      "fire": 72,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69c5c0bfl0i1ptlhsrovoc8dx07.png"
+  },
+  {
+    "id": 1304000,
+    "name": "Hoslow's Petal Whip",
+    "type": "Whip",
+    "weight": 3.5,
+    "requirements": {
+      "str": 10,
+      "dex": 20,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 110,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f694eefe9l0i1pto8dn7ezy61a99.png"
+  },
+  {
+    "id": 1305000,
+    "name": "Giant's Red Braid",
+    "type": "Whip",
+    "weight": 2.5,
+    "requirements": {
+      "str": 18,
+      "dex": 12,
+      "int": 0,
+      "fai": 21,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "D",
+      "int": "-",
+      "fai": "D",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 82,
+      "magic": 0,
+      "fire": 53,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f696af19bl0i1ptpv0fdawl72o4yq.png"
+  },
+  {
+    "id": 1306000,
+    "name": "Urumi",
+    "type": "Whip",
+    "weight": 3,
+    "requirements": {
+      "str": 10,
+      "dex": 19,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "C",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "damage": {
+      "physical": 101,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "passives": [],
+    "image": "https://eldenring.fanapis.com/images/weapons/17f69691044l0i1ptyliubsc1c29o9.png"
+  }
+]

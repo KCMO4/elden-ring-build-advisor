@@ -1,0 +1,154 @@
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nameGlow {
+  0%, 100% { text-shadow: 0 0 40px rgba(201, 167, 79, 0.2); }
+  50%       { text-shadow: 0 0 65px rgba(201, 167, 79, 0.5), 0 0 20px rgba(201, 167, 79, 0.15); }
+}
+
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 70% -10%, rgba(201, 167, 79, 0.06) 0%, transparent 55%),
+    var(--bg-base);
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(to bottom, #1a1408, var(--bg-panel));
+  padding: 0.75rem 1.5rem;
+  animation: fadeSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold-dim) 20%,
+    var(--gold-dim) 80%,
+    transparent
+  );
+}
+
+.backBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.8rem;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.backBtn:hover {
+  border-color: var(--gold-dim);
+  color: var(--text);
+}
+
+.heroInfo {
+  text-align: center;
+}
+
+.charName {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin: 0 0 0.2rem;
+  text-transform: uppercase;
+  animation: nameGlow 4s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.charMeta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.levelBadge {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  background: rgba(201, 167, 79, 0.1);
+  border: 1px solid var(--gold-dim);
+  padding: 0.15rem 0.5rem;
+  border-radius: 0;
+}
+
+.metaDot {
+  color: var(--border);
+}
+
+.playtime {
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+
+.headerRight {
+  min-width: 80px;
+}
+
+/* ── Layout principal ────────────────────────────── */
+.main {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 0.75rem;
+  }
+
+  .header {
+    grid-template-columns: auto 1fr;
+    padding: 0.75rem;
+  }
+
+  .headerRight { display: none; }
+  .heroInfo { text-align: left; }
+  .charName { font-size: 1.2rem; }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}

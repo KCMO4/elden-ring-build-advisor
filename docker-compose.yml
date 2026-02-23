@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      target: dev
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend/src:/app/src
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      target: dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      VITE_API_URL: http://localhost:3001
+    depends_on:
+      backend:
+        condition: service_healthy

@@ -1,0 +1,76 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--bg-base);
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: 900px;
+}
+
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 1.5rem 2rem;
+  width: 220px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cardName {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardLevel {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+.backBtn {
+  margin-top: 2.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+
+.backBtn:hover {
+  color: var(--text);
+}

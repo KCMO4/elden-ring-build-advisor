@@ -1,0 +1,110 @@
+// ──────────────────────────────────────────────────────────────
+// Tipos del módulo de inventario de Elden Ring
+// ──────────────────────────────────────────────────────────────
+
+/**
+ * Categoría de un ítem según su ID en el .sl2.
+ *
+ * Nibble alto del itemId:
+ *   0x0 = weapon (EquipParamWeapon + flechas/ballestas en rango 50M+)
+ *   0x1 = armor  (EquipParamProtector)
+ *   0x2 = talisman (EquipParamAccessory)
+ *   0x4 = consumable (EquipParamGoods — incluye hechizos, espíritus, materiales, etc.)
+ *   0x8 = ash_of_war (EquipParamGem — Cenizas de Guerra)
+ */
+export type ItemCategory =
+  | 'weapon'
+  | 'ammo'         // Flechas y ballestas (nibble 0x0, base ID 50M+)
+  | 'armor'
+  | 'talisman'
+  | 'spell'        // Hechizos desde nibble 0x4 (IDs 4000-7999)
+  | 'spirit'       // Spirit Ashes (nibble 0x4, IDs 200000-299999)
+  | 'ash_of_war'   // Cenizas de guerra (nibble 0x8, EquipParamGem)
+  | 'consumable'   // Flasks, boluses, grease, throwables, misc
+  | 'material'     // Materiales de crafteo (animal parts, plantas, etc.)
+  | 'upgrade'      // Smithing Stones, Somber Stones, Glovewort
+  | 'crystal_tear' // Lágrimas del Flask of Wondrous Physick
+  | 'key_item'     // Ítems clave, mapas, notas, llaves, Bell Bearings
+  | 'cookbook'     // Recetas de crafteo (Nomadic Warrior's Cookbook, etc.)
+  | 'multiplayer'  // Ítems multijugador (Fingers, Rings, Effigies, etc.)
+  | 'gesture'      // Gestos
+  | 'unknown';
+
+/** Ítem crudo tal como aparece en el slot data del .sl2 */
+export interface RawInventoryItem {
+  /** ID del ítem en el formato del .sl2 */
+  itemId: number;
+  /** Unique ID de la instancia del ítem */
+  uid: number;
+  /** Cantidad (1 para armas/armaduras equipables, >1 para consumibles) */
+  quantity: number;
+  /** Categoría decodificada del ID */
+  category: ItemCategory;
+  /** ID base del ítem (sin el byte de tipo) */
+  baseId: number;
+}
+
+/** Ítem del inventario con nombre resuelto de la base de datos */
+export interface ResolvedInventoryItem extends RawInventoryItem {
+  name: string;
+  image?: string;
+}
+
+/** Arma equipada en un slot de mano */
+export interface EquippedWeapon {
+  /** ID crudo del .sl2 (gaitem_handle o 0xFFFFFFFF = vacío) */
+  rawId: number;
+  /** ID base del arma/armadura/talismán */
+  baseId: number;
+  /** Nombre del ítem o null si no se encontró en la base de datos */
+  name: string | null;
+  /** Nivel de mejora del arma (+0 a +25 / +10 para únicas). undefined si no aplica. */
+  upgradeLevel?: number;
+  /** URL de la imagen del ítem (fanapis.com) */
+  image?: string;
+  /** Daño base del arma (solo para weapons) */
+  damage?: { physical: number; magic: number; fire: number; lightning: number; holy: number };
+  /** Escalado del arma (solo para weapons) */
+  scaling?: { str: string; dex: string; int: string; fai: string; arc: string };
+  /** Peso del ítem */
+  weight?: number;
+  /** Defensa de la armadura (solo para armors) */
+  defense?: { physical: number; strike: number; slash: number; pierce: number; magic: number; fire: number; lightning: number; holy: number };
+}
+
+/** Ítems equipados en el personaje */
+export interface EquippedItems {
+  rightHand: [EquippedWeapon, EquippedWeapon, EquippedWeapon];
+  leftHand:  [EquippedWeapon, EquippedWeapon, EquippedWeapon];
+  head:   EquippedWeapon;
+  chest:  EquippedWeapon;
+  hands:  EquippedWeapon;
+  legs:   EquippedWeapon;
+  talismans: [EquippedWeapon, EquippedWeapon, EquippedWeapon, EquippedWeapon];
+}
+
+/** Inventario completo categorizado */
+export interface Inventory {
+  weapons:      ResolvedInventoryItem[];
+  ammos:        ResolvedInventoryItem[];   // Flechas y ballestas
+  armors:       ResolvedInventoryItem[];
+  talismans:    ResolvedInventoryItem[];
+  spells:       ResolvedInventoryItem[];   // Hechizos (desde nibble 0x4)
+  spirits:      ResolvedInventoryItem[];   // Spirit Ashes
+  ashesOfWar:   ResolvedInventoryItem[];   // Cenizas de guerra (nibble 0x8, TBD)
+  consumables:  ResolvedInventoryItem[];   // Flasks, boluses, comidas, etc.
+  materials:    ResolvedInventoryItem[];   // Materiales de crafteo
+  upgrades:     ResolvedInventoryItem[];   // Piedras de mejora, glovewort
+  crystalTears: ResolvedInventoryItem[];   // Lágrimas para Flask
+  keyItems:     ResolvedInventoryItem[];   // Ítems clave, mapas, notas
+  cookbooks:    ResolvedInventoryItem[];   // Recetas de crafteo
+  multiplayer:  ResolvedInventoryItem[];   // Ítems multijugador
+  /** Ítems sin categoría conocida */
+  other:        RawInventoryItem[];
+}
+
+/** Resultado completo del escaneo de un slot */
+export interface InventoryScanResult {
+  equipped: EquippedItems;
+  inventory: Inventory;
+}

@@ -1,0 +1,168 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201, 167, 79, 0.08) 0%, transparent 60%),
+    var(--bg-base);
+}
+
+@keyframes titleReveal {
+  from { opacity: 0; letter-spacing: 0.5em; }
+  to   { opacity: 1; letter-spacing: 0.15em; }
+}
+
+@keyframes subtitleReveal {
+  from { opacity: 0; letter-spacing: 0.55em; }
+  to   { opacity: 1; letter-spacing: 0.3em; }
+}
+
+.title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  text-shadow: 0 0 40px rgba(201, 167, 79, 0.4);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.3rem;
+  animation: titleReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-family: 'Cinzel', serif;
+  color: var(--text-dim);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  animation: subtitleReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.dropzone {
+  position: relative;
+  width: min(480px, 90vw);
+  border: 2px dashed var(--border-gold);
+  border-radius: 0;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: var(--bg-panel);
+}
+
+.dropzone:hover,
+.dropzoneDragging {
+  border-color: var(--gold);
+  background: rgba(201, 167, 79, 0.05);
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: -20; }
+}
+
+.dropzoneIcon {
+  font-size: 3rem;
+  color: var(--gold-dim);
+}
+
+.dropzoneText {
+  color: var(--text);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.dropzoneHint {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.fileInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.fileName {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--gold);
+  color: var(--bg-base);
+  box-shadow: 0 0 20px rgba(201, 167, 79, 0.3);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-dim);
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+/* Spinner cuadrado rotante — estilo UI de Elden Ring */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-top-color: var(--gold);
+  border-right-color: var(--gold-dim);
+  animation: spinSlow 1.4s linear infinite;
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  margin-top: 1rem;
+  color: #e05a5a;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 400px;
+}
+
+.divider {
+  width: min(480px, 90vw);
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-gold), transparent);
+  margin: 2rem 0 1.5rem;
+}
+
+.footer {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+}

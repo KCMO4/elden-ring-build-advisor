@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+:root {
+  --bg-base:      #0a0906;
+  --bg-panel:     #16120b;
+  --bg-slot:      #1f1a10;
+  --gold:         #c9a74f;
+  --gold-dim:     #7a6130;
+  --gold-bright:  #e8c97a;
+  --text:         #e8d5a0;
+  --text-dim:     #7a6e5a;
+  --border:       #3a2e18;
+  --border-gold:  #5a4820;
+  --slot-size:    58px;
+  font-family: system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+}
+
+a {
+  color: var(--gold);
+}
+
+img {
+  display: block;
+}
+
+/* Scrollbar temática */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}

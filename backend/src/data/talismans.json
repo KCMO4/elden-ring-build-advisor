@@ -1,0 +1,524 @@
+[
+  {
+    "id": 1000,
+    "name": "Arrow's Sting Talisman",
+    "effect": "Raises attack power of arrows and bolts",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69f4f7a3l0i2soioqe3qysjxaw.png"
+  },
+  {
+    "id": 1001,
+    "name": "Arsenal Charm",
+    "effect": "Raises maximum equipment load",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69659e33l0i2soj4uhpxf54ncje.png"
+  },
+  {
+    "id": 1002,
+    "name": "Assassin's Cerulean Dagger",
+    "effect": "Critical hits restore FP",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69d47ea5l0i2sokp40249x3da4f.png"
+  },
+  {
+    "id": 1003,
+    "name": "Assassin's Crimson Dagger",
+    "effect": "Critical hits restore HP",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f697e45b3l0i2sol3u2c1y0ja11.png"
+  },
+  {
+    "id": 1004,
+    "name": "Arrow's Reach Talisman",
+    "effect": "Increases bow effective range.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69dfff40l0i2soo71h481xlxzx8i.png"
+  },
+  {
+    "id": 1005,
+    "name": "Axe Talisman",
+    "effect": "Enhances charge attacks.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69c74ab1l0i2sp8u8ehul0cxenh.png"
+  },
+  {
+    "id": 1006,
+    "name": "Boltdrake Talisman",
+    "effect": "Boosts lightning damage negation.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f697718ffl0i2sp9dowe0oahaam.png"
+  },
+  {
+    "id": 1007,
+    "name": "Blue Dancer Charm",
+    "effect": "Raises attack power with lower equipment load",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69811f79l0i2spa5kavq1z95u5i.png"
+  },
+  {
+    "id": 1008,
+    "name": "Blessed Dew Talisman",
+    "effect": "Slowly restores HP.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69977289l0i2spaggtt1hdtxhk4.png"
+  },
+  {
+    "id": 1009,
+    "name": "Bull-goat's Talisman",
+    "effect": "Raises Poise",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69659808l0i2sphoobyfsfvku2i.png"
+  },
+  {
+    "id": 1010,
+    "name": "Cerulean Amber Medallion",
+    "effect": "Raises maximum FP",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ed62a2l0i2sq0x8kqy5oe9mwn.png"
+  },
+  {
+    "id": 1011,
+    "name": "Carian Filigreed Crest",
+    "effect": "Lowers FP consumed by skills",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69e97eaal0i2sq1lvpkd5cfq2q.png"
+  },
+  {
+    "id": 1012,
+    "name": "Cerulean Seed Talisman",
+    "effect": "Boosts FP restoration from Flask of Cerulean Tears",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69dc1892l0i2sq1oh9i2x6tlarj.png"
+  },
+  {
+    "id": 1013,
+    "name": "Clarifying Horn Charm",
+    "effect": "Raises Focus",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69942443l0i2sq2zl2bttnq08hp.png"
+  },
+  {
+    "id": 1014,
+    "name": "Claw Talisman",
+    "effect": "Enhances jump attacks.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ba1d62l0i2sq92f4o8t2tlzp7.png"
+  },
+  {
+    "id": 1015,
+    "name": "Crucible Knot Talisman",
+    "effect": "Reduces damage and impact of headshots",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69d61012l0i2sqr9dmioj7dxngi.png"
+  },
+  {
+    "id": 1016,
+    "name": "Crimson Amber Medallion",
+    "effect": "Raises maximum HP",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f699e5a9dl0i2sqsk8mpabyj9mm4.png"
+  },
+  {
+    "id": 1017,
+    "name": "Crucible Scale Talisman",
+    "effect": "Reduces damage taken from critical hits",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6993bc1fl0i2sqt5xscysq45rce.png"
+  },
+  {
+    "id": 1018,
+    "name": "Crepus's Vial",
+    "effect": "Eliminates all sound made by the wearer during movement",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69b7aec7l0i2sqw1x7ajlmzguyi.png"
+  },
+  {
+    "id": 1019,
+    "name": "Curved Sword Talisman",
+    "effect": "Enhances guard counters.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ed2edfl0i2sqxgpadu0gprbn.png"
+  },
+  {
+    "id": 1020,
+    "name": "Dragoncrest Shield Talisman",
+    "effect": "Boosts physical damage negation",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69d584c8l0i2srfem3zhei7qek.png"
+  },
+  {
+    "id": 1021,
+    "name": "Flamedrake Talisman",
+    "effect": "Boosts fire damage negation.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6969e375l0i2srh8fpkcyede0z.png"
+  },
+  {
+    "id": 1022,
+    "name": "Fire Scorpion Charm",
+    "effect": "Raises fire attack, but lowers damage negation",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f697b6373l0i2srhja32ffmg9v7s.png"
+  },
+  {
+    "id": 1023,
+    "name": "Godskin Swaddling Cloth",
+    "effect": "Successive attacks restore HP",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69c7f897l0i2srkhjmyvn5rfnva.png"
+  },
+  {
+    "id": 1024,
+    "name": "Faithful's Canvas Talisman",
+    "effect": "Raises potency of Incantations",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f696b2a8el0i2srkijjgnyeo45ic.png"
+  },
+  {
+    "id": 1025,
+    "name": "Great-jar's Arsenal",
+    "effect": "Vastly Raises maximum equip load (~19%)",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69882e78l0i2ss2r6zb3cbd6h3k.png"
+  },
+  {
+    "id": 1026,
+    "name": "Haligdrake Talisman",
+    "effect": "Boosts holy damage negation.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69854ae6l0i2ss4quq0gikz8cw.png"
+  },
+  {
+    "id": 1027,
+    "name": "Green Turtle Talisman",
+    "effect": "Raises stamina recovery speed.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ecd4bdl0i2ss5cnven5hobw5d.png"
+  },
+  {
+    "id": 1028,
+    "name": "Hammer Talisman",
+    "effect": "Enhances stamina-reducing attacks against blockers.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f696fc245l0i2ss7f2pzn3xdhj6n.png"
+  },
+  {
+    "id": 1029,
+    "name": "Immunizing Horn Charm",
+    "effect": "Raises Immunity",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69a7ec34l0i2ss898co9a2xz8uv.png"
+  },
+  {
+    "id": 1030,
+    "name": "Kindred Of Rot's Exultation",
+    "effect": "Poisoning or rot in vicinity increases attack power",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69cd1ed6l0i2ssohaju8uk3qvro.png"
+  },
+  {
+    "id": 1031,
+    "name": "Lightning Scorpion Charm",
+    "effect": "Raises lightning attack, but lowers damage negation",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69e2a905l0i2ssrfz1ym5wgjvc.png"
+  },
+  {
+    "id": 1032,
+    "name": "Longtail Cat Talisman",
+    "effect": "Renders the wearer immune to fall damage",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ca952al0i2ssu6yw9l5kfw6q.png"
+  },
+  {
+    "id": 1033,
+    "name": "Marika's Scarseal",
+    "effect": "Raises attributes, but also increases damage taken",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69bdcd53l0i2ssvjmuvkx73w1bo.png"
+  },
+  {
+    "id": 1034,
+    "name": "Lord Of Blood's Exultation",
+    "effect": "Enhances critical hits",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69c66a45l0i2sswom5whqqzshn.png"
+  },
+  {
+    "id": 1035,
+    "name": "Mottled Necklace",
+    "effect": "Raises Robustness, Immunity, and Focus",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69b9af92l0i2st8bt7bg2grdb1h.png"
+  },
+  {
+    "id": 1036,
+    "name": "Moon Of Nokstella",
+    "effect": "Increases memory slots by 2",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6980d220l0i2stavhe03m4ms2yf.png"
+  },
+  {
+    "id": 1037,
+    "name": "Old Lord's Talisman",
+    "effect": "Extends spell effect duration",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6967fb2dl0i2ste8y2pomb9gcj9.png"
+  },
+  {
+    "id": 1038,
+    "name": "Pearldrake Talisman",
+    "effect": "Boosts non-physical damage negation.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f699f5086l0i2stgzl85bqm2vvy.png"
+  },
+  {
+    "id": 1039,
+    "name": "Primal Glintstone Blade",
+    "effect": "Spells consume less FP, but maximum HP is reduced",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69e4e872l0i2strgtb0bn8sior8.png"
+  },
+  {
+    "id": 1040,
+    "name": "Prince Of Death's Pustule",
+    "effect": "Raises Vitality",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f697a330el0i2stvssvzrmkqvrx.png"
+  },
+  {
+    "id": 1041,
+    "name": "Radagon Icon",
+    "effect": "Shortens spell casting time",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69db3ddfl0i2stxpa5we7cuil2.png"
+  },
+  {
+    "id": 1042,
+    "name": "Radagon's Scarseal",
+    "effect": "Raises attributes, but also increases damage taken.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69f6b0d2l0i2su0uxibci7qzsn.png"
+  },
+  {
+    "id": 1043,
+    "name": "Radagon's Soreseal",
+    "effect": "Greatly raises attributes, but also increases damage taken",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f696a52c1l0i2su2ddt9cbw3bnog.png"
+  },
+  {
+    "id": 1044,
+    "name": "Sacred Scorpion Charm",
+    "effect": "Raises holy attack, but lowers damage negation.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69e49085l0i2sudupmymnf7is0e.png"
+  },
+  {
+    "id": 1045,
+    "name": "Sacrificial Twig",
+    "effect": "Will be lost on death in place of runes.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6966d3a9l0i2suh41ayrux3telz.png"
+  },
+  {
+    "id": 1046,
+    "name": "Shabriri's Woe",
+    "effect": "Constantly attracts enemies' aggression",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f697d1dacl0i2sui3ut73lui72f.png"
+  },
+  {
+    "id": 1047,
+    "name": "Spelldrake Talisman",
+    "effect": "Boosts magical damage negation.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69b80630l0i2sum3q22drl273qe.png"
+  },
+  {
+    "id": 1048,
+    "name": "Stargazer Heirloom",
+    "effect": "Raises intelligence by 5.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69726e74l0i2sunvmav2rtqj9e.png"
+  },
+  {
+    "id": 1049,
+    "name": "Twinblade Talisman",
+    "effect": "Enhances final hit of chain attacks.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6964b6cbl0i2suzpeqzc8p0p31a.png"
+  },
+  {
+    "id": 1050,
+    "name": "Taker's Cameo",
+    "effect": "Restores HP upon defeating enemies",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ebbca4l0i2suzy77ydy8c49x.png"
+  },
+  {
+    "id": 1051,
+    "name": "Starscourge Heirloom",
+    "effect": "Raises strength",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f697e6e60l0i2sv6zgblnfuco5k5.png"
+  },
+  {
+    "id": 1052,
+    "name": "Viridian Amber Medallion",
+    "effect": "Raises maximum stamina",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f697609cfl0i2sv7ve0yxa2u67ps.png"
+  },
+  {
+    "id": 1053,
+    "name": "Two Fingers Heirloom",
+    "effect": "Raises faith by 5.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69b8ff63l0i2svfsqagao13n1q.png"
+  },
+  {
+    "id": 1054,
+    "name": "Winged Sword Insignia",
+    "effect": "Raises attack power with successive attacks",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69a2445bl0i2svl6l9dei5cxhbd.png"
+  },
+  {
+    "id": 1055,
+    "name": "Erdtree's Favor",
+    "effect": "Raises maximum HP, stamina and equip load",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69f205a0l0i2svmo2djg04dhvj4.png"
+  },
+  {
+    "id": 1056,
+    "name": "Crimson Seed Talisman",
+    "effect": "Boosts HP regeneration from Flask of Crimson Tears",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f699b6e58l0i2svqah8qxabssa6s.png"
+  },
+  {
+    "id": 1057,
+    "name": "Graven-school Talisman",
+    "effect": "Raises potency of sorceries",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69d7c380l0i2sw0rxwfk68fidwr.png"
+  },
+  {
+    "id": 1058,
+    "name": "Godfrey Icon",
+    "effect": "Enhances charged spells and skills.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69c0c973l0i2sw8w6uvbwqiqfmy.png"
+  },
+  {
+    "id": 1059,
+    "name": "Lance Talisman",
+    "effect": "Enhances attacks on horseback",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69858252l0i2swaqtyccdf5kihk.png"
+  },
+  {
+    "id": 1060,
+    "name": "Graven-mass Talisman",
+    "effect": "Greatly raises potency of sorceries.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ee87e3l0i2swe4iei5nanxbr.png"
+  },
+  {
+    "id": 1061,
+    "name": "Ancestral Spirit's Horn",
+    "effect": "Restores FP upon defeating enemies",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6967466bl0i2swi5et1ibv4rc6r.png"
+  },
+  {
+    "id": 1062,
+    "name": "Stalwart Horn Charm",
+    "effect": "Greatly raises robustness",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69990291l0i2swl19cw8v99d5tk.png"
+  },
+  {
+    "id": 1063,
+    "name": "Dragoncrest Greatshield Talisman",
+    "effect": "Enormously boosts physical damage negation",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f696b90dbl0i2sws9twxdvi39xzf.png"
+  },
+  {
+    "id": 1064,
+    "name": "Marika's Soreseal",
+    "effect": "Greatly raises attributes, but also increases damage taken.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69c504f2l0i2swunxt9oun5dn9.png"
+  },
+  {
+    "id": 1065,
+    "name": "Gold Scarab",
+    "effect": "Increases runes obtained from",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69d1b2c0l0i2sx1e2ftbrqshztb.png"
+  },
+  {
+    "id": 1066,
+    "name": "Ritual Sword Talisman",
+    "effect": "Raises attack power when HP is at maximum.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f699ae959l0i2sx3bloupcziqiz.png"
+  },
+  {
+    "id": 1067,
+    "name": "Ritual Shield Talisman",
+    "effect": "Raises defense when HP is at maximum.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f699e1a3al0i2sxkv62fi32hab4.png"
+  },
+  {
+    "id": 1068,
+    "name": "Perfumer's Talisman",
+    "effect": "Raises potency of perfume items",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69e92d45l0i2sxmogqn2tdfna89.png"
+  },
+  {
+    "id": 1069,
+    "name": "Blue-feathered Branchsword",
+    "effect": "Raises defense when HP is low.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69b3ce89l0i2sxo7j01c9t4v2b.png"
+  },
+  {
+    "id": 1070,
+    "name": "Magic Scorpion Charm",
+    "effect": "Raises magic attack, but lowers damage negation",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69747fbcl0i2sxow29iyn6fm75v.png"
+  },
+  {
+    "id": 1071,
+    "name": "Prince Of Death's Cyst",
+    "effect": "Greatly raises vitality",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69c86334l0i2sy3lip14s6g9qa.png"
+  },
+  {
+    "id": 1072,
+    "name": "Warrior Jar Shard",
+    "effect": "Boosts the attack power of skills.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69f4710al0i2sy6gpkd85ki28.png"
+  },
+  {
+    "id": 1073,
+    "name": "Shard Of Alexander",
+    "effect": "Greatly boosts the attack power of skills.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f698e1ea9l0i2sy8csbpc3y128lo.png"
+  },
+  {
+    "id": 1074,
+    "name": "Greatshield Talisman",
+    "effect": "Boosts guarding ability.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ba2ff0l0i2sye3sdb94vc6u6j.png"
+  },
+  {
+    "id": 1075,
+    "name": "Millicent's Prosthesis",
+    "effect": "Boosts dexterity, raises attack power with successive attacks",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69afb835l0i2sykg6ynuw6wl9b.png"
+  },
+  {
+    "id": 1076,
+    "name": "Spear Talisman",
+    "effect": "Enhances counterattacks unique to thrusting weapons",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69e13918l0i2syr0vvb0gg1l8xg.png"
+  },
+  {
+    "id": 1077,
+    "name": "Dagger Talisman",
+    "effect": "Enhances critical hits.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6991130cl0i2sywsfxyysl6tz7h.png"
+  },
+  {
+    "id": 1078,
+    "name": "Red-feathered Branchsword",
+    "effect": "Raises attack power when HP is low.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69ad7529l0i2syzo9ji7wrucoq5.png"
+  },
+  {
+    "id": 1079,
+    "name": "Companion Jar",
+    "effect": "Raises potency of throwing pots",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69eaed7fl0i2sz3buubfj570rq.png"
+  },
+  {
+    "id": 1080,
+    "name": "Flock's Canvas Talisman",
+    "effect": "Greatly raises potency of Incantations.",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f6976f6b0l0i2szav175mw9xww9x.png"
+  },
+  {
+    "id": 1081,
+    "name": "Concealing Veil",
+    "effect": "Conceals wearer while crouching away from foes",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69c9bfc8l0i2sze3h5gawcr577p.png"
+  },
+  {
+    "id": 1082,
+    "name": "Furled Finger's Trick-mirror",
+    "effect": "Take on appearance of a Host of Fingers",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69cdc905l0i2szmkk79ces1m9ea.png"
+  },
+  {
+    "id": 1083,
+    "name": "Crucible Feather Talisman",
+    "effect": "Improves dodge rolling but increases damage taken",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69d33e2dl0i2szt872otxd3taua.png"
+  },
+  {
+    "id": 1084,
+    "name": "Daedicar's Woe",
+    "effect": "Increases damage taken",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f699d64d5l0i2szu3wjjkmeqklc.png"
+  },
+  {
+    "id": 1085,
+    "name": "Host's Trick-mirror",
+    "effect": "Take on appearance of a cooperator",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f69e0bce6l0i2szv2ltfxx820p4e.png"
+  },
+  {
+    "id": 1086,
+    "name": "Entwining Umbilical Cord",
+    "effect": "Changes demeanour of wearer's actions",
+    "image": "https://eldenring.fanapis.com/images/talismans/17f696c4991l0i2szwm52zrw4bgso4.png"
+  }
+]

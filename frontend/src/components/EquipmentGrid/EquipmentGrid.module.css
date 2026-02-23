@@ -1,0 +1,75 @@
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+}
+
+.section {
+  margin-bottom: 0.9rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sectionTitle::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Armas */
+.weaponsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.handGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.handLabel {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.handSlots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+/* Armadura */
+.armorRow {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Talismanes */
+.talismanRow {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

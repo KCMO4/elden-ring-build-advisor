@@ -1,0 +1,134 @@
+@keyframes slotReveal {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  animation: slotReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.frame {
+  width: var(--slot-size);
+  height: var(--slot-size);
+  border: 1px solid var(--border-gold);
+  background: var(--bg-slot);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: box-shadow 0.25s, border-color 0.25s;
+  flex-shrink: 0;
+}
+
+/* Rim light superior — simula iluminación desde arriba */
+.frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid transparent;
+  transition: border-color 0.25s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Shimmer sweep al hacer hover */
+.frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(201, 167, 79, 0.12) 50%,
+    transparent 70%
+  );
+  transition: left 0s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.frame:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 14px rgba(201, 167, 79, 0.25), inset 0 0 8px rgba(201, 167, 79, 0.06);
+}
+
+.frame:hover::before {
+  border-top-color: var(--gold-bright);
+}
+
+.frame:hover::after {
+  left: 150%;
+  transition: left 0.5s ease-out;
+}
+
+.frameEmpty {
+  border-color: var(--border);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 4px,
+      rgba(255, 255, 255, 0.02) 4px,
+      rgba(255, 255, 255, 0.02) 5px
+    );
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 3px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.placeholder {
+  font-size: 1.3rem;
+  opacity: 0.2;
+  user-select: none;
+}
+
+.badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--gold);
+  font-size: 0.55rem;
+  padding: 1px 3px;
+  border-radius: 0;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.label {
+  font-size: 0.58rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 0.62rem;
+  color: var(--text);
+  text-align: center;
+  max-width: var(--slot-size);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.frame[title] {
+  cursor: help;
+}
