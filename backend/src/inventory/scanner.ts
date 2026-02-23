@@ -33,6 +33,7 @@ import type {
   ResolvedInventoryItem,
   EquippedItems,
   EquippedWeapon,
+  QuickSlotItem,
   Inventory,
   InventoryScanResult,
   ItemCategory,
@@ -251,6 +252,9 @@ function tryReadEquippedItemsViaChrAsm2(buf: Buffer, level: number): EquippedIte
     readHandle(0x4C), readHandle(0x50), readHandle(0x54), readHandle(0x58),
   ];
 
+  // Quick items, pouch y great rune desde EquippedItems struct
+  const { quickItems, pouch, greatRune } = readQuickSlotsAndGreatRune(buf, vigorOff, chrAsm2Off);
+
   return {
     rightHand: rhHandles.map(h =>
       resolveWeaponHandle(h, buf, gaItemsSearchLimit),
@@ -265,6 +269,9 @@ function tryReadEquippedItemsViaChrAsm2(buf: Buffer, level: number): EquippedIte
     talismans: talismanHandles.map(h =>
       resolveTalismanHandle(h),
     ) as [EquippedWeapon, EquippedWeapon, EquippedWeapon, EquippedWeapon],
+    quickItems,
+    pouch,
+    greatRune,
   };
 }
 
@@ -282,7 +289,136 @@ function emptyEquippedItems(): EquippedItems {
     hands:     emptySlot(),
     legs:      emptySlot(),
     talismans: [emptySlot(), emptySlot(), emptySlot(), emptySlot()],
+    quickItems: [],
+    pouch: [],
+    greatRune: null,
   };
+}
+
+// ── Quick Items, Pouch y Great Rune desde EquippedItems struct ──────────
+
+/**
+ * Busca el struct EquippedItems en el slot data y lee quick items (10),
+ * pouch (6) y la Great Rune equipada.
+ *
+ * EquippedItems es la 4ª copia de datos de equipo en el SaveSlot. Se encuentra
+ * DESPUÉS de EquipInventoryData (ga_items) + EquipMagicData + EquipItemData +
+ * gesture data + EquipProjectileData. Usa IDs de inventario con nibble de categoría:
+ *   0x0xxxxxxx = weapon, 0x1xxxxxxx = armor, 0x2xxxxxxx = talisman, 0x4xxxxxxx = goods
+ *
+ * Layout (verificado con save real + ClayAmore/ER-Save-Editor):
+ *   +0x00..+0x14: 6 weapons (LH/RH interleaved, item IDs)
+ *   +0x18..+0x24: arrows/bolts
+ *   +0x28..+0x2C: unknown
+ *   +0x30..+0x3C: head, chest, arms, legs (0x10xxxxxx)
+ *   +0x40: unknown
+ *   +0x44..+0x50: talismans (0x20xxxxxx)
+ *   +0x54: great rune / covenant (0x40xxxxxx o 0xFFFFFFFF = vacío)
+ *   +0x58..+0x7C: quickitems[10] (0x40xxxxxx goods IDs)
+ *   +0x80..+0x94: pouch[6] (0x40xxxxxx goods IDs)
+ */
+function readQuickSlotsAndGreatRune(
+  buf: Buffer,
+  vigorOff: number,
+  chrAsm2Off: number,
+): { quickItems: QuickSlotItem[]; pouch: QuickSlotItem[]; greatRune: QuickSlotItem | null } {
+  const empty = { quickItems: [] as QuickSlotItem[], pouch: [] as QuickSlotItem[], greatRune: null };
+
+  const structOff = findEquippedItemsStruct(buf, vigorOff, chrAsm2Off);
+  if (structOff === null) return empty;
+
+  const quickItems: QuickSlotItem[] = [];
+  for (let i = 0; i < 10; i++) {
+    quickItems.push(resolveInventorySlotItem(buf.readUInt32LE(structOff + 0x58 + i * 4)));
+  }
+
+  const pouch: QuickSlotItem[] = [];
+  for (let i = 0; i < 6; i++) {
+    pouch.push(resolveInventorySlotItem(buf.readUInt32LE(structOff + 0x80 + i * 4)));
+  }
+
+  const grRaw = buf.readUInt32LE(structOff + 0x54);
+  const greatRune = (grRaw === 0xFFFFFFFF || grRaw === 0) ? null : resolveInventorySlotItem(grRaw);
+
+  return { quickItems, pouch, greatRune };
+}
+
+/**
+ * Busca el EquippedItems struct en el slot data.
+ *
+ * Estrategia: escanear desde después del EquipInventoryData (ga_items end)
+ * hasta +0x4000 bytes más adelante. Validar con 3 checks:
+ *   1. +0x30 debe ser armor (nibble 0x1) o vacío (0xFFFFFFFF)
+ *   2. +0x44 debe ser talisman (nibble 0x2) o vacío (0xFFFFFFFF)
+ *   3. +0x00 debe ser un weapon ID válido, Unarmed (110000), o vacío (0xFFFFFFFF)
+ */
+function findEquippedItemsStruct(buf: Buffer, vigorOff: number, chrAsm2Off: number): number | null {
+  // ga_items: starts at ChrAsm2+0x64, count at ChrAsm2+0x60
+  // EquipInventoryData = 0xa80 common × 12 + 0x180 key × 12 = 0x9000 bytes
+  const gaItemsStart = chrAsm2Off + 0x64;
+  const searchStart = gaItemsStart + 0x9000; // After EquipInventoryData
+  const searchEnd = Math.min(searchStart + 0x4000, buf.length - 0xA0);
+
+  for (let off = searchStart; off < searchEnd; off += 4) {
+    // Check 1: +0x30 = armor (high nibble 0x1) or empty
+    const armorVal = buf.readUInt32LE(off + 0x30);
+    if (armorVal !== 0xFFFFFFFF && ((armorVal >>> 28) & 0xF) !== 1) continue;
+
+    // Check 2: +0x44 = talisman (high nibble 0x2) or empty
+    const talismanVal = buf.readUInt32LE(off + 0x44);
+    if (talismanVal !== 0xFFFFFFFF && ((talismanVal >>> 28) & 0xF) !== 2) continue;
+
+    // Check 3: +0x00 = weapon ID, Unarmed, or empty
+    const lh0 = buf.readUInt32LE(off);
+    const weaponOk = lh0 === 0xFFFFFFFF || lh0 === 110000 ||
+      (lh0 >= 1000000 && lh0 < 50000000);
+    if (!weaponOk) continue;
+
+    // Check 4: +0x34 also armor or empty (second armor slot)
+    const armorVal2 = buf.readUInt32LE(off + 0x34);
+    if (armorVal2 !== 0xFFFFFFFF && ((armorVal2 >>> 28) & 0xF) !== 1) continue;
+
+    return off;
+  }
+
+  return null;
+}
+
+/**
+ * Resuelve un item de inventario (con nibble de categoría) a QuickSlotItem.
+ * Formato: 0x0xxxxxxx=weapon, 0x1xxxxxxx=armor, 0x2xxxxxxx=talisman, 0x4xxxxxxx=goods
+ */
+function resolveInventorySlotItem(rawId: number): QuickSlotItem {
+  if (rawId === 0xFFFFFFFF || rawId === 0) {
+    return { rawId, baseId: 0, name: null };
+  }
+
+  const nibble = (rawId >>> 28) & 0xF;
+  const baseId = rawId & 0x0FFFFFFF;
+
+  switch (nibble) {
+    case 0x0: { // Weapon
+      const name = weaponIdName(baseId);
+      const image = name ? resolveWeaponImage(baseId) : '';
+      return { rawId, baseId, name, image };
+    }
+    case 0x1: { // Armor
+      const name = armorIdName(baseId);
+      return { rawId, baseId, name };
+    }
+    case 0x2: { // Talisman
+      const name = talismanIdName(baseId);
+      return { rawId, baseId, name };
+    }
+    case 0x4: { // Goods (consumables, flasks, spells, spirits, etc.)
+      const name = getGameIds()[String(baseId)] ?? null;
+      return { rawId, baseId, name };
+    }
+    default: {
+      const name = getGameIds()[String(baseId)] ?? null;
+      return { rawId, baseId, name };
+    }
+  }
 }
 
 // ── Helper: resolver imagen de arma ──────────────────────────
@@ -521,6 +657,8 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
           // Estas son armaduras almacenadas bajo nibble 0x0 — ya están en armors
           other.push(item); break;
         }
+        // Filtrar placeholder "Unarmed" (baseId 110000) — no es un arma real
+        if (item.baseId === 110000) { other.push(item); break; }
         const image = resolveWeaponImage(item.baseId);
         // Enriquecer con stats (weapon o shield según donde se encuentre)
         const baseWeaponId = Math.floor(item.baseId / 10000) * 10000;
@@ -539,6 +677,8 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
         break;
       }
       case 'armor': {
+        // Filtrar placeholders de armadura: Head/Body/Arms/Legs (IDs 10000-10300)
+        if (item.baseId >= 10000 && item.baseId <= 10300) { other.push(item); break; }
         const armorName = armorIdName(item.baseId) ?? store.getArmorByBaseId(item.baseId)?.name;
         if (!armorName) { other.push(item); break; }
         const a = store.getArmorByName(armorName);

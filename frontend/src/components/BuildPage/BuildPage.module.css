@@ -70,7 +70,7 @@
 }
 
 .charName {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--gold);
@@ -167,7 +167,7 @@
 }
 
 .runeValue {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--gold-bright);

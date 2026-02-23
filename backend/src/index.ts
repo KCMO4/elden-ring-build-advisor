@@ -100,13 +100,16 @@ app.post('/api/parse', upload.single('savefile'), (req: Request, res: Response) 
       stats:     char.stats,
       equipped: inventoryData
         ? {
-            rightHand: inventoryData.equipped.rightHand,
-            leftHand:  inventoryData.equipped.leftHand,
-            head:      inventoryData.equipped.head,
-            chest:     inventoryData.equipped.chest,
-            hands:     inventoryData.equipped.hands,
-            legs:      inventoryData.equipped.legs,
-            talismans: inventoryData.equipped.talismans,
+            rightHand:  inventoryData.equipped.rightHand,
+            leftHand:   inventoryData.equipped.leftHand,
+            head:       inventoryData.equipped.head,
+            chest:      inventoryData.equipped.chest,
+            hands:      inventoryData.equipped.hands,
+            legs:       inventoryData.equipped.legs,
+            talismans:  inventoryData.equipped.talismans,
+            quickItems: inventoryData.equipped.quickItems,
+            pouch:      inventoryData.equipped.pouch,
+            greatRune:  inventoryData.equipped.greatRune,
           }
         : null,
     };

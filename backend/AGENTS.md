@@ -1,93 +1,111 @@
 # AGENTS.md — Backend: Elden Ring Build Advisor
 
-Guía de referencia para agentes de IA (y humanos) que trabajen en el backend.
-Describe la arquitectura, las convenciones y las reglas de trabajo.
+Reference guide for AI agents (and humans) working on the backend.
+Describes architecture, conventions and working rules.
 
 ---
 
 ## Stack
 
-| Capa        | Tecnología                     |
+| Layer       | Technology                     |
 |-------------|--------------------------------|
-| Runtime     | Node.js 22 (Alpine en Docker)  |
-| Lenguaje    | TypeScript 5.7, target ES2022  |
+| Runtime     | Node.js 22 (Alpine in Docker)  |
+| Language    | TypeScript 5.7, target ES2022  |
 | Framework   | Express 4                      |
-| Upload      | Multer 2 (memoria, máx. 50 MB) |
+| Upload      | Multer 2 (memory, max 50 MB)   |
 | Tests       | Jest 30 + ts-jest              |
 | Dev hot-reload | ts-node-dev               |
 
 ---
 
-## Estructura de carpetas
+## Folder structure
 
 ```
 backend/
 ├── scripts/
-│   ├── sync-data.ts          # Descarga JSON de ítems de fanapis.com (npm run sync-data)
-│   └── check-images.ts       # Diagnóstico: cobertura de imágenes por categoría
+│   ├── sync-data.ts             # Download item JSONs from fanapis.com (npm run sync-data)
+│   ├── patch-armor-precision.ts # Overlay float defense + poise from EldenRingArmorOptimizer
+│   ├── audit-data.ts            # Data quality audit: duplicates, zero values, type errors
+│   └── check-images.ts          # Diagnostic: image coverage per category
 ├── src/
-│   ├── index.ts              # Servidor Express: rutas, middleware, error handler
-│   ├── data/                 # JSON estáticos (commiteados, actualizados por sync-data)
-│   │   ├── weapons.json      # 307 armas con damage, scaling, weight, image
-│   │   ├── armors.json       # 568 armaduras con 8 tipos de defensa, weight, image
-│   │   ├── talismans.json    # 87 talismanes con name, effect (texto), image
-│   │   ├── spells.json       # 169 hechizos
-│   │   ├── shields.json      # Escudos con stability (Guard Boost), defense, weight
-│   │   ├── ashes.json        # 90 Ashes of War con affinity + skill
-│   │   ├── spirits.json      # 64 Spirit Ashes con fpCost, hpCost, effect
-│   │   ├── consumables.json  # 462 consumibles (flasks, boluses, food, etc.)
-│   │   ├── gameIds.json      # IDs reales de armas (Deskete/EldenRingResources)
-│   │   ├── armorIds.json     # IDs de EquipParamProtector (623 entradas)
-│   │   ├── talismanIds.json  # IDs de EquipParamAccessory (IDs reales del juego)
-│   │   └── gemIds.json       # IDs de Ashes of War (EquipParamGem)
-│   ├── items/                # Base de datos de ítems en memoria + advisor
-│   │   ├── types.ts          # Weapon, Armor, Talisman, Spell, Shield, Ash, Spirit, Consumable
-│   │   ├── store.ts          # ItemStore singleton: carga JSON → queries tipadas
-│   │   │                     # getWeaponByName/ByBaseId, getArmorByName, getTalismanByName,
-│   │   │                     # getShieldByName, getAshByName, getSpiritByName, getConsumableByName
-│   │   ├── advisor.ts        # getAdvisorResult(): recomendaciones por AR estimado
-│   │   ├── index.ts          # Re-exports públicos
+│   ├── index.ts                 # Express server: routes, middleware, error handler
+│   ├── data/                    # Static JSONs (committed, updated by sync-data)
+│   │   ├── weapons.json         # 306 weapons with damage, scaling, weight, image
+│   │   ├── armors.json          # 568 armors — 550 with float defense + poise (patch-armor)
+│   │   ├── talismans.json       # 87 talismans with name, effect text, image
+│   │   ├── spells.json          # 169 spells
+│   │   ├── shields.json         # Shields with stability (Guard Boost), defense, weight
+│   │   ├── ashes.json           # 90 Ashes of War with affinity + skill
+│   │   ├── spirits.json         # 64 Spirit Ashes with fpCost, hpCost, effect
+│   │   ├── consumables.json     # 462 consumables (flasks, boluses, food, etc.)
+│   │   ├── gameIds.json         # Real weapon IDs (Deskete/EldenRingResources)
+│   │   ├── armorIds.json        # EquipParamProtector IDs (623 entries)
+│   │   ├── talismanIds.json     # EquipParamAccessory IDs (real game IDs)
+│   │   └── gemIds.json          # Ash of War IDs (EquipParamGem)
+│   ├── items/                   # In-memory item database + advisor
+│   │   ├── types.ts             # Weapon, Armor, Talisman, Spell, Shield, Ash, Spirit, Consumable
+│   │   ├── store.ts             # ItemStore singleton: loads JSON → typed queries
+│   │   │                        # getWeaponByName/ByBaseId, getArmorByName, getTalismanByName,
+│   │   │                        # getShieldByName, getAshByName, getSpiritByName, getConsumableByName
+│   │   ├── advisor.ts           # getAdvisorResult(): recommendations by estimated AR
+│   │   ├── index.ts             # Public re-exports
 │   │   └── __tests__/
 │   │       ├── store.test.ts
 │   │       └── advisor.test.ts
-│   ├── inventory/            # Lectura de inventario/equipo del .sl2
-│   │   ├── types.ts          # RawInventoryItem, ResolvedInventoryItem, EquippedWeapon,
-│   │   │                     # EquippedItems, Inventory, InventoryScanResult, ItemCategory
-│   │   ├── constants.ts      # Offsets de equipo e inventario (relativos al slot data)
-│   │   ├── scanner.ts        # scanInventory(slotData): equipo + inventario completo
-│   │   │                     # resolveWeaponHandle, resolveArmorHandle, resolveTalismanHandle
-│   │   ├── index.ts          # Re-exports públicos
+│   ├── inventory/               # Inventory / equipped gear reader
+│   │   ├── types.ts             # RawInventoryItem, ResolvedInventoryItem, EquippedWeapon,
+│   │   │                        # EquippedItems, Inventory, InventoryScanResult, ItemCategory
+│   │   ├── constants.ts         # Equipment and inventory offsets (relative to slot data)
+│   │   ├── scanner.ts           # scanInventory(slotData): equipped + full inventory
+│   │   │                        # resolveWeaponHandle, resolveArmorHandle, resolveTalismanHandle
+│   │   ├── index.ts             # Public re-exports
 │   │   └── __tests__/
 │   │       └── scanner.test.ts
-│   └── parser/               # Lectura del contenedor BND4 y stats del personaje
+│   └── parser/                  # BND4 container reader + character stats
 │       ├── types.ts
 │       ├── constants.ts
 │       ├── bnd4.ts
 │       ├── summary.ts
-│       ├── stats.ts          # findStats(): busca los 8 atributos por patrón
+│       ├── stats.ts             # findStats(): locates 8 attributes by pattern
 │       ├── index.ts
 │       └── __tests__/
 │           └── parser.test.ts
-├── Dockerfile                # Multi-stage: base → deps → dev / production
+├── Dockerfile                   # Multi-stage: base → deps → dev / production
 ├── .dockerignore
 ├── package.json
 ├── tsconfig.json
-└── tsconfig.scripts.json     # Extiende tsconfig.json, incluye scripts/
+└── tsconfig.scripts.json        # Extends tsconfig.json, includes scripts/
 ```
+
+---
+
+## npm scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | ts-node-dev with hot-reload at :3001 |
+| `npm run build` | Compile to dist/ |
+| `npm start` | Run dist/index.js (production) |
+| `npm test` | Jest — 43 tests, all must pass |
+| `npm run sync-data` | Regenerate all `src/data/*.json` from fanapis.com |
+| `npm run patch-armor` | Overlay float defense + poise from EldenRingArmorOptimizer |
+| `npm run patch-armor:dry` | Dry run — shows match stats without writing files |
+| `npm run audit` | Data quality audit (exits 1 on critical bugs) |
+| `npm run audit:save` | Same, writes report to audit-report.json |
 
 ---
 
 ## API REST
 
 ### `GET /health`
-Healthcheck. Devuelve `{ status: "ok", timestamp, items: { weapons, armors, ... } }`.
-Usado por Docker Compose para `depends_on: condition: service_healthy`.
+Healthcheck. Returns `{ status: "ok", timestamp, items: { weapons, armors, ... } }`.
+Used by Docker Compose for `depends_on: condition: service_healthy`.
 
 ### `POST /api/parse`
-**Body:** `multipart/form-data`, campo `savefile` (archivo `.sl2`).
-**Query:** `inventory=true` para incluir inventario completo.
+**Body:** `multipart/form-data`, field `savefile` (`.sl2` file).
+**Query:** `inventory=true` to include full inventory.
 
-**Respuesta exitosa:**
+**Successful response:**
 ```json
 {
   "fileSize": 28967888,
@@ -115,29 +133,29 @@ Usado por Docker Compose para `depends_on: condition: service_healthy`.
           ...
         ]
       },
-      "inventory": { ... }  // solo con ?inventory=true
+      "inventory": { ... }  // only with ?inventory=true
     }
   ]
 }
 ```
 
-**Errores:**
-- `400` — no se envió archivo, no es `.sl2`, o nombre de campo incorrecto (debe ser `savefile`)
-- `422` — archivo válido pero no parseable (ParseError)
+**Errors:**
+- `400` — no file sent, not a `.sl2`, or wrong field name (must be `savefile`)
+- `422` — valid file but not parseable (ParseError)
 
 ### `GET /api/items/weapons`
 
 **Query params:**
-| Param   | Descripción                                                   |
-|---------|---------------------------------------------------------------|
-| `type`  | Tipo de arma (`Katana`, `Greatsword`, `Straight Sword`, ...) |
-| `canUse`| `true` para filtrar por stats del personaje                  |
-| `str`, `dex`, `int`, `fai`, `arc` | Stats del personaje (requeridos si `canUse=true`) |
+| Param   | Description                                                    |
+|---------|----------------------------------------------------------------|
+| `type`  | Weapon type (`Katana`, `Greatsword`, `Straight Sword`, ...)   |
+| `canUse`| `true` to filter by character stats                           |
+| `str`, `dex`, `int`, `fai`, `arc` | Character stats (required if `canUse=true`) |
 
-**Respuesta:** `{ count: number, data: Weapon[] }`
+**Response:** `{ count: number, data: Weapon[] }`
 
 ### `POST /api/advisor`
-Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR estimado.
+Given a stats block, returns weapon recommendations sorted by estimated AR.
 
 **Body:** `application/json`
 ```json
@@ -148,7 +166,7 @@ Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR esti
 }
 ```
 
-**Respuesta:**
+**Response:**
 ```json
 {
   "usable": [
@@ -163,35 +181,35 @@ Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR esti
 }
 ```
 
-**Query params opcionales:** `top` (default 10), `nearlyRange` (default 5).
+**Optional query params:** `top` (default 10), `nearlyRange` (default 5).
 
 ---
 
-## Formato del archivo .sl2
+## .sl2 file format
 
-### Contenedor BND4
+### BND4 container
 
 ```
 0x000  BND4 header (0x40 bytes)
          ├─ 0x00: magic "BND4" (ASCII)
-         ├─ 0x0C: fileCount (uint32 LE)  → usualmente 11
-         ├─ 0x20: entryHeaderSize (uint32 LE) → 0x20 bytes/entrada
+         ├─ 0x0C: fileCount (uint32 LE)  → usually 11
+         ├─ 0x20: entryHeaderSize (uint32 LE) → 0x20 bytes/entry
          └─ 0x28: dataOffset (uint32 LE)
 
-0x040  Directorio de entradas (11 × 0x20 bytes)
+0x040  Entry directory (11 × 0x20 bytes)
 
-0x310  Datos de slots de personaje (entradas 0-9)
-         Cada slot: 0x280000 bytes (2 621 440)
-         Stride entre slots: 0x280010 (datos + 0x10 padding)
+0x310  Character slot data (entries 0-9)
+         Each slot: 0x280000 bytes (2,621,440)
+         Stride between slots: 0x280010 (data + 0x10 padding)
 
-0x19003B0  Datos de sistema (entrada 10) — resumen de personajes
+0x19003B0  System data (entry 10) — character summary
 ```
 
-### Layout de ChrAsm2 (equipo equipado)
+### ChrAsm2 layout (equipped gear)
 
-`ChrAsm2` se localiza en `vigor_offset + 0x310` dentro del slot data. Tamaño: 96 bytes.
+`ChrAsm2` is located at `vigor_offset + 0x310` within the slot data. Size: 96 bytes.
 
-| Offset | Campo |
+| Offset | Field |
 |--------|-------|
 | +0x00 | LH[0] gaitem_handle |
 | +0x04 | RH[0] gaitem_handle |
@@ -200,7 +218,7 @@ Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR esti
 | +0x10 | LH[2] gaitem_handle |
 | +0x14 | RH[2] gaitem_handle |
 | +0x18..+0x27 | arrows[0,1] + bolts[0,1] |
-| +0x28..+0x37 | 4 campos desconocidos (_unk0..3) |
+| +0x28..+0x37 | 4 unknown fields (_unk0..3) |
 | +0x38 | HEAD gaitem_handle |
 | +0x3C | CHEST gaitem_handle |
 | +0x40 | ARMS gaitem_handle |
@@ -209,107 +227,185 @@ Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR esti
 | +0x4C..+0x58 | talisman[0..3] gaitem_handles |
 | +0x5C | _unk5 |
 
-> **Ojo**: el ER-Save-Editor (Rust) etiqueta +0x30/+0x34 como head/chest. Incorrecto.
-> Los verdaderos slots de armadura están en +0x38..+0x44 (verificado con saves reales).
+> **Warning**: ER-Save-Editor (Rust) labels +0x30/+0x34 as head/chest. This is wrong.
+> The real armor slots are at +0x38..+0x44 (verified against real saves).
 
-### Decodificación de gaitem_handles
+### gaitem_handle decoding
 
-| High byte | Categoría | Cómo obtener el ID real |
-|-----------|-----------|------------------------|
-| `0x80` | Arma | buscar en ga_items → `item_id`; `baseId = floor(id/100)*100`; `upgrade = id%100` |
-| `0x90` | Armadura | buscar en ga_items → `item_id`; `armorId = item_id XOR 0x10000000` |
-| `0xA0` | Talismán | sin ga_items; `talismanId = handle XOR 0xA0000000` |
+| High byte | Category | How to get the real ID |
+|-----------|----------|------------------------|
+| `0x80` | Weapon | look up in ga_items → `item_id`; `baseId = floor(id/100)*100`; `upgrade = id%100` |
+| `0x90` | Armor | look up in ga_items → `item_id`; `armorId = item_id XOR 0x10000000` |
+| `0xA0` | Talisman | no ga_items lookup; `talismanId = handle XOR 0xA0000000` |
 
-### Tabla de fuentes de ID
+### ID source table
 
-| Categoría | Fuente primaria | Fallback |
-|-----------|----------------|---------|
-| Armas | `gameIds.json` (Deskete/EldenRingResources) | `ItemStore.getWeaponByBaseId()` |
-| Armaduras | `armorIds.json` (ER-Save-Editor armor_name.rs) | `ItemStore.getArmorByBaseId()` |
-| Talismanes | `talismanIds.json` (ER-Save-Editor accessory_name.rs) | — |
+| Category | Primary source | Fallback |
+|----------|---------------|---------|
+| Weapons | `gameIds.json` (Deskete/EldenRingResources) | `ItemStore.getWeaponByBaseId()` |
+| Armors | `armorIds.json` (ER-Save-Editor armor_name.rs) | `ItemStore.getArmorByBaseId()` |
+| Talismans | `talismanIds.json` (ER-Save-Editor accessory_name.rs) | — |
 | Ashes of War | `gemIds.json` (ER-Save-Editor aow_name.rs) | — |
 
 ---
 
-## Inventario completo
+## Full inventory
 
-`scanItemArray()` localiza el array de ítems en el slot data usando el ítem ancla
-"Tarnished Wizened Finger" (ID `0x4003D`). Cada entrada es de 8 bytes: `[itemId: u32, flag: u32]`.
+`scanItemArray()` locates the item array in slot data using the anchor item
+"Tarnished Wizened Finger" (ID `0x4003D`). Each entry is 8 bytes: `[itemId: u32, flag: u32]`.
 
-Las categorías se deducen del nibble alto del itemId:
+Categories are derived from the high nibble of the itemId:
 
-| Nibble | Categoría | Notas |
-|--------|-----------|-------|
+| Nibble | Category | Notes |
+|--------|----------|-------|
 | 0x0 | weapon / ammo | ammo: baseId >= 50M |
 | 0x1 | armor | IDs XOR 0x10000000 |
 | 0x2 | talisman | — |
-| 0x4 | consumable (+ spells, spirits, etc.) | subcategorizado por rango de ID y nombre |
+| 0x4 | consumable (+ spells, spirits, etc.) | subcategorized by ID range and name |
 | 0x8 | ash_of_war | EquipParamGem |
 
 ---
 
-## Convenciones de código
+## Data scripts
 
-### TypeScript
-- `strict: true` — no hay excepciones.
-- Preferir `interface` para objetos, `type` solo para uniones.
-- Sin `any`. Si es inevitable, usar `unknown` + type guard.
-- Nombres de constantes binarias en `SCREAMING_SNAKE_CASE`.
-- Nombres de funciones en `camelCase`, archivos en `kebab-case`.
+### `sync-data.ts`
+Downloads item data from `fanapis.com` and normalizes it into the `src/data/*.json` files.
 
-### Offsets binarios
-- **Toda constante numérica de offset va en `parser/constants.ts`**, nunca hardcodeada en otros archivos.
-- Comentar la fuente de cada offset (nombre del proyecto de referencia).
-- Usar `0x` prefix para todos los offsets.
+- Handles `WEAPON_CORRECTIONS` — name mappings for fanapis inconsistencies
+  (e.g. `"Godksin Peeler"` → `"Godskin Peeler"`)
+- Adds Fextralife wiki URL as fallback `image` for items with no fanapis image
+- Sets `poise: 0` on all armors — the real values come from `patch-armor-precision.ts`
+- Writes `weapons.json` using real IDs from `gameIds.json` (fanapis IDs are sequential and wrong)
 
-### Errores
-- El parser lanza `ParseError` (subclase de `Error`) para archivos malformados.
-- Express devuelve `422` para `ParseError`, `400` para errores de Multer.
-- No capturar errores para silenciarlos; dejar que burbujeen al error handler.
+### `patch-armor-precision.ts`
+Overlays float defense values and `poise` from `jerpdoesgames/EldenRingArmorOptimizer`
+onto `armors.json`. The optimizer data is extracted from `regulation.bin → EquipParamProtector`.
 
-### Tests
-- Cada módulo del parser debe tener tests en `__tests__/`.
-- Usar buffers sintéticos (no archivos reales) para los tests unitarios.
-- Nombrar tests en español: `describe('módulo', () => test('comportamiento', ...))`.
-- Comando: `npm test` (43 tests, deben pasar todos).
+- Downloads `armor/data/armor.js` from GitHub raw (a JS file, not JSON)
+- Parses it with `vm.runInNewContext('(function(){ ${code}\nreturn armor; })()', {})`
+- Matches by normalized name with fallbacks:
+  1. Exact match after normalization (lowercase + strip typographic apostrophes)
+  2. Strip `(altered)` suffix
+  3. `corrections` map for known fanapis ↔ optimizer name mismatches
+- Coverage: **550 / 568** armors (96.8%)
+- Unmatched (18): 6 DLC Brave's set items + 12 obscure/near-zero items
+- Supports `--dry-run` flag (logs match stats without writing)
+
+### `audit-data.ts`
+Checks data quality across all item JSONs:
+- Duplicate IDs and names
+- Zero values in critical fields (damage, defense)
+- Missing required fields
+- Type validation
+- Exits with code 1 if critical issues are found (for CI use)
 
 ---
 
-## Flujo de trabajo
+## Item types — key interfaces
 
-### Desarrollo local
+### `Weapon`
+```typescript
+interface Weapon {
+  id: number;
+  name: string;
+  type: WeaponType;
+  weight: number;
+  damage: DamageStats;       // base damage at +0
+  scaling: ScalingStats;     // STR/DEX/INT/FAI/ARC grades
+  image?: string;
+}
+```
+
+### `Armor`
+```typescript
+interface Armor {
+  id: number;
+  name: string;
+  type: ArmorType;
+  weight: number;
+  poise: number;             // 0 if unavailable (18 unmatched items)
+  defense: Defense;          // float precision for 550/568 items
+  image?: string;
+}
+
+interface Defense {
+  physical: number;  strike: number; slash: number; pierce: number;
+  magic: number;     fire: number;   lightning: number; holy: number;
+}
+```
+
+---
+
+## Code conventions
+
+### TypeScript
+- `strict: true` — no exceptions.
+- Prefer `interface` for objects, `type` only for unions.
+- No `any`. If unavoidable, use `unknown` + type guard.
+- Binary offset constants in `SCREAMING_SNAKE_CASE`.
+- Function names in `camelCase`, files in `kebab-case`.
+
+### Binary offsets
+- **Every numeric offset constant goes in `parser/constants.ts`**, never hardcoded elsewhere.
+- Comment the source of each offset (reference project name).
+- Use `0x` prefix for all offsets.
+
+### Errors
+- The parser throws `ParseError` (subclass of `Error`) for malformed files.
+- Express returns `422` for `ParseError`, `400` for Multer errors.
+- Do not catch errors to silence them; let them bubble to the error handler.
+
+### Tests
+- Each parser module must have tests in `__tests__/`.
+- Use synthetic buffers (not real files) for unit tests.
+- Command: `npm test` (43 tests, all must pass).
+
+---
+
+## Workflow
+
+### Local development
 ```bash
 cd backend
 npm install
-npm run dev          # ts-node-dev con hot-reload en :3001
+npm run dev          # ts-node-dev with hot-reload at :3001
 npm test             # Jest
 ```
 
-### Con Docker
+### With Docker
 ```bash
-# Desde la raíz del proyecto:
-docker compose up    # levanta backend (:3001) y frontend (:5173)
-docker compose build backend   # rebuild solo el backend
+# From project root:
+docker compose up    # starts backend (:3001) and frontend (:5173)
+docker compose build backend   # rebuild backend only
 ```
 
-### Verificar el parser con un .sl2 real
+### Sync and patch item data
 ```bash
-# Con el servidor corriendo:
-curl -X POST http://localhost:3001/api/parse \
-  -F "savefile=@/ruta/a/ER0000.sl2"
+cd backend
+npm run sync-data    # download from fanapis.com + map with real game IDs
+npm run patch-armor  # overlay float defense + poise from EldenRingArmorOptimizer
+npm run audit        # verify data quality (exits 1 if critical bugs found)
+npm test             # all 43 tests must pass after data changes
+```
 
-# Con inventario completo:
+### Verify the parser with a real .sl2
+```bash
+# With the server running:
+curl -X POST http://localhost:3001/api/parse \
+  -F "savefile=@/path/to/ER0000.sl2"
+
+# With full inventory:
 curl -X POST "http://localhost:3001/api/parse?inventory=true" \
-  -F "savefile=@/ruta/a/ER0000.sl2"
+  -F "savefile=@/path/to/ER0000.sl2"
 ```
 
 ---
 
-## Checklist para agregar una feature nueva
+## Checklist for adding a new feature
 
-1. Si el feature toca el formato binario → actualizar `constants.ts` primero.
-2. Si agrega lógica de parsing → módulo nuevo en `parser/` con su test.
-3. Si agrega un endpoint → documentarlo aquí en la sección API.
-4. `npm test` debe pasar en verde antes de commitear.
-5. `npx tsc --noEmit` sin errores.
-6. Reconstruir imagen Docker si es necesario: `docker compose build backend`.
+1. If the feature touches binary format → update `constants.ts` first.
+2. If it adds parsing logic → new module in `parser/` with its test.
+3. If it adds an endpoint → document it here in the API section.
+4. `npm test` must be green before committing.
+5. `npx tsc --noEmit` with no errors.
+6. Rebuild Docker image if needed: `docker compose build backend`.

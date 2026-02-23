@@ -1,19 +1,19 @@
 # AGENTS.md — Elden Ring Build Advisor
 
-Guía para agentes de IA que trabajen en este repositorio.
-Leer este archivo **antes** de tocar cualquier código.
+Guide for AI agents (and humans) working in this repository.
+Read this file **before** touching any code.
 
 ---
 
-## Estructura del repositorio
+## Repository structure
 
 ```
 elden-ring-build-advisor/
-├── backend/          # API REST (Node.js + TypeScript + Express)
+├── backend/          # REST API (Node.js + TypeScript + Express)
 ├── frontend/         # UI (React 19 + Vite + TypeScript)
 ├── docker-compose.yml
-├── README.md         # Documentación pública del proyecto
-└── AGENTS.md         # Este archivo
+├── README.md         # Public project documentation
+└── AGENTS.md         # This file
 ```
 
 ---
@@ -22,121 +22,140 @@ elden-ring-build-advisor/
 
 ### Stack
 
-| Tech | Versión | Rol |
-|------|---------|-----|
+| Tech | Version | Role |
+|------|---------|------|
 | Node.js | 22+ | Runtime |
-| TypeScript | 5.7 | Lenguaje |
+| TypeScript | 5.7 | Language |
 | Express | 4.x | HTTP server |
-| Multer | 2.x | Upload de .sl2 (memoryStorage) |
-| ts-node-dev | 2.x | Dev server con hot reload |
+| Multer | 2.x | .sl2 upload (memoryStorage) |
+| ts-node-dev | 2.x | Dev server with hot reload |
 | Jest + ts-jest | 30.x | Tests |
 
-### Comandos
+### Commands
 
 ```bash
 cd backend
-npm run dev         # Dev server en http://localhost:3001 (hot reload)
-npm run build       # Compilar a dist/
-npm start           # Correr dist/index.js (producción)
-npm test            # Tests (43 tests, deben pasar todos)
-npm run sync-data   # Regenerar src/data/*.json desde fanapis.com
+npm run dev         # Dev server at http://localhost:3001 (hot reload)
+npm run build       # Compile to dist/
+npm start           # Run dist/index.js (production)
+npm test            # Tests (43 tests, all must pass)
+npm run sync-data   # Regenerate src/data/*.json from fanapis.com
+npm run patch-armor # Overlay float defense values + poise from EldenRingArmorOptimizer
+npm run audit       # Data quality audit (exits 1 if critical bugs found)
 ```
 
 ### Endpoints
 
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| GET | `/health` | Estado del servidor + conteo de ítems cargados |
-| POST | `/api/parse` | Parsea .sl2 → personajes con stats, equipo, inventario. Multipart `savefile`. Query: `inventory=true` para inventario completo |
-| POST | `/api/debug` | Dump hex de offsets clave. Query: `slot`, `level`, `offset`, `search`, `scanWeapons` |
-| GET | `/api/items/weapons` | Lista armas. Query: `type`, `str`, `dex`, `int`, `fai`, `arc`, `canUse=true` |
-| GET | `/api/items/weapons/:id` | Arma por ID |
-| GET | `/api/items/armors` | Lista armaduras |
-| GET | `/api/items/talismans` | Lista talismanes |
-| GET | `/api/items/spells` | Lista hechizos |
-| POST | `/api/advisor` | Body: stats del personaje → `usable`, `nearlyUsable`, `wastedStats` |
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/health` | Server status + loaded item counts |
+| POST | `/api/parse` | Parse .sl2 → characters with stats, equipment, inventory. Multipart `savefile`. Query: `inventory=true` for full inventory |
+| POST | `/api/debug` | Hex dump of key offsets. Query: `slot`, `level`, `offset`, `search`, `scanWeapons` |
+| GET | `/api/items/weapons` | List weapons. Query: `type`, `str`, `dex`, `int`, `fai`, `arc`, `canUse=true` |
+| GET | `/api/items/weapons/:id` | Weapon by ID |
+| GET | `/api/items/armors` | List armors |
+| GET | `/api/items/talismans` | List talismans |
+| GET | `/api/items/spells` | List spells |
+| POST | `/api/advisor` | Body: character stats → `usable`, `nearlyUsable`, `wastedStats` |
 
-### Arquitectura interna
+### Internal architecture
 
 ```
 backend/src/
-├── index.ts              # Express app + rutas
-├── parser/               # Lectura del .sl2 binario
+├── index.ts              # Express app + routes
+├── parser/               # Binary .sl2 reader
 │   ├── index.ts          # parseSl2(), hexDump(), summaryOffsetsForSlot()
-│   ├── bnd4.ts           # Estructura BND4 del save file
-│   ├── stats.ts          # findStats() — busca los 8 atributos por nivel
-│   ├── summary.ts        # Offsets clave por slot
-│   ├── constants.ts      # Offsets globales (BND4, slot size, etc.)
+│   ├── bnd4.ts           # BND4 container format
+│   ├── stats.ts          # findStats() — locates 8 attributes by level pattern
+│   ├── summary.ts        # Key offsets per slot
+│   ├── constants.ts      # Global offsets (BND4, slot size, etc.)
 │   └── types.ts
-├── items/                # Catálogo de ítems del juego
-│   ├── store.ts          # ItemStore singleton — carga todos los JSON de ítems
-│   ├── advisor.ts        # getAdvisorResult() — ranking de armas por AR estimado
+├── items/                # In-memory item catalog + advisor
+│   ├── store.ts          # ItemStore singleton — loads all item JSONs
+│   │                     # getWeaponByName/ByBaseId, getArmorByName, getTalismanByName,
+│   │                     # getShieldByName, getAshByName, getSpiritByName, getConsumableByName
+│   ├── advisor.ts        # getAdvisorResult() — weapon rankings by estimated AR
 │   ├── types.ts          # Weapon, Armor, Talisman, Spell, Shield, Ash, Spirit, Consumable
 │   └── index.ts
-├── inventory/            # Lectura de equipo equipado + inventario
-│   ├── scanner.ts        # scanInventory() — lee ChrAsm2 + ga_items_data
-│   ├── constants.ts      # Offsets dentro del slot data
-│   ├── types.ts          # EquippedWeapon, EquippedItems, Inventory, etc.
+├── inventory/            # Equipped gear + full inventory reader
+│   ├── scanner.ts        # scanInventory() — reads ChrAsm2 + ga_items_data
+│   ├── constants.ts      # Equipment and inventory offsets (relative to slot data)
+│   ├── types.ts          # RawInventoryItem, ResolvedInventoryItem, EquippedWeapon,
+│   │                     # EquippedItems, Inventory, InventoryScanResult, ItemCategory
 │   └── index.ts
-└── data/                 # JSONs generados por sync-data (NO editar a mano)
-    ├── weapons.json       # 307 armas con IDs reales (gameIds.json como fuente)
-    ├── armors.json        # 568 armaduras con 8 tipos de defensa
-    ├── talismans.json     # 87 talismanes con nombre, imagen y efecto (texto)
-    ├── spells.json        # 169 hechizos
-    ├── shields.json       # Escudos con stability, defense, weight
-    ├── ashes.json         # 90 Ashes of War con affinity + skill
-    ├── spirits.json       # 64 Spirit Ashes con fpCost, hpCost, effect
-    ├── consumables.json   # 462 consumibles (flasks, boluses, food, etc.)
-    ├── gameIds.json       # IDs reales de armas (Deskete/EldenRingResources)
-    ├── armorIds.json      # IDs de EquipParamProtector (623 entradas)
-    ├── talismanIds.json   # IDs de EquipParamAccessory (IDs reales del juego)
-    └── gemIds.json        # IDs de Ashes of War (EquipParamGem)
+└── data/                 # JSONs generated by sync-data (do NOT edit manually)
+    ├── weapons.json       # 306 weapons with real IDs, damage, scaling, weight, image
+    ├── armors.json        # 568 armors — 550 with float defense + poise (see patch-armor)
+    ├── talismans.json     # 87 talismans with name, effect text, image
+    ├── spells.json        # 169 spells
+    ├── shields.json       # Shields with stability (Guard Boost), defense, weight
+    ├── ashes.json         # 90 Ashes of War with affinity + skill
+    ├── spirits.json       # 64 Spirit Ashes with fpCost, hpCost, effect
+    ├── consumables.json   # 462 consumables (flasks, boluses, food, etc.)
+    ├── gameIds.json       # Real weapon IDs (Deskete/EldenRingResources)
+    ├── armorIds.json      # EquipParamProtector IDs (623 entries)
+    ├── talismanIds.json   # EquipParamAccessory IDs (real game IDs)
+    └── gemIds.json        # Ash of War IDs (EquipParamGem)
 ```
 
-### Lectura del .sl2 — puntos críticos
+### .sl2 reading — critical points
 
-El parser reverse-engineered contra el formato BND4 de FromSoftware:
+The parser reverse-engineers FromSoftware's BND4 format:
 
-- **Slot size**: `0x280010` bytes por slot; slot data comienza en `offset 0x310 + slot * 0x280010`
-- **Stats**: `findStats()` busca los 8 atributos por nivel de personaje (signature pattern)
-- **ChrAsm2** (equipo equipado) = `vigor_offset + 0x310`, 96 bytes:
+- **Slot size**: `0x280010` bytes per slot; slot data starts at `offset 0x310 + slot * 0x280010`
+- **Stats**: `findStats()` locates the 8 attributes by character level (signature pattern)
+- **ChrAsm2** (equipped gear) = `vigor_offset + 0x310`, 96 bytes:
   - `+0x00..+0x17` → LH[0..2] / RH[0..2] (interleaved: LH1,RH1,LH2,RH2,LH3,RH3)
   - `+0x18..+0x27` → arrows + bolts
-  - `+0x28..+0x37` → 4 campos desconocidos (ojo: el Rust de ER-Save-Editor los etiqueta mal)
+  - `+0x28..+0x37` → 4 unknown fields (note: ER-Save-Editor Rust struct mislabels these)
   - `+0x38..+0x44` → HEAD, CHEST, ARMS, LEGS
   - `+0x48` → unk; `+0x4C..+0x58` → talisman[0..3]
-- **gaitem_handle** — high byte indica categoría:
-  - `0x80xxxxxx` → arma (weapon)
-  - `0x90xxxxxx` → armadura (armor)
-  - `0xA0xxxxxx` → talismán
-- **IDs de armas**: `baseId = floor(item_id / 100) * 100`, `upgradeLevel = item_id % 100`
-- **IDs de armadura**: `baseId = item_id XOR 0x10000000`
-- **IDs de talismán**: `baseId = handle XOR 0xA0000000`
+- **gaitem_handle** — high byte indicates category:
+  - `0x80xxxxxx` → weapon
+  - `0x90xxxxxx` → armor
+  - `0xA0xxxxxx` → talisman
+- **Weapon IDs**: `baseId = floor(item_id / 100) * 100`, `upgradeLevel = item_id % 100`
+- **Armor IDs**: `baseId = item_id XOR 0x10000000`
+- **Talisman IDs**: `baseId = handle XOR 0xA0000000`
 
-### EquippedWeapon — campos disponibles
+### EquippedWeapon — available fields
 
 ```typescript
 interface EquippedWeapon {
-  rawId: number;           // gaitem_handle crudo del .sl2
-  baseId: number;          // ID base del ítem (sin nivel ni infusión)
-  name: string | null;     // null si no se encontró en la BD
-  upgradeLevel?: number;   // +0 a +25 / +10 (solo weapons)
-  image?: string;          // URL fanapis (puede ser vacío)
-  infusion?: string;       // "Heavy" | "Keen" | "Fire" | … (solo weapons con infusión)
-  damage?: DamageStats;    // solo weapons
-  scaling?: ScalingStats;  // solo weapons
+  rawId: number;           // raw gaitem_handle from .sl2
+  baseId: number;          // base item ID (without upgrade level or infusion)
+  name: string | null;     // null if not found in database
+  upgradeLevel?: number;   // +0 to +25 / +10 (weapons only)
+  image?: string;          // fanapis URL (may be empty)
+  infusion?: string;       // "Heavy" | "Keen" | "Fire" | … (infused weapons only)
+  damage?: DamageStats;    // weapons only
+  scaling?: ScalingStats;  // weapons only
   weight?: number;         // weapons, armors
-  defense?: DefenseStats;  // solo armors
-  effect?: string;         // descripción de efecto (principalmente talismanes)
+  defense?: DefenseStats;  // armors only (float precision for 550/568 items)
+  effect?: string;         // effect description (mainly talismans)
 }
 ```
 
-### fanapis — gotchas en campos de defensa
+### Armor data precision
 
-La API de fanapis usa nombres distintos a los esperados:
-- `"Phy"` en lugar de `"physical"`
-- `"Ligt"` en lugar de `"lightning"` (**typo en la API**)
-- El campo `dmgNegation` es un array de `{ name, amount }` — buscar con `getDef(key)` case-insensitive
+`armors.json` has two layers:
+- **fanapis** (base): integer defense values, no poise
+- **patch-armor** overlay: float precision from `jerpdoesgames/EldenRingArmorOptimizer`
+  (extracted from game's `regulation.bin → EquipParamProtector`)
+
+Coverage after patching:
+- **550 / 568** armors have float values + poise (e.g. `strike: 5.4, poise: 11`)
+- **18 unmatched**: 6 DLC Brave's set (optimizer predates Shadow of the Erdtree) + 12 obscure
+  items with near-zero stats — these keep integer approximations from fanapis
+
+The `Armor` type includes `poise: number` (0 when unavailable).
+
+### fanapis — field name gotchas
+
+The fanapis API uses non-standard names:
+- `"Phy"` instead of `"physical"`
+- `"Ligt"` instead of `"lightning"` (**typo in the API**)
+- The `dmgNegation` field is an array of `{ name, amount }` — use `getDef(key)` case-insensitively
 
 ---
 
@@ -144,95 +163,101 @@ La API de fanapis usa nombres distintos a los esperados:
 
 ### Stack
 
-| Tech | Versión | Rol |
-|------|---------|-----|
+| Tech | Version | Role |
+|------|---------|------|
 | React | 19 | UI |
-| TypeScript | 5.7 | Lenguaje |
+| TypeScript | 5.7 | Language |
 | Vite | 6.x | Bundler / dev server |
-| CSS Modules | — | Estilos por componente |
+| CSS Modules | — | Per-component styles |
 
-### Comandos
+### Commands
 
 ```bash
 cd frontend
-npm run dev      # Dev server en http://localhost:5173 (hot reload)
-npm run build    # Build de producción en dist/
-npm run preview  # Previsualizar el build en :4173
+npm run dev      # Dev server at http://localhost:5173 (hot reload)
+npm run build    # Production build to dist/
+npm run preview  # Preview the build at :4173
 ```
 
-> **AVISO WSL2**: en WSL2, el hot reload de Vite puede no funcionar correctamente.
-> `usePolling: true` está configurado en `vite.config.ts`, pero si los cambios siguen
-> sin reflejarse, usar `npm run build && npx vite preview --port 4173` como alternativa confiable.
+> **WSL2 note**: hot reload in Vite may not work correctly under WSL2.
+> `usePolling: true` is configured in `vite.config.ts`, but if changes still
+> don't reflect, use `npm run build && npx vite preview --port 4173` as a reliable alternative.
 
-### Estructura de componentes
+### Component structure
 
 ```
 frontend/src/
 ├── main.tsx
-├── App.tsx               # Máquina de estados: 'upload' | 'select' | 'build'
-├── App.css               # Variables CSS globales del tema Elden Ring
-├── types.ts              # Tipos espejo de las respuestas del backend
+├── App.tsx               # State machine: 'upload' | 'select' | 'build'
+├── App.css               # Global CSS variables — Elden Ring theme
+├── types.ts              # Mirror types of backend responses
 ├── api/
-│   └── client.ts         # parseSave(), getAdvisorRecommendations() — fetch tipado
+│   └── client.ts         # parseSave(), getAdvisorRecommendations() — typed fetch
 ├── hooks/
-│   ├── useMountAnimation.ts      # rAF doble-render para activar transiciones CSS en mount
-│   └── useTooltipPosition.ts     # Posicionamiento flip del tooltip (left/right según viewport)
+│   ├── useMountAnimation.ts      # Double-rAF to trigger CSS transitions on mount
+│   └── useTooltipPosition.ts     # Viewport-aware tooltip flip (left/right)
 ├── utils/
-│   └── talismanEffects.ts        # Efectos numéricos de ~19 talismanes conocidos
+│   ├── talismanEffects.ts        # Numeric effects for ~19 known talismans
+│   └── arCalc.ts                 # AR estimation with per-stat scaling breakdown
 └── components/
-    ├── UploadPage/         # Drop zone + botón cargar .sl2
-    ├── CharacterSelect/    # Cards de selección si hay múltiples personajes activos
-    ├── BuildPage/          # Layout principal: stats + equipo + advisor + inventario
-    ├── StatsPanel/         # 8 atributos con barras (VIG/MND/END/STR/DEX/INT/FAI/ARC)
-    ├── DerivedStatsPanel/  # HP, FP, Stamina, Equip Load, Attack, Defense/Dmg Negation
-    │                       # Los valores de HP/FP/Stamina/Load incluyen bonos de talismanes
-    ├── EquipmentGrid/      # Armas LH/RH, armadura (head/chest/arms/legs), talismanes
-    │                       # Hover dispara ItemTooltip mediante onItemHover callback
-    ├── ItemSlot/           # Slot individual: imagen fanapis o SVG placeholder por categoría
-    │                       # Badge +N de nivel de mejora, badge de infusión
-    ├── ItemTooltip/        # Tooltip hover con stats completos (portal a document.body)
-    │                       # Muestra: nombre+nivel, Attack Power (barras), Scaling badges,
-    │                       # Defense (armaduras), efectos numéricos o texto (talismanes), peso
-    ├── AdvisorPanel/       # Top-N armas recomendadas por AR estimado
-    └── InventoryPanel/     # Tabs: Armas | Armaduras | Talismanes | Hechizos | Cenizas |
-                            # Espíritus | Consumibles | Mejoras | Materiales
-                            # Búsqueda por nombre + filtro por tipo en cada tab
+    ├── UploadPage/         # Drop zone + load .sl2 button
+    ├── CharacterSelect/    # Selection cards if multiple active characters
+    ├── BuildPage/          # Main layout: stats + equipment + inventory
+    ├── StatsPanel/         # 8 attributes with bars (VIG/MND/END/STR/DEX/INT/FAI/ARC)
+    ├── DerivedStatsPanel/  # HP, FP, Stamina, Equip Load, Attack, Dmg Negation
+    │                       # HP/FP/Stamina/Load values include talisman bonuses
+    ├── EquipmentGrid/      # Weapons LH/RH, armor (head/chest/arms/legs), talismans
+    │                       # Hover triggers ItemTooltip via onItemHover callback
+    ├── ItemSlot/           # Individual slot: fanapis image or SVG placeholder per category
+    │                       # Upgrade badge (+N), infusion badge
+    ├── ItemTooltip/        # Hover tooltip with full stats (portal to document.body)
+    │                       # Shows: name+level, Attack Power (bars), Scaling badges,
+    │                       # Estimated AR with per-stat breakdown, Defense (armors),
+    │                       # numeric or text effects (talismans), weight
+    ├── InventoryTooltip/   # Hover tooltip for inventory items (portal to document.body)
+    │                       # Shows: damage, scaling, defense, effects, ash/spirit details
+    ├── AdvisorPanel/       # (kept in codebase, NOT rendered in BuildPage)
+    │                       # TODO: replace with tabs — "Recommended Builds" + "Questlines"
+    └── InventoryPanel/     # Tabs: Weapons | Armor | Talismans | Spells | Spirits |
+                            # Ashes | Consumables | Upgrades | Mats | Tears | Ammo |
+                            # Key | Books | Multi
+                            # Name search + type filter per tab
 ```
 
-### Tema visual (CSS variables en App.css)
+### Visual theme (CSS variables in App.css)
 
 ```css
---bg-base:      #0a0906   /* fondo global */
---bg-panel:     #16120b   /* paneles */
---bg-slot:      #1f1a10   /* slots de ítem */
---gold:         #c9a74f   /* acento principal */
---gold-dim:     #7a6130   /* acento tenue */
---gold-bright:  #e8c97a   /* acento brillante (hover) */
---text:         #e8d5a0   /* texto normal */
---text-dim:     #7a6e5a   /* texto secundario */
---border:       #3a2e18   /* bordes base */
---border-gold:  #5a4820   /* bordes destacados */
---slot-size:    58px      /* tamaño de slots de equipo */
+--bg-base:      #0a0906   /* global background */
+--bg-panel:     #16120b   /* panels */
+--bg-slot:      #1f1a10   /* item slots */
+--gold:         #c9a74f   /* main accent */
+--gold-dim:     #7a6130   /* dim accent */
+--gold-bright:  #e8c97a   /* bright accent (hover) */
+--text:         #e8d5a0   /* body text */
+--text-dim:     #7a6e5a   /* secondary text */
+--border:       #3a2e18   /* base borders */
+--border-gold:  #5a4820   /* highlighted borders */
+--slot-size:    58px      /* equipment slot size */
 ```
 
-**Regla de diseño crítica**: NO usar `border-radius` con valores positivos en px.
-La estética de Elden Ring es angular/cuadrada. Todos los bordes son `border-radius: 0`.
+**Critical design rule**: do NOT use positive `border-radius` values.
+Elden Ring's aesthetic is angular/square. All borders must be `border-radius: 0`.
 
-### Efectos de talismanes
+### Talisman effects
 
-**Dos capas de datos:**
+**Two layers of data:**
 
-1. **`utils/talismanEffects.ts`** — `TALISMAN_EFFECTS` map con ~19 talismanes que afectan stats
-   (Erdtree's Favor, Radagon's Soreseal, Arsenal Charm, etc.) con valores numéricos precisos.
-   - `getTalismanEffectLines(baseId)` → `{ label, value }[]` para el tooltip (e.g. `HP +3%`)
-   - Estos valores se aplican en `DerivedStatsPanel` para calcular HP/FP/Stamina/Load real
+1. **`utils/talismanEffects.ts`** — `TALISMAN_EFFECTS` map with ~19 talismans that affect stats
+   (Erdtree's Favor, Radagon's Soreseal, Arsenal Charm, etc.) with precise numeric values.
+   - `getTalismanEffectLines(baseId)` → `{ label, value }[]` for tooltips (e.g. `HP +3%`)
+   - These values are applied in `DerivedStatsPanel` to compute real HP/FP/Stamina/Load
 
-2. **`backend: EquippedWeapon.effect`** — texto de descripción de fanapis para **todos** los
-   talismanes. Cuando `getTalismanEffectLines` retorna `null`, el tooltip muestra este texto.
+2. **`backend: EquippedWeapon.effect`** — fanapis description text for **all** talismans.
+   When `getTalismanEffectLines` returns `null`, the tooltip shows this text instead.
 
-### Fórmulas de stats derivados (DerivedStatsPanel)
+### Derived stats formulas (DerivedStatsPanel)
 
-Implementadas con interpolación piecewise exacta (reverse-engineered por la comunidad):
+Implemented with exact piecewise interpolation (reverse-engineered by the community):
 
 ```
 HP (Vigor):
@@ -260,75 +285,75 @@ Max Equip Load (Endurance):
   e ≤ 99 → 120 + 40 * ((e-60)/39)
 ```
 
-### Animaciones
+### Animations
 
-- **Barras**: `useMountAnimation()` hook — activa transición CSS tras 1 rAF.
-  Curva: `cubic-bezier(0.16, 1, 0.3, 1)` (easeOutExpo), duración 0.9s.
-  Stagger: `transitionDelay: index * 60ms` por barra.
-- **Entrada de página**: `fadeSlideDown` (header), `fadeSlideUp` (sidebar/content)
-- **Nombre del personaje**: `nameGlow` pulse cada 4s
-- **ItemSlot**: `slotReveal` (scale 0.88→1 + fade), stagger de 45ms por slot
-- **Hover ItemSlot**: shimmer sweep diagonal (`::after`) + rim light gold (`::before`)
-- **Título UploadPage**: `titleReveal` (letter-spacing colapsa 0.5em→0.15em)
-- **Spinner**: cuadrado (sin border-radius), rotación 1.2s–1.4s linear
+- **Bars**: `useMountAnimation()` hook — triggers CSS transition after 1 rAF.
+  Curve: `cubic-bezier(0.16, 1, 0.3, 1)` (easeOutExpo), duration 0.9s.
+  Stagger: `transitionDelay: index * 60ms` per bar.
+- **Page entry**: `fadeSlideDown` (header), `fadeSlideUp` (sidebar/content)
+- **Character name**: `nameGlow` pulse every 4s
+- **ItemSlot**: `slotReveal` (scale 0.88→1 + fade), 45ms stagger per slot
+- **Hover ItemSlot**: diagonal shimmer sweep (`::after`) + gold rim light (`::before`)
+- **UploadPage title**: `titleReveal` (letter-spacing collapses 0.5em→0.15em)
+- **Spinner**: square (no border-radius), 1.2s–1.4s linear rotation
 
-### Flujo de la app
+### App flow
 
 ```
 Upload .sl2
     ↓
 POST /api/parse
     ↓
-1 personaje activo → BuildPage directamente
-N personajes activos → CharacterSelect → BuildPage
+1 active character → BuildPage directly
+N active characters → CharacterSelect → BuildPage
     ↓
-BuildPage monta:
-  - StatsPanel (8 atributos)
-  - DerivedStatsPanel (HP/FP/Stamina/Load/Attack/Defense con bonos de talismanes)
-  - EquipmentGrid (armas + armadura + talismanes, con hover → ItemTooltip)
-  - AdvisorPanel (POST /api/advisor con stats)
-  - InventoryPanel (tabs con búsqueda + filtro por tipo)
+BuildPage renders:
+  - StatsPanel (8 attributes)
+  - DerivedStatsPanel (HP/FP/Stamina/Load/Attack/Defense with talisman bonuses)
+  - EquipmentGrid (weapons + armor + talismans, hover → ItemTooltip)
+  - InventoryPanel (tabs with search + type filter)
+  [AdvisorPanel is NOT rendered — see TODO in BuildPage.tsx]
 ```
 
 ---
 
-## Imágenes de ítems
+## Item images
 
-Las imágenes vienen de `https://eldenring.fanapis.com/images/{categoría}/{id}.png`.
-El campo `image` está presente en cada ítem de los JSON de datos.
-En el frontend, `<ItemSlot>` muestra la imagen si existe, o un SVG placeholder por categoría
-(espada para weapons, yelmo para head, coraza para chest, etc.) si no.
+Images come from `https://eldenring.fanapis.com/images/{category}/{id}.png`.
+The `image` field is present on each item in the data JSONs.
+In the frontend, `<ItemSlot>` shows the image if available, or an SVG placeholder per category
+(sword for weapons, helm for head, cuirass for chest, etc.) if not.
 
 ---
 
-## Personaje de prueba
+## Test character
 
-- **Nombre**: Zhyak, nivel 68, slot 2
+- **Name**: Zhyak, level 68, slot 2
 - **Save**: `/mnt/c/Users/pacho/AppData/Roaming/EldenRing/76561198241678230/ER0000.sl2`
 - **Stats**: VIG 34, MND 17, END 18, STR 18, DEX 34, INT 7, FAI 8, ARC 11
-- **Arma RH**: Bloodhound's Fang +4 / Torch
-- **Armadura**: Banished Knight Helm (Altered) + Godrick Knight set
-- **Talismanes**: Erdtree's Favor, Arsenal Charm (varían según sesión de juego)
+- **RH weapon**: Bloodhound's Fang +4 / Torch
+- **Armor**: Banished Knight Helm (Altered) + Godrick Knight set
+- **Talismans**: Erdtree's Favor, Arsenal Charm (may vary between play sessions)
 
 ---
 
 ## Tests
 
 ```bash
-cd backend && npm test   # 43 tests — deben pasar todos antes de commitear
+cd backend && npm test   # 43 tests — all must pass before committing
 ```
 
-Los tests cubren: parser BND4, findStats, scanner de inventario, store de ítems, advisor.
-No hay tests en el frontend actualmente.
+Tests cover: BND4 parser, findStats, inventory scanner, item store, advisor.
+No frontend tests currently.
 
 ---
 
-## Convenciones
+## Conventions
 
-- **TypeScript estricto**: no usar `any`, preferir tipos explícitos
-- **CSS Modules**: cada componente tiene su `.module.css`, no estilos inline excepto valores dinámicos (animaciones, colores de barras)
-- **Sin border-radius positivo** en barras, paneles, slots ni badges
-- **Español** en comentarios, nombres de variables de UI y logs del servidor
-- **No editar `src/data/*.json` a mano** — siempre regenerar con `npm run sync-data`
-- **Multer field name**: el campo del formulario multipart es `savefile` (no `save` ni `file`)
-- **No commitear archivos `.js`** sueltos en `frontend/src/` — son artefactos de compilación. Solo `.ts` y `.tsx`
+- **Strict TypeScript**: no `any`, prefer explicit types
+- **CSS Modules**: each component has its `.module.css`; no inline styles except dynamic values (animations, bar colors)
+- **No positive `border-radius`** on bars, panels, slots or badges
+- **English** in all UI strings, comments, variable names and server logs
+- **Do not manually edit `src/data/*.json`** — always regenerate with `npm run sync-data`
+- **Multer field name**: the multipart form field must be `savefile` (not `save` or `file`)
+- **Do not commit loose `.js` files** in `frontend/src/` — those are build artifacts. Only `.ts` and `.tsx`

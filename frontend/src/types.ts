@@ -48,6 +48,13 @@ export interface EquippedWeapon {
   effect?: string;
 }
 
+export interface QuickSlotItem {
+  rawId: number;
+  baseId: number;
+  name: string | null;
+  image?: string;
+}
+
 export interface EquippedItems {
   rightHand: [EquippedWeapon, EquippedWeapon, EquippedWeapon];
   leftHand:  [EquippedWeapon, EquippedWeapon, EquippedWeapon];
@@ -56,6 +63,9 @@ export interface EquippedItems {
   hands:  EquippedWeapon;
   legs:   EquippedWeapon;
   talismans: [EquippedWeapon, EquippedWeapon, EquippedWeapon, EquippedWeapon];
+  quickItems: QuickSlotItem[];
+  pouch: QuickSlotItem[];
+  greatRune: QuickSlotItem | null;
 }
 
 export interface ResolvedInventoryItem {

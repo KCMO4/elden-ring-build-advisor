@@ -46,7 +46,7 @@
 }
 
 .cardName {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   color: var(--gold);
   margin-bottom: 0.5rem;

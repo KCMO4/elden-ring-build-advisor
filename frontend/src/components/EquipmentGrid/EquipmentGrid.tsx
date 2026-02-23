@@ -1,4 +1,4 @@
-import type { EquippedItems, EquippedWeapon } from '../../types';
+import type { EquippedItems, EquippedWeapon, QuickSlotItem } from '../../types';
 import ItemSlot from '../ItemSlot/ItemSlot';
 import styles from './EquipmentGrid.module.css';
 
@@ -7,9 +7,39 @@ interface Props {
   onItemHover?: (item: EquippedWeapon | null, rect: DOMRect | null) => void;
 }
 
+/** Move equipped items to the front, empty slots to the back */
+function compactSlots<T extends EquippedWeapon>(slots: T[]): T[] {
+  const filled = slots.filter(s => s.rawId !== 0xFFFFFFFF && s.rawId !== 0 && s.name);
+  const empty  = slots.filter(s => s.rawId === 0xFFFFFFFF || s.rawId === 0 || !s.name);
+  return [...filled, ...empty];
+}
+
+function isQuickSlotEmpty(item: QuickSlotItem): boolean {
+  return item.rawId === 0xFFFFFFFF || item.rawId === 0 || !item.name;
+}
+
 export default function EquipmentGrid({ equipped, onItemHover }: Props) {
+  const leftHand  = compactSlots(equipped.leftHand);
+  const rightHand = compactSlots(equipped.rightHand);
+
+  const filledQuickItems = equipped.quickItems?.filter(q => !isQuickSlotEmpty(q)) ?? [];
+  const filledPouch      = equipped.pouch?.filter(q => !isQuickSlotEmpty(q)) ?? [];
+
   return (
     <div className={styles.panel}>
+      {/* ── Great Rune ── */}
+      {equipped.greatRune && equipped.greatRune.name && (
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>Great Rune</div>
+          <div className={styles.greatRuneRow}>
+            <div className={styles.greatRuneSlot}>
+              <span className={styles.greatRuneIcon}>ᛟ</span>
+              <span className={styles.greatRuneName}>{equipped.greatRune.name}</span>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ── Armas ── */}
       <div className={styles.section}>
         <div className={styles.sectionTitle}>Weapons</div>
@@ -17,7 +47,7 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
           <div className={styles.handGroup}>
             <div className={styles.handLabel}>Left Hand</div>
             <div className={styles.handSlots}>
-              {equipped.leftHand.map((w, i) => (
+              {leftHand.map((w, i) => (
                 <ItemSlot
                   key={i}
                   item={w}
@@ -32,7 +62,7 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
           <div className={styles.handGroup}>
             <div className={styles.handLabel}>Right Hand</div>
             <div className={styles.handSlots}>
-              {equipped.rightHand.map((w, i) => (
+              {rightHand.map((w, i) => (
                 <ItemSlot
                   key={i}
                   item={w}
@@ -74,6 +104,36 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
           ))}
         </div>
       </div>
+
+      {/* ── Quick Items ── */}
+      {filledQuickItems.length > 0 && (
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>Quick Items</div>
+          <div className={styles.quickItemsRow}>
+            {filledQuickItems.map((item, i) => (
+              <div key={i} className={styles.quickSlot} title={item.name ?? ''}>
+                <span className={styles.quickSlotIcon}>◆</span>
+                <span className={styles.quickSlotName}>{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ── Pouch ── */}
+      {filledPouch.length > 0 && (
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>Pouch</div>
+          <div className={styles.quickItemsRow}>
+            {filledPouch.map((item, i) => (
+              <div key={i} className={styles.quickSlot} title={item.name ?? ''}>
+                <span className={styles.quickSlotIcon}>◆</span>
+                <span className={styles.quickSlotName}>{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

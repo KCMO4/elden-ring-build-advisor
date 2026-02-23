@@ -98,6 +98,18 @@ export interface EquippedWeapon {
   effect?: string;
 }
 
+/** Ítem en un quick slot o pouch */
+export interface QuickSlotItem {
+  /** ID crudo del .sl2 (inventory ID con nibble de categoría, 0xFFFFFFFF = vacío) */
+  rawId: number;
+  /** ID base del ítem (sin nibble de categoría) */
+  baseId: number;
+  /** Nombre del ítem o null si no se encontró */
+  name: string | null;
+  /** URL de la imagen del ítem */
+  image?: string;
+}
+
 /** Ítems equipados en el personaje */
 export interface EquippedItems {
   rightHand: [EquippedWeapon, EquippedWeapon, EquippedWeapon];
@@ -107,6 +119,12 @@ export interface EquippedItems {
   hands:  EquippedWeapon;
   legs:   EquippedWeapon;
   talismans: [EquippedWeapon, EquippedWeapon, EquippedWeapon, EquippedWeapon];
+  /** Quick item slots (10 slots: flasks, consumables, etc.) */
+  quickItems: QuickSlotItem[];
+  /** Pouch items (6 slots: spirit ashes, torrent whistle, etc.) */
+  pouch: QuickSlotItem[];
+  /** Equipped Great Rune (null = none equipped) */
+  greatRune: QuickSlotItem | null;
 }
 
 /** Inventario completo categorizado */
