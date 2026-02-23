@@ -19,13 +19,13 @@ interface StatDef {
 
 const STAT_DEFS: StatDef[] = [
   { key: 'vigor',        abbr: 'VIG', label: 'Vigor',        colorClass: styles.colVig, caps: [40, 60] },
-  { key: 'mind',         abbr: 'MND', label: 'Mente',        colorClass: styles.colMnd, caps: [55, 60] },
-  { key: 'endurance',    abbr: 'END', label: 'Resistencia',  colorClass: styles.colEnd, caps: [25, 60] },
-  { key: 'strength',     abbr: 'STR', label: 'Fuerza',       colorClass: styles.colStr, caps: [20, 40, 60, 80] },
-  { key: 'dexterity',    abbr: 'DEX', label: 'Destreza',     colorClass: styles.colDex, caps: [20, 40, 60, 80] },
-  { key: 'intelligence', abbr: 'INT', label: 'Inteligencia', colorClass: styles.colInt, caps: [20, 40, 60, 80] },
-  { key: 'faith',        abbr: 'FAI', label: 'Fe',           colorClass: styles.colFai, caps: [20, 40, 60, 80] },
-  { key: 'arcane',       abbr: 'ARC', label: 'Arcano',       colorClass: styles.colArc, caps: [20, 40, 60, 80] },
+  { key: 'mind',         abbr: 'MND', label: 'Mind',         colorClass: styles.colMnd, caps: [55, 60] },
+  { key: 'endurance',    abbr: 'END', label: 'Endurance',    colorClass: styles.colEnd, caps: [25, 60] },
+  { key: 'strength',     abbr: 'STR', label: 'Strength',     colorClass: styles.colStr, caps: [20, 40, 60, 80] },
+  { key: 'dexterity',    abbr: 'DEX', label: 'Dexterity',    colorClass: styles.colDex, caps: [20, 40, 60, 80] },
+  { key: 'intelligence', abbr: 'INT', label: 'Intelligence', colorClass: styles.colInt, caps: [20, 40, 60, 80] },
+  { key: 'faith',        abbr: 'FAI', label: 'Faith',        colorClass: styles.colFai, caps: [20, 40, 60, 80] },
+  { key: 'arcane',       abbr: 'ARC', label: 'Arcane',       colorClass: styles.colArc, caps: [20, 40, 60, 80] },
 ];
 
 const MAX_STAT = 99;
@@ -37,7 +37,7 @@ export default function StatsPanel({ stats, talismans = [] }: Props) {
   return (
     <div className={styles.panel}>
       <div className={styles.header}>
-        <span className={styles.title}>Atributos</span>
+        <span className={styles.title}>Attributes</span>
       </div>
 
       <div className={styles.list}>

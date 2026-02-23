@@ -117,7 +117,7 @@ export default function AdvisorPanel({ stats, mainWeaponAR = 0, mainWeapon }: Pr
         }
       })
       .catch(err => {
-        if (!cancelled) setError(err instanceof Error ? err.message : 'Error al cargar recomendaciones');
+        if (!cancelled) setError(err instanceof Error ? err.message : 'Failed to load recommendations');
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -130,12 +130,12 @@ export default function AdvisorPanel({ stats, mainWeaponAR = 0, mainWeapon }: Pr
 
   return (
     <div className={styles.panel}>
-      <div className={styles.title}>Armas Recomendadas</div>
+      <div className={styles.title}>Recommended Weapons</div>
 
       {loading && (
         <div className={styles.loading}>
           <div className={styles.spinner} />
-          <span>Calculando AR estimado...</span>
+          <span>Calculating estimated AR...</span>
         </div>
       )}
 
@@ -182,7 +182,7 @@ export default function AdvisorPanel({ stats, mainWeaponAR = 0, mainWeapon }: Pr
 
           {weapons.length === 0 && (
             <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>
-              No se encontraron armas para estos stats.
+              No weapons found for these stats.
             </p>
           )}
         </div>
@@ -191,7 +191,7 @@ export default function AdvisorPanel({ stats, mainWeaponAR = 0, mainWeapon }: Pr
       {/* ── Optimizador de nivel ── */}
       {tips.length > 0 && (
         <>
-          <div className={styles.optimizerTitle}>Próximos Caps</div>
+          <div className={styles.optimizerTitle}>Next Caps</div>
           <div className={styles.optList}>
             {tips.map(t => (
               <div key={t.statKey} className={styles.optItem}>

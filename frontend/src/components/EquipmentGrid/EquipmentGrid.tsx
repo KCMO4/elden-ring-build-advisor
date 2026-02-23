@@ -12,10 +12,10 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
     <div className={styles.panel}>
       {/* ── Armas ── */}
       <div className={styles.section}>
-        <div className={styles.sectionTitle}>Armas</div>
+        <div className={styles.sectionTitle}>Weapons</div>
         <div className={styles.weaponsRow}>
           <div className={styles.handGroup}>
-            <div className={styles.handLabel}>Mano izquierda</div>
+            <div className={styles.handLabel}>Left Hand</div>
             <div className={styles.handSlots}>
               {equipped.leftHand.map((w, i) => (
                 <ItemSlot
@@ -30,7 +30,7 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
             </div>
           </div>
           <div className={styles.handGroup}>
-            <div className={styles.handLabel}>Mano derecha</div>
+            <div className={styles.handLabel}>Right Hand</div>
             <div className={styles.handSlots}>
               {equipped.rightHand.map((w, i) => (
                 <ItemSlot
@@ -49,18 +49,18 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
 
       {/* ── Armadura ── */}
       <div className={styles.section}>
-        <div className={styles.sectionTitle}>Armadura</div>
+        <div className={styles.sectionTitle}>Armor</div>
         <div className={styles.armorRow}>
-          <ItemSlot item={equipped.head}  label="Cabeza"  category="armor-head"  animIndex={6}  onHover={onItemHover} />
-          <ItemSlot item={equipped.chest} label="Torso"   category="armor-chest" animIndex={7}  onHover={onItemHover} />
-          <ItemSlot item={equipped.hands} label="Brazos"  category="armor-hands" animIndex={8}  onHover={onItemHover} />
-          <ItemSlot item={equipped.legs}  label="Piernas" category="armor-legs"  animIndex={9}  onHover={onItemHover} />
+          <ItemSlot item={equipped.head}  label="Head"  category="armor-head"  animIndex={6}  onHover={onItemHover} />
+          <ItemSlot item={equipped.chest} label="Chest" category="armor-chest" animIndex={7}  onHover={onItemHover} />
+          <ItemSlot item={equipped.hands} label="Arms"  category="armor-hands" animIndex={8}  onHover={onItemHover} />
+          <ItemSlot item={equipped.legs}  label="Legs"  category="armor-legs"  animIndex={9}  onHover={onItemHover} />
         </div>
       </div>
 
       {/* ── Talismanes ── */}
       <div className={styles.section}>
-        <div className={styles.sectionTitle}>Talismanes</div>
+        <div className={styles.sectionTitle}>Talismans</div>
         <div className={styles.talismanRow}>
           {equipped.talismans.map((t, i) => (
             <ItemSlot

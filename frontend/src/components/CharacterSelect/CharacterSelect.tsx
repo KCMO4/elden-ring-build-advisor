@@ -12,22 +12,22 @@ export default function CharacterSelect({ characters, onSelect, onBack }: Props)
 
   return (
     <div className={styles.page}>
-      <h2 className={styles.title}>Seleccionar Personaje</h2>
+      <h2 className={styles.title}>Select Character</h2>
       <p className={styles.subtitle}>
-        {active.length} personaje{active.length !== 1 ? 's' : ''} encontrado{active.length !== 1 ? 's' : ''}
+        {active.length} character{active.length !== 1 ? 's' : ''} found
       </p>
 
       <div className={styles.grid}>
         {active.map((char, i) => (
           <div key={i} className={styles.card} onClick={() => onSelect(char)}>
             <div className={styles.cardName} title={char.name}>{char.name}</div>
-            <div className={styles.cardLevel}>Nivel {char.level}</div>
+            <div className={styles.cardLevel}>Level {char.level}</div>
           </div>
         ))}
       </div>
 
       <button className={styles.backBtn} onClick={onBack}>
-        ← Volver
+        ← Back
       </button>
     </div>
   );

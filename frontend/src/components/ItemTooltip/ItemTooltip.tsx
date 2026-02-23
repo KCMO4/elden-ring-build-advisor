@@ -136,26 +136,26 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
       {rawDamage && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>
-            {arData ? 'AR Estimado' : 'Attack Power'}
+            {arData ? 'Estimated AR' : 'Attack Power'}
           </div>
 
           {arData ? (
             // AR con escalado aplicado
             <>
-              <DamageBar label="Físico"   value={arData.ar.physical}  max={arMax} color={DMG_COLOR.physical}  prefix="~" />
-              <DamageBar label="Magia"    value={arData.ar.magic}     max={arMax} color={DMG_COLOR.magic}     prefix="~" />
-              <DamageBar label="Fuego"    value={arData.ar.fire}      max={arMax} color={DMG_COLOR.fire}      prefix="~" />
-              <DamageBar label="Relámp."  value={arData.ar.lightning} max={arMax} color={DMG_COLOR.lightning} prefix="~" />
-              <DamageBar label="Sagrado"  value={arData.ar.holy}      max={arMax} color={DMG_COLOR.holy}      prefix="~" />
+              <DamageBar label="Physical"  value={arData.ar.physical}  max={arMax} color={DMG_COLOR.physical}  prefix="~" />
+              <DamageBar label="Magic"     value={arData.ar.magic}     max={arMax} color={DMG_COLOR.magic}     prefix="~" />
+              <DamageBar label="Fire"      value={arData.ar.fire}      max={arMax} color={DMG_COLOR.fire}      prefix="~" />
+              <DamageBar label="Lightning" value={arData.ar.lightning} max={arMax} color={DMG_COLOR.lightning} prefix="~" />
+              <DamageBar label="Holy"      value={arData.ar.holy}      max={arMax} color={DMG_COLOR.holy}      prefix="~" />
             </>
           ) : (
             // Base +0 sin escalar
             <>
-              <DamageBar label="Físico"   value={rawDamage.physical}  max={maxRawDmg} color={DMG_COLOR.physical}  />
-              <DamageBar label="Magia"    value={rawDamage.magic}     max={maxRawDmg} color={DMG_COLOR.magic}     />
-              <DamageBar label="Fuego"    value={rawDamage.fire}      max={maxRawDmg} color={DMG_COLOR.fire}      />
-              <DamageBar label="Relámp."  value={rawDamage.lightning} max={maxRawDmg} color={DMG_COLOR.lightning} />
-              <DamageBar label="Sagrado"  value={rawDamage.holy}      max={maxRawDmg} color={DMG_COLOR.holy}      />
+              <DamageBar label="Physical"  value={rawDamage.physical}  max={maxRawDmg} color={DMG_COLOR.physical}  />
+              <DamageBar label="Magic"     value={rawDamage.magic}     max={maxRawDmg} color={DMG_COLOR.magic}     />
+              <DamageBar label="Fire"      value={rawDamage.fire}      max={maxRawDmg} color={DMG_COLOR.fire}      />
+              <DamageBar label="Lightning" value={rawDamage.lightning} max={maxRawDmg} color={DMG_COLOR.lightning} />
+              <DamageBar label="Holy"      value={rawDamage.holy}      max={maxRawDmg} color={DMG_COLOR.holy}      />
             </>
           )}
         </div>
@@ -164,25 +164,25 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
       {/* ── Defensa (para armaduras) ── */}
       {item.defense && !rawDamage && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Negación de daño</div>
-          <DamageBar label="Físico"   value={item.defense.physical}  max={35} color={DMG_COLOR.physical}  />
-          <DamageBar label="Magia"    value={item.defense.magic}     max={35} color={DMG_COLOR.magic}     />
-          <DamageBar label="Fuego"    value={item.defense.fire}      max={35} color={DMG_COLOR.fire}      />
-          <DamageBar label="Relámp."  value={item.defense.lightning} max={35} color={DMG_COLOR.lightning} />
-          <DamageBar label="Sagrado"  value={item.defense.holy}      max={35} color={DMG_COLOR.holy}      />
+          <div className={styles.sectionLabel}>Dmg Negation</div>
+          <DamageBar label="Physical"  value={item.defense.physical}  max={35} color={DMG_COLOR.physical}  />
+          <DamageBar label="Magic"     value={item.defense.magic}     max={35} color={DMG_COLOR.magic}     />
+          <DamageBar label="Fire"      value={item.defense.fire}      max={35} color={DMG_COLOR.fire}      />
+          <DamageBar label="Lightning" value={item.defense.lightning} max={35} color={DMG_COLOR.lightning} />
+          <DamageBar label="Holy"      value={item.defense.holy}      max={35} color={DMG_COLOR.holy}      />
         </div>
       )}
 
       {/* ── Desglose de escalado (solo si hay AR calculado) ── */}
       {arData && hasScaling && item.scaling && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Escalado aplicado</div>
+          <div className={styles.sectionLabel}>Scaling applied</div>
           <BreakdownRow
-            stat="FUE" grade={item.scaling.str}
+            stat="STR" grade={item.scaling.str}
             statValue={stats!.strength}    bonus={arData.breakdown.strBonus}
           />
           <BreakdownRow
-            stat="DES" grade={item.scaling.dex}
+            stat="DEX" grade={item.scaling.dex}
             statValue={stats!.dexterity}   bonus={arData.breakdown.dexBonus}
           />
           <BreakdownRow
@@ -190,7 +190,7 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
             statValue={stats!.intelligence} bonus={arData.breakdown.intBonus}
           />
           <BreakdownRow
-            stat="FE"  grade={item.scaling.fai}
+            stat="FAI" grade={item.scaling.fai}
             statValue={stats!.faith}       bonus={arData.breakdown.faiBonus}
           />
           <BreakdownRow
@@ -214,12 +214,12 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
       {/* ── Escalado simple (cuando no hay stats del personaje) ── */}
       {!arData && hasScaling && item.scaling && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Escalado</div>
+          <div className={styles.sectionLabel}>Scaling</div>
           <div className={styles.badgeRow}>
-            <ScalingBadge stat="FUE" grade={item.scaling.str} />
-            <ScalingBadge stat="DES" grade={item.scaling.dex} />
+            <ScalingBadge stat="STR" grade={item.scaling.str} />
+            <ScalingBadge stat="DEX" grade={item.scaling.dex} />
             <ScalingBadge stat="INT" grade={item.scaling.int} />
-            <ScalingBadge stat="FE"  grade={item.scaling.fai} />
+            <ScalingBadge stat="FAI" grade={item.scaling.fai} />
             <ScalingBadge stat="ARC" grade={item.scaling.arc} />
           </div>
         </div>
@@ -228,7 +228,7 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
       {/* ── Efectos (talismanes con stats numéricos) ── */}
       {effectLines && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Efecto</div>
+          <div className={styles.sectionLabel}>Effect</div>
           {effectLines.map(({ label, value }) => (
             <div key={label} className={styles.effectRow}>
               <span className={styles.effectLabel}>{label}</span>
@@ -241,7 +241,7 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
       {/* ── Descripción de efecto (talismanes sin datos numéricos) ── */}
       {!effectLines && item.effect && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Efecto</div>
+          <div className={styles.sectionLabel}>Effect</div>
           <p className={styles.effectText}>{item.effect}</p>
         </div>
       )}
@@ -249,7 +249,7 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
       {/* ── Peso ── */}
       {item.weight !== undefined && item.weight > 0 && (
         <div className={styles.weightRow}>
-          <span className={styles.weightLabel}>Peso</span>
+          <span className={styles.weightLabel}>Weight</span>
           <span className={styles.weightValue}>{item.weight.toFixed(1)}</span>
         </div>
       )}

@@ -31,19 +31,19 @@ interface TabDef {
 }
 
 const TABS: TabDef[] = [
-  { key: 'weapons',      label: 'Armas',    placeholder: '⚔' },
-  { key: 'armors',       label: 'Armad.',   placeholder: '🛡' },
-  { key: 'talismans',    label: 'Talism.',  placeholder: '✦' },
-  { key: 'spells',       label: 'Hechizos', placeholder: '✦' },
-  { key: 'spirits',      label: 'Espírit.', placeholder: '👻' },
-  { key: 'ashesOfWar',   label: 'Cenizas',  placeholder: '🔥' },
+  { key: 'weapons',      label: 'Weapons',  placeholder: '⚔' },
+  { key: 'armors',       label: 'Armor',    placeholder: '🛡' },
+  { key: 'talismans',    label: 'Talisms.', placeholder: '✦' },
+  { key: 'spells',       label: 'Spells',   placeholder: '✦' },
+  { key: 'spirits',      label: 'Spirits',  placeholder: '👻' },
+  { key: 'ashesOfWar',   label: 'Ashes',    placeholder: '🔥' },
   { key: 'consumables',  label: 'Consum.',  placeholder: '🍶' },
-  { key: 'materials',    label: 'Mater.',   placeholder: '🌿' },
-  { key: 'upgrades',     label: 'Mejoras',  placeholder: '⬆' },
-  { key: 'crystalTears', label: 'Lágrim.',  placeholder: '💧' },
-  { key: 'ammos',        label: 'Munición', placeholder: '🏹' },
-  { key: 'keyItems',     label: 'Clave',    placeholder: '🗝' },
-  { key: 'cookbooks',    label: 'Recetas',  placeholder: '📖' },
+  { key: 'materials',    label: 'Mats.',    placeholder: '🌿' },
+  { key: 'upgrades',     label: 'Upgrades', placeholder: '⬆' },
+  { key: 'crystalTears', label: 'Tears',    placeholder: '💧' },
+  { key: 'ammos',        label: 'Ammo',     placeholder: '🏹' },
+  { key: 'keyItems',     label: 'Key',      placeholder: '🗝' },
+  { key: 'cookbooks',    label: 'Books',    placeholder: '📖' },
   { key: 'multiplayer',  label: 'Multi',    placeholder: '👆' },
 ];
 
@@ -98,7 +98,7 @@ function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placehol
 
 function ItemGrid({ items, placeholder }: ItemGridProps) {
   if (items.length === 0) {
-    return <div className={styles.empty}>Sin ítems</div>;
+    return <div className={styles.empty}>No items</div>;
   }
 
   return (
@@ -198,7 +198,7 @@ export default function InventoryPanel({ inventory }: Props) {
           <input
             className={styles.searchInput}
             type="text"
-            placeholder="Buscar por nombre..."
+            placeholder="Search by name..."
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
@@ -208,7 +208,7 @@ export default function InventoryPanel({ inventory }: Props) {
               value={typeFilter}
               onChange={e => setTypeFilter(e.target.value)}
             >
-              <option value="">Todos los tipos</option>
+              <option value="">All types</option>
               {availableTypes.map(t => (
                 <option key={t} value={t}>{t}</option>
               ))}
@@ -222,7 +222,7 @@ export default function InventoryPanel({ inventory }: Props) {
 
       {/* ── Resultado de búsqueda ── */}
       {(search || typeFilter) && filteredItems.length === 0 && tabItems.length > 0 && (
-        <div className={styles.empty}>Sin resultados para "{search || typeFilter}"</div>
+        <div className={styles.empty}>No results for "{search || typeFilter}"</div>
       )}
     </div>
   );

@@ -62,12 +62,12 @@ export default function BuildPage({ character, onBack }: Props) {
 
       {/* ── Header ── */}
       <header className={styles.header}>
-        <button className={styles.backBtn} onClick={onBack}>← Volver</button>
+        <button className={styles.backBtn} onClick={onBack}>← Back</button>
 
         <div className={styles.heroInfo}>
           <h1 className={styles.charName}>{character.name}</h1>
           <div className={styles.charMeta}>
-            <span className={styles.levelBadge}>Nivel {character.level}</span>
+            <span className={styles.levelBadge}>Level {character.level}</span>
             <span className={styles.metaDot}>·</span>
             <span className={styles.playtime}>{character.playtime}</span>
           </div>
@@ -79,7 +79,7 @@ export default function BuildPage({ character, onBack }: Props) {
             className={`${styles.exportBtn} ${exporting ? styles.exportBtnBusy : ''}`}
             onClick={handleExport}
             disabled={exporting}
-            title="Descargar build como PNG"
+            title="Download build as PNG"
           >
             {exporting ? '...' : '↓ PNG'}
           </button>
@@ -87,9 +87,9 @@ export default function BuildPage({ character, onBack }: Props) {
             <span className={styles.runeIcon}>ᛟ</span>
             <div className={styles.runeInfo}>
               <span className={styles.runeValue}>
-                {character.heldRunes.toLocaleString('es-AR')}
+                {character.heldRunes.toLocaleString('en-US')}
               </span>
-              <span className={styles.runeLabel}>runas</span>
+              <span className={styles.runeLabel}>runes</span>
             </div>
           </div>
         </div>

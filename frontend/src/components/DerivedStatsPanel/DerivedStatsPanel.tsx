@@ -188,7 +188,7 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
 
   const currLoad = equipWeight(equipped);
   const loadPct  = maxLoad > 0 ? (currLoad / maxLoad) * 100 : 0;
-  const loadTag  = loadPct < 30 ? 'Ligero' : loadPct < 70 ? 'Medio' : loadPct < 100 ? 'Pesado' : '¡Sobrecarga!';
+  const loadTag  = loadPct < 30 ? 'Light' : loadPct < 70 ? 'Medium' : loadPct < 100 ? 'Heavy' : 'Overloaded!';
 
   const neg      = totalNegation(equipped);
   const hasArmor = Object.values(neg).some(v => v > 0);

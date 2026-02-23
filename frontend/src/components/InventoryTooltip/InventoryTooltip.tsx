@@ -58,21 +58,21 @@ function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
       {damage && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Attack Power</div>
-          <DamageBar label="Físico"  value={damage.physical}  max={maxDmg} />
-          <DamageBar label="Magia"   value={damage.magic}     max={maxDmg} />
-          <DamageBar label="Fuego"   value={damage.fire}      max={maxDmg} />
-          <DamageBar label="Relámp." value={damage.lightning} max={maxDmg} />
-          <DamageBar label="Sagrado" value={damage.holy}      max={maxDmg} />
+          <DamageBar label="Physical"  value={damage.physical}  max={maxDmg} />
+          <DamageBar label="Magic"     value={damage.magic}     max={maxDmg} />
+          <DamageBar label="Fire"      value={damage.fire}      max={maxDmg} />
+          <DamageBar label="Lightning" value={damage.lightning} max={maxDmg} />
+          <DamageBar label="Holy"      value={damage.holy}      max={maxDmg} />
         </div>
       )}
       {hasScaling && scaling && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Escalado</div>
+          <div className={styles.sectionLabel}>Scaling</div>
           <div className={styles.badgeRow}>
-            <ScalingBadge stat="FUE" grade={scaling.str} />
-            <ScalingBadge stat="DES" grade={scaling.dex} />
+            <ScalingBadge stat="STR" grade={scaling.str} />
+            <ScalingBadge stat="DEX" grade={scaling.dex} />
             <ScalingBadge stat="INT" grade={scaling.int} />
-            <ScalingBadge stat="FE"  grade={scaling.fai} />
+            <ScalingBadge stat="FAI" grade={scaling.fai} />
             <ScalingBadge stat="ARC" grade={scaling.arc} />
           </div>
         </div>
@@ -85,7 +85,7 @@ function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
       )}
       {weight !== undefined && weight > 0 && (
         <div className={`${styles.weightRow} ${stability ? invStyles.noTopBorder : ''}`}>
-          <span className={styles.weightLabel}>Peso</span>
+          <span className={styles.weightLabel}>Weight</span>
           <span className={styles.weightValue}>{weight.toFixed(1)}</span>
         </div>
       )}
@@ -106,19 +106,19 @@ function ArmorSection({ item }: { item: ResolvedInventoryItem }) {
   return (
     <>
       <div className={styles.section}>
-        <div className={styles.sectionLabel}>Negación de daño</div>
-        <DamageBar label="Físico"   value={defense.physical}  max={maxDef} />
-        <DamageBar label="Impacto"  value={defense.strike}    max={maxDef} />
-        <DamageBar label="Corte"    value={defense.slash}     max={maxDef} />
-        <DamageBar label="Piercing" value={defense.pierce}    max={maxDef} />
-        <DamageBar label="Magia"    value={defense.magic}     max={maxDef} />
-        <DamageBar label="Fuego"    value={defense.fire}      max={maxDef} />
-        <DamageBar label="Relámp."  value={defense.lightning} max={maxDef} />
-        <DamageBar label="Sagrado"  value={defense.holy}      max={maxDef} />
+        <div className={styles.sectionLabel}>Dmg Negation</div>
+        <DamageBar label="Physical"  value={defense.physical}  max={maxDef} />
+        <DamageBar label="Strike"    value={defense.strike}    max={maxDef} />
+        <DamageBar label="Slash"     value={defense.slash}     max={maxDef} />
+        <DamageBar label="Pierce"    value={defense.pierce}    max={maxDef} />
+        <DamageBar label="Magic"     value={defense.magic}     max={maxDef} />
+        <DamageBar label="Fire"      value={defense.fire}      max={maxDef} />
+        <DamageBar label="Lightning" value={defense.lightning} max={maxDef} />
+        <DamageBar label="Holy"      value={defense.holy}      max={maxDef} />
       </div>
       {weight !== undefined && weight > 0 && (
         <div className={styles.weightRow}>
-          <span className={styles.weightLabel}>Peso</span>
+          <span className={styles.weightLabel}>Weight</span>
           <span className={styles.weightValue}>{weight.toFixed(1)}</span>
         </div>
       )}
@@ -141,13 +141,13 @@ function AshSection({ item }: { item: ResolvedInventoryItem }) {
     <div className={styles.section}>
       {affinity && affinity !== 'None' && (
         <div className={invStyles.ashRow}>
-          <span className={invStyles.ashLabel}>Afinidad</span>
+          <span className={invStyles.ashLabel}>Affinity</span>
           <span className={invStyles.ashValue}>{affinity}</span>
         </div>
       )}
       {skill && (
         <div className={invStyles.ashRow}>
-          <span className={invStyles.ashLabel}>Habilidad</span>
+          <span className={invStyles.ashLabel}>Skill</span>
           <span className={invStyles.ashValue}>{skill}</span>
         </div>
       )}
@@ -164,7 +164,7 @@ function SpiritSection({ item }: { item: ResolvedInventoryItem }) {
     <>
       {hasCosts && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Coste de invocación</div>
+          <div className={styles.sectionLabel}>Summon Cost</div>
           {fpCost !== undefined && fpCost > 0 && (
             <div className={invStyles.costRow}>
               <span className={invStyles.fpLabel}>FP</span>

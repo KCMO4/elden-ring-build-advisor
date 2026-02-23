@@ -33,7 +33,7 @@ export default function UploadPage({ onLoaded }: Props) {
       const data = await parseSave(file);
       onLoaded(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error desconocido');
+      setError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
       setLoading(false);
     }
@@ -47,7 +47,7 @@ export default function UploadPage({ onLoaded }: Props) {
       {loading ? (
         <div className={styles.loading}>
           <div className={styles.spinner} />
-          <span>Leyendo tu legado...</span>
+          <span>Reading your legacy...</span>
         </div>
       ) : (
         <>
@@ -65,12 +65,12 @@ export default function UploadPage({ onLoaded }: Props) {
             />
             <span className={styles.dropzoneIcon}>⚔</span>
             <p className={styles.dropzoneText}>
-              {file ? file.name : 'Arrastrá tu archivo de guardado aquí'}
+              {file ? file.name : 'Drag your save file here'}
             </p>
             <p className={styles.dropzoneHint}>
               {file
                 ? `${(file.size / 1024 / 1024).toFixed(1)} MB`
-                : 'o hacé clic para seleccionar · archivo .sl2'}
+                : 'or click to select · .sl2 file'}
             </p>
           </div>
 
@@ -79,7 +79,7 @@ export default function UploadPage({ onLoaded }: Props) {
             disabled={!file}
             onClick={handleSubmit}
           >
-            Cargar save
+            Load save
           </button>
 
           {error && <p className={styles.error}>{error}</p>}
@@ -88,7 +88,7 @@ export default function UploadPage({ onLoaded }: Props) {
 
       <div className={styles.divider} />
       <p className={styles.footer}>
-        Tu archivo nunca abandona tu máquina · solo se procesa localmente
+        Your file never leaves your machine · processed locally
       </p>
     </div>
   );
