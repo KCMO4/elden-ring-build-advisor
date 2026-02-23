@@ -1,13 +1,16 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useRef } from 'react';
 import html2canvas from 'html2canvas';
 import type { CharacterData, EquippedWeapon } from '../../types';
 import StatsPanel from '../StatsPanel/StatsPanel';
 import DerivedStatsPanel from '../DerivedStatsPanel/DerivedStatsPanel';
 import EquipmentGrid from '../EquipmentGrid/EquipmentGrid';
 import InventoryPanel from '../InventoryPanel/InventoryPanel';
-import AdvisorPanel from '../AdvisorPanel/AdvisorPanel';
 import ItemTooltip from '../ItemTooltip/ItemTooltip';
 import styles from './BuildPage.module.css';
+
+// TODO: Advisor panel — planned tabs:
+//   - "Recommended Builds"  : curated build suggestions based on character stats
+//   - "Questlines"          : step-by-step guide for each NPC questline
 
 interface Props {
   character: CharacterData;
@@ -24,12 +27,6 @@ export default function BuildPage({ character, onBack }: Props) {
     setHoveredItem(item);
     setTooltipRect(rect);
   };
-
-  // Arma principal RH1 (primer slot con arma real) — para el Advisor y el optimizer
-  const mainWeapon = useMemo(
-    () => character.equipped.rightHand.find(w => w.name && w.damage) ?? null,
-    [character.equipped],
-  );
 
   const handleExport = async () => {
     if (!captureRef.current || exporting) return;
@@ -49,13 +46,6 @@ export default function BuildPage({ character, onBack }: Props) {
       setExporting(false);
     }
   };
-
-  // AR estimado del arma principal para la comparación en el Advisor
-  const mainWeaponAR = useMemo(() => {
-    if (!mainWeapon?.damage) return 0;
-    const d = mainWeapon.damage;
-    return d.physical + d.magic + d.fire + d.lightning + d.holy;
-  }, [mainWeapon]);
 
   return (
     <div className={styles.page}>
@@ -100,7 +90,6 @@ export default function BuildPage({ character, onBack }: Props) {
         <aside className={styles.sidebar}>
           <StatsPanel stats={character.stats} talismans={character.equipped.talismans} />
           <DerivedStatsPanel stats={character.stats} equipped={character.equipped} />
-          <AdvisorPanel stats={character.stats} mainWeaponAR={mainWeaponAR} mainWeapon={mainWeapon} />
         </aside>
 
         <section className={styles.content}>
