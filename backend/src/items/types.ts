@@ -76,6 +76,8 @@ export interface Armor {
   name: string;
   type: ArmorType;
   weight: number;
+  /** Poise (resistencia a interrupciones). 0 si no disponible. */
+  poise: number;
   defense: Defense;
   image?: string;
 }

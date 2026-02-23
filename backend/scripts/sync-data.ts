@@ -340,6 +340,7 @@ function normalizeArmor(a: FanApiArmor, idx: number): Armor {
     name: a.name,
     type,
     weight: a.weight ?? 0,
+    poise: 0,  // fanapis no provee poise; se actualiza con patch-armor
     defense: {
       physical:  getDef(['phy']),           // Phy / Physical
       strike:    getDef(['str']),           // Str / Strike / StrEldenike

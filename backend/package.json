@@ -11,7 +11,9 @@
     "scrape-images": "ts-node --project tsconfig.scripts.json scripts/scrape-fandom-images.ts",
     "check-images": "ts-node --project tsconfig.scripts.json scripts/check-images.ts",
     "audit": "ts-node --project tsconfig.scripts.json scripts/audit-data.ts",
-    "audit:save": "ts-node --project tsconfig.scripts.json scripts/audit-data.ts --save"
+    "audit:save": "ts-node --project tsconfig.scripts.json scripts/audit-data.ts --save",
+    "patch-armor": "ts-node --project tsconfig.scripts.json scripts/patch-armor-precision.ts",
+    "patch-armor:dry": "ts-node --project tsconfig.scripts.json scripts/patch-armor-precision.ts --dry-run"
   },
   "jest": {
     "preset": "ts-jest",
