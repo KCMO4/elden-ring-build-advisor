@@ -121,6 +121,36 @@
   letter-spacing: 0.05em;
 }
 
+/* ── Badge comparativo vs arma equipada ─────────────── */
+.compBadge {
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1px 4px;
+  border: 1px solid transparent;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.comp_better {
+  color: #6dbf7e;
+  border-color: #2a5e35;
+  background: rgba(109, 191, 126, 0.1);
+}
+
+.comp_similar {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  background: rgba(201, 167, 79, 0.08);
+}
+
+.comp_worse {
+  color: #e05a5a;
+  border-color: #6e2020;
+  background: rgba(224, 90, 90, 0.1);
+}
+
 .rank {
   font-size: 0.7rem;
   color: var(--text-dim);
@@ -130,4 +160,60 @@
 
 .topBadge {
   color: var(--gold);
+}
+
+/* ── Optimizador de nivel ─────────────────────────────── */
+.optimizerTitle {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-top: 1.2rem;
+  margin-bottom: 0.55rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.8rem;
+}
+
+.optList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.optItem {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--bg-slot);
+}
+
+.optLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.optGrade {
+  font-size: 0.52rem;
+  color: var(--gold-dim);
+}
+
+.optArrow {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.optPointsBadge {
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: #6dbf7e;
+  background: rgba(109, 191, 126, 0.1);
+  border: 1px solid #2a5e35;
+  padding: 1px 5px;
+  white-space: nowrap;
 }

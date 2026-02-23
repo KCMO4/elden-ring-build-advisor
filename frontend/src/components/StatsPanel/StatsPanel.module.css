@@ -29,6 +29,7 @@
   gap: 0.6rem;
   padding: 0.3rem 1rem;
   transition: background 0.12s;
+  overflow: visible; /* permite que los ticks sobresalgan */
 }
 
 .row:hover {
@@ -55,6 +56,12 @@
   color: var(--text-dim);
 }
 
+/* Wrapper para la barra + ticks */
+.barWrap {
+  position: relative;
+  /* hereda el 1fr de la columna del grid */
+}
+
 .barTrack {
   height: 4px;
   background: rgba(255,255,255,0.06);
@@ -69,12 +76,40 @@
   transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Tick mark de softcap */
+.tick {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+/* Tick alcanzado: más visible, dorado */
+.tickReached {
+  background: rgba(201, 167, 79, 0.45);
+}
+
 .value {
   font-size: 0.82rem;
   font-variant-numeric: tabular-nums;
   font-weight: 600;
   color: var(--text);
   text-align: right;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.2rem;
+}
+
+/* Badge de bonus de talismán */
+.bonus {
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: #6dbf7e;
+  letter-spacing: 0.02em;
 }
 
 /* ── Colores por stat ─────────────────────────── */

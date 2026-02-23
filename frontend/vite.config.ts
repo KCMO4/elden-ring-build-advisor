@@ -6,5 +6,9 @@ export default defineConfig({
   server: {
     host: true,   // necesario para que Docker exponga el puerto
     port: 5173,
+    watch: {
+      usePolling: true,   // necesario en WSL2 donde inotify no detecta cambios
+      interval: 300,
+    },
   },
 });

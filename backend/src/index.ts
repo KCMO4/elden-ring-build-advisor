@@ -78,12 +78,26 @@ app.post('/api/parse', upload.single('savefile'), (req: Request, res: Response) 
 
     const inventoryData = slotData ? scanInventory(slotData, char.level) : null;
 
+    // Leer runas actuales: vigor_offset + 0x30 (uint32 LE)
+    // Fuente: ClayAmore/ER-Save-Editor, campo `souls` en PlayerGameData
+    let heldRunes = 0;
+    if (slotData) {
+      const statsResult = findStats(slotData, char.level);
+      if (statsResult) {
+        const runeOffset = statsResult.foundAtOffset + 0x30;
+        if (runeOffset + 4 <= slotData.length) {
+          heldRunes = slotData.readUInt32LE(runeOffset);
+        }
+      }
+    }
+
     const base = {
-      slot:     slot.index,
-      name:     char.name,
-      level:    char.level,
-      playtime: formatPlaytime(char.playtimeSeconds),
-      stats:    char.stats,
+      slot:      slot.index,
+      name:      char.name,
+      level:     char.level,
+      playtime:  formatPlaytime(char.playtimeSeconds),
+      heldRunes,
+      stats:     char.stats,
       equipped: inventoryData
         ? {
             rightHand: inventoryData.equipped.rightHand,
@@ -404,6 +418,30 @@ app.get('/api/items/talismans', (_req: Request, res: Response) => {
 app.get('/api/items/spells', (_req: Request, res: Response) => {
   const spells = ItemStore.getInstance().getSpells();
   res.json({ count: spells.length, data: spells });
+});
+
+// ── GET /api/items/shields ───────────────────────────────────────────────────
+app.get('/api/items/shields', (_req: Request, res: Response) => {
+  const shields = ItemStore.getInstance().getShields();
+  res.json({ count: shields.length, data: shields });
+});
+
+// ── GET /api/items/ashes ─────────────────────────────────────────────────────
+app.get('/api/items/ashes', (_req: Request, res: Response) => {
+  const ashes = ItemStore.getInstance().getAshes();
+  res.json({ count: ashes.length, data: ashes });
+});
+
+// ── GET /api/items/spirits ───────────────────────────────────────────────────
+app.get('/api/items/spirits', (_req: Request, res: Response) => {
+  const spirits = ItemStore.getInstance().getSpirits();
+  res.json({ count: spirits.length, data: spirits });
+});
+
+// ── GET /api/items/consumables ───────────────────────────────────────────────
+app.get('/api/items/consumables', (_req: Request, res: Response) => {
+  const consumables = ItemStore.getInstance().getConsumables();
+  res.json({ count: consumables.length, data: consumables });
 });
 
 // ── POST /api/advisor ────────────────────────────────────────────────────────

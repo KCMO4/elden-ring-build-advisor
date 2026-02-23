@@ -38,10 +38,14 @@ export interface EquippedWeapon {
   name: string | null;
   upgradeLevel?: number;
   image?: string;
+  /** Infusión del arma (Heavy, Keen, Fire, etc.). undefined = Standard */
+  infusion?: string;
   damage?:  DamageStats;
   scaling?: { str: string; dex: string; int: string; fai: string; arc: string };
   weight?:  number;
   defense?: DefenseStats;
+  /** Efecto o descripción corta (principalmente para talismanes) */
+  effect?: string;
 }
 
 export interface EquippedItems {
@@ -62,6 +66,28 @@ export interface ResolvedInventoryItem {
   baseId: number;
   name: string;
   image?: string;
+  /** Tipo de ítem (weapon type, armor type, spell type) */
+  itemType?: string;
+  /** Daño base — para armas */
+  damage?: DamageStats;
+  /** Escalado — para armas */
+  scaling?: { str: string; dex: string; int: string; fai: string; arc: string };
+  /** Negación de daño — para armaduras */
+  defense?: DefenseStats;
+  /** Peso — armas, armaduras, escudos */
+  weight?: number;
+  /** Estabilidad (Guard Boost) — escudos */
+  stability?: number;
+  /** Efecto o descripción corta — talismanes, consumibles, espíritus */
+  effect?: string;
+  /** Afinidad — cenizas de guerra */
+  affinity?: string;
+  /** Nombre de la habilidad — cenizas de guerra */
+  skill?: string;
+  /** Coste de FP — espíritus invocables */
+  fpCost?: number;
+  /** Coste de HP — espíritus invocables */
+  hpCost?: number;
 }
 
 export interface Inventory {
@@ -86,6 +112,8 @@ export interface CharacterData {
   name: string;
   level: number;
   playtime: string;
+  /** Runas actualmente en posesión (souls equivalent) */
+  heldRunes: number;
   stats: CharacterStats;
   equipped: EquippedItems;
   inventory: Inventory;

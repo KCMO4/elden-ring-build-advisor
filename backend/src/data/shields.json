@@ -1,0 +1,623 @@
+[
+  {
+    "id": "17f69c62fe8l0i124u8fi4nc7dbfbf",
+    "name": "Buckler",
+    "category": "Small Shield",
+    "weight": 1.5,
+    "physicalAttack": 68,
+    "stability": 30,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69c62fe8l0i124u8fi4nc7dbfbf.png"
+  },
+  {
+    "id": "17f694b8615l0i124uyj41jnmpvitp",
+    "name": "Perfumer's Shield",
+    "category": "Small Shield",
+    "weight": 1.5,
+    "physicalAttack": 67,
+    "stability": 30,
+    "image": "https://eldenring.fanapis.com/images/shields/17f694b8615l0i124uyj41jnmpvitp.png"
+  },
+  {
+    "id": "17f69b5141al0i124v8pxr1ks1ekij",
+    "name": "Man-serpent's Shield",
+    "category": "Small Shield",
+    "weight": 2,
+    "physicalAttack": 70,
+    "stability": 32,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69b5141al0i124v8pxr1ks1ekij.png"
+  },
+  {
+    "id": "17f69a7085fl0i124y1772hsc2fore",
+    "name": "Pillory Shield",
+    "category": "Small Shield",
+    "weight": 3.5,
+    "physicalAttack": 71,
+    "stability": 33,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69a7085fl0i124y1772hsc2fore.png"
+  },
+  {
+    "id": "17f6976985el0i124znputjytfizsr",
+    "name": "Rickety Shield",
+    "category": "Small Shield",
+    "weight": 1,
+    "physicalAttack": 70,
+    "stability": 25,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6976985el0i124znputjytfizsr.png"
+  },
+  {
+    "id": "17f693d58ael0i125pgfsn2zo4078i",
+    "name": "Beastman's Jar-shield",
+    "category": "Small Shield",
+    "weight": 5,
+    "physicalAttack": 71,
+    "stability": 48,
+    "image": "https://eldenring.fanapis.com/images/shields/17f693d58ael0i125pgfsn2zo4078i.png"
+  },
+  {
+    "id": "17f69c6b08dl0i125phehezloe6mgp",
+    "name": "Red Thorn Roundshield",
+    "category": "Small Shield",
+    "weight": 1.5,
+    "physicalAttack": 70,
+    "stability": 32,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69c6b08dl0i125phehezloe6mgp.png"
+  },
+  {
+    "id": "17f6976f39fl0i125rvey7g31uyix",
+    "name": "Riveted Wooden Shield",
+    "category": "Small Shield",
+    "weight": 2,
+    "physicalAttack": 72,
+    "stability": 35,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6976f39fl0i125rvey7g31uyix.png"
+  },
+  {
+    "id": "17f69cbb4afl0i125s3vg05tmg3h9",
+    "name": "Scripture Wooden Shield",
+    "category": "Small Shield",
+    "weight": 1.5,
+    "physicalAttack": 70,
+    "stability": 32,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69cbb4afl0i125s3vg05tmg3h9.png"
+  },
+  {
+    "id": "17f69652424l0i125urgh9o09mhavm",
+    "name": "Blue-white Wooden Shield",
+    "category": "Small Shield",
+    "weight": 2,
+    "physicalAttack": 72,
+    "stability": 35,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69652424l0i125urgh9o09mhavm.png"
+  },
+  {
+    "id": "17f69c01371l0i126fsrmmhmt78m7",
+    "name": "Rift Shield",
+    "category": "Small Shield",
+    "weight": 2,
+    "physicalAttack": 70,
+    "stability": 37,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69c01371l0i126fsrmmhmt78m7.png"
+  },
+  {
+    "id": "17f69b10c2el0i126k1rlvenfih79r",
+    "name": "Iron Roundshield",
+    "category": "Small Shield",
+    "weight": 3,
+    "physicalAttack": 74,
+    "stability": 40,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69b10c2el0i126k1rlvenfih79r.png"
+  },
+  {
+    "id": "17f69bd6428l0i126mo49q97n1both",
+    "name": "Smoldering Shield",
+    "category": "Small Shield",
+    "weight": 3,
+    "physicalAttack": 58,
+    "stability": 40,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69bd6428l0i126mo49q97n1both.png"
+  },
+  {
+    "id": "17f698a4b7bl0i126nb4s0xsp2lnfw",
+    "name": "Gilded Iron Shield",
+    "category": "Small Shield",
+    "weight": 3,
+    "physicalAttack": 74,
+    "stability": 40,
+    "image": "https://eldenring.fanapis.com/images/shields/17f698a4b7bl0i126nb4s0xsp2lnfw.png"
+  },
+  {
+    "id": "17f69b12e1bl0i126nysn2v09nsd3",
+    "name": "Ice Crest Shield",
+    "category": "Small Shield",
+    "weight": 3,
+    "physicalAttack": 74,
+    "stability": 40,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69b12e1bl0i126nysn2v09nsd3.png"
+  },
+  {
+    "id": "17f6942deffl0i1271bdbp91snfovh",
+    "name": "Spiralhorn Shield",
+    "category": "Small Shield",
+    "weight": 2,
+    "physicalAttack": 75,
+    "stability": 29,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6942deffl0i1271bdbp91snfovh.png"
+  },
+  {
+    "id": "17f6985902bl0i127b1nqhoj9b4nhl",
+    "name": "Marred Leather Shield",
+    "category": "Medium Shield",
+    "weight": 3,
+    "physicalAttack": 75,
+    "stability": 40,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6985902bl0i127b1nqhoj9b4nhl.png"
+  },
+  {
+    "id": "17f696cb3bal0i127cn7tiavj7t1u",
+    "name": "Marred Wooden Shield",
+    "category": "Medium Shield",
+    "weight": 4,
+    "physicalAttack": 76,
+    "stability": 41,
+    "image": "https://eldenring.fanapis.com/images/shields/17f696cb3bal0i127cn7tiavj7t1u.png"
+  },
+  {
+    "id": "17f694927d7l0i127ng35ra4v5k4gn",
+    "name": "Coil Shield",
+    "category": "Small Shield",
+    "weight": 1.5,
+    "physicalAttack": 92,
+    "stability": 22,
+    "image": "https://eldenring.fanapis.com/images/shields/17f694927d7l0i127ng35ra4v5k4gn.png"
+  },
+  {
+    "id": "17f6967bb2bl0i127q8x98oklbecj",
+    "name": "Kite Shield",
+    "category": "Medium Shield",
+    "weight": 4.5,
+    "physicalAttack": 78,
+    "stability": 47,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6967bb2bl0i127q8x98oklbecj.png"
+  },
+  {
+    "id": "17f698ac740l0i127wziv2s11fd2c",
+    "name": "Banished Knight's Shield",
+    "category": "Medium Shield",
+    "weight": 6,
+    "physicalAttack": 81,
+    "stability": 52,
+    "image": "https://eldenring.fanapis.com/images/shields/17f698ac740l0i127wziv2s11fd2c.png"
+  },
+  {
+    "id": "17f69ce5e4cl0i128b0nivmu8x7jg",
+    "name": "Albinauric Shield",
+    "category": "Medium Shield",
+    "weight": 4.5,
+    "physicalAttack": 78,
+    "stability": 42,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69ce5e4cl0i128b0nivmu8x7jg.png"
+  },
+  {
+    "id": "17f6987cd26l0i128fmzfvt6grfjsp",
+    "name": "Sun Realm Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 74,
+    "stability": 40,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6987cd26l0i128fmzfvt6grfjsp.png"
+  },
+  {
+    "id": "17f6970052fl0i128q30d2avtlnbrrf",
+    "name": "Silver Mirrorshield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 70,
+    "stability": 42,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6970052fl0i128q30d2avtlnbrrf.png"
+  },
+  {
+    "id": "17f6988b72dl0i128vmcj5b7a5j1e9",
+    "name": "Round Shield",
+    "category": "Medium Shield",
+    "weight": 4,
+    "physicalAttack": 76,
+    "stability": 42,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6988b72dl0i128vmcj5b7a5j1e9.png"
+  },
+  {
+    "id": "17f6948dfb1l0i1298n92tg7459mbg",
+    "name": "Scorpion Kite Shield",
+    "category": "Medium Shield",
+    "weight": 4.5,
+    "physicalAttack": 78,
+    "stability": 47,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6948dfb1l0i1298n92tg7459mbg.png"
+  },
+  {
+    "id": "17f698aad3fl0i129kcpcnkgwlznm",
+    "name": "Twinbird Kite Shield",
+    "category": "Medium Shield",
+    "weight": 4.5,
+    "physicalAttack": 78,
+    "stability": 49,
+    "image": "https://eldenring.fanapis.com/images/shields/17f698aad3fl0i129kcpcnkgwlznm.png"
+  },
+  {
+    "id": "17f6966bef4l0i129o1blgktqip69s",
+    "name": "Blue-gold Kite Shield",
+    "category": "Medium Shield",
+    "weight": 5,
+    "physicalAttack": 80,
+    "stability": 47,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6966bef4l0i129o1blgktqip69s.png"
+  },
+  {
+    "id": "17f69beaf5al0i12ae69s49g5aaaea",
+    "name": "Brass Shield",
+    "category": "Medium Shield",
+    "weight": 7,
+    "physicalAttack": 84,
+    "stability": 56,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69beaf5al0i12ae69s49g5aaaea.png"
+  },
+  {
+    "id": "17f6996caf5l0i12afnpkuzhuzo9o",
+    "name": "Shield Of The Guilty",
+    "category": "Small Shield",
+    "weight": 2,
+    "physicalAttack": 75,
+    "stability": 29,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6996caf5l0i12afnpkuzhuzo9o.png"
+  },
+  {
+    "id": "17f699d7257l0i12ai52ozxwx6ewwi",
+    "name": "Great Turtle Shell",
+    "category": "Medium Shield",
+    "weight": 5.5,
+    "physicalAttack": 81,
+    "stability": 48,
+    "image": "https://eldenring.fanapis.com/images/shields/17f699d7257l0i12ai52ozxwx6ewwi.png"
+  },
+  {
+    "id": "17f6942eeabl0i12apjrp14m98cxmg",
+    "name": "Carian Knight's Shield",
+    "category": "Medium Shield",
+    "weight": 4.5,
+    "physicalAttack": 63,
+    "stability": 47,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6942eeabl0i12apjrp14m98cxmg.png"
+  },
+  {
+    "id": "17f699a214fl0i12beelfraiymmf7",
+    "name": "Horse Crest Wooden Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 76,
+    "stability": 38,
+    "image": "https://eldenring.fanapis.com/images/shields/17f699a214fl0i12beelfraiymmf7.png"
+  },
+  {
+    "id": "17f69723a6dl0i12bhd8qm1rkekq4w",
+    "name": "Candletree Wooden Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 76,
+    "stability": 39,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69723a6dl0i12bhd8qm1rkekq4w.png"
+  },
+  {
+    "id": "17f69b8ad9fl0i12bhsus3gi193fg",
+    "name": "Large Leather Shield",
+    "category": "Medium Shield",
+    "weight": 3,
+    "physicalAttack": 75,
+    "stability": 40,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69b8ad9fl0i12bhsus3gi193fg.png"
+  },
+  {
+    "id": "17f698d0e0bl0i12bjdv825l4x33d",
+    "name": "Flame Crest Wooden Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 76,
+    "stability": 39,
+    "image": "https://eldenring.fanapis.com/images/shields/17f698d0e0bl0i12bjdv825l4x33d.png"
+  },
+  {
+    "id": "17f694f969el0i12bq44jy1iwmun1y",
+    "name": "Hawk Crest Wooden Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 76,
+    "stability": 38,
+    "image": "https://eldenring.fanapis.com/images/shields/17f694f969el0i12bq44jy1iwmun1y.png"
+  },
+  {
+    "id": "17f69710d06l0i12cez6ml1ut0n7cs",
+    "name": "Beast Crest Heater Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 77,
+    "stability": 44,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69710d06l0i12cez6ml1ut0n7cs.png"
+  },
+  {
+    "id": "17f69654c0bl0i12chkv2olyhv4kt",
+    "name": "Red Crest Heater Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 77,
+    "stability": 43,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69654c0bl0i12chkv2olyhv4kt.png"
+  },
+  {
+    "id": "17f69c34ab1l0i12cmtzhluyza2vbd",
+    "name": "Eclipse Crest Heater Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 77,
+    "stability": 46,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69c34ab1l0i12cmtzhluyza2vbd.png"
+  },
+  {
+    "id": "17f69722576l0i12cnfqtct2uo1lqi",
+    "name": "Blue Crest Heater Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 77,
+    "stability": 44,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69722576l0i12cnfqtct2uo1lqi.png"
+  },
+  {
+    "id": "17f693c5d25l0i12cqwc17w5od5uh",
+    "name": "Inverted Hawk Heater Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 77,
+    "stability": 44,
+    "image": "https://eldenring.fanapis.com/images/shields/17f693c5d25l0i12cqwc17w5od5uh.png"
+  },
+  {
+    "id": "17f694b8cc1l0i12d7wmnsvn9wams",
+    "name": "Heater Shield",
+    "category": "Medium Shield",
+    "weight": 3.5,
+    "physicalAttack": 77,
+    "stability": 38,
+    "image": "https://eldenring.fanapis.com/images/shields/17f694b8cc1l0i12d7wmnsvn9wams.png"
+  },
+  {
+    "id": "17f698cf256l0i12dbf0mgqicx93p",
+    "name": "Black Leather Shield",
+    "category": "Medium Shield",
+    "weight": 3,
+    "physicalAttack": 75,
+    "stability": 37,
+    "image": "https://eldenring.fanapis.com/images/shields/17f698cf256l0i12dbf0mgqicx93p.png"
+  },
+  {
+    "id": "17f693c793el0i12deqfa24mgi3ik7",
+    "name": "Dragon Towershield",
+    "category": "Greatshield",
+    "weight": 17.5,
+    "physicalAttack": 115,
+    "stability": 64,
+    "image": "https://eldenring.fanapis.com/images/shields/17f693c793el0i12deqfa24mgi3ik7.png"
+  },
+  {
+    "id": "17f695a9c70l0i12dg13mf7v9clac",
+    "name": "Crucible Hornshield",
+    "category": "Greatshield",
+    "weight": 11.5,
+    "physicalAttack": 147,
+    "stability": 58,
+    "image": "https://eldenring.fanapis.com/images/shields/17f695a9c70l0i12dg13mf7v9clac.png"
+  },
+  {
+    "id": "17f6998f8b8l0i12dhelzp1oi1uyv",
+    "name": "Distinguished Greatshield",
+    "category": "Greatshield",
+    "weight": 17,
+    "physicalAttack": 112,
+    "stability": 66,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6998f8b8l0i12dhelzp1oi1uyv.png"
+  },
+  {
+    "id": "17f69872931l0i12dy19gq5ij75yoe",
+    "name": "Dragonclaw Shield",
+    "category": "Greatshield",
+    "weight": 13.5,
+    "physicalAttack": 118,
+    "stability": 59,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69872931l0i12dy19gq5ij75yoe.png"
+  },
+  {
+    "id": "17f6989b386l0i12e4lob57bdw1rqq",
+    "name": "Golden Beast Crest Shield",
+    "category": "Greatshield",
+    "weight": 12.5,
+    "physicalAttack": 0,
+    "stability": 58,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6989b386l0i12e4lob57bdw1rqq.png"
+  },
+  {
+    "id": "17f694b1b61l0i12e5nf59cb5qk7vu",
+    "name": "Erdtree Greatshield",
+    "category": "Greatshield",
+    "weight": 13.5,
+    "physicalAttack": 120,
+    "stability": 57,
+    "image": "https://eldenring.fanapis.com/images/shields/17f694b1b61l0i12e5nf59cb5qk7vu.png"
+  },
+  {
+    "id": "17f69ac13ecl0i12e68qij6rgf53vp",
+    "name": "Briar Greatshield",
+    "category": "Greatshield",
+    "weight": 9.5,
+    "physicalAttack": 98,
+    "stability": 56,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69ac13ecl0i12e68qij6rgf53vp.png"
+  },
+  {
+    "id": "17f699569f2l0i12e91gm212p52kz4",
+    "name": "Jellyfish Shield",
+    "category": "Greatshield",
+    "weight": 8,
+    "physicalAttack": 123,
+    "stability": 50,
+    "image": "https://eldenring.fanapis.com/images/shields/17f699569f2l0i12e91gm212p52kz4.png"
+  },
+  {
+    "id": "17f69ac7946l0i12emsgkbeuohu93n",
+    "name": "Fingerprint Stone Shield",
+    "category": "Greatshield",
+    "weight": 29,
+    "physicalAttack": 158,
+    "stability": 81,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69ac7946l0i12emsgkbeuohu93n.png"
+  },
+  {
+    "id": "17f693ca65dl0i12eu7yz6cf3nexe",
+    "name": "Icon Shield",
+    "category": "Greatshield",
+    "weight": 11.5,
+    "physicalAttack": 160,
+    "stability": 57,
+    "image": "https://eldenring.fanapis.com/images/shields/17f693ca65dl0i12eu7yz6cf3nexe.png"
+  },
+  {
+    "id": "17f69797ac7l0i12ew4eqk33suyj17",
+    "name": "Visage Shield",
+    "category": "Greatshield",
+    "weight": 24,
+    "physicalAttack": 186,
+    "stability": 75,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69797ac7l0i12ew4eqk33suyj17.png"
+  },
+  {
+    "id": "17f69378e1dl0i12exgnluqgflkbi",
+    "name": "One-eyed Shield",
+    "category": "Greatshield",
+    "weight": 20.5,
+    "physicalAttack": 175,
+    "stability": 67,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69378e1dl0i12exgnluqgflkbi.png"
+  },
+  {
+    "id": "17f69c7916el0i12ey2p0l7xj09nis",
+    "name": "Spiked Palisade Shield",
+    "category": "Greatshield",
+    "weight": 11.5,
+    "physicalAttack": 0,
+    "stability": 57,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69c7916el0i12ey2p0l7xj09nis.png"
+  },
+  {
+    "id": "17f695ce77cl0i12fbgg8t0smpvg3n",
+    "name": "Manor Towershield",
+    "category": "Greatshield",
+    "weight": 16,
+    "physicalAttack": 111,
+    "stability": 65,
+    "image": "https://eldenring.fanapis.com/images/shields/17f695ce77cl0i12fbgg8t0smpvg3n.png"
+  },
+  {
+    "id": "17f6981fc6cl0i12fkq4jfcsautbiv",
+    "name": "Crossed-tree Towershield",
+    "category": "Greatshield",
+    "weight": 16,
+    "physicalAttack": 111,
+    "stability": 63,
+    "image": "https://eldenring.fanapis.com/images/shields/17f6981fc6cl0i12fkq4jfcsautbiv.png"
+  },
+  {
+    "id": "17f69a1afefl0i12fozrc1tnhg20is",
+    "name": "Redmane Greatshield",
+    "category": "Greatshield",
+    "weight": 14,
+    "physicalAttack": 108,
+    "stability": 61,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69a1afefl0i12fozrc1tnhg20is.png"
+  },
+  {
+    "id": "17f69b33aafl0i12fqkwzuaznegji",
+    "name": "Ant's Skull Plate",
+    "category": "Greatshield",
+    "weight": 13.5,
+    "physicalAttack": 136,
+    "stability": 59,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69b33aafl0i12fqkwzuaznegji.png"
+  },
+  {
+    "id": "17f69bfaff2l0i12frzztam4cpn7d",
+    "name": "Inverted Hawk Towershield",
+    "category": "Greatshield",
+    "weight": 16,
+    "physicalAttack": 111,
+    "stability": 63,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69bfaff2l0i12frzztam4cpn7d.png"
+  },
+  {
+    "id": "17f69ae9ee5l0i12fyuk6a06fvdcq",
+    "name": "Eclipse Crest Greatshield",
+    "category": "Greatshield",
+    "weight": 15,
+    "physicalAttack": 110,
+    "stability": 63,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69ae9ee5l0i12fyuk6a06fvdcq.png"
+  },
+  {
+    "id": "17f69aba9d3l0i12ga56obpyqthd0a",
+    "name": "Cuckoo Greatshield",
+    "category": "Small Shield",
+    "weight": 15,
+    "physicalAttack": 110,
+    "stability": 62,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69aba9d3l0i12ga56obpyqthd0a.png"
+  },
+  {
+    "id": "17f695ae9edl0i12glt4xotvobrl0m",
+    "name": "Gilded Greatshield",
+    "category": "Greatshield",
+    "weight": 17.5,
+    "physicalAttack": 115,
+    "stability": 67,
+    "image": "https://eldenring.fanapis.com/images/shields/17f695ae9edl0i12glt4xotvobrl0m.png"
+  },
+  {
+    "id": "17f698cf6d3l0i12gnjnwa5wdqlqj",
+    "name": "Golden Greatshield",
+    "category": "Greatshield",
+    "weight": 17,
+    "physicalAttack": 100,
+    "stability": 68,
+    "image": "https://eldenring.fanapis.com/images/shields/17f698cf6d3l0i12gnjnwa5wdqlqj.png"
+  },
+  {
+    "id": "17f698f9c1fl0i12go9pgbh4sdw0zs",
+    "name": "Haligtree Crest Greatshield",
+    "category": "Greatshield",
+    "weight": 18.5,
+    "physicalAttack": 116,
+    "stability": 68,
+    "image": "https://eldenring.fanapis.com/images/shields/17f698f9c1fl0i12go9pgbh4sdw0zs.png"
+  },
+  {
+    "id": "17f699949b2l0i12gqzulu6fgih91o",
+    "name": "Wooden Greatshield",
+    "category": "Greatshield",
+    "weight": 8,
+    "physicalAttack": 95,
+    "stability": 51,
+    "image": "https://eldenring.fanapis.com/images/shields/17f699949b2l0i12gqzulu6fgih91o.png"
+  },
+  {
+    "id": "17f69b9df0bl0i12h4ss3ka8zvpcoc",
+    "name": "Lordsworn's Shield",
+    "category": "Greatshield",
+    "weight": 10,
+    "physicalAttack": 99,
+    "stability": 57,
+    "image": "https://eldenring.fanapis.com/images/shields/17f69b9df0bl0i12h4ss3ka8zvpcoc.png"
+  }
+]

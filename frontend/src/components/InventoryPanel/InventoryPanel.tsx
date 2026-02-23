@@ -1,6 +1,7 @@
-// v2
-import { useState } from 'react';
+// v5 — con tooltips de stats por categoría
+import { useState, useMemo, useEffect, useRef } from 'react';
 import type { Inventory, ResolvedInventoryItem } from '../../types';
+import InventoryTooltip from '../InventoryTooltip/InventoryTooltip';
 import styles from './InventoryPanel.module.css';
 
 interface Props {
@@ -46,7 +47,56 @@ const TABS: TabDef[] = [
   { key: 'multiplayer',  label: 'Multi',    placeholder: '👆' },
 ];
 
-function ItemGrid({ items, placeholder }: { items: ResolvedInventoryItem[]; placeholder: string }) {
+interface ItemGridProps {
+  items: ResolvedInventoryItem[];
+  placeholder: string;
+}
+
+function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placeholder: string }) {
+  const [imgError, setImgError] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [rect, setRect] = useState<DOMRect | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const showImg = !!item.image && !imgError;
+
+  function handleMouseEnter() {
+    if (ref.current) setRect(ref.current.getBoundingClientRect());
+    setHovered(true);
+  }
+
+  // Solo mostrar tooltip si el ítem tiene datos extra además del nombre/imagen
+  const hasTooltipData =
+    !!item.damage || !!item.defense || !!item.scaling || !!item.effect ||
+    !!item.affinity || !!item.skill || item.fpCost !== undefined || item.hpCost !== undefined ||
+    !!item.itemType;
+
+  return (
+    <div
+      ref={ref}
+      className={styles.gridItem}
+      title={item.name}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {showImg ? (
+        <img
+          src={item.image}
+          alt={item.name}
+          className={styles.itemImg}
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <div className={styles.itemPlaceholder}>{placeholder}</div>
+      )}
+      <span className={styles.itemName}>{item.name}</span>
+      {hovered && hasTooltipData && rect && (
+        <InventoryTooltip item={item} triggerRect={rect} />
+      )}
+    </div>
+  );
+}
+
+function ItemGrid({ items, placeholder }: ItemGridProps) {
   if (items.length === 0) {
     return <div className={styles.empty}>Sin ítems</div>;
   }
@@ -54,19 +104,7 @@ function ItemGrid({ items, placeholder }: { items: ResolvedInventoryItem[]; plac
   return (
     <div className={styles.grid}>
       {items.map((item, i) => (
-        <div key={i} className={styles.gridItem} title={item.name}>
-          {item.image ? (
-            <img
-              src={item.image}
-              alt={item.name}
-              className={styles.itemImg}
-              onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
-          ) : (
-            <div className={styles.itemPlaceholder}>{placeholder}</div>
-          )}
-          <span className={styles.itemName}>{item.name}</span>
-        </div>
+        <GridItem key={i} item={item} placeholder={placeholder} />
       ))}
     </div>
   );
@@ -80,6 +118,14 @@ const EMPTY_INVENTORY: Inventory = {
 
 export default function InventoryPanel({ inventory }: Props) {
   const [active, setActive] = useState<Tab>('weapons');
+  const [search, setSearch] = useState('');
+  const [typeFilter, setTypeFilter] = useState('');
+
+  // Resetear filtros al cambiar de tab
+  useEffect(() => {
+    setSearch('');
+    setTypeFilter('');
+  }, [active]);
 
   const inv = inventory ?? EMPTY_INVENTORY;
 
@@ -100,14 +146,37 @@ export default function InventoryPanel({ inventory }: Props) {
     multiplayer:  inv.multiplayer.length,
   };
 
+  // Ítems del tab activo (con strip de "Ash of War: " si corresponde)
   const rawItems = inv[active] ?? [];
-  const activeItems = active === 'ashesOfWar'
+  const tabItems: ResolvedInventoryItem[] = active === 'ashesOfWar'
     ? rawItems.map(item => ({ ...item, name: item.name.replace(/^Ash of War:\s*/i, '') }))
     : rawItems;
+
+  // Tipos únicos para el select de filtro (solo categorías que tienen datos)
+  const availableTypes = useMemo(() => {
+    const cats = tabItems.map(i => i.category).filter(Boolean);
+    return [...new Set(cats)].sort();
+  }, [tabItems]);
+
+  // Filtrado client-side
+  const filteredItems = useMemo(() => {
+    let items = tabItems;
+    if (search.trim()) {
+      const q = search.trim().toLowerCase();
+      items = items.filter(i => i.name.toLowerCase().includes(q));
+    }
+    if (typeFilter) {
+      items = items.filter(i => i.category === typeFilter);
+    }
+    return items;
+  }, [tabItems, search, typeFilter]);
+
   const activeDef = TABS.find(t => t.key === active)!;
+  const showTypeFilter = availableTypes.length > 1;
 
   return (
     <div className={styles.panel}>
+      {/* ── Tabs ── */}
       <div className={styles.tabs}>
         {TABS.map(({ key, label }) => (
           <button
@@ -123,7 +192,38 @@ export default function InventoryPanel({ inventory }: Props) {
         ))}
       </div>
 
-      <ItemGrid items={activeItems} placeholder={activeDef.placeholder} />
+      {/* ── Filtros ── */}
+      {tabItems.length > 0 && (
+        <div className={styles.filters}>
+          <input
+            className={styles.searchInput}
+            type="text"
+            placeholder="Buscar por nombre..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          {showTypeFilter && (
+            <select
+              className={styles.typeSelect}
+              value={typeFilter}
+              onChange={e => setTypeFilter(e.target.value)}
+            >
+              <option value="">Todos los tipos</option>
+              {availableTypes.map(t => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+          )}
+        </div>
+      )}
+
+      {/* ── Grid de ítems ── */}
+      <ItemGrid items={filteredItems} placeholder={activeDef.placeholder} />
+
+      {/* ── Resultado de búsqueda ── */}
+      {(search || typeFilter) && filteredItems.length === 0 && tabItems.length > 0 && (
+        <div className={styles.empty}>Sin resultados para "{search || typeFilter}"</div>
+      )}
     </div>
   );
 }

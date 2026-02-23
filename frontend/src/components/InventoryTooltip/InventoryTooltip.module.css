@@ -1,0 +1,92 @@
+/* Estilos propios del InventoryTooltip (complementa ItemTooltip.module.css) */
+
+/* Subtítulo de tipo de ítem */
+.subtitle {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-top: -0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Efecto / descripción textual */
+.effectText {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  font-style: italic;
+  max-width: 250px;
+}
+
+/* Fila de ceniza de guerra (Afinidad / Habilidad) */
+.ashRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.ashLabel {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.ashValue {
+  font-size: 0.7rem;
+  color: var(--text);
+  text-align: right;
+}
+
+/* Fila de costes FP/HP (espíritus) */
+.costRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.fpLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #5090d0;
+  background: rgba(80, 144, 208, 0.12);
+  border: 1px solid rgba(80, 144, 208, 0.25);
+  padding: 0 5px;
+}
+
+.hpLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #c06060;
+  background: rgba(192, 96, 96, 0.12);
+  border: 1px solid rgba(192, 96, 96, 0.25);
+  padding: 0 5px;
+}
+
+.costValue {
+  font-size: 0.72rem;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tipo de hechizo (Sorcery / Incantation) */
+.spellType {
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: #a080d0;
+  margin-bottom: 0.4rem;
+}
+
+/* Evitar borde doble cuando Guard Boost + Peso aparecen juntos */
+.noTopBorder {
+  border-top: none;
+  padding-top: 0.25rem;
+  margin-top: 0;
+}

@@ -110,7 +110,77 @@
 }
 
 .headerRight {
-  min-width: 80px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+/* ── Botón exportar ─────────────────────────────────── */
+.exportBtn {
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  color: var(--gold-dim);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.7rem;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.exportBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  background: rgba(201, 167, 79, 0.06);
+}
+
+.exportBtnBusy {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ── Runas ──────────────────────────────────────── */
+.runeBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(201, 167, 79, 0.06);
+  border: 1px solid var(--border-gold);
+  padding: 0.3rem 0.7rem;
+}
+
+.runeIcon {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--gold);
+  filter: drop-shadow(0 0 6px rgba(201, 167, 79, 0.5));
+}
+
+.runeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.runeValue {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.runeLabel {
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  line-height: 1;
 }
 
 /* ── Layout principal ────────────────────────────── */

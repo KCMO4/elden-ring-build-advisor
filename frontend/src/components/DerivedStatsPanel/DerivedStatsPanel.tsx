@@ -1,5 +1,7 @@
+import { useMemo } from 'react';
 import type { CharacterStats, EquippedItems, DamageStats, DefenseStats } from '../../types';
 import { useMountAnimation } from '../../hooks/useMountAnimation';
+import { computeTalismanBonuses } from '../../utils/talismanEffects';
 import styles from './DerivedStatsPanel.module.css';
 
 interface Props {
@@ -159,10 +161,23 @@ function BodyRow({ label, value, max, colorClass, ready, delay }: BodyRowProps) 
 export default function DerivedStatsPanel({ stats, equipped }: Props) {
   const ready = useMountAnimation();
 
-  const hp       = calcHP(stats.vigor);
-  const fp       = calcFP(stats.mind);
-  const stamina  = calcStamina(stats.endurance);
-  const maxLoad  = calcMaxEquipLoad(stats.endurance);
+  // Bonuses de talismanes equipados
+  const talBonus = useMemo(
+    () => computeTalismanBonuses(equipped.talismans),
+    [equipped.talismans],
+  );
+
+  // Stats efectivos (base + bonus de atributo de talismanes)
+  const effVig = Math.min(99, stats.vigor      + (talBonus.attrs.vigor      ?? 0));
+  const effMnd = Math.min(99, stats.mind       + (talBonus.attrs.mind       ?? 0));
+  const effEnd = Math.min(99, stats.endurance  + (talBonus.attrs.endurance  ?? 0));
+
+  // Derivadas con multiplicadores de talismanes
+  const hp      = Math.floor(calcHP(effVig)          * (1 + talBonus.hpBonus));
+  const fp      = Math.floor(calcFP(effMnd)          * (1 + talBonus.fpBonus));
+  const stamina = Math.floor(calcStamina(effEnd)      * (1 + talBonus.staminaBonus));
+  const maxLoad = Math.round(calcMaxEquipLoad(effEnd) * (1 + talBonus.equipLoadBonus) * 10) / 10;
+
   const currLoad = equipWeight(equipped);
   const loadPct  = maxLoad > 0 ? (currLoad / maxLoad) * 100 : 0;
   const loadTag  = loadPct < 30 ? 'Ligero' : loadPct < 70 ? 'Medio' : loadPct < 100 ? 'Pesado' : '¡Sobrecarga!';
@@ -186,8 +201,13 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
         {/* Equip Load */}
         <div className={styles.loadRow}>
           <span className={styles.rowLabel}>Equip Load</span>
-          <div className={`${styles.barTrack} ${loadPct >= 100 ? styles.barOver : styles.barLoad}`}>
-            <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
+          <div className={styles.loadBarWrap}>
+            <div className={`${styles.barTrack} ${loadPct >= 100 ? styles.barOver : styles.barLoad}`}>
+              <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
+            </div>
+            {/* Thresholds: 30% (light/medium) y 70% (medium/heavy) */}
+            <div className={`${styles.loadTick} ${loadPct >= 30 ? styles.loadTickReached : ''}`} style={{ left: '30%' }} title="Light / Medium (30%)" />
+            <div className={`${styles.loadTick} ${loadPct >= 70 ? styles.loadTickReached : ''}`} style={{ left: '70%' }} title="Medium / Heavy (70%)" />
           </div>
           <span className={styles.rowValue}>
             {currLoad > 0 ? `${currLoad} / ${maxLoad.toFixed(1)}` : `— / ${maxLoad.toFixed(1)}`}

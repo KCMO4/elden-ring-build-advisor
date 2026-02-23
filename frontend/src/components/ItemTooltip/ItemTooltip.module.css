@@ -1,0 +1,176 @@
+.tooltip {
+  position: fixed;
+  z-index: 9999;
+  width: 272px;
+  background: linear-gradient(160deg, #1c1609 0%, #110f08 100%);
+  border: 1px solid var(--border-gold);
+  outline: 1px solid #2e2418;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(201, 167, 79, 0.08) inset;
+  padding: 0.75rem 0.9rem;
+  pointer-events: none;
+  /* Transición suave de aparición */
+  animation: tooltipFade 0.12s ease-out both;
+}
+
+@keyframes tooltipFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ──────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.upgradeLevel {
+  font-size: 0.72rem;
+  color: var(--gold-bright);
+  font-weight: 600;
+  background: rgba(201, 167, 79, 0.12);
+  padding: 1px 5px;
+  border: 1px solid var(--gold-dim);
+  flex-shrink: 0;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-gold) 30%, var(--border-gold) 70%, transparent);
+  margin-bottom: 0.6rem;
+}
+
+/* ── Sección genérica ────────────────────────────────── */
+.section {
+  margin-bottom: 0.6rem;
+}
+
+.sectionLabel {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.35rem;
+}
+
+/* ── Barras de daño ──────────────────────────────────── */
+.damageRow {
+  display: grid;
+  grid-template-columns: 52px 1fr 36px;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.damageLabel {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+.barTrack {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(to right, #7a5a18, var(--gold));
+  transition: width 0.3s ease;
+}
+
+.damageValue {
+  font-size: 0.7rem;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* ── Escalado badges ─────────────────────────────────── */
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.badge {
+  font-size: 0.62rem;
+  padding: 1px 6px;
+  border: 1px solid transparent;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.gradeS { color: #e8c97a; border-color: #8a6820; background: rgba(232, 201, 122, 0.12); }
+.gradeA { color: #c8a060; border-color: #6a5018; background: rgba(200, 160, 96,  0.1);  }
+.gradeB { color: #a0c068; border-color: #4a6020; background: rgba(160, 192, 104, 0.1);  }
+.gradeC { color: #80a0c0; border-color: #304858; background: rgba(128, 160, 192, 0.1);  }
+.gradeD { color: #7a7a8a; border-color: #383840; background: rgba(122, 122, 138, 0.08); }
+.gradeE { color: #5a5a68; border-color: #2e2e38; background: rgba(90, 90, 104,  0.08);  }
+.gradeNone { display: none; }
+
+/* ── Efectos de talismán ─────────────────────────────── */
+.effectRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.18rem;
+}
+
+.effectLabel {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.effectValue {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #6dbf7e;
+  font-variant-numeric: tabular-nums;
+}
+
+.effectText {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ── Peso ────────────────────────────────────────────── */
+.weightRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.weightLabel {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.weightValue {
+  font-size: 0.75rem;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}

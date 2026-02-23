@@ -10,7 +10,7 @@
  */
 
 import path from 'path';
-import type { Weapon, Armor, Talisman, Spell, WeaponFilter, CharacterStatsForFilter } from './types';
+import type { Weapon, Armor, Talisman, Spell, Shield, Ash, Spirit, Consumable, WeaponFilter, CharacterStatsForFilter } from './types';
 
 // JSON estáticos en src/data/
 const DATA_DIR = path.join(__dirname, '..', 'data');
@@ -28,20 +28,28 @@ function loadJson<T>(filename: string): T[] {
 export class ItemStore {
   private static instance: ItemStore | null = null;
 
-  private readonly weapons:   Weapon[];
-  private readonly armors:    Armor[];
-  private readonly talismans: Talisman[];
-  private readonly spells:    Spell[];
+  private readonly weapons:     Weapon[];
+  private readonly armors:      Armor[];
+  private readonly talismans:   Talisman[];
+  private readonly spells:      Spell[];
+  private readonly shields:     Shield[];
+  private readonly ashes:       Ash[];
+  private readonly spirits:     Spirit[];
+  private readonly consumables: Consumable[];
 
   private readonly weaponsByName:   Map<string, Weapon>;
   private readonly armorsByName:    Map<string, Armor>;
   private readonly talismansByName: Map<string, Talisman>;
 
   private constructor() {
-    this.weapons   = loadJson<Weapon>('weapons.json');
-    this.armors    = loadJson<Armor>('armors.json');
-    this.talismans = loadJson<Talisman>('talismans.json');
-    this.spells    = loadJson<Spell>('spells.json');
+    this.weapons     = loadJson<Weapon>('weapons.json');
+    this.armors      = loadJson<Armor>('armors.json');
+    this.talismans   = loadJson<Talisman>('talismans.json');
+    this.spells      = loadJson<Spell>('spells.json');
+    this.shields     = loadJson<Shield>('shields.json');
+    this.ashes       = loadJson<Ash>('ashes.json');
+    this.spirits     = loadJson<Spirit>('spirits.json');
+    this.consumables = loadJson<Consumable>('consumables.json');
 
     this.weaponsByName   = new Map(this.weapons.map(w => [w.name.toLowerCase(), w]));
     this.armorsByName    = new Map(this.armors.map(a => [a.name.toLowerCase(), a]));
@@ -49,9 +57,10 @@ export class ItemStore {
 
     console.log(
       `[ItemStore] Cargados: ${this.weapons.length} armas, ` +
-      `${this.armors.length} armaduras, ` +
-      `${this.talismans.length} talismanes, ` +
-      `${this.spells.length} hechizos`,
+      `${this.armors.length} armaduras, ${this.talismans.length} talismanes, ` +
+      `${this.spells.length} hechizos, ${this.shields.length} escudos, ` +
+      `${this.ashes.length} cenizas, ${this.spirits.length} espíritus, ` +
+      `${this.consumables.length} consumibles`,
     );
   }
 
@@ -154,13 +163,64 @@ export class ItemStore {
     return this.weapons.filter(w => canEquipWeapon(w, stats));
   }
 
+  // ── Escudos ─────────────────────────────────────────────────
+
+  getShields(): Shield[] {
+    return [...this.shields];
+  }
+
+  // ── Cenizas de guerra ────────────────────────────────────────
+
+  getAshes(): Ash[] {
+    return [...this.ashes];
+  }
+
+  getShieldByName(name: string): Shield | undefined {
+    return this.shields.find(s => s.name.toLowerCase() === name.toLowerCase());
+  }
+
+  getAshByName(name: string): Ash | undefined {
+    return this.ashes.find(a => a.name.toLowerCase() === name.toLowerCase())
+      ?? this.ashes.find(a => a.name.toLowerCase().includes(name.toLowerCase().replace(/^ash of war:\s*/i, '')));
+  }
+
+  // ── Espíritus ────────────────────────────────────────────────
+
+  getSpirits(): Spirit[] {
+    return [...this.spirits];
+  }
+
+  getSpiritByName(name: string): Spirit | undefined {
+    return this.spirits.find(s => s.name.toLowerCase() === name.toLowerCase());
+  }
+
+  // ── Consumibles ──────────────────────────────────────────────
+
+  getConsumables(): Consumable[] {
+    return [...this.consumables];
+  }
+
+  getConsumableByName(name: string): Consumable | undefined {
+    return this.consumables.find(c => c.name.toLowerCase() === name.toLowerCase());
+  }
+
+  // ── Hechizos por nombre ──────────────────────────────────────
+
+  getSpellByName(name: string): Spell | undefined {
+    return this.spells.find(s => s.name.toLowerCase() === name.toLowerCase());
+  }
+
   /** Stats de carga para debug */
-  getStats(): { weapons: number; armors: number; talismans: number; spells: number } {
+  getStats(): { weapons: number; armors: number; talismans: number; spells: number; shields: number; ashes: number; spirits: number; consumables: number } {
     return {
-      weapons:   this.weapons.length,
-      armors:    this.armors.length,
-      talismans: this.talismans.length,
-      spells:    this.spells.length,
+      weapons:     this.weapons.length,
+      armors:      this.armors.length,
+      talismans:   this.talismans.length,
+      spells:      this.spells.length,
+      shields:     this.shields.length,
+      ashes:       this.ashes.length,
+      spirits:     this.spirits.length,
+      consumables: this.consumables.length,
     };
   }
 }

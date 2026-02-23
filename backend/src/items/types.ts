@@ -95,6 +95,47 @@ export interface Spell {
   image?: string;
 }
 
+export interface Shield {
+  /** ID de fanapis (string, no hay ID numérico de juego disponible) */
+  id: string;
+  name: string;
+  category: 'Small Shield' | 'Medium Shield' | 'Greatshield';
+  weight: number;
+  /** Daño de ataque físico base */
+  physicalAttack: number;
+  /** Reducción física (Guard Boost) */
+  stability: number;
+  image?: string;
+}
+
+export interface Ash {
+  /** ID de fanapis */
+  id: string;
+  name: string;
+  affinity: string;
+  skill: string;
+  image?: string;
+}
+
+export interface Spirit {
+  /** ID de fanapis */
+  id: string;
+  name: string;
+  fpCost: number;
+  hpCost: number;
+  effect: string;
+  image?: string;
+}
+
+export interface Consumable {
+  /** ID de fanapis */
+  id: string;
+  name: string;
+  type: string;
+  effect: string;
+  image?: string;
+}
+
 // ── Filtros para consultas ───────────────────────────────────
 
 export interface WeaponFilter {

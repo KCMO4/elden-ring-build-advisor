@@ -101,6 +101,28 @@ function classifyConsumable(baseId: number, name: string): ItemCategory {
   return 'consumable';
 }
 
+// ── Mapa de infusiones (EquipParamWeapon offset % 10000) ─────────────────────
+const INFUSION_MAP: Record<number, string> = {
+  100:  'Heavy',
+  200:  'Keen',
+  300:  'Quality',
+  400:  'Fire',
+  500:  'Flame Art',
+  600:  'Lightning',
+  700:  'Sacred',
+  800:  'Magic',
+  900:  'Cold',
+  1000: 'Poison',
+  1100: 'Blood',
+  1200: 'Occult',
+};
+
+function decodeInfusion(baseId: number): string | undefined {
+  const baseWeaponId = Math.floor(baseId / 10000) * 10000;
+  const offset = baseId - baseWeaponId;
+  return offset > 0 ? INFUSION_MAP[offset] : undefined;
+}
+
 // ── Flechas y ballestas: nibble 0x0 (weapon), base ID >= 50_000_000 ──
 const AMMO_BASE_ID_MIN = 50_000_000;
 import { ItemStore } from '../items/store';
@@ -146,6 +168,22 @@ function getArmorIds(): Record<string, string> {
 
 function armorIdName(id: number): string | null {
   return getArmorIds()[String(id)] ?? null;
+}
+
+// ── Lookup de nombres de talismanes por EquipParamAccessory ID ────────────────
+// talismanIds.json mapea {id: name} — Fuente: ClayAmore/ER-Save-Editor accessory_name.rs
+// Los IDs de fanapis (talismans.json) son SECUENCIALES y no coinciden con el juego.
+// Los IDs reales son los que se almacenan en ChrAsm2 y en el item array del .sl2.
+let _talismanIds: Record<string, string> | null = null;
+function getTalismanIds(): Record<string, string> {
+  if (!_talismanIds) {
+    _talismanIds = loadJsonFile<Record<string, string>>('talismanIds.json') ?? {};
+  }
+  return _talismanIds;
+}
+
+function talismanIdName(id: number): string | null {
+  return getTalismanIds()[String(id)] ?? null;
 }
 
 // ── API pública ──────────────────────────────────────────────
@@ -265,7 +303,8 @@ function resolveWeaponImage(baseId: number): string {
   // 1. Intentar con el nombre exacto (p.ej. arma sin infusión)
   const exactName = weaponIdName(baseId);
   if (exactName) {
-    const img = store.getWeaponByName(exactName)?.image;
+    const img = store.getWeaponByName(exactName)?.image
+             ?? store.getShieldByName(exactName)?.image;
     if (img) return img;
   }
 
@@ -274,7 +313,8 @@ function resolveWeaponImage(baseId: number): string {
   if (baseWeaponId !== baseId) {
     const baseName = weaponIdName(baseWeaponId);
     if (baseName) {
-      const img = store.getWeaponByName(baseName)?.image;
+      const img = store.getWeaponByName(baseName)?.image
+               ?? store.getShieldByName(baseName)?.image;
       if (img) return img;
     }
   }
@@ -337,9 +377,10 @@ function resolveWeaponHandle(
     name,
     upgradeLevel,
     image,
-    damage:  weaponData?.damage,
-    scaling: weaponData?.scaling,
-    weight:  weaponData?.weight,
+    infusion: decodeInfusion(baseId),
+    damage:   weaponData?.damage,
+    scaling:  weaponData?.scaling,
+    weight:   weaponData?.weight,
   };
 }
 
@@ -378,21 +419,27 @@ function resolveArmorHandle(
 
 /**
  * Resuelve un gaitem_handle de talismán (high byte 0xA0):
- *   talisman_id = handle ^ 0xA0000000 (EquipParamAccessory ID, sin ga_items lookup)
+ *   talisman_id = handle ^ 0xA0000000 (EquipParamAccessory ID real, sin ga_items lookup)
+ *
+ * Los IDs de fanapis (talismans.json) son SECUENCIALES y NO coinciden con EquipParamAccessory.
+ * Usar talismanIds.json (ClayAmore/ER-Save-Editor) que tiene los IDs reales del juego.
+ * Las imágenes y efectos se resuelven por nombre desde talismans.json (fanapis).
  */
 function resolveTalismanHandle(handle: number): EquippedWeapon {
   if (isEmptyHandle(handle)) return { rawId: handle, baseId: 0, name: null, image: '' };
   if (handleHighByte(handle) !== 0xA0) return { rawId: handle, baseId: 0, name: null, image: '' };
 
-  const baseId   = handle ^ 0xA0000000;
-  // Talismanes: fanapis talismans.json tiene los IDs correctos de EquipParamAccessory
-  const talisman = ItemStore.getInstance().getTalismanByBaseId(baseId);
-  return {
-    rawId: handle,
-    baseId,
-    name: talisman?.name ?? weaponIdName(baseId),
-    image: talisman?.image ?? '',
-  };
+  const baseId = handle ^ 0xA0000000;
+  const store  = ItemStore.getInstance();
+
+  // 1. talismanIds.json tiene los EquipParamAccessory IDs reales del juego
+  const name = talismanIdName(baseId) ?? null;
+
+  // 2. Buscar imagen y efecto por nombre en talismans.json (fanapis)
+  const talData = name ? store.getTalismanByName(name) : undefined;
+  const image  = talData?.image ?? '';
+  const effect = talData?.effect;
+  return { rawId: handle, baseId, name, image, effect };
 }
 
 /**
@@ -475,21 +522,43 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
           other.push(item); break;
         }
         const image = resolveWeaponImage(item.baseId);
-        weapons.push({ ...item, name, image });
+        // Enriquecer con stats (weapon o shield según donde se encuentre)
+        const baseWeaponId = Math.floor(item.baseId / 10000) * 10000;
+        const wData = store.getWeaponByName(name)
+          ?? store.getWeaponByBaseId(item.baseId)
+          ?? store.getWeaponByBaseId(baseWeaponId);
+        const shData = !wData ? store.getShieldByName(name) : undefined;
+        weapons.push({
+          ...item, name, image,
+          itemType:  wData?.type ?? shData?.category,
+          damage:    wData?.damage,
+          scaling:   wData?.scaling,
+          weight:    wData?.weight ?? shData?.weight,
+          stability: shData?.stability,
+        });
         break;
       }
       case 'armor': {
         const armorName = armorIdName(item.baseId) ?? store.getArmorByBaseId(item.baseId)?.name;
         if (!armorName) { other.push(item); break; }
         const a = store.getArmorByName(armorName);
-        armors.push({ ...item, name: armorName, image: a?.image ?? '' });
+        armors.push({
+          ...item, name: armorName, image: a?.image ?? '',
+          itemType: a?.type,
+          defense:  a?.defense,
+          weight:   a?.weight,
+        });
         break;
       }
       case 'talisman': {
-        const t = store.getTalismanByBaseId(item.baseId);
-        const name = t?.name ?? weaponIdName(item.baseId);
+        // talismanIds.json tiene los IDs reales (EquipParamAccessory).
+        // talismans.json (fanapis) tiene imágenes y efectos, buscados por nombre.
+        const name = talismanIdName(item.baseId) ?? null;
         if (!name) { other.push(item); break; }
-        talismans.push({ ...item, name, image: t?.image ?? '' });
+        const talData = store.getTalismanByName(name);
+        const image   = talData?.image ?? '';
+        const effect  = talData?.effect;
+        talismans.push({ ...item, name, image, effect });
         break;
       }
       case 'consumable': {
@@ -497,7 +566,27 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
         if (!name) { other.push(item); break; }
         // Subcategorizar por nombre y rango de base ID
         const subcat = classifyConsumable(item.baseId, name);
-        const resolved: ResolvedInventoryItem = { ...item, category: subcat, name, image: '' };
+
+        // Resolver imagen y datos extra según subcategoría
+        let consumableImage = '';
+        let extra: Partial<ResolvedInventoryItem> = {};
+
+        if (subcat === 'spell') {
+          const spData = store.getSpellByName(name);
+          consumableImage = spData?.image ?? '';
+          extra = { itemType: spData?.type };
+        } else if (subcat === 'spirit') {
+          const spData = store.getSpiritByName(name)
+            ?? store.getSpiritByName(name + ' Ashes');
+          consumableImage = spData?.image ?? '';
+          extra = { fpCost: spData?.fpCost, hpCost: spData?.hpCost, effect: spData?.effect };
+        } else {
+          const cData = store.getConsumableByName(name);
+          consumableImage = cData?.image ?? '';
+          extra = { itemType: cData?.type, effect: cData?.effect };
+        }
+
+        const resolved: ResolvedInventoryItem = { ...item, category: subcat, name, image: consumableImage, ...extra };
 
         switch (subcat) {
           case 'spell':        spells.push(resolved);      break;
@@ -517,7 +606,13 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
         // EquipParamGem IDs — gemIds.json (fuente: ER-Save-Editor aow_name.rs)
         const name = gemIdName(item.baseId);
         if (!name) { other.push(item); break; }
-        ashesOfWar.push({ ...item, name, image: '' });
+        const ashData = store.getAshByName(name);
+        const ashImage = ashData?.image ?? '';
+        ashesOfWar.push({
+          ...item, name, image: ashImage,
+          affinity: ashData?.affinity,
+          skill:    ashData?.skill,
+        });
         break;
       }
       default:

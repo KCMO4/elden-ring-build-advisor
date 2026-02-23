@@ -48,6 +48,28 @@ export interface RawInventoryItem {
 export interface ResolvedInventoryItem extends RawInventoryItem {
   name: string;
   image?: string;
+  /** Tipo de ítem (weapon type, armor type, spell type, shield category) */
+  itemType?: string;
+  /** Daño base — para armas */
+  damage?: { physical: number; magic: number; fire: number; lightning: number; holy: number };
+  /** Escalado — para armas */
+  scaling?: { str: string; dex: string; int: string; fai: string; arc: string };
+  /** Negación de daño — para armaduras */
+  defense?: { physical: number; strike: number; slash: number; pierce: number; magic: number; fire: number; lightning: number; holy: number };
+  /** Peso — armas, armaduras, escudos */
+  weight?: number;
+  /** Estabilidad (Guard Boost) — escudos */
+  stability?: number;
+  /** Efecto o descripción corta — talismanes, consumibles, espíritus */
+  effect?: string;
+  /** Afinidad — cenizas de guerra */
+  affinity?: string;
+  /** Nombre de la habilidad — cenizas de guerra */
+  skill?: string;
+  /** Coste de FP — espíritus invocables */
+  fpCost?: number;
+  /** Coste de HP — espíritus invocables */
+  hpCost?: number;
 }
 
 /** Arma equipada en un slot de mano */
@@ -62,6 +84,8 @@ export interface EquippedWeapon {
   upgradeLevel?: number;
   /** URL de la imagen del ítem (fanapis.com) */
   image?: string;
+  /** Infusión del arma (Heavy, Keen, Fire, etc.). undefined = Standard */
+  infusion?: string;
   /** Daño base del arma (solo para weapons) */
   damage?: { physical: number; magic: number; fire: number; lightning: number; holy: number };
   /** Escalado del arma (solo para weapons) */
@@ -70,6 +94,8 @@ export interface EquippedWeapon {
   weight?: number;
   /** Defensa de la armadura (solo para armors) */
   defense?: { physical: number; strike: number; slash: number; pierce: number; magic: number; fire: number; lightning: number; holy: number };
+  /** Efecto o descripción corta (principalmente para talismanes) */
+  effect?: string;
 }
 
 /** Ítems equipados en el personaje */

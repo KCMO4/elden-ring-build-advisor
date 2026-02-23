@@ -23,35 +23,48 @@ Describe la arquitectura, las convenciones y las reglas de trabajo.
 ```
 backend/
 ├── scripts/
-│   └── sync-data.ts          # One-time: descarga JSON de ítems (npm run sync-data)
+│   ├── sync-data.ts          # Descarga JSON de ítems de fanapis.com (npm run sync-data)
+│   └── check-images.ts       # Diagnóstico: cobertura de imágenes por categoría
 ├── src/
 │   ├── index.ts              # Servidor Express: rutas, middleware, error handler
 │   ├── data/                 # JSON estáticos (commiteados, actualizados por sync-data)
-│   │   ├── weapons.json
-│   │   ├── armors.json
-│   │   ├── talismans.json
-│   │   └── spells.json
+│   │   ├── weapons.json      # 307 armas con damage, scaling, weight, image
+│   │   ├── armors.json       # 568 armaduras con 8 tipos de defensa, weight, image
+│   │   ├── talismans.json    # 87 talismanes con name, effect (texto), image
+│   │   ├── spells.json       # 169 hechizos
+│   │   ├── shields.json      # Escudos con stability (Guard Boost), defense, weight
+│   │   ├── ashes.json        # 90 Ashes of War con affinity + skill
+│   │   ├── spirits.json      # 64 Spirit Ashes con fpCost, hpCost, effect
+│   │   ├── consumables.json  # 462 consumibles (flasks, boluses, food, etc.)
+│   │   ├── gameIds.json      # IDs reales de armas (Deskete/EldenRingResources)
+│   │   ├── armorIds.json     # IDs de EquipParamProtector (623 entradas)
+│   │   ├── talismanIds.json  # IDs de EquipParamAccessory (IDs reales del juego)
+│   │   └── gemIds.json       # IDs de Ashes of War (EquipParamGem)
 │   ├── items/                # Base de datos de ítems en memoria + advisor
-│   │   ├── types.ts          # Weapon, Armor, Talisman, Spell, WeaponFilter, etc.
+│   │   ├── types.ts          # Weapon, Armor, Talisman, Spell, Shield, Ash, Spirit, Consumable
 │   │   ├── store.ts          # ItemStore singleton: carga JSON → queries tipadas
+│   │   │                     # getWeaponByName/ByBaseId, getArmorByName, getTalismanByName,
+│   │   │                     # getShieldByName, getAshByName, getSpiritByName, getConsumableByName
 │   │   ├── advisor.ts        # getAdvisorResult(): recomendaciones por AR estimado
 │   │   ├── index.ts          # Re-exports públicos
 │   │   └── __tests__/
 │   │       ├── store.test.ts
 │   │       └── advisor.test.ts
 │   ├── inventory/            # Lectura de inventario/equipo del .sl2
-│   │   ├── types.ts          # InventoryItem, EquippedItems, InventoryScanResult, etc.
+│   │   ├── types.ts          # RawInventoryItem, ResolvedInventoryItem, EquippedWeapon,
+│   │   │                     # EquippedItems, Inventory, InventoryScanResult, ItemCategory
 │   │   ├── constants.ts      # Offsets de equipo e inventario (relativos al slot data)
-│   │   ├── scanner.ts        # scanInventory(slotData): equipo + inventario
+│   │   ├── scanner.ts        # scanInventory(slotData): equipo + inventario completo
+│   │   │                     # resolveWeaponHandle, resolveArmorHandle, resolveTalismanHandle
 │   │   ├── index.ts          # Re-exports públicos
 │   │   └── __tests__/
 │   │       └── scanner.test.ts
-│   └── parser/               # EXISTENTE — sin cambios
+│   └── parser/               # Lectura del contenedor BND4 y stats del personaje
 │       ├── types.ts
 │       ├── constants.ts
 │       ├── bnd4.ts
 │       ├── summary.ts
-│       ├── stats.ts
+│       ├── stats.ts          # findStats(): busca los 8 atributos por patrón
 │       ├── index.ts
 │       └── __tests__/
 │           └── parser.test.ts
@@ -67,40 +80,52 @@ backend/
 ## API REST
 
 ### `GET /health`
-Healthcheck. Devuelve `{ status: "ok", timestamp }`.
+Healthcheck. Devuelve `{ status: "ok", timestamp, items: { weapons, armors, ... } }`.
 Usado por Docker Compose para `depends_on: condition: service_healthy`.
 
 ### `POST /api/parse`
 **Body:** `multipart/form-data`, campo `savefile` (archivo `.sl2`).
+**Query:** `inventory=true` para incluir inventario completo.
 
 **Respuesta exitosa:**
 ```json
 {
-  "fileSize": 26214400,
+  "fileSize": 28967888,
   "totalSlots": 10,
-  "activeSlots": 2,
+  "activeSlots": 1,
   "characters": [
     {
-      "slot": 0,
-      "name": "Tarnished",
-      "level": 150,
-      "playtime": "42h 17m 3s",
-      "stats": {
-        "vigor": 60, "mind": 20, "endurance": 30,
-        "strength": 50, "dexterity": 15,
-        "intelligence": 9, "faith": 9, "arcane": 7
-      }
+      "slot": 2,
+      "name": "Zhyak",
+      "level": 68,
+      "playtime": "33h 14m 5s",
+      "heldRunes": 42000,
+      "stats": { "vigor": 34, "mind": 17, ... },
+      "equipped": {
+        "rightHand": [
+          { "rawId": 123, "baseId": 3400000, "name": "Bloodhound's Fang", "upgradeLevel": 4,
+            "image": "https://eldenring.fanapis.com/...", "damage": {...}, "scaling": {...} },
+          ...
+        ],
+        "leftHand": [...],
+        "head": { "name": "Banished Knight Helm (Altered)", "defense": {...}, ... },
+        "chest": {...}, "hands": {...}, "legs": {...},
+        "talismans": [
+          { "name": "Erdtree's Favor", "effect": "Raises maximum HP, stamina and equip load", ... },
+          ...
+        ]
+      },
+      "inventory": { ... }  // solo con ?inventory=true
     }
   ]
 }
 ```
 
 **Errores:**
-- `400` — no se envió archivo o no es `.sl2`
+- `400` — no se envió archivo, no es `.sl2`, o nombre de campo incorrecto (debe ser `savefile`)
 - `422` — archivo válido pero no parseable (ParseError)
 
 ### `GET /api/items/weapons`
-Lista todas las armas con filtros opcionales.
 
 **Query params:**
 | Param   | Descripción                                                   |
@@ -110,18 +135,6 @@ Lista todas las armas con filtros opcionales.
 | `str`, `dex`, `int`, `fai`, `arc` | Stats del personaje (requeridos si `canUse=true`) |
 
 **Respuesta:** `{ count: number, data: Weapon[] }`
-
-### `GET /api/items/weapons/:id`
-Detalle de un arma por su ID. **404** si no existe.
-
-### `GET /api/items/armors`
-Lista todas las armaduras. **Respuesta:** `{ count, data: Armor[] }`
-
-### `GET /api/items/talismans`
-Lista todos los talismanes. **Respuesta:** `{ count, data: Talisman[] }`
-
-### `GET /api/items/spells`
-Lista todos los hechizos. **Respuesta:** `{ count, data: Spell[] }`
 
 ### `POST /api/advisor`
 Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR estimado.
@@ -140,10 +153,9 @@ Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR esti
 {
   "usable": [
     {
-      "weapon": { "id": 1000000, "name": "Uchigatana", ... },
+      "weapon": { "id": 1000000, "name": "Uchigatana", "type": "Katana", "estimatedAR": 312, ... },
       "estimatedAR": 312,
-      "canEquip": true,
-      "nearThreshold": [{ "stat": "dexterity", "currentValue": 34, "pointsNeeded": 6, "arGain": 8 }]
+      "canEquip": true
     }
   ],
   "nearlyUsable": [...],
@@ -152,38 +164,6 @@ Dado un bloque de stats, devuelve recomendaciones de armas ordenadas por AR esti
 ```
 
 **Query params opcionales:** `top` (default 10), `nearlyRange` (default 5).
-
-### `POST /api/parse` (ampliado)
-Ahora incluye `equipped` en cada personaje (ítems equipados leídos del .sl2).
-Con `?inventory=true` también incluye el inventario completo categorizado.
-
-```json
-{
-  "characters": [{
-    "slot": 0, "name": "Zhyak", "level": 68,
-    "stats": { ... },
-    "equipped": {
-      "rightHand": [{ "rawId": 123, "baseId": 123, "name": "Uchigatana" }, ...],
-      "leftHand": [...],
-      "head": { ... }, "chest": { ... }, "hands": { ... }, "legs": { ... },
-      "talismans": [...]
-    }
-  }]
-}
-```
-
-### `POST /api/debug`
-Herramienta de diagnóstico: devuelve hex dumps de regiones clave del archivo.
-Ahora incluye dump de `equipmentBase` (offset 0x370 dentro del slot data).
-
-**Query params:**
-| Param    | Tipo   | Default | Descripción                             |
-|----------|--------|---------|-----------------------------------------|
-| `slot`   | 0-9    | 0       | Slot a inspeccionar                     |
-| `offset` | hex/dec | —      | Offset adicional para dump libre        |
-| `length` | dec    | 64      | Bytes a mostrar en el dump libre        |
-
-Útil para calibrar offsets cuando el parser devuelve datos incorrectos.
 
 ---
 
@@ -199,9 +179,6 @@ Ahora incluye dump de `equipmentBase` (offset 0x370 dentro del slot data).
          └─ 0x28: dataOffset (uint32 LE)
 
 0x040  Directorio de entradas (11 × 0x20 bytes)
-         Cada entrada:
-           0x00: dataOffset (uint32) — offset absoluto del dato
-           0x08: dataSize   (uint32) — tamaño del dato
 
 0x310  Datos de slots de personaje (entradas 0-9)
          Cada slot: 0x280000 bytes (2 621 440)
@@ -210,30 +187,64 @@ Ahora incluye dump de `equipmentBase` (offset 0x370 dentro del slot data).
 0x19003B0  Datos de sistema (entrada 10) — resumen de personajes
 ```
 
-### Sección de resumen (offsets absolutos)
+### Layout de ChrAsm2 (equipo equipado)
 
-| Campo             | Offset absoluto           | Tipo       |
-|-------------------|---------------------------|------------|
-| Array activo[0-9] | `0x1901D04 + slot`        | uint8      |
-| Nombre[n]         | `0x1901D0E + n×0x24C`     | UTF-16LE, 32 bytes |
-| Nivel[n]          | `0x1901D0E + n×0x24C + 0x22` | uint16  |
-| Playtime[n]       | `0x1901D0E + n×0x24C + 0x26` | uint32 (segundos) |
+`ChrAsm2` se localiza en `vigor_offset + 0x310` dentro del slot data. Tamaño: 96 bytes.
 
-Fuentes: `Ariescyn/EldenRing-Save-Manager`, `dsyer/jersc`, `mi5hmash/SL2Bonfire`.
+| Offset | Campo |
+|--------|-------|
+| +0x00 | LH[0] gaitem_handle |
+| +0x04 | RH[0] gaitem_handle |
+| +0x08 | LH[1] gaitem_handle |
+| +0x0C | RH[1] gaitem_handle |
+| +0x10 | LH[2] gaitem_handle |
+| +0x14 | RH[2] gaitem_handle |
+| +0x18..+0x27 | arrows[0,1] + bolts[0,1] |
+| +0x28..+0x37 | 4 campos desconocidos (_unk0..3) |
+| +0x38 | HEAD gaitem_handle |
+| +0x3C | CHEST gaitem_handle |
+| +0x40 | ARMS gaitem_handle |
+| +0x44 | LEGS gaitem_handle |
+| +0x48 | _unk4 |
+| +0x4C..+0x58 | talisman[0..3] gaitem_handles |
+| +0x5C | _unk5 |
 
-### Atributos (stats) — búsqueda por patrón
+> **Ojo**: el ER-Save-Editor (Rust) etiqueta +0x30/+0x34 como head/chest. Incorrecto.
+> Los verdaderos slots de armadura están en +0x38..+0x44 (verificado con saves reales).
 
-Los stats no tienen offset fijo documentado públicamente. Se localizan por el
-invariante de Elden Ring (válido para todas las clases):
+### Decodificación de gaitem_handles
 
-```
-vigor + mind + endurance + strength + dexterity + intelligence + faith + arcane
-= nivel + 79
-```
+| High byte | Categoría | Cómo obtener el ID real |
+|-----------|-----------|------------------------|
+| `0x80` | Arma | buscar en ga_items → `item_id`; `baseId = floor(id/100)*100`; `upgrade = id%100` |
+| `0x90` | Armadura | buscar en ga_items → `item_id`; `armorId = item_id XOR 0x10000000` |
+| `0xA0` | Talismán | sin ga_items; `talismanId = handle XOR 0xA0000000` |
 
-- Cada atributo: `uint32 LE` (4 bytes), rango `[1, 99]`
-- Orden: vigor → mind → endurance → strength → dexterity → intelligence → faith → arcane
-- Validación cruzada: `uint16` a `+44 bytes` desde la base debe coincidir con el nivel
+### Tabla de fuentes de ID
+
+| Categoría | Fuente primaria | Fallback |
+|-----------|----------------|---------|
+| Armas | `gameIds.json` (Deskete/EldenRingResources) | `ItemStore.getWeaponByBaseId()` |
+| Armaduras | `armorIds.json` (ER-Save-Editor armor_name.rs) | `ItemStore.getArmorByBaseId()` |
+| Talismanes | `talismanIds.json` (ER-Save-Editor accessory_name.rs) | — |
+| Ashes of War | `gemIds.json` (ER-Save-Editor aow_name.rs) | — |
+
+---
+
+## Inventario completo
+
+`scanItemArray()` localiza el array de ítems en el slot data usando el ítem ancla
+"Tarnished Wizened Finger" (ID `0x4003D`). Cada entrada es de 8 bytes: `[itemId: u32, flag: u32]`.
+
+Las categorías se deducen del nibble alto del itemId:
+
+| Nibble | Categoría | Notas |
+|--------|-----------|-------|
+| 0x0 | weapon / ammo | ammo: baseId >= 50M |
+| 0x1 | armor | IDs XOR 0x10000000 |
+| 0x2 | talisman | — |
+| 0x4 | consumable (+ spells, spirits, etc.) | subcategorizado por rango de ID y nombre |
+| 0x8 | ash_of_war | EquipParamGem |
 
 ---
 
@@ -241,7 +252,7 @@ vigor + mind + endurance + strength + dexterity + intelligence + faith + arcane
 
 ### TypeScript
 - `strict: true` — no hay excepciones.
-- Prefiero `type` sobre `interface` solo para uniones. Para objetos, `interface`.
+- Preferir `interface` para objetos, `type` solo para uniones.
 - Sin `any`. Si es inevitable, usar `unknown` + type guard.
 - Nombres de constantes binarias en `SCREAMING_SNAKE_CASE`.
 - Nombres de funciones en `camelCase`, archivos en `kebab-case`.
@@ -260,7 +271,7 @@ vigor + mind + endurance + strength + dexterity + intelligence + faith + arcane
 - Cada módulo del parser debe tener tests en `__tests__/`.
 - Usar buffers sintéticos (no archivos reales) para los tests unitarios.
 - Nombrar tests en español: `describe('módulo', () => test('comportamiento', ...))`.
-- Comando: `npm test`.
+- Comando: `npm test` (43 tests, deben pasar todos).
 
 ---
 
@@ -287,13 +298,10 @@ docker compose build backend   # rebuild solo el backend
 curl -X POST http://localhost:3001/api/parse \
   -F "savefile=@/ruta/a/ER0000.sl2"
 
-# Debug de offsets del slot 0:
-curl -X POST "http://localhost:3001/api/debug?slot=0" \
+# Con inventario completo:
+curl -X POST "http://localhost:3001/api/parse?inventory=true" \
   -F "savefile=@/ruta/a/ER0000.sl2"
 ```
-
-Si el nombre aparece vacío o corrupto, usar `/api/debug` para ver el hex dump
-y comparar contra los offsets en `constants.ts`.
 
 ---
 
@@ -304,4 +312,4 @@ y comparar contra los offsets en `constants.ts`.
 3. Si agrega un endpoint → documentarlo aquí en la sección API.
 4. `npm test` debe pasar en verde antes de commitear.
 5. `npx tsc --noEmit` sin errores.
-6. Reconstruir imagen Docker: `docker compose build backend`.
+6. Reconstruir imagen Docker si es necesario: `docker compose build backend`.

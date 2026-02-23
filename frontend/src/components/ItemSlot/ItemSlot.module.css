@@ -11,18 +11,27 @@
   animation: slotReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* ── Frame estilo From Software ─────────────────────────── */
 .frame {
   width: var(--slot-size);
   height: var(--slot-size);
-  border: 1px solid var(--border-gold);
-  background: var(--bg-slot);
+  /* Doble borde: externo dorado fino + interno oscuro */
+  outline: 1px solid var(--border-gold);
+  outline-offset: 0px;
+  border: 1px solid #2e2418;
+  /* Fondo con gradiente radial oscuro, profundidad de pozo */
+  background:
+    radial-gradient(ellipse at 50% 30%, #1e1810 0%, var(--bg-slot) 70%);
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.6),
+    inset 0 -1px 3px rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   cursor: default;
-  transition: box-shadow 0.25s, border-color 0.25s;
+  transition: outline-color 0.2s, box-shadow 0.2s;
   flex-shrink: 0;
 }
 
@@ -32,7 +41,7 @@
   position: absolute;
   inset: 0;
   border-top: 1px solid transparent;
-  transition: border-color 0.25s;
+  transition: border-color 0.2s;
   pointer-events: none;
   z-index: 1;
 }
@@ -48,7 +57,7 @@
   background: linear-gradient(
     105deg,
     transparent 30%,
-    rgba(201, 167, 79, 0.12) 50%,
+    rgba(201, 167, 79, 0.14) 50%,
     transparent 70%
   );
   transition: left 0s;
@@ -57,8 +66,11 @@
 }
 
 .frame:hover {
-  border-color: var(--gold);
-  box-shadow: 0 0 14px rgba(201, 167, 79, 0.25), inset 0 0 8px rgba(201, 167, 79, 0.06);
+  outline-color: var(--gold);
+  box-shadow:
+    0 0 16px rgba(201, 167, 79, 0.3),
+    inset 0 0 10px rgba(201, 167, 79, 0.07),
+    inset 0 2px 6px rgba(0,0,0,0.6);
 }
 
 .frame:hover::before {
@@ -70,18 +82,28 @@
   transition: left 0.5s ease-out;
 }
 
+/* Slot vacío — patrón de rejilla sutil */
 .frameEmpty {
-  border-color: var(--border);
+  outline-color: var(--border);
+  border-color: #1a150e;
   background-image:
+    radial-gradient(ellipse at 50% 30%, #131008 0%, #0d0b07 70%),
     repeating-linear-gradient(
       45deg,
       transparent,
       transparent 4px,
-      rgba(255, 255, 255, 0.02) 4px,
-      rgba(255, 255, 255, 0.02) 5px
+      rgba(255, 255, 255, 0.015) 4px,
+      rgba(255, 255, 255, 0.015) 5px
     );
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.7);
 }
 
+.frameEmpty:hover {
+  outline-color: var(--border-gold);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.7);
+}
+
+/* ── Imagen ─────────────────────────────────────────────── */
 .image {
   width: 100%;
   height: 100%;
@@ -90,17 +112,28 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
+/* ── SVG placeholder ────────────────────────────────────── */
+.svgPlaceholder {
+  width: 52%;
+  height: 52%;
+  color: var(--gold-dim);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Emoji placeholder (fallback legacy) */
 .placeholder {
   font-size: 1.3rem;
   opacity: 0.2;
   user-select: none;
 }
 
+/* ── Badge nivel de mejora ──────────────────────────────── */
 .badge {
   position: absolute;
   bottom: 2px;
   right: 2px;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.82);
   color: var(--gold);
   font-size: 0.55rem;
   padding: 1px 3px;
@@ -108,8 +141,39 @@
   font-family: system-ui, sans-serif;
   font-weight: 600;
   letter-spacing: 0;
+  z-index: 3;
 }
 
+/* ── Badge de infusión (top-left) ──────────────────────── */
+.infusionBadge {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 0.42rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1px 3px;
+  background: rgba(0, 0, 0, 0.78);
+  border: 1px solid currentColor;
+  z-index: 3;
+  line-height: 1.3;
+  color: var(--gold-dim);
+}
+.infusionBadge[data-infusion="heavy"]     { color: #c0903a; border-color: #704a10; }
+.infusionBadge[data-infusion="keen"]      { color: #5ab0d0; border-color: #1e6080; }
+.infusionBadge[data-infusion="quality"]   { color: #d0b030; border-color: #806010; }
+.infusionBadge[data-infusion="fire"]      { color: #e07040; border-color: #803010; }
+.infusionBadge[data-infusion="flame-art"] { color: #e05030; border-color: #801808; }
+.infusionBadge[data-infusion="lightning"] { color: #d8d040; border-color: #888010; }
+.infusionBadge[data-infusion="sacred"]    { color: #d8b050; border-color: #806020; }
+.infusionBadge[data-infusion="magic"]     { color: #5070d0; border-color: #203090; }
+.infusionBadge[data-infusion="cold"]      { color: #78aae0; border-color: #204870; }
+.infusionBadge[data-infusion="poison"]    { color: #60b060; border-color: #205820; }
+.infusionBadge[data-infusion="blood"]     { color: #c83040; border-color: #6e1018; }
+.infusionBadge[data-infusion="occult"]    { color: #9060c0; border-color: #482068; }
+
+/* ── Textos debajo ──────────────────────────────────────── */
 .label {
   font-size: 0.58rem;
   color: var(--text-dim);
@@ -131,4 +195,19 @@
 
 .frame[title] {
   cursor: help;
+}
+
+/* ── Badge de efectos de talismán ──────────────────────── */
+.effectLabel {
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: #6dbf7e;
+  letter-spacing: 0.04em;
+  text-align: center;
+  max-width: var(--slot-size);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  text-transform: uppercase;
 }

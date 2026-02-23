@@ -90,6 +90,27 @@
   padding: 0.17rem 0;
 }
 
+/* Wrapper posicional para la barra de carga + ticks */
+.loadBarWrap {
+  position: relative;
+}
+
+/* Tick de threshold en la barra de carga */
+.loadTick {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+/* Threshold alcanzado: dorado/ámbar */
+.loadTickReached {
+  background: rgba(201, 167, 79, 0.5);
+}
+
 .loadTag {
   font-size: 0.48rem;
   color: var(--text-dim);

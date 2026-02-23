@@ -32,3 +32,7 @@ coverage/
 
 # Save files (datos personales del usuario)
 *.sl2
+
+# Artefactos de compilación sueltos en src/ (no son source of truth)
+frontend/src/**/*.js
+frontend/src/**/*.js.map
