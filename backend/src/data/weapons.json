@@ -418,8 +418,8 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
+      "str": "D",
+      "dex": "E",
       "int": "-",
       "fai": "-",
       "arc": "-"
@@ -447,7 +447,7 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
+      "str": "D",
       "dex": "-",
       "int": "-",
       "fai": "-",
@@ -1549,8 +1549,8 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
+      "str": "E",
+      "dex": "D",
       "int": "-",
       "fai": "-",
       "arc": "-"
@@ -1578,8 +1578,8 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
+      "str": "D",
+      "dex": "D",
       "int": "-",
       "fai": "-",
       "arc": "-"
@@ -1607,8 +1607,8 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
+      "str": "D",
+      "dex": "D",
       "int": "-",
       "fai": "-",
       "arc": "-"
@@ -1636,8 +1636,8 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
+      "str": "D",
+      "dex": "D",
       "int": "-",
       "fai": "-",
       "arc": "-"
@@ -1665,9 +1665,9 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
-      "int": "-",
+      "str": "D",
+      "dex": "D",
+      "int": "E",
       "fai": "-",
       "arc": "-"
     },
@@ -1723,8 +1723,8 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
+      "str": "D",
+      "dex": "D",
       "int": "-",
       "fai": "-",
       "arc": "-"
@@ -1752,8 +1752,8 @@
       "arc": 0
     },
     "scaling": {
-      "str": "-",
-      "dex": "-",
+      "str": "D",
+      "dex": "D",
       "int": "-",
       "fai": "-",
       "arc": "-"
@@ -4063,7 +4063,7 @@
     "id": 1140000,
     "name": "Gargoyle's Great Axe",
     "type": "Greataxe",
-    "weight": 0,
+    "weight": 20.5,
     "requirements": {
       "str": 24,
       "dex": 8,
@@ -6190,13 +6190,13 @@
     },
     "scaling": {
       "str": "E",
-      "dex": "C",
+      "dex": "D",
       "int": "-",
       "fai": "-",
-      "arc": "-"
+      "arc": "D"
     },
     "damage": {
-      "physical": 0,
+      "physical": 86,
       "magic": 0,
       "fire": 0,
       "lightning": 0,
@@ -6639,35 +6639,6 @@
     },
     "passives": [],
     "image": "https://eldenring.fanapis.com/images/weapons/17f69746125l0i1phti5gxbjc1nfhx.png"
-  },
-  {
-    "id": 1229000,
-    "name": "Erdtree Seal",
-    "type": "Sacred Seal",
-    "weight": 0,
-    "requirements": {
-      "str": 0,
-      "dex": 0,
-      "int": 0,
-      "fai": 40,
-      "arc": 0
-    },
-    "scaling": {
-      "str": "-",
-      "dex": "-",
-      "int": "-",
-      "fai": "C",
-      "arc": "-"
-    },
-    "damage": {
-      "physical": 25,
-      "magic": 0,
-      "fire": 0,
-      "lightning": 0,
-      "holy": 15
-    },
-    "passives": [],
-    "image": "https://eldenring.fanapis.com/images/weapons/17f698bacafl0i1phz3om56qt5bqof.png"
   },
   {
     "id": 1230000,

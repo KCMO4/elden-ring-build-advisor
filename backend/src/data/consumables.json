@@ -1033,7 +1033,7 @@
     "name": "Baldachin's Blessing",
     "type": "- ",
     "effect": "Uses FP to temporarilty boost poise",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/8/8d/ER_Icon_Tool_Baldachin%27s_Blessing.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/baldachins-blessing.png"
   },
   {
     "id": "17f69d54061l0i1zouypdn8vlubda",
@@ -1215,7 +1215,7 @@
     "name": "Cuckoo Glintstone",
     "type": "Int B",
     "effect": "Uses FP to produce a magic bolt",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/5/55/ER_Icon_Tool_cuckoo_glintstone.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/cuckoo-glintstone.png"
   },
   {
     "id": "17f6979df4bl0i1zs7fenpk1iotjg",
@@ -1271,7 +1271,7 @@
     "name": "Clarifying Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts focus",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/7/7a/ER_Icon_Tool_meat_clarifying_cured.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/clarifying-cured-meat.png"
   },
   {
     "id": "17f69613247l0i1ztcd6v9vqg09u1",
@@ -1453,7 +1453,7 @@
     "name": "Clarifying Boluses",
     "type": "-",
     "effect": "Alleviates madness buildup",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/0/04/ER_Icon_Tool_boluses_clarifying.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/clarifying-boluses.png"
   },
   {
     "id": "17f69ca9998l0i1zx2bs65c7kep4i",
@@ -1467,14 +1467,14 @@
     "name": "Drawstring Blood Grease",
     "type": "-",
     "effect": "Quickly coats armament, inflicting blood loss",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/f/f7/ER_Icon_Tool_grease_drawstring_blood.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/drawstring-blood-grease.png"
   },
   {
     "id": "17f6964ca94l0i1zxddi20asvh8byj",
     "name": "Drawstring Magic Grease",
     "type": "- ",
     "effect": "Quickly coats armament, inflicting magic damage",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/e/e2/ER_Icon_Tool_grease_drawstring_magic.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/drawstring-magic-grease.png"
   },
   {
     "id": "17f69c39d47l0i1zxgqfco64hbk1nd",
@@ -1488,14 +1488,14 @@
     "name": "Roped Fetid Pot",
     "type": "-",
     "effect": "Throw behind to cause buildup of deadly poison",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/d/d4/ER_Icon_pot_roped_fetid.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/roped-fetid-pot.png"
   },
   {
     "id": "17f697a5074l0i1zxos2qrarphijg9",
     "name": "Roped Poison Pot",
     "type": "-",
     "effect": "Throw behind to cause buildup of poison",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/2/22/ER_Icon_pot_roped_poison.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/roped-poison-pot.png"
   },
   {
     "id": "17f69aced0el0i1zy0licjui6swml",
@@ -1509,14 +1509,14 @@
     "name": "Roped Oil Pot",
     "type": "-",
     "effect": "Throw behind to douse enemies in oil",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/d/d3/ER_Icon_pot_roped_oil.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/roped-oil-pot.png"
   },
   {
     "id": "17f6983cd86l0i1zy5lf9rln6u4a6",
     "name": "Rancor Pot",
     "type": "-",
     "effect": "Uses FP. Throw to summon vengeful spirits.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/c/cf/ER_Icon_pot_rancor.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rancor-pot.png"
   },
   {
     "id": "17f69b1181al0i1zy6tbrd4p8felpt",
@@ -1530,49 +1530,49 @@
     "name": "Freezing Pot",
     "type": "-",
     "effect": "Throw at enemies to cause buildup of frost.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/b/b5/ER_Icon_pot_freezing.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/freezing-pot.png"
   },
   {
     "id": "17f697c0c48l0i1zynfj6qp34snkn",
     "name": "Poison Pot",
     "type": "-",
     "effect": "Throw at enemies to cause buildup of poison.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/1/1f/ER_Icon_pot_poison.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/poison-pot.png"
   },
   {
     "id": "17f697120eel0i1zysexy9dml5aarj",
     "name": "Oil Pot",
     "type": "-",
     "effect": "Throw at enemies to soak them in oil.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/4/4b/ER_Icon_pot_oil.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/oil-pot.png"
   },
   {
     "id": "17f6950f5e5l0i1zyy9pleuxod1dd",
     "name": "Poison Spraymist",
     "type": "- ",
     "effect": "Uses FP to release poison mist from the mouth.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/6/68/ER_Icon_Tool_Poison_Spraymist.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/poison-spraymist.png"
   },
   {
     "id": "17f699d1da5l0i1zz0e2z7fpkkk4b",
     "name": "Fetid Pot",
     "type": "-",
     "effect": "Throw at enemies to cause deadly buildup of poison.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/2/2c/ER_Icon_pot_fetid.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fetid-pot.png"
   },
   {
     "id": "17f69bbb349l0i1zz39n2i94xzb0c",
     "name": "Giantsflame Fire Pot",
     "type": "Fai S",
     "effect": "Uses FP. Throw at enemies to inflict heavy fire damage.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/9/90/ER_Icon_pot_giantsflame_fire.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/giantsflame-fire-pot.png"
   },
   {
     "id": "17f697be6c9l0i1zz7w2cqc6netcxt",
     "name": "Bloodboil Aromatic",
     "type": "-",
     "effect": "Uses FP to enter a temporary state of fervor.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/f/fe/ER_Icon_Tool_Bloodboil_Aromatic.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bloodboil-aromatic.png"
   },
   {
     "id": "17f695281b9l0i1zzkzgdfu3fmw0h7",
@@ -1621,21 +1621,21 @@
     "name": "Sacred Order Pot",
     "type": "Fai S",
     "effect": "Uses FP. Throw at enemies to inflict heavy holy damage.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/7/76/ER_Icon_pot_sacred_order.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/sacred-order-pot.png"
   },
   {
     "id": "17f69bd730al0i200d10c6jt6jmyjus",
     "name": "Rot Pot",
     "type": "-",
     "effect": "Throw at enemies to cause buildup of scarlet rot.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/3/3d/ER_Icon_pot_rot.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rot-pot.png"
   },
   {
     "id": "17f69cc7cc4l0i200eiqrrphtaqwg",
     "name": "Spark Aromatic",
     "type": "Str D Dex S ",
     "effect": "Uses FP to broadly scatter sparks in a wide arc straight ahead",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/a/a7/ER_Icon_Tool_Spark_Aromatic.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/spark-aromatic.png"
   },
   {
     "id": "17f698094a4l0i200to6xkgyxul9w5",
@@ -1649,7 +1649,7 @@
     "name": "Uplifting Aromatic",
     "type": "- ",
     "effect": "Boosts ally attack power and reduces incoming damage once.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/8/81/ER_Icon_Tool_Uplifting_Aromatic.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/uplifting-aromatic.png"
   },
   {
     "id": "17f69889ffcl0i200yg02e54y4cfe3i",
@@ -1754,7 +1754,7 @@
     "name": "Drawstring Rot Grease",
     "type": "-  ",
     "effect": "Quickly coats armament, inflicting scarlet rot, but with a brief effect, owing to its small size.",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/3/31/ER_Icon_Tool_grease_drawstring_rot.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/drawstring-rot-grease.png"
   },
   {
     "id": "17f69ca14d8l0i202ziztkj1sjb9sa",
@@ -1810,7 +1810,7 @@
     "name": "Radiant Baldachin's Blessing",
     "type": "-",
     "effect": "Uses FP to temporarily raise poise",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/b/b9/ER_Icon_Tool_Radiant_Baldachin%27s_Blessing.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/radiant-baldachins-blessing.png"
   },
   {
     "id": "17f697d40afl0i2041cta4gx4stl1",
@@ -2188,7 +2188,7 @@
     "name": "Rold Medallion",
     "type": "Key Item",
     "effect": "Operates Grand Lift of Rold",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/5/55/ER_Icon_Key_Item_Rold_Medallion.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rold-medallion.png"
   },
   {
     "id": "17f699e7b9al0i20ch56uunpr2w1ge",
@@ -2272,7 +2272,7 @@
     "name": "Conspectus Scroll",
     "type": "Key Item",
     "effect": "Give to Sorceress Sellen to unlock Glintstone Cometshard and Star Shower",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/7/72/ER_Icon_Scroll_Academy.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/conspectus-scroll.png"
   },
   {
     "id": "17f69e2b453l0i20e2ze058fuit5nf",
@@ -2314,7 +2314,7 @@
     "name": "Iron Whetblade",
     "type": "Key Item",
     "effect": "Grants choice of affinity upgrade to weapon",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/a/ae/ER_Icon_Key_Item_Whetblade_Iron.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/iron-whetblade.png"
   },
   {
     "id": "17f698eeca4l0i20ezgtkbf7ugf2gl",
@@ -2930,7 +2930,7 @@
     "name": "Golden Dung",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/9/9a/ER_Icon_material_gold-tinged_excrement.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden-dung.png"
   },
   {
     "id": "17f6994ecael0i20rfo807kblgeik6",
@@ -2979,7 +2979,7 @@
     "name": "Hidden Plumage",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://static.wikia.nocookie.net/eldenring/images/7/7f/ER_Icon_material_00513.png/revision/latest"
+    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/hidden-plumage.png"
   },
   {
     "id": "17f69dab742l0i20s67dnwox3ezoin",

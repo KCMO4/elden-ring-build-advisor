@@ -167,12 +167,56 @@ async function fetchAllFanApi<T>(endpoint: string): Promise<T[]> {
 
 // ── Sincronización de armas ──────────────────────────────────
 
+// ── Correcciones manuales de datos erróneos de fanapis ───────
+// Fuente: Fextralife wiki / community research.
+// Se aplican después de normalizar, antes de guardar.
+
+const WEAPON_CORRECTIONS: Partial<Record<string, Partial<Weapon>>> = {
+  // fanapis devuelve damage todo 0; valor real en wiki: físico 86 base +0
+  "Serpentbone Blade": {
+    damage: { physical: 86, magic: 0, fire: 0, lightning: 0, holy: 0 },
+    scaling: { str: 'E', dex: 'D', int: '-', fai: '-', arc: 'D' },
+  },
+  // weight=0 en fanapis; peso real: 20.5
+  "Gargoyle's Great Axe": { weight: 20.5 },
+  // Crossbows / Ballistas: fanapis no registra su escalado
+  // Fuente: wiki Fextralife
+  "Light Crossbow":                { scaling: { str: 'D', dex: 'D', int: '-', fai: '-', arc: '-' } },
+  "Soldier's Crossbow":            { scaling: { str: 'E', dex: 'D', int: '-', fai: '-', arc: '-' } },
+  "Heavy Crossbow":                { scaling: { str: 'D', dex: 'D', int: '-', fai: '-', arc: '-' } },
+  "Arbalest":                      { scaling: { str: 'D', dex: 'D', int: '-', fai: '-', arc: '-' } },
+  "Pulley Crossbow":               { scaling: { str: 'D', dex: 'D', int: '-', fai: '-', arc: '-' } },
+  "Crepus's Black-key Crossbow":   { scaling: { str: 'D', dex: 'D', int: '-', fai: '-', arc: '-' } },
+  "Full Moon Crossbow":            { scaling: { str: 'D', dex: 'D', int: 'E', fai: '-', arc: '-' } },
+  "Hand Ballista":                 { scaling: { str: 'D', dex: 'E', int: '-', fai: '-', arc: '-' } },
+  "Jar Cannon":                    { scaling: { str: 'D', dex: '-', int: '-', fai: '-', arc: '-' } },
+};
+
+function applyWeaponCorrections(w: Weapon): Weapon {
+  const fix = WEAPON_CORRECTIONS[w.name];
+  if (!fix) return w;
+  return {
+    ...w,
+    weight:  fix.weight  ?? w.weight,
+    damage:  fix.damage  ? { ...w.damage, ...fix.damage }   : w.damage,
+    scaling: fix.scaling ? { ...w.scaling, ...fix.scaling } : w.scaling,
+  };
+}
+
 async function syncWeapons(): Promise<void> {
   console.log('\n[1/8] Descargando armas...');
   try {
     const raw = await fetchAllFanApi<FanApiWeapon>('weapons');
-    const weapons = raw.map((w, i) => normalizeFanApiWeapon(w, i));
-    console.log(`  ${weapons.length} armas`);
+    // Normalizar y aplicar correcciones manuales
+    const all = raw.map((w, i) => applyWeaponCorrections(normalizeFanApiWeapon(w, i)));
+    // Eliminar duplicados por nombre (conservar el primero)
+    const seen = new Set<string>();
+    const weapons = all.filter(w => {
+      if (seen.has(w.name)) { console.warn(`  WARN: duplicado eliminado: ${w.name}`); return false; }
+      seen.add(w.name);
+      return true;
+    });
+    console.log(`  ${weapons.length} armas (${raw.length - weapons.length} duplicados eliminados)`);
     saveJson('weapons.json', weapons);
   } catch (err) {
     console.warn(`  WARN: fanapis weapons falló: ${err}`);
@@ -311,11 +355,19 @@ function normalizeArmor(a: FanApiArmor, idx: number): Armor {
 }
 
 function normalizeArmorType(raw: string): ArmorType {
-  const lower = raw.toLowerCase();
-  if (lower.includes('helm') || lower.includes('head')) return 'Helm';
-  if (lower.includes('chest') || lower.includes('armor') || lower.includes('body')) return 'Chest Armor';
-  if (lower.includes('gauntlet') || lower.includes('arm') || lower.includes('glove')) return 'Gauntlets';
+  const lower = raw.toLowerCase().trim();
+  // Matches exactos de los valores que devuelve fanapis
+  if (lower === 'leg armor')    return 'Leg Armor';
+  if (lower === 'gauntlets')    return 'Gauntlets';
+  if (lower === 'helm')         return 'Helm';
+  if (lower === 'chest armor')  return 'Chest Armor';
+  // Fallbacks fuzzy — ORDEN CRÍTICO: 'leg' y 'greave' ANTES de cualquier
+  // check que contenga 'armor', porque "Leg Armor".includes('armor') = true.
   if (lower.includes('leg') || lower.includes('greave') || lower.includes('boot')) return 'Leg Armor';
+  if (lower.includes('helm') || lower.includes('head') || lower.includes('hat') ||
+      lower.includes('hood') || lower.includes('crown') || lower.includes('mask'))  return 'Helm';
+  if (lower.includes('gauntlet') || lower.includes('glove') || lower.includes('bracelet') ||
+      lower.includes('manchette'))                                                   return 'Gauntlets';
   return 'Chest Armor';
 }
 
