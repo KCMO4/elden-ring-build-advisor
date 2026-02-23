@@ -143,3 +143,64 @@ export function stackNegation(values: number[]): number {
   const product = values.reduce((acc, v) => acc * (1 - v / 100), 1.0);
   return Math.round((1 - product) * 1000) / 10; // una décima de precisión
 }
+
+// ── Desglose de escalado ──────────────────────────────────
+
+export interface ARBreakdown {
+  /** Daño base por tipo, ajustado por nivel de mejora (antes del escalado de stats) */
+  base: { physical: number; magic: number; fire: number; lightning: number; holy: number };
+  /** Contribución neta de cada stat al AR total (suma de todos los tipos afectados) */
+  strBonus: number;
+  dexBonus: number;
+  intBonus: number;
+  faiBonus: number;
+  arcBonus: number;
+}
+
+/**
+ * Igual que estimateEquippedAR pero también devuelve el desglose intermedio:
+ * daño base por nivel y aporte de cada stat.
+ */
+export function estimateARWithBreakdown(
+  weapon: EquippedWeapon,
+  stats:  CharacterStats,
+): { ar: ReturnType<typeof estimateEquippedAR>; breakdown: ARBreakdown } {
+  const lvl  = weapon.upgradeLevel ?? 0;
+  const mult = upgradeMultiplier(lvl);
+  const dmg  = weapon.damage!;
+  const scl  = weapon.scaling!;
+
+  const bPhys = Math.round(dmg.physical  * mult);
+  const bMag  = Math.round(dmg.magic     * mult);
+  const bFire = Math.round(dmg.fire      * mult);
+  const bLig  = Math.round(dmg.lightning * mult);
+  const bHoly = Math.round(dmg.holy      * mult);
+
+  const strBon  = bPhys * (GRADE_COEFF[scl.str] ?? 0) * interpCurve(PHYS_CURVE,  stats.strength);
+  const dexBon  = bPhys * (GRADE_COEFF[scl.dex] ?? 0) * interpCurve(PHYS_CURVE,  stats.dexterity);
+  const intBon  = bMag  * (GRADE_COEFF[scl.int] ?? 0) * interpCurve(MAGIC_CURVE, stats.intelligence);
+  const faiMag  = bMag  * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
+  const faiFire = bFire * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
+  const faiLig  = bLig  * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
+  const faiHoly = bHoly * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
+  const arcBon  = bPhys * (GRADE_COEFF[scl.arc] ?? 0) * interpCurve(ARC_CURVE,   stats.arcane);
+
+  const physical  = Math.round(bPhys + strBon + dexBon + arcBon);
+  const magic     = Math.round(bMag  + intBon + faiMag);
+  const fire      = Math.round(bFire + faiFire);
+  const lightning = Math.round(bLig  + faiLig);
+  const holy      = Math.round(bHoly + faiHoly);
+  const total     = physical + magic + fire + lightning + holy;
+
+  return {
+    ar: { physical, magic, fire, lightning, holy, total },
+    breakdown: {
+      base: { physical: bPhys, magic: bMag, fire: bFire, lightning: bLig, holy: bHoly },
+      strBonus: Math.round(strBon),
+      dexBonus: Math.round(dexBon),
+      intBonus: Math.round(intBon),
+      faiBonus: Math.round(faiMag + faiFire + faiLig + faiHoly),
+      arcBonus: Math.round(arcBon),
+    },
+  };
+}

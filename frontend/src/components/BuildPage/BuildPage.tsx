@@ -111,7 +111,7 @@ export default function BuildPage({ character, onBack }: Props) {
 
       {/* ── Tooltip flotante ── */}
       {hoveredItem && tooltipRect && (
-        <ItemTooltip item={hoveredItem} triggerRect={tooltipRect} />
+        <ItemTooltip item={hoveredItem} triggerRect={tooltipRect} stats={character.stats} />
       )}
     </div>
   );

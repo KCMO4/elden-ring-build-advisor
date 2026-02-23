@@ -152,6 +152,66 @@
   margin: 0;
 }
 
+/* ── Desglose de escalado ────────────────────────────── */
+.breakdownRow {
+  display: grid;
+  /* stat  grade  statval  →  bonus */
+  grid-template-columns: 28px 36px 22px 14px 1fr;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 0.22rem;
+}
+
+.breakdownStat {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.breakdownStatVal {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.breakdownArrow {
+  font-size: 0.6rem;
+  color: var(--gold-dim);
+  text-align: center;
+}
+
+.breakdownBonus {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6dbf7e;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fila de "Base +N" al final del desglose */
+.breakdownBase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--border);
+}
+
+.breakdownBaseLbl {
+  font-size: 0.6rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.breakdownBaseVal {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
 /* ── Peso ────────────────────────────────────────────── */
 .weightRow {
   display: flex;
