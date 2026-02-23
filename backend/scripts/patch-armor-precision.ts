@@ -109,16 +109,23 @@ function findEntry(name: string, byName: Map<string, OptEntry>): OptEntry | unde
   const noAltered = key.replace(/\s*\(altered\)\s*$/, '').trim();
   if (noAltered !== key && byName.has(noAltered)) return byName.get(noAltered);
 
-  // Fallback: variantes tipográficas conocidas en fanapis
+  // Fallback: variantes tipográficas/nomenclatura fanapis → optimizer
   const corrections: Record<string, string> = {
-    'godksin noble robe': 'godskin noble robe',
-    'godksin apostle robe': 'godskin apostle robe',
-    'godksin noble hood': 'godskin noble hood',
-    'godksin apostle hood': 'godskin apostle hood',
-    'godksin noble trousers': 'godskin noble trousers',
-    'godksin apostle trousers': 'godskin apostle trousers',
-    'godksin noble bracelets': 'godskin noble bracelets',
+    // Typos de fanapis (Godksin → Godskin)
+    'godksin noble robe':        'godskin noble robe',
+    'godksin apostle robe':      'godskin apostle robe',
+    'godksin noble hood':        'godskin noble hood',
+    'godksin apostle hood':      'godskin apostle hood',
+    'godksin noble trousers':    'godskin noble trousers',
+    'godksin apostle trousers':  'godskin apostle trousers',
+    'godksin noble bracelets':   'godskin noble bracelets',
     'godksin apostle bracelets': 'godskin apostle bracelets',
+    // "Greave" (singular fanapis) → "Greaves" (plural optimizer/juego)
+    'blackflame monk greave':    'blackflame monk greaves',
+    // fanapis usa "Gauntlets", el juego real usa "Bracers"
+    'champion gauntlets':        'champion bracers',
+    // fanapis omite el genitivo: "Old Sorcerer" → "Old Sorcerer's"
+    'old sorcerer legwraps':     'old sorcerers legwraps',
   };
   const corrected = corrections[key];
   if (corrected && byName.has(corrected)) return byName.get(corrected);

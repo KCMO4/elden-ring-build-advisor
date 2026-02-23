@@ -4122,16 +4122,17 @@
     "type": "Gauntlets",
     "weight": 1,
     "defense": {
-      "physical": 1,
-      "strike": 0,
-      "slash": 1,
-      "pierce": 1,
-      "magic": 1,
-      "fire": 1,
-      "lightning": 1,
-      "holy": 1
+      "physical": 1.6,
+      "strike": 2.1,
+      "slash": 1.7,
+      "pierce": 1.9,
+      "magic": 1.9,
+      "fire": 2.3,
+      "lightning": 2.5,
+      "holy": 2.3
     },
-    "image": "https://eldenring.fanapis.com/images/armors/17f69a5c5bbl0i0o9b3mzby0ky19w.png"
+    "image": "https://eldenring.fanapis.com/images/armors/17f69a5c5bbl0i0o9b3mzby0ky19w.png",
+    "poise": 3
   },
   {
     "id": 12300000,
@@ -8468,16 +8469,17 @@
     "type": "Leg Armor",
     "weight": 7.3,
     "defense": {
-      "physical": 7,
-      "strike": 6,
-      "slash": 8,
-      "pierce": 7,
-      "magic": 5,
-      "fire": 0,
-      "lightning": 4,
-      "holy": 5
+      "physical": 7.7,
+      "strike": 6.5,
+      "slash": 8.4,
+      "pierce": 7.4,
+      "magic": 5.8,
+      "fire": 7.4,
+      "lightning": 4.5,
+      "holy": 5.8
     },
-    "image": "https://eldenring.fanapis.com/images/armors/17f692d4de3l0i0pf68kg5ine04x3.png"
+    "image": "https://eldenring.fanapis.com/images/armors/17f692d4de3l0i0pf68kg5ine04x3.png",
+    "poise": 14
   },
   {
     "id": 14720000,
@@ -9455,16 +9457,17 @@
     "type": "Leg Armor",
     "weight": 2.5,
     "defense": {
-      "physical": 3,
-      "strike": 1,
-      "slash": 3,
-      "pierce": 1,
-      "magic": 8,
-      "fire": 6,
-      "lightning": 7,
-      "holy": 7
+      "physical": 3.4,
+      "strike": 1.5,
+      "slash": 3.4,
+      "pierce": 1.5,
+      "magic": 8.1,
+      "fire": 6.8,
+      "lightning": 7.2,
+      "holy": 7.3
     },
-    "image": "https://eldenring.fanapis.com/images/armors/17f69bf199dl0i0pn8qhruxql5jeou.png"
+    "image": "https://eldenring.fanapis.com/images/armors/17f69bf199dl0i0pn8qhruxql5jeou.png",
+    "poise": 4
   },
   {
     "id": 15270000,
