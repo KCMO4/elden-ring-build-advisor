@@ -1,96 +1,130 @@
 /**
  * Estimación de Attack Rating (AR) para Elden Ring.
  *
- * Fuente principal: community research de fextralife, Soulsborne wiki y
- * análisis de los archivos de parámetros del juego.
+ * Usa las curvas CalcCorrectGraph reales extraídas de regulation.bin
+ * (fuente: ThomasJClark/elden-ring-weapon-calculator, hanslhansl/elden-ring-damage-optimizer).
  *
- * El AR real del juego requiere las tablas exactas de CalcCorrectGraph y
- * ReinforceParamWeapon. Esta implementación usa curvas documentadas por la
- * comunidad que producen resultados dentro de un ±5-10% del valor real.
+ * La interpolación entre breakpoints usa factores exponenciales (adjPt) exactos del juego.
  *
- * Verificación empírica:
- *   Bloodhound's Fang +4, DEX 34, STR 18
- *   → estimado: ~336   real en juego: 348 (error: ~3%)
+ * Limitaciones conocidas:
+ * - Los grados de escalado (S/A/B/C/D/E) son letras; el valor exacto varía por arma.
+ *   Usamos valores representativos del rango de cada grado.
+ * - No tenemos las tablas ReinforceParamWeapon, que cambian el escalado con cada nivel
+ *   de mejora. El upgradeMultiplier es una aproximación lineal.
+ * - Se usa CalcCorrectGraph ID 0 (Default) para físico y ID 4 (Magic) para elemental.
+ *   Armas con afinidades Heavy/Keen/Quality/Occult usan IDs ligeramente diferentes
+ *   (1/2/7/8) con breakpoints similares.
+ *
+ * Precisión esperada: ±5-15% del valor real, dependiendo del arma y nivel de mejora.
  */
 
 import type { EquippedWeapon, CharacterStats } from '../types';
 
-// ── Curvas de corrección de stat ─────────────────────────────
-// Cada tabla = [[stat_value, scaling_ratio], ...] — interpolación lineal entre nodos.
-// Fuente: CalcCorrectGraph parameters extraídos por la comunidad.
+// ── CalcCorrectGraph — datos reales de regulation.bin ────────────
+//
+// Cada entrada = { maxVal (stat breakpoint), maxGrowVal (output 0-1), adjPt (exponente) }
+// La curva entre breakpoints usa interpolación no-lineal:
+//   adjPt > 0 → ratio^adjPt      (acelerante: empieza lento)
+//   adjPt < 0 → 1-(1-ratio)^|adj| (desacelerante: empieza rápido)
+//   adjPt = 1 → lineal
 
-/** Curva para STR y DEX (daño físico) */
-const PHYS_CURVE: [number, number][] = [
-  [1,  0.00],
-  [20, 0.35],
-  [40, 0.65],
-  [60, 0.80],
-  [80, 0.90],
-  [99, 1.00],
-];
-
-/** Curva para INT y FAI (daño mágico / fuego / sagrado) */
-const MAGIC_CURVE: [number, number][] = [
-  [1,  0.00],
-  [20, 0.36],
-  [40, 0.65],
-  [60, 0.80],
-  [80, 0.91],
-  [99, 1.00],
-];
-
-/** Curva para ARC (acumulación de sangrado / veneno en algunas armas) */
-const ARC_CURVE: [number, number][] = [
-  [1,  0.00],
-  [20, 0.40],
-  [40, 0.60],
-  [60, 0.78],
-  [80, 0.90],
-  [99, 1.00],
-];
-
-function interpCurve(curve: [number, number][], stat: number): number {
-  const s = Math.max(1, Math.min(99, stat));
-  for (let i = 1; i < curve.length; i++) {
-    const [x0, y0] = curve[i - 1];
-    const [x1, y1] = curve[i];
-    if (s <= x1) {
-      return y0 + ((s - x0) / (x1 - x0)) * (y1 - y0);
-    }
-  }
-  return 1.0;
+interface CalcCorrectStage {
+  maxVal: number;
+  maxGrowVal: number;
+  adjPt: number;
 }
 
-// ── Coeficientes de grado (a upgrade máximo) ─────────────────
-// Representan el multiplicador máximo que contribuye el grado al AR.
+/** ID 0: Default — Physical scaling (Standard affinity, STR/DEX) */
+const PHYS_GRAPH: CalcCorrectStage[] = [
+  { maxVal:   1, maxGrowVal: 0.00, adjPt:  1.2 },
+  { maxVal:  18, maxGrowVal: 0.25, adjPt: -1.2 },
+  { maxVal:  60, maxGrowVal: 0.75, adjPt:  1.0 },
+  { maxVal:  80, maxGrowVal: 0.90, adjPt:  1.0 },
+  { maxVal: 150, maxGrowVal: 1.10, adjPt:  1.0 },
+];
+
+/** ID 4: Magic / Fire / Lightning / Holy (elemental scaling, INT/FAI) */
+const MAGIC_GRAPH: CalcCorrectStage[] = [
+  { maxVal:  1, maxGrowVal: 0.00, adjPt: 1.0 },
+  { maxVal: 20, maxGrowVal: 0.40, adjPt: 1.0 },
+  { maxVal: 50, maxGrowVal: 0.80, adjPt: 1.0 },
+  { maxVal: 80, maxGrowVal: 0.95, adjPt: 1.0 },
+  { maxVal: 99, maxGrowVal: 1.00, adjPt: 1.0 },
+];
+
+/** ID 7: Occult (Arcane scaling for physical/elemental damage) */
+const ARC_GRAPH: CalcCorrectStage[] = [
+  { maxVal:   1, maxGrowVal: 0.00, adjPt:  1.2 },
+  { maxVal:  20, maxGrowVal: 0.35, adjPt: -1.2 },
+  { maxVal:  60, maxGrowVal: 0.75, adjPt:  1.0 },
+  { maxVal:  80, maxGrowVal: 0.90, adjPt:  1.0 },
+  { maxVal: 150, maxGrowVal: 1.10, adjPt:  1.0 },
+];
+
+/**
+ * Interpola un valor de stat sobre un CalcCorrectGraph usando la fórmula exacta del juego.
+ * El adjPt del stage ANTERIOR (left boundary) controla la forma de la curva en ese intervalo.
+ */
+function interpGraph(graph: CalcCorrectStage[], stat: number): number {
+  const s = Math.max(graph[0].maxVal, Math.min(graph[graph.length - 1].maxVal, stat));
+  for (let i = 1; i < graph.length; i++) {
+    const prev = graph[i - 1];
+    const curr = graph[i];
+    if (s <= curr.maxVal) {
+      const range = curr.maxVal - prev.maxVal;
+      if (range <= 0) return curr.maxGrowVal;
+      let ratio = (s - prev.maxVal) / range;
+      ratio = Math.max(0, Math.min(1, ratio));
+
+      const adj = prev.adjPt;
+      if (adj > 0 && adj !== 1.0) {
+        ratio = Math.pow(ratio, adj);
+      } else if (adj < 0) {
+        ratio = 1 - Math.pow(1 - ratio, -adj);
+      }
+      // adj === 0 or adj === 1.0 → linear (ratio unchanged)
+
+      return prev.maxGrowVal + (curr.maxGrowVal - prev.maxGrowVal) * ratio;
+    }
+  }
+  return graph[graph.length - 1].maxGrowVal;
+}
+
+// ── Coeficientes de grado ────────────────────────────────────────
+// El juego almacena un valor de escalado exacto por arma (correctStrength, etc.)
+// y usa umbrales para asignar la letra: S≥175, A≥140, B≥90, C≥60, D≥25, E≥1
+// (valores ÷100 para obtener el multiplicador real).
+//
+// Como solo tenemos la letra (de fanapis), usamos valores representativos
+// del rango de cada grado. Esto introduce error inherente (~±15%).
 const GRADE_COEFF: Record<string, number> = {
-  'S': 1.25,
-  'A': 0.90,
-  'B': 0.70,
-  'C': 0.65,
-  'D': 0.40,
-  'E': 0.20,
+  'S': 1.75,  // S grade: raw ≥175, typical 175-250
+  'A': 1.50,  // A grade: raw 140-174
+  'B': 1.10,  // B grade: raw 90-139
+  'C': 0.75,  // C grade: raw 60-89
+  'D': 0.40,  // D grade: raw 25-59
+  'E': 0.12,  // E grade: raw 1-24
   '-': 0.00,
 };
 
-// ── Fórmula de upgrade (incremento del daño base por nivel) ──
+// ── Fórmula de upgrade (incremento del daño base por nivel) ──────
 //
-// Armas únicas  (+0 a +10, somber stones): factor máximo ×2.5 al llegar a +10
-// Armas estándar (+0 a +25, smithing stones): factor máximo ×3.0 al llegar a +25
+// Armas somber (+0 a +10): factor máximo ~×2.44 (e.g. Moonveil base 73 → +10: 178)
+// Armas estándar (+0 a +25): factor máximo ~×2.45 (e.g. Longsword base 110 → +25: 269)
 //
-// Aproximación lineal: damage(N) = base × (1 + (N / maxN) × (maxFactor - 1))
+// Aproximación lineal: damage(N) = base × (1 + (N / maxN) × factor)
 //
-// Heurística: si upgradeLevel <= 10 → asumimos arma única (maxN=10, factor 1.5)
-//             si upgradeLevel > 10  → arma estándar         (maxN=25, factor 2.0)
+// Heurística: si upgradeLevel <= 10 → arma somber (maxN=10)
+//             si upgradeLevel > 10  → arma estándar (maxN=25)
 
 function upgradeMultiplier(upgradeLevel: number): number {
   if (upgradeLevel <= 0) return 1.0;
   const isUnique = upgradeLevel <= 10;
-  const [maxN, factor] = isUnique ? [10, 1.5] : [25, 2.0];
+  const [maxN, factor] = isUnique ? [10, 1.44] : [25, 1.45];
   return 1.0 + (upgradeLevel / maxN) * factor;
 }
 
-// ── Cálculo de AR estimado ────────────────────────────────────
+// ── Cálculo de AR estimado ────────────────────────────────────────
 
 /** Retorna el AR estimado (total por tipo de daño + total) para el arma equipada. */
 export function estimateEquippedAR(
@@ -110,18 +144,18 @@ export function estimateEquippedAR(
   const bHoly = Math.round(dmg.holy      * mult);
 
   // Bonus de escalado: cada stat escala su tipo de daño correspondiente
-  // Física: STR + DEX → physical
-  const strBonus = bPhys * (GRADE_COEFF[scl.str] ?? 0) * interpCurve(PHYS_CURVE,  stats.strength);
-  const dexBonus = bPhys * (GRADE_COEFF[scl.dex] ?? 0) * interpCurve(PHYS_CURVE,  stats.dexterity);
-  // Mágica: INT → magic (y en algunos casos FP también, simplificado)
-  const intBonus = bMag  * (GRADE_COEFF[scl.int] ?? 0) * interpCurve(MAGIC_CURVE, stats.intelligence);
-  // Fuego / Relámp / Sagrado: FAI → los tres tipos (simplificado para armas de fe)
-  const faiMag   = bMag  * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  const faiFire  = bFire * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  const faiLig   = bLig  * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  const faiHoly  = bHoly * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  // ARC: en armas con escalado arcano aumenta el daño físico/mágico (Rivers of Blood, etc.)
-  const arcBonus = bPhys * (GRADE_COEFF[scl.arc] ?? 0) * interpCurve(ARC_CURVE,   stats.arcane);
+  // Física: STR + DEX → physical (CalcCorrectGraph ID 0)
+  const strBonus = bPhys * (GRADE_COEFF[scl.str] ?? 0) * interpGraph(PHYS_GRAPH,  stats.strength);
+  const dexBonus = bPhys * (GRADE_COEFF[scl.dex] ?? 0) * interpGraph(PHYS_GRAPH,  stats.dexterity);
+  // Mágica: INT → magic (CalcCorrectGraph ID 4)
+  const intBonus = bMag  * (GRADE_COEFF[scl.int] ?? 0) * interpGraph(MAGIC_GRAPH, stats.intelligence);
+  // Fuego / Relámp / Sagrado: FAI (CalcCorrectGraph ID 4)
+  const faiMag   = bMag  * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  const faiFire  = bFire * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  const faiLig   = bLig  * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  const faiHoly  = bHoly * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  // ARC: escalado arcano (CalcCorrectGraph ID 7)
+  const arcBonus = bPhys * (GRADE_COEFF[scl.arc] ?? 0) * interpGraph(ARC_GRAPH,   stats.arcane);
 
   const physical  = Math.round(bPhys + strBonus + dexBonus + arcBonus);
   const magic     = Math.round(bMag  + intBonus + faiMag);
@@ -176,14 +210,14 @@ export function estimateARWithBreakdown(
   const bLig  = Math.round(dmg.lightning * mult);
   const bHoly = Math.round(dmg.holy      * mult);
 
-  const strBon  = bPhys * (GRADE_COEFF[scl.str] ?? 0) * interpCurve(PHYS_CURVE,  stats.strength);
-  const dexBon  = bPhys * (GRADE_COEFF[scl.dex] ?? 0) * interpCurve(PHYS_CURVE,  stats.dexterity);
-  const intBon  = bMag  * (GRADE_COEFF[scl.int] ?? 0) * interpCurve(MAGIC_CURVE, stats.intelligence);
-  const faiMag  = bMag  * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  const faiFire = bFire * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  const faiLig  = bLig  * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  const faiHoly = bHoly * (GRADE_COEFF[scl.fai] ?? 0) * interpCurve(MAGIC_CURVE, stats.faith);
-  const arcBon  = bPhys * (GRADE_COEFF[scl.arc] ?? 0) * interpCurve(ARC_CURVE,   stats.arcane);
+  const strBon  = bPhys * (GRADE_COEFF[scl.str] ?? 0) * interpGraph(PHYS_GRAPH,  stats.strength);
+  const dexBon  = bPhys * (GRADE_COEFF[scl.dex] ?? 0) * interpGraph(PHYS_GRAPH,  stats.dexterity);
+  const intBon  = bMag  * (GRADE_COEFF[scl.int] ?? 0) * interpGraph(MAGIC_GRAPH, stats.intelligence);
+  const faiMag  = bMag  * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  const faiFire = bFire * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  const faiLig  = bLig  * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  const faiHoly = bHoly * (GRADE_COEFF[scl.fai] ?? 0) * interpGraph(MAGIC_GRAPH, stats.faith);
+  const arcBon  = bPhys * (GRADE_COEFF[scl.arc] ?? 0) * interpGraph(ARC_GRAPH,   stats.arcane);
 
   const physical  = Math.round(bPhys + strBon + dexBon + arcBon);
   const magic     = Math.round(bMag  + intBon + faiMag);

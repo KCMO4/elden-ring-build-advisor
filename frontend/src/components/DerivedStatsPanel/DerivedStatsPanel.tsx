@@ -27,7 +27,7 @@ function calcHP(vig: number): number {
 function calcFP(mnd: number): number {
   const m = Math.min(99, Math.max(1, mnd));
   let fp: number;
-  if      (m <= 15) fp = 50  + 45  * ((m - 1)  / 14);
+  if      (m <= 15) fp = 40  + 55  * ((m - 1)  / 14);
   else if (m <= 35) fp = 95  + 105 * ((m - 15) / 20);
   else if (m <= 60) fp = 200 + 150 * (1 - Math.pow(1 - (m - 35) / 25, 1.2));
   else              fp = 350 + 100 * ((m - 60) / 39);
