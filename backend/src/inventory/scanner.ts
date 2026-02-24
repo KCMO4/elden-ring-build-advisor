@@ -220,6 +220,14 @@ function talismanIdName(id: number): string | null {
 export function scanInventory(slotData: Buffer, level?: number): InventoryScanResult {
   const equipped = readEquippedItems(slotData, level);
   const inventory = readInventory(slotData, level);
+
+  // Count Memory Stones (baseId 10030) in keyItems to compute total spell slots.
+  // Base = 2 slots; each Memory Stone adds 1 (max 10 stones → 12 total).
+  const memoryStoneCount = inventory.keyItems
+    .filter(item => item.baseId === 10030)
+    .reduce((sum, item) => sum + item.quantity, 0);
+  equipped.memorySlotCount = 2 + memoryStoneCount;
+
   return { equipped, inventory };
 }
 
@@ -274,8 +282,8 @@ function tryReadEquippedItemsViaChrAsm2(buf: Buffer, level: number): EquippedIte
     readHandle(0x4C), readHandle(0x50), readHandle(0x54), readHandle(0x58),
   ];
 
-  // Quick items, pouch y great rune desde EquippedItems struct
-  const { quickItems, pouch, greatRune } = readQuickSlotsAndGreatRune(buf, vigorOff, chrAsm2Off);
+  // Quick items, pouch, great rune, physick tears y spell slots
+  const { quickItems, pouch, greatRune, physickTears, spellSlots } = readQuickSlotsAndGreatRune(buf, vigorOff, chrAsm2Off);
 
   return {
     rightHand: rhHandles.map(h =>
@@ -294,6 +302,9 @@ function tryReadEquippedItemsViaChrAsm2(buf: Buffer, level: number): EquippedIte
     quickItems,
     pouch,
     greatRune,
+    physickTears,
+    spellSlots,
+    memorySlotCount: 2, // Updated by scanInventory with Memory Stone count
   };
 }
 
@@ -314,6 +325,9 @@ function emptyEquippedItems(): EquippedItems {
     quickItems: [],
     pouch: [],
     greatRune: null,
+    physickTears: [],
+    spellSlots: [],
+    memorySlotCount: 2,
   };
 }
 
@@ -338,13 +352,14 @@ function emptyEquippedItems(): EquippedItems {
  *   +0x54: great rune / covenant (0x40xxxxxx o 0xFFFFFFFF = vacío)
  *   +0x58..+0x7C: quickitems[10] (0x40xxxxxx goods IDs)
  *   +0x80..+0x94: pouch[6] (0x40xxxxxx goods IDs)
+ *   +0x98..+0xA8: physick crystal tears (0x40xxxxxx goods IDs, up to 5 slots)
  */
 function readQuickSlotsAndGreatRune(
   buf: Buffer,
   vigorOff: number,
   chrAsm2Off: number,
-): { quickItems: QuickSlotItem[]; pouch: QuickSlotItem[]; greatRune: QuickSlotItem | null } {
-  const empty = { quickItems: [] as QuickSlotItem[], pouch: [] as QuickSlotItem[], greatRune: null };
+): { quickItems: QuickSlotItem[]; pouch: QuickSlotItem[]; greatRune: QuickSlotItem | null; physickTears: QuickSlotItem[]; spellSlots: QuickSlotItem[] } {
+  const empty = { quickItems: [] as QuickSlotItem[], pouch: [] as QuickSlotItem[], greatRune: null, physickTears: [] as QuickSlotItem[], spellSlots: [] as QuickSlotItem[] };
 
   const structOff = findEquippedItemsStruct(buf, vigorOff, chrAsm2Off);
   if (structOff === null) return empty;
@@ -362,7 +377,33 @@ function readQuickSlotsAndGreatRune(
   const grRaw = buf.readUInt32LE(structOff + 0x54);
   const greatRune = (grRaw === 0xFFFFFFFF || grRaw === 0) ? null : resolveInventorySlotItem(grRaw);
 
-  return { quickItems, pouch, greatRune };
+  // Flask of Wondrous Physick crystal tears: up to 5 uint32 at +0x98
+  const physickTears: QuickSlotItem[] = [];
+  for (let i = 0; i < 5; i++) {
+    const raw = buf.readUInt32LE(structOff + 0x98 + i * 4);
+    if (raw === 0xFFFFFFFF || raw === 0) continue;
+    const resolved = resolveInventorySlotItem(raw);
+    if (resolved.name) physickTears.push(resolved);
+  }
+
+  // EquipMagicData (spell/memory slots): 14 entries × 8 bytes each,
+  // located right after EquipInventoryData (ga_items).
+  // Each entry: [spell_id: u32, unk: u32]. spell_id is a raw goods ID (no nibble).
+  const gaItemsStart = chrAsm2Off + 0x64;
+  const equipMagicOff = gaItemsStart + 0x9000 + 0x08; // +8 for header
+  const spellSlots: QuickSlotItem[] = [];
+  for (let i = 0; i < 14; i++) {
+    const off = equipMagicOff + i * 8; // 8 bytes per entry
+    if (off + 4 > buf.length) break;
+    const rawSpellId = buf.readUInt32LE(off);
+    if (rawSpellId === 0xFFFFFFFF || rawSpellId === 0) continue;
+    // EquipMagicData stores raw goods IDs (no 0x40 nibble prefix)
+    const withNibble = 0x40000000 | rawSpellId;
+    const resolved = resolveInventorySlotItem(withNibble);
+    if (resolved.name) spellSlots.push(resolved);
+  }
+
+  return { quickItems, pouch, greatRune, physickTears, spellSlots };
 }
 
 /**

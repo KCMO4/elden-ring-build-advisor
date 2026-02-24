@@ -118,6 +118,49 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
         </div>
       </div>
 
+      {/* ── Flask of Wondrous Physick ── */}
+      {(equipped.physickTears?.length ?? 0) > 0 && (
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>Flask of Wondrous Physick</div>
+          <div className={styles.quickItemsRow}>
+            {equipped.physickTears!.map((tear, i) => (
+              <ItemSlot
+                key={i}
+                item={quickSlotToEquipped(tear)}
+                category="physick-tear"
+                size="small"
+                animIndex={45 + i}
+                onHover={onItemHover}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ── Memory Slots (Spell Slots) ── */}
+      {(equipped.memorySlotCount ?? 0) > 0 && (
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>
+            Memory Slots ({equipped.spellSlots?.filter(s => s.name)?.length ?? 0}/{equipped.memorySlotCount})
+          </div>
+          <div className={styles.quickItemsRow}>
+            {Array.from({ length: equipped.memorySlotCount! }).map((_, i) => {
+              const spell = equipped.spellSlots?.[i];
+              return (
+                <ItemSlot
+                  key={i}
+                  item={spell ? quickSlotToEquipped(spell) : undefined}
+                  category="spell-slot"
+                  size="small"
+                  animIndex={31 + i}
+                  onHover={onItemHover}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* ── Quick Items ── */}
       {filledQuickItems.length > 0 && (
         <div className={styles.section}>

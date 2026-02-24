@@ -127,6 +127,12 @@ export interface EquippedItems {
   pouch: QuickSlotItem[];
   /** Equipped Great Rune (null = none equipped) */
   greatRune: QuickSlotItem | null;
+  /** Crystal Tears equipped in the Flask of Wondrous Physick */
+  physickTears: QuickSlotItem[];
+  /** Attuned spells in memory slots (empty if none equipped) */
+  spellSlots: QuickSlotItem[];
+  /** Total memory slot count = 2 (base) + Memory Stones in inventory */
+  memorySlotCount: number;
 }
 
 /** Inventario completo categorizado */

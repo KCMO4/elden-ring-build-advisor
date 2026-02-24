@@ -11,7 +11,9 @@ export type ItemCategory =
   | 'talisman'
   | 'quick-item'
   | 'pouch'
-  | 'great-rune';
+  | 'great-rune'
+  | 'spell-slot'
+  | 'physick-tear';
 
 interface Props {
   item?: EquippedWeapon | null;
@@ -87,6 +89,20 @@ function PlaceholderSvg({ category }: { category: ItemCategory }) {
         <svg viewBox="0 0 24 24" className={styles.svgPlaceholder} fill="currentColor">
           {/* Runa ᛟ estilizada */}
           <path d="M12 2L7 7v4l-3 3v2l3-3v5l5 5 5-5v-5l3 3v-2l-3-3V7l-5-5zm0 3l3 3v3l-3 3-3-3V8l3-3zm0 8l2 2v2l-2 2-2-2v-2l2-2z"/>
+        </svg>
+      );
+    case 'spell-slot':
+      return (
+        <svg viewBox="0 0 24 24" className={styles.svgPlaceholder} fill="currentColor">
+          {/* Estrella mágica / spell */}
+          <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8L8 14 2 9.2h7.6L12 2z"/>
+        </svg>
+      );
+    case 'physick-tear':
+      return (
+        <svg viewBox="0 0 24 24" className={styles.svgPlaceholder} fill="currentColor">
+          {/* Gota / Crystal Tear */}
+          <path d="M12 2C12 2 6 10 6 14c0 3.3 2.7 6 6 6s6-2.7 6-6C18 10 12 2 12 2zm0 17c-2.8 0-5-2.2-5-5 0-2.8 3.3-8.1 5-10.7 1.7 2.6 5 7.9 5 10.7 0 2.8-2.2 5-5 5z"/>
         </svg>
       );
     default:

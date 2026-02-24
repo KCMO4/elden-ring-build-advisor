@@ -10,5 +10,8 @@ export default defineConfig({
       usePolling: true,   // necesario en WSL2 donde inotify no detecta cambios
       interval: 300,
     },
+    proxy: {
+      '/images': 'http://localhost:3001',
+    },
   },
 });

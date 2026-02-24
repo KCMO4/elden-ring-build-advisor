@@ -66,6 +66,12 @@ export interface EquippedItems {
   quickItems: QuickSlotItem[];
   pouch: QuickSlotItem[];
   greatRune: QuickSlotItem | null;
+  /** Crystal Tears equipped in the Flask of Wondrous Physick */
+  physickTears?: QuickSlotItem[];
+  /** Attuned spells in memory slots */
+  spellSlots?: QuickSlotItem[];
+  /** Total memory slot count = 2 (base) + Memory Stones */
+  memorySlotCount?: number;
 }
 
 export interface ResolvedInventoryItem {
