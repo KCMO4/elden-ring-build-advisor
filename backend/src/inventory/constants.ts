@@ -95,6 +95,34 @@ export const INVENTORY = {
   SEARCH_WINDOW: 0x80000,
 } as const;
 
+// ── Inventory Held — cantidades reales de ítems ─────────────────────────────
+
+/**
+ * La sección "inventory_held" almacena las cantidades reales de cada ítem.
+ * Cada entrada tiene 12 bytes: [gaitem_handle: u32, quantity: u32, acquisition_index: u32]
+ *
+ * Fuente: ClayAmore/ER-Save-Lib (Rust) — InventoryHeld struct.
+ *
+ * Offset desde vigor_offset:
+ *   ChrAsm2 está a vigor + 0x310, mide 0x60 bytes (24 × u32).
+ *   inventory_held empieza inmediatamente después: ChrAsm2 + 0x60 = vigor + 0x370.
+ *   El primer u32 es common_item_count, seguido de common_items[2688] × 12 bytes,
+ *   luego key_item_count (u32), key_items[384] × 12 bytes.
+ *
+ * Verificado empíricamente con save real (Zhyak, slot 2, nivel 68):
+ *   vigor=0xaad0, held=0xae40, count=537, key_count=76.
+ */
+export const INVENTORY_HELD = {
+  /** Offset desde vigor_offset hasta el inicio de inventory_held (ChrAsm2 + 0x60) */
+  VIGOR_TO_HELD_OFFSET: 0x370,
+  /** Capacidad de common items (held inventory) */
+  COMMON_CAPACITY: 2688,   // 0xA80
+  /** Capacidad de key items (held inventory) */
+  KEY_CAPACITY: 384,        // 0x180
+  /** Bytes por entrada (gaitem_handle + quantity + acquisition_index) */
+  ENTRY_SIZE: 12,
+} as const;
+
 // ── Decodificación de IDs de ítems ──────────────────────────────────────────
 
 /**

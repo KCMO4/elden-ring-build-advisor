@@ -88,6 +88,9 @@ function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placehol
       {upgradeLevel !== null && (
         <span className={styles.upgradeBadge}>+{upgradeLevel}</span>
       )}
+      {item.quantity > 1 && (
+        <span className={styles.quantityBadge}>×{item.quantity}</span>
+      )}
       {showImg ? (
         <img
           src={item.image}

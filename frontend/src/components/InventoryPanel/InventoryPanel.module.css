@@ -152,6 +152,20 @@
   z-index: 1;
 }
 
+.quantityBadge {
+  position: absolute;
+  bottom: 16px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.82);
+  color: var(--text);
+  font-size: 0.52rem;
+  padding: 1px 3px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  z-index: 1;
+  line-height: 1.2;
+}
+
 .gridItem:hover {
   border-color: var(--border-gold);
 }

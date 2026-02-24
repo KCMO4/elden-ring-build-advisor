@@ -26,7 +26,7 @@
 
 import path from 'path';
 import fs from 'fs';
-import { INVENTORY, ITEM_CATEGORY } from './constants';
+import { INVENTORY, ITEM_CATEGORY, INVENTORY_HELD } from './constants';
 import { findStats } from '../parser/stats';
 import type {
   RawInventoryItem,
@@ -752,12 +752,138 @@ function scanWeaponUpgradeLevels(buf: Buffer, level?: number): Map<number, numbe
   return map;
 }
 
+// ── Lectura de cantidades reales (inventory_held) ───────────
+
+/**
+ * Lee la sección inventory_held y construye un Map<inventoryItemId, quantity>.
+ *
+ * inventory_held almacena entradas de 12 bytes: [gaitem_handle, quantity, acquisition_index].
+ * Se divide en common_items (2688 slots) y key_items (384 slots), cada sección
+ * precedida por un u32 count.
+ *
+ * Fuente: ClayAmore/ER-Save-Lib (Rust) — InventoryHeld struct.
+ */
+function readInventoryHeld(
+  buf: Buffer,
+  vigorOff: number,
+  gaItemsSearchLimit: number,
+): Map<number, number> {
+  const quantityMap = new Map<number, number>();
+
+  const heldStart = vigorOff + INVENTORY_HELD.VIGOR_TO_HELD_OFFSET;
+  if (heldStart + 4 > buf.length) return quantityMap;
+
+  // Common items section
+  const commonCount = buf.readUInt32LE(heldStart);
+  const commonDataStart = heldStart + 4;
+
+  readHeldEntries(buf, commonDataStart, commonCount, gaItemsSearchLimit, quantityMap);
+
+  // Skip past all common item slots (fixed capacity) to reach key items
+  const keyStart = commonDataStart + INVENTORY_HELD.COMMON_CAPACITY * INVENTORY_HELD.ENTRY_SIZE;
+  if (keyStart + 4 > buf.length) return quantityMap;
+
+  // Key items section
+  const keyCount = buf.readUInt32LE(keyStart);
+  readHeldEntries(buf, keyStart + 4, keyCount, gaItemsSearchLimit, quantityMap);
+
+  return quantityMap;
+}
+
+function readHeldEntries(
+  buf: Buffer,
+  startOffset: number,
+  count: number,
+  gaItemsSearchLimit: number,
+  quantityMap: Map<number, number>,
+): void {
+  for (let i = 0; i < count; i++) {
+    const off = startOffset + i * INVENTORY_HELD.ENTRY_SIZE;
+    if (off + 12 > buf.length) break;
+
+    const gaitemHandle = buf.readUInt32LE(off);
+    const quantity = buf.readUInt32LE(off + 4);
+
+    if (gaitemHandle === 0 || quantity === 0) continue;
+
+    const inventoryId = resolveGaitemToInventoryId(buf, gaitemHandle, gaItemsSearchLimit);
+    if (inventoryId !== undefined) {
+      quantityMap.set(inventoryId, (quantityMap.get(inventoryId) ?? 0) + quantity);
+    }
+  }
+}
+
+/**
+ * Convierte un gaitem_handle (prefijo 0x8/0x9/0xA/0xB/0xC) al inventory item ID
+ * que usa la sección compacta del inventario (nibble 0x0/0x1/0x2/0x4/0x8).
+ *
+ * Para items (0xB) y accessories (0xA) el item_id se extrae directamente del handle.
+ * Para weapons (0x8), armor (0x9) y AoW (0xC) se necesita buscar en ga_items.
+ */
+function resolveGaitemToInventoryId(
+  buf: Buffer,
+  gaitemHandle: number,
+  gaItemsSearchLimit: number,
+): number | undefined {
+  const type = (gaitemHandle >>> 28) & 0xF;
+
+  switch (type) {
+    case 0xB: { // Item/goods → inventory nibble 0x4
+      const baseId = gaitemHandle & 0x0FFFFFFF;
+      return 0x40000000 | baseId;
+    }
+    case 0xA: { // Accessory/talisman → inventory nibble 0x2
+      const baseId = gaitemHandle & 0x0FFFFFFF;
+      return 0x20000000 | baseId;
+    }
+    case 0x8: { // Weapon → inventory nibble 0x0, needs ga_items lookup
+      const itemId = findGaItemId(buf, gaitemHandle, gaItemsSearchLimit);
+      if (itemId === undefined) return undefined;
+      // Weapons in the compact inventory use the base ID (floor to 100) with nibble 0x0
+      const baseId = Math.floor(itemId / 100) * 100;
+      return baseId; // weapon nibble = 0x0
+    }
+    case 0x9: { // Armor → inventory nibble 0x1
+      const itemId = findGaItemId(buf, gaitemHandle, gaItemsSearchLimit);
+      if (itemId === undefined) return undefined;
+      // Armor item_id in ga_items has 0x10000000 prefix; compact inventory also uses 0x1 nibble
+      // but with the EquipParamProtector ID (= item_id ^ 0x10000000)
+      const armorId = itemId ^ 0x10000000;
+      return 0x10000000 | armorId;
+    }
+    case 0xC: { // Ash of War → inventory nibble 0x8
+      const itemId = findGaItemId(buf, gaitemHandle, gaItemsSearchLimit);
+      if (itemId === undefined) return undefined;
+      return 0x80000000 | (itemId & 0x0FFFFFFF);
+    }
+    default:
+      return undefined;
+  }
+}
+
 // ── Lectura del inventario completo ─────────────────────────
 
 function readInventory(buf: Buffer, _level?: number): Inventory {
   const rawItems = scanItemArray(buf);
   const store = ItemStore.getInstance();
   const weaponUpgrades = scanWeaponUpgradeLevels(buf, _level);
+
+  // Aplicar cantidades reales desde inventory_held
+  if (_level !== undefined) {
+    const statsResult = findStats(buf, _level);
+    if (statsResult) {
+      const vigorOff = statsResult.foundAtOffset;
+      const gaItemsSearchLimit = vigorOff - 0x34;
+      const quantityMap = readInventoryHeld(buf, vigorOff, gaItemsSearchLimit);
+
+      for (const item of rawItems) {
+        const qty = quantityMap.get(item.itemId);
+        if (qty !== undefined && qty > 0) {
+          item.quantity = qty;
+        }
+      }
+    }
+  }
 
   const weapons:      ResolvedInventoryItem[] = [];
   const ammos:        ResolvedInventoryItem[] = [];
