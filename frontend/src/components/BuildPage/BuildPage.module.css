@@ -186,11 +186,15 @@
 /* ── Layout principal ────────────────────────────── */
 .main {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 260px auto 1fr;
+  align-items: start;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  max-width: 1280px;
-  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+}
+
+.main > * {
+  align-self: stretch;
 }
 
 @media (max-width: 900px) {
@@ -216,11 +220,31 @@
   animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
-.content {
+.sidebar > *:last-child {
+  flex: 1;
+}
+
+.equipment {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.equipment > *:last-child {
+  flex: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.content > *:last-child {
+  flex: 1;
 }
 
 /* ── Image preload progress bar ────────────────── */

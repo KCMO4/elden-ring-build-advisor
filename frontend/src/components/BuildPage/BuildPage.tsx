@@ -117,7 +117,7 @@ export default function BuildPage({ character, onBack }: Props) {
           <DerivedStatsPanel stats={character.stats} equipped={character.equipped} />
         </aside>
 
-        <section className={styles.content}>
+        <section className={styles.equipment}>
           <EquipmentGrid equipped={character.equipped} onItemHover={handleItemHover} />
           {!preloadProgress.done && (
             <div className={styles.preloadBar}>
@@ -130,6 +130,9 @@ export default function BuildPage({ character, onBack }: Props) {
               </span>
             </div>
           )}
+        </section>
+
+        <section className={styles.content}>
           <InventoryPanel inventory={character.inventory} />
         </section>
       </div>
