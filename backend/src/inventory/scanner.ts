@@ -589,6 +589,10 @@ function resolveWeaponHandle(
   if (itemId === undefined) return { rawId: handle, baseId: 0, name: null, image: '' };
 
   const baseId       = Math.floor(itemId / 100) * 100;
+
+  // Unarmed (110000) es un estado, no un arma real — tratar como vacío
+  if (baseId === 110000) return { rawId: handle, baseId: 0, name: null, image: '' };
+
   const upgradeLevel = itemId % 100;
 
   // Buscar nombre usando los IDs reales del juego (EquipParamWeapon)
