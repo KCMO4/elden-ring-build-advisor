@@ -31,7 +31,7 @@ backend/
 │   ├── index.ts                 # Express server: routes, middleware, error handler
 │   ├── data/                    # Static JSONs (committed, updated by sync-data)
 │   │   ├── weapons.json         # 306 weapons with damage, scaling, weight, image
-│   │   ├── armors.json          # 568 armors — 550 with float defense + poise (patch-armor)
+│   │   ├── armors.json          # 568 armors — 550 with float defense + poise + resistances (patch-armor)
 │   │   ├── talismans.json       # 87 talismans with name, effect text, image
 │   │   ├── spells.json          # 169 spells
 │   │   ├── shields.json         # Shields with stability (Guard Boost), defense, weight
@@ -88,7 +88,7 @@ backend/
 | `npm start` | Run dist/index.js (production) |
 | `npm test` | Jest — 43 tests, all must pass |
 | `npm run sync-data` | Regenerate all `src/data/*.json` from fanapis.com |
-| `npm run patch-armor` | Overlay float defense + poise from EldenRingArmorOptimizer |
+| `npm run patch-armor` | Overlay float defense + poise + resistances from EldenRingArmorOptimizer |
 | `npm run patch-armor:dry` | Dry run — shows match stats without writing files |
 | `npm run audit` | Data quality audit (exits 1 on critical bugs) |
 | `npm run audit:save` | Same, writes report to audit-report.json |
@@ -278,8 +278,9 @@ Downloads item data from `fanapis.com` and normalizes it into the `src/data/*.js
 - Writes `weapons.json` using real IDs from `gameIds.json` (fanapis IDs are sequential and wrong)
 
 ### `patch-armor-precision.ts`
-Overlays float defense values and `poise` from `jerpdoesgames/EldenRingArmorOptimizer`
-onto `armors.json`. The optimizer data is extracted from `regulation.bin → EquipParamProtector`.
+Overlays float defense values, `poise` and resistances (`immunity`, `robustness`, `focus`, `vitality`)
+from `jerpdoesgames/EldenRingArmorOptimizer` onto `armors.json`. The optimizer data is extracted
+from `regulation.bin → EquipParamProtector`.
 
 - Downloads `armor/data/armor.js` from GitHub raw (a JS file, not JSON)
 - Parses it with `vm.runInNewContext('(function(){ ${code}\nreturn armor; })()', {})`
@@ -324,6 +325,10 @@ interface Armor {
   type: ArmorType;
   weight: number;
   poise: number;             // 0 if unavailable (18 unmatched items)
+  immunity?: number;         // resistance to Poison/Scarlet Rot
+  robustness?: number;       // resistance to Hemorrhage/Frostbite
+  focus?: number;            // resistance to Sleep/Madness
+  vitality?: number;         // resistance to Death Blight
   defense: Defense;          // float precision for 550/568 items
   image?: string;
 }

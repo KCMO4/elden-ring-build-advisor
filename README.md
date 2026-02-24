@@ -11,12 +11,13 @@ and shows accurate derived stats (HP, FP, Stamina, Equip Load, Attack Rating, Da
 - **Save file upload** — drag & drop or file picker for `.sl2` (PC Steam only)
 - **Character selection** — card picker when the save has multiple active characters
 - **Attributes panel** — all 8 stats (VIG/MND/END/STR/DEX/INT/FAI/ARC) with proportional bars and softcap ticks
-- **Derived stats** — HP, FP, Stamina and Equip Load computed with exact piecewise interpolation formulas; Attack Rating for the main weapon; total Damage Negation % for equipped armor
+- **Derived stats** — HP, FP, Stamina and Equip Load computed with exact piecewise interpolation formulas; Attack Rating for the main weapon; total Damage Negation % for equipped armor; Poise (sum of armor pieces); Resistances (Immunity, Robustness, Focus, Vitality) with exact game formulas (level + attribute + armor)
 - **Talisman effects** — HP, FP, Stamina and Equip Load adjusted by equipped talismans (shown as green `+N` indicators)
 - **Equipment grid** — weapons (Left Hand / Right Hand), full armor (Head / Chest / Arms / Legs) and 4 talismans with fanapis images and SVG placeholders per category
 - **Item tooltips on hover** — full stats for each equipped item:
-  - Weapons: Estimated AR per damage type (bars) with per-stat scaling breakdown (e.g. `DEX D 34 → +82`), base damage at upgrade level
-  - Armor: Damage Negation per type (8 values, float precision from game data)
+  - Weapons: Estimated AR per damage type (bars) with per-stat scaling breakdown (e.g. `DEX D 34 → +82`), base damage at upgrade level, Ash of War skill name
+  - Armor: Damage Negation per type (8 values, float precision from game data), Poise, Resistances (Immunity, Robustness, Focus, Vitality)
+  - Shields: Guard Boost (stability)
   - Talismans: numeric effects (HP%, Stamina%, etc.) or text description
   - Weight for all items
 - **Full inventory** — tabs: Weapons / Armor / Talismans / Spells / Spirits / Ashes of War / Consumables / Materials / Upgrades / Tears / Ammo / Key Items / Cookbooks / Multiplayer — with name search and type filter per tab
@@ -132,10 +133,10 @@ elden-ring-build-advisor/
         ├── components/
         │   ├── BuildPage/         # Main layout
         │   ├── StatsPanel/        # 8 attributes
-        │   ├── DerivedStatsPanel/ # HP/FP/Stamina/Load/Attack/Defense
+        │   ├── DerivedStatsPanel/ # HP/FP/Stamina/Load/Attack/Defense/Poise/Resistances
         │   ├── EquipmentGrid/     # Weapons + armor + talismans
         │   ├── ItemSlot/          # Slot with image, upgrade badge, infusion badge
-        │   ├── ItemTooltip/       # Hover tooltip with full stats + AR breakdown
+        │   ├── ItemTooltip/       # Hover tooltip: AR, defense, poise, resistances, guard boost, skill
         │   ├── InventoryTooltip/  # Hover tooltip for inventory items
         │   ├── InventoryPanel/    # Full inventory with search and type filter
         │   ├── AdvisorPanel/      # (kept, not rendered — TODO: Builds + Questlines tabs)
@@ -223,7 +224,7 @@ fanapis stores defense values as integers. The `patch-armor` script overlays flo
 extracted from the game's `EquipParamProtector` param (via EldenRingArmorOptimizer):
 
 - **550 / 568 armors** have float precision (e.g. `strike: 5.4` instead of `5`)
-- **Also adds `poise`** (not available in fanapis)
+- **Also adds `poise`** and **resistances** (`immunity`, `robustness`, `focus`, `vitality`) — not available in fanapis
 - **18 unmatched** (6 Shadow of the Erdtree DLC pieces not yet in the optimizer, ~12 obscure items with near-zero stats) — keep integer approximations from fanapis
 
 ---
