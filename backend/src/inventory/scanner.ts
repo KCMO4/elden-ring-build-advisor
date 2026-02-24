@@ -218,8 +218,17 @@ function talismanIdName(id: number): string | null {
  * @param level     Nivel del personaje (necesario para localizar ChrAsm2)
  */
 export function scanInventory(slotData: Buffer, level?: number): InventoryScanResult {
+  const quantityMap = level !== undefined ? buildQuantityMap(slotData, level) : undefined;
   const equipped = readEquippedItems(slotData, level);
-  const inventory = readInventory(slotData, level);
+  const inventory = readInventory(slotData, level, quantityMap);
+
+  // Apply quantities to quick items (flasks show charges)
+  if (quantityMap) {
+    for (const item of equipped.quickItems) {
+      const qty = quantityMap.get(item.rawId);
+      if (qty !== undefined && qty > 1) item.quantity = qty;
+    }
+  }
 
   // Count Memory Stones (baseId 10030) in keyItems to compute total spell slots.
   // Base = 2 slots; each Memory Stone adds 1 (max 10 stones → 12 total).
@@ -756,6 +765,37 @@ function scanWeaponUpgradeLevels(buf: Buffer, level?: number): Map<number, numbe
   return map;
 }
 
+// ── Mapa de cantidades reales ────────────────────────────────
+
+/**
+ * Construye un Map<inventoryItemId, quantity> a partir de inventory_held.
+ * Incluye aliases para flasks: las variantes con upgrade (+1..+12) también
+ * apuntan al ID base para que el inventario compacto las encuentre.
+ */
+function buildQuantityMap(buf: Buffer, level: number): Map<number, number> | undefined {
+  const statsResult = findStats(buf, level);
+  if (!statsResult) return undefined;
+
+  const vigorOff = statsResult.foundAtOffset;
+  const gaItemsSearchLimit = vigorOff - 0x34;
+  const quantityMap = readInventoryHeld(buf, vigorOff, gaItemsSearchLimit);
+
+  // Flask aliases: the compact inventory stores the base flask ID (1001/1051)
+  // but inventory_held stores the upgraded variant (e.g. 1013 = Crimson +6).
+  // Add aliases so both the quick item (exact ID) and inventory (base ID) match.
+  for (const [id, qty] of [...quantityMap.entries()]) {
+    if (((id >>> 28) & 0xF) !== 4) continue; // only goods
+    const baseId = id & 0x0FFFFFFF;
+    if (baseId > 1001 && baseId <= 1013) {
+      quantityMap.set(0x40000000 | 1001, qty);  // Crimson Tears base
+    } else if (baseId > 1051 && baseId <= 1063) {
+      quantityMap.set(0x40000000 | 1051, qty);  // Cerulean Tears base
+    }
+  }
+
+  return quantityMap;
+}
+
 // ── Lectura de cantidades reales (inventory_held) ───────────
 
 /**
@@ -867,24 +907,17 @@ function resolveGaitemToInventoryId(
 
 // ── Lectura del inventario completo ─────────────────────────
 
-function readInventory(buf: Buffer, _level?: number): Inventory {
+function readInventory(buf: Buffer, _level?: number, quantityMap?: Map<number, number>): Inventory {
   const rawItems = scanItemArray(buf);
   const store = ItemStore.getInstance();
   const weaponUpgrades = scanWeaponUpgradeLevels(buf, _level);
 
   // Aplicar cantidades reales desde inventory_held
-  if (_level !== undefined) {
-    const statsResult = findStats(buf, _level);
-    if (statsResult) {
-      const vigorOff = statsResult.foundAtOffset;
-      const gaItemsSearchLimit = vigorOff - 0x34;
-      const quantityMap = readInventoryHeld(buf, vigorOff, gaItemsSearchLimit);
-
-      for (const item of rawItems) {
-        const qty = quantityMap.get(item.itemId);
-        if (qty !== undefined && qty > 0) {
-          item.quantity = qty;
-        }
+  if (quantityMap) {
+    for (const item of rawItems) {
+      const qty = quantityMap.get(item.itemId);
+      if (qty !== undefined && qty > 0) {
+        item.quantity = qty;
       }
     }
   }

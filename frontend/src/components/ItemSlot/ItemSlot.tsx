@@ -183,6 +183,10 @@ export default function ItemSlot({
           <span className={styles.badge}>+{item.upgradeLevel}</span>
         )}
 
+        {!empty && item?.quantity !== undefined && item.quantity > 1 && (
+          <span className={styles.quantityBadge}>×{item.quantity}</span>
+        )}
+
         {!empty && item?.infusion && (
           <span
             className={styles.infusionBadge}

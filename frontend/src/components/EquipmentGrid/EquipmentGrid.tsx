@@ -26,6 +26,7 @@ function quickSlotToEquipped(item: QuickSlotItem): EquippedWeapon {
     name: item.name,
     image: item.image,
     upgradeLevel: levelMatch ? parseInt(levelMatch[1], 10) : undefined,
+    quantity: item.quantity,
   };
 }
 

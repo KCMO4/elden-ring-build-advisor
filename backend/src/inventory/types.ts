@@ -110,6 +110,8 @@ export interface QuickSlotItem {
   name: string | null;
   /** URL de la imagen del ítem */
   image?: string;
+  /** Cantidad (cargas de flask, etc.). undefined = 1 */
+  quantity?: number;
 }
 
 /** Ítems equipados en el personaje */

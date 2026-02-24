@@ -46,6 +46,8 @@ export interface EquippedWeapon {
   defense?: DefenseStats;
   /** Efecto o descripción corta (principalmente para talismanes) */
   effect?: string;
+  /** Cantidad (cargas de flask, etc.). undefined = 1 */
+  quantity?: number;
 }
 
 export interface QuickSlotItem {
@@ -53,6 +55,7 @@ export interface QuickSlotItem {
   baseId: number;
   name: string | null;
   image?: string;
+  quantity?: number;
 }
 
 export interface EquippedItems {
