@@ -44,6 +44,17 @@ export interface EquippedWeapon {
   scaling?: { str: string; dex: string; int: string; fai: string; arc: string };
   weight?:  number;
   defense?: DefenseStats;
+  /** Poise de la armadura */
+  poise?: number;
+  /** Resistencias de la armadura */
+  immunity?:   number;
+  robustness?: number;
+  focus?:      number;
+  vitality?:   number;
+  /** Estabilidad (Guard Boost) — escudos */
+  stability?: number;
+  /** Nombre de la habilidad (Ash of War skill) — armas */
+  skill?: string;
   /** Efecto o descripción corta (principalmente para talismanes) */
   effect?: string;
   /** Cantidad (cargas de flask, etc.). undefined = 1 */

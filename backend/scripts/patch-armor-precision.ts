@@ -56,6 +56,10 @@ interface LocalArmor {
   type:   string;
   weight: number;
   poise?: number;
+  immunity?:   number;
+  robustness?: number;
+  focus?:      number;
+  vitality?:   number;
   defense: {
     physical:  number;
     strike:    number;
@@ -173,6 +177,10 @@ async function main(): Promise<void> {
       armor.defense.lightning = opt.lightning;
       armor.defense.holy      = opt.holy;
       armor.poise             = opt.poise;
+      armor.immunity          = opt.immunity;
+      armor.robustness        = opt.robustness;
+      armor.focus             = opt.focus;
+      armor.vitality          = opt.vitality;
       patched++;
     } else {
       missed++;

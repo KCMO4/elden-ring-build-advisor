@@ -114,7 +114,7 @@ export default function BuildPage({ character, onBack }: Props) {
       <div className={styles.main} ref={captureRef}>
         <aside className={styles.sidebar}>
           <StatsPanel stats={character.stats} talismans={character.equipped.talismans} />
-          <DerivedStatsPanel stats={character.stats} equipped={character.equipped} />
+          <DerivedStatsPanel stats={character.stats} equipped={character.equipped} level={character.level} />
         </aside>
 
         <section className={styles.equipment}>

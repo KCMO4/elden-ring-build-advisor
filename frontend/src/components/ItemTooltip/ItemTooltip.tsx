@@ -129,6 +129,9 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
           <span className={styles.upgradeLevel}>+{item.upgradeLevel}</span>
         )}
       </div>
+      {item.skill && (
+        <div className={styles.skillLine}>Skill: {item.skill}</div>
+      )}
 
       <div className={styles.divider} />
 
@@ -170,6 +173,42 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
           <DamageBar label="Fire"      value={item.defense.fire}      max={35} color={DMG_COLOR.fire}      />
           <DamageBar label="Lightning" value={item.defense.lightning} max={35} color={DMG_COLOR.lightning} />
           <DamageBar label="Holy"      value={item.defense.holy}      max={35} color={DMG_COLOR.holy}      />
+        </div>
+      )}
+
+      {/* ── Poise + Resistances (para armaduras) ── */}
+      {item.defense && !rawDamage && (item.poise != null && item.poise > 0 || item.immunity != null) && (
+        <div className={styles.section}>
+          {item.poise != null && item.poise > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel}>Poise</span>
+              <span className={styles.statValue}>{item.poise}</span>
+            </div>
+          )}
+          {item.immunity != null && item.immunity > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#8bc34a' }}>Immunity</span>
+              <span className={styles.statValue}>{item.immunity}</span>
+            </div>
+          )}
+          {item.robustness != null && item.robustness > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#e57373' }}>Robustness</span>
+              <span className={styles.statValue}>{item.robustness}</span>
+            </div>
+          )}
+          {item.focus != null && item.focus > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#ba68c8' }}>Focus</span>
+              <span className={styles.statValue}>{item.focus}</span>
+            </div>
+          )}
+          {item.vitality != null && item.vitality > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#78909c' }}>Vitality</span>
+              <span className={styles.statValue}>{item.vitality}</span>
+            </div>
+          )}
         </div>
       )}
 
@@ -243,6 +282,16 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Effect</div>
           <p className={styles.effectText}>{item.effect}</p>
+        </div>
+      )}
+
+      {/* ── Guard Boost (shields) ── */}
+      {item.stability != null && item.stability > 0 && (
+        <div className={styles.section}>
+          <div className={styles.statRow}>
+            <span className={styles.statLabel}>Guard Boost</span>
+            <span className={styles.statValue}>{item.stability}</span>
+          </div>
         </div>
       )}
 

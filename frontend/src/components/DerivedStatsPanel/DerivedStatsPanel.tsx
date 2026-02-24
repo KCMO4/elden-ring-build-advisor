@@ -8,6 +8,7 @@ import styles from './DerivedStatsPanel.module.css';
 interface Props {
   stats:    CharacterStats;
   equipped: EquippedItems;
+  level:    number;
 }
 
 // ── Fórmulas exactas de Elden Ring ────────────────────────────
@@ -59,6 +60,65 @@ function equipWeight(eq: EquippedItems): number {
   const all = [...eq.rightHand, ...eq.leftHand, eq.head, eq.chest, eq.hands, eq.legs];
   const total = all.reduce((s, item) => s + (item.weight ?? 0), 0);
   return Math.round(total * 10) / 10;
+}
+
+/** Total poise from equipped armor pieces (simple sum) */
+function totalPoise(eq: EquippedItems): number {
+  return [eq.head, eq.chest, eq.hands, eq.legs]
+    .reduce((sum, p) => sum + (p.poise ?? 0), 0);
+}
+
+// ── Fórmulas exactas de resistencias de Elden Ring ──────────────
+// Resistencia = floor(LevelComponent + AttributeComponent) + ArmorSum
+
+/** Rune Level component — identical for all 4 resistances */
+function resistLevelComponent(runeLevel: number): number {
+  const lvl = runeLevel + 79; // internal formula uses lvl+79
+  if (lvl <= 149) return 75 + 30 * ((lvl - 1) / 149);
+  if (lvl <= 190) return 105 + 40 * ((lvl - 150) / 40);
+  if (lvl <= 240) return 145 + 15 * ((lvl - 190) / 50);
+  return 160 + 20 * ((lvl - 240) / 552);
+}
+
+/** Attribute component for Immunity (Vigor), Robustness (Endurance), Focus (Mind) */
+function resistAttrComponent(stat: number): number {
+  if (stat <= 30) return 0;
+  if (stat <= 40) return 30 * ((stat - 30) / 10);
+  if (stat <= 60) return 30 + 10 * ((stat - 40) / 20);
+  return 40 + 10 * ((stat - 60) / 39);
+}
+
+/** Attribute component for Vitality (Arcane) — different curve, starts from level 1 */
+function resistArcaneComponent(arc: number): number {
+  if (arc <= 15) return arc;
+  if (arc <= 40) return 15 + 15 * ((arc - 15) / 25);
+  if (arc <= 60) return 30 + 10 * ((arc - 40) / 20);
+  return 40 + 10 * ((arc - 60) / 39);
+}
+
+interface ResistanceTotals {
+  immunity: number;
+  robustness: number;
+  focus: number;
+  vitality: number;
+}
+
+function calcResistances(
+  level: number,
+  stats: CharacterStats,
+  eq: EquippedItems,
+): ResistanceTotals {
+  const pieces = [eq.head, eq.chest, eq.hands, eq.legs];
+  const armorSum = (key: 'immunity' | 'robustness' | 'focus' | 'vitality') =>
+    pieces.reduce((s, p) => s + (p[key] ?? 0), 0);
+
+  const lvlComp = resistLevelComponent(level);
+  return {
+    immunity:   Math.floor(lvlComp + resistAttrComponent(stats.vigor))      + armorSum('immunity'),
+    robustness: Math.floor(lvlComp + resistAttrComponent(stats.endurance))  + armorSum('robustness'),
+    focus:      Math.floor(lvlComp + resistAttrComponent(stats.mind))       + armorSum('focus'),
+    vitality:   Math.floor(lvlComp + resistArcaneComponent(stats.arcane))   + armorSum('vitality'),
+  };
 }
 
 /**
@@ -136,7 +196,7 @@ function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent }: N
         />
       </div>
       <span className={styles.negValue} style={{ color: indent ? '#9a9080' : color }}>
-        {negation > 0 ? negation.toFixed(1) : '—'}
+        {negation > 0 ? (Number.isInteger(negation) ? negation : negation.toFixed(1)) : '—'}
       </span>
     </div>
   );
@@ -166,7 +226,15 @@ function BodyRow({ label, value, max, colorClass, ready, delay }: BodyRowProps) 
 
 // ── Componente principal ──────────────────────────────────────
 
-export default function DerivedStatsPanel({ stats, equipped }: Props) {
+// ── Tipos de resistencia ──────────────────────────────────────
+const RESIST_TYPES: { key: keyof ResistanceTotals; label: string; color: string }[] = [
+  { key: 'immunity',   label: 'Immunity',   color: '#8bc34a' },
+  { key: 'robustness', label: 'Robustness', color: '#e57373' },
+  { key: 'focus',      label: 'Focus',      color: '#ba68c8' },
+  { key: 'vitality',   label: 'Vitality',   color: '#78909c' },
+];
+
+export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
   const ready = useMountAnimation();
 
   // Bonuses de talismanes equipados
@@ -192,6 +260,9 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
 
   const neg      = totalNegation(equipped);
   const hasArmor = Object.values(neg).some(v => v > 0);
+
+  const poise    = totalPoise(equipped);
+  const resist   = calcResistances(level, stats, equipped);
 
   // Arma principal RH: primer slot con arma real
   const mainWeapon = equipped.rightHand.find(w => w.name && w.damage) ?? null;
@@ -291,6 +362,30 @@ export default function DerivedStatsPanel({ stats, equipped }: Props) {
           ))}
         </div>
       )}
+
+      {/* ── Poise ── */}
+      {poise > 0 && (
+        <div className={styles.section}>
+          <span className={styles.sectionTitle}>Poise</span>
+          <BodyRow label="Poise" value={Math.round(poise * 10) / 10} max={100} colorClass={styles.barPoise} ready={ready} delay={900} />
+        </div>
+      )}
+
+      {/* ── Resistances ── */}
+      <div className={styles.section}>
+        <span className={styles.sectionTitle}>Resistances</span>
+        {RESIST_TYPES.map(({ key, label, color }, i) => (
+          <NegRow
+            key={key}
+            label={label}
+            negation={resist[key]}
+            color={color}
+            maxNeg={300}
+            ready={ready}
+            delay={960 + i * 50}
+          />
+        ))}
+      </div>
 
     </div>
   );

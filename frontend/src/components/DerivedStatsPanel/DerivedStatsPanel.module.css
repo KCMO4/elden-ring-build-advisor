@@ -78,8 +78,9 @@
 .barVig .barFill  { background: linear-gradient(to right, #8b1c18, #d4483c); }
 .barMnd .barFill  { background: linear-gradient(to right, #1d4f8a, #4a8fc4); }
 .barEnd .barFill  { background: linear-gradient(to right, #2e6e1e, #6ab54a); }
-.barLoad .barFill { background: linear-gradient(to right, #3a6e3a, #8fc47a); }
-.barOver .barFill { background: linear-gradient(to right, #8b1c18, #e04040); }
+.barLoad .barFill  { background: linear-gradient(to right, #3a6e3a, #8fc47a); }
+.barOver .barFill  { background: linear-gradient(to right, #8b1c18, #e04040); }
+.barPoise .barFill { background: linear-gradient(to right, #5a4820, #c9a74f); }
 
 /* ── Equip Load row (4 columnas) ── */
 .loadRow {

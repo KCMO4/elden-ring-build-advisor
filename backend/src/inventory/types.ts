@@ -96,6 +96,17 @@ export interface EquippedWeapon {
   weight?: number;
   /** Defensa de la armadura (solo para armors) */
   defense?: { physical: number; strike: number; slash: number; pierce: number; magic: number; fire: number; lightning: number; holy: number };
+  /** Poise de la armadura */
+  poise?: number;
+  /** Resistencias de la armadura */
+  immunity?:   number;
+  robustness?: number;
+  focus?:      number;
+  vitality?:   number;
+  /** Estabilidad (Guard Boost) — escudos */
+  stability?: number;
+  /** Nombre de la habilidad (Ash of War skill) — armas */
+  skill?: string;
   /** Efecto o descripción corta (principalmente para talismanes) */
   effect?: string;
 }

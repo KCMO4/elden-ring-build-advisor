@@ -138,16 +138,82 @@ const AMMO_BASE_ID_MIN = 50_000_000;
 import { ItemStore } from '../items/store';
 
 // ── Fallback images para ítems que no están en fanapis ──────────────────────
-// Imágenes servidas localmente desde /images/ (descargadas por sync-data, WebP optimizado)
+// Imágenes servidas localmente desde /images/ (descargadas por sync-data + download-fandom-images)
 const FALLBACK_IMAGES: Record<string, string> = {
-  'champion gaiters':         '/images/armors/champion_gaiters_elden_ring_wiki_guide_200px.webp',
-  'karolos glintstone crown': '/images/armors/karolos_glintstone_crown_elden_ring_wiki_guide_200px.webp',
-  'roar medallion':           '/images/talismans/roar_medallion_talisman_elden_ring_wiki_guide_200px.webp',
-  'flame, cleanse me':        '/images/spells/flame_cleanse_me_incantation_elden_ring_wiki_guide_200px.webp',
+  // Armors (sync-data fallbacks from Fextralife)
+  'champion gaiters':                           '/images/armors/champion_gaiters_elden_ring_wiki_guide_200px.webp',
+  'karolos glintstone crown':                   '/images/armors/karolos_glintstone_crown_elden_ring_wiki_guide_200px.webp',
+  'roar medallion':                             '/images/talismans/roar_medallion_talisman_elden_ring_wiki_guide_200px.webp',
+  'flame, cleanse me':                          '/images/spells/flame_cleanse_me_incantation_elden_ring_wiki_guide_200px.webp',
+
+  // ── Ammos (Fandom wiki) ───────────────────────────────────────
+  'arrow':                                      '/images/ammos/arrow.webp',
+  'fire arrow':                                 '/images/ammos/fire_arrow.webp',
+  'serpent arrow':                              '/images/ammos/serpent_arrow.webp',
+  "st. trina's arrow":                          '/images/ammos/st_trinas_arrow.webp',
+  'shattershard arrow (fletched)':              '/images/ammos/shattershard_arrow_fletched.webp',
+  'bone arrow':                                 '/images/ammos/bone_arrow.webp',
+  'great arrow':                                '/images/ammos/great_arrow.webp',
+  'bolt':                                       '/images/ammos/bolt.webp',
+  "perfumer's bolt":                            '/images/ammos/perfumers_bolt.webp',
+  'black-key bolt':                             '/images/ammos/black_key_bolt.webp',
+  'burred bolt':                                '/images/ammos/burred_bolt.webp',
+  'meteor bolt':                                '/images/ammos/meteor_bolt.webp',
+  "lordsworn's bolt":                           '/images/ammos/lordsworns_bolt.webp',
+  'ballista bolt':                              '/images/ammos/ballista_bolt.webp',
+
+  // ── Key Items (Fandom wiki) ───────────────────────────────────
+  "rya's necklace":                             '/images/keyitems/ryas_necklace.webp',
+  'volcano manor invitation':                   '/images/keyitems/letter_generic.webp',
+  "godrick's great rune":                       '/images/keyitems/godricks_great_rune.webp',
+  "lord of blood's favor":                      '/images/keyitems/lord_of_bloods_favor.webp',
+  'knifeprint clue':                            '/images/keyitems/black_knifeprint.webp',
+  'meeting place map':                          '/images/keyitems/meeting_place_map.webp',
+  '"homing instinct" painting':                 '/images/keyitems/painting_homing_instinct.webp',
+  '"resurrection" painting':                    '/images/keyitems/painting_resurrection.webp',
+  '"prophecy" painting':                        '/images/keyitems/painting_prophecy.webp',
+  'godskin prayerbook':                         '/images/keyitems/godskin_prayerbook.webp',
+  "thops's bell bearing":                       '/images/keyitems/bell_bearing_sorcerer.webp',
+  "smithing-stone miner's bell bearing":        '/images/keyitems/bell_bearing_1.webp',
+
+  // Maps
+  'map: limgrave, west':                        '/images/keyitems/map_limgrave_west.webp',
+  'map: weeping peninsula':                     '/images/keyitems/map_weeping_peninsula.webp',
+  'map: limgrave, east':                        '/images/keyitems/map_limgrave_east.webp',
+  'map: liurnia, east':                         '/images/keyitems/map_liurnia_east.webp',
+  'map: liurnia, north':                        '/images/keyitems/map_liurnia_north.webp',
+  'map: liurnia, west':                         '/images/keyitems/map_liurnia_west.webp',
+  'map: siofra river':                          '/images/keyitems/map_siofra_river.webp',
+
+  // Notes (generic icon)
+  'note: flask of wondrous physick':            '/images/keyitems/note_generic.webp',
+  'note: stonedigger trolls':                   '/images/keyitems/note_generic.webp',
+  'note: flame chariots':                       '/images/keyitems/note_generic.webp',
+  'note: land squirts':                         '/images/keyitems/note_generic.webp',
+  'note: waypoint ruins':                       '/images/keyitems/note_generic.webp',
+  'note: the lord of frenzied flame':           '/images/keyitems/note_generic.webp',
+
+  // ── Cookbooks (Fandom wiki — shared per type) ────────────────
+  "nomadic warrior's cookbook":                  '/images/cookbooks/nomadic_warriors_cookbook.webp',
+  "glintstone craftsman's cookbook":             '/images/cookbooks/glintstone_craftsmans_cookbook.webp',
+  "missionary's cookbook":                       '/images/cookbooks/missionarys_cookbook.webp',
+
+  // ── Multiplayer (Fandom wiki) ─────────────────────────────────
+  'phantom bloody finger':                      '/images/multiplayer/phantom_bloody_finger.webp',
 };
 
+/**
+ * Busca imagen fallback para un ítem por nombre.
+ * Normaliza: lowercase, colapsa whitespace, strip [N] sufijos.
+ */
 function getFallbackImage(name: string): string {
-  return FALLBACK_IMAGES[name.toLowerCase().replace(/\s+/g, ' ').trim()] ?? '';
+  const normalized = name.toLowerCase().replace(/\s+/g, ' ').trim();
+  // Intento exacto
+  if (FALLBACK_IMAGES[normalized]) return FALLBACK_IMAGES[normalized];
+  // Strip [N] suffix (cookbooks, bell bearings)
+  const withoutBracket = normalized.replace(/ \[\d+\]$/, '');
+  if (FALLBACK_IMAGES[withoutBracket]) return FALLBACK_IMAGES[withoutBracket];
+  return '';
 }
 
 // ── Lookup de nombres de ítems por ID del juego (EquipParamGoods/Weapon) ─────
@@ -581,6 +647,51 @@ function isEmptyHandle(handle: number): boolean {
 }
 
 /**
+ * Busca la ceniza de guerra (gem) equipada en un arma.
+ *
+ * Estructura de ga_items: cada entrada de arma tiene un gem_gaitem_handle en offset +0x14
+ * desde el inicio de la entrada. Este handle referencia la ceniza equipada.
+ *
+ * Flujo: weapon_handle → buscar en ga_items → leer +0x14 → gem_gaitem_handle
+ *        → buscar ESE handle en ga_items → gem_item_id → gemIds.json → ashes.json → skill
+ */
+function findGemSkillForWeapon(
+  buf: Buffer,
+  weaponHandle: number,
+  searchLimit: number,
+): string | null {
+  const GA_ITEMS_START = 0x30;
+  const limit = Math.min(searchLimit, buf.length) - 0x20;
+
+  // Find the weapon handle in ga_items to get its entry offset
+  for (let off = GA_ITEMS_START; off <= limit; off++) {
+    if (buf.readUInt32LE(off) !== weaponHandle) continue;
+
+    // Found the weapon entry. The gem gaitem_handle is at +0x14 from entry start.
+    const gemHandle = buf.readUInt32LE(off + 0x14);
+    if (gemHandle === 0 || gemHandle === 0xFFFFFFFF) return null;
+
+    // Gem handles have high byte 0xC0
+    if (((gemHandle >>> 24) & 0xFF) !== 0xC0) return null;
+
+    // Look up the gem handle in ga_items to get the gem item_id
+    const gemItemId = findGaItemId(buf, gemHandle, searchLimit);
+    if (gemItemId === undefined) return null;
+
+    // gemItemId is an EquipParamGem ID — look up in gemIds.json
+    const gemName = gemIdName(gemItemId);
+    if (!gemName) return null;
+
+    // Look up in ashes.json for the skill name
+    const store = ItemStore.getInstance();
+    const ashData = store.getAshByName(gemName);
+    return ashData?.skill ?? gemName.replace(/^Ash of War:\s*/i, '');
+  }
+
+  return null;
+}
+
+/**
  * Resuelve un gaitem_handle de arma (high byte 0x80):
  *   1. Busca el handle en la tabla ga_items del slot para obtener el item_id
  *   2. item_id codifica: base_id (con infusión) = Math.floor(id/100)*100, upgrade = id%100
@@ -619,16 +730,24 @@ function resolveWeaponHandle(
     ?? store.getWeaponByBaseId(baseId)
     ?? store.getWeaponByBaseId(baseWeaponId);
 
+  // Check if this is actually a shield (not in weapons.json)
+  const shieldData = !weaponData ? store.getShieldByName(baseName ?? '') : undefined;
+
+  // Try to resolve the Ash of War skill from the gem gaitem_handle
+  const skillName = findGemSkillForWeapon(buf, handle, searchLimit);
+
   return {
     rawId: handle,
     baseId,
     name,
     upgradeLevel,
     image,
-    infusion: decodeInfusion(baseId),
-    damage:   weaponData?.damage,
-    scaling:  weaponData?.scaling,
-    weight:   weaponData?.weight,
+    infusion:  decodeInfusion(baseId),
+    damage:    weaponData?.damage,
+    scaling:   weaponData?.scaling,
+    weight:    weaponData?.weight ?? shieldData?.weight,
+    stability: shieldData?.stability,
+    skill:     skillName ?? undefined,
   };
 }
 
@@ -660,8 +779,13 @@ function resolveArmorHandle(
     baseId,
     name,
     image,
-    defense: armorData?.defense,
-    weight:  armorData?.weight,
+    defense:    armorData?.defense,
+    weight:     armorData?.weight,
+    poise:      armorData?.poise,
+    immunity:   armorData?.immunity,
+    robustness: armorData?.robustness,
+    focus:      armorData?.focus,
+    vitality:   armorData?.vitality,
   };
 }
 
@@ -945,7 +1069,7 @@ function readInventory(buf: Buffer, _level?: number, quantityMap?: Map<number, n
         if (item.baseId >= AMMO_BASE_ID_MIN) {
           const name = weaponIdName(item.baseId);
           if (!name) { other.push(item); break; }
-          ammos.push({ ...item, name, image: '' });
+          ammos.push({ ...item, name, image: getFallbackImage(name) });
           break;
         }
         // El inventario almacena el ID base directamente (sin nivel de mejora).

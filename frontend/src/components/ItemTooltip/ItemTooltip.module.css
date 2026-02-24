@@ -48,6 +48,35 @@
   flex-shrink: 0;
 }
 
+/* ── Skill line (debajo del nombre) ────────────────────── */
+.skillLine {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.4rem;
+}
+
+/* ── Stat row (poise, resistances, guard boost) ────────── */
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.18rem;
+}
+
+.statLabel {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+.statValue {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
 .divider {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--border-gold) 30%, var(--border-gold) 70%, transparent);

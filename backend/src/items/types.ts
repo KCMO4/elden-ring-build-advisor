@@ -78,6 +78,10 @@ export interface Armor {
   weight: number;
   /** Poise (resistencia a interrupciones). 0 si no disponible. */
   poise: number;
+  immunity?:   number;
+  robustness?: number;
+  focus?:      number;
+  vitality?:   number;
   defense: Defense;
   image?: string;
 }
