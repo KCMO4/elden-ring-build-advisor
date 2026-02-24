@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import html2canvas from 'html2canvas';
 import type { CharacterData, EquippedWeapon } from '../../types';
 import StatsPanel from '../StatsPanel/StatsPanel';
@@ -6,6 +6,7 @@ import DerivedStatsPanel from '../DerivedStatsPanel/DerivedStatsPanel';
 import EquipmentGrid from '../EquipmentGrid/EquipmentGrid';
 import InventoryPanel from '../InventoryPanel/InventoryPanel';
 import ItemTooltip from '../ItemTooltip/ItemTooltip';
+import { useImagePreloader } from '../../hooks/useImagePreloader';
 import styles from './BuildPage.module.css';
 
 // TODO: Advisor panel — planned tabs:
@@ -22,6 +23,30 @@ export default function BuildPage({ character, onBack }: Props) {
   const [tooltipRect, setTooltipRect] = useState<DOMRect | null>(null);
   const [exporting, setExporting] = useState(false);
   const captureRef = useRef<HTMLDivElement>(null);
+
+  // Collect all image URLs from equipped + inventory for preloading
+  const allImageUrls = useMemo(() => {
+    const urls: string[] = [];
+    const eq = character.equipped;
+    // Equipped items
+    for (const w of [...eq.rightHand, ...eq.leftHand]) if (w.image) urls.push(w.image);
+    if (eq.head.image) urls.push(eq.head.image);
+    if (eq.chest.image) urls.push(eq.chest.image);
+    if (eq.hands.image) urls.push(eq.hands.image);
+    if (eq.legs.image) urls.push(eq.legs.image);
+    for (const t of eq.talismans) if (t.image) urls.push(t.image);
+    for (const q of eq.quickItems) if (q.image) urls.push(q.image);
+    for (const p of eq.pouch) if (p.image) urls.push(p.image);
+    if (eq.greatRune?.image) urls.push(eq.greatRune.image);
+    // Inventory items (all 14 categories)
+    const inv = character.inventory;
+    for (const cat of Object.values(inv)) {
+      for (const item of cat) if (item.image) urls.push(item.image);
+    }
+    return urls;
+  }, [character]);
+
+  const preloadProgress = useImagePreloader(allImageUrls);
 
   const handleItemHover = (item: EquippedWeapon | null, rect: DOMRect | null) => {
     setHoveredItem(item);
@@ -94,6 +119,17 @@ export default function BuildPage({ character, onBack }: Props) {
 
         <section className={styles.content}>
           <EquipmentGrid equipped={character.equipped} onItemHover={handleItemHover} />
+          {!preloadProgress.done && (
+            <div className={styles.preloadBar}>
+              <div
+                className={styles.preloadFill}
+                style={{ width: `${(preloadProgress.loaded / preloadProgress.total) * 100}%` }}
+              />
+              <span className={styles.preloadLabel}>
+                Loading images... {preloadProgress.loaded}/{preloadProgress.total}
+              </span>
+            </div>
+          )}
           <InventoryPanel inventory={character.inventory} />
         </section>
       </div>

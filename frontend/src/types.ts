@@ -76,6 +76,8 @@ export interface ResolvedInventoryItem {
   baseId: number;
   name: string;
   image?: string;
+  /** Nivel de mejora del arma (+0 a +25). undefined si no aplica. */
+  upgradeLevel?: number;
   /** Tipo de ítem (weapon type, armor type, spell type) */
   itemType?: string;
   /** Daño base — para armas */

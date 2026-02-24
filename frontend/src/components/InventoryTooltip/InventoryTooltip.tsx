@@ -233,6 +233,11 @@ export default function InventoryTooltip({ item, triggerRect }: Props) {
   // Nombre limpio de prefijo "Ash of War: "
   const displayName = item.name.replace(/^Ash of War:\s*/i, '');
 
+  // Parsear upgrade level del nombre
+  const levelMatch = displayName.match(/ \+(\d+)$/);
+  const upgradeLevel = levelMatch ? parseInt(levelMatch[1], 10) : null;
+  const baseName = upgradeLevel !== null ? displayName.replace(/ \+\d+$/, '') : displayName;
+
   // Subtítulo de tipo
   const subtitle = item.itemType
     ? String(item.itemType).charAt(0).toUpperCase() + String(item.itemType).slice(1)
@@ -242,7 +247,10 @@ export default function InventoryTooltip({ item, triggerRect }: Props) {
     <div className={styles.tooltip} style={{ left: pos.x, top: pos.y }}>
       {/* ── Nombre ── */}
       <div className={styles.header}>
-        <span className={styles.name}>{displayName}</span>
+        <span className={styles.name}>{baseName}</span>
+        {upgradeLevel !== null && (
+          <span className={styles.upgradeLevel}>+{upgradeLevel}</span>
+        )}
       </div>
 
       {subtitle && (

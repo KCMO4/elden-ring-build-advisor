@@ -18,6 +18,17 @@ function isQuickSlotEmpty(item: QuickSlotItem): boolean {
   return item.rawId === 0xFFFFFFFF || item.rawId === 0 || !item.name;
 }
 
+function quickSlotToEquipped(item: QuickSlotItem): EquippedWeapon {
+  const levelMatch = item.name?.match(/ \+(\d+)$/);
+  return {
+    rawId: item.rawId,
+    baseId: item.baseId,
+    name: item.name,
+    image: item.image,
+    upgradeLevel: levelMatch ? parseInt(levelMatch[1], 10) : undefined,
+  };
+}
+
 export default function EquipmentGrid({ equipped, onItemHover }: Props) {
   const leftHand  = compactSlots(equipped.leftHand);
   const rightHand = compactSlots(equipped.rightHand);
@@ -32,10 +43,12 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
         <div className={styles.section}>
           <div className={styles.sectionTitle}>Great Rune</div>
           <div className={styles.greatRuneRow}>
-            <div className={styles.greatRuneSlot}>
-              <span className={styles.greatRuneIcon}>ᛟ</span>
-              <span className={styles.greatRuneName}>{equipped.greatRune.name}</span>
-            </div>
+            <ItemSlot
+              item={quickSlotToEquipped(equipped.greatRune)}
+              category="great-rune"
+              animIndex={14}
+              onHover={onItemHover}
+            />
           </div>
         </div>
       )}
@@ -111,10 +124,14 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
           <div className={styles.sectionTitle}>Quick Items</div>
           <div className={styles.quickItemsRow}>
             {filledQuickItems.map((item, i) => (
-              <div key={i} className={styles.quickSlot} title={item.name ?? ''}>
-                <span className={styles.quickSlotIcon}>◆</span>
-                <span className={styles.quickSlotName}>{item.name}</span>
-              </div>
+              <ItemSlot
+                key={i}
+                item={quickSlotToEquipped(item)}
+                category="quick-item"
+                size="small"
+                animIndex={15 + i}
+                onHover={onItemHover}
+              />
             ))}
           </div>
         </div>
@@ -126,10 +143,14 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
           <div className={styles.sectionTitle}>Pouch</div>
           <div className={styles.quickItemsRow}>
             {filledPouch.map((item, i) => (
-              <div key={i} className={styles.quickSlot} title={item.name ?? ''}>
-                <span className={styles.quickSlotIcon}>◆</span>
-                <span className={styles.quickSlotName}>{item.name}</span>
-              </div>
+              <ItemSlot
+                key={i}
+                item={quickSlotToEquipped(item)}
+                category="pouch"
+                size="small"
+                animIndex={25 + i}
+                onHover={onItemHover}
+              />
             ))}
           </div>
         </div>

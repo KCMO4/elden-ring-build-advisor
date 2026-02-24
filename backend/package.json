@@ -18,13 +18,18 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testMatch": ["**/__tests__/**/*.test.ts"]
+    "testMatch": [
+      "**/__tests__/**/*.test.ts"
+    ]
   },
   "dependencies": {
+    "@types/compression": "^1.8.1",
+    "compression": "^1.8.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "multer": "^2.0.0"
+    "multer": "^2.0.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

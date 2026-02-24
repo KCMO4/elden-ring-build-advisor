@@ -132,6 +132,20 @@
   background: var(--bg-slot);
   cursor: default;
   transition: border-color 0.15s;
+  position: relative;
+}
+
+.upgradeBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.82);
+  color: var(--gold);
+  font-size: 0.55rem;
+  padding: 1px 3px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  z-index: 1;
 }
 
 .gridItem:hover {

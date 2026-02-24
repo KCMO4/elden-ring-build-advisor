@@ -1,3 +1,8 @@
+/** Normaliza nombre: lowercase + colapsar whitespace */
+function norm(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
 /**
  * ItemStore — base de datos de ítems de Elden Ring en memoria.
  *
@@ -51,9 +56,9 @@ export class ItemStore {
     this.spirits     = loadJson<Spirit>('spirits.json');
     this.consumables = loadJson<Consumable>('consumables.json');
 
-    this.weaponsByName   = new Map(this.weapons.map(w => [w.name.toLowerCase(), w]));
-    this.armorsByName    = new Map(this.armors.map(a => [a.name.toLowerCase(), a]));
-    this.talismansByName = new Map(this.talismans.map(t => [t.name.toLowerCase(), t]));
+    this.weaponsByName   = new Map(this.weapons.map(w => [norm(w.name), w]));
+    this.armorsByName    = new Map(this.armors.map(a => [norm(a.name), a]));
+    this.talismansByName = new Map(this.talismans.map(t => [norm(t.name), t]));
 
     console.log(
       `[ItemStore] Cargados: ${this.weapons.length} armas, ` +
@@ -100,7 +105,7 @@ export class ItemStore {
   }
 
   getWeaponByName(name: string): Weapon | undefined {
-    return this.weaponsByName.get(name.toLowerCase());
+    return this.weaponsByName.get(norm(name));
   }
 
   // ── Armaduras ───────────────────────────────────────────────
@@ -118,7 +123,7 @@ export class ItemStore {
   }
 
   getArmorByName(name: string): Armor | undefined {
-    return this.armorsByName.get(name.toLowerCase());
+    return this.armorsByName.get(norm(name));
   }
 
   // ── Talismanes ──────────────────────────────────────────────
@@ -136,7 +141,7 @@ export class ItemStore {
   }
 
   getTalismanByName(name: string): Talisman | undefined {
-    return this.talismansByName.get(name.toLowerCase());
+    return this.talismansByName.get(norm(name));
   }
 
   // ── Hechizos ────────────────────────────────────────────────
@@ -176,12 +181,12 @@ export class ItemStore {
   }
 
   getShieldByName(name: string): Shield | undefined {
-    return this.shields.find(s => s.name.toLowerCase() === name.toLowerCase());
+    return this.shields.find(s => norm(s.name) === norm(name));
   }
 
   getAshByName(name: string): Ash | undefined {
-    return this.ashes.find(a => a.name.toLowerCase() === name.toLowerCase())
-      ?? this.ashes.find(a => a.name.toLowerCase().includes(name.toLowerCase().replace(/^ash of war:\s*/i, '')));
+    return this.ashes.find(a => norm(a.name) === norm(name))
+      ?? this.ashes.find(a => norm(a.name).includes(norm(name).replace(/^ash of war:\s*/i, '')));
   }
 
   // ── Espíritus ────────────────────────────────────────────────
@@ -191,7 +196,7 @@ export class ItemStore {
   }
 
   getSpiritByName(name: string): Spirit | undefined {
-    return this.spirits.find(s => s.name.toLowerCase() === name.toLowerCase());
+    return this.spirits.find(s => norm(s.name) === norm(name));
   }
 
   // ── Consumibles ──────────────────────────────────────────────
@@ -201,13 +206,13 @@ export class ItemStore {
   }
 
   getConsumableByName(name: string): Consumable | undefined {
-    return this.consumables.find(c => c.name.toLowerCase() === name.toLowerCase());
+    return this.consumables.find(c => norm(c.name) === norm(name));
   }
 
   // ── Hechizos por nombre ──────────────────────────────────────
 
   getSpellByName(name: string): Spell | undefined {
-    return this.spells.find(s => s.name.toLowerCase() === name.toLowerCase());
+    return this.spells.find(s => norm(s.name) === norm(name));
   }
 
   /** Stats de carga para debug */

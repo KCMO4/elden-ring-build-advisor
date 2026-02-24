@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
+import compression from 'compression';
 import dotenv from 'dotenv';
 import multer from 'multer';
 import path from 'path';
@@ -20,7 +21,12 @@ ItemStore.getInstance();
 
 // ── Middleware ──────────────────────────────────────────────────────────────
 app.use(cors());
+app.use(compression());
 app.use(express.json());
+app.use('/images', express.static(path.join(__dirname, 'data', 'images'), {
+  maxAge: '1y',
+  immutable: true,
+}));
 
 // ── Multer: acepta solo .sl2 en memoria (máx. 50 MB) ──────────────────────
 const upload = multer({

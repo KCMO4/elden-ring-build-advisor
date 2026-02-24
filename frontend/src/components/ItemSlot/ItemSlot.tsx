@@ -8,12 +8,16 @@ export type ItemCategory =
   | 'armor-chest'
   | 'armor-hands'
   | 'armor-legs'
-  | 'talisman';
+  | 'talisman'
+  | 'quick-item'
+  | 'pouch'
+  | 'great-rune';
 
 interface Props {
   item?: EquippedWeapon | null;
   label?: string;
   category?: ItemCategory;
+  size?: 'normal' | 'small';
   animIndex?: number;
   onHover?: (item: EquippedWeapon | null, rect: DOMRect | null) => void;
 }
@@ -64,6 +68,27 @@ function PlaceholderSvg({ category }: { category: ItemCategory }) {
           <path d="M12 2L4 9l8 13 8-13L12 2zm0 2.8L17.5 9 12 18.2 6.5 9 12 4.8zM9 9.5L12 15l3-5.5H9z"/>
         </svg>
       );
+    case 'quick-item':
+      return (
+        <svg viewBox="0 0 24 24" className={styles.svgPlaceholder} fill="currentColor">
+          {/* Flask / frasco */}
+          <path d="M9 2v2H8v2l-3 8v4c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4l-3-8V4h-1V2H9zm2 2h2v2h-2V4zM8.3 14L10 9h4l1.7 5H8.3zM7 16h10v2H7v-2z"/>
+        </svg>
+      );
+    case 'pouch':
+      return (
+        <svg viewBox="0 0 24 24" className={styles.svgPlaceholder} fill="currentColor">
+          {/* Bolsa / bag */}
+          <path d="M9 4c-1.1 0-2 .9-2 2H5v12c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h-2c0-1.1-.9-2-2-2H9zm0 2h6v1H9V6zM7 8h10v10H7V8zm3 2v2h4v-2h-4z"/>
+        </svg>
+      );
+    case 'great-rune':
+      return (
+        <svg viewBox="0 0 24 24" className={styles.svgPlaceholder} fill="currentColor">
+          {/* Runa ᛟ estilizada */}
+          <path d="M12 2L7 7v4l-3 3v2l3-3v5l5 5 5-5v-5l3 3v-2l-3-3V7l-5-5zm0 3l3 3v3l-3 3-3-3V8l3-3zm0 8l2 2v2l-2 2-2-2v-2l2-2z"/>
+        </svg>
+      );
     default:
       return <span className={styles.placeholder}>—</span>;
   }
@@ -92,6 +117,7 @@ export default function ItemSlot({
   item,
   label,
   category = 'weapon',
+  size = 'normal',
   animIndex = 0,
   onHover,
 }: Props) {
@@ -116,10 +142,10 @@ export default function ItemSlot({
   };
 
   return (
-    <div className={styles.slot} style={{ animationDelay: `${animIndex * 45}ms` }}>
+    <div className={`${styles.slot} ${size === 'small' ? styles.slotSmall : ''}`} style={{ animationDelay: `${animIndex * 45}ms` }}>
       <div
         ref={frameRef}
-        className={`${styles.frame} ${empty ? styles.frameEmpty : ''}`}
+        className={`${styles.frame} ${empty ? styles.frameEmpty : ''} ${size === 'small' ? styles.frameSmall : ''}`}
         title={tooltip}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

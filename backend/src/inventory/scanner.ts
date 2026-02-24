@@ -39,6 +39,11 @@ import type {
   ItemCategory,
 } from './types';
 
+/** Normaliza nombre: lowercase + colapsar whitespace */
+function norm(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
 // ── Carga de JSON estática (evita caché de require()) ────────────────────────
 function loadJsonFile<T>(relativePath: string): T | null {
   try {
@@ -53,10 +58,14 @@ function loadJsonFile<T>(relativePath: string): T | null {
 // Se carga una sola vez y se usa para distinguir hechizos de consumibles.
 // Los hechizos están en nibble 0x4 con IDs mezclados con consumibles (rango ~4000-8000).
 let _spellNameSet: Set<string> | null = null;
+// Hechizos que existen en el juego pero no están en fanapis spells.json
+const EXTRA_SPELLS = ['flame, cleanse me'];
+
 function getSpellNameSet(): Set<string> {
   if (!_spellNameSet) {
     const spells = loadJsonFile<{ name: string }[]>('spells.json');
-    _spellNameSet = spells ? new Set(spells.map(s => s.name.toLowerCase())) : new Set();
+    _spellNameSet = spells ? new Set(spells.map(s => norm(s.name))) : new Set();
+    for (const s of EXTRA_SPELLS) _spellNameSet.add(s);
   }
   return _spellNameSet;
 }
@@ -70,7 +79,7 @@ function getSpellNameSet(): Set<string> {
 //
 function classifyConsumable(baseId: number, name: string): ItemCategory {
   // ── Hechizos: verificar por nombre contra el set de hechizos conocidos ──
-  if (getSpellNameSet().has(name.toLowerCase())) return 'spell';
+  if (getSpellNameSet().has(norm(name))) return 'spell';
 
   // ── Spirit Ashes (EquipParamGoods, range 200000-299000) ──
   if (baseId >= 200000 && baseId < 300000) return 'spirit';
@@ -127,6 +136,19 @@ function decodeInfusion(baseId: number): string | undefined {
 // ── Flechas y ballestas: nibble 0x0 (weapon), base ID >= 50_000_000 ──
 const AMMO_BASE_ID_MIN = 50_000_000;
 import { ItemStore } from '../items/store';
+
+// ── Fallback images para ítems que no están en fanapis ──────────────────────
+// Imágenes servidas localmente desde /images/ (descargadas por sync-data, WebP optimizado)
+const FALLBACK_IMAGES: Record<string, string> = {
+  'champion gaiters':         '/images/armors/champion_gaiters_elden_ring_wiki_guide_200px.webp',
+  'karolos glintstone crown': '/images/armors/karolos_glintstone_crown_elden_ring_wiki_guide_200px.webp',
+  'roar medallion':           '/images/talismans/roar_medallion_talisman_elden_ring_wiki_guide_200px.webp',
+  'flame, cleanse me':        '/images/spells/flame_cleanse_me_incantation_elden_ring_wiki_guide_200px.webp',
+};
+
+function getFallbackImage(name: string): string {
+  return FALLBACK_IMAGES[name.toLowerCase().replace(/\s+/g, ' ').trim()] ?? '';
+}
 
 // ── Lookup de nombres de ítems por ID del juego (EquipParamGoods/Weapon) ─────
 // gameIds.json mapea {id: name} — Fuente: Deskete/EldenRingResources
@@ -404,15 +426,18 @@ function resolveInventorySlotItem(rawId: number): QuickSlotItem {
     }
     case 0x1: { // Armor
       const name = armorIdName(baseId);
-      return { rawId, baseId, name };
+      const image = name ? resolveArmorImage(name) : '';
+      return { rawId, baseId, name, image };
     }
     case 0x2: { // Talisman
       const name = talismanIdName(baseId);
-      return { rawId, baseId, name };
+      const image = name ? resolveTalismanImage(name) : '';
+      return { rawId, baseId, name, image };
     }
     case 0x4: { // Goods (consumables, flasks, spells, spirits, etc.)
       const name = getGameIds()[String(baseId)] ?? null;
-      return { rawId, baseId, name };
+      const image = name ? resolveGoodsImage(baseId, name) : '';
+      return { rawId, baseId, name, image };
     }
     default: {
       const name = getGameIds()[String(baseId)] ?? null;
@@ -456,6 +481,39 @@ function resolveWeaponImage(baseId: number): string {
   }
 
   return '';
+}
+
+function resolveArmorImage(name: string): string {
+  const store = ItemStore.getInstance();
+  return store.getArmorByName(name)?.image ?? getFallbackImage(name);
+}
+
+function resolveTalismanImage(name: string): string {
+  const store = ItemStore.getInstance();
+  return store.getTalismanByName(name)?.image ?? getFallbackImage(name);
+}
+
+/**
+ * Resuelve imagen para goods (consumables, spirits, spells, etc.).
+ * Busca en varias colecciones del store por nombre.
+ * Quita sufijo de nivel (+N) para matchear contra el store.
+ */
+function resolveGoodsImage(baseId: number, name: string): string {
+  const store = ItemStore.getInstance();
+  const baseName = name.replace(/ \+\d+$/, '');
+
+  // Spirits (200000-299000)
+  if (baseId >= 200000 && baseId < 300000) {
+    return store.getSpiritByName(baseName)?.image ?? getFallbackImage(baseName);
+  }
+
+  // Spells
+  if (getSpellNameSet().has(norm(baseName))) {
+    return store.getSpellByName(baseName)?.image ?? getFallbackImage(baseName);
+  }
+
+  // Consumables, flasks, key items, multiplayer items, etc.
+  return store.getConsumableByName(baseName)?.image ?? getFallbackImage(baseName);
 }
 
 // ── Decodificación de gaitem_handles ────────────────────────
@@ -615,11 +673,50 @@ function findGaItemId(buf: Buffer, handle: number, searchLimit: number): number 
   return undefined;
 }
 
+// ── Upgrade levels desde ga_items ────────────────────────────
+
+/**
+ * Escanea la sección ga_items buscando todos los handles de arma (0x80xxxxxx).
+ * Para cada uno lee el item_id y extrae upgradeLevel = itemId % 100.
+ * Retorna un Map<baseWeaponId, upgradeLevel[]> para cruzar con el inventario.
+ */
+function scanWeaponUpgradeLevels(buf: Buffer, level?: number): Map<number, number[]> {
+  const map = new Map<number, number[]>();
+  if (level === undefined) return map;
+
+  const statsResult = findStats(buf, level);
+  if (!statsResult) return map;
+
+  const vigorOff = statsResult.foundAtOffset;
+  const searchLimit = vigorOff - 0x34;
+  const GA_ITEMS_START = 0x30;
+  const limit = Math.min(searchLimit, buf.length) - 8;
+
+  for (let off = GA_ITEMS_START; off <= limit; off++) {
+    const val = buf.readUInt32LE(off);
+    if (((val >>> 24) & 0xFF) === 0x80) {
+      const itemId = buf.readUInt32LE(off + 4);
+      if (itemId > 0 && itemId < 0x10000000) {
+        const baseId = Math.floor(itemId / 100) * 100;
+        const upgradeLevel = itemId % 100;
+        if (upgradeLevel > 0 && upgradeLevel <= 25) {
+          const list = map.get(baseId) ?? [];
+          list.push(upgradeLevel);
+          map.set(baseId, list);
+        }
+      }
+    }
+  }
+
+  return map;
+}
+
 // ── Lectura del inventario completo ─────────────────────────
 
 function readInventory(buf: Buffer, _level?: number): Inventory {
   const rawItems = scanItemArray(buf);
   const store = ItemStore.getInstance();
+  const weaponUpgrades = scanWeaponUpgradeLevels(buf, _level);
 
   const weapons:      ResolvedInventoryItem[] = [];
   const ammos:        ResolvedInventoryItem[] = [];
@@ -648,9 +745,9 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
           break;
         }
         // El inventario almacena el ID base directamente (sin nivel de mejora).
-        // Los IDs de mejora están solo en la sección ga_items (ítems equipados).
-        const name = weaponIdName(item.baseId) ?? store.getWeaponByBaseId(item.baseId)?.name;
-        if (!name) { other.push(item); break; }
+        // Los upgrade levels se cruzan con la sección ga_items.
+        const baseName = weaponIdName(item.baseId) ?? store.getWeaponByBaseId(item.baseId)?.name;
+        if (!baseName) { other.push(item); break; }
         // Excluir entradas que son armaduras duplicadas (IDs 1M-3M en gameIds)
         // Solo IDs >= 3M son armas reales; menores son EquipParamProtector duplicados
         if (item.baseId > 0 && item.baseId < 3_000_000 && item.baseId >= 1_000_000) {
@@ -659,15 +756,20 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
         }
         // Filtrar placeholder "Unarmed" (baseId 110000) — no es un arma real
         if (item.baseId === 110000) { other.push(item); break; }
+        // Upgrade level desde ga_items (pop para manejar duplicados)
+        const upgrades = weaponUpgrades.get(item.baseId);
+        const upgradeLevel = upgrades?.shift();
+        const name = upgradeLevel ? `${baseName} +${upgradeLevel}` : baseName;
         const image = resolveWeaponImage(item.baseId);
         // Enriquecer con stats (weapon o shield según donde se encuentre)
         const baseWeaponId = Math.floor(item.baseId / 10000) * 10000;
-        const wData = store.getWeaponByName(name)
+        const wData = store.getWeaponByName(baseName)
           ?? store.getWeaponByBaseId(item.baseId)
           ?? store.getWeaponByBaseId(baseWeaponId);
-        const shData = !wData ? store.getShieldByName(name) : undefined;
+        const shData = !wData ? store.getShieldByName(baseName) : undefined;
         weapons.push({
           ...item, name, image,
+          upgradeLevel,
           itemType:  wData?.type ?? shData?.category,
           damage:    wData?.damage,
           scaling:   wData?.scaling,
@@ -683,7 +785,7 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
         if (!armorName) { other.push(item); break; }
         const a = store.getArmorByName(armorName);
         armors.push({
-          ...item, name: armorName, image: a?.image ?? '',
+          ...item, name: armorName, image: a?.image || getFallbackImage(armorName),
           itemType: a?.type,
           defense:  a?.defense,
           weight:   a?.weight,
@@ -696,7 +798,7 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
         const name = talismanIdName(item.baseId) ?? null;
         if (!name) { other.push(item); break; }
         const talData = store.getTalismanByName(name);
-        const image   = talData?.image ?? '';
+        const image   = talData?.image || getFallbackImage(name);
         const effect  = talData?.effect;
         talismans.push({ ...item, name, image, effect });
         break;
@@ -713,16 +815,16 @@ function readInventory(buf: Buffer, _level?: number): Inventory {
 
         if (subcat === 'spell') {
           const spData = store.getSpellByName(name);
-          consumableImage = spData?.image ?? '';
+          consumableImage = spData?.image || getFallbackImage(name);
           extra = { itemType: spData?.type };
         } else if (subcat === 'spirit') {
           const spData = store.getSpiritByName(name)
             ?? store.getSpiritByName(name + ' Ashes');
-          consumableImage = spData?.image ?? '';
+          consumableImage = spData?.image || getFallbackImage(name);
           extra = { fpCost: spData?.fpCost, hpCost: spData?.hpCost, effect: spData?.effect };
         } else {
           const cData = store.getConsumableByName(name);
-          consumableImage = cData?.image ?? '';
+          consumableImage = cData?.image || getFallbackImage(name);
           extra = { itemType: cData?.type, effect: cData?.effect };
         }
 

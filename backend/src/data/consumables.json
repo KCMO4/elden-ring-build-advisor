@@ -4,3233 +4,3233 @@
     "name": "Blue Cipher Ring",
     "type": "Reusable",
     "effect": "Enables the wearer to answer calls for rescue",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e47912l0i1z0lip3kamll88h.png"
+    "image": "/images/consumables/17f69e47912l0i1z0lip3kamll88h.webp"
   },
   {
     "id": "17f69cb5ad0l0i1z0lpxlgghg1a5nd",
     "name": "White Cipher Ring",
     "type": "Reusable",
     "effect": "When invaded, request the aid of a hunter.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cb5ad0l0i1z0lpxlgghg1a5nd.png"
+    "image": "/images/consumables/17f69cb5ad0l0i1z0lpxlgghg1a5nd.webp"
   },
   {
     "id": "17f69bc7c03l0i1z0m2oonn1paf7l9",
     "name": "Furlcalling Finger Remedy",
     "type": "Consumable",
     "effect": "Reveals co-op and hostile summoning signs",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bc7c03l0i1z0m2oonn1paf7l9.png"
+    "image": "/images/consumables/17f69bc7c03l0i1z0m2oonn1paf7l9.webp"
   },
   {
     "id": "17f69d424cel0i1z0mj267csnydppy",
     "name": "Tarnished's Furled Finger",
     "type": "Reusable",
     "effect": "Creates cooperative multiplayer summon sign.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d424cel0i1z0mj267csnydppy.png"
+    "image": "/images/consumables/17f69d424cel0i1z0mj267csnydppy.webp"
   },
   {
     "id": "17f698fa494l0i1z0mm3upwg29zx1p",
     "name": "Finger Severer",
     "type": "Consumable",
     "effect": "Sends another, or oneself, home.",
-    "image": "https://eldenring.fanapis.com/images/items/17f698fa494l0i1z0mm3upwg29zx1p.png"
+    "image": "/images/consumables/17f698fa494l0i1z0mm3upwg29zx1p.webp"
   },
   {
     "id": "17f696e0825l0i1z1b0yp9snq79rx9",
     "name": "Duelist's Furled Finger",
     "type": "Reusable",
     "effect": "Creates competitive multiplayer summon sign.",
-    "image": "https://eldenring.fanapis.com/images/items/17f696e0825l0i1z1b0yp9snq79rx9.png"
+    "image": "/images/consumables/17f696e0825l0i1z1b0yp9snq79rx9.webp"
   },
   {
     "id": "17f69cd0b30l0i1z1b1wxix8w3nd5m",
     "name": "Memory Of Grace",
     "type": "Reusable",
     "effect": "Lose all runes, return to last site of lost grace.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cd0b30l0i1z1b1wxix8w3nd5m.png"
+    "image": "/images/consumables/17f69cd0b30l0i1z1b1wxix8w3nd5m.webp"
   },
   {
     "id": "17f698b2c80l0i1z1bptckziolc5y7",
     "name": "Tarnished's Wizened Finger",
     "type": "Reusable",
     "effect": "Used to write messages.",
-    "image": "https://eldenring.fanapis.com/images/items/17f698b2c80l0i1z1bptckziolc5y7.png"
+    "image": "/images/consumables/17f698b2c80l0i1z1bptckziolc5y7.webp"
   },
   {
     "id": "17f69a78385l0i1z1czzifpit6ox3p",
     "name": "Taunter's Tongue",
     "type": "Reusable",
     "effect": "Lures in invanders.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a78385l0i1z1czzifpit6ox3p.png"
+    "image": "/images/consumables/17f69a78385l0i1z1czzifpit6ox3p.webp"
   },
   {
     "id": "17f697244e5l0i1z1detjfd6slms6p",
     "name": "Bloody Finger",
     "type": "Reusable",
     "effect": "Attempts invasion of other player's world.",
-    "image": "https://eldenring.fanapis.com/images/items/17f697244e5l0i1z1detjfd6slms6p.png"
+    "image": "/images/consumables/17f697244e5l0i1z1detjfd6slms6p.webp"
   },
   {
     "id": "17f69717335l0i1z1ugb9kk8smactr",
     "name": "Small Golden Effigy",
     "type": "Reusable",
     "effect": "Send co-operative sign to summoning pool",
-    "image": "https://eldenring.fanapis.com/images/items/17f69717335l0i1z1ugb9kk8smactr.png"
+    "image": "/images/consumables/17f69717335l0i1z1ugb9kk8smactr.webp"
   },
   {
     "id": "17f69aab07al0i1z1ujum0v02t4lr",
     "name": "Small Red Effigy",
     "type": "Reusable",
     "effect": "Sends competitive sign to summoning pool",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aab07al0i1z1ujum0v02t4lr.png"
+    "image": "/images/consumables/17f69aab07al0i1z1ujum0v02t4lr.webp"
   },
   {
     "id": "17f69ae7f2cl0i1z1vi2pn3lxnbuv1",
     "name": "Festering Bloody Finger",
     "type": "Consumable",
     "effect": "Attempts invasion of other player's world",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ae7f2cl0i1z1vi2pn3lxnbuv1.png"
+    "image": "/images/consumables/17f69ae7f2cl0i1z1vi2pn3lxnbuv1.webp"
   },
   {
     "id": "17f69ac860fl0i1z2dnysa6pbi4pu",
     "name": "Smithing Stone [3]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +9.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ac860fl0i1z2dnysa6pbi4pu.png"
+    "image": "/images/consumables/17f69ac860fl0i1z2dnysa6pbi4pu.webp"
   },
   {
     "id": "17f695e1877l0i1z2esul0ltnftrn",
     "name": "Smithing Stone [2]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +6.",
-    "image": "https://eldenring.fanapis.com/images/items/17f695e1877l0i1z2esul0ltnftrn.png"
+    "image": "/images/consumables/17f695e1877l0i1z2esul0ltnftrn.webp"
   },
   {
     "id": "17f69bee3a7l0i1z2fc6lkodwqn7x3",
     "name": "Smithing Stone [4]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +12.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bee3a7l0i1z2fc6lkodwqn7x3.png"
+    "image": "/images/consumables/17f69bee3a7l0i1z2fc6lkodwqn7x3.webp"
   },
   {
     "id": "17f695d4f2el0i1z2y303232bvbqcsm",
     "name": "Smithing Stone [5]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +15.",
-    "image": "https://eldenring.fanapis.com/images/items/17f695d4f2el0i1z2y303232bvbqcsm.png"
+    "image": "/images/consumables/17f695d4f2el0i1z2y303232bvbqcsm.webp"
   },
   {
     "id": "17f6973188al0i1z2yq2dinoi6bw1s",
     "name": "Smithing Stone [7]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +21.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6973188al0i1z2yq2dinoi6bw1s.png"
+    "image": "/images/consumables/17f6973188al0i1z2yq2dinoi6bw1s.webp"
   },
   {
     "id": "17f697b82e2l0i1z2zbvgg37zujx7h",
     "name": "Smithing Stone [6]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +18.",
-    "image": "https://eldenring.fanapis.com/images/items/17f697b82e2l0i1z2zbvgg37zujx7h.png"
+    "image": "/images/consumables/17f697b82e2l0i1z2zbvgg37zujx7h.webp"
   },
   {
     "id": "17f69ce5a34l0i1z3ghagihivxr1l8",
     "name": "Smithing Stone [8]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +24.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ce5a34l0i1z3ghagihivxr1l8.png"
+    "image": "/images/consumables/17f69ce5a34l0i1z3ghagihivxr1l8.webp"
   },
   {
     "id": "17f69575078l0i1z3hvssftszqfcdc",
     "name": "Ancient Dragon Smithing Stone",
     "type": "Misc",
     "effect": "Reinforce armamanets to +25",
-    "image": "https://eldenring.fanapis.com/images/items/17f69575078l0i1z3hvssftszqfcdc.png"
+    "image": "/images/consumables/17f69575078l0i1z3hvssftszqfcdc.webp"
   },
   {
     "id": "17f699e3818l0i1z3py7vre05m7hde",
     "name": "Somber Smithing Stone [1]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +1.",
-    "image": "https://eldenring.fanapis.com/images/items/17f699e3818l0i1z3py7vre05m7hde.png"
+    "image": "/images/consumables/17f699e3818l0i1z3py7vre05m7hde.webp"
   },
   {
     "id": "17f69557171l0i1z41hmz7jh3lkd3r",
     "name": "Somber Smithing Stone [2]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +2.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69557171l0i1z41hmz7jh3lkd3r.png"
+    "image": "/images/consumables/17f69557171l0i1z41hmz7jh3lkd3r.webp"
   },
   {
     "id": "17f698e70cfl0i1z46kcgxebtfpmk9",
     "name": "Somber Smithing Stone [4]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +4.",
-    "image": "https://eldenring.fanapis.com/images/items/17f698e70cfl0i1z46kcgxebtfpmk9.png"
+    "image": "/images/consumables/17f698e70cfl0i1z46kcgxebtfpmk9.webp"
   },
   {
     "id": "17f69955de5l0i1z49nehfqmj45gnf",
     "name": "Somber Smithing Stone [3]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +3.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69955de5l0i1z49nehfqmj45gnf.png"
+    "image": "/images/consumables/17f69955de5l0i1z49nehfqmj45gnf.webp"
   },
   {
     "id": "17f69d2531dl0i1z4jsm5titqsarvk",
     "name": "Somber Smithing Stone [5]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +5.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d2531dl0i1z4jsm5titqsarvk.png"
+    "image": "/images/consumables/17f69d2531dl0i1z4jsm5titqsarvk.webp"
   },
   {
     "id": "17f69a51074l0i1z4pallnm7f1pi2",
     "name": "Somber Smithing Stone [6]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +6.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a51074l0i1z4pallnm7f1pi2.png"
+    "image": "/images/consumables/17f69a51074l0i1z4pallnm7f1pi2.webp"
   },
   {
     "id": "17f69ae2e0el0i1z4s9cuuv3okbw3",
     "name": "Somber Smithing Stone [7]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +7.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ae2e0el0i1z4s9cuuv3okbw3.png"
+    "image": "/images/consumables/17f69ae2e0el0i1z4s9cuuv3okbw3.webp"
   },
   {
     "id": "17f69c9d615l0i1z5a6lrzcg89z4st",
     "name": "Somber Smithing Stone [9]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +9.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c9d615l0i1z5a6lrzcg89z4st.png"
+    "image": "/images/consumables/17f69c9d615l0i1z5a6lrzcg89z4st.webp"
   },
   {
     "id": "17f69e30537l0i1z5d38vjwm2mnuun",
     "name": "Somber Ancient Dragon Smithing Stone",
     "type": "Misc",
     "effect": "Reinforce special armaments to +10",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e30537l0i1z5d38vjwm2mnuun.png"
+    "image": "/images/consumables/17f69e30537l0i1z5d38vjwm2mnuun.webp"
   },
   {
     "id": "17f69bd53b9l0i1z5eu0n5wz5ntzp4",
     "name": "Recusant Finger",
     "type": "Consumable",
     "effect": "Attempts invasion of other player's world",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bd53b9l0i1z5eu0n5wz5ntzp4.png"
+    "image": "/images/consumables/17f69bd53b9l0i1z5eu0n5wz5ntzp4.webp"
   },
   {
     "id": "17f69c09b3fl0i1z5i8s4czdm29hd",
     "name": "Smithing Stone [1]",
     "type": "Misc",
     "effect": "Reinforce armaments up to +3.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c09b3fl0i1z5i8s4czdm29hd.png"
+    "image": "/images/consumables/17f69c09b3fl0i1z5i8s4czdm29hd.webp"
   },
   {
     "id": "17f6962abacl0i1z5t9om2a1tau3gk",
     "name": "Grave Glovewort [1]",
     "type": "Misc",
     "effect": "Strengthen ashes to +1.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6962abacl0i1z5t9om2a1tau3gk.png"
+    "image": "/images/consumables/17f6962abacl0i1z5t9om2a1tau3gk.webp"
   },
   {
     "id": "17f6968996al0i1z5x4u91mr8eawhi",
     "name": "Grave Glovewort [2]",
     "type": "Misc",
     "effect": "Strengthen ashes to +2.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6968996al0i1z5x4u91mr8eawhi.png"
+    "image": "/images/consumables/17f6968996al0i1z5x4u91mr8eawhi.webp"
   },
   {
     "id": "17f69d99dcal0i1z5xb44ygddyj8ph",
     "name": "Grave Glovewort [3]",
     "type": "Misc",
     "effect": "Strengthen ashes to +3",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d99dcal0i1z5xb44ygddyj8ph.png"
+    "image": "/images/consumables/17f69d99dcal0i1z5xb44ygddyj8ph.webp"
   },
   {
     "id": "17f69be8c68l0i1z60n8krxbcmu5lh",
     "name": "Grave Glovewort [4]",
     "type": "Misc",
     "effect": "Strengthens ashes to +4",
-    "image": "https://eldenring.fanapis.com/images/items/17f69be8c68l0i1z60n8krxbcmu5lh.png"
+    "image": "/images/consumables/17f69be8c68l0i1z60n8krxbcmu5lh.webp"
   },
   {
     "id": "17f6950a8a2l0i1z6dbq0oi9fi4kl",
     "name": "Grave Glovewort [5]",
     "type": "Misc",
     "effect": "Strengthens ashes to +5",
-    "image": "https://eldenring.fanapis.com/images/items/17f6950a8a2l0i1z6dbq0oi9fi4kl.png"
+    "image": "/images/consumables/17f6950a8a2l0i1z6dbq0oi9fi4kl.webp"
   },
   {
     "id": "17f6959b3eal0i1z6gieqkdipn6qdw",
     "name": "Grave Glovewort [7]",
     "type": "Misc",
     "effect": "Strengthens ashes to +7",
-    "image": "https://eldenring.fanapis.com/images/items/17f6959b3eal0i1z6gieqkdipn6qdw.png"
+    "image": "/images/consumables/17f6959b3eal0i1z6gieqkdipn6qdw.webp"
   },
   {
     "id": "17f69846a4fl0i1z6ghc5th9zqh3c",
     "name": "Grave Glovewort [6]",
     "type": "Misc",
     "effect": "Strengthens ashes to +6",
-    "image": "https://eldenring.fanapis.com/images/items/17f69846a4fl0i1z6ghc5th9zqh3c.png"
+    "image": "/images/consumables/17f69846a4fl0i1z6ghc5th9zqh3c.webp"
   },
   {
     "id": "17f695e071dl0i1z6jeqn98zpx0tw",
     "name": "Grave Glovewort [8]",
     "type": "Misc",
     "effect": "Strengthens ashes to +8",
-    "image": "https://eldenring.fanapis.com/images/items/17f695e071dl0i1z6jeqn98zpx0tw.png"
+    "image": "/images/consumables/17f695e071dl0i1z6jeqn98zpx0tw.webp"
   },
   {
     "id": "17f69550850l0i1z6ttayiwnk136e7",
     "name": "Grave Glovewort [9]",
     "type": "Misc",
     "effect": "Strengthens ashes to +9",
-    "image": "https://eldenring.fanapis.com/images/items/17f69550850l0i1z6ttayiwnk136e7.png"
+    "image": "/images/consumables/17f69550850l0i1z6ttayiwnk136e7.webp"
   },
   {
     "id": "17f6983e8a7l0i1z70f50kbxtxa1we",
     "name": "Ghost Glovewort [2]",
     "type": "Misc",
     "effect": "Strengthen renowned ashes to +2",
-    "image": "https://eldenring.fanapis.com/images/items/17f6983e8a7l0i1z70f50kbxtxa1we.png"
+    "image": "/images/consumables/17f6983e8a7l0i1z70f50kbxtxa1we.webp"
   },
   {
     "id": "17f69ab06d7l0i1z78pkil3bve557",
     "name": "Great Grave Glovewort",
     "type": "Misc",
     "effect": "Strengthens ashes to +10",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ab06d7l0i1z78pkil3bve557.png"
+    "image": "/images/consumables/17f69ab06d7l0i1z78pkil3bve557.webp"
   },
   {
     "id": "17f69d7e3b1l0i1z7a3m84mb5vo2mp",
     "name": "Ghost Glovewort [1]",
     "type": "Misc",
     "effect": "Strengthens renowned ashes to +1.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d7e3b1l0i1z7a3m84mb5vo2mp.png"
+    "image": "/images/consumables/17f69d7e3b1l0i1z7a3m84mb5vo2mp.webp"
   },
   {
     "id": "17f6989521fl0i1z7e7voj3cl6foma",
     "name": "Ghost Glovewort [3]",
     "type": "Misc",
     "effect": "Strengthen renowned ashes to +3",
-    "image": "https://eldenring.fanapis.com/images/items/17f6989521fl0i1z7e7voj3cl6foma.png"
+    "image": "/images/consumables/17f6989521fl0i1z7e7voj3cl6foma.webp"
   },
   {
     "id": "17f695bf162l0i1z7hktcp73asrcps",
     "name": "Ghost Glovewort [4]",
     "type": "Misc",
     "effect": "Strengthen renowned ashes to +4",
-    "image": "https://eldenring.fanapis.com/images/items/17f695bf162l0i1z7hktcp73asrcps.png"
+    "image": "/images/consumables/17f695bf162l0i1z7hktcp73asrcps.webp"
   },
   {
     "id": "17f69d3fc22l0i1z7svk9t9mb26sha",
     "name": "Ghost Glovewort [5]",
     "type": "Misc",
     "effect": "Strengthen renowned ashes to +5",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d3fc22l0i1z7svk9t9mb26sha.png"
+    "image": "/images/consumables/17f69d3fc22l0i1z7svk9t9mb26sha.webp"
   },
   {
     "id": "17f69baadd3l0i1z87ddphdbju5ve",
     "name": "Ghost Glovewort [7]",
     "type": "Misc",
     "effect": "Strengthens renowned ashes to +7",
-    "image": "https://eldenring.fanapis.com/images/items/17f69baadd3l0i1z87ddphdbju5ve.png"
+    "image": "/images/consumables/17f69baadd3l0i1z87ddphdbju5ve.webp"
   },
   {
     "id": "17f69900ffcl0i1z8d2nt7ic89ll99",
     "name": "Ghost Glovewort [8]",
     "type": "Misc",
     "effect": "Stengthened renowed ashes to +8",
-    "image": "https://eldenring.fanapis.com/images/items/17f69900ffcl0i1z8d2nt7ic89ll99.png"
+    "image": "/images/consumables/17f69900ffcl0i1z8d2nt7ic89ll99.webp"
   },
   {
     "id": "17f69ddcb7bl0i1z8k1ng5vrva9zl",
     "name": "Ghost Glovewort [6]",
     "type": "Misc",
     "effect": "Strengthens renowned ashes to +6",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ddcb7bl0i1z8k1ng5vrva9zl.png"
+    "image": "/images/consumables/17f69ddcb7bl0i1z8k1ng5vrva9zl.webp"
   },
   {
     "id": "17f69a7b6cel0i1z8mdm78yqop5r9s",
     "name": "Ghost Glovewort [9]",
     "type": "Misc",
     "effect": "Stengthened renowed ashes to +9",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a7b6cel0i1z8mdm78yqop5r9s.png"
+    "image": "/images/consumables/17f69a7b6cel0i1z8mdm78yqop5r9s.webp"
   },
   {
     "id": "17f69a3148al0i1z8zpm2kxo9k7tsb",
     "name": "Great Ghost Glovewort",
     "type": "Misc",
     "effect": "Strengthens renowned ashes to +10",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a3148al0i1z8zpm2kxo9k7tsb.png"
+    "image": "/images/consumables/17f69a3148al0i1z8zpm2kxo9k7tsb.webp"
   },
   {
     "id": "17f698d84c6l0i1z9j88aqgzk91xi",
     "name": "Armorer's Cookbook [2]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f698d84c6l0i1z9j88aqgzk91xi.png"
+    "image": "/images/consumables/17f698d84c6l0i1z9j88aqgzk91xi.webp"
   },
   {
     "id": "17f6973b0dfl0i1z9j8z53v119vieb",
     "name": "Armorer's Cookbook [3]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6973b0dfl0i1z9j8z53v119vieb.png"
+    "image": "/images/consumables/17f6973b0dfl0i1z9j8z53v119vieb.webp"
   },
   {
     "id": "17f69580265l0i1z9ldv7cl2ik9fj",
     "name": "Armorer's Cookbook [4]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69580265l0i1z9ldv7cl2ik9fj.png"
+    "image": "/images/consumables/17f69580265l0i1z9ldv7cl2ik9fj.webp"
   },
   {
     "id": "17f695b03bcl0i1z9pei7soclm9rrb",
     "name": "Armorer's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f695b03bcl0i1z9pei7soclm9rrb.png"
+    "image": "/images/consumables/17f695b03bcl0i1z9pei7soclm9rrb.webp"
   },
   {
     "id": "17f69d9a17el0i1za4u32e9vwk8fod",
     "name": "Armorer's Cookbook [5]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d9a17el0i1za4u32e9vwk8fod.png"
+    "image": "/images/consumables/17f69d9a17el0i1za4u32e9vwk8fod.webp"
   },
   {
     "id": "17f6964fe20l0i1za7f9d49sepjq0m",
     "name": "Armorer's Cookbook [6]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6964fe20l0i1za7f9d49sepjq0m.png"
+    "image": "/images/consumables/17f6964fe20l0i1za7f9d49sepjq0m.webp"
   },
   {
     "id": "17f69648c8cl0i1za89md3xfqou70r",
     "name": "Armorer's Cookbook [7]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69648c8cl0i1za89md3xfqou70r.png"
+    "image": "/images/consumables/17f69648c8cl0i1za89md3xfqou70r.webp"
   },
   {
     "id": "17f69e36ce5l0i1zab98x6rqsnkacj",
     "name": "Fevor's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e36ce5l0i1zab98x6rqsnkacj.png"
+    "image": "/images/consumables/17f69e36ce5l0i1zab98x6rqsnkacj.webp"
   },
   {
     "id": "17f69d428c1l0i1zanj5zzei2c67ey",
     "name": "Fevor's Cookbook [2]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d428c1l0i1zanj5zzei2c67ey.png"
+    "image": "/images/consumables/17f69d428c1l0i1zanj5zzei2c67ey.webp"
   },
   {
     "id": "17f69b54da8l0i1zarwlosa6oatghm",
     "name": "Missionary's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b54da8l0i1zarwlosa6oatghm.png"
+    "image": "/images/consumables/17f69b54da8l0i1zarwlosa6oatghm.webp"
   },
   {
     "id": "17f696be910l0i1zb6pflfp474bc8t",
     "name": "Missionary's Cookbook [3]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f696be910l0i1zb6pflfp474bc8t.png"
+    "image": "/images/consumables/17f696be910l0i1zb6pflfp474bc8t.webp"
   },
   {
     "id": "17f696c4efbl0i1zbbjda4qxmf8kzc",
     "name": "Missionary's Cookbook [4]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f696c4efbl0i1zbbjda4qxmf8kzc.png"
+    "image": "/images/consumables/17f696c4efbl0i1zbbjda4qxmf8kzc.webp"
   },
   {
     "id": "17f69c220f9l0i1zbcayfdgzc5yh2k",
     "name": "Missionary's Cookbook [5]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c220f9l0i1zbcayfdgzc5yh2k.png"
+    "image": "/images/consumables/17f69c220f9l0i1zbcayfdgzc5yh2k.webp"
   },
   {
     "id": "17f69b599fbl0i1zbpzd0gjsxcjbp9",
     "name": "Somber Smithing Stone [8]",
     "type": "Misc",
     "effect": "Reinforce special armaments to +8.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b599fbl0i1zbpzd0gjsxcjbp9.png"
+    "image": "/images/consumables/17f69b599fbl0i1zbpzd0gjsxcjbp9.webp"
   },
   {
     "id": "17f6961bfa3l0i1zbvsgmyyg8a7as7",
     "name": "Missionary's Cookbook [7]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6961bfa3l0i1zbvsgmyyg8a7as7.png"
+    "image": "/images/consumables/17f6961bfa3l0i1zbvsgmyyg8a7as7.webp"
   },
   {
     "id": "17f69af7badl0i1zbxm0vgkl5hrbpb",
     "name": "Deserter's Cookbook [1]",
     "type": "Expands crafting repertoire",
     "effect": "",
-    "image": "https://eldenring.fanapis.com/images/items/17f69af7badl0i1zbxm0vgkl5hrbpb.png"
+    "image": "/images/consumables/17f69af7badl0i1zbxm0vgkl5hrbpb.webp"
   },
   {
     "id": "17f69d94b09l0i1zca6dbwhl4hzv3",
     "name": "Deserter's Cookbook [2]",
     "type": "Expands crafting repertoire",
     "effect": "",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d94b09l0i1zca6dbwhl4hzv3.png"
+    "image": "/images/consumables/17f69d94b09l0i1zca6dbwhl4hzv3.webp"
   },
   {
     "id": "17f699cc01dl0i1zcfxbtac79ecrh9",
     "name": "Nomadic Warrior's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f699cc01dl0i1zcfxbtac79ecrh9.png"
+    "image": "/images/consumables/17f699cc01dl0i1zcfxbtac79ecrh9.webp"
   },
   {
     "id": "17f698f3124l0i1zcgfoaub4hhz5c",
     "name": "Nomadic Warrior's Cookbook [2]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f698f3124l0i1zcgfoaub4hhz5c.png"
+    "image": "/images/consumables/17f698f3124l0i1zcgfoaub4hhz5c.webp"
   },
   {
     "id": "17f6977f601l0i1zcudmlqwbhxvxlg",
     "name": "Nomadic Warrior's Cookbook [3]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6977f601l0i1zcudmlqwbhxvxlg.png"
+    "image": "/images/consumables/17f6977f601l0i1zcudmlqwbhxvxlg.webp"
   },
   {
     "id": "17f6966acccl0i1zd18qqiub6s1ytp",
     "name": "Nomadic Warrior's Cookbook [5]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6966acccl0i1zd18qqiub6s1ytp.png"
+    "image": "/images/consumables/17f6966acccl0i1zd18qqiub6s1ytp.webp"
   },
   {
     "id": "17f6988025el0i1zd1qoym326hibp8",
     "name": "Nomadic Warrior's Cookbook [4]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6988025el0i1zd1qoym326hibp8.png"
+    "image": "/images/consumables/17f6988025el0i1zd1qoym326hibp8.webp"
   },
   {
     "id": "17f69ce4214l0i1zd7ncu58jp3qh2d",
     "name": "Nomadic Warrior's Cookbook [6]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ce4214l0i1zd7ncu58jp3qh2d.png"
+    "image": "/images/consumables/17f69ce4214l0i1zd7ncu58jp3qh2d.webp"
   },
   {
     "id": "17f6957d138l0i1zddedaluxtisiod",
     "name": "Nomadic Warrior's Cookbook [7]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6957d138l0i1zddedaluxtisiod.png"
+    "image": "/images/consumables/17f6957d138l0i1zddedaluxtisiod.webp"
   },
   {
     "id": "17f69535af1l0i1zdkjerpcqovjl5s",
     "name": "Nomadic Warrior's Cookbook [9]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69535af1l0i1zdkjerpcqovjl5s.png"
+    "image": "/images/consumables/17f69535af1l0i1zdkjerpcqovjl5s.webp"
   },
   {
     "id": "17f69b034fdl0i1zdqd6d630e0zg57",
     "name": "Nomadic Warrior's Cookbook [10]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b034fdl0i1zdqd6d630e0zg57.png"
+    "image": "/images/consumables/17f69b034fdl0i1zdqd6d630e0zg57.webp"
   },
   {
     "id": "17f698ea0a5l0i1zdvil6p7p73nqco",
     "name": "Nomadic Warrior's Cookbook [11]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f698ea0a5l0i1zdvil6p7p73nqco.png"
+    "image": "/images/consumables/17f698ea0a5l0i1zdvil6p7p73nqco.webp"
   },
   {
     "id": "17f69c5fc0fl0i1ze224rq2oxc9r49",
     "name": "Nomadic Warrior's Cookbook (12)",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c5fc0fl0i1ze224rq2oxc9r49.png"
+    "image": "/images/consumables/17f69c5fc0fl0i1ze224rq2oxc9r49.webp"
   },
   {
     "id": "17f69a93cc2l0i1ze8stwtckka37bd",
     "name": "Nomadic Warrior's Cookbook [13]",
     "type": "Misc",
     "effect": "Expands crafting repertiore",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a93cc2l0i1ze8stwtckka37bd.png"
+    "image": "/images/consumables/17f69a93cc2l0i1ze8stwtckka37bd.webp"
   },
   {
     "id": "17f69cf9bd0l0i1zec4cc7daag8e6w",
     "name": "Nomadic Warrior's Cookbook [14]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cf9bd0l0i1zec4cc7daag8e6w.png"
+    "image": "/images/consumables/17f69cf9bd0l0i1zec4cc7daag8e6w.webp"
   },
   {
     "id": "17f698fdea2l0i1zeqb3eyjn1dbptq",
     "name": "Fevor's Cookbook [3]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f698fdea2l0i1zeqb3eyjn1dbptq.png"
+    "image": "/images/consumables/17f698fdea2l0i1zeqb3eyjn1dbptq.webp"
   },
   {
     "id": "17f6996b11el0i1zevwdyb7l44ds8u",
     "name": "Nomadic Warrior's Cookbook [16]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6996b11el0i1zevwdyb7l44ds8u.png"
+    "image": "/images/consumables/17f6996b11el0i1zevwdyb7l44ds8u.webp"
   },
   {
     "id": "17f69ac6809l0i1zex4m9c2k1sz6qb",
     "name": "Nomadic Warrior's Cookbook [15]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ac6809l0i1zex4m9c2k1sz6qb.png"
+    "image": "/images/consumables/17f69ac6809l0i1zex4m9c2k1sz6qb.webp"
   },
   {
     "id": "17f6998506bl0i1zf11urklhzx6yy",
     "name": "Nomadic Warrior's Cookbook [17]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6998506bl0i1zf11urklhzx6yy.png"
+    "image": "/images/consumables/17f6998506bl0i1zf11urklhzx6yy.webp"
   },
   {
     "id": "17f6980d0c8l0i1zf5catnqhzzcq4d",
     "name": "Nomadic Warrior's Cookbook [8]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6980d0c8l0i1zf5catnqhzzcq4d.png"
+    "image": "/images/consumables/17f6980d0c8l0i1zf5catnqhzzcq4d.webp"
   },
   {
     "id": "17f696a2658l0i1zfdy9wqeumcm1p5",
     "name": "Nomadic Warrior's Cookbook [18]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f696a2658l0i1zfdy9wqeumcm1p5.png"
+    "image": "/images/consumables/17f696a2658l0i1zfdy9wqeumcm1p5.webp"
   },
   {
     "id": "17f69e20663l0i1zfivaz2gkciocs",
     "name": "Nomadic Warrior's Cookbook (19)",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e20663l0i1zfivaz2gkciocs.png"
+    "image": "/images/consumables/17f69e20663l0i1zfivaz2gkciocs.webp"
   },
   {
     "id": "17f697ce7a2l0i1zfkaqx67yaqq3in",
     "name": "Nomadic Warrior's Cookbook [20]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f697ce7a2l0i1zfkaqx67yaqq3in.png"
+    "image": "/images/consumables/17f697ce7a2l0i1zfkaqx67yaqq3in.webp"
   },
   {
     "id": "17f69de8f6el0i1zfmu2hggk0w6xoe",
     "name": "Nomadic Warrior's Cookbook [21]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69de8f6el0i1zfmu2hggk0w6xoe.png"
+    "image": "/images/consumables/17f69de8f6el0i1zfmu2hggk0w6xoe.webp"
   },
   {
     "id": "17f69d22004l0i1zg3o0zd1cmdml6u",
     "name": "Nomadic Warrior's Cookbook [24]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d22004l0i1zg3o0zd1cmdml6u.png"
+    "image": "/images/consumables/17f69d22004l0i1zg3o0zd1cmdml6u.webp"
   },
   {
     "id": "17f69e461dfl0i1zg4jldt4yjnoys",
     "name": "Glintstone Craftsman's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e461dfl0i1zg4jldt4yjnoys.png"
+    "image": "/images/consumables/17f69e461dfl0i1zg4jldt4yjnoys.webp"
   },
   {
     "id": "17f69b0fee6l0i1zg4tyg6lrae4tbe",
     "name": "Glintstone Craftsman's Cookbook [2]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b0fee6l0i1zg4tyg6lrae4tbe.png"
+    "image": "/images/consumables/17f69b0fee6l0i1zg4tyg6lrae4tbe.webp"
   },
   {
     "id": "17f69c179b8l0i1zgf7yrmwlblu65f",
     "name": "Nomadic Warrior's Cookbook [22]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c179b8l0i1zgf7yrmwlblu65f.png"
+    "image": "/images/consumables/17f69c179b8l0i1zgf7yrmwlblu65f.webp"
   },
   {
     "id": "17f69ca6512l0i1zgmwo4po0v83oq8",
     "name": "Glintstone Craftsman's Cookbook [3]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ca6512l0i1zgmwo4po0v83oq8.png"
+    "image": "/images/consumables/17f69ca6512l0i1zgmwo4po0v83oq8.webp"
   },
   {
     "id": "17f69a51206l0i1zgo366ludyegee",
     "name": "Glintstone Craftsman's Cookbook [4]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a51206l0i1zgo366ludyegee.png"
+    "image": "/images/consumables/17f69a51206l0i1zgo366ludyegee.webp"
   },
   {
     "id": "17f697db6a5l0i1zgqp6vwj9feu18h",
     "name": "Glintstone Craftsman's Cookbook [5]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f697db6a5l0i1zgqp6vwj9feu18h.png"
+    "image": "/images/consumables/17f697db6a5l0i1zgqp6vwj9feu18h.webp"
   },
   {
     "id": "17f69d1dd3cl0i1zh08kyvg85za7ud",
     "name": "Glintstone Craftsman's Cookbook [6]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d1dd3cl0i1zh08kyvg85za7ud.png"
+    "image": "/images/consumables/17f69d1dd3cl0i1zh08kyvg85za7ud.webp"
   },
   {
     "id": "17f69baa90dl0i1zh8h3353r1wz8f8",
     "name": "Nomadic Warrior's Cookbook [23]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69baa90dl0i1zh8h3353r1wz8f8.png"
+    "image": "/images/consumables/17f69baa90dl0i1zh8h3353r1wz8f8.webp"
   },
   {
     "id": "17f699eb929l0i1zhbm10vm1rnqhn0i",
     "name": "Glintstone Craftsman's Cookbook [8]",
     "type": "Misc",
     "effect": "Expands crafting repertoire.",
-    "image": "https://eldenring.fanapis.com/images/items/17f699eb929l0i1zhbm10vm1rnqhn0i.png"
+    "image": "/images/consumables/17f699eb929l0i1zhbm10vm1rnqhn0i.webp"
   },
   {
     "id": "17f698e27d3l0i1zhco4l1yq3r6c7x",
     "name": "Glintstone Craftsman's Cookbook (7)",
     "type": "Misc",
     "effect": "Expands crafting repertoire.",
-    "image": "https://eldenring.fanapis.com/images/items/17f698e27d3l0i1zhco4l1yq3r6c7x.png"
+    "image": "/images/consumables/17f698e27d3l0i1zhco4l1yq3r6c7x.webp"
   },
   {
     "id": "17f69775681l0i1zhfktji7qpekgeb",
     "name": "Frenzied's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69775681l0i1zhfktji7qpekgeb.png"
+    "image": "/images/consumables/17f69775681l0i1zhfktji7qpekgeb.webp"
   },
   {
     "id": "17f69cae817l0i1zhm8oiev20icuyf",
     "name": "Frenzied Cookbook",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cae817l0i1zhm8oiev20icuyf.png"
+    "image": "/images/consumables/17f69cae817l0i1zhm8oiev20icuyf.webp"
   },
   {
     "id": "17f69d93f0bl0i1zi1do78bjwzjpo",
     "name": "Perfumer's Cookbook [2]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d93f0bl0i1zi1do78bjwzjpo.png"
+    "image": "/images/consumables/17f69d93f0bl0i1zi1do78bjwzjpo.webp"
   },
   {
     "id": "17f69a4e1eel0i1zi2q9em38bfes5f",
     "name": "Perfumer's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a4e1eel0i1zi2q9em38bfes5f.png"
+    "image": "/images/consumables/17f69a4e1eel0i1zi2q9em38bfes5f.webp"
   },
   {
     "id": "17f698347edl0i1zi4edg1khr0lppf",
     "name": "Perfumer's Cookbook [3]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f698347edl0i1zi4edg1khr0lppf.png"
+    "image": "/images/consumables/17f698347edl0i1zi4edg1khr0lppf.webp"
   },
   {
     "id": "17f6974b90fl0i1zi5dk04ssmsdf7",
     "name": "Perfumer's Cookbook [4]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f6974b90fl0i1zi5dk04ssmsdf7.png"
+    "image": "/images/consumables/17f6974b90fl0i1zi5dk04ssmsdf7.webp"
   },
   {
     "id": "17f69c972e4l0i1ziaqbmt5nn2nfxk",
     "name": "Ancient Dragon Apostle's Cookbook [1]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c972e4l0i1ziaqbmt5nn2nfxk.png"
+    "image": "/images/consumables/17f69c972e4l0i1ziaqbmt5nn2nfxk.webp"
   },
   {
     "id": "17f69b9584al0i1zivdht7fbjv2zjq",
     "name": "Ancient Dragon Apostle's Cookbook [2]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b9584al0i1zivdht7fbjv2zjq.png"
+    "image": "/images/consumables/17f69b9584al0i1zivdht7fbjv2zjq.webp"
   },
   {
     "id": "17f69b12521l0i1zivlbebkgvvzsal",
     "name": "Ancient Dragon Apostle's Cookbook [3]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b12521l0i1zivlbebkgvvzsal.png"
+    "image": "/images/consumables/17f69b12521l0i1zivlbebkgvvzsal.webp"
   },
   {
     "id": "17f69b4a217l0i1zix90eaz2cyjd06r",
     "name": "Ancient Dragon Apostle's Cookbook [4]",
     "type": "Misc",
     "effect": "Expands crafting repertoire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b4a217l0i1zix90eaz2cyjd06r.png"
+    "image": "/images/consumables/17f69b4a217l0i1zix90eaz2cyjd06r.webp"
   },
   {
     "id": "17f69aa268al0i1zj0rfdsne7y1g1w",
     "name": "Flask Of Crimson Tears",
     "type": "-",
     "effect": "Restores HP",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aa268al0i1zj0rfdsne7y1g1w.png"
+    "image": "/images/consumables/17f69aa268al0i1zj0rfdsne7y1g1w.webp"
   },
   {
     "id": "17f69c3ff84l0i1zj2p7ufmf8aagmk",
     "name": "Flask Of Cerulean Tears",
     "type": "-",
     "effect": "Restores FP",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c3ff84l0i1zj2p7ufmf8aagmk.png"
+    "image": "/images/consumables/17f69c3ff84l0i1zj2p7ufmf8aagmk.webp"
   },
   {
     "id": "17f69d8aa5fl0i1zjnvamum74phqg",
     "name": "Scriptstone",
     "type": "- ",
     "effect": "Reveals more messages from other worlds",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d8aa5fl0i1zjnvamum74phqg.png"
+    "image": "/images/consumables/17f69d8aa5fl0i1zjnvamum74phqg.webp"
   },
   {
     "id": "17f69724116l0i1zjot8ai6wb8tnwb",
     "name": "Holy Water Pot",
     "type": "- ",
     "effect": "Uses FP. Throw at enemies to inflict holy damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69724116l0i1zjot8ai6wb8tnwb.png"
+    "image": "/images/consumables/17f69724116l0i1zjot8ai6wb8tnwb.webp"
   },
   {
     "id": "17f69cb38bfl0i1zjpuu6hdk5bkppp",
     "name": "Rainbow Stone",
     "type": "- ",
     "effect": "Shines with colored light when placed, serving as a guide",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cb38bfl0i1zjpuu6hdk5bkppp.png"
+    "image": "/images/consumables/17f69cb38bfl0i1zjpuu6hdk5bkppp.webp"
   },
   {
     "id": "17f6987a37cl0i1zjt7mvguxdthe1",
     "name": "Roped Fire Pot",
     "type": "Str A Dex C",
     "effect": "Throw behind to inflict fire damage.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6987a37cl0i1zjt7mvguxdthe1.png"
+    "image": "/images/consumables/17f6987a37cl0i1zjt7mvguxdthe1.webp"
   },
   {
     "id": "17f699d2c14l0i1zju94uo7sodfgrt",
     "name": "Rowa Raisin",
     "type": "- ",
     "effect": "On horseback, feed to spectral steed to restore HP",
-    "image": "https://eldenring.fanapis.com/images/items/17f699d2c14l0i1zju94uo7sodfgrt.png"
+    "image": "/images/consumables/17f699d2c14l0i1zju94uo7sodfgrt.webp"
   },
   {
     "id": "17f69af87d1l0i1zkawkfivu9nltzr",
     "name": "Glowstone",
     "type": "- ",
     "effect": "Emits a faint light from the location it is placed",
-    "image": "https://eldenring.fanapis.com/images/items/17f69af87d1l0i1zkawkfivu9nltzr.png"
+    "image": "/images/consumables/17f69af87d1l0i1zkawkfivu9nltzr.webp"
   },
   {
     "id": "17f69cd6520l0i1zkfatyirikr6qrf",
     "name": "Pauper's Rune",
     "type": "-",
     "effect": "Use to gain a few runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cd6520l0i1zkfatyirikr6qrf.png"
+    "image": "/images/consumables/17f69cd6520l0i1zkfatyirikr6qrf.webp"
   },
   {
     "id": "17f69b8a1f0l0i1zkh6maq6vqjsba",
     "name": "Flask Of Wondrous Physick",
     "type": "-",
     "effect": "Bestows various special effects",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b8a1f0l0i1zkh6maq6vqjsba.png"
+    "image": "/images/consumables/17f69b8a1f0l0i1zkh6maq6vqjsba.webp"
   },
   {
     "id": "17f696ee91el0i1zkibguxzrhqyozt",
     "name": "Immunizing Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts Immunity",
-    "image": "https://eldenring.fanapis.com/images/items/17f696ee91el0i1zkibguxzrhqyozt.png"
+    "image": "/images/consumables/17f696ee91el0i1zkibguxzrhqyozt.webp"
   },
   {
     "id": "17f697afcfel0i1zl4a55avoigqigk",
     "name": "Pickled Turtle Neck",
     "type": "-",
     "effect": "Temporarily boosts Stamina recovery",
-    "image": "https://eldenring.fanapis.com/images/items/17f697afcfel0i1zl4a55avoigqigk.png"
+    "image": "/images/consumables/17f697afcfel0i1zl4a55avoigqigk.webp"
   },
   {
     "id": "17f697457b4l0i1zl7xxckgmi3o54d",
     "name": "Fireproof Dried Liver",
     "type": "- ",
     "effect": "Boosts  Fire Damage Negation for a short time.",
-    "image": "https://eldenring.fanapis.com/images/items/17f697457b4l0i1zl7xxckgmi3o54d.png"
+    "image": "/images/consumables/17f697457b4l0i1zl7xxckgmi3o54d.webp"
   },
   {
     "id": "17f69e41af8l0i1zl9gsih5hy2b26m",
     "name": "Drawstring Fire Grease",
     "type": "- ",
     "effect": "Quickly coats weapon, inflicting  Fire Damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e41af8l0i1zl9gsih5hy2b26m.png"
+    "image": "/images/consumables/17f69e41af8l0i1zl9gsih5hy2b26m.webp"
   },
   {
     "id": "17f69e533f7l0i1zlczjc9uof4rycd",
     "name": "Fire Pot",
     "type": "Str A Dex C",
     "effect": "Throw at enemies to inflict Fire Damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e533f7l0i1zlczjc9uof4rycd.png"
+    "image": "/images/consumables/17f69e533f7l0i1zlczjc9uof4rycd.webp"
   },
   {
     "id": "17f69dfccaal0i1zlsr4o9wdgh17ls",
     "name": "Fire Grease",
     "type": "- ",
     "effect": "Coats weapon, inflicting Fire Damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69dfccaal0i1zlsr4o9wdgh17ls.png"
+    "image": "/images/consumables/17f69dfccaal0i1zlsr4o9wdgh17ls.webp"
   },
   {
     "id": "17f694ee235l0i1zm039o3qkxzujg",
     "name": "Neutralizing Boluses",
     "type": "- ",
     "effect": "Alleviates poison buildup and cures poison",
-    "image": "https://eldenring.fanapis.com/images/items/17f694ee235l0i1zm039o3qkxzujg.png"
+    "image": "/images/consumables/17f694ee235l0i1zm039o3qkxzujg.webp"
   },
   {
     "id": "17f6958b812l0i1zm14qf7ii129s89",
     "name": "Exalted Flesh",
     "type": "-",
     "effect": "Temporarily boosts physical attack",
-    "image": "https://eldenring.fanapis.com/images/items/17f6958b812l0i1zm14qf7ii129s89.png"
+    "image": "/images/consumables/17f6958b812l0i1zm14qf7ii129s89.webp"
   },
   {
     "id": "17f69a48fbel0i1zm37z2g5pk0abql",
     "name": "Sleep Pot",
     "type": "-",
     "effect": "Emits a Soporific purple haze",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a48fbel0i1zm37z2g5pk0abql.png"
+    "image": "/images/consumables/17f69a48fbel0i1zm37z2g5pk0abql.webp"
   },
   {
     "id": "17f697fc525l0i1zm3syso1p5cmup",
     "name": "Gold-pickled Fowl Foot",
     "type": "-",
     "effect": "Boosts rune acquisition for a time (30%)",
-    "image": "https://eldenring.fanapis.com/images/items/17f697fc525l0i1zm3syso1p5cmup.png"
+    "image": "/images/consumables/17f697fc525l0i1zm3syso1p5cmup.webp"
   },
   {
     "id": "17f699a6aa5l0i1zmh7yprbiqxpkc",
     "name": "Dragon Heart",
     "type": "- ",
     "effect": "Gain power of the dragon at the Dragon Communion altar.",
-    "image": "https://eldenring.fanapis.com/images/items/17f699a6aa5l0i1zmh7yprbiqxpkc.png"
+    "image": "/images/consumables/17f699a6aa5l0i1zmh7yprbiqxpkc.webp"
   },
   {
     "id": "17f6962fdacl0i1zms0owlgpo23pwd",
     "name": "Throwing Dagger",
     "type": "Str B Dex A",
     "effect": "Throw at enemies to inflict damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f6962fdacl0i1zms0owlgpo23pwd.png"
+    "image": "/images/consumables/17f6962fdacl0i1zms0owlgpo23pwd.webp"
   },
   {
     "id": "17f69780e1cl0i1zmv3kagaozf4ptp",
     "name": "Stimulating Boluses",
     "type": "-",
     "effect": "Alleviates buildup of sleep",
-    "image": "https://eldenring.fanapis.com/images/items/17f69780e1cl0i1zmv3kagaozf4ptp.png"
+    "image": "/images/consumables/17f69780e1cl0i1zmv3kagaozf4ptp.webp"
   },
   {
     "id": "17f69a2292al0i1zmwlcpqjohxl42m",
     "name": "Stanching Boluses",
     "type": "-",
     "effect": "Alleviates impending blood loss",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a2292al0i1zmwlcpqjohxl42m.png"
+    "image": "/images/consumables/17f69a2292al0i1zmwlcpqjohxl42m.webp"
   },
   {
     "id": "17f697e883fl0i1zmygjhgy8ulgnbc",
     "name": "Lands Between Rune",
     "type": "-",
     "effect": "Use to gain many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f697e883fl0i1zmygjhgy8ulgnbc.png"
+    "image": "/images/consumables/17f697e883fl0i1zmygjhgy8ulgnbc.webp"
   },
   {
     "id": "17f69561a93l0i1zn82gmca4ahwx1j",
     "name": "Golden Seed",
     "type": "- ",
     "effect": "Increases Sacred Flask's number of uses",
-    "image": "https://eldenring.fanapis.com/images/items/17f69561a93l0i1zn82gmca4ahwx1j.png"
+    "image": "/images/consumables/17f69561a93l0i1zn82gmca4ahwx1j.webp"
   },
   {
     "id": "17f69afb0abl0i1znm7l2q4q6i7jle",
     "name": "Bewitching Branch",
     "type": "-",
     "effect": "Uses FP to charm pierced enemy",
-    "image": "https://eldenring.fanapis.com/images/items/17f69afb0abl0i1znm7l2q4q6i7jle.png"
+    "image": "/images/consumables/17f69afb0abl0i1znm7l2q4q6i7jle.webp"
   },
   {
     "id": "17f69545b6dl0i1znndlckbc7g9qcc",
     "name": "Boiled Prawn",
     "type": "- ",
     "effect": "Boosts physical damage negation for a time",
-    "image": "https://eldenring.fanapis.com/images/items/17f69545b6dl0i1znndlckbc7g9qcc.png"
+    "image": "/images/consumables/17f69545b6dl0i1znndlckbc7g9qcc.webp"
   },
   {
     "id": "17f69adc8c9l0i1znnjz2luapkc2u",
     "name": "Explosive Stone",
     "type": "Str A Dex C",
     "effect": "Explodes when thrown, inflicting Fire Damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69adc8c9l0i1znnjz2luapkc2u.png"
+    "image": "/images/consumables/17f69adc8c9l0i1znnjz2luapkc2u.webp"
   },
   {
     "id": "17f69c92a81l0i1znojgn5a3ut4umv",
     "name": "Starlight Shards",
     "type": "-",
     "effect": "Use to gradually recover FP",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c92a81l0i1znojgn5a3ut4umv.png"
+    "image": "/images/consumables/17f69c92a81l0i1znojgn5a3ut4umv.webp"
   },
   {
     "id": "17f69d9db08l0i1znvqfeg973qx3p",
     "name": "Golden Rune [1]",
     "type": "-",
     "effect": "Use to gain a small number of runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d9db08l0i1znvqfeg973qx3p.png"
+    "image": "/images/consumables/17f69d9db08l0i1znvqfeg973qx3p.webp"
   },
   {
     "id": "17f6974b67al0i1zo8yaqe8p732yk8",
     "name": "Golden Rune [2]",
     "type": "Misc",
     "effect": "Use to gain a small number of runes (400)",
-    "image": "https://eldenring.fanapis.com/images/items/17f6974b67al0i1zo8yaqe8p732yk8.png"
+    "image": "/images/consumables/17f6974b67al0i1zo8yaqe8p732yk8.webp"
   },
   {
     "id": "17f6975a9acl0i1zoayos0878n8oh",
     "name": "Golden Rune [3]",
     "type": "-",
     "effect": "Use to gain runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f6975a9acl0i1zoayos0878n8oh.png"
+    "image": "/images/consumables/17f6975a9acl0i1zoayos0878n8oh.webp"
   },
   {
     "id": "17f69a2a7e6l0i1zoddtgpi2gkrbkl",
     "name": "Golden Rune [6]",
     "type": "-",
     "effect": "Use to gain many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a2a7e6l0i1zoddtgpi2gkrbkl.png"
+    "image": "/images/consumables/17f69a2a7e6l0i1zoddtgpi2gkrbkl.webp"
   },
   {
     "id": "17f6997d0c5l0i1zojo2zkr29gi7ww",
     "name": "Golden Rune [4]",
     "type": "-",
     "effect": "Use to gain runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f6997d0c5l0i1zojo2zkr29gi7ww.png"
+    "image": "/images/consumables/17f6997d0c5l0i1zojo2zkr29gi7ww.webp"
   },
   {
     "id": "17f6955cce6l0i1zok9ln4sdjpuv6p",
     "name": "Baldachin's Blessing",
     "type": "- ",
     "effect": "Uses FP to temporarilty boost poise",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/baldachins-blessing.png"
+    "image": "/images/consumables/baldachins-blessing.webp"
   },
   {
     "id": "17f69d54061l0i1zouypdn8vlubda",
     "name": "Blood Grease",
     "type": "-",
     "effect": "Coats armament, inflicting blood loss",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d54061l0i1zouypdn8vlubda.png"
+    "image": "/images/consumables/17f69d54061l0i1zouypdn8vlubda.webp"
   },
   {
     "id": "17f6965ed4el0i1zoz7uqkyk6g9g1",
     "name": "Frozen Raisin",
     "type": "- ",
     "effect": "On horseback, feed to Torrent to vastly restore HP",
-    "image": "https://eldenring.fanapis.com/images/items/17f6965ed4el0i1zoz7uqkyk6g9g1.png"
+    "image": "/images/consumables/17f6965ed4el0i1zoz7uqkyk6g9g1.webp"
   },
   {
     "id": "17f6953a99el0i1zp7dxh4533wgeze",
     "name": "Glass Shard",
     "type": "-",
     "effect": "Shard of filthy glass. Worthless rubbish",
-    "image": "https://eldenring.fanapis.com/images/items/17f6953a99el0i1zp7dxh4533wgeze.png"
+    "image": "/images/consumables/17f6953a99el0i1zp7dxh4533wgeze.webp"
   },
   {
     "id": "17f69aeec5cl0i1zp8vmpfgj1t4xs",
     "name": "Fan Daggers",
     "type": "Str B Dex S",
     "effect": "Thrown fanned-out knives at enemies to inflict damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aeec5cl0i1zp8vmpfgj1t4xs.png"
+    "image": "/images/consumables/17f69aeec5cl0i1zp8vmpfgj1t4xs.webp"
   },
   {
     "id": "17f69a32a0fl0i1zpct4u7kc4ijukf",
     "name": "Grace Mimic",
     "type": "-",
     "effect": "Light shows the path, but without order",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a32a0fl0i1zpct4u7kc4ijukf.png"
+    "image": "/images/consumables/17f69a32a0fl0i1zpct4u7kc4ijukf.webp"
   },
   {
     "id": "17f69668249l0i1zpjg8d4bkrce3ta",
     "name": "Roped Holy Water Pot",
     "type": "- ",
     "effect": "Uses FP. Throw behind to inflict holy damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69668249l0i1zpjg8d4bkrce3ta.png"
+    "image": "/images/consumables/17f69668249l0i1zpjg8d4bkrce3ta.webp"
   },
   {
     "id": "17f69b3aef4l0i1zpm49uo2xs68exc",
     "name": "Bone Dart",
     "type": "Str B",
     "effect": "Throw at enemies to inflict damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b3aef4l0i1zpm49uo2xs68exc.png"
+    "image": "/images/consumables/17f69b3aef4l0i1zpm49uo2xs68exc.webp"
   },
   {
     "id": "17f69d7bfb8l0i1zptnmjls9ovhrv",
     "name": "Gravity Stone Chunk",
     "type": "Str C Int B",
     "effect": "Uses FP to cause a gravitational explosion",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d7bfb8l0i1zptnmjls9ovhrv.png"
+    "image": "/images/consumables/17f69d7bfb8l0i1zptnmjls9ovhrv.webp"
   },
   {
     "id": "17f69c024c6l0i1zpx4zat52cu59v",
     "name": "Gravity Stone Fan",
     "type": "Str C Int B",
     "effect": "Uses FP to emit fan-shaped gravitational shockwave",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c024c6l0i1zpx4zat52cu59v.png"
+    "image": "/images/consumables/17f69c024c6l0i1zpx4zat52cu59v.webp"
   },
   {
     "id": "17f699c5c47l0i1zq1zgxhczy5ltgk",
     "name": "Invigorating Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts Robustness",
-    "image": "https://eldenring.fanapis.com/images/items/17f699c5c47l0i1zq1zgxhczy5ltgk.png"
+    "image": "/images/consumables/17f699c5c47l0i1zq1zgxhczy5ltgk.webp"
   },
   {
     "id": "17f696f7fe4l0i1zq5oy45bomxbku",
     "name": "Invigorating White Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts Robustness",
-    "image": "https://eldenring.fanapis.com/images/items/17f696f7fe4l0i1zq5oy45bomxbku.png"
+    "image": "/images/consumables/17f696f7fe4l0i1zq5oy45bomxbku.webp"
   },
   {
     "id": "17f695feb0fl0i1zq84qhi7rx2s6a",
     "name": "Kukri",
     "type": "Str A Dex S ",
     "effect": "Throw at enemies to inflict damage and build up onset of blood loss",
-    "image": "https://eldenring.fanapis.com/images/items/17f695feb0fl0i1zq84qhi7rx2s6a.png"
+    "image": "/images/consumables/17f695feb0fl0i1zq84qhi7rx2s6a.webp"
   },
   {
     "id": "17f699b908dl0i1zqfh6dh62dsp296",
     "name": "Glintstone Scrap",
     "type": "-",
     "effect": "Break gem, using FP to produce a magic bolt.",
-    "image": "https://eldenring.fanapis.com/images/items/17f699b908dl0i1zqfh6dh62dsp296.png"
+    "image": "/images/consumables/17f699b908dl0i1zqfh6dh62dsp296.webp"
   },
   {
     "id": "17f69c3939bl0i1zqiqmrzf87vvtq",
     "name": "Large Glintstone Scrap",
     "type": "- ",
     "effect": "Break gem and use FP to produce many magic bolts",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c3939bl0i1zqiqmrzf87vvtq.png"
+    "image": "/images/consumables/17f69c3939bl0i1zqiqmrzf87vvtq.webp"
   },
   {
     "id": "17f696302a8l0i1zqoqze558msc2fj",
     "name": "Magic Grease",
     "type": "- ",
     "effect": "Coats armament, inflicting magic damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f696302a8l0i1zqoqze558msc2fj.png"
+    "image": "/images/consumables/17f696302a8l0i1zqoqze558msc2fj.webp"
   },
   {
     "id": "17f6982bcdal0i1zqvhswyzzak6ajo",
     "name": "Remembrance Of The Grafted",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f6982bcdal0i1zqvhswyzzak6ajo.png"
+    "image": "/images/consumables/17f6982bcdal0i1zqvhswyzzak6ajo.webp"
   },
   {
     "id": "17f69a0fa67l0i1zr06cic3ysdb53h",
     "name": "Rot Grease",
     "type": "-",
     "effect": "Coats armament, inflicting scarlet rot",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a0fa67l0i1zr06cic3ysdb53h.png"
+    "image": "/images/consumables/17f69a0fa67l0i1zr06cic3ysdb53h.webp"
   },
   {
     "id": "17f6956598al0i1zr6fcz3amgdevdi",
     "name": "Rune Arc",
     "type": "- ",
     "effect": "Grants the blessing of an equipped rune upon use",
-    "image": "https://eldenring.fanapis.com/images/items/17f6956598al0i1zr6fcz3amgdevdi.png"
+    "image": "/images/consumables/17f6956598al0i1zr6fcz3amgdevdi.webp"
   },
   {
     "id": "17f69ba3d2dl0i1zr6z6bv5j4psjwb",
     "name": "Silver-pickled Fowl Foot",
     "type": "-",
     "effect": "Temporarily boosts item discovery (+50)",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ba3d2dl0i1zr6z6bv5j4psjwb.png"
+    "image": "/images/consumables/17f69ba3d2dl0i1zr6z6bv5j4psjwb.webp"
   },
   {
     "id": "17f69512556l0i1zrbv0or737s1cnog",
     "name": "Spellproof Dried Liver",
     "type": "- ",
     "effect": "Temporarily boosts magic damage negation",
-    "image": "https://eldenring.fanapis.com/images/items/17f69512556l0i1zrbv0or737s1cnog.png"
+    "image": "/images/consumables/17f69512556l0i1zrbv0or737s1cnog.webp"
   },
   {
     "id": "17f69e45f5fl0i1zrimb576117xqq",
     "name": "Warming Stone",
     "type": "- ",
     "effect": "Uses FP to continuously heal nearby allies",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e45f5fl0i1zrimb576117xqq.png"
+    "image": "/images/consumables/17f69e45f5fl0i1zrimb576117xqq.webp"
   },
   {
     "id": "17f69aafa52l0i1zrl8tds5hunxjle",
     "name": "Sacred Tear",
     "type": "-",
     "effect": "Improves Sacred Flask's potency",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aafa52l0i1zrl8tds5hunxjle.png"
+    "image": "/images/consumables/17f69aafa52l0i1zrl8tds5hunxjle.webp"
   },
   {
     "id": "17f699913bal0i1zrucvihxtb6jv7s",
     "name": "Furled Finger's Trick-mirror",
     "type": "0.7",
     "effect": "Take on appearance of a Host of Fingers",
-    "image": "https://eldenring.fanapis.com/images/items/17f699913bal0i1zrucvihxtb6jv7s.png"
+    "image": "/images/consumables/17f699913bal0i1zrucvihxtb6jv7s.webp"
   },
   {
     "id": "17f697e3a12l0i1zruipu7889t5tdp",
     "name": "Host's Trick-mirror",
     "type": "0.7",
     "effect": "Take on appearance of a cooperator",
-    "image": "https://eldenring.fanapis.com/images/items/17f697e3a12l0i1zruipu7889t5tdp.png"
+    "image": "/images/consumables/17f697e3a12l0i1zruipu7889t5tdp.webp"
   },
   {
     "id": "17f699b03e6l0i1zrzgtoswlr09ws",
     "name": "Drawstring Lightning Grease",
     "type": "- ",
     "effect": "Quickly coats armament, inflicting lightning damage.",
-    "image": "https://eldenring.fanapis.com/images/items/17f699b03e6l0i1zrzgtoswlr09ws.png"
+    "image": "/images/consumables/17f699b03e6l0i1zrzgtoswlr09ws.webp"
   },
   {
     "id": "17f69870be6l0i1zs6qqeo4m0a3u5p",
     "name": "Cuckoo Glintstone",
     "type": "Int B",
     "effect": "Uses FP to produce a magic bolt",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/cuckoo-glintstone.png"
+    "image": "/images/consumables/cuckoo-glintstone.webp"
   },
   {
     "id": "17f6979df4bl0i1zs7fenpk1iotjg",
     "name": "Preserving Boluses",
     "type": "-",
     "effect": "Alleviates scarlet rot buildup and cures rot",
-    "image": "https://eldenring.fanapis.com/images/items/17f6979df4bl0i1zs7fenpk1iotjg.png"
+    "image": "/images/consumables/17f6979df4bl0i1zs7fenpk1iotjg.webp"
   },
   {
     "id": "17f69781475l0i1zsfawh03ylws8b",
     "name": "Golden Rune [5]",
     "type": "Misc",
     "effect": "Use to gain runes (1600)",
-    "image": "https://eldenring.fanapis.com/images/items/17f69781475l0i1zsfawh03ylws8b.png"
+    "image": "/images/consumables/17f69781475l0i1zsfawh03ylws8b.webp"
   },
   {
     "id": "17f6951f0e7l0i1zsksmwnefcweq8s",
     "name": "Remembrance Of The Full Moon Queen",
     "type": "-",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f6951f0e7l0i1zsksmwnefcweq8s.png"
+    "image": "/images/consumables/17f6951f0e7l0i1zsksmwnefcweq8s.webp"
   },
   {
     "id": "17f69dd3e15l0i1zspj8og4zvjdfpp",
     "name": "Raw Meat Dumpling",
     "type": "-",
     "effect": "Restores HP but causes poison buildup",
-    "image": "https://eldenring.fanapis.com/images/items/17f69dd3e15l0i1zspj8og4zvjdfpp.png"
+    "image": "/images/consumables/17f69dd3e15l0i1zspj8og4zvjdfpp.webp"
   },
   {
     "id": "17f6993270fl0i1zsv5nkrr64y1hj",
     "name": "Prattling Pate \"wonderful\"",
     "type": "-",
     "effect": "Emits a voice that says \"Wonderful\"",
-    "image": "https://eldenring.fanapis.com/images/items/17f6993270fl0i1zsv5nkrr64y1hj.png"
+    "image": "/images/consumables/17f6993270fl0i1zsv5nkrr64y1hj.webp"
   },
   {
     "id": "17f69c99adbl0i1zt2xdaz8q3om0rr",
     "name": "Clarifying White Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts focus",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c99adbl0i1zt2xdaz8q3om0rr.png"
+    "image": "/images/consumables/17f69c99adbl0i1zt2xdaz8q3om0rr.webp"
   },
   {
     "id": "17f69802f8al0i1zt4cxwkj4viuw9",
     "name": "Immunizing White Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts immunity",
-    "image": "https://eldenring.fanapis.com/images/items/17f69802f8al0i1zt4cxwkj4viuw9.png"
+    "image": "/images/consumables/17f69802f8al0i1zt4cxwkj4viuw9.webp"
   },
   {
     "id": "17f69c75a2bl0i1zt7vexd3k832oss",
     "name": "Clarifying Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts focus",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/clarifying-cured-meat.png"
+    "image": "/images/consumables/clarifying-cured-meat.webp"
   },
   {
     "id": "17f69613247l0i1ztcd6v9vqg09u1",
     "name": "Soft Cotton",
     "type": "-",
     "effect": "Temporarily reduces fall damage and sound",
-    "image": "https://eldenring.fanapis.com/images/items/17f69613247l0i1ztcd6v9vqg09u1.png"
+    "image": "/images/consumables/17f69613247l0i1ztcd6v9vqg09u1.webp"
   },
   {
     "id": "17f69718064l0i1ztj6zs1ga6awrij",
     "name": "Poisonbone Dart",
     "type": "Str D Dex C",
     "effect": "Throw at enemies to inflict damage and build up poison",
-    "image": "https://eldenring.fanapis.com/images/items/17f69718064l0i1ztj6zs1ga6awrij.png"
+    "image": "/images/consumables/17f69718064l0i1ztj6zs1ga6awrij.webp"
   },
   {
     "id": "17f69b5fbc8l0i1ztqsut1ylsv5gss",
     "name": "Poisoned Stone",
     "type": "-",
     "effect": "Throw at enemies to cause buildup of poison",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b5fbc8l0i1ztqsut1ylsv5gss.png"
+    "image": "/images/consumables/17f69b5fbc8l0i1ztqsut1ylsv5gss.webp"
   },
   {
     "id": "17f69e1972el0i1ztt3nnqscjrmgf",
     "name": "Poisoned Stone Clump",
     "type": "-",
     "effect": "Throw together to cause buildup of poison",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e1972el0i1ztt3nnqscjrmgf.png"
+    "image": "/images/consumables/17f69e1972el0i1ztt3nnqscjrmgf.webp"
   },
   {
     "id": "17f69703ba7l0i1ztwp3pff9ealg3j",
     "name": "Dragonwound Grease",
     "type": "-",
     "effect": "Coats armament, granting special dragon attacks",
-    "image": "https://eldenring.fanapis.com/images/items/17f69703ba7l0i1ztwp3pff9ealg3j.png"
+    "image": "/images/consumables/17f69703ba7l0i1ztwp3pff9ealg3j.webp"
   },
   {
     "id": "17f69d75574l0i1ztzpw8w4gi0347p",
     "name": "Prattling Pate \"apologies\"",
     "type": "-",
     "effect": "Emits a voice that says \"Apologies\"",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d75574l0i1ztzpw8w4gi0347p.png"
+    "image": "/images/consumables/17f69d75574l0i1ztzpw8w4gi0347p.webp"
   },
   {
     "id": "17f69c5e2f9l0i1zu84zepim5swncf",
     "name": "Rejuvenating Boluses",
     "type": "-",
     "effect": "Alleviates death blight buildup",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c5e2f9l0i1zu84zepim5swncf.png"
+    "image": "/images/consumables/17f69c5e2f9l0i1zu84zepim5swncf.webp"
   },
   {
     "id": "17f697e103fl0i1zuezwn5gaqyajzs",
     "name": "Explosive Stone Clump",
     "type": "-",
     "effect": "Explodes when thrown together, inflicting fire damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f697e103fl0i1zuezwn5gaqyajzs.png"
+    "image": "/images/consumables/17f697e103fl0i1zuezwn5gaqyajzs.webp"
   },
   {
     "id": "17f6979b090l0i1zufqn06yc9f7hb7",
     "name": "Prattling Pate \"you're Beautiful\"",
     "type": "-",
     "effect": "Emits a voice that says \"You're beautiful\"",
-    "image": "https://eldenring.fanapis.com/images/items/17f6979b090l0i1zufqn06yc9f7hb7.png"
+    "image": "/images/consumables/17f6979b090l0i1zufqn06yc9f7hb7.webp"
   },
   {
     "id": "17f69beefc3l0i1zujz0wn3ingciqnc",
     "name": "Poison Grease",
     "type": "-",
     "effect": "Coats armament, inflicting poison",
-    "image": "https://eldenring.fanapis.com/images/items/17f69beefc3l0i1zujz0wn3ingciqnc.png"
+    "image": "/images/consumables/17f69beefc3l0i1zujz0wn3ingciqnc.webp"
   },
   {
     "id": "17f698e33e7l0i1zuo3ffvwukb3f6c",
     "name": "Prattling Pate \"please Help\"",
     "type": "-",
     "effect": "Emits a voice that says \"Please help\"",
-    "image": "https://eldenring.fanapis.com/images/items/17f698e33e7l0i1zuo3ffvwukb3f6c.png"
+    "image": "/images/consumables/17f698e33e7l0i1zuo3ffvwukb3f6c.webp"
   },
   {
     "id": "17f69cb8ebbl0i1zusn8k0dzg2s6gm",
     "name": "Golden Rune [7]",
     "type": "-",
     "effect": "Use to gain many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cb8ebbl0i1zusn8k0dzg2s6gm.png"
+    "image": "/images/consumables/17f69cb8ebbl0i1zusn8k0dzg2s6gm.webp"
   },
   {
     "id": "17f69bce6eel0i1zv0rrdqfs7qm8yr",
     "name": "Golden Rune [9]",
     "type": "-",
     "effect": "Use to gain many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bce6eel0i1zv0rrdqfs7qm8yr.png"
+    "image": "/images/consumables/17f69bce6eel0i1zv0rrdqfs7qm8yr.webp"
   },
   {
     "id": "17f697039b2l0i1zv6dezjshd2x0g5",
     "name": "Golden Rune [10]",
     "type": "-",
     "effect": "Use to gain a great many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f697039b2l0i1zv6dezjshd2x0g5.png"
+    "image": "/images/consumables/17f697039b2l0i1zv6dezjshd2x0g5.webp"
   },
   {
     "id": "17f694e6a2fl0i1zvchdkv8cinr6cb",
     "name": "Golden Rune [8]",
     "type": "-",
     "effect": "Use to gain many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f694e6a2fl0i1zvchdkv8cinr6cb.png"
+    "image": "/images/consumables/17f694e6a2fl0i1zvchdkv8cinr6cb.webp"
   },
   {
     "id": "17f695a52adl0i1zvgus4frzy6auv",
     "name": "Shield Grease",
     "type": "-",
     "effect": "Boosts guarding ability and all damage negation.",
-    "image": "https://eldenring.fanapis.com/images/items/17f695a52adl0i1zvgus4frzy6auv.png"
+    "image": "/images/consumables/17f695a52adl0i1zvgus4frzy6auv.webp"
   },
   {
     "id": "17f6970af99l0i1zvoz3gwwbqtju1v",
     "name": "Soap",
     "type": "-",
     "effect": "Removes filth and accumulations on the body",
-    "image": "https://eldenring.fanapis.com/images/items/17f6970af99l0i1zvoz3gwwbqtju1v.png"
+    "image": "/images/consumables/17f6970af99l0i1zvoz3gwwbqtju1v.webp"
   },
   {
     "id": "17f69d59ab8l0i1zvubpwttkrksadi",
     "name": "Frenzyflame Stone",
     "type": "-",
     "effect": "Uses FP to continuously heal chaos followers",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d59ab8l0i1zvubpwttkrksadi.png"
+    "image": "/images/consumables/17f69d59ab8l0i1zvubpwttkrksadi.webp"
   },
   {
     "id": "17f69ce1a37l0i1zvzsf1tixw94s9f",
     "name": "Lightning Grease",
     "type": "- ",
     "effect": "Coats armament, inflicting lightning damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ce1a37l0i1zvzsf1tixw94s9f.png"
+    "image": "/images/consumables/17f69ce1a37l0i1zvzsf1tixw94s9f.webp"
   },
   {
     "id": "17f69bdb926l0i1zw078oxfws6rxdx",
     "name": "Soporific Grease",
     "type": "-",
     "effect": "Coats armament, inflicting sleep",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bdb926l0i1zw078oxfws6rxdx.png"
+    "image": "/images/consumables/17f69bdb926l0i1zw078oxfws6rxdx.webp"
   },
   {
     "id": "17f69db9b82l0i1zw39wz6zngratgd",
     "name": "Dappled Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts Immunity, Robustness, and Focus",
-    "image": "https://eldenring.fanapis.com/images/items/17f69db9b82l0i1zw39wz6zngratgd.png"
+    "image": "/images/consumables/17f69db9b82l0i1zw39wz6zngratgd.webp"
   },
   {
     "id": "17f69b99714l0i1zwil9vntjqzg5br",
     "name": "Wraith Calling Bell",
     "type": "-",
     "effect": "Uses FP to ring bell and calls prowling wraiths",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b99714l0i1zwil9vntjqzg5br.png"
+    "image": "/images/consumables/17f69b99714l0i1zwil9vntjqzg5br.webp"
   },
   {
     "id": "17f69687043l0i1zwohznakihrb9es",
     "name": "Holyproof Dried Liver",
     "type": "-",
     "effect": "Temporarily boosts holy damage negation",
-    "image": "https://eldenring.fanapis.com/images/items/17f69687043l0i1zwohznakihrb9es.png"
+    "image": "/images/consumables/17f69687043l0i1zwohznakihrb9es.webp"
   },
   {
     "id": "17f69b3ed72l0i1zwpf1dtkj8tyj8o",
     "name": "Remembrance Of The Starscourge",
     "type": "-",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b3ed72l0i1zwpf1dtkj8tyj8o.png"
+    "image": "/images/consumables/17f69b3ed72l0i1zwpf1dtkj8tyj8o.webp"
   },
   {
     "id": "17f69db2b94l0i1zwqrfx488ux3f6q",
     "name": "Dappled White Cured Meat",
     "type": "-",
     "effect": "Temporarily boosts immunity, robustness, and focus",
-    "image": "https://eldenring.fanapis.com/images/items/17f69db2b94l0i1zwqrfx488ux3f6q.png"
+    "image": "/images/consumables/17f69db2b94l0i1zwqrfx488ux3f6q.webp"
   },
   {
     "id": "17f69b51449l0i1zwrsu6aji3lq2sj",
     "name": "Clarifying Boluses",
     "type": "-",
     "effect": "Alleviates madness buildup",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/clarifying-boluses.png"
+    "image": "/images/consumables/clarifying-boluses.webp"
   },
   {
     "id": "17f69ca9998l0i1zx2bs65c7kep4i",
     "name": "Crystal Dart",
     "type": "Str D Dex C",
     "effect": "Uses FP. Throw to inflict magic damage.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ca9998l0i1zx2bs65c7kep4i.png"
+    "image": "/images/consumables/17f69ca9998l0i1zx2bs65c7kep4i.webp"
   },
   {
     "id": "17f695e58dal0i1zxcrmxrz0dodtr",
     "name": "Drawstring Blood Grease",
     "type": "-",
     "effect": "Quickly coats armament, inflicting blood loss",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/drawstring-blood-grease.png"
+    "image": "/images/consumables/drawstring-blood-grease.webp"
   },
   {
     "id": "17f6964ca94l0i1zxddi20asvh8byj",
     "name": "Drawstring Magic Grease",
     "type": "- ",
     "effect": "Quickly coats armament, inflicting magic damage",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/drawstring-magic-grease.png"
+    "image": "/images/consumables/drawstring-magic-grease.webp"
   },
   {
     "id": "17f69c39d47l0i1zxgqfco64hbk1nd",
     "name": "Furlcalling Finger Remedy",
     "type": "Consumable",
     "effect": "Reveals co-op and hostile summoning signs",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c39d47l0i1zxgqfco64hbk1nd.png"
+    "image": "/images/consumables/17f69c39d47l0i1zxgqfco64hbk1nd.webp"
   },
   {
     "id": "17f699d546cl0i1zxh020yg1czr9us",
     "name": "Roped Fetid Pot",
     "type": "-",
     "effect": "Throw behind to cause buildup of deadly poison",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/roped-fetid-pot.png"
+    "image": "/images/consumables/roped-fetid-pot.webp"
   },
   {
     "id": "17f697a5074l0i1zxos2qrarphijg9",
     "name": "Roped Poison Pot",
     "type": "-",
     "effect": "Throw behind to cause buildup of poison",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/roped-poison-pot.png"
+    "image": "/images/consumables/roped-poison-pot.webp"
   },
   {
     "id": "17f69aced0el0i1zy0licjui6swml",
     "name": "Beastlure Pot",
     "type": "-",
     "effect": "Uses FP. Lures beasts only.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/beastlure-pot.png"
+    "image": "/images/consumables/beastlure-pot.webp"
   },
   {
     "id": "17f696882a6l0i1zy2cfi5283ak1x8",
     "name": "Roped Oil Pot",
     "type": "-",
     "effect": "Throw behind to douse enemies in oil",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/roped-oil-pot.png"
+    "image": "/images/consumables/roped-oil-pot.webp"
   },
   {
     "id": "17f6983cd86l0i1zy5lf9rln6u4a6",
     "name": "Rancor Pot",
     "type": "-",
     "effect": "Uses FP. Throw to summon vengeful spirits.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rancor-pot.png"
+    "image": "/images/consumables/rancor-pot.webp"
   },
   {
     "id": "17f69b1181al0i1zy6tbrd4p8felpt",
     "name": "Cursed-blood Pot",
     "type": "-",
     "effect": "Throw to douse enemy with accursed blood.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/cursed-blood-pot.png"
+    "image": "/images/consumables/cursed-blood-pot.webp"
   },
   {
     "id": "17f6982170dl0i1zycb6ugfxopo6ko",
     "name": "Freezing Pot",
     "type": "-",
     "effect": "Throw at enemies to cause buildup of frost.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/freezing-pot.png"
+    "image": "/images/consumables/freezing-pot.webp"
   },
   {
     "id": "17f697c0c48l0i1zynfj6qp34snkn",
     "name": "Poison Pot",
     "type": "-",
     "effect": "Throw at enemies to cause buildup of poison.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/poison-pot.png"
+    "image": "/images/consumables/poison-pot.webp"
   },
   {
     "id": "17f697120eel0i1zysexy9dml5aarj",
     "name": "Oil Pot",
     "type": "-",
     "effect": "Throw at enemies to soak them in oil.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/oil-pot.png"
+    "image": "/images/consumables/oil-pot.webp"
   },
   {
     "id": "17f6950f5e5l0i1zyy9pleuxod1dd",
     "name": "Poison Spraymist",
     "type": "- ",
     "effect": "Uses FP to release poison mist from the mouth.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/poison-spraymist.png"
+    "image": "/images/consumables/poison-spraymist.webp"
   },
   {
     "id": "17f699d1da5l0i1zz0e2z7fpkkk4b",
     "name": "Fetid Pot",
     "type": "-",
     "effect": "Throw at enemies to cause deadly buildup of poison.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fetid-pot.png"
+    "image": "/images/consumables/fetid-pot.webp"
   },
   {
     "id": "17f69bbb349l0i1zz39n2i94xzb0c",
     "name": "Giantsflame Fire Pot",
     "type": "Fai S",
     "effect": "Uses FP. Throw at enemies to inflict heavy fire damage.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/giantsflame-fire-pot.png"
+    "image": "/images/consumables/giantsflame-fire-pot.webp"
   },
   {
     "id": "17f697be6c9l0i1zz7w2cqc6netcxt",
     "name": "Bloodboil Aromatic",
     "type": "-",
     "effect": "Uses FP to enter a temporary state of fervor.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bloodboil-aromatic.png"
+    "image": "/images/consumables/bloodboil-aromatic.webp"
   },
   {
     "id": "17f695281b9l0i1zzkzgdfu3fmw0h7",
     "name": "Thawfrost Boluses",
     "type": "-",
     "effect": "Alleviates buildup of frost",
-    "image": "https://eldenring.fanapis.com/images/items/17f695281b9l0i1zzkzgdfu3fmw0h7.png"
+    "image": "/images/consumables/17f695281b9l0i1zzkzgdfu3fmw0h7.webp"
   },
   {
     "id": "17f696de995l0i1zzow2rkegmvbu5s",
     "name": "Remembrance Of The Naturalborn",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f696de995l0i1zzow2rkegmvbu5s.png"
+    "image": "/images/consumables/17f696de995l0i1zzow2rkegmvbu5s.webp"
   },
   {
     "id": "17f69c57af4l0i1zzs199y8izriyrk",
     "name": "Remembrance Of The Regal Ancestor",
     "type": "-",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c57af4l0i1zzs199y8izriyrk.png"
+    "image": "/images/consumables/17f69c57af4l0i1zzs199y8izriyrk.webp"
   },
   {
     "id": "17f69cdd48bl0i1zztdzohsxjyagu",
     "name": "Margit's Shackle",
     "type": "n/a",
     "effect": "Binds Margit and Morgott two times per battle",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cdd48bl0i1zztdzohsxjyagu.png"
+    "image": "/images/consumables/17f69cdd48bl0i1zztdzohsxjyagu.webp"
   },
   {
     "id": "17f69bb97c7l0i1zzwzgyd2w1un4it",
     "name": "Numen'srune",
     "type": "-",
     "effect": "Use to gain a multitude of runes",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/numensrune.png"
+    "image": "/images/consumables/numensrune.webp"
   },
   {
     "id": "17f6957231fl0i200708bjcot9sgbg",
     "name": "Regal Omen Bairn",
     "type": "Int B Fai B",
     "effect": "Uses FP to unleash many wraiths that chase that foes",
-    "image": "https://eldenring.fanapis.com/images/items/17f6957231fl0i200708bjcot9sgbg.png"
+    "image": "/images/consumables/17f6957231fl0i200708bjcot9sgbg.webp"
   },
   {
     "id": "17f69d999f2l0i200anh3ptqo3sv58",
     "name": "Sacred Order Pot",
     "type": "Fai S",
     "effect": "Uses FP. Throw at enemies to inflict heavy holy damage.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/sacred-order-pot.png"
+    "image": "/images/consumables/sacred-order-pot.webp"
   },
   {
     "id": "17f69bd730al0i200d10c6jt6jmyjus",
     "name": "Rot Pot",
     "type": "-",
     "effect": "Throw at enemies to cause buildup of scarlet rot.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rot-pot.png"
+    "image": "/images/consumables/rot-pot.webp"
   },
   {
     "id": "17f69cc7cc4l0i200eiqrrphtaqwg",
     "name": "Spark Aromatic",
     "type": "Str D Dex S ",
     "effect": "Uses FP to broadly scatter sparks in a wide arc straight ahead",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/spark-aromatic.png"
+    "image": "/images/consumables/spark-aromatic.webp"
   },
   {
     "id": "17f698094a4l0i200to6xkgyxul9w5",
     "name": "Blasphemous Claw",
     "type": "-",
     "effect": "Deflects the power of the Black Blade",
-    "image": "https://eldenring.fanapis.com/images/items/17f698094a4l0i200to6xkgyxul9w5.png"
+    "image": "/images/consumables/17f698094a4l0i200to6xkgyxul9w5.webp"
   },
   {
     "id": "17f69b4e09el0i200tt07oxggxfz0dp",
     "name": "Uplifting Aromatic",
     "type": "- ",
     "effect": "Boosts ally attack power and reduces incoming damage once.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/uplifting-aromatic.png"
+    "image": "/images/consumables/uplifting-aromatic.webp"
   },
   {
     "id": "17f69889ffcl0i200yg02e54y4cfe3i",
     "name": "Drawstring Holy Grease",
     "type": "- ",
     "effect": "Quickly coats armament, inflicting holy damage",
-    "image": "https://eldenring.fanapis.com/images/items/17f69889ffcl0i200yg02e54y4cfe3i.png"
+    "image": "/images/consumables/17f69889ffcl0i200yg02e54y4cfe3i.webp"
   },
   {
     "id": "17f69b8c28al0i2010m9r41jzo1ap",
     "name": "Freezing Grease",
     "type": "-",
     "effect": "Coats armament, inflicting frost",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b8c28al0i2010m9r41jzo1ap.png"
+    "image": "/images/consumables/17f69b8c28al0i2010m9r41jzo1ap.webp"
   },
   {
     "id": "17f69df1f09l0i2012e482ufurh3wy",
     "name": "Golden Rune [13]",
     "type": "-",
     "effect": "Use to gain a great many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f69df1f09l0i2012e482ufurh3wy.png"
+    "image": "/images/consumables/17f69df1f09l0i2012e482ufurh3wy.webp"
   },
   {
     "id": "17f6964c944l0i201hw2l5522zote8",
     "name": "Hero's Rune [1]",
     "type": "-",
     "effect": "Use to gain an abundance of runes.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6964c944l0i201hw2l5522zote8.png"
+    "image": "/images/consumables/17f6964c944l0i201hw2l5522zote8.webp"
   },
   {
     "id": "17f695791c0l0i201jpwndb2ziv7rs",
     "name": "Hero's Rune [5]",
     "type": "-",
     "effect": "Use to gain an abundance of runes.",
-    "image": "https://eldenring.fanapis.com/images/items/17f695791c0l0i201jpwndb2ziv7rs.png"
+    "image": "/images/consumables/17f695791c0l0i201jpwndb2ziv7rs.webp"
   },
   {
     "id": "17f69cb286dl0i201ltzsa5s8tqidq",
     "name": "Lightningproof Dried Liver",
     "type": "- ",
     "effect": "Temporarily boosts lightning damage negation",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cb286dl0i201ltzsa5s8tqidq.png"
+    "image": "/images/consumables/17f69cb286dl0i201ltzsa5s8tqidq.webp"
   },
   {
     "id": "17f697889a5l0i201p4fv8p1iost25",
     "name": "Lord's Rune",
     "type": "- ",
     "effect": "Use to gain an enormous abundance of runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f697889a5l0i201p4fv8p1iost25.png"
+    "image": "/images/consumables/17f697889a5l0i201p4fv8p1iost25.webp"
   },
   {
     "id": "17f69aa4eebl0i201qxnapq8bgdxs",
     "name": "Memory Of Grace",
     "type": "Reusable",
     "effect": "Lose all runes, return to last site of lost grace.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aa4eebl0i201qxnapq8bgdxs.png"
+    "image": "/images/consumables/17f69aa4eebl0i201qxnapq8bgdxs.webp"
   },
   {
     "id": "17f6990e974l0i20267ju78azulcz",
     "name": "Mohg's Shackle",
     "type": "- ",
     "effect": "Briefly binds Mogh, once imprisoned, to earth",
-    "image": "https://eldenring.fanapis.com/images/items/17f6990e974l0i20267ju78azulcz.png"
+    "image": "/images/consumables/17f6990e974l0i20267ju78azulcz.webp"
   },
   {
     "id": "17f699a816al0i2029cqa1vgu934qm",
     "name": "Omen Bairn",
     "type": "- ",
     "effect": "Uses FP to unleash wraiths that chase down foes",
-    "image": "https://eldenring.fanapis.com/images/items/17f699a816al0i2029cqa1vgu934qm.png"
+    "image": "/images/consumables/17f699a816al0i2029cqa1vgu934qm.webp"
   },
   {
     "id": "17f6995d3d0l0i202bb7hvshtg9usl",
     "name": "Remembrance Of Hoarah Loux",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f6995d3d0l0i202bb7hvshtg9usl.png"
+    "image": "/images/consumables/17f6995d3d0l0i202bb7hvshtg9usl.webp"
   },
   {
     "id": "17f6979a73cl0i202d198w2z4k0iug",
     "name": "Remembrance Of The Black Blade",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f6979a73cl0i202d198w2z4k0iug.png"
+    "image": "/images/consumables/17f6979a73cl0i202d198w2z4k0iug.webp"
   },
   {
     "id": "17f6982c67cl0i202fvde54suq2f7",
     "name": "Remembrance Of The Blasphemous",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f6982c67cl0i202fvde54suq2f7.png"
+    "image": "/images/consumables/17f6982c67cl0i202fvde54suq2f7.webp"
   },
   {
     "id": "17f69b51e87l0i202t1add41xwy9y7",
     "name": "Remembrance Of The Fire Giant",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b51e87l0i202t1add41xwy9y7.png"
+    "image": "/images/consumables/17f69b51e87l0i202t1add41xwy9y7.webp"
   },
   {
     "id": "17f69c3de02l0i202x8dtlt8lut0ub",
     "name": "Drawstring Rot Grease",
     "type": "-  ",
     "effect": "Quickly coats armament, inflicting scarlet rot, but with a brief effect, owing to its small size.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/drawstring-rot-grease.png"
+    "image": "/images/consumables/drawstring-rot-grease.webp"
   },
   {
     "id": "17f69ca14d8l0i202ziztkj1sjb9sa",
     "name": "Golden Rune (11)",
     "type": "-",
     "effect": "Use to gain many runes",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ca14d8l0i202ziztkj1sjb9sa.png"
+    "image": "/images/consumables/17f69ca14d8l0i202ziztkj1sjb9sa.webp"
   },
   {
     "id": "17f697d3b4dl0i2037x501vy93x619",
     "name": "Remembrance Of The Omen King",
     "type": "-",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f697d3b4dl0i2037x501vy93x619.png"
+    "image": "/images/consumables/17f697d3b4dl0i2037x501vy93x619.webp"
   },
   {
     "id": "17f698f3aadl0i2038pwv566m3ddrj",
     "name": "Remembrance Of The Black Blade",
     "type": "-",
     "effect": "Take the power of its namesake Via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f698f3aadl0i2038pwv566m3ddrj.png"
+    "image": "/images/consumables/17f698f3aadl0i2038pwv566m3ddrj.webp"
   },
   {
     "id": "17f69c5468fl0i203fvz09odp0k4pq",
     "name": "Remembrance Of The Dragonlord",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c5468fl0i203fvz09odp0k4pq.png"
+    "image": "/images/consumables/17f69c5468fl0i203fvz09odp0k4pq.webp"
   },
   {
     "id": "17f6968b770l0i203kwq77zbsiq5om",
     "name": "Remembrance Of The Lichdragon",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f6968b770l0i203kwq77zbsiq5om.png"
+    "image": "/images/consumables/17f6968b770l0i203kwq77zbsiq5om.webp"
   },
   {
     "id": "17f69aed689l0i203q40vkjazumcks",
     "name": "Elden Remembrance",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aed689l0i203q40vkjazumcks.png"
+    "image": "/images/consumables/17f69aed689l0i203q40vkjazumcks.webp"
   },
   {
     "id": "17f69881ac4l0i203w68wewtomkibu",
     "name": "Remembrance Of The Rot Goddess",
     "type": "- ",
     "effect": "Take the power of its namesake via Finger Reader",
-    "image": "https://eldenring.fanapis.com/images/items/17f69881ac4l0i203w68wewtomkibu.png"
+    "image": "/images/consumables/17f69881ac4l0i203w68wewtomkibu.webp"
   },
   {
     "id": "17f6997dbc1l0i203xgtsq0upd72xl",
     "name": "Radiant Baldachin's Blessing",
     "type": "-",
     "effect": "Uses FP to temporarily raise poise",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/radiant-baldachins-blessing.png"
+    "image": "/images/consumables/radiant-baldachins-blessing.webp"
   },
   {
     "id": "17f697d40afl0i2041cta4gx4stl1",
     "name": "Crafting Kit",
     "type": "Key Item",
     "effect": "Enables the practice of item Crafting",
-    "image": "https://eldenring.fanapis.com/images/items/17f697d40afl0i2041cta4gx4stl1.png"
+    "image": "/images/consumables/17f697d40afl0i2041cta4gx4stl1.webp"
   },
   {
     "id": "17f69ab94aal0i2045kje2bq3ipfkj",
     "name": "Telescope",
     "type": "Key Item",
     "effect": "Allows viewer to see faraway things",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ab94aal0i2045kje2bq3ipfkj.png"
+    "image": "/images/consumables/17f69ab94aal0i2045kje2bq3ipfkj.webp"
   },
   {
     "id": "17f69e5500bl0i204is3030yvaae9v",
     "name": "Torch",
     "type": "Guard Phy 21 Mag 15 Fire 25 Ligt 15 Holy 15 Boost 19",
     "effect": "Phy 54 Mag 0 Fire 97 Ligt 0 Holy 0 Crit 100",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e5500bl0i204is3030yvaae9v.png"
+    "image": "/images/consumables/17f69e5500bl0i204is3030yvaae9v.webp"
   },
   {
     "id": "17f696a91e6l0i204lxs4hae8avy0g",
     "name": "Lantern",
     "type": "Key Item",
     "effect": "Attach to waist to illuminate surroundings",
-    "image": "https://eldenring.fanapis.com/images/items/17f696a91e6l0i204lxs4hae8avy0g.png"
+    "image": "/images/consumables/17f696a91e6l0i204lxs4hae8avy0g.webp"
   },
   {
     "id": "17f69d76eb3l0i204oq09gkwaowmf68",
     "name": "Spectral Steed Whistle",
     "type": "Key Item",
     "effect": "Summon and ride spectral steed Torrent.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d76eb3l0i204oq09gkwaowmf68.png"
+    "image": "/images/consumables/17f69d76eb3l0i204oq09gkwaowmf68.webp"
   },
   {
     "id": "17f69991a5al0i204r59tm4exdtnr",
     "name": "Spirit Calling Bell",
     "type": "Key Item",
     "effect": "Bell that summons various spirits from ashen items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69991a5al0i204r59tm4exdtnr.png"
+    "image": "/images/consumables/17f69991a5al0i204r59tm4exdtnr.webp"
   },
   {
     "id": "17f69c0fff6l0i204tptw18qdioh",
     "name": "Spirit Calling Bell",
     "type": "Key Item",
     "effect": "Bell that summons various spirits from ashen items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c0fff6l0i204tptw18qdioh.png"
+    "image": "/images/consumables/17f69c0fff6l0i204tptw18qdioh.webp"
   },
   {
     "id": "17f69bd62d1l0i2055wu9b0k4ddvh",
     "name": "Tailoring Tools",
     "type": "Key Item",
     "effect": "Enables armor adjustment at sites of grace",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bd62d1l0i2055wu9b0k4ddvh.png"
+    "image": "/images/consumables/17f69bd62d1l0i2055wu9b0k4ddvh.webp"
   },
   {
     "id": "17f69a35611l0i20597yedxrkvphsh",
     "name": "Sewing Needle",
     "type": "Key Item",
     "effect": "Boc the demi-human's prized sewing needle",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a35611l0i20597yedxrkvphsh.png"
+    "image": "/images/consumables/17f69a35611l0i20597yedxrkvphsh.webp"
   },
   {
     "id": "17f69d455c5l0i205a3k0wzn2ypqle",
     "name": "Tailoring Tools",
     "type": "Key Item",
     "effect": "Enables armor adjustment at sites of grace",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d455c5l0i205a3k0wzn2ypqle.png"
+    "image": "/images/consumables/17f69d455c5l0i205a3k0wzn2ypqle.webp"
   },
   {
     "id": "17f69c02f20l0i205dxwda6n4zguv",
     "name": "Golden Tailoring Tools",
     "type": "Key Item",
     "effect": "Allows demigod garb alteration at sites of grace",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c02f20l0i205dxwda6n4zguv.png"
+    "image": "/images/consumables/17f69c02f20l0i205dxwda6n4zguv.webp"
   },
   {
     "id": "17f69a57e1al0i205nrq7r7ejujwwf",
     "name": "Gold Sewing Needle",
     "type": "Key Item",
     "effect": "Special sewing needle for demigod attire",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a57e1al0i205nrq7r7ejujwwf.png"
+    "image": "/images/consumables/17f69a57e1al0i205nrq7r7ejujwwf.webp"
   },
   {
     "id": "17f69799c84l0i205u6lcu7cimt6go",
     "name": "Unalloyed Gold Needle",
     "type": "Key Item",
     "effect": "Snapped intricate needle of unalloyed gold",
-    "image": "https://eldenring.fanapis.com/images/items/17f69799c84l0i205u6lcu7cimt6go.png"
+    "image": "/images/consumables/17f69799c84l0i205u6lcu7cimt6go.webp"
   },
   {
     "id": "17f697d6e2fl0i205z4701bi2d4i8o",
     "name": "Memory Stone",
     "type": "Key Item",
     "effect": "Increases memory slots",
-    "image": "https://eldenring.fanapis.com/images/items/17f697d6e2fl0i205z4701bi2d4i8o.png"
+    "image": "/images/consumables/17f697d6e2fl0i205z4701bi2d4i8o.webp"
   },
   {
     "id": "17f69c3d8d6l0i20606xv4qubbfu7p",
     "name": "Memory Stone",
     "type": "Key Item",
     "effect": "Increases memory slots",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c3d8d6l0i20606xv4qubbfu7p.png"
+    "image": "/images/consumables/17f69c3d8d6l0i20606xv4qubbfu7p.webp"
   },
   {
     "id": "17f69b3daf5l0i2065ib5jg6rmi10i",
     "name": "Talisman Pouch",
     "type": "Key Item",
     "effect": "Increases Talisman equip slots.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b3daf5l0i2065ib5jg6rmi10i.png"
+    "image": "/images/consumables/17f69b3daf5l0i2065ib5jg6rmi10i.webp"
   },
   {
     "id": "17f69b93f33l0i206bj18mqb1lqzvbh",
     "name": "Stonesword Key",
     "type": "Key Item",
     "effect": "Use to break one imp statue seal",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b93f33l0i206bj18mqb1lqzvbh.png"
+    "image": "/images/consumables/17f69b93f33l0i206bj18mqb1lqzvbh.webp"
   },
   {
     "id": "17f6979cd85l0i206pxht9kpknud0h",
     "name": "Academy Glintstone Key",
     "type": "Key Item",
     "effect": "Key to open the academy's two sealed gates",
-    "image": "https://eldenring.fanapis.com/images/items/17f6979cd85l0i206pxht9kpknud0h.png"
+    "image": "/images/consumables/17f6979cd85l0i206pxht9kpknud0h.webp"
   },
   {
     "id": "17f69a99affl0i206qzglzvffjj70w",
     "name": "Sewer-gaol Key",
     "type": "Key Item",
     "effect": "Unlocks sewer-gaol door beneath Leyndell",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a99affl0i206qzglzvffjj70w.png"
+    "image": "/images/consumables/17f69a99affl0i206qzglzvffjj70w.webp"
   },
   {
     "id": "17f69862ba2l0i206t8hr6feig9ai",
     "name": "Rusty Key",
     "type": "Key Item",
     "effect": "Opens a locked door in Stormveil Castle",
-    "image": "https://eldenring.fanapis.com/images/items/17f69862ba2l0i206t8hr6feig9ai.png"
+    "image": "/images/consumables/17f69862ba2l0i206t8hr6feig9ai.webp"
   },
   {
     "id": "17f69c62b71l0i206vv9tbzikgtxl",
     "name": "Imbued Sword Key",
     "type": "Key Item",
     "effect": "Unseals sending gate, but disappears upon use",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c62b71l0i206vv9tbzikgtxl.png"
+    "image": "/images/consumables/17f69c62b71l0i206vv9tbzikgtxl.webp"
   },
   {
     "id": "17f69d12884l0i206zpa4yilhgxhcb",
     "name": "Drawing-room Key",
     "type": "Key Item",
     "effect": "Key to the Volcano Manor drawing room",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d12884l0i206zpa4yilhgxhcb.png"
+    "image": "/images/consumables/17f69d12884l0i206zpa4yilhgxhcb.webp"
   },
   {
     "id": "17f699245f7l0i207cf3uiypio9die",
     "name": "Hosts' Trick-mirror",
     "type": "Key Item",
     "effect": "Take on appearance of a cooperator",
-    "image": "https://eldenring.fanapis.com/images/items/17f699245f7l0i207cf3uiypio9die.png"
+    "image": "/images/consumables/17f699245f7l0i207cf3uiypio9die.webp"
   },
   {
     "id": "17f69b4f8del0i207kzy9ssb5jzjmk",
     "name": "Mimic's Veil",
     "type": "-",
     "effect": "Uses FP to mimic nearby objects.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b4f8del0i207kzy9ssb5jzjmk.png"
+    "image": "/images/consumables/17f69b4f8del0i207kzy9ssb5jzjmk.webp"
   },
   {
     "id": "17f69707f53l0i207oh8lu8mjrhphg",
     "name": "Irina's Letter",
     "type": "Key Item",
     "effect": "Letter addressed to the commander of Castle Morne",
-    "image": "https://eldenring.fanapis.com/images/items/17f69707f53l0i207oh8lu8mjrhphg.png"
+    "image": "/images/consumables/17f69707f53l0i207oh8lu8mjrhphg.webp"
   },
   {
     "id": "17f696d60ffl0i207s3ni82cdzpgc9",
     "name": "Discarded Palace Key",
     "type": "Key Item",
     "effect": "Key to treasure chest for Carian Princesses",
-    "image": "https://eldenring.fanapis.com/images/items/17f696d60ffl0i207s3ni82cdzpgc9.png"
+    "image": "/images/consumables/17f696d60ffl0i207s3ni82cdzpgc9.webp"
   },
   {
     "id": "17f69a7f529l0i207u8n67m2onfkvg",
     "name": "Furled Finger's Trick-mirror",
     "type": "0.7",
     "effect": "Take on appearance of a Host of Fingers",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a7f529l0i207u8n67m2onfkvg.png"
+    "image": "/images/consumables/17f69a7f529l0i207u8n67m2onfkvg.webp"
   },
   {
     "id": "17f69d4793al0i20803285w1d3ou7g",
     "name": "Irina's Letter",
     "type": "Key Item",
     "effect": "Letter addressed to the commander of Castle Morne",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d4793al0i20803285w1d3ou7g.png"
+    "image": "/images/consumables/17f69d4793al0i20803285w1d3ou7g.webp"
   },
   {
     "id": "17f69afd15fl0i208acg0jckcmfrp4",
     "name": "Chrysalids' Memento",
     "type": "Key Item",
     "effect": "Broach wrapped in red velvet",
-    "image": "https://eldenring.fanapis.com/images/items/17f69afd15fl0i208acg0jckcmfrp4.png"
+    "image": "/images/consumables/17f69afd15fl0i208acg0jckcmfrp4.webp"
   },
   {
     "id": "17f69a609b5l0i208e7iwd8rqbtcbm",
     "name": "Chrysalids' Memento",
     "type": "Key Item",
     "effect": "Broach wrapped in red velvet",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a609b5l0i208e7iwd8rqbtcbm.png"
+    "image": "/images/consumables/17f69a609b5l0i208e7iwd8rqbtcbm.webp"
   },
   {
     "id": "17f69c98ba8l0i208j7gybwirorhvk",
     "name": "Beast Eye",
     "type": "Key Item",
     "effect": "Said to tremble when close to Deathroot",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c98ba8l0i208j7gybwirorhvk.png"
+    "image": "/images/consumables/17f69c98ba8l0i208j7gybwirorhvk.webp"
   },
   {
     "id": "17f698fde01l0i208oj9xgaolt458e",
     "name": "Deathroot",
     "type": "Key Item",
     "effect": "Beast Clergyman seeks and devours these",
-    "image": "https://eldenring.fanapis.com/images/items/17f698fde01l0i208oj9xgaolt458e.png"
+    "image": "/images/consumables/17f698fde01l0i208oj9xgaolt458e.webp"
   },
   {
     "id": "17f69b4efcfl0i208rome3b7ahkojo",
     "name": "Shabriri Grape",
     "type": "Key Item",
     "effect": "Yellow, oozing eyeball of the infirm",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b4efcfl0i208rome3b7ahkojo.png"
+    "image": "/images/consumables/17f69b4efcfl0i208rome3b7ahkojo.webp"
   },
   {
     "id": "17f69a32e39l0i2092ydbzq5izu5c8",
     "name": "Celestial Dew",
     "type": "-",
     "effect": "Carry out Absolution at the Church of Vows",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a32e39l0i2092ydbzq5izu5c8.png"
+    "image": "/images/consumables/17f69a32e39l0i2092ydbzq5izu5c8.webp"
   },
   {
     "id": "17f695a2eeal0i209a1og68zgohdyd",
     "name": "Seedbed Curse",
     "type": "Key Item",
     "effect": "Curse grown on a body defiled by a Dung Eater",
-    "image": "https://eldenring.fanapis.com/images/items/17f695a2eeal0i209a1og68zgohdyd.png"
+    "image": "/images/consumables/17f695a2eeal0i209a1og68zgohdyd.webp"
   },
   {
     "id": "17f69826b90l0i209g5sv9021cx8ik",
     "name": "Black Knifeprint",
     "type": "Key Item",
     "effect": "Mark of the Night of the Black Knives ritual",
-    "image": "https://eldenring.fanapis.com/images/items/17f69826b90l0i209g5sv9021cx8ik.png"
+    "image": "/images/consumables/17f69826b90l0i209g5sv9021cx8ik.webp"
   },
   {
     "id": "17f6956fa2el0i209gnb9oi6el6zzg",
     "name": "Dragon Heart",
     "type": "- ",
     "effect": "Gain power of the dragon at the Dragon Communion altar.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6956fa2el0i209gnb9oi6el6zzg.png"
+    "image": "/images/consumables/17f6956fa2el0i209gnb9oi6el6zzg.webp"
   },
   {
     "id": "17f69cab719l0i209ibai7z2o5douc",
     "name": "Fingerprint Grape",
     "type": "Key Item",
     "effect": "Eyeball of the knight Vyke, inflamed yellow",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cab719l0i209ibai7z2o5douc.png"
+    "image": "/images/consumables/17f69cab719l0i209ibai7z2o5douc.webp"
   },
   {
     "id": "17f698bc780l0i209x9kxpfhp6297c",
     "name": "Prattling Pate \"hello\"",
     "type": "Key Item",
     "effect": "Emits a voice that says \"Hello\"",
-    "image": "https://eldenring.fanapis.com/images/items/17f698bc780l0i209x9kxpfhp6297c.png"
+    "image": "/images/consumables/17f698bc780l0i209x9kxpfhp6297c.webp"
   },
   {
     "id": "17f697e1515l0i209ylrbt1feisj3s",
     "name": "Prattling Pate \"thank You\"",
     "type": "Key Item",
     "effect": "Emits a voice that says \"Thank you\"",
-    "image": "https://eldenring.fanapis.com/images/items/17f697e1515l0i209ylrbt1feisj3s.png"
+    "image": "/images/consumables/17f697e1515l0i209ylrbt1feisj3s.webp"
   },
   {
     "id": "17f69ba793cl0i20a5i67qt4pr57t7",
     "name": "Prattling Pate \"apologies\"",
     "type": "-",
     "effect": "Emits a voice that says \"Apologies\"",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ba793cl0i20a5i67qt4pr57t7.png"
+    "image": "/images/consumables/17f69ba793cl0i20a5i67qt4pr57t7.webp"
   },
   {
     "id": "17f69dadf19l0i20a83u1x69rwqczk",
     "name": "Wraith Calling Bell",
     "type": "-",
     "effect": "Uses FP to ring bell and calls prowling wraiths",
-    "image": "https://eldenring.fanapis.com/images/items/17f69dadf19l0i20a83u1x69rwqczk.png"
+    "image": "/images/consumables/17f69dadf19l0i20a83u1x69rwqczk.webp"
   },
   {
     "id": "17f69da909al0i20aqnq0fxca1m5be",
     "name": "Larval Tear",
     "type": "Key Item",
     "effect": "Material needed by Rennala to grant rebirth",
-    "image": "https://eldenring.fanapis.com/images/items/17f69da909al0i20aqnq0fxca1m5be.png"
+    "image": "/images/consumables/17f69da909al0i20aqnq0fxca1m5be.webp"
   },
   {
     "id": "17f69a28766l0i20atzgf1lpmg55at",
     "name": "Seluvis's Potion",
     "type": "Key Item",
     "effect": "Small flask received from Preceptor Seluvis",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a28766l0i20atzgf1lpmg55at.png"
+    "image": "/images/consumables/17f69a28766l0i20atzgf1lpmg55at.webp"
   },
   {
     "id": "17f69962291l0i20av3l6zm3ggrahd",
     "name": "Mirage Riddle",
     "type": "Key Item",
     "effect": "Simple map taken from an imp statue.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69962291l0i20av3l6zm3ggrahd.png"
+    "image": "/images/consumables/17f69962291l0i20av3l6zm3ggrahd.webp"
   },
   {
     "id": "17f69c601f1l0i20axhgsq56l4d2zi",
     "name": "Valkyrie's Prosthesis",
     "type": "Key Item",
     "effect": "Golden prosthesis used by the one-armed Valkyrie",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c601f1l0i20axhgsq56l4d2zi.png"
+    "image": "/images/consumables/17f69c601f1l0i20axhgsq56l4d2zi.webp"
   },
   {
     "id": "17f6952825al0i20b9avef4x7252jh",
     "name": "Weathered Dagger",
     "type": "Key Item",
     "effect": "Dagger received from Fia, Deathbed Companion",
-    "image": "https://eldenring.fanapis.com/images/items/17f6952825al0i20b9avef4x7252jh.png"
+    "image": "/images/consumables/17f6952825al0i20b9avef4x7252jh.webp"
   },
   {
     "id": "17f697ac7cdl0i20bjoloti5bjijqj",
     "name": "Seluvis's Introduction",
     "type": "Key Item",
     "effect": "Letter of introduction addressed to Sellen",
-    "image": "https://eldenring.fanapis.com/images/items/17f697ac7cdl0i20bjoloti5bjijqj.png"
+    "image": "/images/consumables/17f697ac7cdl0i20bjoloti5bjijqj.webp"
   },
   {
     "id": "17f69ca8b16l0i20bpl4cjplmus4qq",
     "name": "Lost Ashes Of War",
     "type": "None",
     "effect": "",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ca8b16l0i20bpl4cjplmus4qq.png"
+    "image": "/images/consumables/17f69ca8b16l0i20bpl4cjplmus4qq.webp"
   },
   {
     "id": "17f69d110b2l0i20bsbvoeefww2qqn",
     "name": "Fingerslayer Blade",
     "type": "Key Item",
     "effect": "Hidden treasure of the Eternal City of Nokron",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d110b2l0i20bsbvoeefww2qqn.png"
+    "image": "/images/consumables/17f69d110b2l0i20bsbvoeefww2qqn.webp"
   },
   {
     "id": "17f69bbfcedl0i20btp9912bp33pz",
     "name": "Ancestral Infant's Head",
     "type": "",
     "effect": "Uses FP to spray spirit vapor",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bbfcedl0i20btp9912bp33pz.png"
+    "image": "/images/consumables/17f69bbfcedl0i20btp9912bp33pz.webp"
   },
   {
     "id": "17f69ab7dd2l0i20bzz7fy70n87jt3",
     "name": "Carian Inverted Statue",
     "type": "Key Item",
     "effect": "Key revealing the hidden form of Carian Study Hall",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ab7dd2l0i20bzz7fy70n87jt3.png"
+    "image": "/images/consumables/17f69ab7dd2l0i20bzz7fy70n87jt3.webp"
   },
   {
     "id": "17f697f2455l0i20c8cp8jdqkuxah",
     "name": "Cursemark Of Death",
     "type": "Key Item",
     "effect": "Cursemark carved into Lunar Princess Ranni's discarded flesh",
-    "image": "https://eldenring.fanapis.com/images/items/17f697f2455l0i20c8cp8jdqkuxah.png"
+    "image": "/images/consumables/17f697f2455l0i20c8cp8jdqkuxah.webp"
   },
   {
     "id": "17f695f318dl0i20cgklnlvhdsi89p",
     "name": "Rold Medallion",
     "type": "Key Item",
     "effect": "Operates Grand Lift of Rold",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rold-medallion.png"
+    "image": "/images/consumables/rold-medallion.webp"
   },
   {
     "id": "17f699e7b9al0i20ch56uunpr2w1ge",
     "name": "Miniature Ranni",
     "type": "Key Item",
     "effect": "Doll resembling Ranni the Witch",
-    "image": "https://eldenring.fanapis.com/images/items/17f699e7b9al0i20ch56uunpr2w1ge.png"
+    "image": "/images/consumables/17f699e7b9al0i20ch56uunpr2w1ge.webp"
   },
   {
     "id": "17f6983c493l0i20cmftbvnhog3ss",
     "name": "The Stormhawk King",
     "type": "Key Item",
     "effect": "Ashes of a hawk which heeds no summons.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6983c493l0i20cmftbvnhog3ss.png"
+    "image": "/images/consumables/17f6983c493l0i20cmftbvnhog3ss.webp"
   },
   {
     "id": "17f69523119l0i20cmm4d46vbtfoav",
     "name": "Dark Moon Ring",
     "type": "Key Item",
     "effect": "Ring of Lunar Princess Ranni's cold oath",
-    "image": "https://eldenring.fanapis.com/images/items/17f69523119l0i20cmm4d46vbtfoav.png"
+    "image": "/images/consumables/17f69523119l0i20cmm4d46vbtfoav.webp"
   },
   {
     "id": "17f6959831dl0i20d4zgl0vkogk7d",
     "name": "Dectus Medallion (right)",
     "type": "Key Item",
     "effect": "Join medallions to operate Grand Lift of Dectus",
-    "image": "https://eldenring.fanapis.com/images/items/17f6959831dl0i20d4zgl0vkogk7d.png"
+    "image": "/images/consumables/17f6959831dl0i20d4zgl0vkogk7d.webp"
   },
   {
     "id": "17f69998009l0i20d6pfa4akbg6h3",
     "name": "Haligtree Secret Medallion (left)",
     "type": "Key Item",
     "effect": "Join medallions to operate Grand Lift of Rold",
-    "image": "https://eldenring.fanapis.com/images/items/17f69998009l0i20d6pfa4akbg6h3.png"
+    "image": "/images/consumables/17f69998009l0i20d6pfa4akbg6h3.webp"
   },
   {
     "id": "17f69bcf445l0i20dcnkb0ztuvth8s",
     "name": "Haligtree Secret Medallion (right)",
     "type": "Key Item",
     "effect": "Join medallions to operate Grand Lift of Rold",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bcf445l0i20dcnkb0ztuvth8s.png"
+    "image": "/images/consumables/17f69bcf445l0i20dcnkb0ztuvth8s.webp"
   },
   {
     "id": "17f69ab901fl0i20dd00gtgirm4elci",
     "name": "Assassin's Prayerbook",
     "type": "Key Item",
     "effect": "Give to a learned cleric to acquire new incantations",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ab901fl0i20dd00gtgirm4elci.png"
+    "image": "/images/consumables/17f69ab901fl0i20dd00gtgirm4elci.webp"
   },
   {
     "id": "17f6975e351l0i20de560bjj9cbf17",
     "name": "Dectus Medallion (left)",
     "type": "Key Item",
     "effect": "Join medallions to operate Grand Lift of Dectus",
-    "image": "https://eldenring.fanapis.com/images/items/17f6975e351l0i20de560bjj9cbf17.png"
+    "image": "/images/consumables/17f6975e351l0i20de560bjj9cbf17.webp"
   },
   {
     "id": "17f699197bal0i20dpu8p25sz2o9nh",
     "name": "Fire Monks' Prayerbook",
     "type": "Key Item",
     "effect": "Give to a learned cleric to acquire new incantations",
-    "image": "https://eldenring.fanapis.com/images/items/17f699197bal0i20dpu8p25sz2o9nh.png"
+    "image": "/images/consumables/17f699197bal0i20dpu8p25sz2o9nh.webp"
   },
   {
     "id": "17f69a33a88l0i20dxcmnrdd280sk",
     "name": "Dragon Cult Prayerbook",
     "type": "Key Item",
     "effect": "Give to a learned cleric to acquire new incantations",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a33a88l0i20dxcmnrdd280sk.png"
+    "image": "/images/consumables/17f69a33a88l0i20dxcmnrdd280sk.webp"
   },
   {
     "id": "17f69b1c0cfl0i20dzpbaidjoa86za",
     "name": "Two Fingers Prayerbook",
     "type": "Key Item",
     "effect": "Give to a learned cleric to acquire new incantations",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b1c0cfl0i20dzpbaidjoa86za.png"
+    "image": "/images/consumables/17f69b1c0cfl0i20dzpbaidjoa86za.webp"
   },
   {
     "id": "17f6968dc1bl0i20e1dqt7z4wq2k",
     "name": "Conspectus Scroll",
     "type": "Key Item",
     "effect": "Give to Sorceress Sellen to unlock Glintstone Cometshard and Star Shower",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/conspectus-scroll.png"
+    "image": "/images/consumables/conspectus-scroll.webp"
   },
   {
     "id": "17f69e2b453l0i20e2ze058fuit5nf",
     "name": "Ancient Dragon Prayerbook",
     "type": "Key Item",
     "effect": "Give to a learned cleric to acquire new incantations",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e2b453l0i20e2ze058fuit5nf.png"
+    "image": "/images/consumables/17f69e2b453l0i20e2ze058fuit5nf.webp"
   },
   {
     "id": "17f69b63b06l0i20ecjxchj0k8a7ig",
     "name": "Royal House Scroll",
     "type": "Key Item",
     "effect": "Give to a learned sorcerer to acquire new sorceries",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b63b06l0i20ecjxchj0k8a7ig.png"
+    "image": "/images/consumables/17f69b63b06l0i20ecjxchj0k8a7ig.webp"
   },
   {
     "id": "17f694fccbbl0i20eikwp9uvlqwr6o",
     "name": "Academy Scroll",
     "type": "Key Item",
     "effect": "Give to a learned sorcerer to acquire new sorceries",
-    "image": "https://eldenring.fanapis.com/images/items/17f694fccbbl0i20eikwp9uvlqwr6o.png"
+    "image": "/images/consumables/17f694fccbbl0i20eikwp9uvlqwr6o.webp"
   },
   {
     "id": "17f6967bc44l0i20eky6x7bayh6h3p",
     "name": "Whetstone Knife",
     "type": "Key Item",
     "effect": "Can add new battle arts and affinities to weapons",
-    "image": "https://eldenring.fanapis.com/images/items/17f6967bc44l0i20eky6x7bayh6h3p.png"
+    "image": "/images/consumables/17f6967bc44l0i20eky6x7bayh6h3p.webp"
   },
   {
     "id": "17f69ceb2bfl0i20en3jbf94z5kosa",
     "name": "Glintstone Whetblade",
     "type": "Key Item",
     "effect": "Grants choice of affinity upgrade to weapon",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ceb2bfl0i20en3jbf94z5kosa.png"
+    "image": "/images/consumables/17f69ceb2bfl0i20en3jbf94z5kosa.webp"
   },
   {
     "id": "17f698399dcl0i20ezd67kobaongjp",
     "name": "Iron Whetblade",
     "type": "Key Item",
     "effect": "Grants choice of affinity upgrade to weapon",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/iron-whetblade.png"
+    "image": "/images/consumables/iron-whetblade.webp"
   },
   {
     "id": "17f698eeca4l0i20ezgtkbf7ugf2gl",
     "name": "Whetstone Knife",
     "type": "Key Item",
     "effect": "Can add new battle arts and affinities to weapons",
-    "image": "https://eldenring.fanapis.com/images/items/17f698eeca4l0i20ezgtkbf7ugf2gl.png"
+    "image": "/images/consumables/17f698eeca4l0i20ezgtkbf7ugf2gl.webp"
   },
   {
     "id": "17f69c318f1l0i20f46vnxg6mw0oo",
     "name": "Black Whetblade",
     "type": "Key Item",
     "effect": "Grants choice of affinity upgrade to weapon",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c318f1l0i20f46vnxg6mw0oo.png"
+    "image": "/images/consumables/17f69c318f1l0i20f46vnxg6mw0oo.webp"
   },
   {
     "id": "17f696c1a6dl0i20f794jlosxy5qdh",
     "name": "Sancrified Whetblade",
     "type": "Key Item",
     "effect": "Grants choice of affinity upgrade to weapon.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/sancrified-whetblade.png"
+    "image": "/images/consumables/sancrified-whetblade.webp"
   },
   {
     "id": "17f697add84l0i20fki5ddrc2o8ihq",
     "name": "Map (limgrave, West)",
     "type": "Key Item",
     "effect": "Map of Limgrave's western region.",
-    "image": "https://eldenring.fanapis.com/images/items/17f697add84l0i20fki5ddrc2o8ihq.png"
+    "image": "/images/consumables/17f697add84l0i20fki5ddrc2o8ihq.webp"
   },
   {
     "id": "17f69ae525fl0i20fnhvhwl08ea2v",
     "name": "Map (limgrave, East)",
     "type": "Key Item",
     "effect": "Map of Limgrave's eastern region",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ae525fl0i20fnhvhwl08ea2v.png"
+    "image": "/images/consumables/17f69ae525fl0i20fnhvhwl08ea2v.webp"
   },
   {
     "id": "17f697220e5l0i20fpg2nmulkvdafa",
     "name": "Map (weeping Peninsula)",
     "type": "Key Item",
     "effect": "Map of Weeping peninsula",
-    "image": "https://eldenring.fanapis.com/images/items/17f697220e5l0i20fpg2nmulkvdafa.png"
+    "image": "/images/consumables/17f697220e5l0i20fpg2nmulkvdafa.webp"
   },
   {
     "id": "17f69bc7ac3l0i20ftc9ksdvp9o8qh",
     "name": "Map (weeping Peninsula)",
     "type": "Key Item",
     "effect": "Map of Weeping peninsula",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bc7ac3l0i20ftc9ksdvp9o8qh.png"
+    "image": "/images/consumables/17f69bc7ac3l0i20ftc9ksdvp9o8qh.webp"
   },
   {
     "id": "17f69e575b2l0i20fulh3vipmyxp1k",
     "name": "Map (liurnia, East)",
     "type": "Key Item",
     "effect": "Map of Liurnia's eastern region",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e575b2l0i20fulh3vipmyxp1k.png"
+    "image": "/images/consumables/17f69e575b2l0i20fulh3vipmyxp1k.webp"
   },
   {
     "id": "17f698cb16bl0i20gbiaq4ftcbfq49",
     "name": "Map (liurnia, North)",
     "type": "Key Item",
     "effect": "Map of Liurnia's northern region",
-    "image": "https://eldenring.fanapis.com/images/items/17f698cb16bl0i20gbiaq4ftcbfq49.png"
+    "image": "/images/consumables/17f698cb16bl0i20gbiaq4ftcbfq49.webp"
   },
   {
     "id": "17f695367c8l0i20gh6kodyxpb4bfa",
     "name": "Map (dragonbarrow)",
     "type": "Key Item",
     "effect": "Reveals the region of Dragonbarrow on the map.",
-    "image": "https://eldenring.fanapis.com/images/items/17f695367c8l0i20gh6kodyxpb4bfa.png"
+    "image": "/images/consumables/17f695367c8l0i20gh6kodyxpb4bfa.webp"
   },
   {
     "id": "17f69a27203l0i20gj45mz73yc4sg4",
     "name": "Map (liurnia, West)",
     "type": "Key Item",
     "effect": "Reveals the western portion of Liurnia on your map.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a27203l0i20gj45mz73yc4sg4.png"
+    "image": "/images/consumables/17f69a27203l0i20gj45mz73yc4sg4.webp"
   },
   {
     "id": "17f69bcff36l0i20gk66rt5cl1vqfi",
     "name": "Map (ainsel River)",
     "type": "Key Item",
     "effect": "Map of Ainsel River and environs",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bcff36l0i20gk66rt5cl1vqfi.png"
+    "image": "/images/consumables/17f69bcff36l0i20gk66rt5cl1vqfi.webp"
   },
   {
     "id": "17f696f617el0i20gys4sw8juq0vk",
     "name": "Map (siofra River)",
     "type": "Key Item",
     "effect": "Reveals the region of Siofra River on the map.",
-    "image": "https://eldenring.fanapis.com/images/items/17f696f617el0i20gys4sw8juq0vk.png"
+    "image": "/images/consumables/17f696f617el0i20gys4sw8juq0vk.webp"
   },
   {
     "id": "17f69bb1c19l0i20h49f2hpdukrxm",
     "name": "Map (mt. Gelmir)",
     "type": "Key Item",
     "effect": "Map of Mt. Gelmir region",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-mt-gelmir.png"
+    "image": "/images/consumables/map-mt-gelmir.webp"
   },
   {
     "id": "17f699b7c79l0i20h77tcma9tlhts7",
     "name": "Map (altus Plateau)",
     "type": "Key Item",
     "effect": "Reveals  Altus Plateau on your map",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-altus-plateau.png"
+    "image": "/images/consumables/map-altus-plateau.webp"
   },
   {
     "id": "17f6995aa57l0i20h8jme2bn8796i",
     "name": "Map (leyndell, Royal Capital)",
     "type": "Key Item",
     "effect": "Reveals the region of Leyndell on the map.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6995aa57l0i20h8jme2bn8796i.png"
+    "image": "/images/consumables/17f6995aa57l0i20h8jme2bn8796i.webp"
   },
   {
     "id": "17f69e33300l0i20h8vkh9032jtw3e",
     "name": "Map (caelid)",
     "type": "Key Item",
     "effect": "Reveals the region of Caelid on the map.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e33300l0i20h8vkh9032jtw3e.png"
+    "image": "/images/consumables/17f69e33300l0i20h8vkh9032jtw3e.webp"
   },
   {
     "id": "17f697f7345l0i20hjcfpipdbaa11k",
     "name": "Map (mountaintops Of The Giants, West)",
     "type": "Key Item",
     "effect": "Map of Western Mountaintops of the Giants.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-mountaintops-of-the-giants-west.png"
+    "image": "/images/consumables/map-mountaintops-of-the-giants-west.webp"
   },
   {
     "id": "17f69ab2b46l0i20hpb5mikgzabosa",
     "name": "Map (mountaintops Of The Giants, East)",
     "type": "Key Item",
     "effect": "Map of Eastern Mountaintops of the Giants.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-mountaintops-of-the-giants-east.png"
+    "image": "/images/consumables/map-mountaintops-of-the-giants-east.webp"
   },
   {
     "id": "17f69a067a9l0i20hrwf9m77mp3r9h",
     "name": "Map (consecrated Snowfield)",
     "type": "Key Item",
     "effect": "Map of Consecrated Snowfield and environs.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a067a9l0i20hrwf9m77mp3r9h.png"
+    "image": "/images/consumables/17f69a067a9l0i20hrwf9m77mp3r9h.webp"
   },
   {
     "id": "17f69a3fed5l0i20ht8k8i7pbo9wid",
     "name": "Map (lake Of Rot)",
     "type": "Key Item",
     "effect": "Map of Lake of Rot and environs.",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-lake-of-rot.png"
+    "image": "/images/consumables/map-lake-of-rot.webp"
   },
   {
     "id": "17f6957440dl0i20i4vsxb1msb3o9m",
     "name": "Note (land Squirts)",
     "type": "Key Item",
     "effect": "Note imparting knowledge in brief",
-    "image": "https://eldenring.fanapis.com/images/items/17f6957440dl0i20i4vsxb1msb3o9m.png"
+    "image": "/images/consumables/17f6957440dl0i20i4vsxb1msb3o9m.webp"
   },
   {
     "id": "17f6978addbl0i20i7pujapslhmdd",
     "name": "Map (deeproot Depths)",
     "type": "Key Item",
     "effect": "Revels Deeproot Depths and environs on your map",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-deeproot-depths.png"
+    "image": "/images/consumables/map-deeproot-depths.webp"
   },
   {
     "id": "17f69914576l0i20id2ao3vcc91lt",
     "name": "Note (stonedigger Trolls)",
     "type": "Key Item",
     "effect": "Note imparting knowledge in brief",
-    "image": "https://eldenring.fanapis.com/images/items/17f69914576l0i20id2ao3vcc91lt.png"
+    "image": "/images/consumables/17f69914576l0i20id2ao3vcc91lt.webp"
   },
   {
     "id": "17f6964e6b1l0i20iezdwm31zbocld",
     "name": "Note (flask Of Wondrous Physick)",
     "type": "Key Item",
     "effect": "Note imparting knowledge in brief",
-    "image": "https://eldenring.fanapis.com/images/items/17f6964e6b1l0i20iezdwm31zbocld.png"
+    "image": "/images/consumables/17f6964e6b1l0i20iezdwm31zbocld.webp"
   },
   {
     "id": "17f69dcf918l0i20ijw6kb689st3bl",
     "name": "Note (waypoint Ruins)",
     "type": "Key Item",
     "effect": "Note imparting knowledge in brief",
-    "image": "https://eldenring.fanapis.com/images/items/17f69dcf918l0i20ijw6kb689st3bl.png"
+    "image": "/images/consumables/17f69dcf918l0i20ijw6kb689st3bl.webp"
   },
   {
     "id": "17f69730a73l0i20ivfxo0h69aodo",
     "name": "Ruptured Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Causes concoction to explode in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69730a73l0i20ivfxo0h69aodo.png"
+    "image": "/images/consumables/17f69730a73l0i20ivfxo0h69aodo.webp"
   },
   {
     "id": "17f69c804ccl0i20izz3axyvu3nii",
     "name": "Note: Demi-human Mobs",
     "type": "Info Item",
     "effect": "Note imparting knowledge in brief.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c804ccl0i20izz3axyvu3nii.png"
+    "image": "/images/consumables/17f69c804ccl0i20izz3axyvu3nii.webp"
   },
   {
     "id": "17f69aa1441l0i20j2e37z2mxbx8qt",
     "name": "Greenspill Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts stamina in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aa1441l0i20j2e37z2mxbx8qt.png"
+    "image": "/images/consumables/17f69aa1441l0i20j2e37z2mxbx8qt.webp"
   },
   {
     "id": "17f697c721fl0i20j4uws9c44dnb3e",
     "name": "Cerulean Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Restores half of total FP in mixed physick.",
-    "image": "https://eldenring.fanapis.com/images/items/17f697c721fl0i20j4uws9c44dnb3e.png"
+    "image": "/images/consumables/17f697c721fl0i20j4uws9c44dnb3e.webp"
   },
   {
     "id": "17f69e2c73dl0i20j8em1vna080i3k",
     "name": "Cerulean Hidden Tear",
     "type": "Crystal Tear",
     "effect": " Eliminates all FP consumption in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e2c73dl0i20j8em1vna080i3k.png"
+    "image": "/images/consumables/17f69e2c73dl0i20j8em1vna080i3k.webp"
   },
   {
     "id": "17f69561c1fl0i20jhvr6qnfvfnvlt",
     "name": "Crimson Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Restores half of total HP in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69561c1fl0i20jhvr6qnfvfnvlt.png"
+    "image": "/images/consumables/17f69561c1fl0i20jhvr6qnfvfnvlt.webp"
   },
   {
     "id": "17f69da9423l0i20jnhwocxfpp5qa",
     "name": "Crimsonburst Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Steadily restores HP for a time in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69da9423l0i20jnhwocxfpp5qa.png"
+    "image": "/images/consumables/17f69da9423l0i20jnhwocxfpp5qa.webp"
   },
   {
     "id": "17f69579378l0i20jqwrykv5651bni",
     "name": "Faith-knot Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts faith in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69579378l0i20jqwrykv5651bni.png"
+    "image": "/images/consumables/17f69579378l0i20jqwrykv5651bni.webp"
   },
   {
     "id": "17f698018fbl0i20jvm3lnanvufs6e",
     "name": "Strength-knot Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts strength in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f698018fbl0i20jvm3lnanvufs6e.png"
+    "image": "/images/consumables/17f698018fbl0i20jvm3lnanvufs6e.webp"
   },
   {
     "id": "17f69d744c5l0i20jwe37b04q6po19",
     "name": "Opaline Bubbletear",
     "type": "Crystal Tear",
     "effect": "Significantly negates damage in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d744c5l0i20jwe37b04q6po19.png"
+    "image": "/images/consumables/17f69d744c5l0i20jwe37b04q6po19.webp"
   },
   {
     "id": "17f69836ff1l0i20k414gijjqgw3vk",
     "name": "Spiked Cracked Tear",
     "type": "Crystal Tear",
     "effect": "Enhances charged attacks for a time in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69836ff1l0i20k414gijjqgw3vk.png"
+    "image": "/images/consumables/17f69836ff1l0i20k414gijjqgw3vk.webp"
   },
   {
     "id": "17f69a367e6l0i20k8hchpm6hmgrlb",
     "name": "Dexterity-knot Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts dexterity in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a367e6l0i20k8hchpm6hmgrlb.png"
+    "image": "/images/consumables/17f69a367e6l0i20k8hchpm6hmgrlb.webp"
   },
   {
     "id": "17f6973d2b5l0i20kjwc86cu35lbi",
     "name": "Lightning-shrouding Cracked Tear",
     "type": "Crystal Tears",
     "effect": "Temporarily boosts lightning attacks in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f6973d2b5l0i20kjwc86cu35lbi.png"
+    "image": "/images/consumables/17f6973d2b5l0i20kjwc86cu35lbi.webp"
   },
   {
     "id": "17f6951b682l0i20km8uli0fh4xor8",
     "name": "Magic-shrouding Cracked Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts magic attacks in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f6951b682l0i20km8uli0fh4xor8.png"
+    "image": "/images/consumables/17f6951b682l0i20km8uli0fh4xor8.webp"
   },
   {
     "id": "17f69bd68bdl0i20kmor5s3eti9h5o",
     "name": "Winged Crystal Tear",
     "type": "Crystal Tears",
     "effect": "Temporarily reduces equip load in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bd68bdl0i20kmor5s3eti9h5o.png"
+    "image": "/images/consumables/17f69bd68bdl0i20kmor5s3eti9h5o.webp"
   },
   {
     "id": "17f69e3acc0l0i20kqrn0lto40la6k",
     "name": "Holy-shrouding Cracked Tear",
     "type": "Crystal Tears",
     "effect": "Temporarily boosts holy attacks in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e3acc0l0i20kqrn0lto40la6k.png"
+    "image": "/images/consumables/17f69e3acc0l0i20kqrn0lto40la6k.webp"
   },
   {
     "id": "17f69b88332l0i20kw85k8xxbferva",
     "name": "Twiggy Cracked Tear",
     "type": "Crystal Tear",
     "effect": "Briefly stop rune loss on death in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b88332l0i20kw85k8xxbferva.png"
+    "image": "/images/consumables/17f69b88332l0i20kw85k8xxbferva.webp"
   },
   {
     "id": "17f6959a6ccl0i20l8o0t2gzabbv4g",
     "name": "Leaden Hardtear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts poise in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f6959a6ccl0i20l8o0t2gzabbv4g.png"
+    "image": "/images/consumables/17f6959a6ccl0i20l8o0t2gzabbv4g.webp"
   },
   {
     "id": "17f6955db65l0i20ldhqzkp3n6bm9o",
     "name": "Crimsonspill Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts max HP in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f6955db65l0i20ldhqzkp3n6bm9o.png"
+    "image": "/images/consumables/17f6955db65l0i20ldhqzkp3n6bm9o.webp"
   },
   {
     "id": "17f69d587e6l0i20ldq6svu7yi213g",
     "name": "Greenburst Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts stamina recovery speed in mixed physick.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d587e6l0i20ldq6svu7yi213g.png"
+    "image": "/images/consumables/17f69d587e6l0i20ldq6svu7yi213g.webp"
   },
   {
     "id": "17f696fcbd8l0i20lfm0397f7x0dt3d",
     "name": "Speckled Hardtear",
     "type": "Crystal Tear",
     "effect": "Boosts resistance and heals status in mixed physick.",
-    "image": "https://eldenring.fanapis.com/images/items/17f696fcbd8l0i20lfm0397f7x0dt3d.png"
+    "image": "/images/consumables/17f696fcbd8l0i20lfm0397f7x0dt3d.webp"
   },
   {
     "id": "17f69b0a8d8l0i20liyue9ium4r8va",
     "name": "Flame-shrouding Cracked Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts the power of one's fire attacks.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b0a8d8l0i20liyue9ium4r8va.png"
+    "image": "/images/consumables/17f69b0a8d8l0i20liyue9ium4r8va.webp"
   },
   {
     "id": "17f69880f5cl0i20lxljnhf615863",
     "name": "Crimson Bubbletear",
     "type": "Crystal Tear",
     "effect": "Restores HP when near death in mixed physick.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69880f5cl0i20lxljnhf615863.png"
+    "image": "/images/consumables/17f69880f5cl0i20lxljnhf615863.webp"
   },
   {
     "id": "17f69d8bccfl0i20m1sbm7hv0g8u8",
     "name": "Crimsonwhorl Bubbletear",
     "type": "Crystal Tear",
     "effect": "Converts damage received into HP in mixed physick.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d8bccfl0i20m1sbm7hv0g8u8.png"
+    "image": "/images/consumables/17f69d8bccfl0i20m1sbm7hv0g8u8.webp"
   },
   {
     "id": "17f69e058bcl0i20m27gbn17mv4o6o",
     "name": "Thorny Cracked Tear",
     "type": "Crystal Tear",
     "effect": "Makes consecutive attacks grow stronger in mixed physick.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e058bcl0i20m27gbn17mv4o6o.png"
+    "image": "/images/consumables/17f69e058bcl0i20m27gbn17mv4o6o.webp"
   },
   {
     "id": "17f6981aec0l0i20m4sxqx6hk0w1d",
     "name": "Stonebarb Cracked Tear",
     "type": "Crystal Tear",
     "effect": "Make attacks more likely to break enemy stances in a mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f6981aec0l0i20m4sxqx6hk0w1d.png"
+    "image": "/images/consumables/17f6981aec0l0i20m4sxqx6hk0w1d.webp"
   },
   {
     "id": "17f6992e09fl0i20m5xak4e12nfsnh",
     "name": "Windy Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Enhances dodge rolls for a time in mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f6992e09fl0i20m5xak4e12nfsnh.png"
+    "image": "/images/consumables/17f6992e09fl0i20m5xak4e12nfsnh.webp"
   },
   {
     "id": "17f6988a2dfl0i20ml5uqk4eom5n28",
     "name": "Opaline Hardtear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts all damage negations in physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f6988a2dfl0i20ml5uqk4eom5n28.png"
+    "image": "/images/consumables/17f6988a2dfl0i20ml5uqk4eom5n28.webp"
   },
   {
     "id": "17f69925cc9l0i20mslhcxg8v5za8b",
     "name": "Purifying Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Purifies the Lord of Blood's curse in a mixed physick",
-    "image": "https://eldenring.fanapis.com/images/items/17f69925cc9l0i20mslhcxg8v5za8b.png"
+    "image": "/images/consumables/17f69925cc9l0i20mslhcxg8v5za8b.webp"
   },
   {
     "id": "17f69d21105l0i20my2sfysawm3s6",
     "name": "Aeonian Butterfly",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d21105l0i20my2sfysawm3s6.png"
+    "image": "/images/consumables/17f69d21105l0i20my2sfysawm3s6.webp"
   },
   {
     "id": "17f69768007l0i20myf597e9ahqzms",
     "name": "Albinauric Bloodclot",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69768007l0i20myf597e9ahqzms.png"
+    "image": "/images/consumables/17f69768007l0i20myf597e9ahqzms.webp"
   },
   {
     "id": "17f6985c1ael0i20naf0jklozksdt6c",
     "name": "Intelligence-knot Crystal Tear",
     "type": "Crystal Tear",
     "effect": "Temporarily boosts intelligence in mixed physick.",
-    "image": "https://eldenring.fanapis.com/images/items/17f6985c1ael0i20naf0jklozksdt6c.png"
+    "image": "/images/consumables/17f6985c1ael0i20naf0jklozksdt6c.webp"
   },
   {
     "id": "17f69e2308al0i20nco59qnknn4mrr",
     "name": "Altus Bloom",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e2308al0i20nco59qnknn4mrr.png"
+    "image": "/images/consumables/17f69e2308al0i20nco59qnknn4mrr.webp"
   },
   {
     "id": "17f69c46adfl0i20nko6nvaa9h2a0b",
     "name": "Arteria Leaf",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c46adfl0i20nko6nvaa9h2a0b.png"
+    "image": "/images/consumables/17f69c46adfl0i20nko6nvaa9h2a0b.webp"
   },
   {
     "id": "17f698a8a22l0i20noyxxsyz5zu5so",
     "name": "Beast Liver",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f698a8a22l0i20noyxxsyz5zu5so.png"
+    "image": "/images/consumables/17f698a8a22l0i20noyxxsyz5zu5so.webp"
   },
   {
     "id": "17f69aa13e1l0i20nqh9bxwuds3hsc",
     "name": "Beast Blood",
     "type": "-",
     "effect": "Material used for crafting materials",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aa13e1l0i20nqh9bxwuds3hsc.png"
+    "image": "/images/consumables/17f69aa13e1l0i20nqh9bxwuds3hsc.webp"
   },
   {
     "id": "17f6974ef59l0i20ny9hi38756cga",
     "name": "Bloodrose",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f6974ef59l0i20ny9hi38756cga.png"
+    "image": "/images/consumables/17f6974ef59l0i20ny9hi38756cga.webp"
   },
   {
     "id": "17f69c43df5l0i20nyvcaklpb90h3r",
     "name": "Blood-tainted Excrement",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c43df5l0i20nyvcaklpb90h3r.png"
+    "image": "/images/consumables/17f69c43df5l0i20nyvcaklpb90h3r.webp"
   },
   {
     "id": "17f69aa948fl0i20o647g0tdm01l7r",
     "name": "Budding Cave Moss",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69aa948fl0i20o647g0tdm01l7r.png"
+    "image": "/images/consumables/17f69aa948fl0i20o647g0tdm01l7r.webp"
   },
   {
     "id": "17f69956f50l0i20oaky1f6im9a4n",
     "name": "Cave Moss",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69956f50l0i20oaky1f6im9a4n.png"
+    "image": "/images/consumables/17f69956f50l0i20oaky1f6im9a4n.webp"
   },
   {
     "id": "17f69643277l0i20ompxk7v2m0l8x",
     "name": "Cracked Crystal",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69643277l0i20ompxk7v2m0l8x.png"
+    "image": "/images/consumables/17f69643277l0i20ompxk7v2m0l8x.webp"
   },
   {
     "id": "17f69c3b54dl0i20onb616e9092ux7",
     "name": "Crystal Cave Moss",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c3b54dl0i20onb616e9092ux7.png"
+    "image": "/images/consumables/17f69c3b54dl0i20onb616e9092ux7.webp"
   },
   {
     "id": "17f69b6d614l0i20ooikuhjfwair8c",
     "name": "Budding Horn",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b6d614l0i20ooikuhjfwair8c.png"
+    "image": "/images/consumables/17f69b6d614l0i20ooikuhjfwair8c.webp"
   },
   {
     "id": "17f6987b884l0i20ots2fyt472bwzt",
     "name": "Crab Eggs",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f6987b884l0i20ots2fyt472bwzt.png"
+    "image": "/images/consumables/17f6987b884l0i20ots2fyt472bwzt.webp"
   },
   {
     "id": "17f69cd64fel0i20oy5m6swcehuold",
     "name": "Cracked Pot",
     "type": "Misc",
     "effect": "Container required for crafting cracked pot items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cd64fel0i20oy5m6swcehuold.png"
+    "image": "/images/consumables/17f69cd64fel0i20oy5m6swcehuold.webp"
   },
   {
     "id": "17f69654396l0i20p99cx76f8d5wud",
     "name": "Ritual Pot",
     "type": "Key Item",
     "effect": "Container required for crafting ritual pot items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69654396l0i20p99cx76f8d5wud.png"
+    "image": "/images/consumables/17f69654396l0i20p99cx76f8d5wud.webp"
   },
   {
     "id": "17f697d0bfbl0i20pachd1fy9xdd4g",
     "name": "Crystal Bud",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f697d0bfbl0i20pachd1fy9xdd4g.png"
+    "image": "/images/consumables/17f697d0bfbl0i20pachd1fy9xdd4g.webp"
   },
   {
     "id": "17f696dfdbal0i20pae9ft0yshlqc",
     "name": "Dewkissed Herba",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f696dfdbal0i20pae9ft0yshlqc.png"
+    "image": "/images/consumables/17f696dfdbal0i20pae9ft0yshlqc.webp"
   },
   {
     "id": "17f69b4015al0i20pk8rh0a8hmnisb",
     "name": "Eye Of Yelough",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b4015al0i20pk8rh0a8hmnisb.png"
+    "image": "/images/consumables/17f69b4015al0i20pk8rh0a8hmnisb.webp"
   },
   {
     "id": "17f69d31beal0i20pm932mnql2ncvl",
     "name": "Erdleaf Flower",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d31beal0i20pm932mnql2ncvl.png"
+    "image": "/images/consumables/17f69d31beal0i20pm932mnql2ncvl.webp"
   },
   {
     "id": "17f69501453l0i20pwobhzqqzb91l",
     "name": "Faded Erdleaf Flower",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69501453l0i20pwobhzqqzb91l.png"
+    "image": "/images/consumables/17f69501453l0i20pwobhzqqzb91l.webp"
   },
   {
     "id": "17f696b18f7l0i20py1bglxxi3i3nj",
     "name": "Fire Blossom",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f696b18f7l0i20py1bglxxi3i3nj.png"
+    "image": "/images/consumables/17f696b18f7l0i20py1bglxxi3i3nj.webp"
   },
   {
     "id": "17f698c0fdel0i20q1a623yipgjzvv",
     "name": "Flight Pinion",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f698c0fdel0i20q1a623yipgjzvv.png"
+    "image": "/images/consumables/17f698c0fdel0i20q1a623yipgjzvv.webp"
   },
   {
     "id": "17f69691e55l0i20q7wtw4sogfyqw",
     "name": "Formic Rock",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69691e55l0i20q7wtw4sogfyqw.png"
+    "image": "/images/consumables/17f69691e55l0i20q7wtw4sogfyqw.webp"
   },
   {
     "id": "17f69a0ffaal0i20q99jl7kkmdd88",
     "name": "Four-toed Fowl Foot",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a0ffaal0i20q99jl7kkmdd88.png"
+    "image": "/images/consumables/17f69a0ffaal0i20q99jl7kkmdd88.webp"
   },
   {
     "id": "17f69637dc5l0i20qjwolw4upywy5c",
     "name": "Fulgurbloom",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69637dc5l0i20qjwolw4upywy5c.png"
+    "image": "/images/consumables/17f69637dc5l0i20qjwolw4upywy5c.webp"
   },
   {
     "id": "17f69e6def8l0i20qnpvz7bfbof5wa",
     "name": "Glintstone Firefly",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e6def8l0i20qnpvz7bfbof5wa.png"
+    "image": "/images/consumables/17f69e6def8l0i20qnpvz7bfbof5wa.webp"
   },
   {
     "id": "17f697063a4l0i20qr8q6jyc7jaqe",
     "name": "Glintstone Scrap",
     "type": "-",
     "effect": "Break gem, using FP to produce a magic bolt.",
-    "image": "https://eldenring.fanapis.com/images/items/17f697063a4l0i20qr8q6jyc7jaqe.png"
+    "image": "/images/consumables/17f697063a4l0i20qr8q6jyc7jaqe.webp"
   },
   {
     "id": "17f6990bdf6l0i20qullo8dvtakzql",
     "name": "Gold Firefly",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f6990bdf6l0i20qullo8dvtakzql.png"
+    "image": "/images/consumables/17f6990bdf6l0i20qullo8dvtakzql.webp"
   },
   {
     "id": "17f696590dfl0i20qw5kp27t1vuxkl",
     "name": "Gold-tinged Excrement",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f696590dfl0i20qw5kp27t1vuxkl.png"
+    "image": "/images/consumables/17f696590dfl0i20qw5kp27t1vuxkl.webp"
   },
   {
     "id": "17f69615481l0i20r6ruawgwn5lot",
     "name": "Golden Centipede",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69615481l0i20r6ruawgwn5lot.png"
+    "image": "/images/consumables/17f69615481l0i20r6ruawgwn5lot.webp"
   },
   {
     "id": "17f6979f70el0i20ra2nrx5nltfkpl",
     "name": "Golden Dung",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden-dung.png"
+    "image": "/images/consumables/golden-dung.webp"
   },
   {
     "id": "17f6994ecael0i20rfo807kblgeik6",
     "name": "Golden Rowa",
     "type": "-",
     "effect": "Material used for craftign items",
-    "image": "https://eldenring.fanapis.com/images/items/17f6994ecael0i20rfo807kblgeik6.png"
+    "image": "/images/consumables/17f6994ecael0i20rfo807kblgeik6.webp"
   },
   {
     "id": "17f69684565l0i20rio3gogqk529",
     "name": "Golden Sunflower",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69684565l0i20rio3gogqk529.png"
+    "image": "/images/consumables/17f69684565l0i20rio3gogqk529.webp"
   },
   {
     "id": "17f69b4ad06l0i20rkg7ujgzd52c6m",
     "name": "Grave Violet",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b4ad06l0i20rkg7ujgzd52c6m.png"
+    "image": "/images/consumables/17f69b4ad06l0i20rkg7ujgzd52c6m.webp"
   },
   {
     "id": "17f69db831dl0i20ruam154s50qorb",
     "name": "Gravel Stone",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69db831dl0i20ruam154s50qorb.png"
+    "image": "/images/consumables/17f69db831dl0i20ruam154s50qorb.webp"
   },
   {
     "id": "17f69a2fb8al0i20ry76zl5i6p6jf9",
     "name": "Great Dragonfly Head",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a2fb8al0i20ry76zl5i6p6jf9.png"
+    "image": "/images/consumables/17f69a2fb8al0i20ry76zl5i6p6jf9.webp"
   },
   {
     "id": "17f69cf6ad5l0i20s2sl4a9t0r9x5",
     "name": "Herba",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cf6ad5l0i20s2sl4a9t0r9x5.png"
+    "image": "/images/consumables/17f69cf6ad5l0i20s2sl4a9t0r9x5.webp"
   },
   {
     "id": "17f697e14d1l0i20s60u9p96fco7up",
     "name": "Hidden Plumage",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/hidden-plumage.png"
+    "image": "/images/consumables/hidden-plumage.webp"
   },
   {
     "id": "17f69dab742l0i20s67dnwox3ezoin",
     "name": "Human Bone Shard",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69dab742l0i20s67dnwox3ezoin.png"
+    "image": "/images/consumables/17f69dab742l0i20s67dnwox3ezoin.webp"
   },
   {
     "id": "17f69d3344dl0i20shwvr1yh8ak6b",
     "name": "Living Jar Shard",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d3344dl0i20shwvr1yh8ak6b.png"
+    "image": "/images/consumables/17f69d3344dl0i20shwvr1yh8ak6b.webp"
   },
   {
     "id": "17f69786a0dl0i20spggpk96zw6ibw",
     "name": "Lump Of Flesh",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69786a0dl0i20spggpk96zw6ibw.png"
+    "image": "/images/consumables/17f69786a0dl0i20spggpk96zw6ibw.webp"
   },
   {
     "id": "17f69a07a1al0i20ss320opmzoy91l",
     "name": "Land Octopus Ovary",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69a07a1al0i20ss320opmzoy91l.png"
+    "image": "/images/consumables/17f69a07a1al0i20ss320opmzoy91l.webp"
   },
   {
     "id": "17f69dc4ee4l0i20stjmv4ysnhcv4",
     "name": "Melted Mushroom",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69dc4ee4l0i20stjmv4ysnhcv4.png"
+    "image": "/images/consumables/17f69dc4ee4l0i20stjmv4ysnhcv4.webp"
   },
   {
     "id": "17f6980a33al0i20suxe6cfo440nal",
     "name": "Miquella's Lily",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f6980a33al0i20suxe6cfo440nal.png"
+    "image": "/images/consumables/17f6980a33al0i20suxe6cfo440nal.webp"
   },
   {
     "id": "17f69834a0dl0i20t2fkqauq3bcpao",
     "name": "Miranda Powder",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69834a0dl0i20t2fkqauq3bcpao.png"
+    "image": "/images/consumables/17f69834a0dl0i20t2fkqauq3bcpao.webp"
   },
   {
     "id": "17f69ca09d3l0i20t8ikhdavucxz6k",
     "name": "Moon Egg",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69ca09d3l0i20t8ikhdavucxz6k.png"
+    "image": "/images/consumables/17f69ca09d3l0i20t8ikhdavucxz6k.webp"
   },
   {
     "id": "17f69d4d11cl0i20tbrfcqa6e5d78g",
     "name": "Old Fang",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d4d11cl0i20tbrfcqa6e5d78g.png"
+    "image": "/images/consumables/17f69d4d11cl0i20tbrfcqa6e5d78g.webp"
   },
   {
     "id": "17f6964f00el0i20tppczbaoims4ml",
     "name": "Mushroom",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f6964f00el0i20tppczbaoims4ml.png"
+    "image": "/images/consumables/17f6964f00el0i20tppczbaoims4ml.webp"
   },
   {
     "id": "17f69d82f11l0i20tuxkggd95d1j9",
     "name": "Perfume Bottle",
     "type": "Key Item",
     "effect": "Container required for crafting perfume items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d82f11l0i20tuxkggd95d1j9.png"
+    "image": "/images/consumables/17f69d82f11l0i20tuxkggd95d1j9.webp"
   },
   {
     "id": "17f69b7b57fl0i20tzbiubv6jcq8jj",
     "name": "Poisonbloom",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b7b57fl0i20tzbiubv6jcq8jj.png"
+    "image": "/images/consumables/17f69b7b57fl0i20tzbiubv6jcq8jj.webp"
   },
   {
     "id": "17f69e2024dl0i20u17bo0rakkxt4p",
     "name": "Nascent Butterfly",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e2024dl0i20u17bo0rakkxt4p.png"
+    "image": "/images/consumables/17f69e2024dl0i20u17bo0rakkxt4p.webp"
   },
   {
     "id": "17f69b436a7l0i20u2559dhaojhyu7",
     "name": "Rimed Crystal Bud",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b436a7l0i20u2559dhaojhyu7.png"
+    "image": "/images/consumables/17f69b436a7l0i20u2559dhaojhyu7.webp"
   },
   {
     "id": "17f694ebbfcl0i20uefnopg180rzc",
     "name": "Rimed Rowa",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f694ebbfcl0i20uefnopg180rzc.png"
+    "image": "/images/consumables/17f694ebbfcl0i20uefnopg180rzc.webp"
   },
   {
     "id": "17f698673d9l0i20un1lzoje9e4gk",
     "name": "Root Resin",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f698673d9l0i20un1lzoje9e4gk.png"
+    "image": "/images/consumables/17f698673d9l0i20un1lzoje9e4gk.webp"
   },
   {
     "id": "17f699c789fl0i20upgftqx2gq1t6j",
     "name": "Rowa Fruit",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f699c789fl0i20upgftqx2gq1t6j.png"
+    "image": "/images/consumables/17f699c789fl0i20upgftqx2gq1t6j.webp"
   },
   {
     "id": "17f69d4a8f9l0i20uswjmcb0cvqoo",
     "name": "Ruin Fragment",
     "type": "Str A Dex C",
     "effect": "Material used for crafting items.",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d4a8f9l0i20uswjmcb0cvqoo.png"
+    "image": "/images/consumables/17f69d4a8f9l0i20uswjmcb0cvqoo.webp"
   },
   {
     "id": "17f69bd34d8l0i20uudycdy9olwe3",
     "name": "Sacramental Bud",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69bd34d8l0i20uudycdy9olwe3.png"
+    "image": "/images/consumables/17f69bd34d8l0i20uudycdy9olwe3.webp"
   },
   {
     "id": "17f69c4120fl0i20v0co0r953ef5a",
     "name": "Sanctuary Stone",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69c4120fl0i20v0co0r953ef5a.png"
+    "image": "/images/consumables/17f69c4120fl0i20v0co0r953ef5a.webp"
   },
   {
     "id": "17f69cce56dl0i20vh7gio2hcq6dd5",
     "name": "Slumbering Egg",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69cce56dl0i20vh7gio2hcq6dd5.png"
+    "image": "/images/consumables/17f69cce56dl0i20vh7gio2hcq6dd5.webp"
   },
   {
     "id": "17f699a6ce0l0i20vkg2lnygo0fg4x",
     "name": "Smoldering Butterfly",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f699a6ce0l0i20vkg2lnygo0fg4x.png"
+    "image": "/images/consumables/17f699a6ce0l0i20vkg2lnygo0fg4x.webp"
   },
   {
     "id": "17f69d2a7c6l0i20vpvqzkbel16l5d",
     "name": "String",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d2a7c6l0i20vpvqzkbel16l5d.png"
+    "image": "/images/consumables/17f69d2a7c6l0i20vpvqzkbel16l5d.webp"
   },
   {
     "id": "17f69b86430l0i20vrtchuof1ye82q",
     "name": "Silver Firefly",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69b86430l0i20vrtchuof1ye82q.png"
+    "image": "/images/consumables/17f69b86430l0i20vrtchuof1ye82q.webp"
   },
   {
     "id": "17f69d3d30fl0i20vsmh310ariv4e",
     "name": "Sliver Of Meat",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69d3d30fl0i20vsmh310ariv4e.png"
+    "image": "/images/consumables/17f69d3d30fl0i20vsmh310ariv4e.webp"
   },
   {
     "id": "17f698fe982l0i20w7mxzp4xobarr",
     "name": "Strip Of White Flesh",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f698fe982l0i20w7mxzp4xobarr.png"
+    "image": "/images/consumables/17f698fe982l0i20w7mxzp4xobarr.webp"
   },
   {
     "id": "17f695a0052l0i20wco3s88dlvxzg8",
     "name": "Tarnished Golden Sunflower",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f695a0052l0i20wco3s88dlvxzg8.png"
+    "image": "/images/consumables/17f695a0052l0i20wco3s88dlvxzg8.webp"
   },
   {
     "id": "17f699334fdl0i20wh9sbxo4bhrft",
     "name": "Toxic Mushroom",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f699334fdl0i20wh9sbxo4bhrft.png"
+    "image": "/images/consumables/17f699334fdl0i20wh9sbxo4bhrft.webp"
   },
   {
     "id": "17f6973636al0i20whzxvyxnan3jg",
     "name": "Trina's Lily",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f6973636al0i20whzxvyxnan3jg.png"
+    "image": "/images/consumables/17f6973636al0i20whzxvyxnan3jg.webp"
   },
   {
     "id": "17f695d12a2l0i20wj4zy22pjjmjug",
     "name": "Thin Beast Bones",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f695d12a2l0i20wj4zy22pjjmjug.png"
+    "image": "/images/consumables/17f695d12a2l0i20wj4zy22pjjmjug.webp"
   },
   {
     "id": "17f698700d4l0i20wzka5xr5167mqc",
     "name": "Turtle Neck Meat",
     "type": "Misc",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f698700d4l0i20wzka5xr5167mqc.png"
+    "image": "/images/consumables/17f698700d4l0i20wzka5xr5167mqc.webp"
   },
   {
     "id": "17f69dedfe0l0i20x23pgfjuxqgfz",
     "name": "Volcanic Stone",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69dedfe0l0i20x23pgfjuxqgfz.png"
+    "image": "/images/consumables/17f69dedfe0l0i20x23pgfjuxqgfz.webp"
   },
   {
     "id": "17f69788047l0i20x6m9m704elzu8q",
     "name": "Yellow Ember",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69788047l0i20x6m9m704elzu8q.png"
+    "image": "/images/consumables/17f69788047l0i20x6m9m704elzu8q.webp"
   },
   {
     "id": "17f69641acfl0i20x74jhiu021r24",
     "name": "Hefty Beast Bone",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69641acfl0i20x74jhiu021r24.png"
+    "image": "/images/consumables/17f69641acfl0i20x74jhiu021r24.webp"
   },
   {
     "id": "17f697d2225l0i20x95fjwgm1fay3b",
     "name": "Silver Tear Husk",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f697d2225l0i20x95fjwgm1fay3b.png"
+    "image": "/images/consumables/17f697d2225l0i20x95fjwgm1fay3b.webp"
   },
   {
     "id": "17f69e1ba82l0i20xlrxcid1qo6ydb",
     "name": "Stormhawk Feather",
     "type": "-",
     "effect": "Material used for crafting items",
-    "image": "https://eldenring.fanapis.com/images/items/17f69e1ba82l0i20xlrxcid1qo6ydb.png"
+    "image": "/images/consumables/17f69e1ba82l0i20xlrxcid1qo6ydb.webp"
   }
 ]

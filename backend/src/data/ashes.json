@@ -4,629 +4,629 @@
     "name": "Ash Of War: Prelate's Charge",
     "affinity": "Flame",
     "skill": "Prelate's Charge",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f699db6b0l0hzn9xsxxwtgyfky3.png"
+    "image": "/images/ashes/17f699db6b0l0hzn9xsxxwtgyfky3.webp"
   },
   {
     "id": "17f69632311l0hzna19sl4rzmmvk4",
     "name": "Ash Of War: Barrage",
     "affinity": "Standard",
     "skill": "Barrage",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69632311l0hzna19sl4rzmmvk4.png"
+    "image": "/images/ashes/17f69632311l0hzna19sl4rzmmvk4.webp"
   },
   {
     "id": "17f6983255fl0hzna1ak272zmag8w",
     "name": "Ash Of War: Barbaric Roar",
     "affinity": "Heavy",
     "skill": "Barbaric Roar",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-barbaric-roar.png"
+    "image": "/images/ashes/ash-of-war-barbaric-roar.webp"
   },
   {
     "id": "17f6999bbdcl0hzna471b3xeg6cjip",
     "name": "Ash Of War: Blood Blade",
     "affinity": "Blood",
     "skill": "Blood Blade",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-blood-blade.png"
+    "image": "/images/ashes/ash-of-war-blood-blade.webp"
   },
   {
     "id": "17f6959211al0hzna508db0yt3kk1k",
     "name": "Ash Of War: Assassin's Gambit",
     "affinity": "Occult",
     "skill": "Assassin's Gambit",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6959211al0hzna508db0yt3kk1k.png"
+    "image": "/images/ashes/17f6959211al0hzna508db0yt3kk1k.webp"
   },
   {
     "id": "17f693ca8bfl0hzna7sr5dyvlqs7s",
     "name": "Ash Of War: Black Flame Tornado",
     "affinity": "Flame Art",
     "skill": "Black Flame Tornado",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f693ca8bfl0hzna7sr5dyvlqs7s.png"
+    "image": "/images/ashes/17f693ca8bfl0hzna7sr5dyvlqs7s.webp"
   },
   {
     "id": "17f6930b2bbl0hznaexvxdlscgaiq",
     "name": "Ash Of War: Barricade Shield",
     "affinity": "Standard",
     "skill": "Barricade Shield",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6930b2bbl0hznaexvxdlscgaiq.png"
+    "image": "/images/ashes/17f6930b2bbl0hznaexvxdlscgaiq.webp"
   },
   {
     "id": "17f694892c5l0hznah6w4ltudpzuj",
     "name": "Ash Of War: Beast's Roar",
     "affinity": "Keen",
     "skill": "Beast's Roar",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f694892c5l0hznah6w4ltudpzuj.png"
+    "image": "/images/ashes/17f694892c5l0hznah6w4ltudpzuj.webp"
   },
   {
     "id": "17f69558c5el0hznater26nv2f3sgh",
     "name": "Ash Of War: Bloodhound's Step",
     "affinity": "Keen",
     "skill": "Bloodhound's Step",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69558c5el0hznater26nv2f3sgh.png"
+    "image": "/images/ashes/17f69558c5el0hznater26nv2f3sgh.webp"
   },
   {
     "id": "17f6957156al0hznayepq0xs5o00l",
     "name": "Ash Of War: Braggart's Roar",
     "affinity": "Heavy",
     "skill": "Braggart's Roar",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-braggarts-roar.png"
+    "image": "/images/ashes/ash-of-war-braggarts-roar.webp"
   },
   {
     "id": "17f69748b38l0hznb7t11snt2v6e5to",
     "name": "Ash Of War: Bloody Slash",
     "affinity": "Blood",
     "skill": "Bloody Slash",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69748b38l0hznb7t11snt2v6e5to.png"
+    "image": "/images/ashes/17f69748b38l0hznb7t11snt2v6e5to.webp"
   },
   {
     "id": "17f69972a78l0hznb8uihn419g6mja",
     "name": "Ash Of War: Carian Greatsword",
     "affinity": "Magic",
     "skill": "Carian Greatsword",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69972a78l0hznb8uihn419g6mja.png"
+    "image": "/images/ashes/17f69972a78l0hznb8uihn419g6mja.webp"
   },
   {
     "id": "17f6920fe70l0hznbb7s5p9luh70kn",
     "name": "Ash Of War: Carian Grandeur",
     "affinity": "Magic",
     "skill": "Carian Grandeur",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6920fe70l0hznbb7s5p9luh70kn.png"
+    "image": "/images/ashes/17f6920fe70l0hznbb7s5p9luh70kn.webp"
   },
   {
     "id": "17f691ce52el0hznbb8jlg0tc6t0dm",
     "name": "Ash Of War: Carian Retaliation",
     "affinity": "Magic",
     "skill": "Carian Retaliation",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f691ce52el0hznbb8jlg0tc6t0dm.png"
+    "image": "/images/ashes/17f691ce52el0hznbb8jlg0tc6t0dm.webp"
   },
   {
     "id": "17f69877351l0hznbcbt6uafsjw6at",
     "name": "Ash Of War: Blood Tax",
     "affinity": "Blood",
     "skill": "Blood Tax",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69877351l0hznbcbt6uafsjw6at.png"
+    "image": "/images/ashes/17f69877351l0hznbcbt6uafsjw6at.webp"
   },
   {
     "id": "17f6997d2f3l0hznbknjad2nj3vw6",
     "name": "Ash Of War: Charge Forth",
     "affinity": "Quality",
     "skill": "Charge Forth",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6997d2f3l0hznbknjad2nj3vw6.png"
+    "image": "/images/ashes/17f6997d2f3l0hznbknjad2nj3vw6.webp"
   },
   {
     "id": "17f69632b47l0hznbo20nfz1jomqp0m",
     "name": "Ash Of War: Chilling Mist",
     "affinity": "Cold",
     "skill": "Chilling Mist",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69632b47l0hznbo20nfz1jomqp0m.png"
+    "image": "/images/ashes/17f69632b47l0hznbo20nfz1jomqp0m.webp"
   },
   {
     "id": "17f699c39abl0hznbvtaua60bridg",
     "name": "Ash Of War: Cragblade",
     "affinity": "Heavy",
     "skill": "Cragblade",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-cragblade.png"
+    "image": "/images/ashes/ash-of-war-cragblade.webp"
   },
   {
     "id": "17f69718726l0hznc4a52929rfg1aw",
     "name": "Ash Of War: Double Slash",
     "affinity": "Keen",
     "skill": "Double Slash",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69718726l0hznc4a52929rfg1aw.png"
+    "image": "/images/ashes/17f69718726l0hznc4a52929rfg1aw.webp"
   },
   {
     "id": "17f69473c75l0hznc4u7wv3mae45bn",
     "name": "Ash Of War: Determination",
     "affinity": "Quality",
     "skill": "Determination",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69473c75l0hznc4u7wv3mae45bn.png"
+    "image": "/images/ashes/17f69473c75l0hznc4u7wv3mae45bn.webp"
   },
   {
     "id": "17f69a8f14bl0hznc9h9qokr7i72zg",
     "name": "Ash Of War: Earthshaker",
     "affinity": "Heavy",
     "skill": "Earthshaker",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-earthshaker.png"
+    "image": "/images/ashes/ash-of-war-earthshaker.webp"
   },
   {
     "id": "17f6920c27el0hzncahvte5m3xhhws",
     "name": "Ash Of War: Enchanted Shot",
     "affinity": "Standard",
     "skill": "Enchanted Shot",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6920c27el0hzncahvte5m3xhhws.png"
+    "image": "/images/ashes/17f6920c27el0hzncahvte5m3xhhws.webp"
   },
   {
     "id": "17f69a074b6l0hzncbpisvienjm7",
     "name": "Ash Of War: Endure",
     "affinity": "Heavy",
     "skill": "Endure",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a074b6l0hzncbpisvienjm7.png"
+    "image": "/images/ashes/17f69a074b6l0hzncbpisvienjm7.webp"
   },
   {
     "id": "17f69a3b29al0hzncgekzv3o1qoaml",
     "name": "Ash Of War: Eruption",
     "affinity": "Fire",
     "skill": "Eruption",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a3b29al0hzncgekzv3o1qoaml.png"
+    "image": "/images/ashes/17f69a3b29al0hzncgekzv3o1qoaml.webp"
   },
   {
     "id": "17f696f88b7l0hzncoms7ors9s5xn8",
     "name": "Ash Of War: Flame Of The Redmanes",
     "affinity": "Fire",
     "skill": "Flame of the Redmanes",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-flame-of-the-redmanes.png"
+    "image": "/images/ashes/ash-of-war-flame-of-the-redmanes.webp"
   },
   {
     "id": "17f69717cc3l0hzncvopzfk4mhxexm",
     "name": "Ash Of War: Flaming Strike",
     "affinity": "Fire",
     "skill": "Flaming Strike",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69717cc3l0hzncvopzfk4mhxexm.png"
+    "image": "/images/ashes/17f69717cc3l0hzncvopzfk4mhxexm.webp"
   },
   {
     "id": "17f696839ebl0hznd4efk9q3sfn90t",
     "name": "Ash Of War: Golden Land",
     "affinity": "Sacred",
     "skill": "Golden Land",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f696839ebl0hznd4efk9q3sfn90t.png"
+    "image": "/images/ashes/17f696839ebl0hznd4efk9q3sfn90t.webp"
   },
   {
     "id": "17f69124253l0hznd58kalvsnumdfs",
     "name": "Ash Of War: Glintblade Phalanx",
     "affinity": "Magic",
     "skill": "Glintblade Phalanx",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69124253l0hznd58kalvsnumdfs.png"
+    "image": "/images/ashes/17f69124253l0hznd58kalvsnumdfs.webp"
   },
   {
     "id": "17f69318912l0hzndcxhadx37qie0d",
     "name": "Ash Of War: Glintstone Pebble",
     "affinity": "Magic",
     "skill": "Glintstone Pebble Skill",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69318912l0hzndcxhadx37qie0d.png"
+    "image": "/images/ashes/17f69318912l0hzndcxhadx37qie0d.webp"
   },
   {
     "id": "17f69350c54l0hzndgv6rnmsmeuovl",
     "name": "Ash Of War: Giant Hunt",
     "affinity": "Quality",
     "skill": "Giant Hunt",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69350c54l0hzndgv6rnmsmeuovl.png"
+    "image": "/images/ashes/17f69350c54l0hzndgv6rnmsmeuovl.webp"
   },
   {
     "id": "17f698a21ael0hzndhz5rzpbq6s2kr",
     "name": "Ash Of War: Golden Parry",
     "affinity": "Sacred",
     "skill": "Golden Parry",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-golden-parry.png"
+    "image": "/images/ashes/ash-of-war-golden-parry.webp"
   },
   {
     "id": "17f697fa0abl0hzndk8ckmkt1uwa8c",
     "name": "Ash Of War: Golden Slam",
     "affinity": "Sacred",
     "skill": "Golden Slam",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f697fa0abl0hzndk8ckmkt1uwa8c.png"
+    "image": "/images/ashes/17f697fa0abl0hzndk8ckmkt1uwa8c.webp"
   },
   {
     "id": "17f69351ab5l0hzndrisc8jnkt6cio",
     "name": "Ashes Of War: Golden Vow",
     "affinity": "Sacred",
     "skill": "Golden Vow",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69351ab5l0hzndrisc8jnkt6cio.png"
+    "image": "/images/ashes/17f69351ab5l0hzndrisc8jnkt6cio.webp"
   },
   {
     "id": "17f691ddaael0hzndtkuqlxj0gi37d",
     "name": "Ash Of War: Gravitas",
     "affinity": "Magic",
     "skill": "Gravitas",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f691ddaael0hzndtkuqlxj0gi37d.png"
+    "image": "/images/ashes/17f691ddaael0hzndtkuqlxj0gi37d.webp"
   },
   {
     "id": "17f694e769dl0hzndwlq2qilmdrv3j",
     "name": "Ash Of War: Ground Slam",
     "affinity": "Heavy",
     "skill": "Ground Slam",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f694e769dl0hzndwlq2qilmdrv3j.png"
+    "image": "/images/ashes/17f694e769dl0hzndwlq2qilmdrv3j.webp"
   },
   {
     "id": "17f693bc341l0hzndy1cxubyy4g0bq",
     "name": "Ash Of War: Hoarah Loux's Earthshaker",
     "affinity": "Heavy",
     "skill": "Hoarah Loux's Earthshaker",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f693bc341l0hzndy1cxubyy4g0bq.png"
+    "image": "/images/ashes/17f693bc341l0hzndy1cxubyy4g0bq.webp"
   },
   {
     "id": "17f698e1b7fl0hznea0kg0jfvuo96",
     "name": "Ash Of War: Holy Ground",
     "affinity": "Sacred",
     "skill": "Holy Ground",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f698e1b7fl0hznea0kg0jfvuo96.png"
+    "image": "/images/ashes/17f698e1b7fl0hznea0kg0jfvuo96.webp"
   },
   {
     "id": "17f692fc3aal0hzneh25vt285rpane",
     "name": "Ash Of War: Hoarfrost Stomp",
     "affinity": "Cold",
     "skill": "Hoarfrost Stomp",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f692fc3aal0hzneh25vt285rpane.png"
+    "image": "/images/ashes/17f692fc3aal0hzneh25vt285rpane.webp"
   },
   {
     "id": "17f69609053l0hzneinqfv4xxlqvhj",
     "name": "Ash Of War: Ice Spear",
     "affinity": "Cold",
     "skill": "Ice Spear",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69609053l0hzneinqfv4xxlqvhj.png"
+    "image": "/images/ashes/17f69609053l0hzneinqfv4xxlqvhj.webp"
   },
   {
     "id": "17f69a64ff1l0hzneows1ewhajkkgh",
     "name": "Ash Of War: Impaling Thrust",
     "affinity": "Keen",
     "skill": "Impaling Thrust",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a64ff1l0hzneows1ewhajkkgh.png"
+    "image": "/images/ashes/17f69a64ff1l0hzneows1ewhajkkgh.webp"
   },
   {
     "id": "17f69700932l0hznetfa5h21htw70m",
     "name": "Ash Of War: Kick",
     "affinity": "Heavy",
     "skill": "Kick",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69700932l0hznetfa5h21htw70m.png"
+    "image": "/images/ashes/17f69700932l0hznetfa5h21htw70m.webp"
   },
   {
     "id": "17f69a62d88l0hzneyzvq5fyjnottm",
     "name": "Ash Of War: Lightning Ram",
     "affinity": "Lightning",
     "skill": "Lightning Ram",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a62d88l0hzneyzvq5fyjnottm.png"
+    "image": "/images/ashes/17f69a62d88l0hzneyzvq5fyjnottm.webp"
   },
   {
     "id": "17f692df771l0hznf03p274erwk98h",
     "name": "Ash Of War: Lightning Slash",
     "affinity": "Lightning",
     "skill": "Lightning Slash",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f692df771l0hznf03p274erwk98h.png"
+    "image": "/images/ashes/17f692df771l0hznf03p274erwk98h.webp"
   },
   {
     "id": "17f696bfa3bl0hznf6k0etmzqb06tl9",
     "name": "Ash Of War: Lifesteal Fist",
     "affinity": "Occult",
     "skill": "Lifesteal Fist",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f696bfa3bl0hznf6k0etmzqb06tl9.png"
+    "image": "/images/ashes/17f696bfa3bl0hznf6k0etmzqb06tl9.webp"
   },
   {
     "id": "17f69a31a8al0hznf908v1nxqoxy0e",
     "name": "Ash Of War: Lion's Claw",
     "affinity": "Heavy",
     "skill": "Lion's Claw",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a31a8al0hznf908v1nxqoxy0e.png"
+    "image": "/images/ashes/17f69a31a8al0hznf908v1nxqoxy0e.webp"
   },
   {
     "id": "17f69a32673l0hznfbappm2n51jcv",
     "name": "Ash Of War: Loretta's Slash",
     "affinity": "Magic",
     "skill": "Loretta's Slash",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a32673l0hznfbappm2n51jcv.png"
+    "image": "/images/ashes/17f69a32673l0hznfbappm2n51jcv.webp"
   },
   {
     "id": "17f69325755l0hznfv4s2ciqdltjtq",
     "name": "Ash Of War: Mighty Shot",
     "affinity": "Standard",
     "skill": "Mighty Shot",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69325755l0hznfv4s2ciqdltjtq.png"
+    "image": "/images/ashes/17f69325755l0hznfv4s2ciqdltjtq.webp"
   },
   {
     "id": "17f697ede6el0hzng0czebz0gl42f",
     "name": "Ash Of War: No Skill",
     "affinity": "Standard",
     "skill": "",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f697ede6el0hzng0czebz0gl42f.png"
+    "image": "/images/ashes/17f697ede6el0hzng0czebz0gl42f.webp"
   },
   {
     "id": "17f69a087c2l0hzng49rzvczvag1p",
     "name": "Ash Of War: Piercing Fang",
     "affinity": "Keen",
     "skill": "Piercing Fang",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a087c2l0hzng49rzvczvag1p.png"
+    "image": "/images/ashes/17f69a087c2l0hzng49rzvczvag1p.webp"
   },
   {
     "id": "17f6992b87dl0hzng4xdj3kj5y9j56",
     "name": "Ash Of War: Parry",
     "affinity": "Standard",
     "skill": "Parry Skill",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6992b87dl0hzng4xdj3kj5y9j56.png"
+    "image": "/images/ashes/17f6992b87dl0hzng4xdj3kj5y9j56.webp"
   },
   {
     "id": "17f69449189l0hzng7hu2ig878ohic",
     "name": "Ash Of War: Poisonous Mist",
     "affinity": "Poison",
     "skill": "Poisonous Mist",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69449189l0hzng7hu2ig878ohic.png"
+    "image": "/images/ashes/17f69449189l0hzng7hu2ig878ohic.webp"
   },
   {
     "id": "17f697b4d33l0hzng9g0bop6lam24gp",
     "name": "Ash Of War: Prayerful Strike",
     "affinity": "Sacred",
     "skill": "Prayerful Strike",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f697b4d33l0hzng9g0bop6lam24gp.png"
+    "image": "/images/ashes/17f697b4d33l0hzng9g0bop6lam24gp.webp"
   },
   {
     "id": "17f6932a2d8l0hzngb251bqvfmqy2",
     "name": "Ash Of War: Phantom Slash",
     "affinity": "Quality",
     "skill": "Phantom Slash",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6932a2d8l0hzngb251bqvfmqy2.png"
+    "image": "/images/ashes/17f6932a2d8l0hzngb251bqvfmqy2.webp"
   },
   {
     "id": "17f69742e0fl0hzngchtcvdl4bok5h",
     "name": "Ash Of War: Poison Moth Flight",
     "affinity": "Poison",
     "skill": "Poison Moth Flight",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69742e0fl0hzngchtcvdl4bok5h.png"
+    "image": "/images/ashes/17f69742e0fl0hzngchtcvdl4bok5h.webp"
   },
   {
     "id": "17f692c7232l0hzngn8rlhloj6d81g",
     "name": "Ash Of War: Quickstep",
     "affinity": "Keen",
     "skill": "Quickstep",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f692c7232l0hzngn8rlhloj6d81g.png"
+    "image": "/images/ashes/17f692c7232l0hzngn8rlhloj6d81g.webp"
   },
   {
     "id": "17f69295181l0hznh0xinc6xftw9ba",
     "name": "Ash Of War: Raptor Of The Mists",
     "affinity": "Keen",
     "skill": "Raptor of the Mists",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69295181l0hznh0xinc6xftw9ba.png"
+    "image": "/images/ashes/17f69295181l0hznh0xinc6xftw9ba.webp"
   },
   {
     "id": "17f693d5026l0hznh18sc9evm9dy7",
     "name": "Ash Of War: Rain Of Arrows",
     "affinity": "Standard",
     "skill": "Rain of Arrows",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f693d5026l0hznh18sc9evm9dy7.png"
+    "image": "/images/ashes/17f693d5026l0hznh18sc9evm9dy7.webp"
   },
   {
     "id": "17f694bd57dl0hznh3df4y3fmzs47",
     "name": "Ash Of War: Repeating Thrust",
     "affinity": "Keen",
     "skill": "Repeating Thrust",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f694bd57dl0hznh3df4y3fmzs47.png"
+    "image": "/images/ashes/17f694bd57dl0hznh3df4y3fmzs47.webp"
   },
   {
     "id": "17f6932e7ccl0hznh41483furh3gwl",
     "name": "Ash Of War: Royal Knight's Resolve",
     "affinity": "Quality",
     "skill": "Royal Knight's Resolve",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6932e7ccl0hznh41483furh3gwl.png"
+    "image": "/images/ashes/17f6932e7ccl0hznh41483furh3gwl.webp"
   },
   {
     "id": "17f697367f8l0hznh85n59iw24a9cs",
     "name": "Ash Of War: Sacred Ring Of Light",
     "affinity": "Sacred",
     "skill": "Sacred Ring of Light",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f697367f8l0hznh85n59iw24a9cs.png"
+    "image": "/images/ashes/17f697367f8l0hznh85n59iw24a9cs.webp"
   },
   {
     "id": "17f6926fae4l0hznh93w8eu63gg5a",
     "name": "Ash Of War: Sacred Blade",
     "affinity": "Sacred",
     "skill": "Sacred Blade",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6926fae4l0hznh93w8eu63gg5a.png"
+    "image": "/images/ashes/17f6926fae4l0hznh93w8eu63gg5a.webp"
   },
   {
     "id": "17f69494c37l0hznhbbgk88jc3uz5o",
     "name": "Ash Of War: Sacred Order",
     "affinity": "Sacred",
     "skill": "Sacred Order",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69494c37l0hznhbbgk88jc3uz5o.png"
+    "image": "/images/ashes/17f69494c37l0hznhbbgk88jc3uz5o.webp"
   },
   {
     "id": "17f69835c8el0hznhgxliq172h0mb",
     "name": "Ash Of War: Seppuku",
     "affinity": "Blood",
     "skill": "Seppuku",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69835c8el0hznhgxliq172h0mb.png"
+    "image": "/images/ashes/17f69835c8el0hznhgxliq172h0mb.webp"
   },
   {
     "id": "17f69368b21l0hzni1ub97dix6no65",
     "name": "Ash Of War: Spinning Strikes",
     "affinity": "Quality",
     "skill": "Spinning Strikes",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69368b21l0hzni1ub97dix6no65.png"
+    "image": "/images/ashes/17f69368b21l0hzni1ub97dix6no65.webp"
   },
   {
     "id": "17f69a61881l0hzni3itnz1oxlbfz",
     "name": "Ash Of War: Shield Crash",
     "affinity": "Standard",
     "skill": "Shield Crash",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69a61881l0hzni3itnz1oxlbfz.png"
+    "image": "/images/ashes/17f69a61881l0hzni3itnz1oxlbfz.webp"
   },
   {
     "id": "17f6974700al0hzni4it3sh1bwmn4c",
     "name": "Ash Of War: Spinning Slash",
     "affinity": "Keen",
     "skill": "Spinning Slash",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6974700al0hzni4it3sh1bwmn4c.png"
+    "image": "/images/ashes/17f6974700al0hzni4it3sh1bwmn4c.webp"
   },
   {
     "id": "17f6926182el0hzni6gy8lu3ewebgc",
     "name": "Ash Of War: Spectral Lance",
     "affinity": "Occult",
     "skill": "Spectral Lance",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6926182el0hzni6gy8lu3ewebgc.png"
+    "image": "/images/ashes/17f6926182el0hzni6gy8lu3ewebgc.webp"
   },
   {
     "id": "17f695e6f65l0hzni7f6oo2ih1csuu",
     "name": "Ash Of War: Spinning Weapon",
     "affinity": "Magic",
     "skill": "Spinning Weapon",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f695e6f65l0hzni7f6oo2ih1csuu.png"
+    "image": "/images/ashes/17f695e6f65l0hzni7f6oo2ih1csuu.webp"
   },
   {
     "id": "17f694d3942l0hzni7obhdodn7w1sf",
     "name": "Ash Of War: Square Off",
     "affinity": "Quality",
     "skill": "Square Off",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f694d3942l0hzni7obhdodn7w1sf.png"
+    "image": "/images/ashes/17f694d3942l0hzni7obhdodn7w1sf.webp"
   },
   {
     "id": "17f694a9a1cl0hznib028gwf1bodgy",
     "name": "Ash Of War: Shield Bash",
     "affinity": "Standard",
     "skill": "Shield Bash",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-shield-bash.png"
+    "image": "/images/ashes/ash-of-war-shield-bash.webp"
   },
   {
     "id": "17f69615628l0hznicfne35ba3ux6k",
     "name": "Ash Of War: Stamp (sweep)",
     "affinity": "Heavy",
     "skill": "Stamp (Sweep)",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69615628l0hznicfne35ba3ux6k.png"
+    "image": "/images/ashes/17f69615628l0hznicfne35ba3ux6k.webp"
   },
   {
     "id": "17f699c60e7l0hzniu3lqezpf8qd1p",
     "name": "Ash Of War: Stamp (upward Cut)",
     "affinity": "Heavy",
     "skill": "Stamp (Upward Cut)",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f699c60e7l0hzniu3lqezpf8qd1p.png"
+    "image": "/images/ashes/17f699c60e7l0hzniu3lqezpf8qd1p.webp"
   },
   {
     "id": "17f6927105cl0hznj0z1zekjxe48uw",
     "name": "Ash Of War: Stormcaller",
     "affinity": "Quality",
     "skill": "Stormcaller",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6927105cl0hznj0z1zekjxe48uw.png"
+    "image": "/images/ashes/17f6927105cl0hznj0z1zekjxe48uw.webp"
   },
   {
     "id": "17f698b0169l0hznj20xql58va51p",
     "name": "Ash Of War: Storm Stomp",
     "affinity": "Quality",
     "skill": "Storm Stomp",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f698b0169l0hznj20xql58va51p.png"
+    "image": "/images/ashes/17f698b0169l0hznj20xql58va51p.webp"
   },
   {
     "id": "17f6958e40fl0hznj220cxyqrpbhbtl",
     "name": "Ash Of War: Storm Wall",
     "affinity": "Standard",
     "skill": "Storm Wall",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6958e40fl0hznj220cxyqrpbhbtl.png"
+    "image": "/images/ashes/17f6958e40fl0hznj220cxyqrpbhbtl.webp"
   },
   {
     "id": "17f691bde6dl0hznj254ai88m30jy4",
     "name": "Ash Of War: Storm Assault",
     "affinity": "Quality",
     "skill": "Storm Assault",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f691bde6dl0hznj254ai88m30jy4.png"
+    "image": "/images/ashes/17f691bde6dl0hznj254ai88m30jy4.webp"
   },
   {
     "id": "17f6967f8b4l0hznj7rb45wsxsqe2k",
     "name": "Ash Of War: Thops's Barrier",
     "affinity": "Magic",
     "skill": "Thops's Barrier",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6967f8b4l0hznj7rb45wsxsqe2k.png"
+    "image": "/images/ashes/17f6967f8b4l0hznj7rb45wsxsqe2k.webp"
   },
   {
     "id": "17f69649d89l0hznj9kugkc82bxbio",
     "name": "Ash Of War: Storm Blade",
     "affinity": "Quality",
     "skill": "Storm Blade",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69649d89l0hznj9kugkc82bxbio.png"
+    "image": "/images/ashes/17f69649d89l0hznj9kugkc82bxbio.webp"
   },
   {
     "id": "17f6934bf80l0hznjbmtfxzfeycj3",
     "name": "Ash Of War: Sword Dance",
     "affinity": "Keen",
     "skill": "Sword Dance",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6934bf80l0hznjbmtfxzfeycj3.png"
+    "image": "/images/ashes/17f6934bf80l0hznjbmtfxzfeycj3.webp"
   },
   {
     "id": "17f694f3dc4l0hznjyrorixzbrhtyl",
     "name": "Through And Through",
     "affinity": "Standard",
     "skill": "Through and Through",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f694f3dc4l0hznjyrorixzbrhtyl.png"
+    "image": "/images/ashes/17f694f3dc4l0hznjyrorixzbrhtyl.webp"
   },
   {
     "id": "17f698ab1efl0hznjzezdci4en72vq",
     "name": "Ash Of War: Thunderbolt",
     "affinity": "Lightning",
     "skill": "Thunderbolt",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f698ab1efl0hznjzezdci4en72vq.png"
+    "image": "/images/ashes/17f698ab1efl0hznjzezdci4en72vq.webp"
   },
   {
     "id": "17f699ec1a6l0hznk0i5ha4237hzfk",
     "name": "Ash Of War: Unsheathe",
     "affinity": "Keen",
     "skill": "Unsheathe",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f699ec1a6l0hznk0i5ha4237hzfk.png"
+    "image": "/images/ashes/17f699ec1a6l0hznk0i5ha4237hzfk.webp"
   },
   {
     "id": "17f697d7810l0hznk0s61fxkyp7oyb",
     "name": "Ash Of War: Vacuum Slice",
     "affinity": "Quality",
     "skill": "Vacuum Slice",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f697d7810l0hznk0s61fxkyp7oyb.png"
+    "image": "/images/ashes/17f697d7810l0hznk0s61fxkyp7oyb.webp"
   },
   {
     "id": "17f6993d1e2l0hznk0xt4ctr9t63x",
     "name": "Ash Of War: Troll's Roar",
     "affinity": "Heavy",
     "skill": "Troll's Roar",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-trolls-roar.png"
+    "image": "/images/ashes/ash-of-war-trolls-roar.webp"
   },
   {
     "id": "17f692815c3l0hznk5jl6bndkytllg",
     "name": "Ash Of War: War Cry",
     "affinity": "Heavy",
     "skill": "War Cry",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f692815c3l0hznk5jl6bndkytllg.png"
+    "image": "/images/ashes/17f692815c3l0hznk5jl6bndkytllg.webp"
   },
   {
     "id": "17f694286dcl0hznk67par4y8fhfsr",
     "name": "Ash Of War: Vow Of The Indomitable",
     "affinity": "Sacred",
     "skill": "Vow of the Indomitable",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f694286dcl0hznk67par4y8fhfsr.png"
+    "image": "/images/ashes/17f694286dcl0hznk67par4y8fhfsr.webp"
   },
   {
     "id": "17f6972b1a9l0hznk88u6e3xorhqag",
     "name": "Ash Of War: Waves Of Darkness",
     "affinity": "Magic",
     "skill": "Waves of Darkness",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f6972b1a9l0hznk88u6e3xorhqag.png"
+    "image": "/images/ashes/17f6972b1a9l0hznk88u6e3xorhqag.webp"
   },
   {
     "id": "17f693d28cal0hznkls4roarty63j",
     "name": "Ash Of War: White Shadow's Lure",
     "affinity": "Occult",
     "skill": "White Shadow's Lure",
-    "image": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ash-of-war-white-shadows-lure.png"
+    "image": "/images/ashes/ash-of-war-white-shadows-lure.webp"
   },
   {
     "id": "17f694c6f7dl0hznknwj67qfg5tulf",
     "name": "Ash Of War: Wild Strikes",
     "affinity": "Heavy",
     "skill": "Wild Strikes",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f694c6f7dl0hznknwj67qfg5tulf.png"
+    "image": "/images/ashes/17f694c6f7dl0hznknwj67qfg5tulf.webp"
   },
   {
     "id": "17f69961854l0hznksnfmac6brvbwg",
     "name": "Lost Ashes Of War",
     "affinity": "None",
     "skill": "Ashes of War",
-    "image": "https://eldenring.fanapis.com/images/ashes/17f69961854l0hznksnfmac6brvbwg.png"
+    "image": "/images/ashes/17f69961854l0hznksnfmac6brvbwg.webp"
   }
 ]

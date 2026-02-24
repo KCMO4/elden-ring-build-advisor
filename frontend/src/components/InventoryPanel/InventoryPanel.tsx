@@ -57,7 +57,14 @@ function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placehol
   const [hovered, setHovered] = useState(false);
   const [rect, setRect] = useState<DOMRect | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+
+  // Reset imgError cuando cambia la imagen (cambio de tab reutiliza el componente)
+  useEffect(() => {
+    setImgError(false);
+  }, [item.image]);
+
   const showImg = !!item.image && !imgError;
+  const upgradeLevel = item.upgradeLevel ?? null;
 
   function handleMouseEnter() {
     if (ref.current) setRect(ref.current.getBoundingClientRect());
@@ -78,6 +85,9 @@ function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placehol
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setHovered(false)}
     >
+      {upgradeLevel !== null && (
+        <span className={styles.upgradeBadge}>+{upgradeLevel}</span>
+      )}
       {showImg ? (
         <img
           src={item.image}
@@ -103,8 +113,8 @@ function ItemGrid({ items, placeholder }: ItemGridProps) {
 
   return (
     <div className={styles.grid}>
-      {items.map((item, i) => (
-        <GridItem key={i} item={item} placeholder={placeholder} />
+      {items.map((item) => (
+        <GridItem key={item.uid} item={item} placeholder={placeholder} />
       ))}
     </div>
   );

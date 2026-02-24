@@ -15,6 +15,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
+import * as http from 'http';
+import sharp from 'sharp';
 
 const DATA_DIR = path.join(__dirname, '..', 'src', 'data');
 
@@ -555,6 +557,188 @@ function saveJson(filename: string, data: unknown[]): void {
   console.log(`  Guardado: ${filePath} (${data.length} ítems)`);
 }
 
+// ── Descarga de imágenes ─────────────────────────────────────
+
+const IMAGES_DIR = path.join(DATA_DIR, 'images');
+const IMAGE_SIZE = 128; // px — displayed at 52-58px, this covers 2x retina
+
+/** Descarga una URL a buffer en memoria. Sigue redirects HTTP/HTTPS. */
+function fetchBuffer(url: string): Promise<Buffer | null> {
+  return new Promise((resolve) => {
+    const get = url.startsWith('https') ? https.get : http.get;
+    get(url, { headers: { 'User-Agent': 'elden-ring-build-advisor/1.0' } }, (res) => {
+      if ((res.statusCode === 301 || res.statusCode === 302) && res.headers.location) {
+        fetchBuffer(res.headers.location).then(resolve);
+        return;
+      }
+      if (res.statusCode !== 200) {
+        res.resume();
+        resolve(null);
+        return;
+      }
+      const chunks: Buffer[] = [];
+      res.on('data', (chunk: Buffer) => chunks.push(chunk));
+      res.on('end', () => resolve(Buffer.concat(chunks)));
+      res.on('error', () => resolve(null));
+    }).on('error', () => resolve(null));
+  });
+}
+
+/**
+ * Descarga, redimensiona a 128x128 y convierte a WebP.
+ * Skip si destPath ya existe (idempotente).
+ */
+async function downloadAndOptimize(url: string, destPath: string): Promise<boolean> {
+  if (fs.existsSync(destPath)) return true;
+
+  const buf = await fetchBuffer(url);
+  if (!buf) return false;
+
+  try {
+    await sharp(buf)
+      .resize(IMAGE_SIZE, IMAGE_SIZE, { fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toFile(destPath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+interface DownloadTask { url: string; dest: string; }
+
+/** Pool de descargas con concurrencia limitada y progreso en stdout */
+async function downloadWithConcurrency(
+  tasks: DownloadTask[],
+  concurrency = 10,
+): Promise<{ ok: number; failed: number; skipped: number }> {
+  let ok = 0;
+  let failed = 0;
+  let skipped = 0;
+  let idx = 0;
+
+  async function worker(): Promise<void> {
+    while (idx < tasks.length) {
+      const task = tasks[idx++];
+      if (fs.existsSync(task.dest)) {
+        skipped++;
+      } else {
+        const success = await downloadAndOptimize(task.url, task.dest);
+        if (success) ok++;
+        else failed++;
+      }
+      process.stdout.write(`  ${ok + failed + skipped}/${tasks.length} (${failed} failed)\r`);
+    }
+  }
+
+  const workers: Promise<void>[] = [];
+  for (let i = 0; i < Math.min(concurrency, tasks.length); i++) {
+    workers.push(worker());
+  }
+  await Promise.all(workers);
+  console.log(); // newline after progress
+  return { ok, failed, skipped };
+}
+
+/** Extrae el filename de una URL de imagen y cambia extensión a .webp */
+function imageFilenameFromUrl(url: string): string {
+  try {
+    const pathname = new URL(url).pathname;
+    const base = path.basename(pathname);
+    return base.replace(/\.[^.]+$/, '.webp');
+  } catch {
+    const base = url.split('/').pop() ?? 'unknown.png';
+    return base.replace(/\.[^.]+$/, '.webp');
+  }
+}
+
+/** Categorías de JSON que contienen campo `image` */
+const IMAGE_CATEGORIES = [
+  'weapons', 'armors', 'talismans', 'spells',
+  'shields', 'ashes', 'spirits', 'consumables',
+] as const;
+
+/**
+ * Descarga todas las imágenes de los JSON ya sincronizados,
+ * luego reescribe cada JSON reemplazando URLs externas por paths locales.
+ */
+async function downloadAllImages(): Promise<void> {
+  console.log('\n[9/9] Downloading images...');
+
+  // Preparar tareas de descarga y mapeo URL→local path
+  const tasks: DownloadTask[] = [];
+  const urlToLocal = new Map<string, string>();
+
+  for (const cat of IMAGE_CATEGORIES) {
+    const jsonPath = path.join(DATA_DIR, `${cat}.json`);
+    if (!fs.existsSync(jsonPath)) continue;
+
+    const items = JSON.parse(fs.readFileSync(jsonPath, 'utf8')) as Array<{ image?: string }>;
+    const catDir = path.join(IMAGES_DIR, cat);
+    fs.mkdirSync(catDir, { recursive: true });
+
+    for (const item of items) {
+      if (!item.image || !item.image.startsWith('http')) continue;
+      if (urlToLocal.has(item.image)) continue;
+
+      const filename = imageFilenameFromUrl(item.image);
+      const destPath = path.join(catDir, filename);
+      const localPath = `/images/${cat}/${filename}`;
+
+      urlToLocal.set(item.image, localPath);
+      tasks.push({ url: item.image, dest: destPath });
+    }
+  }
+
+  // Agregar imágenes de fallback (usadas en scanner.ts para ítems sin imagen en fanapis)
+  const FEXTRA = 'https://eldenring.wiki.fextralife.com/file/Elden-Ring';
+  const fallbacks: Array<{ url: string; cat: string; filename: string }> = [
+    { url: `${FEXTRA}/champion_gaiters_elden_ring_wiki_guide_200px.png`, cat: 'armors', filename: 'champion_gaiters_elden_ring_wiki_guide_200px.webp' },
+    { url: `${FEXTRA}/karolos_glintstone_crown_elden_ring_wiki_guide_200px.png`, cat: 'armors', filename: 'karolos_glintstone_crown_elden_ring_wiki_guide_200px.webp' },
+    { url: `${FEXTRA}/roar_medallion_talisman_elden_ring_wiki_guide_200px.png`, cat: 'talismans', filename: 'roar_medallion_talisman_elden_ring_wiki_guide_200px.webp' },
+    { url: `${FEXTRA}/flame_cleanse_me_incantation_elden_ring_wiki_guide_200px.png`, cat: 'spells', filename: 'flame_cleanse_me_incantation_elden_ring_wiki_guide_200px.webp' },
+  ];
+  for (const fb of fallbacks) {
+    const catDir = path.join(IMAGES_DIR, fb.cat);
+    fs.mkdirSync(catDir, { recursive: true });
+    const destPath = path.join(catDir, fb.filename);
+    if (!urlToLocal.has(fb.url)) {
+      urlToLocal.set(fb.url, `/images/${fb.cat}/${fb.filename}`);
+      tasks.push({ url: fb.url, dest: destPath });
+    }
+  }
+
+  console.log(`  ${tasks.length} imágenes por descargar (${urlToLocal.size} URLs únicas)`);
+
+  if (tasks.length > 0) {
+    const result = await downloadWithConcurrency(tasks, 10);
+    console.log(`  OK: ${result.ok}, Failed: ${result.failed}, Skipped: ${result.skipped}`);
+  }
+
+  // Reescribir los JSON con paths locales
+  for (const cat of IMAGE_CATEGORIES) {
+    const jsonPath = path.join(DATA_DIR, `${cat}.json`);
+    if (!fs.existsSync(jsonPath)) continue;
+
+    const items = JSON.parse(fs.readFileSync(jsonPath, 'utf8')) as Array<{ image?: string }>;
+    let changed = false;
+
+    for (const item of items) {
+      if (!item.image) continue;
+      const local = urlToLocal.get(item.image);
+      if (local) {
+        item.image = local;
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      fs.writeFileSync(jsonPath, JSON.stringify(items, null, 2), 'utf-8');
+      console.log(`  Rewritten: ${cat}.json`);
+    }
+  }
+}
+
 // ── Punto de entrada ─────────────────────────────────────────
 
 async function main(): Promise<void> {
@@ -569,6 +753,7 @@ async function main(): Promise<void> {
   await syncAshes();
   await syncSpirits();
   await syncConsumables();
+  await downloadAllImages();
 
   console.log('\n✓ sync-data completado. Archivos en src/data/');
 }

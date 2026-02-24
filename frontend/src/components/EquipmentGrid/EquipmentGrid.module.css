@@ -78,57 +78,14 @@
 .greatRuneRow {
   display: flex;
   justify-content: center;
-}
-
-.greatRuneSlot {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(201, 167, 79, 0.08);
-  border: 1px solid var(--border-gold);
-  padding: 0.35rem 0.9rem;
-}
-
-.greatRuneIcon {
-  font-size: 1.2rem;
-  color: var(--gold);
-  filter: drop-shadow(0 0 6px rgba(201, 167, 79, 0.5));
-}
-
-.greatRuneName {
-  font-size: 0.72rem;
-  color: var(--gold-bright);
-  letter-spacing: 0.06em;
+  padding: 0.25rem;
+  background: rgba(201, 167, 79, 0.06);
+  border: 1px solid rgba(201, 167, 79, 0.15);
 }
 
 /* Quick Items & Pouch */
 .quickItemsRow {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.35rem;
   flex-wrap: wrap;
-}
-
-.quickSlot {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
-  padding: 0.25rem 0.55rem;
-  max-width: 180px;
-}
-
-.quickSlotIcon {
-  font-size: 0.5rem;
-  color: var(--gold-dim);
-  flex-shrink: 0;
-}
-
-.quickSlotName {
-  font-size: 0.62rem;
-  color: var(--text);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
