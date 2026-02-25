@@ -1,4 +1,5 @@
-import type { ParseResponse, AdvisorResponse, CharacterStats } from '../types';
+import type { ParseResponse } from '../types';
+import type { BuildTemplate } from '../utils/buildMatcher';
 
 const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
 
@@ -19,17 +20,12 @@ export async function parseSave(file: File): Promise<ParseResponse> {
   return res.json() as Promise<ParseResponse>;
 }
 
-export async function getAdvisor(stats: CharacterStats): Promise<AdvisorResponse> {
-  const res = await fetch(`${API_URL}/api/advisor`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(stats),
-  });
+export async function getBuilds(): Promise<BuildTemplate[]> {
+  const res = await fetch(`${API_URL}/api/builds`);
 
   if (!res.ok) {
-    const err = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
-    throw new Error(err.error ?? 'Error al obtener recomendaciones');
+    throw new Error('Failed to load build templates');
   }
 
-  return res.json() as Promise<AdvisorResponse>;
+  return res.json() as Promise<BuildTemplate[]>;
 }

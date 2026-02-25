@@ -9,11 +9,10 @@ import AdvisorPanel from '../AdvisorPanel/AdvisorPanel';
 import MatchmakingCalc from '../MatchmakingCalc/MatchmakingCalc';
 import ItemTooltip from '../ItemTooltip/ItemTooltip';
 import { useImagePreloader } from '../../hooks/useImagePreloader';
-import { estimateEquippedAR } from '../../utils/arCalc';
 import { loadScalingData } from '../../utils/scalingData';
 import styles from './BuildPage.module.css';
 
-type ContentTab = 'inventory' | 'advisor' | 'matchmaking';
+type ContentTab = 'inventory' | 'builds' | 'matchmaking';
 
 interface Props {
   character: CharacterData;
@@ -27,14 +26,10 @@ export default function BuildPage({ character, onBack }: Props) {
   const [contentTab, setContentTab] = useState<ContentTab>('inventory');
   const captureRef = useRef<HTMLDivElement>(null);
 
-  // Main weapon + AR for AdvisorPanel comparison
+  // Main weapon for AdvisorPanel (scaling tips)
   const mainWeapon = useMemo(
     () => character.equipped.rightHand.find(w => w.name && w.damage) ?? null,
     [character.equipped.rightHand],
-  );
-  const mainWeaponAR = useMemo(
-    () => mainWeapon?.damage ? estimateEquippedAR(mainWeapon, character.stats).total : 0,
-    [mainWeapon, character.stats],
   );
 
   // Collect all image URLs from equipped + inventory for preloading
@@ -157,10 +152,10 @@ export default function BuildPage({ character, onBack }: Props) {
               Inventory
             </button>
             <button
-              className={`${styles.contentTab} ${contentTab === 'advisor' ? styles.contentTabActive : ''}`}
-              onClick={() => setContentTab('advisor')}
+              className={`${styles.contentTab} ${contentTab === 'builds' ? styles.contentTabActive : ''}`}
+              onClick={() => setContentTab('builds')}
             >
-              Advisor
+              Builds
             </button>
             <button
               className={`${styles.contentTab} ${contentTab === 'matchmaking' ? styles.contentTabActive : ''}`}
@@ -172,11 +167,12 @@ export default function BuildPage({ character, onBack }: Props) {
           {contentTab === 'inventory' && (
             <InventoryPanel inventory={character.inventory} stats={character.stats} />
           )}
-          {contentTab === 'advisor' && (
+          {contentTab === 'builds' && (
             <AdvisorPanel
               stats={character.stats}
-              mainWeaponAR={mainWeaponAR}
+              level={character.level}
               mainWeapon={mainWeapon}
+              inventory={character.inventory}
             />
           )}
           {contentTab === 'matchmaking' && (

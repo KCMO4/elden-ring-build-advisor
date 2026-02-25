@@ -484,6 +484,20 @@ app.get('/api/scaling', (_req: Request, res: Response) => {
   }
 });
 
+// ── GET /api/builds ──────────────────────────────────────────────────────────
+/**
+ * Returns curated community build templates for the build recommender.
+ */
+app.get('/api/builds', (_req: Request, res: Response) => {
+  const buildsPath = path.join(__dirname, 'data', 'builds.json');
+  if (!fs.existsSync(buildsPath)) {
+    res.json([]);
+    return;
+  }
+  const builds = JSON.parse(fs.readFileSync(buildsPath, 'utf8'));
+  res.json(builds);
+});
+
 // ── POST /api/advisor ────────────────────────────────────────────────────────
 /**
  * Dadas las stats de un personaje, devuelve:

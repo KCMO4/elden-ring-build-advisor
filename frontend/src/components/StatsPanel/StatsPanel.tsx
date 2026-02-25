@@ -13,19 +13,19 @@ interface StatDef {
   abbr: string;
   label: string;
   colorClass: string;
-  /** Softcap values (at 99-scale) */
   caps: number[];
+  desc: string;
 }
 
 const STAT_DEFS: StatDef[] = [
-  { key: 'vigor',        abbr: 'VIG', label: 'Vigor',        colorClass: styles.colVig, caps: [25, 40, 60] },
-  { key: 'mind',         abbr: 'MND', label: 'Mind',         colorClass: styles.colMnd, caps: [15, 35, 60] },
-  { key: 'endurance',    abbr: 'END', label: 'Endurance',    colorClass: styles.colEnd, caps: [15, 30, 50] },
-  { key: 'strength',     abbr: 'STR', label: 'Strength',     colorClass: styles.colStr, caps: [18, 60, 80] },
-  { key: 'dexterity',    abbr: 'DEX', label: 'Dexterity',    colorClass: styles.colDex, caps: [18, 60, 80] },
-  { key: 'intelligence', abbr: 'INT', label: 'Intelligence', colorClass: styles.colInt, caps: [20, 50, 80] },
-  { key: 'faith',        abbr: 'FAI', label: 'Faith',        colorClass: styles.colFai, caps: [20, 50, 80] },
-  { key: 'arcane',       abbr: 'ARC', label: 'Arcane',       colorClass: styles.colArc, caps: [20, 60, 80] },
+  { key: 'vigor',        abbr: 'VIG', label: 'Vigor',        colorClass: styles.colVig, caps: [25, 40, 60], desc: 'Increases maximum HP. Also boosts Immunity (poison/rot resistance). Major softcaps at 40 and 60.' },
+  { key: 'mind',         abbr: 'MND', label: 'Mind',         colorClass: styles.colMnd, caps: [15, 35, 60], desc: 'Increases maximum FP for spells and weapon skills. Also boosts Focus (madness/sleep resistance). Softcaps at 35 and 60.' },
+  { key: 'endurance',    abbr: 'END', label: 'Endurance',    colorClass: styles.colEnd, caps: [15, 30, 50], desc: 'Increases maximum Stamina and Equip Load. Also boosts Robustness (bleed/frost resistance). Softcaps at 30 and 50.' },
+  { key: 'strength',     abbr: 'STR', label: 'Strength',     colorClass: styles.colStr, caps: [18, 60, 80], desc: 'Increases damage with STR-scaling weapons. Required for heavy weapons and greatshields. Two-handing gives 1.5x effective STR.' },
+  { key: 'dexterity',    abbr: 'DEX', label: 'Dexterity',    colorClass: styles.colDex, caps: [18, 60, 80], desc: 'Increases damage with DEX-scaling weapons. Reduces casting time of spells and incantations. Slightly reduces fall damage.' },
+  { key: 'intelligence', abbr: 'INT', label: 'Intelligence', colorClass: styles.colInt, caps: [20, 50, 80], desc: 'Increases magic damage and sorcery scaling. Required to cast sorceries. Also boosts magic defense.' },
+  { key: 'faith',        abbr: 'FAI', label: 'Faith',        colorClass: styles.colFai, caps: [20, 50, 80], desc: 'Increases holy/fire damage and incantation scaling. Required to cast incantations. Also boosts Vitality (death blight resistance).' },
+  { key: 'arcane',       abbr: 'ARC', label: 'Arcane',       colorClass: styles.colArc, caps: [20, 60, 80], desc: 'Increases status buildup (bleed, poison, rot) and Discovery. Scales certain weapons and dragon incantations. Also boosts Vitality.' },
 ];
 
 const MAX_STAT = 99;
@@ -41,7 +41,7 @@ export default function StatsPanel({ stats, talismans = [] }: Props) {
       </div>
 
       <div className={styles.list}>
-        {STAT_DEFS.map(({ key, abbr, label, colorClass, caps }, index) => {
+        {STAT_DEFS.map(({ key, abbr, label, colorClass, caps, desc }, index) => {
           const base  = stats[key] ?? 0;
           const bonus = (talBonus.attrs[key] ?? 0) as number;
           const value = Math.min(99, base + bonus);
@@ -51,6 +51,7 @@ export default function StatsPanel({ stats, talismans = [] }: Props) {
               <div className={styles.labelGroup}>
                 <span className={styles.abbr}>{abbr}</span>
                 <span className={styles.label}>{label}</span>
+                <span className={styles.infoIcon} data-tooltip={desc}>?</span>
               </div>
 
               {/* Barra con ticks de softcap */}

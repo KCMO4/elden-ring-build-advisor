@@ -153,23 +153,23 @@ function totalNegation(eq: EquippedItems): DefenseStats {
 }
 
 // ── Tipos de daño (para Attack) ───────────────────────────────
-const DMG_TYPES: { key: keyof DamageStats; label: string; color: string }[] = [
-  { key: 'physical',  label: 'Physical',  color: '#c8bfa0' },
-  { key: 'magic',     label: 'Magic',     color: '#6a9cd4' },
-  { key: 'fire',      label: 'Fire',      color: '#d4703c' },
-  { key: 'lightning', label: 'Lightning', color: '#d4c03c' },
-  { key: 'holy',      label: 'Holy',      color: '#c4a84c' },
+const DMG_TYPES: { key: keyof DamageStats; label: string; color: string; tooltip: string }[] = [
+  { key: 'physical',  label: 'Physical',  color: '#c8bfa0', tooltip: 'Physical damage. Scales with STR and/or DEX depending on weapon and infusion.' },
+  { key: 'magic',     label: 'Magic',     color: '#6a9cd4', tooltip: 'Magic damage. Scales primarily with INT. Effective against heavily armored enemies.' },
+  { key: 'fire',      label: 'Fire',      color: '#d4703c', tooltip: 'Fire damage. Scales with STR, FAI, or both depending on infusion. Effective vs nature enemies.' },
+  { key: 'lightning', label: 'Lightning', color: '#d4c03c', tooltip: 'Lightning damage. Scales primarily with DEX. Effective vs dragons and armored foes.' },
+  { key: 'holy',      label: 'Holy',      color: '#c4a84c', tooltip: 'Holy damage. Scales primarily with FAI. Effective vs undead and Those Who Live in Death.' },
 ];
 
-const DEF_TYPES: { key: keyof DefenseStats; label: string; color: string; indent?: boolean }[] = [
-  { key: 'physical',  label: 'Physical',  color: '#c8bfa0' },
-  { key: 'strike',    label: 'VS Strike', color: '#a8a090', indent: true },
-  { key: 'slash',     label: 'VS Slash',  color: '#a8a090', indent: true },
-  { key: 'pierce',    label: 'VS Pierce', color: '#a8a090', indent: true },
-  { key: 'magic',     label: 'Magic',     color: '#6a9cd4' },
-  { key: 'fire',      label: 'Fire',      color: '#d4703c' },
-  { key: 'lightning', label: 'Lightning', color: '#d4c03c' },
-  { key: 'holy',      label: 'Holy',      color: '#c4a84c' },
+const DEF_TYPES: { key: keyof DefenseStats; label: string; color: string; indent?: boolean; tooltip: string }[] = [
+  { key: 'physical',  label: 'Physical',  color: '#c8bfa0', tooltip: 'Percentage of physical damage negated by armor. Stacks multiplicatively across armor pieces.' },
+  { key: 'strike',    label: 'VS Strike', color: '#a8a090', indent: true, tooltip: 'Negation vs strike damage (hammers, flails, fists). Physical subtype.' },
+  { key: 'slash',     label: 'VS Slash',  color: '#a8a090', indent: true, tooltip: 'Negation vs slash damage (swords, axes, claws). Physical subtype.' },
+  { key: 'pierce',    label: 'VS Pierce', color: '#a8a090', indent: true, tooltip: 'Negation vs pierce damage (spears, rapiers, arrows). Physical subtype.' },
+  { key: 'magic',     label: 'Magic',     color: '#6a9cd4', tooltip: 'Percentage of magic damage negated. Improved by INT and certain armor sets.' },
+  { key: 'fire',      label: 'Fire',      color: '#d4703c', tooltip: 'Percentage of fire damage negated. Fire-resistant armor helps significantly.' },
+  { key: 'lightning', label: 'Lightning', color: '#d4c03c', tooltip: 'Percentage of lightning damage negated. Metallic armors tend to have lower lightning negation.' },
+  { key: 'holy',      label: 'Holy',      color: '#c4a84c', tooltip: 'Percentage of holy damage negated. Erdtree-related armors have higher holy negation.' },
 ];
 
 // ── Subcomponentes ───────────────────────────────────────────
@@ -183,9 +183,10 @@ interface NegRowProps {
   delay: number;
   indent?: boolean;
   isFlat?: boolean;
+  tooltip?: string;
 }
 
-function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, isFlat }: NegRowProps) {
+function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, isFlat, tooltip }: NegRowProps) {
   const pct = Math.min((negation / maxNeg) * 100, 100);
   const displayVal = negation > 0
     ? isFlat
@@ -194,7 +195,10 @@ function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, isF
     : '—';
   return (
     <div className={`${styles.negRow} ${indent ? styles.negRowIndent : ''}`}>
-      <span className={styles.negLabel} style={indent ? { color: '#7a7060' } : undefined}>{label}</span>
+      <span className={styles.negLabel} style={indent ? { color: '#7a7060' } : undefined}>
+        {label}
+        {tooltip && <span className={styles.infoIcon} data-tooltip={tooltip}>?</span>}
+      </span>
       <div className={styles.negBar}>
         <div
           className={styles.negFill}
@@ -213,12 +217,15 @@ function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, isF
   );
 }
 
-interface BodyRowProps { label: string; value: number; max: number; colorClass: string; ready: boolean; delay: number }
+interface BodyRowProps { label: string; value: number; max: number; colorClass: string; ready: boolean; delay: number; tooltip?: string }
 
-function BodyRow({ label, value, max, colorClass, ready, delay }: BodyRowProps) {
+function BodyRow({ label, value, max, colorClass, ready, delay, tooltip }: BodyRowProps) {
   return (
     <div className={styles.row}>
-      <span className={styles.rowLabel}>{label}</span>
+      <span className={styles.rowLabel}>
+        {label}
+        {tooltip && <span className={styles.infoIcon} data-tooltip={tooltip}>?</span>}
+      </span>
       <div className={`${styles.barTrack} ${colorClass}`}>
         <div
           className={styles.barFill}
@@ -234,11 +241,11 @@ function BodyRow({ label, value, max, colorClass, ready, delay }: BodyRowProps) 
 }
 
 // ── Tipos de resistencia ──────────────────────────────────────
-const RESIST_TYPES: { key: keyof ResistanceTotals; label: string; color: string }[] = [
-  { key: 'immunity',   label: 'Immunity',   color: '#8bc34a' },
-  { key: 'robustness', label: 'Robustness', color: '#e57373' },
-  { key: 'focus',      label: 'Focus',      color: '#ba68c8' },
-  { key: 'vitality',   label: 'Vitality',   color: '#78909c' },
+const RESIST_TYPES: { key: keyof ResistanceTotals; label: string; color: string; tooltip: string }[] = [
+  { key: 'immunity',   label: 'Immunity',   color: '#8bc34a', tooltip: 'Resistance to Poison and Scarlet Rot buildup. Scales with Vigor + armor.' },
+  { key: 'robustness', label: 'Robustness', color: '#e57373', tooltip: 'Resistance to Hemorrhage (bleed) and Frostbite buildup. Scales with Endurance + armor.' },
+  { key: 'focus',      label: 'Focus',      color: '#ba68c8', tooltip: 'Resistance to Madness and Sleep buildup. Scales with Mind + armor.' },
+  { key: 'vitality',   label: 'Vitality',   color: '#78909c', tooltip: 'Resistance to Death Blight buildup. Scales with Arcane + armor.' },
 ];
 
 // ── Passive effect colors ────────────────────────────────────
@@ -562,12 +569,12 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 </button>
               )}
             </span>
-            <BodyRow label="HP"      value={hp}     max={2100} colorClass={styles.barVig} ready={ready} delay={0} />
-            <BodyRow label="FP"      value={fp}     max={450}  colorClass={styles.barMnd} ready={ready} delay={80} />
-            <BodyRow label="Stamina" value={stamina} max={170}  colorClass={styles.barEnd} ready={ready} delay={160} />
+            <BodyRow label="HP"      value={hp}     max={2100} colorClass={styles.barVig} ready={ready} delay={0} tooltip="Maximum health. Scales with Vigor. Softcaps at 40 VIG (1450 HP) and 60 VIG (1900 HP)." />
+            <BodyRow label="FP"      value={fp}     max={450}  colorClass={styles.barMnd} ready={ready} delay={80} tooltip="Focus Points for weapon skills and spells. Scales with Mind. Softcaps at 35 MND and 60 MND." />
+            <BodyRow label="Stamina" value={stamina} max={170}  colorClass={styles.barEnd} ready={ready} delay={160} tooltip="Used for attacking, dodging, blocking, and sprinting. Scales with Endurance. Softcaps at 30 and 50 END." />
 
             <div className={styles.loadRow}>
-              <span className={styles.rowLabel}>Equip Load</span>
+              <span className={styles.rowLabel}>Equip Load <span className={styles.infoIcon} data-tooltip="Total weight of equipped gear. Roll type: Light <30%, Medium <70%, Heavy <100%, Overloaded >100%. Scales with Endurance.">?</span></span>
               <div className={styles.loadBarWrap}>
                 <div className={`${styles.barTrack} ${loadPct >= 100 ? styles.barOver : styles.barLoad}`}>
                   <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
@@ -592,7 +599,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 return (
                   <>
                     <div className={styles.row}>
-                      <span className={styles.rowLabel}>Cost</span>
+                      <span className={styles.rowLabel}>Cost <span className={styles.infoIcon} data-tooltip="Runes required to reach the next level. Cost increases exponentially with each level.">?</span></span>
                       <div className={`${styles.barTrack} ${styles.barRune}`}>
                         <div
                           className={styles.barFill}
@@ -631,7 +638,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
               </span>
 
               <div className={styles.totalArRow}>
-                <span className={styles.totalArLabel}>Total AR</span>
+                <span className={styles.totalArLabel}>Total AR <span className={styles.infoIcon} data-tooltip="Attack Rating — estimated total damage before enemy defenses. Sum of all damage types. Higher is better.">?</span></span>
                 <span className={styles.totalArValue} style={!reqsMet ? { color: '#e04040' } : undefined}>
                   ~{arEstimate.total}{!reqsMet ? ' !' : ''}
                 </span>
@@ -662,12 +669,12 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                   STR {effStr} → {effectiveSTR2H} (×1.5)
                 </div>
               )}
-              {DMG_TYPES.map(({ key, label, color }, i) => {
+              {DMG_TYPES.map(({ key, label, color, tooltip }, i) => {
                 const v = arEstimate[key as keyof typeof arEstimate] as number;
                 if (!v || v <= 0) return null;
                 return (
                   <div key={key} className={styles.row}>
-                    <span className={styles.rowLabel}>{label}</span>
+                    <span className={styles.rowLabel}>{label} <span className={styles.infoIcon} data-tooltip={tooltip}>?</span></span>
                     <div className={styles.barTrack}>
                       <div
                         className={styles.barFill}
@@ -748,12 +755,12 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 <span className={styles.totalArLabel}>Total AR</span>
                 <span className={styles.totalArValue}>~{offHandAr.total}</span>
               </div>
-              {DMG_TYPES.map(({ key, label, color }, i) => {
+              {DMG_TYPES.map(({ key, label, color, tooltip }, i) => {
                 const v = offHandAr[key as keyof typeof offHandAr] as number;
                 if (!v || v <= 0) return null;
                 return (
                   <div key={key} className={styles.row}>
-                    <span className={styles.rowLabel}>{label}</span>
+                    <span className={styles.rowLabel}>{label} <span className={styles.infoIcon} data-tooltip={tooltip}>?</span></span>
                     <div className={styles.barTrack}>
                       <div
                         className={styles.barFill}
@@ -871,7 +878,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                   {activeBuffIds.length} buff{activeBuffIds.length > 1 ? 's' : ''} affecting values
                 </div>
               )}
-              {DEF_TYPES.map(({ key, label, color, indent }, i) => (
+              {DEF_TYPES.map(({ key, label, color, indent, tooltip }, i) => (
                 <NegRow
                   key={key}
                   label={label}
@@ -880,6 +887,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                   ready={ready}
                   delay={500 + i * 50}
                   indent={indent}
+                  tooltip={tooltip}
                 />
               ))}
             </div>
@@ -889,7 +897,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
             <div className={styles.section}>
               <span className={styles.sectionTitle}>Guard</span>
               <div className={styles.row}>
-                <span className={styles.rowLabel}>Guard Boost</span>
+                <span className={styles.rowLabel}>Guard Boost <span className={styles.infoIcon} data-tooltip="Stamina efficiency when blocking. Higher = less stamina lost. At 100, blocking costs no stamina.">?</span></span>
                 <div className={`${styles.barTrack} ${styles.barPoise}`}>
                   <div
                     className={styles.barFill}
@@ -934,7 +942,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
             <span className={styles.sectionTitle}>Poise & Discovery</span>
             {poise > 0 && (
               <div className={styles.row}>
-                <span className={styles.rowLabel}>Poise</span>
+                <span className={styles.rowLabel}>Poise <span className={styles.infoIcon} data-tooltip="Resistance to stagger. Higher poise = more hits absorbed without flinching. 51+ is good, 100+ is excellent.">?</span></span>
                 <div className={`${styles.barTrack} ${styles.barPoise}`}>
                   <div
                     className={styles.barFill}
@@ -952,12 +960,12 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 </span>
               </div>
             )}
-            <BodyRow label="Discovery" value={discovery} max={250} colorClass={styles.barDisc} ready={ready} delay={1160} />
+            <BodyRow label="Discovery" value={discovery} max={250} colorClass={styles.barDisc} ready={ready} delay={1160} tooltip="Affects item drop rates from enemies. Base 100 + Arcane scaling. Silver Scarab talisman adds 75." />
           </div>
 
           <div className={styles.section}>
             <span className={styles.sectionTitle}>Resistances</span>
-            {RESIST_TYPES.map(({ key, label, color }, i) => (
+            {RESIST_TYPES.map(({ key, label, color, tooltip }, i) => (
               <NegRow
                 key={key}
                 label={label}
@@ -967,6 +975,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 ready={ready}
                 delay={960 + i * 50}
                 isFlat
+                tooltip={tooltip}
               />
             ))}
           </div>

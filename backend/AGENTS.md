@@ -29,7 +29,8 @@ backend/
 │   └── check-images.ts          # Diagnostic: image coverage per category
 ├── src/
 │   ├── index.ts                 # Express server: routes, middleware, error handler
-│   ├── data/                    # Static JSONs (committed, updated by sync-data)
+│   ├── data/                    # Static JSONs (committed, updated by sync-data — except builds.json)
+│   │   ├── builds.json          # 30 curated community build templates (manually maintained)
 │   │   ├── weapons.json         # 306 weapons with damage, scaling, weight, image
 │   │   ├── armors.json          # 568 armors — 550 with float defense + poise + resistances (patch-armor)
 │   │   ├── talismans.json       # 87 talismans with name, effect text, image
@@ -153,6 +154,11 @@ Used by Docker Compose for `depends_on: condition: service_healthy`.
 | `str`, `dex`, `int`, `fai`, `arc` | Character stats (required if `canUse=true`) |
 
 **Response:** `{ count: number, data: Weapon[] }`
+
+### `GET /api/builds`
+Returns 30 curated community build templates for the frontend build recommender.
+
+**Response:** `BuildTemplate[]` — each template includes stat profiles, weapons, shields, armor suggestion, talismans, ashes of war, spells, difficulty, tags, and tips.
 
 ### `POST /api/advisor`
 Given a stats block, returns weapon recommendations sorted by estimated AR.

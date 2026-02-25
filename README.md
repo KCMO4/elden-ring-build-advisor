@@ -11,8 +11,8 @@ Damage Negation, Poise, Resistances, Flat Defense, Rune Level Calculator, and mo
 
 - **Save file upload** — drag & drop or file picker for `.sl2` (PC Steam only)
 - **Character selection** — card picker when the save has multiple active characters
-- **Attributes panel** — all 8 stats (VIG/MND/END/STR/DEX/INT/FAI/ARC) with proportional bars and softcap ticks
-- **Derived stats (sub-tabbed: Body | Attack | Defense)** —
+- **Attributes panel** — all 8 stats (VIG/MND/END/STR/DEX/INT/FAI/ARC) with proportional bars, softcap ticks, and info tooltips explaining what each stat does
+- **Derived stats (sub-tabbed: Body | Attack | Defense)** — info tooltips on every stat explaining what it does, how it scales, and its softcaps
   - **Body**: HP, FP, Stamina, Equip Load with exact piecewise interpolation formulas; Rune Level Calculator (exact game formula: `floor((max(0, (L-11)*0.02) + 0.1) * (L+81)^2 + 1)`)
   - **Attack**: Estimated AR per weapon with 2H STR toggle (×1.5), off-hand AR, spell scaling (staves/seals), weapon passives with ARC scaling, configurable buffs (Golden Vow, Flame Grant Me Strength, etc.)
   - **Defense**: Damage Negation % for equipped armor (with buff indicators), Guard Boost for shields, Poise (color breakpoints), Resistances (Immunity, Robustness, Focus, Vitality — flat values, exact game formulas), Discovery
@@ -28,6 +28,7 @@ Damage Negation, Poise, Resistances, Flat Defense, Rune Level Calculator, and mo
   - Weight for all items
 - **Inventory tooltips** — AR estimation for inventory weapons using character stats, requirement met/unmet styling, ARC-scaled passives
 - **Full inventory** — 14 tabs: Weapons / Armor / Talismans / Spells / Spirits / Ashes of War / Consumables / Materials / Upgrades / Tears / Ammo / Key Items / Cookbooks / Multiplayer — with name search and type filter per tab
+- **Build recommender** — 30 curated community builds matched to your character's stats using weighted scoring (stat similarity, level range, inventory cross-check). Expandable cards show complete builds: weapons, shields, armor, talismans, ashes of war, spells, stat comparison (yours vs ideal), and tips. Covers all major archetypes including DLC weapon classes
 - **Matchmaking calculator** — co-op and invasion level/weapon upgrade ranges
 
 ---
@@ -147,7 +148,7 @@ elden-ring-build-advisor/
         │   ├── ItemTooltip/       # Hover tooltip: AR, defense, poise, resistances, guard boost, skill
         │   ├── InventoryTooltip/  # Hover tooltip for inventory items
         │   ├── InventoryPanel/    # Full inventory with search and type filter
-        │   ├── AdvisorPanel/      # Weapon recommendations by AR + Next Caps optimizer
+        │   ├── AdvisorPanel/      # 30 community builds ranked by stat match + Next Caps optimizer
         │   ├── MatchmakingCalc/  # Co-op & Invasion range calculator
         │   ├── CharacterSelect/   # Character card picker
         │   └── UploadPage/        # .sl2 drop zone
@@ -156,6 +157,7 @@ elden-ring-build-advisor/
         │   └── useTooltipPosition.ts  # Viewport-aware tooltip flip
         └── utils/
             ├── arCalc.ts              # AR estimation, flat defense, spell scaling, passive buildup
+            ├── buildMatcher.ts        # Build recommender: weighted scoring (stat/level/inventory)
             ├── talismanEffects.ts     # Numeric effects for ~35 known talismans
             ├── buffEffects.ts         # Buff system (Golden Vow, Flame Grant Me Strength, etc.)
             ├── greatRuneEffects.ts    # Great Rune stat bonuses
@@ -187,6 +189,7 @@ The Elden Ring save file uses FromSoftware's **BND4** container format. The pars
 | `GET`  | `/api/items/armors` | List armors |
 | `GET`  | `/api/items/talismans` | List talismans |
 | `GET`  | `/api/items/spells` | List spells |
+| `GET`  | `/api/builds` | 30 curated community build templates |
 | `POST` | `/api/advisor` | Weapon recommendations by character stats |
 
 ```bash
