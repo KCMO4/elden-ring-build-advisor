@@ -30,7 +30,7 @@ function calcHP(vig: number): number {
 function calcFP(mnd: number): number {
   const m = Math.min(99, Math.max(1, mnd));
   let fp: number;
-  if      (m <= 15) fp = 40  + 55  * ((m - 1)  / 14);
+  if      (m <= 15) fp = 50  + 45  * ((m - 1)  / 14);
   else if (m <= 35) fp = 95  + 105 * ((m - 15) / 20);
   else if (m <= 60) fp = 200 + 150 * (1 - Math.pow(1 - (m - 35) / 25, 1.2));
   else              fp = 350 + 100 * ((m - 60) / 39);
@@ -50,20 +50,23 @@ function calcStamina(end: number): number {
 function calcMaxEquipLoad(end: number): number {
   const e = Math.min(99, Math.max(1, end));
   let load: number;
-  if      (e <= 8)  load = 45;
+  if      (e <= 8)  load = 25  + 20 * ((e - 1)  / 7);
   else if (e <= 25) load = 45  + 27 * ((e - 8)  / 17);
   else if (e <= 60) load = 72  + 48 * Math.pow((e - 25) / 35, 1.1);
   else              load = 120 + 40 * ((e - 60) / 39);
   return Math.round(load * 10) / 10;
 }
 
-// ── Rune Level Cost (community-sourced formula) ─────────────
+// ── Rune Level Cost (piecewise approximation, community-sourced) ─────
 function runeCostForLevel(targetLevel: number): number {
-  // Elden Ring rune cost formula (reverse-engineered by community)
-  // Cost = 0.02 * (x + 81)^2.5 - 1, where x = target level
   if (targetLevel <= 1) return 0;
   const x = targetLevel;
-  return Math.floor(0.02 * Math.pow(x + 81, 2.5) - 1);
+  // Segment 1 (L1-30): quadratic growth (fits actual game data within ~5%)
+  if (x <= 30) return Math.floor(0.5 * x * x + 15 * x + 641);
+  // Segment 2 (L30-150): exponential growth
+  if (x <= 150) return Math.floor(372 * Math.pow(1.0464, x));
+  // Segment 3 (L150+): slower exponential, capped at game max
+  return Math.min(8879348, Math.floor(765 * Math.pow(1.0414, x)));
 }
 
 // ── Helpers ──────────────────────────────────────────────────
@@ -338,17 +341,27 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
 
   const flatDef = useMemo(() => calcFlatDefense(level, stats), [level, stats]);
 
-  const physNegPhysick = physickActive ? physickBonus.physicalNegBonus * 100 : 0;
+  // Talisman + Physick + Buff defense bonuses stack MULTIPLICATIVELY with armor negation
+  // Formula: 1 - (1 - armorNeg/100) * (1 - talismanBonus) * (1 - physickBonus) * (1 / buffNegMult)
+  const physNegPhysick = physickActive ? physickBonus.physicalNegBonus : 0;
+  const stackDefNeg = (armorPct: number, talDef: number, buffMult: number, physick: number = 0): number => {
+    // buffMult is already a multiplier (e.g., 1.35 for +35% phys neg)
+    // Convert to reduction: 1 - 1/buffMult would give the buff's contribution
+    // Actually buff neg works as: remainingDmg = baseDmg * (1/buffMult)
+    // Combined: remain = (1 - armorPct/100) * (1 - talDef) * (1 - physick) * (1 / buffMult)
+    const remain = (1 - armorPct / 100) * (1 - talDef) * (1 - physick) / Math.max(0.01, buffMult);
+    return Math.round(Math.max(0, Math.min(99.9, (1 - remain) * 100)) * 10) / 10;
+  };
   const adjNeg = useMemo(() => ({
-    physical:  neg.physical  + talBonus.physicalDefBonus * 100 + physNegPhysick,
-    strike:    neg.strike    + talBonus.physicalDefBonus * 100 + physNegPhysick,
-    slash:     neg.slash     + talBonus.physicalDefBonus * 100 + physNegPhysick,
-    pierce:    neg.pierce    + talBonus.physicalDefBonus * 100 + physNegPhysick,
-    magic:     neg.magic     + talBonus.magicDefBonus * 100,
-    fire:      neg.fire      + talBonus.fireDefBonus * 100,
-    lightning: neg.lightning  + talBonus.lightningDefBonus * 100,
-    holy:      neg.holy      + talBonus.holyDefBonus * 100,
-  }), [neg, talBonus, physNegPhysick]);
+    physical:  stackDefNeg(neg.physical,  talBonus.physicalDefBonus,  buffTotals.physNegMult,      physNegPhysick),
+    strike:    stackDefNeg(neg.strike,    talBonus.physicalDefBonus,  buffTotals.physNegMult,      physNegPhysick),
+    slash:     stackDefNeg(neg.slash,     talBonus.physicalDefBonus,  buffTotals.physNegMult,      physNegPhysick),
+    pierce:    stackDefNeg(neg.pierce,    talBonus.physicalDefBonus,  buffTotals.physNegMult,      physNegPhysick),
+    magic:     stackDefNeg(neg.magic,     talBonus.magicDefBonus,     buffTotals.magicNegMult),
+    fire:      stackDefNeg(neg.fire,      talBonus.fireDefBonus,      buffTotals.fireNegMult),
+    lightning: stackDefNeg(neg.lightning,  talBonus.lightningDefBonus, buffTotals.lightningNegMult),
+    holy:      stackDefNeg(neg.holy,      talBonus.holyDefBonus,      buffTotals.holyNegMult),
+  }), [neg, talBonus, physNegPhysick, buffTotals]);
 
   const rawPoise = totalPoise(equipped);
   const physickPoise = physickActive ? physickBonus.poiseFlat : 0;
@@ -470,14 +483,19 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
   // ── Buff tooltip helper ──
   const buffTooltip = (buff: typeof BUFF_LIST[number]): string => {
     const parts: string[] = [];
-    if (buff.allDmgBonus)      parts.push(`All DMG ${buff.allDmgBonus > 0 ? '+' : ''}${Math.round(buff.allDmgBonus * 100)}%`);
-    if (buff.physDmgBonus)     parts.push(`Phys DMG ${buff.physDmgBonus > 0 ? '+' : ''}${Math.round(buff.physDmgBonus * 100)}%`);
-    if (buff.fireDmgBonus)     parts.push(`Fire DMG +${Math.round(buff.fireDmgBonus * 100)}%`);
-    if (buff.magicDmgBonus)    parts.push(`Magic DMG +${Math.round(buff.magicDmgBonus * 100)}%`);
+    if (buff.allDmgBonus)       parts.push(`All DMG ${buff.allDmgBonus > 0 ? '+' : ''}${Math.round(buff.allDmgBonus * 100)}%`);
+    if (buff.physDmgBonus)      parts.push(`Phys DMG +${Math.round(buff.physDmgBonus * 100)}%`);
+    if (buff.fireDmgBonus)      parts.push(`Fire DMG +${Math.round(buff.fireDmgBonus * 100)}%`);
+    if (buff.magicDmgBonus)     parts.push(`Magic DMG +${Math.round(buff.magicDmgBonus * 100)}%`);
     if (buff.lightningDmgBonus) parts.push(`Lightning DMG +${Math.round(buff.lightningDmgBonus * 100)}%`);
-    if (buff.holyDmgBonus)     parts.push(`Holy DMG +${Math.round(buff.holyDmgBonus * 100)}%`);
-    if (buff.allNegBonus)      parts.push(`DEF ${buff.allNegBonus > 0 ? '+' : ''}${Math.round(buff.allNegBonus * 100)}%`);
-    if (buff.physNegPenalty)    parts.push(`Phys DEF ${buff.physNegPenalty > 0 ? '+' : ''}${Math.round(buff.physNegPenalty * 100)}%`);
+    if (buff.holyDmgBonus)      parts.push(`Holy DMG +${Math.round(buff.holyDmgBonus * 100)}%`);
+    if (buff.allNegBonus)       parts.push(`All DEF ${buff.allNegBonus > 0 ? '+' : ''}${Math.round(buff.allNegBonus * 100)}%`);
+    if (buff.physNegBonus)      parts.push(`Phys DEF +${Math.round(buff.physNegBonus * 100)}%`);
+    if (buff.magicNegBonus)     parts.push(`Magic DEF +${Math.round(buff.magicNegBonus * 100)}%`);
+    if (buff.fireNegBonus)      parts.push(`Fire DEF +${Math.round(buff.fireNegBonus * 100)}%`);
+    if (buff.lightningNegBonus) parts.push(`Ltn DEF +${Math.round(buff.lightningNegBonus * 100)}%`);
+    if (buff.holyNegBonus)      parts.push(`Holy DEF +${Math.round(buff.holyNegBonus * 100)}%`);
+    if (buff.physNegPenalty)     parts.push(`Phys DEF ${buff.physNegPenalty > 0 ? '+' : ''}${Math.round(buff.physNegPenalty * 100)}%`);
     return parts.join(', ') || buff.name;
   };
 

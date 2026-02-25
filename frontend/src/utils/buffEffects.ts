@@ -6,6 +6,12 @@
  *
  * Buffs in the same stackGroup do NOT stack (only the strongest applies).
  * Buffs in different groups stack multiplicatively.
+ *
+ * Stack groups mirror the actual game:
+ *   body-buff: Golden Vow, Howl of Shabriri, Exalted Flesh (aura/body buffs)
+ *   protection: Black Flame's Protection (phys), Barrier of Gold (magic),
+ *               Lord's Divine Fortification (holy) — these DON'T conflict with body-buff
+ *   fortification: Magic/Lightning/Divine Fortification (element-specific, lower tier)
  */
 
 export interface BuffEffect {
@@ -18,6 +24,13 @@ export interface BuffEffect {
   magicDmgBonus?: number;
   lightningDmgBonus?: number;
   holyDmgBonus?: number;
+  /** Element-specific negation bonuses (fractions, e.g. 0.35 = +35%) */
+  physNegBonus?: number;
+  magicNegBonus?: number;
+  fireNegBonus?: number;
+  lightningNegBonus?: number;
+  holyNegBonus?: number;
+  /** All negation bonus (only for buffs that truly affect ALL types) */
   allNegBonus?: number;
   physNegPenalty?: number;
   duration: string;
@@ -111,44 +124,43 @@ export const BUFF_LIST: BuffEffect[] = [
     id: 'ironjar-aromatic',
     name: 'Ironjar Aromatic',
     category: 'consumable',
-    physNegPenalty: 0.40,
+    physNegBonus: 0.40,
     duration: '60s',
     stackGroup: 'aromatic',
   },
 
-  // ── Defense Incantations ──
+  // ── Protection Incantations (element-specific, separate from body-buff) ──
   {
     id: 'black-flames-protection',
     name: "Black Flame's Protection",
     category: 'incantation',
-    allNegBonus: 0.35,
+    physNegBonus: 0.35,
     duration: '70s',
-    stackGroup: 'body-buff',
+    stackGroup: 'protection',
   },
   {
     id: 'barrier-of-gold',
     name: 'Barrier of Gold',
     category: 'incantation',
-    magicDmgBonus: 0,  // not a damage buff
-    allNegBonus: 0.60,
+    magicNegBonus: 0.60,
     duration: '70s',
-    stackGroup: 'body-buff',
+    stackGroup: 'protection',
   },
   {
     id: 'lords-divine-fortification',
     name: "Lord's Divine Fortification",
     category: 'incantation',
-    allNegBonus: 0.60,
+    holyNegBonus: 0.60,
     duration: '70s',
-    stackGroup: 'body-buff',
+    stackGroup: 'protection',
   },
 
-  // ── Additional Consumables ──
+  // ── Physical Defense Consumables ──
   {
     id: 'boiled-crab',
     name: 'Boiled Crab',
     category: 'consumable',
-    allNegBonus: 0.20,
+    physNegBonus: 0.20,
     duration: '60s',
     stackGroup: 'boiled',
   },
@@ -156,7 +168,7 @@ export const BUFF_LIST: BuffEffect[] = [
     id: 'boiled-prawn',
     name: 'Boiled Prawn',
     category: 'consumable',
-    allNegBonus: 0.15,
+    physNegBonus: 0.15,
     duration: '60s',
     stackGroup: 'boiled',
   },
@@ -187,20 +199,12 @@ export const BUFF_LIST: BuffEffect[] = [
     stackGroup: 'determination',
   },
 
-  // ── Defense / Buff Incantations ──
-  {
-    id: 'blessing-of-erdtree',
-    name: 'Blessing of the Erdtree',
-    category: 'incantation',
-    allNegBonus: 0,
-    duration: '90s',
-    stackGroup: 'regen',
-  },
+  // ── Fortification Incantations (element-specific, lower tier) ──
   {
     id: 'magic-fortification',
     name: 'Magic Fortification',
     category: 'incantation',
-    allNegBonus: 0.35,
+    magicNegBonus: 0.35,
     duration: '60s',
     stackGroup: 'fortification',
   },
@@ -208,7 +212,7 @@ export const BUFF_LIST: BuffEffect[] = [
     id: 'lightning-fortification',
     name: 'Lightning Fortification',
     category: 'incantation',
-    allNegBonus: 0.35,
+    lightningNegBonus: 0.35,
     duration: '60s',
     stackGroup: 'fortification',
   },
@@ -216,34 +220,24 @@ export const BUFF_LIST: BuffEffect[] = [
     id: 'divine-fortification',
     name: 'Divine Fortification',
     category: 'incantation',
-    allNegBonus: 0.35,
+    holyNegBonus: 0.35,
     duration: '60s',
     stackGroup: 'fortification',
   },
   {
-    id: 'fire-deadly-sin',
-    name: 'Fire, Deadly Sin',
+    id: 'flame-fortification',
+    name: 'Flame Fortification',
     category: 'incantation',
-    fireDmgBonus: 0,
-    duration: '30s',
-    stackGroup: 'deadly-sin',
-  },
-
-  // ── More Consumables ──
-  {
-    id: 'pickled-turtle-neck',
-    name: 'Pickled Turtle Neck',
-    category: 'consumable',
-    allNegBonus: 0,
+    fireNegBonus: 0.35,
     duration: '60s',
-    stackGroup: 'turtle',
+    stackGroup: 'fortification',
   },
 ];
 
 /**
- * Computes the combined damage multipliers from a set of active buffs.
+ * Computes the combined damage multipliers and defense bonuses from active buffs.
  * Buffs in the same stackGroup: only the strongest is used.
- * Buffs in different groups: multiply together.
+ * Buffs in different groups: damage multiplies, defense stacks multiplicatively.
  */
 export interface BuffTotals {
   physMult: number;
@@ -251,7 +245,12 @@ export interface BuffTotals {
   fireMult: number;
   lightningMult: number;
   holyMult: number;
-  negBonus: number;
+  /** Per-element negation bonuses (multiplicative with armor) */
+  physNegMult: number;
+  magicNegMult: number;
+  fireNegMult: number;
+  lightningNegMult: number;
+  holyNegMult: number;
 }
 
 export function computeBuffTotals(activeBuffIds: string[]): BuffTotals {
@@ -266,30 +265,50 @@ export function computeBuffTotals(activeBuffIds: string[]): BuffTotals {
     groups.get(key)!.push(buff);
   }
 
-  // From each group, pick the buff with the highest allDmgBonus (or physDmgBonus)
+  // From each group, pick the buff with the highest combined damage bonus
   let physMult = 1;
   let magicMult = 1;
   let fireMult = 1;
   let lightningMult = 1;
   let holyMult = 1;
-  let negBonus = 0;
+  // Defense: multiplicative stacking across groups
+  let physNegMult = 1;
+  let magicNegMult = 1;
+  let fireNegMult = 1;
+  let lightningNegMult = 1;
+  let holyNegMult = 1;
 
   for (const buffs of groups.values()) {
-    // Pick strongest buff in the group
+    // Pick strongest buff in the group (by total offensive value)
     const best = buffs.reduce((a, b) => {
-      const aVal = (a.allDmgBonus ?? 0) + (a.physDmgBonus ?? 0);
-      const bVal = (b.allDmgBonus ?? 0) + (b.physDmgBonus ?? 0);
+      const aVal = (a.allDmgBonus ?? 0) + (a.physDmgBonus ?? 0)
+        + (a.physNegBonus ?? 0) + (a.magicNegBonus ?? 0) + (a.holyNegBonus ?? 0)
+        + (a.allNegBonus ?? 0);
+      const bVal = (b.allDmgBonus ?? 0) + (b.physDmgBonus ?? 0)
+        + (b.physNegBonus ?? 0) + (b.magicNegBonus ?? 0) + (b.holyNegBonus ?? 0)
+        + (b.allNegBonus ?? 0);
       return bVal > aVal ? b : a;
     });
 
+    // Damage multipliers
     const allDmg = best.allDmgBonus ?? 0;
     physMult      *= (1 + allDmg + (best.physDmgBonus ?? 0));
     magicMult     *= (1 + allDmg + (best.magicDmgBonus ?? 0));
     fireMult      *= (1 + allDmg + (best.fireDmgBonus ?? 0));
     lightningMult *= (1 + allDmg + (best.lightningDmgBonus ?? 0));
     holyMult      *= (1 + allDmg + (best.holyDmgBonus ?? 0));
-    negBonus      += (best.allNegBonus ?? 0);
+
+    // Defense: element-specific or all
+    const allNeg = best.allNegBonus ?? 0;
+    physNegMult      *= (1 + allNeg + (best.physNegBonus ?? 0));
+    magicNegMult     *= (1 + allNeg + (best.magicNegBonus ?? 0));
+    fireNegMult      *= (1 + allNeg + (best.fireNegBonus ?? 0));
+    lightningNegMult *= (1 + allNeg + (best.lightningNegBonus ?? 0));
+    holyNegMult      *= (1 + allNeg + (best.holyNegBonus ?? 0));
   }
 
-  return { physMult, magicMult, fireMult, lightningMult, holyMult, negBonus };
+  return {
+    physMult, magicMult, fireMult, lightningMult, holyMult,
+    physNegMult, magicNegMult, fireNegMult, lightningNegMult, holyNegMult,
+  };
 }

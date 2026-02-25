@@ -94,9 +94,9 @@ const TALISMAN_EFFECTS: Record<number, TalismanFlatEffects> = {
   1032: { equipLoadBonus: 0.19 },   // Great-Jar's Arsenal
 
   // ── Erdtree's Favor (HP + Stamina + Equip Load) ───────────────
-  1040: { hpBonus: 0.03,   staminaBonus: 0.07,  equipLoadBonus: 0.05  },
-  1041: { hpBonus: 0.035,  staminaBonus: 0.085, equipLoadBonus: 0.065 },
-  1042: { hpBonus: 0.04,   staminaBonus: 0.10,  equipLoadBonus: 0.08  },
+  1040: { hpBonus: 0.03,   staminaBonus: 0.0675, equipLoadBonus: 0.05  },
+  1041: { hpBonus: 0.035,  staminaBonus: 0.0825, equipLoadBonus: 0.065 },
+  1042: { hpBonus: 0.04,   staminaBonus: 0.096,  equipLoadBonus: 0.08  },
 
   // ── Radagon's Scarseal / Soreseal (VIG+END+STR+DEX, −neg) ────
   1050: { vigor: 3, endurance: 3, strength: 3, dexterity: 3,
@@ -161,8 +161,8 @@ const TALISMAN_EFFECTS: Record<number, TalismanFlatEffects> = {
   // ── Millicent's Prosthesis (DEX+5) ───────────────────────────
   1250: { dexterity: 5 },
 
-  // ── Gold Scarab (+50 Discovery) ──────────────────────────────
-  1110: { discoveryBonus: 50 },
+  // ── Gold Scarab (+20% Rune acquisition — no stat effect, display only) ──
+  1110: { noteLabel: 'Rune gain +20%' },
 
   // ── Scorpion Charms (+12% elemental dmg, −10% phys absorption) ─
   2000: { magicDmgBonus: 0.12, physicalDefBonus: -0.10 },     // Magic Scorpion
