@@ -82,6 +82,7 @@
 .barOver .barFill  { background: linear-gradient(to right, #8b1c18, #e04040); }
 .barPoise .barFill { background: linear-gradient(to right, #5a4820, #c9a74f); }
 .barDisc .barFill  { background: linear-gradient(to right, #1a4a5a, #4ac4d4); }
+.barRune .barFill  { background: linear-gradient(to right, #5a4820, #c9a74f); }
 
 /* ── Equip Load row (4 columnas) ── */
 .loadRow {
@@ -227,6 +228,27 @@
   color: var(--gold);
 }
 
+/* ── Total AR display ── */
+.totalArRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.15rem 0 0.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 0.2rem;
+}
+.totalArLabel {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+.totalArValue {
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+}
+
 /* ── Flat defense / negation hybrid display ── */
 .defFlat { color: var(--text); font-weight: 600; }
 .defSep { color: var(--text-dim); opacity: 0.5; font-size: 0.55rem; }
@@ -358,7 +380,32 @@
   flex: 1;
 }
 
+.buffEffect {
+  font-size: 0.44rem;
+  color: var(--gold-dim);
+  flex: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .buffDur {
   font-size: 0.48rem;
   color: var(--text-dim);
+}
+
+/* ── Rune Level Calculator ── */
+.runeDetail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.52rem;
+  color: var(--text-dim);
+  padding: 0.1rem 0;
+}
+.runeNeed {
+  color: #e07840;
+}
+.runeReady {
+  color: #6ab54a;
+  font-weight: 600;
 }

@@ -12,6 +12,7 @@ interface Props {
   stats:    CharacterStats;
   equipped: EquippedItems;
   level:    number;
+  heldRunes?: number;
 }
 
 // ── Fórmulas exactas de Elden Ring ────────────────────────────
@@ -54,6 +55,15 @@ function calcMaxEquipLoad(end: number): number {
   else if (e <= 60) load = 72  + 48 * Math.pow((e - 25) / 35, 1.1);
   else              load = 120 + 40 * ((e - 60) / 39);
   return Math.round(load * 10) / 10;
+}
+
+// ── Rune Level Cost (community-sourced formula) ─────────────
+function runeCostForLevel(targetLevel: number): number {
+  // Elden Ring rune cost formula (reverse-engineered by community)
+  // Cost = 0.02 * (x + 81)^2.5 - 1, where x = target level
+  if (targetLevel <= 1) return 0;
+  const x = targetLevel;
+  return Math.floor(0.02 * Math.pow(x + 81, 2.5) - 1);
 }
 
 // ── Helpers ──────────────────────────────────────────────────
@@ -244,7 +254,7 @@ function getWeaponFromSlot(eq: EquippedItems, slot: WeaponSlot): EquippedWeapon 
 
 // ── Componente principal ──────────────────────────────────────
 
-export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
+export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }: Props) {
   const ready = useMountAnimation();
   const [twoHandedSlot, setTwoHandedSlot] = useState<WeaponSlot | null>(null);
   const [greatRuneActive, setGreatRuneActive] = useState(false);
@@ -428,6 +438,24 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
     return { physical: phys, magic: mag, fire, lightning: ltn, holy, total: phys + mag + fire + ltn + holy };
   }, [rawAr, talBonus, buffTotals, physickActive, physickBonus]);
 
+  // ── Off-hand weapon AR (LH weapon that isn't a shield) ──
+  const offHandWeapon = useMemo(() => {
+    const isShield = (w: EquippedWeapon) =>
+      (w.stability != null && w.stability > 0) ||
+      (w.itemType != null && /shield/i.test(w.itemType));
+    // If activeWeapon is from RH, look for a LH weapon; if from LH (2H), skip
+    if (twoHandedSlot) return null;
+    return equipped.leftHand.find(w => w.name && w.damage && !isShield(w)) ?? null;
+  }, [equipped, twoHandedSlot]);
+
+  const offHandAr = useMemo(() => {
+    if (!offHandWeapon?.damage) return null;
+    const raw = estimateEquippedAR(offHandWeapon, effectiveStats);
+    if (!raw) return null;
+    const total = raw.physical + raw.magic + raw.fire + raw.lightning + raw.holy;
+    return { ...raw, total };
+  }, [offHandWeapon, effectiveStats]);
+
   // ── Guard Boost (shield in LH) ──
   const equippedShield = useMemo(() => {
     const all = [...equipped.leftHand, ...equipped.rightHand];
@@ -438,6 +466,20 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
     if (!equippedShield?.stability) return null;
     return Math.floor(equippedShield.stability * (1 + talBonus.guardBoostBonus));
   }, [equippedShield, talBonus.guardBoostBonus]);
+
+  // ── Buff tooltip helper ──
+  const buffTooltip = (buff: typeof BUFF_LIST[number]): string => {
+    const parts: string[] = [];
+    if (buff.allDmgBonus)      parts.push(`All DMG ${buff.allDmgBonus > 0 ? '+' : ''}${Math.round(buff.allDmgBonus * 100)}%`);
+    if (buff.physDmgBonus)     parts.push(`Phys DMG ${buff.physDmgBonus > 0 ? '+' : ''}${Math.round(buff.physDmgBonus * 100)}%`);
+    if (buff.fireDmgBonus)     parts.push(`Fire DMG +${Math.round(buff.fireDmgBonus * 100)}%`);
+    if (buff.magicDmgBonus)    parts.push(`Magic DMG +${Math.round(buff.magicDmgBonus * 100)}%`);
+    if (buff.lightningDmgBonus) parts.push(`Lightning DMG +${Math.round(buff.lightningDmgBonus * 100)}%`);
+    if (buff.holyDmgBonus)     parts.push(`Holy DMG +${Math.round(buff.holyDmgBonus * 100)}%`);
+    if (buff.allNegBonus)      parts.push(`DEF ${buff.allNegBonus > 0 ? '+' : ''}${Math.round(buff.allNegBonus * 100)}%`);
+    if (buff.physNegPenalty)    parts.push(`Phys DEF ${buff.physNegPenalty > 0 ? '+' : ''}${Math.round(buff.physNegPenalty * 100)}%`);
+    return parts.join(', ') || buff.name;
+  };
 
   // ── Toggle buff ──
   const toggleBuff = (id: string) => {
@@ -500,8 +542,18 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
         <div className={styles.section}>
           <span className={styles.sectionTitle}>
             Attack
-            <span className={styles.sectionNote}>{activeWeapon.name}</span>
+            <span className={styles.sectionNote}>
+              {activeWeapon.infusion && activeWeapon.infusion !== 'Standard'
+                ? `${activeWeapon.infusion} ${activeWeapon.name}`
+                : activeWeapon.name}
+            </span>
           </span>
+
+          {/* Total AR */}
+          <div className={styles.totalArRow}>
+            <span className={styles.totalArLabel}>Total AR</span>
+            <span className={styles.totalArValue}>~{arEstimate.total}</span>
+          </div>
 
           {/* 2H slot selection buttons */}
           {weaponSlots.length > 0 && (
@@ -589,6 +641,56 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
         </div>
       )}
 
+      {/* ── Off-hand Weapon AR ── */}
+      {offHandWeapon && offHandAr && (
+        <div className={styles.section}>
+          <span className={styles.sectionTitle}>
+            Left Hand
+            <span className={styles.sectionNote}>
+              {offHandWeapon.infusion && offHandWeapon.infusion !== 'Standard'
+                ? `${offHandWeapon.infusion} ${offHandWeapon.name}`
+                : offHandWeapon.name}
+            </span>
+          </span>
+          <div className={styles.totalArRow}>
+            <span className={styles.totalArLabel}>Total AR</span>
+            <span className={styles.totalArValue}>~{offHandAr.total}</span>
+          </div>
+          {DMG_TYPES.map(({ key, label, color }, i) => {
+            const v = offHandAr[key as keyof typeof offHandAr] as number;
+            if (!v || v <= 0) return null;
+            return (
+              <div key={key} className={styles.row}>
+                <span className={styles.rowLabel}>{label}</span>
+                <div className={styles.barTrack}>
+                  <div
+                    className={styles.barFill}
+                    style={{
+                      width: ready ? `${Math.min((v / 650) * 100, 100)}%` : '0%',
+                      background: color,
+                      transitionDelay: `${320 + i * 60}ms`,
+                    }}
+                  />
+                </div>
+                <span className={styles.rowValue}>~{v}</span>
+              </div>
+            );
+          })}
+          {offHandWeapon.passives && offHandWeapon.passives.length > 0 && (
+            <div className={styles.passiveRow}>
+              {offHandWeapon.passives.map((p, i) => (
+                <span key={i} className={styles.passiveBadge} style={{ borderColor: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                  <span className={styles.passiveType} style={{ color: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                    {p.type.charAt(0).toUpperCase() + p.type.slice(1)}
+                  </span>
+                  <span className={styles.passiveVal}>{p.buildup}</span>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* ── Spell Scaling ── */}
       {spellCatalysts.length > 0 && (
         <div className={styles.section}>
@@ -633,7 +735,7 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
         {buffsOpen && (
           <div className={styles.buffGrid}>
             {BUFF_LIST.map(buff => (
-              <label key={buff.id} className={styles.buffItem}>
+              <label key={buff.id} className={styles.buffItem} title={buffTooltip(buff)}>
                 <input
                   type="checkbox"
                   checked={activeBuffIds.includes(buff.id)}
@@ -641,6 +743,7 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
                   className={styles.buffCheck}
                 />
                 <span className={styles.buffName}>{buff.name}</span>
+                <span className={styles.buffEffect}>{buffTooltip(buff)}</span>
                 <span className={styles.buffDur}>{buff.duration}</span>
               </label>
             ))}
@@ -765,6 +868,39 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
         <span className={styles.sectionTitle}>Discovery</span>
         <BodyRow label="Discovery" value={discovery} max={250} colorClass={styles.barDisc} ready={ready} delay={1160} />
       </div>
+
+      {/* ── Rune Level Calculator ── */}
+      {heldRunes != null && (
+        <div className={styles.section}>
+          <span className={styles.sectionTitle}>Next Level</span>
+          {(() => {
+            const nextCost = runeCostForLevel(level + 1);
+            const remaining = Math.max(0, nextCost - heldRunes);
+            const pct = nextCost > 0 ? Math.min((heldRunes / nextCost) * 100, 100) : 0;
+            return (
+              <>
+                <div className={styles.row}>
+                  <span className={styles.rowLabel}>Cost</span>
+                  <div className={`${styles.barTrack} ${styles.barRune}`}>
+                    <div
+                      className={styles.barFill}
+                      style={{ width: ready ? `${pct}%` : '0%', transitionDelay: '1200ms' }}
+                    />
+                  </div>
+                  <span className={styles.rowValue}>{nextCost.toLocaleString()}</span>
+                </div>
+                <div className={styles.runeDetail}>
+                  <span>Held: {heldRunes.toLocaleString()}</span>
+                  {remaining > 0
+                    ? <span className={styles.runeNeed}>Need: {remaining.toLocaleString()}</span>
+                    : <span className={styles.runeReady}>Ready to level up!</span>
+                  }
+                </div>
+              </>
+            );
+          })()}
+        </div>
+      )}
 
     </div>
   );
