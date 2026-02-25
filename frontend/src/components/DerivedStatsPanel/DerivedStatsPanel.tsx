@@ -5,7 +5,7 @@ import { computeTalismanBonuses } from '../../utils/talismanEffects';
 import { getGreatRuneEffect } from '../../utils/greatRuneEffects';
 import { computePhysickBonuses } from '../../utils/crystalTearEffects';
 import { BUFF_LIST, computeBuffTotals } from '../../utils/buffEffects';
-import { estimateEquippedAR, stackNegation, calcFlatDefense } from '../../utils/arCalc';
+import { estimateEquippedAR, stackNegation, calcFlatDefense, estimateSpellScaling } from '../../utils/arCalc';
 import styles from './DerivedStatsPanel.module.css';
 
 interface Props {
@@ -224,6 +224,12 @@ const RESIST_TYPES: { key: keyof ResistanceTotals; label: string; color: string 
   { key: 'vitality',   label: 'Vitality',   color: '#78909c' },
 ];
 
+// ── Passive effect colors ────────────────────────────────────
+const PASSIVE_COLORS: Record<string, string> = {
+  blood: '#d4483c', frost: '#8ecfef', poison: '#8bc34a', rot: '#c87038',
+  death: '#a0a0a0', sleep: '#ba68c8', madness: '#e0c040',
+};
+
 /** Slot identifiers for 2H selection */
 type WeaponSlot = 'RH1' | 'RH2' | 'RH3' | 'LH1' | 'LH2' | 'LH3';
 
@@ -389,6 +395,24 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
     [activeWeapon, effectiveStats],
   );
 
+  // Spell scaling — detect equipped staves/seals
+  const spellCatalysts = useMemo(() => {
+    const all = [...equipped.rightHand, ...equipped.leftHand];
+    const catalysts: { weapon: EquippedWeapon; scaling: number; type: 'Sorcery' | 'Incant' }[] = [];
+    for (const w of all) {
+      if (!w.name || !w.itemType) continue;
+      const sc = estimateSpellScaling(w, effectiveStats);
+      if (sc != null) {
+        catalysts.push({
+          weapon: w,
+          scaling: sc,
+          type: w.itemType === 'Glintstone Staff' ? 'Sorcery' : 'Incant',
+        });
+      }
+    }
+    return catalysts;
+  }, [equipped, effectiveStats]);
+
   // Apply talisman + physick elemental damage bonuses + buff multipliers
   const arEstimate = useMemo(() => {
     if (!rawAr) return null;
@@ -544,12 +568,52 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
               )}
             </div>
           )}
+          {activeWeapon.passives && activeWeapon.passives.length > 0 && (
+            <div className={styles.passiveRow}>
+              {activeWeapon.passives.map((p, i) => (
+                <span key={i} className={styles.passiveBadge} style={{ borderColor: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                  <span className={styles.passiveType} style={{ color: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                    {p.type.charAt(0).toUpperCase() + p.type.slice(1)}
+                  </span>
+                  <span className={styles.passiveVal}>{p.buildup}</span>
+                </span>
+              ))}
+            </div>
+          )}
           {talBonus.skillFpCostReduction > 0 && (
             <div className={styles.fpNote}>Skill FP Cost −{Math.round(talBonus.skillFpCostReduction * 100)}%</div>
           )}
           {talBonus.spellFpCostReduction > 0 && (
             <div className={styles.fpNote}>Spell FP Cost −{Math.round(talBonus.spellFpCostReduction * 100)}%</div>
           )}
+        </div>
+      )}
+
+      {/* ── Spell Scaling ── */}
+      {spellCatalysts.length > 0 && (
+        <div className={styles.section}>
+          <span className={styles.sectionTitle}>Spell Scaling</span>
+          {spellCatalysts.map((cat, i) => (
+            <div key={i} className={styles.row}>
+              <span className={styles.rowLabel} style={{ color: cat.type === 'Sorcery' ? '#6a9cd4' : '#c4a84c' }}>
+                {cat.type}
+              </span>
+              <div className={styles.barTrack}>
+                <div
+                  className={styles.barFill}
+                  style={{
+                    width: ready ? `${Math.min((cat.scaling / 400) * 100, 100)}%` : '0%',
+                    background: cat.type === 'Sorcery' ? '#6a9cd4' : '#c4a84c',
+                    transitionDelay: `${300 + i * 60}ms`,
+                  }}
+                />
+              </div>
+              <span className={styles.rowValue}>~{cat.scaling}</span>
+            </div>
+          ))}
+          <div className={styles.fpNote}>
+            {spellCatalysts.map(c => c.weapon.name).join(', ')}
+          </div>
         </div>
       )}
 

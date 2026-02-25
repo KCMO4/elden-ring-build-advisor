@@ -251,6 +251,32 @@
   letter-spacing: 0.02em;
 }
 
+/* ── Weapon Passives (blood, frost, poison, etc.) ── */
+.passiveRow {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+  flex-wrap: wrap;
+}
+.passiveBadge {
+  display: flex;
+  gap: 0.15rem;
+  align-items: center;
+  background: var(--bg-slot);
+  border: 1px solid;
+  padding: 1px 5px;
+}
+.passiveType {
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.passiveVal {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 /* ── Physick toggle (green accent) ── */
 .physickActive {
   background: rgba(79, 201, 120, 0.15);

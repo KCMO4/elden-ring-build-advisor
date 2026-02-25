@@ -1,0 +1,153 @@
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 0.75rem;
+}
+
+.header {
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.04em;
+}
+
+.stats {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.statBadge {
+  font-size: 0.52rem;
+  color: var(--text);
+  background: var(--bg-slot);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* ── Range rows ── */
+.ranges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.rangeRow {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.rangeRow:last-child {
+  border-bottom: none;
+}
+
+.rangeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.2rem;
+}
+
+.rangeLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.rangeValues {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.rangeDesc {
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+}
+
+.rangeBar {
+  position: relative;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.rangeBarFill {
+  height: 100%;
+  border-radius: 0;
+}
+
+.rangeMin, .rangeMax {
+  position: absolute;
+  top: 6px;
+  font-size: 0.42rem;
+  color: var(--text-dim);
+}
+.rangeMin { left: 0; }
+.rangeMax { right: 0; }
+
+/* ── Upgrade Section ── */
+.upgradeSection {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.sectionTitle {
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.4rem;
+}
+
+.upgradeInfo {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  padding: 0.15rem 0;
+}
+
+.upgradeLabel {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+}
+
+.upgradeName {
+  font-size: 0.6rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.note {
+  font-size: 0.48rem;
+  color: var(--text-dim);
+  margin: 0.4rem 0 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* ── Formula Section ── */
+.formulaSection {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.formula {
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  padding: 0.1rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.02em;
+}

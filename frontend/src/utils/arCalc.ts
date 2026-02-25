@@ -400,3 +400,52 @@ export function estimateARWithBreakdown(
     },
   };
 }
+
+// ── Spell Scaling (Sorcery / Incant Scaling) estimate ────────────
+
+/** Approximate spell buff base values at upgrade levels (community data averages) */
+const SPELL_BUFF_BASE: Record<'standard' | 'somber', number[]> = {
+  standard: [100, 103, 106, 109, 112, 115, 119, 123, 128, 133, 138, 144, 150, 156, 162, 169, 176, 183, 190, 198, 206, 214, 222, 231, 240, 250],
+  somber:   [100, 115, 130, 145, 162, 180, 198, 218, 235, 245, 250],
+};
+
+const SPELL_GRADE_COEFF: Record<string, number> = {
+  'S': 1.40, 'A': 1.00, 'B': 0.75, 'C': 0.60, 'D': 0.30, 'E': 0.10, '-': 0,
+};
+
+/**
+ * Estimates Sorcery/Incant Scaling for a staff or seal.
+ * Uses the weapon's primary scaling stat and grade + upgrade level.
+ */
+export function estimateSpellScaling(
+  weapon: EquippedWeapon,
+  stats: CharacterStats,
+): number | null {
+  if (!weapon.itemType) return null;
+  const isStaff = weapon.itemType === 'Glintstone Staff';
+  const isSeal  = weapon.itemType === 'Sacred Seal';
+  if (!isStaff && !isSeal) return null;
+  if (!weapon.scaling) return null;
+
+  // Primary stat and grade
+  const primaryStat = isStaff ? stats.intelligence : stats.faith;
+  const primaryGrade = isStaff ? weapon.scaling.int : weapon.scaling.fai;
+  const coeff = SPELL_GRADE_COEFF[primaryGrade] ?? 0;
+
+  // Secondary contribution (some seals scale with ARC, some staves with FAI)
+  const secGrade = isStaff ? weapon.scaling.fai : weapon.scaling.arc;
+  const secStat  = isStaff ? stats.faith : stats.arcane;
+  const secCoeff = SPELL_GRADE_COEFF[secGrade] ?? 0;
+
+  // Base spell buff from upgrade level
+  const lvl = weapon.upgradeLevel ?? 0;
+  const isSomber = lvl <= 10;
+  const table = isSomber ? SPELL_BUFF_BASE.somber : SPELL_BUFF_BASE.standard;
+  const baseBuff = table[Math.min(lvl, table.length - 1)];
+
+  // Scaling contribution via MAGIC_GRAPH
+  const primaryContrib = coeff * interpGraph(MAGIC_GRAPH, primaryStat);
+  const secContrib     = secCoeff > 0 ? secCoeff * 0.5 * interpGraph(MAGIC_GRAPH, secStat) : 0;
+
+  return Math.round(baseBuff * (1 + primaryContrib + secContrib));
+}
