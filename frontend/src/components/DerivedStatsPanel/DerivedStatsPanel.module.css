@@ -81,6 +81,7 @@
 .barLoad .barFill  { background: linear-gradient(to right, #3a6e3a, #8fc47a); }
 .barOver .barFill  { background: linear-gradient(to right, #8b1c18, #e04040); }
 .barPoise .barFill { background: linear-gradient(to right, #5a4820, #c9a74f); }
+.barDisc .barFill  { background: linear-gradient(to right, #1a4a5a, #4ac4d4); }
 
 /* ── Equip Load row (4 columnas) ── */
 .loadRow {
@@ -166,6 +167,36 @@
   white-space: nowrap;
 }
 
+/* ── 2H Toggle ── */
+.twoHandBtn {
+  background: var(--bg-slot);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.5rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  margin-left: auto;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.twoHandBtn:hover {
+  border-color: var(--gold-dim);
+  color: var(--text);
+}
+.twoHandActive {
+  background: rgba(201, 167, 79, 0.15);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.twoHandNote {
+  font-size: 0.52rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
 /* ── Scaling badges ── */
 .scalingRow {
   display: flex;
@@ -195,3 +226,8 @@
   font-weight: 700;
   color: var(--gold);
 }
+
+/* ── Flat defense / negation hybrid display ── */
+.defFlat { color: var(--text); font-weight: 600; }
+.defSep { color: var(--text-dim); opacity: 0.5; font-size: 0.55rem; }
+.fpNote { font-size: 0.52rem; color: #6a9cd4; padding: 0.1rem 0; letter-spacing: 0.03em; }

@@ -34,6 +34,22 @@ const DMG_COLOR: Record<string, string> = {
   holy:      '#c4a84c',
 };
 
+/** Colores por tipo de passive */
+const PASSIVE_COLOR: Record<string, string> = {
+  blood:   '#c06060',
+  frost:   '#70b0d0',
+  poison:  '#6a9a3a',
+  rot:     '#c07030',
+  sleep:   '#8070b0',
+  madness: '#c0a020',
+  death:   '#808080',
+};
+
+const PASSIVE_LABEL: Record<string, string> = {
+  blood: 'Bleed', frost: 'Frost', poison: 'Poison', rot: 'Scarlet Rot',
+  sleep: 'Sleep', madness: 'Madness', death: 'Death Blight',
+};
+
 function ScalingBadge({ stat, grade }: { stat: string; grade: string }) {
   const g = (grade?.toUpperCase() ?? '-') as ScalingGrade;
   if (g === '-') return null;
@@ -115,6 +131,16 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
 
   const effectLines = getTalismanEffectLines(item.baseId ?? 0);
 
+  // Subtítulo: tipo de arma + infusión, tipo de armadura, o categoría de escudo
+  const subtitle = (() => {
+    if (item.itemType) {
+      if (item.infusion) return `${item.infusion} ${item.itemType}`;
+      return item.itemType;
+    }
+    if (item.infusion) return item.infusion;
+    return null;
+  })();
+
   const arMax = 650;
 
   const tooltip = (
@@ -129,8 +155,25 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
           <span className={styles.upgradeLevel}>+{item.upgradeLevel}</span>
         )}
       </div>
+      {subtitle && (
+        <div className={styles.subtitle}>{subtitle}</div>
+      )}
+      {item.damageTypes && item.damageTypes.length > 0 && (
+        <div className={styles.badgeRow} style={{ marginBottom: '0.4rem' }}>
+          {item.damageTypes.map(t => (
+            <span key={t} className={styles.dmgTypeBadge}>{t}</span>
+          ))}
+        </div>
+      )}
       {item.skill && (
-        <div className={styles.skillLine}>Skill: {item.skill}</div>
+        <div className={styles.skillLine}>
+          Skill: {item.skill}
+          {item.skillFpCost && (
+            <span className={styles.skillFp}>
+              FP {item.skillFpCost[0]}{item.skillFpCost[1] != null ? ` (${item.skillFpCost[1]})` : ''}
+            </span>
+          )}
+        </div>
       )}
 
       <div className={styles.divider} />
@@ -164,11 +207,24 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         </div>
       )}
 
-      {/* ── Defensa (para armaduras) ── */}
+      {/* ── Critical ── */}
+      {item.critical != null && (
+        <div className={styles.section}>
+          <div className={styles.statRow}>
+            <span className={styles.statLabel}>Critical</span>
+            <span className={styles.statValue}>{item.critical}</span>
+          </div>
+        </div>
+      )}
+
+      {/* ── Defensa (para armaduras — 8 tipos) ── */}
       {item.defense && !rawDamage && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Dmg Negation</div>
           <DamageBar label="Physical"  value={item.defense.physical}  max={35} color={DMG_COLOR.physical}  />
+          <DamageBar label="  Strike"  value={item.defense.strike}    max={35} color={DMG_COLOR.physical}  />
+          <DamageBar label="  Slash"   value={item.defense.slash}     max={35} color={DMG_COLOR.physical}  />
+          <DamageBar label="  Pierce"  value={item.defense.pierce}    max={35} color={DMG_COLOR.physical}  />
           <DamageBar label="Magic"     value={item.defense.magic}     max={35} color={DMG_COLOR.magic}     />
           <DamageBar label="Fire"      value={item.defense.fire}      max={35} color={DMG_COLOR.fire}      />
           <DamageBar label="Lightning" value={item.defense.lightning} max={35} color={DMG_COLOR.lightning} />
@@ -264,6 +320,64 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         </div>
       )}
 
+      {/* ── Passive effects (blood, frost, etc.) ── */}
+      {item.passives && item.passives.length > 0 && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Passive Effects</div>
+          {item.passives.map(p => (
+            <div key={p.type} className={styles.damageRow}>
+              <span className={styles.damageLabel}>{PASSIVE_LABEL[p.type] ?? p.type}</span>
+              <div className={styles.barTrack}>
+                <div
+                  className={styles.barFill}
+                  style={{
+                    width: `${Math.min(100, (p.buildup / 100) * 100)}%`,
+                    background: `linear-gradient(to right, #3a2a10, ${PASSIVE_COLOR[p.type] ?? '#888'})`,
+                  }}
+                />
+              </div>
+              <span className={styles.damageValue} style={{ color: PASSIVE_COLOR[p.type] ?? '#888' }}>
+                {p.buildup}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* ── Requirements (armas) ── */}
+      {item.requirements && rawDamage && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Requirements</div>
+          <div className={styles.badgeRow}>
+            {item.requirements.str > 0 && (
+              <span className={`${styles.badge} ${stats && stats.strength < item.requirements.str ? styles.reqUnmet : styles.reqMet}`}>
+                STR {item.requirements.str}
+              </span>
+            )}
+            {item.requirements.dex > 0 && (
+              <span className={`${styles.badge} ${stats && stats.dexterity < item.requirements.dex ? styles.reqUnmet : styles.reqMet}`}>
+                DEX {item.requirements.dex}
+              </span>
+            )}
+            {item.requirements.int > 0 && (
+              <span className={`${styles.badge} ${stats && stats.intelligence < item.requirements.int ? styles.reqUnmet : styles.reqMet}`}>
+                INT {item.requirements.int}
+              </span>
+            )}
+            {item.requirements.fai > 0 && (
+              <span className={`${styles.badge} ${stats && stats.faith < item.requirements.fai ? styles.reqUnmet : styles.reqMet}`}>
+                FAI {item.requirements.fai}
+              </span>
+            )}
+            {item.requirements.arc > 0 && (
+              <span className={`${styles.badge} ${stats && stats.arcane < item.requirements.arc ? styles.reqUnmet : styles.reqMet}`}>
+                ARC {item.requirements.arc}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* ── Efectos (talismanes con stats numéricos) ── */}
       {effectLines && (
         <div className={styles.section}>
@@ -277,11 +391,78 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         </div>
       )}
 
-      {/* ── Descripción de efecto (talismanes sin datos numéricos) ── */}
-      {!effectLines && item.effect && (
+      {/* ── Spell info (sorcery/incantation equipped in memory slots) ── */}
+      {(item.itemType === 'sorcery' || item.itemType === 'incantation') && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>
+            {item.itemType === 'sorcery' ? 'Sorcery' : 'Incantation'}
+          </div>
+          {item.skillFpCost && item.skillFpCost[0] > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#6a9cd4' }}>FP Cost</span>
+              <span className={styles.statValue}>{item.skillFpCost[0]}</span>
+            </div>
+          )}
+          {item.requirements && (
+            <div className={styles.badgeRow} style={{ marginTop: '0.3rem' }}>
+              {item.requirements.int > 0 && (
+                <span className={`${styles.badge} ${stats && stats.intelligence < item.requirements.int ? styles.reqUnmet : styles.reqMet}`}>
+                  INT {item.requirements.int}
+                </span>
+              )}
+              {item.requirements.fai > 0 && (
+                <span className={`${styles.badge} ${stats && stats.faith < item.requirements.fai ? styles.reqUnmet : styles.reqMet}`}>
+                  FAI {item.requirements.fai}
+                </span>
+              )}
+              {item.requirements.arc > 0 && (
+                <span className={`${styles.badge} ${stats && stats.arcane < item.requirements.arc ? styles.reqUnmet : styles.reqMet}`}>
+                  ARC {item.requirements.arc}
+                </span>
+              )}
+            </div>
+          )}
+          {item.effect && (
+            <p className={styles.effectText} style={{ marginTop: '0.3rem' }}>{item.effect}</p>
+          )}
+        </div>
+      )}
+
+      {/* ── Descripción de efecto (talismanes sin datos numéricos, consumables) ── */}
+      {!effectLines && item.effect && item.itemType !== 'sorcery' && item.itemType !== 'incantation' && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Effect</div>
           <p className={styles.effectText}>{item.effect}</p>
+        </div>
+      )}
+
+      {/* ── Guarded Dmg Negation (shields — no armor defense) ── */}
+      {item.guardNegation && !item.defense && !rawDamage && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Guarded Dmg Negation</div>
+          <DamageBar label="Physical"  value={item.guardNegation.physical}  max={100} color={DMG_COLOR.physical}  />
+          <DamageBar label="Magic"     value={item.guardNegation.magic}     max={100} color={DMG_COLOR.magic}     />
+          <DamageBar label="Fire"      value={item.guardNegation.fire}      max={100} color={DMG_COLOR.fire}      />
+          <DamageBar label="Lightning" value={item.guardNegation.lightning} max={100} color={DMG_COLOR.lightning} />
+          <DamageBar label="Holy"      value={item.guardNegation.holy}      max={100} color={DMG_COLOR.holy}      />
+        </div>
+      )}
+
+      {/* ── Guard Negation (weapons with damage) ── */}
+      {item.guardNegation && rawDamage && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Guard Negation</div>
+          <DamageBar label="Physical"  value={item.guardNegation.physical}  max={60} color={DMG_COLOR.physical}  />
+          <DamageBar label="Magic"     value={item.guardNegation.magic}     max={60} color={DMG_COLOR.magic}     />
+          <DamageBar label="Fire"      value={item.guardNegation.fire}      max={60} color={DMG_COLOR.fire}      />
+          <DamageBar label="Lightning" value={item.guardNegation.lightning} max={60} color={DMG_COLOR.lightning} />
+          <DamageBar label="Holy"      value={item.guardNegation.holy}      max={60} color={DMG_COLOR.holy}      />
+          {item.guardNegation.boost != null && item.guardNegation.boost > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel}>Guard Boost</span>
+              <span className={styles.statValue}>{item.guardNegation.boost}</span>
+            </div>
+          )}
         </div>
       )}
 
@@ -300,6 +481,12 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         <div className={styles.weightRow}>
           <span className={styles.weightLabel}>Weight</span>
           <span className={styles.weightValue}>{item.weight.toFixed(1)}</span>
+        </div>
+      )}
+      {/* ── Armor efficiency (physical defense / weight) ── */}
+      {item.defense && item.weight != null && item.weight > 0 && !rawDamage && (
+        <div className={styles.efficiencyRow}>
+          Efficiency {(item.defense.physical / item.weight).toFixed(1)}
         </div>
       )}
     </div>

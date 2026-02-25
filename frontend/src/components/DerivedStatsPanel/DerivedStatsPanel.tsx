@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import type { CharacterStats, EquippedItems, DamageStats, DefenseStats } from '../../types';
 import { useMountAnimation } from '../../hooks/useMountAnimation';
 import { computeTalismanBonuses } from '../../utils/talismanEffects';
-import { estimateEquippedAR, stackNegation } from '../../utils/arCalc';
+import { estimateEquippedAR, stackNegation, calcFlatDefense } from '../../utils/arCalc';
 import styles from './DerivedStatsPanel.module.css';
 
 interface Props {
@@ -96,6 +96,11 @@ function resistArcaneComponent(arc: number): number {
   return 40 + 10 * ((arc - 60) / 39);
 }
 
+/** Discovery = 100 (base) + arcane contribution (same curve as vitality resistance) */
+function calcDiscovery(arc: number): number {
+  return 100 + Math.floor(resistArcaneComponent(Math.min(99, Math.max(1, arc))));
+}
+
 interface ResistanceTotals {
   immunity: number;
   robustness: number;
@@ -177,9 +182,10 @@ interface NegRowProps {
   ready: boolean;
   delay: number;
   indent?: boolean;
+  defense?: number;
 }
 
-function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent }: NegRowProps) {
+function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, defense }: NegRowProps) {
   const pct = Math.min((negation / maxNeg) * 100, 100);
   return (
     <div className={`${styles.negRow} ${indent ? styles.negRowIndent : ''}`}>
@@ -196,7 +202,8 @@ function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent }: N
         />
       </div>
       <span className={styles.negValue} style={{ color: indent ? '#9a9080' : color }}>
-        {negation > 0 ? (Number.isInteger(negation) ? negation : negation.toFixed(1)) : '—'}
+        {defense != null && <><span className={styles.defFlat}>{defense}</span><span className={styles.defSep}> / </span></>}
+        <span>{negation > 0 ? (Number.isInteger(negation) ? negation : negation.toFixed(1)) + '%' : '—'}</span>
       </span>
     </div>
   );
@@ -236,6 +243,7 @@ const RESIST_TYPES: { key: keyof ResistanceTotals; label: string; color: string 
 
 export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
   const ready = useMountAnimation();
+  const [twoHanded, setTwoHanded] = useState(false);
 
   // Bonuses de talismanes equipados
   const talBonus = useMemo(
@@ -261,17 +269,71 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
   const neg      = totalNegation(equipped);
   const hasArmor = Object.values(neg).some(v => v > 0);
 
-  const poise    = totalPoise(equipped);
-  const resist   = calcResistances(level, stats, equipped);
+  // Flat defense from level + stats
+  const flatDef = useMemo(() => calcFlatDefense(level, stats), [level, stats]);
+
+  // Adjusted negation with talisman defense bonuses
+  const adjNeg = useMemo(() => ({
+    physical:  neg.physical  + talBonus.physicalDefBonus * 100,
+    strike:    neg.strike    + talBonus.physicalDefBonus * 100,
+    slash:     neg.slash     + talBonus.physicalDefBonus * 100,
+    pierce:    neg.pierce    + talBonus.physicalDefBonus * 100,
+    magic:     neg.magic     + talBonus.magicDefBonus * 100,
+    fire:      neg.fire      + talBonus.fireDefBonus * 100,
+    lightning: neg.lightning  + talBonus.lightningDefBonus * 100,
+    holy:      neg.holy      + talBonus.holyDefBonus * 100,
+  }), [neg, talBonus]);
+
+  // Poise base + Bull-Goat's Talisman bonus (multiplicativo)
+  const rawPoise = totalPoise(equipped);
+  const poise    = Math.round(rawPoise * (1 + talBonus.poiseBonus) * 10) / 10;
+
+  // Resistances base + talisman flat bonuses
+  const baseResist = calcResistances(level, stats, equipped);
+  const resist = {
+    immunity:   baseResist.immunity   + talBonus.immunityBonus,
+    robustness: baseResist.robustness + talBonus.robustnessBonus,
+    focus:      baseResist.focus      + talBonus.focusBonus,
+    vitality:   baseResist.vitality   + talBonus.vitalityBonus,
+  };
+
+  // Discovery = 100 + arcane contribution + Silver Scarab bonus
+  const effArc = Math.min(99, stats.arcane + (talBonus.attrs.arcane ?? 0));
+  const discovery = calcDiscovery(effArc) + talBonus.discoveryBonus;
 
   // Arma principal RH: primer slot con arma real
   const mainWeapon = equipped.rightHand.find(w => w.name && w.damage) ?? null;
 
   // AR estimado (base × upgrade + escalado de atributos)
-  const arEstimate = useMemo(
+  const arEstimate1H = useMemo(
     () => mainWeapon?.damage ? estimateEquippedAR(mainWeapon, stats) : null,
     [mainWeapon, stats],
   );
+
+  // AR con 2H: STR efectivo = min(99, floor(STR * 1.5))
+  const effectiveSTR2H = Math.min(99, Math.floor(stats.strength * 1.5));
+  const stats2H = useMemo(
+    () => ({ ...stats, strength: effectiveSTR2H }),
+    [stats, effectiveSTR2H],
+  );
+  const arEstimate2H = useMemo(
+    () => mainWeapon?.damage ? estimateEquippedAR(mainWeapon, stats2H) : null,
+    [mainWeapon, stats2H],
+  );
+
+  // Apply talisman elemental damage bonuses to AR
+  const rawAr = twoHanded ? arEstimate2H : arEstimate1H;
+  const arEstimate = useMemo(() => {
+    if (!rawAr) return null;
+    return {
+      physical:  rawAr.physical,
+      magic:     Math.round(rawAr.magic     * (1 + talBonus.magicDmgBonus)),
+      fire:      Math.round(rawAr.fire      * (1 + talBonus.fireDmgBonus)),
+      lightning: Math.round(rawAr.lightning * (1 + talBonus.lightningDmgBonus)),
+      holy:      Math.round(rawAr.holy      * (1 + talBonus.holyDmgBonus)),
+      total:     rawAr.total, // recalculated below
+    };
+  }, [rawAr, talBonus]);
 
   return (
     <div className={styles.panel}>
@@ -291,8 +353,8 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
               <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
             </div>
             {/* Thresholds: 30% (light/medium) y 70% (medium/heavy) */}
-            <div className={`${styles.loadTick} ${loadPct >= 30 ? styles.loadTickReached : ''}`} style={{ left: '30%' }} title="Light / Medium (30%)" />
-            <div className={`${styles.loadTick} ${loadPct >= 70 ? styles.loadTickReached : ''}`} style={{ left: '70%' }} title="Medium / Heavy (70%)" />
+            <div className={`${styles.loadTick} ${loadPct >= 30 ? styles.loadTickReached : ''}`} style={{ left: '30%' }} />
+            <div className={`${styles.loadTick} ${loadPct >= 70 ? styles.loadTickReached : ''}`} style={{ left: '70%' }} />
           </div>
           <span className={styles.rowValue}>
             {currLoad > 0 ? `${currLoad} / ${maxLoad.toFixed(1)}` : `— / ${maxLoad.toFixed(1)}`}
@@ -306,8 +368,19 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
         <div className={styles.section}>
           <span className={styles.sectionTitle}>
             Attack
-            <span className={styles.sectionNote}>{mainWeapon.name}{mainWeapon.upgradeLevel ? ` +${mainWeapon.upgradeLevel}` : ''}</span>
+            <span className={styles.sectionNote}>{mainWeapon.name}</span>
+            <button
+              className={`${styles.twoHandBtn} ${twoHanded ? styles.twoHandActive : ''}`}
+              onClick={() => setTwoHanded(v => !v)}
+            >
+              2H
+            </button>
           </span>
+          {twoHanded && (
+            <div className={styles.twoHandNote}>
+              STR {stats.strength} → {effectiveSTR2H} (×1.5)
+            </div>
+          )}
           {DMG_TYPES.map(({ key, label, color }, i) => {
             const v = arEstimate[key as keyof typeof arEstimate] as number;
             if (!v || v <= 0) return null;
@@ -342,24 +415,37 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
               })}
             </div>
           )}
+          {talBonus.skillFpCostReduction > 0 && (
+            <div className={styles.fpNote}>Skill FP Cost −{Math.round(talBonus.skillFpCostReduction * 100)}%</div>
+          )}
+          {talBonus.spellFpCostReduction > 0 && (
+            <div className={styles.fpNote}>Spell FP Cost −{Math.round(talBonus.spellFpCostReduction * 100)}%</div>
+          )}
         </div>
       )}
 
       {/* ── Defense / Dmg Negation ── */}
       {hasArmor && (
         <div className={styles.section}>
-          <span className={styles.sectionTitle}>Dmg Negation %</span>
-          {DEF_TYPES.map(({ key, label, color, indent }, i) => (
-            <NegRow
-              key={key}
-              label={label}
-              negation={neg[key]}
-              color={color}
-              ready={ready}
-              delay={500 + i * 50}
-              indent={indent}
-            />
-          ))}
+          <span className={styles.sectionTitle}>Defense / Negation</span>
+          {DEF_TYPES.map(({ key, label, color, indent }, i) => {
+            const FLAT_DEF_MAP: Partial<Record<keyof DefenseStats, keyof typeof flatDef>> = {
+              physical: 'physical', magic: 'magic', fire: 'fire', lightning: 'lightning', holy: 'holy',
+            };
+            const flatKey = FLAT_DEF_MAP[key];
+            return (
+              <NegRow
+                key={key}
+                label={label}
+                negation={adjNeg[key]}
+                color={color}
+                ready={ready}
+                delay={500 + i * 50}
+                indent={indent}
+                defense={!indent && flatKey ? flatDef[flatKey] : undefined}
+              />
+            );
+          })}
         </div>
       )}
 
@@ -367,7 +453,24 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
       {poise > 0 && (
         <div className={styles.section}>
           <span className={styles.sectionTitle}>Poise</span>
-          <BodyRow label="Poise" value={Math.round(poise * 10) / 10} max={100} colorClass={styles.barPoise} ready={ready} delay={900} />
+          <div className={styles.row}>
+            <span className={styles.rowLabel}>Poise</span>
+            <div className={`${styles.barTrack} ${styles.barPoise}`}>
+              <div
+                className={styles.barFill}
+                style={{
+                  width: ready ? `${Math.min((poise / 100) * 100, 100)}%` : '0%',
+                  transitionDelay: '900ms',
+                }}
+              />
+            </div>
+            <span
+              className={styles.rowValue}
+              style={{ color: poise > 100 ? '#6a9cd4' : poise >= 80 ? '#6dbf7e' : poise >= 51 ? '#e0a040' : '#e06060' }}
+            >
+              {Math.round(poise * 10) / 10}
+            </span>
+          </div>
         </div>
       )}
 
@@ -385,6 +488,12 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
             delay={960 + i * 50}
           />
         ))}
+      </div>
+
+      {/* ── Discovery ── */}
+      <div className={styles.section}>
+        <span className={styles.sectionTitle}>Discovery</span>
+        <BodyRow label="Discovery" value={discovery} max={250} colorClass={styles.barDisc} ready={ready} delay={1160} />
       </div>
 
     </div>
