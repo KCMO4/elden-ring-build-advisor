@@ -218,6 +218,7 @@
   flex-direction: column;
   gap: 0.75rem;
   animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  z-index: 1; /* stat info tooltips must paint above equipment column */
 }
 
 .sidebar > *:last-child {

@@ -2,7 +2,6 @@
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: 0;
-  overflow: hidden;
 }
 
 .header {
@@ -61,9 +60,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 12px;
-  height: 12px;
-  font-size: 0.45rem;
+  width: 14px;
+  height: 14px;
+  font-size: 0.5rem;
   font-weight: 700;
   color: var(--text-dim);
   border: 1px solid var(--border);
@@ -73,6 +72,9 @@
   transition: opacity 0.15s;
   position: relative;
   flex-shrink: 0;
+  vertical-align: middle;
+  margin-left: 4px;
+  transform: translateY(-1px);
 }
 
 .row:hover .infoIcon {
@@ -83,6 +85,7 @@
   opacity: 1 !important;
   color: var(--gold);
   border-color: var(--gold-dim);
+  z-index: 100;
 }
 
 .infoIcon::after {
@@ -99,13 +102,13 @@
   letter-spacing: normal;
   text-transform: none;
   color: var(--text);
-  background: var(--bg-panel);
+  background: #0d0a06;
   border: 1px solid var(--border-gold);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s;
-  z-index: 50;
+  z-index: 100;
   white-space: normal;
 }
 
