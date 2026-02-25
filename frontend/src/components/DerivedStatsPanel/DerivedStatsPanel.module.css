@@ -462,7 +462,7 @@
   position: relative;
   flex-shrink: 0;
   vertical-align: middle;
-  margin-left: 4px;
+  margin-right: 3px;
   transform: translateY(-1px);
 }
 

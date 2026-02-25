@@ -50,8 +50,8 @@ export default function StatsPanel({ stats, talismans = [] }: Props) {
             <div key={key} className={`${styles.row} ${colorClass}`}>
               <div className={styles.labelGroup}>
                 <span className={styles.abbr}>{abbr}</span>
-                <span className={styles.label}>{label}</span>
                 <span className={styles.infoIcon} data-tooltip={desc}>?</span>
+                <span className={styles.label}>{label}</span>
               </div>
 
               {/* Barra con ticks de softcap */}

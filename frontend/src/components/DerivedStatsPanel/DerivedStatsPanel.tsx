@@ -196,8 +196,8 @@ function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, isF
   return (
     <div className={`${styles.negRow} ${indent ? styles.negRowIndent : ''}`}>
       <span className={styles.negLabel} style={indent ? { color: '#7a7060' } : undefined}>
-        {label}
         {tooltip && <span className={styles.infoIcon} data-tooltip={tooltip}>?</span>}
+        {label}
       </span>
       <div className={styles.negBar}>
         <div
@@ -223,8 +223,8 @@ function BodyRow({ label, value, max, colorClass, ready, delay, tooltip }: BodyR
   return (
     <div className={styles.row}>
       <span className={styles.rowLabel}>
-        {label}
         {tooltip && <span className={styles.infoIcon} data-tooltip={tooltip}>?</span>}
+        {label}
       </span>
       <div className={`${styles.barTrack} ${colorClass}`}>
         <div
@@ -574,7 +574,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
             <BodyRow label="Stamina" value={stamina} max={170}  colorClass={styles.barEnd} ready={ready} delay={160} tooltip="Used for attacking, dodging, blocking, and sprinting. Scales with Endurance. Softcaps at 30 and 50 END." />
 
             <div className={styles.loadRow}>
-              <span className={styles.rowLabel}>Equip Load <span className={styles.infoIcon} data-tooltip="Total weight of equipped gear. Roll type: Light <30%, Medium <70%, Heavy <100%, Overloaded >100%. Scales with Endurance.">?</span></span>
+              <span className={styles.rowLabel}><span className={styles.infoIcon} data-tooltip="Total weight of equipped gear. Roll type: Light <30%, Medium <70%, Heavy <100%, Overloaded >100%. Scales with Endurance.">?</span> Equip Load</span>
               <div className={styles.loadBarWrap}>
                 <div className={`${styles.barTrack} ${loadPct >= 100 ? styles.barOver : styles.barLoad}`}>
                   <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
@@ -599,7 +599,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 return (
                   <>
                     <div className={styles.row}>
-                      <span className={styles.rowLabel}>Cost <span className={styles.infoIcon} data-tooltip="Runes required to reach the next level. Cost increases exponentially with each level.">?</span></span>
+                      <span className={styles.rowLabel}><span className={styles.infoIcon} data-tooltip="Runes required to reach the next level. Cost increases exponentially with each level.">?</span> Cost</span>
                       <div className={`${styles.barTrack} ${styles.barRune}`}>
                         <div
                           className={styles.barFill}
@@ -638,7 +638,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
               </span>
 
               <div className={styles.totalArRow}>
-                <span className={styles.totalArLabel}>Total AR <span className={styles.infoIcon} data-tooltip="Attack Rating — estimated total damage before enemy defenses. Sum of all damage types. Higher is better.">?</span></span>
+                <span className={styles.totalArLabel}><span className={styles.infoIcon} data-tooltip="Attack Rating — estimated total damage before enemy defenses. Sum of all damage types. Higher is better.">?</span> Total AR</span>
                 <span className={styles.totalArValue} style={!reqsMet ? { color: '#e04040' } : undefined}>
                   ~{arEstimate.total}{!reqsMet ? ' !' : ''}
                 </span>
@@ -674,7 +674,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 if (!v || v <= 0) return null;
                 return (
                   <div key={key} className={styles.row}>
-                    <span className={styles.rowLabel}>{label} <span className={styles.infoIcon} data-tooltip={tooltip}>?</span></span>
+                    <span className={styles.rowLabel}><span className={styles.infoIcon} data-tooltip={tooltip}>?</span> {label}</span>
                     <div className={styles.barTrack}>
                       <div
                         className={styles.barFill}
@@ -760,7 +760,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
                 if (!v || v <= 0) return null;
                 return (
                   <div key={key} className={styles.row}>
-                    <span className={styles.rowLabel}>{label} <span className={styles.infoIcon} data-tooltip={tooltip}>?</span></span>
+                    <span className={styles.rowLabel}><span className={styles.infoIcon} data-tooltip={tooltip}>?</span> {label}</span>
                     <div className={styles.barTrack}>
                       <div
                         className={styles.barFill}
@@ -897,7 +897,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
             <div className={styles.section}>
               <span className={styles.sectionTitle}>Guard</span>
               <div className={styles.row}>
-                <span className={styles.rowLabel}>Guard Boost <span className={styles.infoIcon} data-tooltip="Stamina efficiency when blocking. Higher = less stamina lost. At 100, blocking costs no stamina.">?</span></span>
+                <span className={styles.rowLabel}><span className={styles.infoIcon} data-tooltip="Stamina efficiency when blocking. Higher = less stamina lost. At 100, blocking costs no stamina.">?</span> Guard Boost</span>
                 <div className={`${styles.barTrack} ${styles.barPoise}`}>
                   <div
                     className={styles.barFill}
@@ -942,7 +942,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
             <span className={styles.sectionTitle}>Poise & Discovery</span>
             {poise > 0 && (
               <div className={styles.row}>
-                <span className={styles.rowLabel}>Poise <span className={styles.infoIcon} data-tooltip="Resistance to stagger. Higher poise = more hits absorbed without flinching. 51+ is good, 100+ is excellent.">?</span></span>
+                <span className={styles.rowLabel}><span className={styles.infoIcon} data-tooltip="Resistance to stagger. Higher poise = more hits absorbed without flinching. 51+ is good, 100+ is excellent.">?</span> Poise</span>
                 <div className={`${styles.barTrack} ${styles.barPoise}`}>
                   <div
                     className={styles.barFill}
