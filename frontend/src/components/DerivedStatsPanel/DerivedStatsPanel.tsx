@@ -1,7 +1,10 @@
 import { useState, useMemo } from 'react';
-import type { CharacterStats, EquippedItems, DamageStats, DefenseStats } from '../../types';
+import type { CharacterStats, EquippedItems, EquippedWeapon, DamageStats, DefenseStats } from '../../types';
 import { useMountAnimation } from '../../hooks/useMountAnimation';
 import { computeTalismanBonuses } from '../../utils/talismanEffects';
+import { getGreatRuneEffect } from '../../utils/greatRuneEffects';
+import { computePhysickBonuses } from '../../utils/crystalTearEffects';
+import { BUFF_LIST, computeBuffTotals } from '../../utils/buffEffects';
 import { estimateEquippedAR, stackNegation, calcFlatDefense } from '../../utils/arCalc';
 import styles from './DerivedStatsPanel.module.css';
 
@@ -12,7 +15,6 @@ interface Props {
 }
 
 // ── Fórmulas exactas de Elden Ring ────────────────────────────
-// Interpolación de potencia piecewise (reverse-engineered por la comunidad)
 
 function calcHP(vig: number): number {
   const v = Math.min(99, Math.max(1, vig));
@@ -62,25 +64,21 @@ function equipWeight(eq: EquippedItems): number {
   return Math.round(total * 10) / 10;
 }
 
-/** Total poise from equipped armor pieces (simple sum) */
 function totalPoise(eq: EquippedItems): number {
   return [eq.head, eq.chest, eq.hands, eq.legs]
     .reduce((sum, p) => sum + (p.poise ?? 0), 0);
 }
 
 // ── Fórmulas exactas de resistencias de Elden Ring ──────────────
-// Resistencia = floor(LevelComponent + AttributeComponent) + ArmorSum
 
-/** Rune Level component — identical for all 4 resistances */
 function resistLevelComponent(runeLevel: number): number {
-  const lvl = runeLevel + 79; // internal formula uses lvl+79
+  const lvl = runeLevel + 79;
   if (lvl <= 149) return 75 + 30 * ((lvl - 1) / 149);
   if (lvl <= 190) return 105 + 40 * ((lvl - 150) / 40);
   if (lvl <= 240) return 145 + 15 * ((lvl - 190) / 50);
   return 160 + 20 * ((lvl - 240) / 552);
 }
 
-/** Attribute component for Immunity (Vigor), Robustness (Endurance), Focus (Mind) */
 function resistAttrComponent(stat: number): number {
   if (stat <= 30) return 0;
   if (stat <= 40) return 30 * ((stat - 30) / 10);
@@ -88,7 +86,6 @@ function resistAttrComponent(stat: number): number {
   return 40 + 10 * ((stat - 60) / 39);
 }
 
-/** Attribute component for Vitality (Arcane) — different curve, starts from level 1 */
 function resistArcaneComponent(arc: number): number {
   if (arc <= 15) return arc;
   if (arc <= 40) return 15 + 15 * ((arc - 15) / 25);
@@ -96,7 +93,6 @@ function resistArcaneComponent(arc: number): number {
   return 40 + 10 * ((arc - 60) / 39);
 }
 
-/** Discovery = 100 (base) + arcane contribution (same curve as vitality resistance) */
 function calcDiscovery(arc: number): number {
   return 100 + Math.floor(resistArcaneComponent(Math.min(99, Math.max(1, arc))));
 }
@@ -126,18 +122,10 @@ function calcResistances(
   };
 }
 
-/**
- * Calcula la negación total de daño usando apilamiento MULTIPLICATIVO.
- * Fórmula del juego: total% = (1 − ∏(1 − ni/100)) × 100
- * Las 4 piezas de armadura contribuyen independientemente.
- */
 function totalNegation(eq: EquippedItems): DefenseStats {
   const pieces = [eq.head, eq.chest, eq.hands, eq.legs];
-
   const collect = (key: keyof DefenseStats): number[] =>
-    pieces
-      .filter(p => p.defense != null)
-      .map(p => p.defense![key] ?? 0);
+    pieces.filter(p => p.defense != null).map(p => p.defense![key] ?? 0);
 
   return {
     physical:  stackNegation(collect('physical')),
@@ -160,7 +148,6 @@ const DMG_TYPES: { key: keyof DamageStats; label: string; color: string }[] = [
   { key: 'holy',      label: 'Holy',      color: '#c4a84c' },
 ];
 
-// ── Tipos de defensa (8 tipos como en el juego) ───────────────
 const DEF_TYPES: { key: keyof DefenseStats; label: string; color: string; indent?: boolean }[] = [
   { key: 'physical',  label: 'Physical',  color: '#c8bfa0' },
   { key: 'strike',    label: 'VS Strike', color: '#a8a090', indent: true },
@@ -172,7 +159,7 @@ const DEF_TYPES: { key: keyof DefenseStats; label: string; color: string; indent
   { key: 'holy',      label: 'Holy',      color: '#c4a84c' },
 ];
 
-// ── Subcomponente: fila de protección con formato "X / Y%" ────
+// ── Subcomponentes ───────────────────────────────────────────
 
 interface NegRowProps {
   label: string;
@@ -209,8 +196,6 @@ function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, def
   );
 }
 
-// ── Subcomponente: fila de body stats ─────────────────────────
-
 interface BodyRowProps { label: string; value: number; max: number; colorClass: string; ready: boolean; delay: number }
 
 function BodyRow({ label, value, max, colorClass, ready, delay }: BodyRowProps) {
@@ -231,8 +216,6 @@ function BodyRow({ label, value, max, colorClass, ready, delay }: BodyRowProps) 
   );
 }
 
-// ── Componente principal ──────────────────────────────────────
-
 // ── Tipos de resistencia ──────────────────────────────────────
 const RESIST_TYPES: { key: keyof ResistanceTotals; label: string; color: string }[] = [
   { key: 'immunity',   label: 'Immunity',   color: '#8bc34a' },
@@ -241,25 +224,93 @@ const RESIST_TYPES: { key: keyof ResistanceTotals; label: string; color: string 
   { key: 'vitality',   label: 'Vitality',   color: '#78909c' },
 ];
 
+/** Slot identifiers for 2H selection */
+type WeaponSlot = 'RH1' | 'RH2' | 'RH3' | 'LH1' | 'LH2' | 'LH3';
+
+function getWeaponFromSlot(eq: EquippedItems, slot: WeaponSlot): EquippedWeapon | null {
+  const map: Record<WeaponSlot, EquippedWeapon> = {
+    RH1: eq.rightHand[0], RH2: eq.rightHand[1], RH3: eq.rightHand[2],
+    LH1: eq.leftHand[0],  LH2: eq.leftHand[1],  LH3: eq.leftHand[2],
+  };
+  const w = map[slot];
+  return w?.name && w?.damage ? w : null;
+}
+
+// ── Componente principal ──────────────────────────────────────
+
 export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
   const ready = useMountAnimation();
-  const [twoHanded, setTwoHanded] = useState(false);
+  const [twoHandedSlot, setTwoHandedSlot] = useState<WeaponSlot | null>(null);
+  const [greatRuneActive, setGreatRuneActive] = useState(false);
+  const [physickActive, setPhysickActive] = useState(false);
+  const [activeBuffIds, setActiveBuffIds] = useState<string[]>([]);
+  const [buffsOpen, setBuffsOpen] = useState(false);
 
-  // Bonuses de talismanes equipados
+  // ── Talisman bonuses ──
   const talBonus = useMemo(
     () => computeTalismanBonuses(equipped.talismans),
     [equipped.talismans],
   );
 
-  // Stats efectivos (base + bonus de atributo de talismanes)
-  const effVig = Math.min(99, stats.vigor      + (talBonus.attrs.vigor      ?? 0));
-  const effMnd = Math.min(99, stats.mind       + (talBonus.attrs.mind       ?? 0));
-  const effEnd = Math.min(99, stats.endurance  + (talBonus.attrs.endurance  ?? 0));
+  // ── Great Rune effect ──
+  const grEffect = useMemo(
+    () => equipped.greatRune?.baseId ? getGreatRuneEffect(equipped.greatRune.baseId) : null,
+    [equipped.greatRune],
+  );
 
-  // Derivadas con multiplicadores de talismanes
-  const hp      = Math.floor(calcHP(effVig)          * (1 + talBonus.hpBonus));
-  const fp      = Math.floor(calcFP(effMnd)          * (1 + talBonus.fpBonus));
-  const stamina = Math.floor(calcStamina(effEnd)      * (1 + talBonus.staminaBonus));
+  // ── Physick bonuses ──
+  const physickBonus = useMemo(
+    () => computePhysickBonuses(equipped.physickTears ?? []),
+    [equipped.physickTears],
+  );
+
+  // ── Buff totals ──
+  const buffTotals = useMemo(
+    () => computeBuffTotals(activeBuffIds),
+    [activeBuffIds],
+  );
+
+  // ── Effective stats (base + talisman attrs + Great Rune + Physick) ──
+  const effVig = Math.min(99, stats.vigor
+    + (talBonus.attrs.vigor ?? 0)
+    + (greatRuneActive && grEffect?.vigor ? grEffect.vigor : 0));
+  const effMnd = Math.min(99, stats.mind
+    + (talBonus.attrs.mind ?? 0)
+    + (greatRuneActive && grEffect?.mind ? grEffect.mind : 0));
+  const effEnd = Math.min(99, stats.endurance
+    + (talBonus.attrs.endurance ?? 0)
+    + (greatRuneActive && grEffect?.endurance ? grEffect.endurance : 0));
+  const effStr = Math.min(99, stats.strength
+    + (talBonus.attrs.strength ?? 0)
+    + (greatRuneActive && grEffect?.strength ? grEffect.strength : 0)
+    + (physickActive ? physickBonus.strength : 0));
+  const effDex = Math.min(99, stats.dexterity
+    + (talBonus.attrs.dexterity ?? 0)
+    + (greatRuneActive && grEffect?.dexterity ? grEffect.dexterity : 0)
+    + (physickActive ? physickBonus.dexterity : 0));
+  const effInt = Math.min(99, stats.intelligence
+    + (talBonus.attrs.intelligence ?? 0)
+    + (greatRuneActive && grEffect?.intelligence ? grEffect.intelligence : 0)
+    + (physickActive ? physickBonus.intelligence : 0));
+  const effFai = Math.min(99, stats.faith
+    + (talBonus.attrs.faith ?? 0)
+    + (greatRuneActive && grEffect?.faith ? grEffect.faith : 0)
+    + (physickActive ? physickBonus.faith : 0));
+
+  // Combined HP/FP/Stamina multipliers
+  const hpMult = 1 + talBonus.hpBonus
+    + (greatRuneActive && grEffect?.hpBonus ? grEffect.hpBonus : 0)
+    + (physickActive ? physickBonus.hpBonus : 0);
+  const fpMult = 1 + talBonus.fpBonus
+    + (greatRuneActive && grEffect?.fpBonus ? grEffect.fpBonus : 0)
+    + (physickActive ? physickBonus.fpBonus : 0);
+  const staMult = 1 + talBonus.staminaBonus
+    + (greatRuneActive && grEffect?.staminaBonus ? grEffect.staminaBonus : 0)
+    + (physickActive ? physickBonus.staminaBonus : 0);
+
+  const hp      = Math.floor(calcHP(effVig) * hpMult);
+  const fp      = Math.floor(calcFP(effMnd) * fpMult);
+  const stamina = Math.floor(calcStamina(effEnd) * staMult);
   const maxLoad = Math.round(calcMaxEquipLoad(effEnd) * (1 + talBonus.equipLoadBonus) * 10) / 10;
 
   const currLoad = equipWeight(equipped);
@@ -269,26 +320,24 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
   const neg      = totalNegation(equipped);
   const hasArmor = Object.values(neg).some(v => v > 0);
 
-  // Flat defense from level + stats
   const flatDef = useMemo(() => calcFlatDefense(level, stats), [level, stats]);
 
-  // Adjusted negation with talisman defense bonuses
+  const physNegPhysick = physickActive ? physickBonus.physicalNegBonus * 100 : 0;
   const adjNeg = useMemo(() => ({
-    physical:  neg.physical  + talBonus.physicalDefBonus * 100,
-    strike:    neg.strike    + talBonus.physicalDefBonus * 100,
-    slash:     neg.slash     + talBonus.physicalDefBonus * 100,
-    pierce:    neg.pierce    + talBonus.physicalDefBonus * 100,
+    physical:  neg.physical  + talBonus.physicalDefBonus * 100 + physNegPhysick,
+    strike:    neg.strike    + talBonus.physicalDefBonus * 100 + physNegPhysick,
+    slash:     neg.slash     + talBonus.physicalDefBonus * 100 + physNegPhysick,
+    pierce:    neg.pierce    + talBonus.physicalDefBonus * 100 + physNegPhysick,
     magic:     neg.magic     + talBonus.magicDefBonus * 100,
     fire:      neg.fire      + talBonus.fireDefBonus * 100,
     lightning: neg.lightning  + talBonus.lightningDefBonus * 100,
     holy:      neg.holy      + talBonus.holyDefBonus * 100,
-  }), [neg, talBonus]);
+  }), [neg, talBonus, physNegPhysick]);
 
-  // Poise base + Bull-Goat's Talisman bonus (multiplicativo)
   const rawPoise = totalPoise(equipped);
-  const poise    = Math.round(rawPoise * (1 + talBonus.poiseBonus) * 10) / 10;
+  const physickPoise = physickActive ? physickBonus.poiseFlat : 0;
+  const poise    = Math.round((rawPoise + physickPoise) * (1 + talBonus.poiseBonus) * 10) / 10;
 
-  // Resistances base + talisman flat bonuses
   const baseResist = calcResistances(level, stats, equipped);
   const resist = {
     immunity:   baseResist.immunity   + talBonus.immunityBonus,
@@ -297,50 +346,110 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
     vitality:   baseResist.vitality   + talBonus.vitalityBonus,
   };
 
-  // Discovery = 100 + arcane contribution + Silver Scarab bonus
-  const effArc = Math.min(99, stats.arcane + (talBonus.attrs.arcane ?? 0));
+  const effArc = Math.min(99, stats.arcane + (talBonus.attrs.arcane ?? 0)
+    + (greatRuneActive && grEffect?.arcane ? grEffect.arcane : 0));
   const discovery = calcDiscovery(effArc) + talBonus.discoveryBonus;
 
-  // Arma principal RH: primer slot con arma real
-  const mainWeapon = equipped.rightHand.find(w => w.name && w.damage) ?? null;
+  // ── 2H weapon selection ──
+  const twoHanded = twoHandedSlot !== null;
 
-  // AR estimado (base × upgrade + escalado de atributos)
-  const arEstimate1H = useMemo(
-    () => mainWeapon?.damage ? estimateEquippedAR(mainWeapon, stats) : null,
-    [mainWeapon, stats],
+  // Build effective stats for AR calculation
+  const effectiveSTR2H = Math.min(99, Math.floor(effStr * 1.5));
+  const effectiveStats: CharacterStats = useMemo(() => ({
+    vigor: effVig, mind: effMnd, endurance: effEnd,
+    strength: twoHanded ? effectiveSTR2H : effStr,
+    dexterity: effDex, intelligence: effInt, faith: effFai,
+    arcane: effArc,
+  }), [effVig, effMnd, effEnd, effStr, effDex, effInt, effFai, effArc, twoHanded, effectiveSTR2H]);
+
+  // Active weapon: 2H slot weapon or first RH with damage
+  const activeWeapon = useMemo(() => {
+    if (twoHandedSlot) return getWeaponFromSlot(equipped, twoHandedSlot);
+    return equipped.rightHand.find(w => w.name && w.damage) ?? null;
+  }, [twoHandedSlot, equipped]);
+
+  // Available weapon slots for 2H buttons (exclude shields — they have stability but no meaningful scaling)
+  const weaponSlots = useMemo(() => {
+    const isShield = (w: EquippedWeapon) =>
+      (w.stability != null && w.stability > 0) ||
+      (w.itemType != null && /shield/i.test(w.itemType));
+    const slots: { slot: WeaponSlot; weapon: EquippedWeapon }[] = [];
+    equipped.rightHand.forEach((w, i) => {
+      if (w.name && w.damage && !isShield(w)) slots.push({ slot: `RH${i + 1}` as WeaponSlot, weapon: w });
+    });
+    equipped.leftHand.forEach((w, i) => {
+      if (w.name && w.damage && !isShield(w)) slots.push({ slot: `LH${i + 1}` as WeaponSlot, weapon: w });
+    });
+    return slots;
+  }, [equipped]);
+
+  // AR estimation
+  const rawAr = useMemo(
+    () => activeWeapon?.damage ? estimateEquippedAR(activeWeapon, effectiveStats) : null,
+    [activeWeapon, effectiveStats],
   );
 
-  // AR con 2H: STR efectivo = min(99, floor(STR * 1.5))
-  const effectiveSTR2H = Math.min(99, Math.floor(stats.strength * 1.5));
-  const stats2H = useMemo(
-    () => ({ ...stats, strength: effectiveSTR2H }),
-    [stats, effectiveSTR2H],
-  );
-  const arEstimate2H = useMemo(
-    () => mainWeapon?.damage ? estimateEquippedAR(mainWeapon, stats2H) : null,
-    [mainWeapon, stats2H],
-  );
-
-  // Apply talisman elemental damage bonuses to AR
-  const rawAr = twoHanded ? arEstimate2H : arEstimate1H;
+  // Apply talisman + physick elemental damage bonuses + buff multipliers
   const arEstimate = useMemo(() => {
     if (!rawAr) return null;
-    return {
-      physical:  rawAr.physical,
-      magic:     Math.round(rawAr.magic     * (1 + talBonus.magicDmgBonus)),
-      fire:      Math.round(rawAr.fire      * (1 + talBonus.fireDmgBonus)),
-      lightning: Math.round(rawAr.lightning * (1 + talBonus.lightningDmgBonus)),
-      holy:      Math.round(rawAr.holy      * (1 + talBonus.holyDmgBonus)),
-      total:     rawAr.total, // recalculated below
-    };
-  }, [rawAr, talBonus]);
+    const pMag = physickActive ? physickBonus.magicDmgBonus : 0;
+    const pFire = physickActive ? physickBonus.fireDmgBonus : 0;
+    const pLtn = physickActive ? physickBonus.lightningDmgBonus : 0;
+    const pHoly = physickActive ? physickBonus.holyDmgBonus : 0;
+    const phys = Math.round(rawAr.physical * buffTotals.physMult);
+    const mag  = Math.round(rawAr.magic     * (1 + talBonus.magicDmgBonus + pMag) * buffTotals.magicMult);
+    const fire = Math.round(rawAr.fire      * (1 + talBonus.fireDmgBonus + pFire) * buffTotals.fireMult);
+    const ltn  = Math.round(rawAr.lightning * (1 + talBonus.lightningDmgBonus + pLtn) * buffTotals.lightningMult);
+    const holy = Math.round(rawAr.holy      * (1 + talBonus.holyDmgBonus + pHoly) * buffTotals.holyMult);
+    return { physical: phys, magic: mag, fire, lightning: ltn, holy, total: phys + mag + fire + ltn + holy };
+  }, [rawAr, talBonus, buffTotals, physickActive, physickBonus]);
+
+  // ── Guard Boost (shield in LH) ──
+  const equippedShield = useMemo(() => {
+    const all = [...equipped.leftHand, ...equipped.rightHand];
+    return all.find(w => w.name && w.stability && w.stability > 0) ?? null;
+  }, [equipped]);
+
+  const guardBoost = useMemo(() => {
+    if (!equippedShield?.stability) return null;
+    return Math.floor(equippedShield.stability * (1 + talBonus.guardBoostBonus));
+  }, [equippedShield, talBonus.guardBoostBonus]);
+
+  // ── Toggle buff ──
+  const toggleBuff = (id: string) => {
+    setActiveBuffIds(prev =>
+      prev.includes(id) ? prev.filter(b => b !== id) : [...prev, id],
+    );
+  };
 
   return (
     <div className={styles.panel}>
 
       {/* ── Body ── */}
       <div className={styles.section}>
-        <span className={styles.sectionTitle}>Body</span>
+        <span className={styles.sectionTitle}>
+          Body
+          {/* Great Rune toggle */}
+          {grEffect && (
+            <button
+              className={`${styles.twoHandBtn} ${greatRuneActive ? styles.twoHandActive : ''}`}
+              onClick={() => setGreatRuneActive(v => !v)}
+              title={grEffect.description}
+            >
+              Rune Arc
+            </button>
+          )}
+          {/* Physick toggle */}
+          {physickBonus.hasAny && (
+            <button
+              className={`${styles.twoHandBtn} ${physickActive ? styles.physickActive : ''}`}
+              onClick={() => setPhysickActive(v => !v)}
+              title="Flask of Wondrous Physick"
+            >
+              Physick
+            </button>
+          )}
+        </span>
         <BodyRow label="HP"      value={hp}     max={2100} colorClass={styles.barVig} ready={ready} delay={0} />
         <BodyRow label="FP"      value={fp}     max={450}  colorClass={styles.barMnd} ready={ready} delay={80} />
         <BodyRow label="Stamina" value={stamina} max={170}  colorClass={styles.barEnd} ready={ready} delay={160} />
@@ -352,7 +461,6 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
             <div className={`${styles.barTrack} ${loadPct >= 100 ? styles.barOver : styles.barLoad}`}>
               <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
             </div>
-            {/* Thresholds: 30% (light/medium) y 70% (medium/heavy) */}
             <div className={`${styles.loadTick} ${loadPct >= 30 ? styles.loadTickReached : ''}`} style={{ left: '30%' }} />
             <div className={`${styles.loadTick} ${loadPct >= 70 ? styles.loadTickReached : ''}`} style={{ left: '70%' }} />
           </div>
@@ -364,21 +472,32 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
       </div>
 
       {/* ── Attack ── */}
-      {mainWeapon && arEstimate && (
+      {activeWeapon && arEstimate && (
         <div className={styles.section}>
           <span className={styles.sectionTitle}>
             Attack
-            <span className={styles.sectionNote}>{mainWeapon.name}</span>
-            <button
-              className={`${styles.twoHandBtn} ${twoHanded ? styles.twoHandActive : ''}`}
-              onClick={() => setTwoHanded(v => !v)}
-            >
-              2H
-            </button>
+            <span className={styles.sectionNote}>{activeWeapon.name}</span>
           </span>
+
+          {/* 2H slot selection buttons */}
+          {weaponSlots.length > 0 && (
+            <div className={styles.twoHandRow}>
+              <span className={styles.twoHandLabel}>2H:</span>
+              {weaponSlots.map(({ slot }) => (
+                <button
+                  key={slot}
+                  className={`${styles.twoHandBtn} ${twoHandedSlot === slot ? styles.twoHandActive : ''}`}
+                  onClick={() => setTwoHandedSlot(prev => prev === slot ? null : slot)}
+                >
+                  {slot}
+                </button>
+              ))}
+            </div>
+          )}
+
           {twoHanded && (
             <div className={styles.twoHandNote}>
-              STR {stats.strength} → {effectiveSTR2H} (×1.5)
+              STR {effStr} → {effectiveSTR2H} (×1.5)
             </div>
           )}
           {DMG_TYPES.map(({ key, label, color }, i) => {
@@ -401,10 +520,10 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
               </div>
             );
           })}
-          {mainWeapon.scaling && (
+          {activeWeapon.scaling && (
             <div className={styles.scalingRow}>
               {(['str','dex','int','fai','arc'] as const).map(s => {
-                const grade = mainWeapon.scaling![s];
+                const grade = activeWeapon.scaling![s];
                 if (!grade || grade === '-') return null;
                 return (
                   <span key={s} className={styles.scalingBadge}>
@@ -415,12 +534,99 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
               })}
             </div>
           )}
+          {activeWeapon.skill && (
+            <div className={styles.skillRow}>
+              <span className={styles.skillName}>{activeWeapon.skill}</span>
+              {activeWeapon.skillFpCost && (
+                <span className={styles.skillFp}>
+                  FP {activeWeapon.skillFpCost[0]}{activeWeapon.skillFpCost[1] != null ? ` (${activeWeapon.skillFpCost[1]})` : ''}
+                </span>
+              )}
+            </div>
+          )}
           {talBonus.skillFpCostReduction > 0 && (
             <div className={styles.fpNote}>Skill FP Cost −{Math.round(talBonus.skillFpCostReduction * 100)}%</div>
           )}
           {talBonus.spellFpCostReduction > 0 && (
             <div className={styles.fpNote}>Spell FP Cost −{Math.round(talBonus.spellFpCostReduction * 100)}%</div>
           )}
+        </div>
+      )}
+
+      {/* ── Active Buffs ── */}
+      <div className={styles.section}>
+        <span className={styles.sectionTitle}>
+          <button
+            className={styles.collapseBtn}
+            onClick={() => setBuffsOpen(v => !v)}
+          >
+            {buffsOpen ? '▾' : '▸'} Buffs
+          </button>
+          {activeBuffIds.length > 0 && (
+            <span className={styles.buffCount}>{activeBuffIds.length} active</span>
+          )}
+        </span>
+        {buffsOpen && (
+          <div className={styles.buffGrid}>
+            {BUFF_LIST.map(buff => (
+              <label key={buff.id} className={styles.buffItem}>
+                <input
+                  type="checkbox"
+                  checked={activeBuffIds.includes(buff.id)}
+                  onChange={() => toggleBuff(buff.id)}
+                  className={styles.buffCheck}
+                />
+                <span className={styles.buffName}>{buff.name}</span>
+                <span className={styles.buffDur}>{buff.duration}</span>
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* ── Guard Boost + Guard Negation ── */}
+      {guardBoost != null && equippedShield && (
+        <div className={styles.section}>
+          <span className={styles.sectionTitle}>Guard</span>
+          <div className={styles.row}>
+            <span className={styles.rowLabel}>Guard Boost</span>
+            <div className={`${styles.barTrack} ${styles.barPoise}`}>
+              <div
+                className={styles.barFill}
+                style={{
+                  width: ready ? `${Math.min((guardBoost / 100) * 100, 100)}%` : '0%',
+                  transitionDelay: '480ms',
+                }}
+              />
+            </div>
+            <span className={styles.rowValue}>{guardBoost}</span>
+          </div>
+          {equippedShield.guardNegation && (
+            <>
+              {([
+                { key: 'physical',  label: 'Physical',  color: '#c8bfa0' },
+                { key: 'magic',     label: 'Magic',     color: '#6a9cd4' },
+                { key: 'fire',      label: 'Fire',      color: '#d4703c' },
+                { key: 'lightning', label: 'Lightning', color: '#d4c03c' },
+                { key: 'holy',      label: 'Holy',      color: '#c4a84c' },
+              ] as const).map(({ key, label, color }, i) => {
+                const v = equippedShield.guardNegation![key as keyof typeof equippedShield.guardNegation] as number;
+                if (v == null || v <= 0) return null;
+                return (
+                  <NegRow
+                    key={key}
+                    label={label}
+                    negation={v}
+                    color={color}
+                    maxNeg={100}
+                    ready={ready}
+                    delay={520 + i * 40}
+                  />
+                );
+              })}
+            </>
+          )}
+          <div className={styles.fpNote}>{equippedShield.name}</div>
         </div>
       )}
 
@@ -466,7 +672,7 @@ export default function DerivedStatsPanel({ stats, equipped, level }: Props) {
             </div>
             <span
               className={styles.rowValue}
-              style={{ color: poise > 100 ? '#6a9cd4' : poise >= 80 ? '#6dbf7e' : poise >= 51 ? '#e0a040' : '#e06060' }}
+              style={{ color: poise >= 125 ? '#6a9cd4' : poise >= 100 ? '#4ab0e0' : poise >= 76 ? '#6dbf7e' : poise >= 51 ? '#e0a040' : poise >= 26 ? '#d08040' : '#e06060' }}
             >
               {Math.round(poise * 10) / 10}
             </span>

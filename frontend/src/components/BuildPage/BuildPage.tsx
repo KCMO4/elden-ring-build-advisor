@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import type { CharacterData, EquippedWeapon } from '../../types';
 import StatsPanel from '../StatsPanel/StatsPanel';
@@ -6,12 +6,14 @@ import DerivedStatsPanel from '../DerivedStatsPanel/DerivedStatsPanel';
 import EquipmentGrid from '../EquipmentGrid/EquipmentGrid';
 import InventoryPanel from '../InventoryPanel/InventoryPanel';
 import AdvisorPanel from '../AdvisorPanel/AdvisorPanel';
+import MatchmakingCalc from '../MatchmakingCalc/MatchmakingCalc';
 import ItemTooltip from '../ItemTooltip/ItemTooltip';
 import { useImagePreloader } from '../../hooks/useImagePreloader';
 import { estimateEquippedAR } from '../../utils/arCalc';
+import { loadScalingData } from '../../utils/scalingData';
 import styles from './BuildPage.module.css';
 
-type ContentTab = 'inventory' | 'advisor';
+type ContentTab = 'inventory' | 'advisor' | 'matchmaking';
 
 interface Props {
   character: CharacterData;
@@ -58,6 +60,9 @@ export default function BuildPage({ character, onBack }: Props) {
   }, [character]);
 
   const preloadProgress = useImagePreloader(allImageUrls);
+
+  // Load exact scaling data in background (improves AR accuracy if available)
+  useEffect(() => { loadScalingData(); }, []);
 
   const handleItemHover = (item: EquippedWeapon | null, rect: DOMRect | null) => {
     setHoveredItem(item);
@@ -157,6 +162,12 @@ export default function BuildPage({ character, onBack }: Props) {
             >
               Advisor
             </button>
+            <button
+              className={`${styles.contentTab} ${contentTab === 'matchmaking' ? styles.contentTabActive : ''}`}
+              onClick={() => setContentTab('matchmaking')}
+            >
+              Matchmaking
+            </button>
           </div>
           {contentTab === 'inventory' && (
             <InventoryPanel inventory={character.inventory} />
@@ -166,6 +177,12 @@ export default function BuildPage({ character, onBack }: Props) {
               stats={character.stats}
               mainWeaponAR={mainWeaponAR}
               mainWeapon={mainWeapon}
+            />
+          )}
+          {contentTab === 'matchmaking' && (
+            <MatchmakingCalc
+              level={character.level}
+              inventory={character.inventory}
             />
           )}
         </section>

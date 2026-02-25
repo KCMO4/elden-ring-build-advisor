@@ -1,5 +1,8 @@
 import type { EquippedItems, EquippedWeapon, QuickSlotItem } from '../../types';
 import ItemSlot from '../ItemSlot/ItemSlot';
+import { getGreatRuneEffectLabel } from '../../utils/greatRuneEffects';
+import { getCrystalTearEffectLabel } from '../../utils/crystalTearEffects';
+import { getTalismanEffectLabel } from '../../utils/talismanEffects';
 import styles from './EquipmentGrid.module.css';
 
 interface Props {
@@ -56,12 +59,19 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
         <div className={styles.section}>
           <div className={styles.sectionTitle}>Great Rune</div>
           <div className={styles.greatRuneRow}>
-            <ItemSlot
-              item={quickSlotToEquipped(equipped.greatRune)}
-              category="great-rune"
-              animIndex={14}
-              onHover={onItemHover}
-            />
+            <div className={styles.slotWithLabel}>
+              <ItemSlot
+                item={quickSlotToEquipped(equipped.greatRune)}
+                category="great-rune"
+                animIndex={14}
+                onHover={onItemHover}
+              />
+              {equipped.greatRune.baseId && (
+                <span className={styles.effectLabel}>
+                  {getGreatRuneEffectLabel(equipped.greatRune.baseId)}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -119,14 +129,20 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
         <div className={styles.sectionTitle}>Talismans</div>
         <div className={styles.talismanRow}>
           {equipped.talismans.map((t, i) => (
-            <ItemSlot
-              key={i}
-              item={t}
-              label={`T${i + 1}`}
-              category="talisman"
-              animIndex={10 + i}
-              onHover={onItemHover}
-            />
+            <div key={i} className={styles.slotWithLabel}>
+              <ItemSlot
+                item={t}
+                label={`T${i + 1}`}
+                category="talisman"
+                animIndex={10 + i}
+                onHover={onItemHover}
+              />
+              {t.baseId && t.name && (
+                <span className={styles.effectLabel}>
+                  {getTalismanEffectLabel(t.baseId)}
+                </span>
+              )}
+            </div>
           ))}
         </div>
       </div>
@@ -137,14 +153,20 @@ export default function EquipmentGrid({ equipped, onItemHover }: Props) {
           <div className={styles.sectionTitle}>Flask of Wondrous Physick</div>
           <div className={styles.quickItemsRow}>
             {equipped.physickTears!.map((tear, i) => (
-              <ItemSlot
-                key={i}
-                item={quickSlotToEquipped(tear)}
-                category="physick-tear"
-                size="small"
-                animIndex={45 + i}
-                onHover={onItemHover}
-              />
+              <div key={i} className={styles.slotWithLabel}>
+                <ItemSlot
+                  item={quickSlotToEquipped(tear)}
+                  category="physick-tear"
+                  size="small"
+                  animIndex={45 + i}
+                  onHover={onItemHover}
+                />
+                {tear.baseId && (
+                  <span className={styles.effectLabel}>
+                    {getCrystalTearEffectLabel(tear.baseId)}
+                  </span>
+                )}
+              </div>
             ))}
           </div>
         </div>

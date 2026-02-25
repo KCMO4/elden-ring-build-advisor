@@ -231,3 +231,108 @@
 .defFlat { color: var(--text); font-weight: 600; }
 .defSep { color: var(--text-dim); opacity: 0.5; font-size: 0.55rem; }
 .fpNote { font-size: 0.52rem; color: #6a9cd4; padding: 0.1rem 0; letter-spacing: 0.03em; }
+
+/* ── Weapon Skill row ── */
+.skillRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0 0.05rem;
+}
+.skillName {
+  font-size: 0.55rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+.skillFp {
+  font-size: 0.48rem;
+  color: #6a9cd4;
+  letter-spacing: 0.02em;
+}
+
+/* ── Physick toggle (green accent) ── */
+.physickActive {
+  background: rgba(79, 201, 120, 0.15);
+  border-color: #4fc978;
+  color: #4fc978;
+}
+
+/* ── 2H slot selection row ── */
+.twoHandRow {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.3rem;
+  flex-wrap: wrap;
+}
+.twoHandLabel {
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+/* Override margin-left:auto for 2H buttons inside twoHandRow */
+.twoHandRow .twoHandBtn {
+  margin-left: 0;
+}
+
+/* ── Buffs ── */
+.collapseBtn {
+  background: none;
+  border: none;
+  color: var(--gold-dim);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+.collapseBtn:hover {
+  color: var(--gold);
+}
+
+.buffCount {
+  font-size: 0.5rem;
+  color: var(--gold);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.buffGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.buffItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  padding: 0.1rem 0;
+}
+.buffItem:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.buffCheck {
+  accent-color: var(--gold);
+  width: 0.7rem;
+  height: 0.7rem;
+  cursor: pointer;
+}
+
+.buffName {
+  font-size: 0.55rem;
+  color: var(--text);
+  flex: 1;
+}
+
+.buffDur {
+  font-size: 0.48rem;
+  color: var(--text-dim);
+}

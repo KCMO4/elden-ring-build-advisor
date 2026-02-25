@@ -63,6 +63,9 @@ interface TalismanFlatEffects {
   skillFpCostReduction?: number;
   spellFpCostReduction?: number;
 
+  // Guard Boost bonus (fracción, e.g. 0.10 = +10%)
+  guardBoostBonus?: number;
+
   // Descriptive label for conditional/utility talismans
   noteLabel?: string;
 }
@@ -213,6 +216,44 @@ const TALISMAN_EFFECTS: Record<number, TalismanFlatEffects> = {
   6020: { skillFpCostReduction: 0.25 },                  // Carian Filigreed Crest
   3080: { spellFpCostReduction: 0.25, hpBonus: -0.15 },  // Primal Glintstone Blade
 
+  // ── Crepus's Vial (eliminates casting noise) ──────────────
+  6000: { noteLabel: 'Silent casting' },
+
+  // ── Concealing Veil (crouch = invisible at distance) ──────
+  6010: { noteLabel: 'Crouch: stealth' },
+
+  // ── Longtail Cat Talisman (negate fall damage) ────────────
+  6040: { noteLabel: 'Negate fall DMG' },
+
+  // ── Shabriri's Woe (attract enemy aggro) ──────────────────
+  6050: { noteLabel: 'Attract aggro' },
+
+  // ── Daedicar's Woe (take +100% damage) ────────────────────
+  6060: { physicalDefBonus: -1.0, magicDefBonus: -1.0, fireDefBonus: -1.0, lightningDefBonus: -1.0, holyDefBonus: -1.0 },
+
+  // ── Sacrificial Twig (keep runes on death) ────────────────
+  6070: { noteLabel: 'Keep runes on death' },
+
+  // ── Crucible Knot Talisman (+40 poise while getting up) ───
+  4110: { noteLabel: 'Knockdown Poise +40' },
+
+  // ── Crucible Feather Talisman (extended dodge i-frames) ───
+  4070: { noteLabel: 'Extended i-frames' },
+
+  // ── Blue-Feathered Branchsword (low HP: DEF up) ──────────
+  4080: { noteLabel: 'Low HP: DEF +20%' },
+
+  // ── Perfumer's Talisman (+20% consumable potency) ────────
+  2220: { noteLabel: 'Item potency +20%' },
+
+  // ── Godskin Swaddling Cloth (successive hits: recover HP) ─
+  5040: { noteLabel: 'Chain hits: regen HP' },
+
+  // ── Multiplayer talismans ──────────────────────────────────
+  6080: { noteLabel: 'Appear as host' },         // Furled Finger's Trick-Mirror
+  6090: { noteLabel: 'Appear as phantom' },      // Host's Trick-Mirror
+  6100: { noteLabel: 'Attract spirits' },        // Entwining Umbilical Cord
+
   // ── Utility talismans (noteLabel only) ──────────────────────
   1140: { noteLabel: 'Memory Slots +2' },
   1150: { noteLabel: 'Stamina Regen +17.8%' },
@@ -239,7 +280,7 @@ const TALISMAN_EFFECTS: Record<number, TalismanFlatEffects> = {
   3070: { noteLabel: 'Cast Speed +30' },
   4060: { noteLabel: 'Roll Phys Neg +12%' },
   4090: { noteLabel: 'Full HP: Neg +30%' },
-  4100: { noteLabel: 'Guard Boost +10%' },
+  4100: { guardBoostBonus: 0.10, noteLabel: 'Guard Boost +10%' },
   5000: { noteLabel: 'Flask HP +10%' },
   5010: { noteLabel: 'Flask FP +10%' },
   5020: { noteLabel: 'HP Regen +2/s' },
@@ -286,6 +327,8 @@ export interface TalismanBonuses {
   /** FP cost reduction (fracción) */
   skillFpCostReduction: number;
   spellFpCostReduction: number;
+  /** Guard Boost bonus (fracción) */
+  guardBoostBonus: number;
   /** true si al menos un talismán activo tiene algún efecto */
   hasAny: boolean;
 }
@@ -347,6 +390,9 @@ export function getTalismanEffectLines(
   // FP cost reduction
   if (eff.skillFpCostReduction) lines.push({ label: 'Skill FP', value: `−${Math.round(eff.skillFpCostReduction * 100)}%` });
   if (eff.spellFpCostReduction) lines.push({ label: 'Spell FP', value: `−${Math.round(eff.spellFpCostReduction * 100)}%` });
+
+  // Guard Boost
+  if (eff.guardBoostBonus) lines.push({ label: 'Guard Boost', value: `+${Math.round(eff.guardBoostBonus * 100)}%` });
 
   // Descriptive note (conditional/utility talismans)
   if (eff.noteLabel) lines.push({ label: 'Effect', value: eff.noteLabel });
@@ -478,6 +524,7 @@ export function computeTalismanBonuses(
   let physicalDefBonus = 0, magicDefBonus = 0, fireDefBonus = 0, lightningDefBonus = 0, holyDefBonus = 0;
   let skillDmgBonus = 0, sorceryPowerBonus = 0, incantPowerBonus = 0;
   let skillFpCostReduction = 0, spellFpCostReduction = 0;
+  let guardBoostBonus = 0;
   let hasAny = false;
 
   for (const t of talismans) {
@@ -522,6 +569,7 @@ export function computeTalismanBonuses(
     if (eff.incantPowerBonus)  incantPowerBonus   += eff.incantPowerBonus;
     if (eff.skillFpCostReduction) skillFpCostReduction += eff.skillFpCostReduction;
     if (eff.spellFpCostReduction) spellFpCostReduction += eff.spellFpCostReduction;
+    if (eff.guardBoostBonus) guardBoostBonus += eff.guardBoostBonus;
   }
 
   return {
@@ -532,6 +580,7 @@ export function computeTalismanBonuses(
     physicalDefBonus, magicDefBonus, fireDefBonus, lightningDefBonus, holyDefBonus,
     skillDmgBonus, sorceryPowerBonus, incantPowerBonus,
     skillFpCostReduction, spellFpCostReduction,
+    guardBoostBonus,
     hasAny,
   };
 }

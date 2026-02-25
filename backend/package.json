@@ -16,7 +16,8 @@
     "patch-damage-types": "ts-node --project tsconfig.scripts.json scripts/patch-damage-types.ts",
     "patch-armor": "ts-node --project tsconfig.scripts.json scripts/patch-armor-precision.ts",
     "patch-armor:dry": "ts-node --project tsconfig.scripts.json scripts/patch-armor-precision.ts --dry-run",
-    "download-fandom": "ts-node --project tsconfig.scripts.json scripts/download-fandom-images.ts"
+    "download-fandom": "ts-node --project tsconfig.scripts.json scripts/download-fandom-images.ts",
+    "sync-scaling": "ts-node --project tsconfig.scripts.json scripts/sync-scaling.ts"
   },
   "jest": {
     "preset": "ts-jest",

@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import type { EquippedWeapon, CharacterStats } from '../../types';
 import { useTooltipPosition } from '../../hooks/useTooltipPosition';
 import { getTalismanEffectLines } from '../../utils/talismanEffects';
+import { getGreatRuneEffectLines } from '../../utils/greatRuneEffects';
 import { estimateARWithBreakdown } from '../../utils/arCalc';
 import styles from './ItemTooltip.module.css';
 
@@ -130,6 +131,7 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
     Object.values(item.scaling).some(v => v !== '-');
 
   const effectLines = getTalismanEffectLines(item.baseId ?? 0);
+  const greatRuneLines = getGreatRuneEffectLines(item.baseId ?? 0);
 
   // Subtítulo: tipo de arma + infusión, tipo de armadura, o categoría de escudo
   const subtitle = (() => {
@@ -207,13 +209,21 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         </div>
       )}
 
-      {/* ── Critical ── */}
+      {/* ── Critical + Riposte ── */}
       {item.critical != null && (
         <div className={styles.section}>
           <div className={styles.statRow}>
             <span className={styles.statLabel}>Critical</span>
             <span className={styles.statValue}>{item.critical}</span>
           </div>
+          {arData && item.critical > 100 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#e8c97a' }}>Riposte</span>
+              <span className={styles.statValue} style={{ color: '#e8c97a' }}>
+                ~{Math.round(arData.ar.total * item.critical / 100)}
+              </span>
+            </div>
+          )}
         </div>
       )}
 
@@ -383,6 +393,19 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Effect</div>
           {effectLines.map(({ label, value }) => (
+            <div key={label} className={styles.effectRow}>
+              <span className={styles.effectLabel}>{label}</span>
+              <span className={styles.effectValue}>{value}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* ── Great Rune effects ── */}
+      {!effectLines && greatRuneLines && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Great Rune Effect (activated)</div>
+          {greatRuneLines.map(({ label, value }) => (
             <div key={label} className={styles.effectRow}>
               <span className={styles.effectLabel}>{label}</span>
               <span className={styles.effectValue}>{value}</span>

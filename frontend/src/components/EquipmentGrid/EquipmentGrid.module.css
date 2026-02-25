@@ -89,3 +89,25 @@
   gap: 0.35rem;
   flex-wrap: wrap;
 }
+
+/* Slot with effect label below */
+.slotWithLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  max-width: 5.5rem;
+}
+
+.effectLabel {
+  font-size: 0.44rem;
+  color: var(--gold-dim);
+  text-align: center;
+  line-height: 1.2;
+  max-width: 5.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
