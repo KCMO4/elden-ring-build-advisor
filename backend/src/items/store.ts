@@ -56,6 +56,15 @@ export class ItemStore {
     this.spirits     = loadJson<Spirit>('spirits.json');
     this.consumables = loadJson<Consumable>('consumables.json');
 
+    // Merge talisman weights from curated data file
+    try {
+      const weights = require(path.join(DATA_DIR, 'talismanWeights.json')) as Record<string, number>;
+      for (const t of this.talismans) {
+        const w = weights[t.name];
+        if (w !== undefined) t.weight = w;
+      }
+    } catch { /* talismanWeights.json not found — weights stay undefined */ }
+
     this.weaponsByName   = new Map(this.weapons.map(w => [norm(w.name), w]));
     this.armorsByName    = new Map(this.armors.map(a => [norm(a.name), a]));
     this.talismansByName = new Map(this.talismans.map(t => [norm(t.name), t]));

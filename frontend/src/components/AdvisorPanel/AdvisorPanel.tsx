@@ -163,7 +163,7 @@ export default function AdvisorPanel({ stats, mainWeaponAR = 0, mainWeapon }: Pr
                 )}
 
                 <div className={styles.itemInfo}>
-                  <div className={styles.itemName} title={w.name}>{w.name}</div>
+                  <div className={styles.itemName}>{w.name}</div>
                   <div className={styles.itemType}>{w.type}</div>
                 </div>
 

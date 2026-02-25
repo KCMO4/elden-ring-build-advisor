@@ -10,6 +10,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 13,
+    "slots": 1,
+    "description": "An aberrant sorcery discovered by exiled criminals. Theirs are the sorceries most reviled by the academy. Wounds the caster with thorns of sin, sending a trail of bloodthorns running over the ground to impale enemies from below. This sorcery can be cast repeatedly. The guilty, their eyes gouged by thorns, lived in eternal darkness. There, they discovered the blood star.",
     "image": "/images/spells/17f69323f35l0hykrc6d1g3vajyc0n.webp"
   },
   {
@@ -23,6 +26,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 24,
+    "slots": 1,
+    "description": "Sorcery of the servants of Death.",
     "image": "/images/spells/17f697cbb96l0hykre66weonnfh81y.webp"
   },
   {
@@ -36,6 +42,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 9,
+    "slots": 1,
+    "description": "An aberrant sorcery, discovered along with red glintstone by those exiled to the north for their crimes. Summons large thorns from a whorl of blood shed by one's own hand in penance for sins. This sorcery can be cast repeatedly. The Academy reviles this sorcery, which draws its power from faith.",
     "image": "/images/spells/17f694c4b51l0hykrh5ekspavmcdh.webp"
   },
   {
@@ -49,6 +58,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 45,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Lobs an explosive magic projectile that flies in an arc. Charging enhances potency. Drawn from the conspectus of Haima, the adjudicator of the academy, this sorcery employs might as a means to quell conflict.",
     "image": "/images/spells/17f697763ffl0hykrjb9eqis858fj9.webp"
   },
   {
@@ -62,6 +74,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 16,
+    "slots": 1,
+    "description": "One of the night sorceries of Sellia, Town of Sorcery. Launches a projectile from a distance removed from the caster, so as to strike the enemy from behind. This sorcery can be cast repeatedly. The Sellian sorcerers were assassins, and it is said that they often hunted their fellows.",
     "image": "/images/spells/17f69548207l0hykrjxtjpw45plt0o.webp"
   },
   {
@@ -75,6 +90,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 26,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family.",
     "image": "/images/spells/17f69526092l0hykrkfqubdcrri5ri.webp"
   },
   {
@@ -88,6 +106,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 26,
+    "slots": 1,
+    "description": "Sorcery of Adula, the Glintstone Dragon. Conjures a cold magic greatsword, then delivers a sweeping blow that launches a blade-like projectile of frost. This sorcery can be cast repeatedly. Adula, a devourer of sorcerers, was bested by Ranni and subsequently swore a knightly oath to her Dark Moon.",
     "image": "/images/spells/17f69501669l0hykrly1hkzqhsjkgf.webp"
   },
   {
@@ -101,6 +122,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 16,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family. Conjures a magic greatsword and then delivers a sweeping blow. This sorcery can be cast repeatedly. Armed with this spell, sorcerers gain the strength of knights, their loyalty sworn to the moon.",
     "image": "/images/spells/17f698158cbl0hykro1lrfmqwblslj.webp"
   },
   {
@@ -114,6 +138,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 23,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family.",
     "image": "/images/spells/17f68f67eeal0hyksqja69pmxoh3yh.webp"
   },
   {
@@ -127,6 +154,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 8,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family.",
     "image": "/images/spells/17f691dc847l0hyksqn4eqkjcj7jls.webp"
   },
   {
@@ -140,6 +170,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 4,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family.",
     "image": "/images/spells/17f69526839l0hykt29wlkzjaekmfp.webp"
   },
   {
@@ -153,6 +186,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 14,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f697a3cebl0hykt5z1wd5xboo99x.webp"
   },
   {
@@ -166,6 +202,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 18,
+    "slots": 1,
+    "description": "One of the glintstone sorceries that manipulates gravitational forces.",
     "image": "/images/spells/17f6935c00al0hykt61d5dex7ibki.webp"
   },
   {
@@ -179,6 +218,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 40,
+    "slots": 3,
+    "description": "Legendary sorcery devised by Azur, primeval sorcerer. Fires a tremendous comet in a torrent akin to the distant starry expanse, the place said to be the origin of glintstone. Hold to continue releasing the sorcery's power. When Azur glimpsed into the primeval current, he saw darkness. He was left both bewitched and fearful of the abyss.",
     "image": "/images/spells/17f69383db4l0hykt8reipbquz8e6t.webp"
   },
   {
@@ -192,6 +234,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 14,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Fires a burst of glintstone crystal shards. This sorcery can be cast repeatedly and while in motion. Charging increases potency. A sorcery of the Crystal Cadre, a group of sorcerers who pursued the wisdom of stone - the secrets locked in the faint cogitation of the Crystalians.",
     "image": "/images/spells/17f69246033l0hykt9k2ifr73lab5s.webp"
   },
   {
@@ -205,6 +250,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 38,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Fires a great magical comet. This sorcery can be cast repeatedly and while in motion. Charging enhances potency. The greatest of the Karolos Conspectus's sorceries, that only a very few sorcerers have ever mastered.",
     "image": "/images/spells/17f69173b9bl0hyktcuppfyv71lx3.webp"
   },
   {
@@ -218,6 +266,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 24,
+    "slots": 1,
+    "description": "Sorcery of the mysterious Crystalians.",
     "image": "/images/spells/17f68f97095l0hykuc91iv4akp5w4i.webp"
   },
   {
@@ -231,6 +282,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 38,
+    "slots": 1,
+    "description": "Sorcery of the mysterious Crystalians. Creates a mass of crystal, then shatters it to scour a wide area with a violent rain of crystal shards. This sorcery is used by high-ranking adepts among the Crystalians. Some also call this sorcery \"the Crystal Sun.\"",
     "image": "/images/spells/17f69346f84l0hykudkkqg6v1lwpk.webp"
   },
   {
@@ -244,6 +298,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 25,
+    "slots": 1,
+    "description": "Sorcery of Fia, the Deathbed Companion. Creates a deathly mist before the caster, which inflicts Death blight upon those who enter. This sorcery can be cast while in motion. Charging enhances range of the mist. This sorcery was developed to oppose the Roundtable Hold, and is effective only against the Tarnished.",
     "image": "/images/spells/17f69402fafl0hykuks706v0mkdjbd.webp"
   },
   {
@@ -257,6 +314,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 25,
+    "slots": 1,
+    "description": "Forbidden sorcery of Sellia, Town of Sorcery. ",
     "image": "/images/spells/17f696b6eael0hykuqvnuxlujdx0r9.webp"
   },
   {
@@ -270,6 +330,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Sorcery said to have been used by the old snow witch. Enchants armament held in the right hand with frost. This sorcery can be cast while in motion. The snowy crone taught the young Ranni to fear the dark moon as she imparted her cold sorcery.",
     "image": "/images/spells/17f698816aal0hykuwweto12afmr3.webp"
   },
   {
@@ -283,6 +346,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 46,
+    "slots": 2,
+    "description": "The eldest primeval sorcery, said to have been discovered by an",
     "image": "/images/spells/17f69206fd7l0hykuyci822nhe618p.webp"
   },
   {
@@ -296,6 +362,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "Sorcery of the servants of Death.",
     "image": "/images/spells/17f6989bf92l0hykv0ugfsrr1nuyy6.webp"
   },
   {
@@ -309,6 +378,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Sorcery said to have been used by the old snow witch.",
     "image": "/images/spells/17f698eaeabl0hykv0y1tsef3d740n.webp"
   },
   {
@@ -322,6 +394,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 27,
+    "slots": 1,
+    "description": "One of the sorceries developed from the magma of Mt. Gelmir.",
     "image": "/images/spells/17f6970b6del0hykw6jbvxlnultl.webp"
   },
   {
@@ -335,6 +410,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 37,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Creates a magical greathammer and slams it down. Allows one follow-up attack. Drawn from the scholarly conspectus of Haima, the adjudicator of the academy, this sorcery employs might as a means to quell conflict.",
     "image": "/images/spells/17f697a11c6l0hykw8gs7a4bj2bzi.webp"
   },
   {
@@ -348,6 +426,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 10,
+    "slots": 1,
+    "description": "Fires a horizontal arc of magic that spreads outward. This sorcery can be cast repeteadly and while in motion.",
     "image": "/images/spells/17f6923b831l0hykweqyar0a2aerzn.webp"
   },
   {
@@ -361,6 +442,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 25,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Fires a magical comet with a trailing tail. This sorcery can be cast repeatedly and while in motion. Charging enhances potency. A sorcery of the Karolos Conspectus, the most venerable of the academy.",
     "image": "/images/spells/17f6933356el0hykwkb5c4f5eue05g.webp"
   },
   {
@@ -374,6 +458,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 7,
+    "slots": 1,
+    "description": "The most basic glintstone sorcery of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f692eb5c4l0hykwkentckpz3y24a.webp"
   },
   {
@@ -387,6 +474,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 14,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f6944ddfel0hykwkrvbsv9aa4yv.webp"
   },
   {
@@ -400,6 +490,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "Sorcery said to have been used by the old snow witch.",
     "image": "/images/spells/17f6964e156l0hykwlsm0jw2254jkf.webp"
   },
   {
@@ -413,6 +506,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family.",
     "image": "/images/spells/17f694aa956l0hykwnt8t2s7k2ohg8.webp"
   },
   {
@@ -426,6 +522,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "One of the glintstone sorceries that manipulates gravitational forces. Fires a projectile of condensed gravitational force. Those struck by it will be pulled toward the caster. Charging enhances potency. A gravitational technique studied by the young Radahn. His master was an Alabaster Lord with skin of stone.",
     "image": "/images/spells/17f68fa1c72l0hykxlbrlhvbrbbyqn.webp"
   },
   {
@@ -439,6 +538,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. The glintstone serves as a conduit, launching large magical projectiles at foes. This sorcery can be cast repeatedly and while in motion. Those unworthy of the stone crown typically end their brief journey into sorcery here.",
     "image": "/images/spells/17f696ff8b3l0hyky03xbsyxdc6ybe.webp"
   },
   {
@@ -452,6 +554,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 10,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family.",
     "image": "/images/spells/17f6916d3a1l0hyky82ck5l071k7zt.webp"
   },
   {
@@ -465,6 +570,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 43,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family. Creates a defensive arch of larger magic glintblades overhead, which automatically attack nearby foes. Used by the enchanted troll knights. They were the comrades of the young Rennala, bound by oath.",
     "image": "/images/spells/17f69580940l0hyky9z5ebz67i2kvd.webp"
   },
   {
@@ -478,6 +586,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 16,
+    "slots": 1,
+    "description": "Sorcery of the claymen who served as priests in the ancient",
     "image": "/images/spells/17f695ccb66l0hykyaen5y0w0khkll.webp"
   },
   {
@@ -491,6 +602,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "Sorcery of the claymen who served as priests in the ancient dynasty.",
     "image": "/images/spells/17f6971b61dl0hykyaiiyblbxaeim.webp"
   },
   {
@@ -504,6 +618,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "Sorcery used by Royal Knight Loretta. Creates a magic greatbow and fires a great arrow. Charging enhances potency. Hold to keep the great arrow nocked. It is said that the bow was Loretta's favored weapon.",
     "image": "/images/spells/17f6921c90fl0hykycr9xzxlra3r57.webp"
   },
   {
@@ -517,6 +634,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 50,
+    "slots": 1,
+    "description": "Sorcery used by Loretta, Knight of the Haligtree. Creates a magic greatbow and fires four great arrows simultaneously. Charging enhances potency. Hold to keep the great arrows nocked. Developed by Loretta after her long, bloody journey to seek out a place where the Albinaurics could live in peace. ",
     "image": "/images/spells/17f696d8893l0hykyj6qhbawvh09t.webp"
   },
   {
@@ -530,6 +650,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 25,
+    "slots": 1,
+    "description": "One of the sorceries of the Carian royal family.",
     "image": "/images/spells/17f69330670l0hykywaqrpmwdbzpyj.webp"
   },
   {
@@ -543,6 +666,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "An old sorcery of the Carian Royal Family.",
     "image": "/images/spells/17f69818087l0hykz26ox2vtdp84yq.webp"
   },
   {
@@ -556,6 +682,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 24,
+    "slots": 1,
+    "description": "One of the sorceries developed from the magma of Mt. Gelmir.",
     "image": "/images/spells/17f6985da4cl0hykzwl2ly1lk18kxg.webp"
   },
   {
@@ -569,6 +698,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "A glintstone sorcery that draws on gravitational force, used by a great white king with stone skin. Calls small meteorites down from the sky. The meteor shower continues for as long as the sorcery is in effect. It is said that, in the Eternal City, now lost in ruin underground, meteorites held the same import as stars.",
     "image": "/images/spells/17f6979d7f4l0hyl01q26suhho4xsd.webp"
   },
   {
@@ -582,6 +714,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "One of the night sorceries of Sellia, Town of Sorcery.",
     "image": "/images/spells/17f69763b5dl0hyl03j39aq843i4li.webp"
   },
   {
@@ -595,6 +730,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 60,
+    "slots": 2,
+    "description": "One of the glintstone sorceries that manipulates gravitational forces. Summons a void that emits a hail of meteorites. Hold to continue the effect. A manifestation of the power with which Astel leveled the Eternal City.",
     "image": "/images/spells/17f68fe64del0hyl068olsfxrrts7.webp"
   },
   {
@@ -608,6 +746,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 7,
+    "slots": 1,
+    "description": "One of the night sorceries of Sellia, Town of Sorcery. ",
     "image": "/images/spells/17f69717eddl0hyl0exs9l0a0sdw6s.webp"
   },
   {
@@ -621,6 +762,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "One of the night sorceries of Sellia, Town of Sorcery.",
     "image": "/images/spells/17f690350b7l0hyl0i9t31pb2ahyzj.webp"
   },
   {
@@ -634,6 +778,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 14,
+    "slots": 1,
+    "description": "Sorcery of the servants of Death.",
     "image": "/images/spells/17f69062ddbl0hyl0j0sh5cueid15m.webp"
   },
   {
@@ -647,6 +794,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "Sorcery of the claymen who served as priests in the ancient",
     "image": "/images/spells/17f698db556l0hyl0jjihm0vl3xdwh.webp"
   },
   {
@@ -660,6 +810,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 55,
+    "slots": 2,
+    "description": "Sorcery associated with the Carian queen. Uses the caster as a vessel to incarnate a full moon, then sends it floating toward foes. The full moon dispels all sorcery that touches it, and temporarily reduces magic damage negation for those it strikes. Queen Rennala encountered this enchanting moon when she was young, and later, it would bewitch the academy.",
     "image": "/images/spells/17f696ded8bl0hyl1chm38nbkimwj9.webp"
   },
   {
@@ -673,6 +826,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 62,
+    "slots": 2,
+    "description": "Legendary sorcery associated with the Carian queen. ",
     "image": "/images/spells/17f6933fcffl0hyl1h3yit07w1s9ta.webp"
   },
   {
@@ -686,6 +842,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f6960508el0hyl1nhkrxurxy1oqd.webp"
   },
   {
@@ -699,6 +858,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "One of the sorceries developed from the magma of Mt. Gelmir. Fires a lump of condensed magma that explodes a short delay after hitting the target. Charging enhances potency and further delays the explosion. After discovering the ancient hexes of Gelmir, Rykard, son of Queen Rennala, brought them back into practical use as new forms of sorcery.",
     "image": "/images/spells/17f695b8eb1l0hyl1wwn8bq4hod2yh.webp"
   },
   {
@@ -712,6 +874,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 35,
+    "slots": 2,
+    "description": "The terrible power of Rykard, Lord of Blasphemy. ",
     "image": "/images/spells/17f6956b602l0hyl1xzxdrjbidynzq.webp"
   },
   {
@@ -725,6 +890,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 18,
+    "slots": 1,
+    "description": "One of the glintstone sorceries that manipulates gravitational forces. ",
     "image": "/images/spells/17f697513fdl0hyl1yp7y0bcj3si6i.webp"
   },
   {
@@ -738,6 +906,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 25,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f694eec4fl0hyl27r5xh06ckw1so.webp"
   },
   {
@@ -751,6 +922,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f69379d7el0hyl27xfguetq35bni.webp"
   },
   {
@@ -764,6 +938,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 16,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f69233f99l0hyl32ixqa8cf501y.webp"
   },
   {
@@ -777,6 +954,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Imbues the ferrule of the caster's staff with magic, then thrusts it into the ground to create a magical shockwave. Allows one follow-up attack. A Stonedigger sorcery used by the glintstone miners of the crystal tunnel. At the academy, use of this sorcery was a stigma that marked out failed scholars.",
     "image": "/images/spells/17f69240fcdl0hyl38ber0x0u7bv3d.webp"
   },
   {
@@ -790,6 +970,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria.",
     "image": "/images/spells/17f6902b989l0hyl3f6iorcnaeypi.webp"
   },
   {
@@ -803,6 +986,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Fires six magic shooting stars that pursue the target. This sorcery can be cast while in motion. Charging enhances potency. The most difficult to master of the Olivinus Conspectus sorceries.",
     "image": "/images/spells/17f693402e5l0hyl3gzhtqb01yjf3k.webp"
   },
   {
@@ -816,6 +1002,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 50,
+    "slots": 1,
+    "description": "Legendary sorcery devised by Lusat, primeval sorcerers. ",
     "image": "/images/spells/17f6974051al0hyl3kcvhpy2j6smf.webp"
   },
   {
@@ -829,6 +1018,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "Sorcery of the mysterious Crystalians. Creates a mass of crystal, then shatters it in a forward burst. Charging enhances potency. The Crystalians are inorganic beings, yet they live. They cleave close to the ideals of the primeval current, and as such, they are revered guests of the sorcerers.",
     "image": "/images/spells/17f696ec037l0hyl3ngvf00twpbcg.webp"
   },
   {
@@ -842,6 +1034,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 5,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. The glintstone serves as a conduit, launching swift magical projectiles at foes. This sorcery can be used without delay after performing another action. Those unworthy of the stone crown typically end their brief journey into sorcery here.",
     "image": "/images/spells/17f69183747l0hyl3o1tnkgev3q3qs.webp"
   },
   {
@@ -855,6 +1050,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "One of the glintstone sorceries of the Academy of Raya Lucaria. Draws an academy sigil upon the ground, raising the magic strength of those within. Once, the sigil would be cast from the highest belfry of the academy, covering the entire institution's grounds. This spell allows such vivid experience of spell—casting success, it turns many a fledgling into a true sorcerer in a flash of newfound understanding.",
     "image": "/images/spells/17f694f65f4l0hyl3qlnj0oepap3pg.webp"
   },
   {
@@ -868,6 +1066,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 18,
+    "slots": 1,
+    "description": "One of the night sorceries of Sellia, Town of Sorcery. Enchants armament held in right hand, making it completely invisible. This sorcery can be cast while in motion. Used by Sellian assassins to present themselves as unarmed sorcerers.",
     "image": "/images/spells/17f69321284l0hyl4lnndsfcv2un9k.webp"
   },
   {
@@ -881,6 +1082,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "One of the night sorceries of Sellia, Town of Sorcery. Makes the caster semi-invisible. While on horseback, effect extends to cover the mount. This sorcery can be cast while in motion. The Sellian assassins considered every option that aided their dirty work.",
     "image": "/images/spells/17f698ec32bl0hyl4ouriysbeaoqvp.webp"
   },
   {
@@ -894,6 +1098,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 7,
+    "slots": 1,
+    "description": "The lifelong pursuit of Thops the Bluntstone.",
     "image": "/images/spells/17f69332a7cl0hyl4q0ahq1rhl510s.webp"
   },
   {
@@ -907,6 +1114,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 22,
+    "slots": 1,
+    "description": "Ice sorcery of the Town of Zamor.",
     "image": "/images/spells/17f693b4e3cl0hyl4rjaph3b2vbtk5.webp"
   },
   {
@@ -920,6 +1130,9 @@
       "fai": 0,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Sorcery of the servants of Death. Summons a group of Those Lost in Death. Three skeletons will appear some distance from the caster and attack foes before disappearing. The dead have long been left to wander; what they need is leadership.",
     "image": "/images/spells/17f692e03b8l0hyl4rlgts2b9n06wj.webp"
   },
   {
@@ -933,6 +1146,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 27,
+    "slots": 1,
+    "description": "A secret incantation of the capital's ancient dragon cult.",
     "image": "/images/spells/17f696c7ce7l0hynrwmh6d0r0rwk2.webp"
   },
   {
@@ -946,6 +1162,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "One of the ancient Erdtree incantations.",
     "image": "/images/spells/17f695ad891l0hynrxcposdnx7gy9h.webp"
   },
   {
@@ -959,6 +1178,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "Superior incantation of Dragon Communion. Channels the power of the flying dragon Agheel.",
     "image": "/images/spells/17f690dc5ael0hynrxf3lq1w3xcjpr.webp"
   },
   {
@@ -972,6 +1194,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "One of the ancient Erdtree incantations.",
     "image": "/images/spells/17f693bd4f8l0hynrzaixs0xzre1q.webp"
   },
   {
@@ -985,6 +1210,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "One of the incantations of Erdtree Worship. ",
     "image": "/images/spells/17f698483c9l0hyns2v5nt60a29sd.webp"
   },
   {
@@ -998,6 +1226,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "A secret incantation of the capital's ancient dragon cult.",
     "image": "/images/spells/17f6911d8c2l0hyns4qd7p9pfucu26.webp"
   },
   {
@@ -1011,6 +1242,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 10,
+    "slots": 1,
+    "description": "Incantation taught by Gurranq, the Beast Clergyman.",
     "image": "/images/spells/17f690418f4l0hyns68vsg9zhbc6w.webp"
   },
   {
@@ -1024,6 +1258,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 28,
+    "slots": 1,
+    "description": "One of the ancient Erdtree incantations.",
     "image": "/images/spells/17f693c22edl0hynsdj8fz0ddz4vni.webp"
   },
   {
@@ -1037,6 +1274,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 10,
+    "slots": 1,
+    "description": "Incantation taught by Gurranq, the Beast Clergyman.",
     "image": "/images/spells/17f69691e79l0hyntbidbq75lrrjb7.webp"
   },
   {
@@ -1050,6 +1290,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 7,
+    "slots": 1,
+    "description": "Incantation taught by Gurranq, the Beast Clergyman. Swiftly flings a number of sharp rock shards. This incantation can be cast without delay after performing another action. It is said that in the time before the Erdtree, stones were the first weapons of the beasts who had gained intelligence.",
     "image": "/images/spells/17f68f98778l0hynteevtb4hr6x90d.webp"
   },
   {
@@ -1063,6 +1306,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 26,
+    "slots": 2,
+    "description": "Power gleaned from the remembrance of Maliketh.",
     "image": "/images/spells/17f69160ac9l0hynthagycs7dr7gq7.webp"
   },
   {
@@ -1076,6 +1322,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 24,
+    "slots": 1,
+    "description": "Superior black flame incantation of the Godskin Apostles. ",
     "image": "/images/spells/17f69860befl0hyntmsoo0kq76fsvd.webp"
   },
   {
@@ -1089,6 +1338,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "A black flame incantation of the Godskin Apostles.",
     "image": "/images/spells/17f6982c810l0hyntn0pvua05sv3w.webp"
   },
   {
@@ -1102,6 +1354,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "A black flame incantation of the Godskin Apostles. ",
     "image": "/images/spells/17f692ee649l0hyntu1vu7cu8wxah.webp"
   },
   {
@@ -1115,6 +1370,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 18,
+    "slots": 1,
+    "description": "Incantation taught by Gurranq, the Beast Clergyman.",
     "image": "/images/spells/17f6955e547l0hyntv29oe95w4kpxj.webp"
   },
   {
@@ -1128,6 +1386,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "A black flame incantation of the Godskin Apostles.",
     "image": "/images/spells/17f694f1c32l0hynu33qh2e3un2g1.webp"
   },
   {
@@ -1141,6 +1402,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 23,
+    "slots": 1,
+    "description": "One of the ancient Erdtree incantations.",
     "image": "/images/spells/17f69801f77l0hynudtg36sba9k5lr.webp"
   },
   {
@@ -1154,6 +1418,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 60,
+    "slots": 2,
+    "description": "One of the ancient Erdtree incantations",
     "image": "/images/spells/17f690ba6e1l0hynuyuvb7sle1w35.webp"
   },
   {
@@ -1167,6 +1434,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "A Blood Oath incantation, granted by the Lord of Blood. Engulfs armament held in the right hand with bloodflame. This incantation can be cast while in motion. After dealing damage, bloodflame continues to build up onset of blood loss for a very short time.",
     "image": "/images/spells/17f697aaf25l0hynv3bmpsnp4lpnd.webp"
   },
   {
@@ -1180,6 +1450,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 18,
+    "slots": 1,
+    "description": "A Blood Oath incantation, granted by the Lord of Blood.",
     "image": "/images/spells/17f6973c98fl0hynv5gnjf09yvy8y.webp"
   },
   {
@@ -1193,6 +1466,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "Sacred incantation of Mohg, Lord of Blood.",
     "image": "/images/spells/17f68fd9537l0hynv7q0d210i53bym9.webp"
   },
   {
@@ -1206,6 +1482,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 48,
+    "slots": 1,
+    "description": "Superior incantation of Dragon Communion.",
     "image": "/images/spells/17f695324del0hynv9a91iu7h3knff.webp"
   },
   {
@@ -1219,6 +1498,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 7,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' faithful.",
     "image": "/images/spells/17f694bc935l0hynvcwx4oahz00k48.webp"
   },
   {
@@ -1232,6 +1514,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "One of the incantations that draws directly from the power of the",
     "image": "/images/spells/17f696d3fddl0hynve32uy42tb6pip.webp"
   },
   {
@@ -1245,6 +1530,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 26,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' servants, who once served as the ",
     "image": "/images/spells/17f690b63a9l0hynvpzqrouoa3uwo.webp"
   },
   {
@@ -1258,6 +1546,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 46,
+    "slots": 2,
+    "description": "Incantation that channels the power of the ancient dragon",
     "image": "/images/spells/17f6907b527l0hynw9qj9bgu0iu0x.webp"
   },
   {
@@ -1271,6 +1562,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 11,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists. ",
     "image": "/images/spells/17f69836ab4l0hynwcix7z37ngspv.webp"
   },
   {
@@ -1284,6 +1578,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' faithful.",
     "image": "/images/spells/17f695c512fl0hynwmn3k7xy8866e.webp"
   },
   {
@@ -1297,6 +1594,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Superior incantation of the capital's ancient dragon cult. Summons lightning to bolster the caster's body. Attacks become easier to deflect and resistance to all ailments is increased. However, lightning damage negation will be reduced. Only those loved by dragons can survive the ordeal of cladding their bodies in lightning.",
     "image": "/images/spells/17f69850e86l0hynws5vlzzny9q7y.webp"
   },
   {
@@ -1310,6 +1610,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "One of the incantations of Dragon Communion.",
     "image": "/images/spells/17f695ddd2cl0hynwt4kcvu1t0jpbh.webp"
   },
   {
@@ -1323,6 +1626,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 42,
+    "slots": 1,
+    "description": "One of the incantations of Dragon Communion.",
     "image": "/images/spells/17f695ee05cl0hynwvuh9iqspb3fmk.webp"
   },
   {
@@ -1336,6 +1642,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 28,
+    "slots": 1,
+    "description": "One of the incantations of Dragon Communion.",
     "image": "/images/spells/17f6919abe5l0hynwx7opzx5u5zvs.webp"
   },
   {
@@ -1349,6 +1658,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 62,
+    "slots": 1,
+    "description": "One of the incantations of Dragon Communion.",
     "image": "/images/spells/17f68f9d130l0hynx3f1brjxtzdk9j.webp"
   },
   {
@@ -1362,6 +1674,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 48,
+    "slots": 1,
+    "description": "Superior incantation of Dragon Communion. Channels the power of Ekzykes, the Decaying.",
     "image": "/images/spells/17f6909836cl0hynxdbh1rpx4s4xfb.webp"
   },
   {
@@ -1375,6 +1690,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 48,
+    "slots": 1,
+    "description": "Superior incantation of Dragon Communion. Channels the power of Ekzykes, the Decaying.",
     "image": "/images/spells/17f693fa72dl0hynxecsuhc2twylv.webp"
   },
   {
@@ -1388,6 +1706,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 26,
+    "slots": 1,
+    "description": "Incantation originating from a deeply ominous prophecy.",
     "image": "/images/spells/17f694fc4c1l0hynyj2kcaruicejdh.webp"
   },
   {
@@ -1401,6 +1722,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 65,
+    "slots": 1,
+    "description": "One of the ancient Erdtree incantations.",
     "image": "/images/spells/17f698775c6l0hynyj6kv53b13zexj.webp"
   },
   {
@@ -1414,6 +1738,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 24,
+    "slots": 1,
+    "description": "One of the incantations that draws directly from the power of the",
     "image": "/images/spells/17f6908edd1l0hynyjh9vrt6fwxg9g.webp"
   },
   {
@@ -1427,6 +1754,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 48,
+    "slots": 1,
+    "description": "Spews scarlet rot breath of Ekzykes from above",
     "image": "/images/spells/17f692cd88cl0hynyo45u48tb1tyn.webp"
   },
   {
@@ -1440,6 +1770,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 21,
+    "slots": 1,
+    "description": "One of the incantations of the capital's ancient dragon cult.",
     "image": "/images/spells/17f691a5912l0hynyooe4izs5zxh3t.webp"
   },
   {
@@ -1453,6 +1786,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' faithful. ",
     "image": "/images/spells/17f6985c468l0hynypycnlfmwjdzds.webp"
   },
   {
@@ -1466,6 +1802,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 2,
+    "description": "This legendary incantation is one of several that draws directly from the power of the Fire Giants. Releases a ball of raging fire said to be inhabited by a fell god. The fireball floats toward enemies and explodes, setting the area ablaze. Arghanthy, the chief guardian of the Flame, had kept this incantation a well-kept secret until it was stolen by Adan. The fell god still lurks within the Fire Giants.",
     "image": "/images/spells/17f6964ed65l0hynyrzn67dmtv89e.webp"
   },
   {
@@ -1479,6 +1818,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 47,
+    "slots": 2,
+    "description": "This legendary incantation is the most ancient of those that derive from the Erdtree.",
     "image": "/images/spells/17f69225db6l0hynyujjw6qxgtrbk.webp"
   },
   {
@@ -1492,6 +1834,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "The most ancient of the Fire Monks' incantations.",
     "image": "/images/spells/17f692f5b38l0hynzsnci8jsfgasx6.webp"
   },
   {
@@ -1505,6 +1850,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 64,
+    "slots": 1,
+    "description": "Incantation that channels the power of the ancient dragon Fortissax. ",
     "image": "/images/spells/17f693ad486l0hynztvo8jus81t2uf.webp"
   },
   {
@@ -1518,6 +1866,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "Incantation that channels the power of the Dragonkin Soldiers. Creates a spear of ice lightning and stabs it into the ground from above. On impact, the spear will burst into trails of lightning advancing forwards. The Dragonkin were born in the Eternal City, where they knew no true sky, nor true lightning. Instead, ice lightning was their weapon.",
     "image": "/images/spells/17f6939dc0dl0hyo003ig3i03oy5eh.webp"
   },
   {
@@ -1531,6 +1882,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "One of the incantations of Dragon Communion.",
     "image": "/images/spells/17f695939cbl0hyo0116aw3hbaoca.webp"
   },
   {
@@ -1544,6 +1898,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "An incantation of Erdtree Worship.",
     "image": "/images/spells/17f68ff32f6l0hyo035frl5ld6347k.webp"
   },
   {
@@ -1557,6 +1914,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 24,
+    "slots": 1,
+    "description": "Incantations originating from the maddening Three Fingers.",
     "image": "/images/spells/17f690e9092l0hyo03nyw25bgiu4hs.webp"
   },
   {
@@ -1570,6 +1930,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 2,
+    "description": "One of the incantations that draws directly from the power of the",
     "image": "/images/spells/17f695e7bcdl0hyo059aa6ajju2es.webp"
   },
   {
@@ -1583,6 +1946,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 47,
+    "slots": 1,
+    "description": "An incantation of Erdtree Worship.",
     "image": "/images/spells/17f69510ee3l0hyo0f0mccaj31dwhq.webp"
   },
   {
@@ -1596,6 +1962,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 21,
+    "slots": 1,
+    "description": "Superior incantation taught by Gurranq, the Beast Clergyman. ",
     "image": "/images/spells/17f69535c25l0hyo1gmmkqtdazls9.webp"
   },
   {
@@ -1609,6 +1978,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists. ",
     "image": "/images/spells/17f69822dd3l0hyo1hzk48p9uymlan.webp"
   },
   {
@@ -1622,6 +1994,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' faithful.",
     "image": "/images/spells/17f692dbdc9l0hyo1jah0ket283h6d.webp"
   },
   {
@@ -1635,6 +2010,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 21,
+    "slots": 1,
+    "description": "Incantation originating from the maddening Three Fingers. ",
     "image": "/images/spells/17f69430705l0hyo1jpd17zxxmmdyl.webp"
   },
   {
@@ -1648,6 +2026,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 45,
+    "slots": 1,
+    "description": "Superior incantation of the Two Fingers' faithful.",
     "image": "/images/spells/17f6926bc7dl0hyo1ku9wh0qz4eyh6.webp"
   },
   {
@@ -1661,6 +2042,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 75,
+    "slots": 2,
+    "description": "Superior incantation of Dragon Communion. Channels the power of Greyoll, the Elder Dragon. An incantation of legendary status.",
     "image": "/images/spells/17f693e76abl0hyo1mzypokk5gvlz.webp"
   },
   {
@@ -1674,6 +2058,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 32,
+    "slots": 1,
+    "description": "Incantation originating from the maddening Three Fingers. ",
     "image": "/images/spells/17f68fa0c30l0hyo1qasgyir08s9kb.webp"
   },
   {
@@ -1687,6 +2074,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "One of the incantations of the capital's ancient dragon cult.",
     "image": "/images/spells/17f6904f3b2l0hyo1u5sqdw9zxr0g.webp"
   },
   {
@@ -1700,6 +2090,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 35,
+    "slots": 1,
+    "description": "Incantation that channels the powr of the ancient dragon Lansseax.",
     "image": "/images/spells/17f69773db5l0hyo3532itzerrsdj.webp"
   },
   {
@@ -1713,6 +2106,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' faithful. ",
     "image": "/images/spells/17f696de88al0hyo39vlr771is6fv.webp"
   },
   {
@@ -1726,6 +2122,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 9,
+    "slots": 1,
+    "description": "Incantation bestowed by the Two Fingers upon the Tarnished",
     "image": "/images/spells/17f69602ae3l0hyo3a6ruzolnobp3o.webp"
   },
   {
@@ -1739,6 +2138,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 14,
+    "slots": 1,
+    "description": "One of the incantations of the capital's ancient dragon cult. Summons a lightning spear and hurls it before the caster. Charging causes a lightning bolt to strike the point ofimpact. Long ago, Godwyn the Golden defeated the ancient dragon Fortissax, and befriended his fallen foe — an event that gave rise to the ancient dragon cult in the capital.",
     "image": "/images/spells/17f6908485dl0hyo3bkdtot70uk3p4.webp"
   },
   {
@@ -1752,6 +2154,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 22,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists.",
     "image": "/images/spells/17f6933b1fdl0hyo3bz9d9loqhf9qh.webp"
   },
   {
@@ -1765,6 +2170,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 17,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists. ",
     "image": "/images/spells/17f6908f509l0hyo3cd6br7iexs0ys.webp"
   },
   {
@@ -1778,6 +2186,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 55,
+    "slots": 1,
+    "description": "Incantation of the Golden Order fundamentalists. One of the key fundamentals. Heals all negative statuses, dispels special effects, and reveals mimicry in all its forms. The fundamentalists describe the Golden Order through the powers of regression and causality. Regression is the pull of meaning; that all things yearn eternally to converge.",
     "image": "/images/spells/17f693addcel0hyo3dh93zpcxbralt.webp"
   },
   {
@@ -1791,6 +2202,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 17,
+    "slots": 1,
+    "description": "One of the incantations of the capital's ancient dragon cult.",
     "image": "/images/spells/17f69522233l0hyo3e7aqun8itt9a.webp"
   },
   {
@@ -1804,6 +2218,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "Incantation taught to Gideon the All-Knowing by the Two",
     "image": "/images/spells/17f6988869dl0hyo4qsblr2lchs3q7.webp"
   },
   {
@@ -1817,6 +2234,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 42,
+    "slots": 1,
+    "description": "Incantation bestowed by the Two Fingers upon the Tarnished",
     "image": "/images/spells/17f69634f78l0hyo4s4zggpkf72qsp.webp"
   },
   {
@@ -1830,6 +2250,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists.",
     "image": "/images/spells/17f68fdec40l0hyo4sbk8kjcr4p6lp.webp"
   },
   {
@@ -1843,6 +2266,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Ancient power of the Godskin Nobles. ",
     "image": "/images/spells/17f6962911el0hyo4s02nf0ie24nvc.webp"
   },
   {
@@ -1856,6 +2282,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 22,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists. Used by hunters of Those Who Live in Death. Enchants armament held in the right hand with holy-affinity attacks. This incantation is especially damaging to Those Who Live in Death. Any felled by this incantation cannot be revived. The role of the hunters is to stamp out defiled reason - all for the perfection of the Golden Order.",
     "image": "/images/spells/17f692fa4d2l0hyo4uc4mjru3qoaee.webp"
   },
   {
@@ -1869,6 +2298,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 20,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' faithful. Increases magic damage negation. This incantation can be cast while in motion. Follow the path that has been set for you, and you will make enemies of all others: the monks, the sorcerers, the ancient dragon knights, and the scions of gold. Heed me – the Lands Between offers no welcome to the Tarnished.",
     "image": "/images/spells/17f69295d83l0hyo4wyff4k2r6tkno.webp"
   },
   {
@@ -1882,6 +2314,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 12,
+    "slots": 1,
+    "description": "Incantation of the Fire Monks.",
     "image": "/images/spells/17f6946750bl0hyo4yckgppsbgjyai.webp"
   },
   {
@@ -1895,6 +2330,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "One of the incantations of Dragon Communion. ",
     "image": "/images/spells/17f6917092dl0hyo511p1ard3b4xwm.webp"
   },
   {
@@ -1908,6 +2346,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 19,
+    "slots": 1,
+    "description": "Incantation of the servants of rot.",
     "image": "/images/spells/17f6971f6b6l0hyo69cly6crooe39.webp"
   },
   {
@@ -1921,6 +2362,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 30,
+    "slots": 1,
+    "description": "A superior incantation of Erdtree Worship. Increase damage negation for all affinities except physical, for both the caster and nearby allies. Hold to continue praying and delay activation. In the beginning, everything was in opposition to the Erdtree. But through countless victories in war, it became the embodiment of Order.",
     "image": "/images/spells/protection-of-the-erdtree.webp"
   },
   {
@@ -1934,6 +2378,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "Incantation of the servants of rot. Enchants armament held in the right hand with poison. This incantation can be cast while in motion. Those who dwell within poison know rot all too well. The death that begets life, that comes to all equally. That is to say: it is the cycle of rebirth put into practice.",
     "image": "/images/spells/17f6922607fl0hyo6c1nfqul6hljpg.webp"
   },
   {
@@ -1947,6 +2394,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 80,
+    "slots": 3,
+    "description": "Power gleaned form the remembrance of Dragonlord Placidusax. ",
     "image": "/images/spells/17f6958b760l0hyo6c41h81a4ao9ihh.webp"
   },
   {
@@ -1960,6 +2410,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 18,
+    "slots": 1,
+    "description": "Incantation of the servants of rot.",
     "image": "/images/spells/17f695abe1dl0hyo6ddrxsg47tz9j9.webp"
   },
   {
@@ -1973,6 +2426,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 29,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists.",
     "image": "/images/spells/17f69215aafl0hyo6fnokhkxl7dq4p.webp"
   },
   {
@@ -1986,6 +2442,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "One of the incantations of Dragon Communion.",
     "image": "/images/spells/17f6968b28dl0hyo6loaay43jahfcp.webp"
   },
   {
@@ -1999,6 +2458,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 9,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' faithful.",
     "image": "/images/spells/17f695dd7d9l0hyo6nbzipolrbtuxg.webp"
   },
   {
@@ -2012,6 +2474,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 36,
+    "slots": 1,
+    "description": "Superior incantation of Dragon Communion.",
     "image": "/images/spells/17f694d5050l0hyo7rhkcg4j0qaii.webp"
   },
   {
@@ -2025,6 +2490,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "Superior incantation taught by Gurranq, the Beast Clergyman. ",
     "image": "/images/spells/17f69771088l0hyo7tmllgof77289o.webp"
   },
   {
@@ -2038,6 +2506,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 1,
+    "slots": 1,
+    "description": "Superior incantation of the Fire Monks.",
     "image": "/images/spells/17f692aa326l0hyo81f3t0bbkonkwh.webp"
   },
   {
@@ -2051,6 +2522,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 15,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers' sewants, who once served as the",
     "image": "/images/spells/17f691c3d89l0hyo81xcmf8pooodpu.webp"
   },
   {
@@ -2064,6 +2538,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 27,
+    "slots": 1,
+    "description": "A black flame incantation of the Godskin Apostles. Sweeps a wide area before the caster with black flame. Charging enhances range. The black flame could once slay gods. But when Maliketh sealed Destined Death, the true power of the black flame was lost.",
     "image": "/images/spells/17f692422c4l0hyo84mlas2e4zch5.webp"
   },
   {
@@ -2077,6 +2554,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 56,
+    "slots": 3,
+    "description": "Technique of Malenia, the Goddess of Rot. ",
     "image": "/images/spells/17f6904109al0hyo84mydzpc5usap9.webp"
   },
   {
@@ -2090,6 +2570,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 14,
+    "slots": 1,
+    "description": "A Blood Oath incantation, shared from the Lord of Blood's power. Releases a swarm of bloodflies before the caster to assault foes. The vile swarm deals damage and builds up onset of blood loss. This incantation can be cast while in motion. The new palace of the Lord of Blood lies in a swamp of festering blood, and these flies are said to spawn from excrement in that land. ",
     "image": "/images/spells/17f6925361el0hyo84va1dajld4erh.webp"
   },
   {
@@ -2103,6 +2586,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 16,
+    "slots": 1,
+    "description": "Incantation originating from the maddening Three Fingers.",
     "image": "/images/spells/17f69632226l0hyo91iqbjmg4xbw1.webp"
   },
   {
@@ -2116,6 +2602,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 45,
+    "slots": 1,
+    "description": "Superior incantation of Dragon Communion. Channels the power of the great wyrm Theodorix. Transforms caster into a great wyrm to spew a large volume of magma breath. Allows one follow-up attack. The name of the ancient troll warrior Theodorix lives on — as a hero of the War against the Giants.",
     "image": "/images/spells/17f69603e55l0hyo92oip6kr38j99r.webp"
   },
   {
@@ -2129,6 +2618,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 42,
+    "slots": 1,
+    "description": "Incantation originating from the maddening Three Fingers. Causes the yellow flame of frenzy to violently burst forth from the caster's eyes. Hold to continue channeling the flame. This incantation can be used while in motion. It is the maddening pain and unstoppable tears of those afflicted with the flame of frenzy brought into being. ",
     "image": "/images/spells/17f692da48al0hyo9dril53k44haam.webp"
   },
   {
@@ -2142,6 +2634,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 23,
+    "slots": 1,
+    "description": "One of the incantations of the Golden Order fundamentalists. Produces three rings of light and fires them forwards. The rings of light return to a position close to the caster before disappearing. This incantation can be cast repeatedly. A gift from the young Ivliquella to his father, Radagon.",
     "image": "/images/spells/17f6912a13el0hyo9e5e3yb9u659qs.webp"
   },
   {
@@ -2155,6 +2650,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 21,
+    "slots": 1,
+    "description": "Superior Incantation of the Fire Monks. ",
     "image": "/images/spells/17f690c2762l0hyo9glzbxuxlwc2dh.webp"
   },
   {
@@ -2168,6 +2666,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 27,
+    "slots": 1,
+    "description": "Incantation of Vyke, knight of the Roundtable Hold.",
     "image": "/images/spells/17f694ba1f5l0hyo9j21xk3iv8ws5v.webp"
   },
   {
@@ -2181,6 +2682,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 16,
+    "slots": 1,
+    "description": "Incantation of the Two Fingers faithful.",
     "image": "/images/spells/17f698ccf55l0hyo9juunjo3lodn1n.webp"
   },
   {
@@ -2194,6 +2698,9 @@
       "fai": 10,
       "arc": 0
     },
+    "cost": 40,
+    "slots": 1,
+    "description": "Superior Erdtree Worship incantation. Produces a golden shockwave that knocks back nearby foes. Charging increases the size of the shockwave. This incantation was discovered when the Elden Ring was shattered, and it was feared as a sign of the Erdtree's wrath.",
     "image": "/images/spells/17f693ca95el0hyo9lhohewhkatfd.webp"
   }
 ]

@@ -20,7 +20,7 @@ export default function CharacterSelect({ characters, onSelect, onBack }: Props)
       <div className={styles.grid}>
         {active.map((char, i) => (
           <div key={i} className={styles.card} onClick={() => onSelect(char)}>
-            <div className={styles.cardName} title={char.name}>{char.name}</div>
+            <div className={styles.cardName}>{char.name}</div>
             <div className={styles.cardLevel}>Level {char.level}</div>
           </div>
         ))}

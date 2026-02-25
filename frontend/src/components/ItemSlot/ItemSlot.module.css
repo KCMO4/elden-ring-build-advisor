@@ -223,8 +223,30 @@
   line-height: 1.3;
 }
 
-.frame[title] {
-  cursor: help;
+/* ── Spell type frame colors ──────────────────────────── */
+.frameSorcery {
+  outline-color: #6a7dc4;
+  border-color: #2a3575;
+}
+.frameIncantation {
+  outline-color: #c9a74f;
+  border-color: #5a4820;
+}
+
+/* ── FP cost badge (spells, top-right) ───────────────── */
+.fpBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(80, 144, 208, 0.85);
+  color: #fff;
+  font-size: 0.48rem;
+  font-weight: 700;
+  padding: 1px 3px;
+  border-radius: 0;
+  font-family: var(--font-ui);
+  z-index: 3;
+  line-height: 1.2;
 }
 
 /* ── Badge de efectos de talismán ──────────────────────── */

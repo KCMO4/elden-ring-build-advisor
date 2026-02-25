@@ -76,6 +76,17 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Slots label */
+.slotsLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #a080d0;
+  background: rgba(160, 128, 208, 0.12);
+  border: 1px solid rgba(160, 128, 208, 0.25);
+  padding: 0 5px;
+}
+
 /* Tipo de hechizo (Sorcery / Incantation) */
 .spellType {
   font-size: 0.65rem;

@@ -25,8 +25,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 28
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c35d2cl0i1oh7zuqfb3mdvsj.webp"
+    "image": "/images/weapons/17f69c35d2cl0i1oh7zuqfb3mdvsj.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1001000,
@@ -54,8 +66,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69667224l0i1ohar280aeoxkl6z.webp"
+    "image": "/images/weapons/17f69667224l0i1ohar280aeoxkl6z.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1002000,
@@ -83,8 +107,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 27,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f695c42f0l0i1ohb4cao0qxackpu.webp"
+    "image": "/images/weapons/17f695c42f0l0i1ohb4cao0qxackpu.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1003000,
@@ -112,8 +148,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 51,
+      "magic": 34,
+      "fire": 34,
+      "lightning": 34,
+      "holy": 34,
+      "boost": 34
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c6388cl0i1ohcb8denrbpuhqs.webp"
+    "image": "/images/weapons/17f69c6388cl0i1ohcb8denrbpuhqs.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1004000,
@@ -141,8 +189,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f699dbb9dl0i1ohfs2g1wqxwja74.webp"
+    "image": "/images/weapons/17f699dbb9dl0i1ohfs2g1wqxwja74.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1005000,
@@ -170,8 +230,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f694ef2f2l0i1ohsk3qoao9ds943.webp"
+    "image": "/images/weapons/17f694ef2f2l0i1ohsk3qoao9ds943.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1006000,
@@ -199,8 +271,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f699235c3l0i1ohvv1u6vgzp6gxv.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 27,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 27
+    },
+    "passives": [
+      {
+        "type": "frost",
+        "buildup": 60
+      }
+    ],
+    "image": "/images/weapons/17f699235c3l0i1ohvv1u6vgzp6gxv.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1007000,
@@ -228,8 +317,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b32182l0i1oi3uyg5fkssmhje.webp"
+    "image": "/images/weapons/17f69b32182l0i1oi3uyg5fkssmhje.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1008000,
@@ -257,8 +358,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f6980f4d4l0i1oi72p2skbsycy5.webp"
+    "image": "/images/weapons/17f6980f4d4l0i1oi72p2skbsycy5.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1009000,
@@ -286,8 +399,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f6963aeael0i1oiez2moleac31tm.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 44,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 33
+    },
+    "passives": [
+      {
+        "type": "death",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f6963aeael0i1oiez2moleac31tm.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1010000,
@@ -315,8 +445,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aeb629l0i1oifaza9fgo5b598.webp"
+    "image": "/images/weapons/17f69aeb629l0i1oifaza9fgo5b598.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1011000,
@@ -344,8 +486,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 56,
+      "magic": 37,
+      "fire": 37,
+      "lightning": 37,
+      "holy": 37,
+      "boost": 43
+    },
     "passives": [],
-    "image": "/images/weapons/17f6959fcafl0i1oinkyocipl7tiwk.webp"
+    "image": "/images/weapons/17f6959fcafl0i1oinkyocipl7tiwk.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1012000,
@@ -373,8 +527,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b8f9edl0i1oitj4z0mizqfmf7.webp"
+    "image": "/images/weapons/17f69b8f9edl0i1oitj4z0mizqfmf7.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1013000,
@@ -402,8 +568,20 @@
       "lightning": 0,
       "holy": 120
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 27,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 54,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f699ef109l0i1oj1cqtn6euxicod.webp"
+    "image": "/images/weapons/17f699ef109l0i1oj1cqtn6euxicod.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1014000,
@@ -431,8 +609,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f698da62dl0i1oj2p6wyeh8vo0to.webp"
+    "image": "/images/weapons/17f698da62dl0i1oj2p6wyeh8vo0to.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1015000,
@@ -460,8 +650,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69dd8093l0i1oj6x6qo6tg76q8.webp"
+    "image": "/images/weapons/17f69dd8093l0i1oj6x6qo6tg76q8.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1016000,
@@ -489,8 +691,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d12746l0i1ojbzxzgz6gfjsi.webp"
+    "image": "/images/weapons/17f69d12746l0i1ojbzxzgz6gfjsi.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1017000,
@@ -518,8 +732,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f695afa44l0i1ojioyvh48q16qul.webp"
+    "image": "/images/weapons/17f695afa44l0i1ojioyvh48q16qul.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1018000,
@@ -547,8 +773,20 @@
       "lightning": 0,
       "holy": 50
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f6968148cl0i1ojrunt1o8v6y34f.webp"
+    "image": "/images/weapons/17f6968148cl0i1ojrunt1o8v6y34f.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1019000,
@@ -576,8 +814,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69dcccffl0i1ojske3hc4ernauj.webp"
+    "image": "/images/weapons/17f69dcccffl0i1ojske3hc4ernauj.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1020000,
@@ -605,8 +855,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f694c87afl0i1ojvhpi9w9ttf21.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
+    "passives": [
+      {
+        "type": "poison",
+        "buildup": 37
+      }
+    ],
+    "image": "/images/weapons/17f694c87afl0i1ojvhpi9w9ttf21.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1021000,
@@ -634,8 +901,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f694cf960l0i1ojybdeac0ffxf5.webp"
+    "image": "/images/weapons/17f694cf960l0i1ojybdeac0ffxf5.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1022000,
@@ -663,8 +942,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f694bf0a0l0i1okt1ao6xjlqrmq9.webp"
+    "image": "/images/weapons/17f694bf0a0l0i1okt1ao6xjlqrmq9.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1023000,
@@ -692,8 +983,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 38,
+      "magic": 22,
+      "fire": 22,
+      "lightning": 22,
+      "holy": 22,
+      "boost": 22
+    },
     "passives": [],
-    "image": "/images/weapons/17f69575d35l0i1oktqg9vbv6v8jk.webp"
+    "image": "/images/weapons/17f69575d35l0i1oktqg9vbv6v8jk.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1024000,
@@ -721,8 +1025,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f695a80d4l0i1okukv5xwwhqcvn.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 21,
+      "fire": 21,
+      "lightning": 21,
+      "holy": 21,
+      "boost": 19
+    },
+    "passives": [
+      {
+        "type": "poison",
+        "buildup": 45
+      }
+    ],
+    "image": "/images/weapons/17f695a80d4l0i1okukv5xwwhqcvn.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1025000,
@@ -750,8 +1072,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69bb71a6l0i1okvek92tqjqy5w.webp"
+    "critical": 110,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 20,
+      "holy": 20,
+      "boost": 20
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 35
+      }
+    ],
+    "image": "/images/weapons/17f69bb71a6l0i1okvek92tqjqy5w.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1026000,
@@ -779,8 +1119,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 33,
+      "magic": 19,
+      "fire": 19,
+      "lightning": 19,
+      "holy": 19,
+      "boost": 19
+    },
     "passives": [],
-    "image": "/images/weapons/17f694a2cc3l0i1okx1gdd6e5ser2.webp"
+    "image": "/images/weapons/17f694a2cc3l0i1okx1gdd6e5ser2.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1027000,
@@ -808,8 +1161,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 66,
+      "magic": 49,
+      "fire": 49,
+      "lightning": 49,
+      "holy": 49,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c91071l0i1olmq0iokptn3hftg.webp"
+    "image": "/images/weapons/17f69c91071l0i1olmq0iokptn3hftg.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1028000,
@@ -837,8 +1203,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 67,
+      "magic": 50,
+      "fire": 50,
+      "lightning": 50,
+      "holy": 50,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f6974feb9l0i1olnp61dvex8ugut.webp"
+    "image": "/images/weapons/17f6974feb9l0i1olnp61dvex8ugut.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1029000,
@@ -866,8 +1245,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 61,
+      "magic": 46,
+      "fire": 46,
+      "lightning": 46,
+      "holy": 46,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d62fd0l0i1olqu110xlsqhiuo.webp"
+    "image": "/images/weapons/17f69d62fd0l0i1olqu110xlsqhiuo.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1030000,
@@ -895,8 +1287,21 @@
       "lightning": 0,
       "holy": 82
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 51,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 49,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f6946481al0i1olr8v9h8hxdx439.webp"
+    "image": "/images/weapons/17f6946481al0i1olr8v9h8hxdx439.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1031000,
@@ -924,8 +1329,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 54,
+      "magic": 40,
+      "fire": 40,
+      "lightning": 40,
+      "holy": 40,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69848f3fl0i1olspoavxf69m81b.webp"
+    "image": "/images/weapons/17f69848f3fl0i1olspoavxf69m81b.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1032000,
@@ -953,8 +1371,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 63,
+      "magic": 47,
+      "fire": 47,
+      "lightning": 47,
+      "holy": 47,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f695e24bel0i1omb3kpapbx2zhn.webp"
+    "image": "/images/weapons/17f695e24bel0i1omb3kpapbx2zhn.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1033000,
@@ -982,8 +1413,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 38,
+      "fire": 49,
+      "lightning": 38,
+      "holy": 38,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69814033l0i1omfg9fbsxwonld.webp"
+    "image": "/images/weapons/17f69814033l0i1omfg9fbsxwonld.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1034000,
@@ -1011,8 +1455,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 64,
+      "magic": 48,
+      "fire": 48,
+      "lightning": 48,
+      "holy": 48,
+      "boost": 44
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ba4b74l0i1omi90yu0wdq7oxu.webp"
+    "image": "/images/weapons/17f69ba4b74l0i1omi90yu0wdq7oxu.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1035000,
@@ -1040,8 +1497,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 65,
+      "magic": 56,
+      "fire": 50,
+      "lightning": 50,
+      "holy": 50,
+      "boost": 45
+    },
     "passives": [],
-    "image": "/images/weapons/17f69695544l0i1omj4kim8sh6j5xh.webp"
+    "image": "/images/weapons/17f69695544l0i1omj4kim8sh6j5xh.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1036000,
@@ -1069,8 +1539,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 47,
+      "fire": 34,
+      "lightning": 34,
+      "holy": 34,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d917e2l0i1omllp8sfqfor6g.webp"
+    "image": "/images/weapons/17f69d917e2l0i1omllp8sfqfor6g.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1037000,
@@ -1098,8 +1581,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 55,
+      "fire": 43,
+      "lightning": 43,
+      "holy": 43,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f694bf77bl0i1on5kwkodf1d6fkp.webp"
+    "image": "/images/weapons/17f694bf77bl0i1on5kwkodf1d6fkp.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1038000,
@@ -1127,8 +1623,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 45,
+      "fire": 45,
+      "lightning": 45,
+      "holy": 45,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69573764l0i1ondtdlwail0224s.webp"
+    "image": "/images/weapons/17f69573764l0i1ondtdlwail0224s.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1039000,
@@ -1156,8 +1665,21 @@
       "lightning": 0,
       "holy": 78
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 43,
+      "fire": 43,
+      "lightning": 43,
+      "holy": 55,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b35d86l0i1ongc5nz2ucwimp3.webp"
+    "image": "/images/weapons/17f69b35d86l0i1ongc5nz2ucwimp3.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1040000,
@@ -1185,8 +1707,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 57,
+      "magic": 42,
+      "fire": 42,
+      "lightning": 42,
+      "holy": 42,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f697c039cl0i1onh4jupgan4exzn.webp"
+    "image": "/images/weapons/17f697c039cl0i1onh4jupgan4exzn.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1041000,
@@ -1214,8 +1749,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 66,
+      "magic": 49,
+      "fire": 49,
+      "lightning": 49,
+      "holy": 49,
+      "boost": 44
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a7dcc1l0i1oniofe8yzb14ixf.webp"
+    "image": "/images/weapons/17f69a7dcc1l0i1oniofe8yzb14ixf.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1042000,
@@ -1243,8 +1791,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 63,
+      "magic": 47,
+      "fire": 47,
+      "lightning": 47,
+      "holy": 47,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a33564l0i1ons3nh18t7o8nt.webp"
+    "image": "/images/weapons/17f69a33564l0i1ons3nh18t7o8nt.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1043000,
@@ -1272,8 +1833,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 45,
+      "fire": 45,
+      "lightning": 45,
+      "holy": 45,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f698fbfe3l0i1onysor0mpgg5yes.webp"
+    "image": "/images/weapons/17f698fbfe3l0i1onysor0mpgg5yes.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1044000,
@@ -1301,8 +1875,21 @@
       "lightning": 78,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 40,
+      "fire": 40,
+      "lightning": 52,
+      "holy": 40,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69469b4bl0i1oo41w96vla79ii.webp"
+    "image": "/images/weapons/17f69469b4bl0i1oo41w96vla79ii.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1045000,
@@ -1330,8 +1917,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 55,
+      "fire": 43,
+      "lightning": 43,
+      "holy": 43,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f6955e72fl0i1oo4m9kmv2xl4xyk.webp"
+    "image": "/images/weapons/17f6955e72fl0i1oo4m9kmv2xl4xyk.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1046000,
@@ -1359,8 +1959,21 @@
       "lightning": 0,
       "holy": 73
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 57,
+      "magic": 45,
+      "fire": 45,
+      "lightning": 45,
+      "holy": 57,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f69dc1749l0i1ooc0npawnyrf3d.webp"
+    "image": "/images/weapons/17f69dc1749l0i1ooc0npawnyrf3d.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1047000,
@@ -1388,8 +2001,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f696bf334l0i1oog74vy08h3bq4g.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 58,
+      "magic": 43,
+      "fire": 43,
+      "lightning": 43,
+      "holy": 43,
+      "boost": 38
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 70
+      }
+    ],
+    "image": "/images/weapons/17f696bf334l0i1oog74vy08h3bq4g.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1048000,
@@ -1417,8 +2048,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 70,
+      "magic": 52,
+      "fire": 52,
+      "lightning": 52,
+      "holy": 52,
+      "boost": 47
+    },
     "passives": [],
-    "image": "/images/weapons/17f698d50ael0i1ooor7m3e3wm1ksn.webp"
+    "image": "/images/weapons/17f698d50ael0i1ooor7m3e3wm1ksn.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1049000,
@@ -1446,8 +2090,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 45,
+      "fire": 45,
+      "lightning": 45,
+      "holy": 45,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69bd8124l0i1oouetnbxq1rzht.webp"
+    "image": "/images/weapons/17f69bd8124l0i1oouetnbxq1rzht.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1050000,
@@ -1475,8 +2132,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 41,
+      "fire": 46,
+      "lightning": 41,
+      "holy": 41,
+      "boost": 34
+    },
     "passives": [],
-    "image": "/images/weapons/17f699e1bc7l0i1oov82brr35n1ie4.webp"
+    "image": "/images/weapons/17f699e1bc7l0i1oov82brr35n1ie4.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1051000,
@@ -1504,8 +2174,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f695f2cdal0i1oozpti2yx0wz51.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 45,
+      "fire": 45,
+      "lightning": 45,
+      "holy": 45,
+      "boost": 40
+    },
+    "passives": [
+      {
+        "type": "rot",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f695f2cdal0i1oozpti2yx0wz51.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1052000,
@@ -1533,8 +2221,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f698e7e0dl0i1op5tj0nigfcedar.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 63,
+      "magic": 47,
+      "fire": 47,
+      "lightning": 47,
+      "holy": 47,
+      "boost": 42
+    },
+    "passives": [
+      {
+        "type": "rot",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f698e7e0dl0i1op5tj0nigfcedar.webp",
+    "damageTypes": [
+      "Standard",
+      "Strike"
+    ]
   },
   {
     "id": 1053000,
@@ -1562,8 +2268,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a1d79cl0i1opcz0k9omitov0n.webp"
+    "image": "/images/weapons/17f69a1d79cl0i1opcz0k9omitov0n.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1054000,
@@ -1591,8 +2309,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69832d19l0i1opiocf2s1b0z8f8.webp"
+    "image": "/images/weapons/17f69832d19l0i1opiocf2s1b0z8f8.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1055000,
@@ -1620,8 +2350,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b95f86l0i1opjf3ra8xpdsovo.webp"
+    "image": "/images/weapons/17f69b95f86l0i1opjf3ra8xpdsovo.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1056000,
@@ -1649,8 +2391,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69744d27l0i1opnrem0400k2gsd.webp"
+    "image": "/images/weapons/17f69744d27l0i1opnrem0400k2gsd.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1057000,
@@ -1678,8 +2432,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ac9f84l0i1opqor2ybht92g9q.webp"
+    "image": "/images/weapons/17f69ac9f84l0i1opqor2ybht92g9q.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1058000,
@@ -1707,8 +2473,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 42,
+      "fire": 29,
+      "lightning": 29,
+      "holy": 29,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d4ff4fl0i1oq3u3wuk37p9n8y.webp"
+    "image": "/images/weapons/17f69d4ff4fl0i1oq3u3wuk37p9n8y.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1059000,
@@ -1736,8 +2514,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f697ea1a4l0i1oq4te6lr8su01zs.webp"
+    "image": "/images/weapons/17f697ea1a4l0i1oq4te6lr8su01zs.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1060000,
@@ -1765,8 +2555,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d24aefl0i1oq9249e558exazo.webp"
+    "image": "/images/weapons/17f69d24aefl0i1oq9249e558exazo.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1061000,
@@ -1794,8 +2596,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f697d9a68l0i1oqeay5e8bb4oc3g.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f697d9a68l0i1oqeay5e8bb4oc3g.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1062000,
@@ -1823,8 +2642,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c95aedl0i1oqkej3b4sanu0ho.webp"
+    "image": "/images/weapons/17f69c95aedl0i1oqkej3b4sanu0ho.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1063000,
@@ -1852,8 +2683,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 33,
+      "fire": 48,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f6959a5afl0i1oqpihevj06l1n6f.webp"
+    "image": "/images/weapons/17f6959a5afl0i1oqpihevj06l1n6f.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1064000,
@@ -1881,8 +2724,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f699cd816l0i1oqxnpfv24k6jntj.webp"
+    "image": "/images/weapons/17f699cd816l0i1oqxnpfv24k6jntj.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1065000,
@@ -1910,8 +2765,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f6951db06l0i1or16gi01imzlv6v.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
+    "passives": [
+      {
+        "type": "frost",
+        "buildup": 60
+      }
+    ],
+    "image": "/images/weapons/17f6951db06l0i1or16gi01imzlv6v.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1066000,
@@ -1939,8 +2811,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d7bd32l0i1or3zgprsj3kycze.webp"
+    "image": "/images/weapons/17f69d7bd32l0i1or3zgprsj3kycze.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1067000,
@@ -1968,8 +2852,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 62,
+      "magic": 43,
+      "fire": 43,
+      "lightning": 43,
+      "holy": 43,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f695a31bbl0i1orafp8agcajnhoq.webp"
+    "image": "/images/weapons/17f695a31bbl0i1orafp8agcajnhoq.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1068000,
@@ -1997,8 +2893,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f695e77b1l0i1orcoyco0l9fpi6j.webp"
+    "critical": 110,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 29,
+      "fire": 29,
+      "lightning": 29,
+      "holy": 29,
+      "boost": 29
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 60
+      }
+    ],
+    "image": "/images/weapons/17f695e77b1l0i1orcoyco0l9fpi6j.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1069000,
@@ -2026,8 +2939,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 26
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ccaa4al0i1orhsuhv0ll0uko.webp"
+    "image": "/images/weapons/17f69ccaa4al0i1orhsuhv0ll0uko.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1070000,
@@ -2055,8 +2980,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 26
+    },
     "passives": [],
-    "image": "/images/weapons/17f69cbbed5l0i1orz2seh3xldf6b.webp"
+    "image": "/images/weapons/17f69cbbed5l0i1orz2seh3xldf6b.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1071000,
@@ -2084,8 +3021,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d22df5l0i1os1vzj7jka683f.webp"
+    "image": "/images/weapons/17f69d22df5l0i1os1vzj7jka683f.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1072000,
@@ -2113,8 +3062,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69498ae3l0i1os4m19u5e478yu2.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 37,
+      "magic": 27,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 22
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f69498ae3l0i1os4m19u5e478yu2.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1073000,
@@ -2142,8 +3108,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 30,
+      "fire": 44,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f69908917l0i1os577fp2a0c8n8w.webp"
+    "image": "/images/weapons/17f69908917l0i1os577fp2a0c8n8w.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1074000,
@@ -2171,8 +3149,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 26
+    },
     "passives": [],
-    "image": "/images/weapons/17f694e2077l0i1osqjan4fnttniyc.webp"
+    "image": "/images/weapons/17f694e2077l0i1osqjan4fnttniyc.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1075000,
@@ -2200,8 +3191,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 28,
+      "magic": 52,
+      "fire": 23,
+      "lightning": 23,
+      "holy": 23,
+      "boost": 23
+    },
     "passives": [],
-    "image": "/images/weapons/17f695b60e8l0i1osrls9u8la9bek.webp"
+    "image": "/images/weapons/17f695b60e8l0i1osrls9u8la9bek.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1076000,
@@ -2229,8 +3232,25 @@
       "lightning": 0,
       "holy": 77
     },
-    "passives": [],
-    "image": "/images/weapons/17f695e8a95l0i1osvuh2s392bslgf.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 50,
+      "boost": 25
+    },
+    "passives": [
+      {
+        "type": "death",
+        "buildup": 60
+      }
+    ],
+    "image": "/images/weapons/17f695e8a95l0i1osvuh2s392bslgf.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1077000,
@@ -2258,8 +3278,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f6977fc1al0i1oswu20i8xjh9liqj.webp"
+    "image": "/images/weapons/17f6977fc1al0i1oswu20i8xjh9liqj.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1078000,
@@ -2287,8 +3319,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69d7cf23l0i1osx8dg6r5dybhck.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 25
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 45
+      }
+    ],
+    "image": "/images/weapons/17f69d7cf23l0i1osx8dg6r5dybhck.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1079000,
@@ -2316,8 +3365,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a28357l0i1otefec4u3qjtjve.webp"
+    "image": "/images/weapons/17f69a28357l0i1otefec4u3qjtjve.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1080000,
@@ -2345,8 +3406,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 25
+    },
     "passives": [],
-    "image": "/images/weapons/17f695c221bl0i1oti2aqelikacuj6.webp"
+    "image": "/images/weapons/17f695c221bl0i1oti2aqelikacuj6.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1081000,
@@ -2374,8 +3447,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 25
+    },
     "passives": [],
-    "image": "/images/weapons/17f69913ab4l0i1otlpefqm0g08exp.webp"
+    "image": "/images/weapons/17f69913ab4l0i1otlpefqm0g08exp.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1082000,
@@ -2403,8 +3488,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 130,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 20,
+      "holy": 20,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f699693fbl0i1otqw0glcy3u6fp0k.webp"
+    "image": "/images/weapons/17f699693fbl0i1otqw0glcy3u6fp0k.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1083000,
@@ -2432,8 +3530,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 46,
+      "magic": 34,
+      "fire": 34,
+      "lightning": 34,
+      "holy": 34,
+      "boost": 28
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ba85cal0i1ou17700c5cqef3i.webp"
+    "image": "/images/weapons/17f69ba85cal0i1ou17700c5cqef3i.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1084000,
@@ -2461,8 +3571,21 @@
       "lightning": 0,
       "holy": 65
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 26,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 42,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69bb7d32l0i1ou85ft99zwecdel.webp"
+    "image": "/images/weapons/17f69bb7d32l0i1ou85ft99zwecdel.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1085000,
@@ -2490,8 +3613,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 20,
+      "holy": 20,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f6959f1adl0i1ou9x8vs08p3u09g.webp"
+    "image": "/images/weapons/17f6959f1adl0i1ou9x8vs08p3u09g.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1086000,
@@ -2519,8 +3655,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 140,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 21,
+      "fire": 21,
+      "lightning": 21,
+      "holy": 21,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aa066dl0i1ouek4e8nmlybotp.webp"
+    "image": "/images/weapons/17f69aa066dl0i1ouek4e8nmlybotp.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1087000,
@@ -2548,8 +3697,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69d42419l0i1oujp0m1csaaqdanf.webp"
+    "critical": 110,
+    "guardNegation": {
+      "physical": 38,
+      "magic": 22,
+      "fire": 22,
+      "lightning": 22,
+      "holy": 22,
+      "boost": 16
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 30
+      }
+    ],
+    "image": "/images/weapons/17f69d42419l0i1oujp0m1csaaqdanf.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1088000,
@@ -2577,8 +3744,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 32,
+      "magic": 31,
+      "fire": 18,
+      "lightning": 18,
+      "holy": 18,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f695c23a5l0i1ourjc45t3ot8y0r.webp"
+    "image": "/images/weapons/17f695c23a5l0i1ourjc45t3ot8y0r.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1089000,
@@ -2606,8 +3786,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 20,
+      "holy": 20,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69538376l0i1ouzstk2t2dod57i.webp"
+    "image": "/images/weapons/17f69538376l0i1ouzstk2t2dod57i.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1090000,
@@ -2635,8 +3828,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 23,
+      "magic": 45,
+      "fire": 14,
+      "lightning": 14,
+      "holy": 14,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69756a35l0i1ov1vi3cb4201sxa.webp"
+    "image": "/images/weapons/17f69756a35l0i1ov1vi3cb4201sxa.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1091000,
@@ -2664,8 +3870,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 38,
+      "magic": 22,
+      "fire": 22,
+      "lightning": 22,
+      "holy": 22,
+      "boost": 16
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d58e08l0i1ovazqw2hxmxgdc.webp"
+    "image": "/images/weapons/17f69d58e08l0i1ovazqw2hxmxgdc.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1092000,
@@ -2693,8 +3912,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 20,
+      "holy": 20,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f6994d16cl0i1ovl2w2asf8hogd.webp"
+    "image": "/images/weapons/17f6994d16cl0i1ovl2w2asf8hogd.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1093000,
@@ -2722,8 +3954,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 24,
+      "fire": 24,
+      "lightning": 24,
+      "holy": 24,
+      "boost": 18
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a01b63l0i1ovq80hzuqcz211pn.webp"
+    "image": "/images/weapons/17f69a01b63l0i1ovq80hzuqcz211pn.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1094000,
@@ -2751,8 +3996,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 43,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 18
+    },
     "passives": [],
-    "image": "/images/weapons/17f6986cfc4l0i1ovvz1l7bcfxqjc9.webp"
+    "image": "/images/weapons/17f6986cfc4l0i1ovvz1l7bcfxqjc9.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1095000,
@@ -2780,8 +4038,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 26,
+      "magic": 42,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69dba532l0i1ow5zn175dgtjn5d.webp"
+    "image": "/images/weapons/17f69dba532l0i1ow5zn175dgtjn5d.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1096000,
@@ -2809,8 +4080,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 21,
+      "fire": 21,
+      "lightning": 21,
+      "holy": 21,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c27224l0i1owfsl4rcc4fgbpe.webp"
+    "image": "/images/weapons/17f69c27224l0i1owfsl4rcc4fgbpe.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1097000,
@@ -2838,8 +4122,21 @@
       "lightning": 0,
       "holy": 43
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 31,
+      "magic": 18,
+      "fire": 18,
+      "lightning": 18,
+      "holy": 30,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69619348l0i1owhkpnh4pq8aju.webp"
+    "image": "/images/weapons/17f69619348l0i1owhkpnh4pq8aju.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1098000,
@@ -2867,8 +4164,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69568512l0i1owirx8rozwu94e.webp"
+    "critical": 110,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 21,
+      "fire": 21,
+      "lightning": 21,
+      "holy": 21,
+      "boost": 15
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 30
+      }
+    ],
+    "image": "/images/weapons/17f69568512l0i1owirx8rozwu94e.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1099000,
@@ -2896,8 +4211,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69822bd8l0i1owzfs8dkv6m0tk.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 20,
+      "holy": 20,
+      "boost": 20
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 30
+      }
+    ],
+    "image": "/images/weapons/17f69822bd8l0i1owzfs8dkv6m0tk.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1100000,
@@ -2925,8 +4257,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 20,
+      "holy": 20,
+      "boost": 20
+    },
     "passives": [],
-    "image": "/images/weapons/17f6961de5dl0i1ox1mrfqv4sj0p5.webp"
+    "image": "/images/weapons/17f6961de5dl0i1ox1mrfqv4sj0p5.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1101000,
@@ -2954,8 +4298,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 27,
+      "magic": 18,
+      "fire": 44,
+      "lightning": 18,
+      "holy": 18,
+      "boost": 22
+    },
     "passives": [],
-    "image": "/images/weapons/17f69598b19l0i1ox85gn7f2sgqpad.webp"
+    "image": "/images/weapons/17f69598b19l0i1ox85gn7f2sgqpad.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1102000,
@@ -2983,8 +4339,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 38,
+      "magic": 22,
+      "fire": 22,
+      "lightning": 22,
+      "holy": 22,
+      "boost": 22
+    },
     "passives": [],
-    "image": "/images/weapons/17f69bdc512l0i1ox8z0tvmo6500lc.webp"
+    "image": "/images/weapons/17f69bdc512l0i1ox8z0tvmo6500lc.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1103000,
@@ -3012,8 +4380,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 41,
+      "magic": 23,
+      "fire": 23,
+      "lightning": 23,
+      "holy": 23,
+      "boost": 23
+    },
     "passives": [],
-    "image": "/images/weapons/17f6958d2a1l0i1oxak1ho6m56edgwi.webp"
+    "image": "/images/weapons/17f6958d2a1l0i1oxak1ho6m56edgwi.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1104000,
@@ -3041,8 +4421,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 21,
+      "fire": 21,
+      "lightning": 21,
+      "holy": 21,
+      "boost": 21
+    },
     "passives": [],
-    "image": "/images/weapons/17f699730a1l0i1oxo8gfllal3rur.webp"
+    "image": "/images/weapons/17f699730a1l0i1oxo8gfllal3rur.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1105000,
@@ -3070,8 +4462,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 21,
+      "fire": 21,
+      "lightning": 21,
+      "holy": 21,
+      "boost": 21
+    },
     "passives": [],
-    "image": "/images/weapons/17f695cc915l0i1oxrft0i2enqepoe.webp"
+    "image": "/images/weapons/17f695cc915l0i1oxrft0i2enqepoe.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1106000,
@@ -3099,8 +4503,20 @@
       "lightning": 0,
       "holy": 85
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 9,
+      "magic": 14,
+      "fire": 14,
+      "lightning": 14,
+      "holy": 61,
+      "boost": 19
+    },
     "passives": [],
-    "image": "/images/weapons/17f69de7e01l0i1oxypr2s4rzvhwnj.webp"
+    "image": "/images/weapons/17f69de7e01l0i1oxypr2s4rzvhwnj.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1107000,
@@ -3128,8 +4544,20 @@
       "lightning": 53,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 30,
+      "magic": 20,
+      "fire": 20,
+      "lightning": 48,
+      "holy": 20,
+      "boost": 24
+    },
     "passives": [],
-    "image": "/images/weapons/17f69912ed2l0i1oxzumweqnzkb2tl.webp"
+    "image": "/images/weapons/17f69912ed2l0i1oxzumweqnzkb2tl.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1108000,
@@ -3157,8 +4585,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 37,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 21
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d96e43l0i1oy4z04zq0mvzanru.webp"
+    "image": "/images/weapons/17f69d96e43l0i1oy4z04zq0mvzanru.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1109000,
@@ -3186,8 +4626,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 24,
+      "fire": 24,
+      "lightning": 24,
+      "holy": 24,
+      "boost": 20
+    },
     "passives": [],
-    "image": "/images/weapons/17f69552774l0i1oyd6lwf3vlq0nhn.webp"
+    "image": "/images/weapons/17f69552774l0i1oyd6lwf3vlq0nhn.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1110000,
@@ -3215,8 +4667,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 37,
+      "magic": 36,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 20
+    },
     "passives": [],
-    "image": "/images/weapons/17f695341ecl0i1oyf1mscsd2tuuid.webp"
+    "image": "/images/weapons/17f695341ecl0i1oyf1mscsd2tuuid.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1111000,
@@ -3244,8 +4708,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f6992e218l0i1oykgr0udpp09p3.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 32,
+      "magic": 48,
+      "fire": 24,
+      "lightning": 24,
+      "holy": 24,
+      "boost": 20
+    },
+    "passives": [
+      {
+        "type": "frost",
+        "buildup": 65
+      }
+    ],
+    "image": "/images/weapons/17f6992e218l0i1oykgr0udpp09p3.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1112000,
@@ -3273,8 +4754,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69930219l0i1oytgbre6o33dti.webp"
+    "image": "/images/weapons/17f69930219l0i1oytgbre6o33dti.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1113000,
@@ -3302,8 +4795,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 28,
+      "magic": 17,
+      "fire": 17,
+      "lightning": 17,
+      "holy": 17,
+      "boost": 17
+    },
     "passives": [],
-    "image": "/images/weapons/17f699946f4l0i1oz2nopkhsi7qz5p.webp"
+    "image": "/images/weapons/17f699946f4l0i1oz2nopkhsi7qz5p.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1114000,
@@ -3331,8 +4836,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 43,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 24
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c119f0l0i1oz3m7cwvc1jqa6w.webp"
+    "image": "/images/weapons/17f69c119f0l0i1oz3m7cwvc1jqa6w.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1115000,
@@ -3360,8 +4877,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 23,
+      "magic": 14,
+      "fire": 14,
+      "lightning": 14,
+      "holy": 14,
+      "boost": 14
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d7a8dcl0i1oz4x85o3hhhl069.webp"
+    "image": "/images/weapons/17f69d7a8dcl0i1oz4x85o3hhhl069.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1116000,
@@ -3389,8 +4918,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f6960232el0i1oz9tjni3i1ghuy.webp"
+    "image": "/images/weapons/17f6960232el0i1oz9tjni3i1ghuy.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1117000,
@@ -3418,8 +4959,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f6953c900l0i1ozjupz92p99yzi.webp"
+    "image": "/images/weapons/17f6953c900l0i1ozjupz92p99yzi.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1118000,
@@ -3447,8 +5000,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b2786dl0i1ozt246l3i5ng1n3.webp"
+    "image": "/images/weapons/17f69b2786dl0i1ozt246l3i5ng1n3.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1119000,
@@ -3476,8 +5041,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 28,
+      "magic": 17,
+      "fire": 17,
+      "lightning": 17,
+      "holy": 17,
+      "boost": 17
+    },
     "passives": [],
-    "image": "/images/weapons/17f6960a2b7l0i1ozuak6b667gyiqq.webp"
+    "image": "/images/weapons/17f6960a2b7l0i1ozuak6b667gyiqq.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1120000,
@@ -3505,8 +5082,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f697c8bb1l0i1ozxd3885l5ejmcw.webp"
+    "image": "/images/weapons/17f697c8bb1l0i1ozxd3885l5ejmcw.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1121000,
@@ -3534,8 +5123,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 23,
+      "magic": 14,
+      "fire": 14,
+      "lightning": 14,
+      "holy": 14,
+      "boost": 14
+    },
     "passives": [],
-    "image": "/images/weapons/17f69bfdbcdl0i1ozxotkx767c6z5e.webp"
+    "image": "/images/weapons/17f69bfdbcdl0i1ozxotkx767c6z5e.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1122000,
@@ -3563,8 +5164,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 23,
+      "magic": 14,
+      "fire": 14,
+      "lightning": 14,
+      "holy": 14,
+      "boost": 14
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d0ae08l0i1p06vghydco2o29u.webp"
+    "image": "/images/weapons/17f69d0ae08l0i1p06vghydco2o29u.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1123000,
@@ -3592,8 +5205,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69dea799l0i1p0jj1dc7gc9ooad.webp"
+    "image": "/images/weapons/17f69dea799l0i1p0jj1dc7gc9ooad.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1124000,
@@ -3621,8 +5246,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f6967c49cl0i1p0mowlnjq4ufrl.webp"
+    "image": "/images/weapons/17f6967c49cl0i1p0mowlnjq4ufrl.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1125000,
@@ -3650,8 +5287,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f695d9e5dl0i1p0otrlfxvt1g9n9.webp"
+    "image": "/images/weapons/17f695d9e5dl0i1p0otrlfxvt1g9n9.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1126000,
@@ -3679,8 +5328,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f695a0063l0i1p0qdogpnbjb7xnf.webp"
+    "image": "/images/weapons/17f695a0063l0i1p0qdogpnbjb7xnf.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1127000,
@@ -3708,8 +5369,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 28,
+      "magic": 17,
+      "fire": 17,
+      "lightning": 17,
+      "holy": 17,
+      "boost": 17
+    },
     "passives": [],
-    "image": "/images/weapons/17f6995e6eel0i1p0ujryl4uvjkiji.webp"
+    "image": "/images/weapons/17f6995e6eel0i1p0ujryl4uvjkiji.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1128000,
@@ -3737,8 +5410,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 28,
+      "magic": 17,
+      "fire": 17,
+      "lightning": 17,
+      "holy": 17,
+      "boost": 17
+    },
     "passives": [],
-    "image": "/images/weapons/17f698cdcd5l0i1p17cuvrv89tk1t.webp"
+    "image": "/images/weapons/17f698cdcd5l0i1p17cuvrv89tk1t.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1129000,
@@ -3766,8 +5451,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 28,
+      "magic": 17,
+      "fire": 17,
+      "lightning": 17,
+      "holy": 17,
+      "boost": 17
+    },
     "passives": [],
-    "image": "/images/weapons/17f69594fd1l0i1p1ad5rxu1z3y9xt.webp"
+    "image": "/images/weapons/17f69594fd1l0i1p1ad5rxu1z3y9xt.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1130000,
@@ -3795,8 +5492,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 53,
+      "magic": 37,
+      "fire": 37,
+      "lightning": 37,
+      "holy": 37,
+      "boost": 37
+    },
     "passives": [],
-    "image": "/images/weapons/17f69932567l0i1p1g57mgpbxaj4hw.webp"
+    "image": "/images/weapons/17f69932567l0i1p1g57mgpbxaj4hw.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1131000,
@@ -3824,8 +5533,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 45,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c517f3l0i1p1j5gib5p31b06c.webp"
+    "image": "/images/weapons/17f69c517f3l0i1p1j5gib5p31b06c.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1132000,
@@ -3853,8 +5574,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 23,
+      "magic": 14,
+      "fire": 14,
+      "lightning": 14,
+      "holy": 14,
+      "boost": 14
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c940f6l0i1p1noaxeazv2s6xo.webp"
+    "image": "/images/weapons/17f69c940f6l0i1p1noaxeazv2s6xo.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1133000,
@@ -3882,8 +5615,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6962ddb3l0i1p1wgacx8m0mpy3c.webp"
+    "image": "/images/weapons/17f6962ddb3l0i1p1wgacx8m0mpy3c.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1134000,
@@ -3911,8 +5656,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a0a0del0i1p1ze2uhbxr6enmw.webp"
+    "image": "/images/weapons/17f69a0a0del0i1p1ze2uhbxr6enmw.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1135000,
@@ -3940,8 +5697,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69822237l0i1p270w3dlqvx3kil.webp"
+    "image": "/images/weapons/17f69822237l0i1p270w3dlqvx3kil.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1136000,
@@ -3969,8 +5738,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 115,
+    "guardNegation": {
+      "physical": 57,
+      "magic": 40,
+      "fire": 40,
+      "lightning": 40,
+      "holy": 40,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69bd922al0i1p2frazvyrv41tge.webp"
+    "image": "/images/weapons/17f69bd922al0i1p2frazvyrv41tge.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1137000,
@@ -3998,8 +5779,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f696240e3l0i1p2l8nsbm1tuf3kq.webp"
+    "image": "/images/weapons/17f696240e3l0i1p2l8nsbm1tuf3kq.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1138000,
@@ -4027,8 +5820,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f699a5bafl0i1p2louzpgjcml2zi.webp"
+    "image": "/images/weapons/17f699a5bafl0i1p2louzpgjcml2zi.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1139000,
@@ -4056,8 +5861,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f698a1aa2l0i1p2ttzr3kqvtkrqo.webp"
+    "image": "/images/weapons/17f698a1aa2l0i1p2ttzr3kqvtkrqo.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1140000,
@@ -4085,8 +5902,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aff1efl0i1p2xlel2i8mhvc2o.webp"
+    "image": "/images/weapons/17f69aff1efl0i1p2xlel2i8mhvc2o.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1141000,
@@ -4114,8 +5943,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f694ec20bl0i1p34h48fycewmkr1.webp"
+    "image": "/images/weapons/17f694ec20bl0i1p34h48fycewmkr1.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1142000,
@@ -4143,8 +5984,20 @@
       "lightning": 0,
       "holy": 65
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69727d35l0i1p3af7vawzb2qx4v.webp"
+    "image": "/images/weapons/17f69727d35l0i1p3af7vawzb2qx4v.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1143000,
@@ -4172,8 +6025,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ba8511l0i1p3aular3j6um6ed.webp"
+    "image": "/images/weapons/17f69ba8511l0i1p3aular3j6um6ed.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1144000,
@@ -4201,8 +6066,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f6967c4f3l0i1p3l1xull5qamw2.webp"
+    "image": "/images/weapons/17f6967c4f3l0i1p3l1xull5qamw2.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1145000,
@@ -4230,8 +6107,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f696abc5el0i1p3mxdl2nf7g3wsu.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 38,
+      "fire": 38,
+      "lightning": 38,
+      "holy": 38,
+      "boost": 38
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 73
+      }
+    ],
+    "image": "/images/weapons/17f696abc5el0i1p3mxdl2nf7g3wsu.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1146000,
@@ -4259,8 +6153,20 @@
       "lightning": 0,
       "holy": 90
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 46,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 55,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f6948ce42l0i1p3rnqwtrftgh5gg.webp"
+    "image": "/images/weapons/17f6948ce42l0i1p3rnqwtrftgh5gg.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1147000,
@@ -4288,8 +6194,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f6949e9bbl0i1p3z882yhinlaqxj.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 45,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 35
+    },
+    "passives": [
+      {
+        "type": "madness",
+        "buildup": 65
+      }
+    ],
+    "image": "/images/weapons/17f6949e9bbl0i1p3z882yhinlaqxj.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1148000,
@@ -4317,8 +6240,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 42,
+      "fire": 42,
+      "lightning": 42,
+      "holy": 42,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b0a1dcl0i1p3zvfkgywidwr2.webp"
+    "image": "/images/weapons/17f69b0a1dcl0i1p3zvfkgywidwr2.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1149000,
@@ -4346,8 +6281,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6965c8c7l0i1p4ca48460ednlrf.webp"
+    "image": "/images/weapons/17f6965c8c7l0i1p4ca48460ednlrf.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1150000,
@@ -4375,8 +6322,20 @@
       "lightning": 0,
       "holy": 79
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 48,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f6995c642l0i1p4de8g3enadtufs.webp"
+    "image": "/images/weapons/17f6995c642l0i1p4de8g3enadtufs.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1151000,
@@ -4404,8 +6363,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a8d915l0i1p4kqv889wy4d4vc.webp"
+    "image": "/images/weapons/17f69a8d915l0i1p4kqv889wy4d4vc.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1152000,
@@ -4433,8 +6405,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6995269el0i1p4oqujogklpkccd.webp"
+    "image": "/images/weapons/17f6995269el0i1p4oqujogklpkccd.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1153000,
@@ -4462,8 +6447,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 56,
+      "magic": 39,
+      "fire": 39,
+      "lightning": 39,
+      "holy": 39,
+      "boost": 39
+    },
     "passives": [],
-    "image": "/images/weapons/17f698d80fal0i1p4tl3fnkays6xcs.webp"
+    "image": "/images/weapons/17f698d80fal0i1p4tl3fnkays6xcs.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1154000,
@@ -4491,8 +6489,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c84a0fl0i1p53njeg78jpm83g.webp"
+    "image": "/images/weapons/17f69c84a0fl0i1p53njeg78jpm83g.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1155000,
@@ -4520,8 +6531,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f696c3869l0i1p57ui4dkke1j2lb.webp"
+    "image": "/images/weapons/17f696c3869l0i1p57ui4dkke1j2lb.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1156000,
@@ -4549,8 +6573,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69958ad2l0i1p5cvrojl4ty52zs.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69958ad2l0i1p5cvrojl4ty52zs.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1157000,
@@ -4578,8 +6620,21 @@
       "lightning": 0,
       "holy": 69
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 37,
+      "fire": 37,
+      "lightning": 37,
+      "holy": 50,
+      "boost": 39
+    },
     "passives": [],
-    "image": "/images/weapons/17f69914456l0i1p5gc8d6bi642ubp.webp"
+    "image": "/images/weapons/17f69914456l0i1p5gc8d6bi642ubp.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1158000,
@@ -4607,8 +6662,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 41,
+      "magic": 33,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a3766al0i1p5jn27ea0xazje3.webp"
+    "image": "/images/weapons/17f69a3766al0i1p5jn27ea0xazje3.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1159000,
@@ -4636,8 +6704,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6961c7efl0i1p5tbamvedpnmzx4.webp"
+    "image": "/images/weapons/17f6961c7efl0i1p5tbamvedpnmzx4.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1160000,
@@ -4665,8 +6746,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69aa76b3l0i1p5w4xa7tbhq0qit.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 63,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 36
+    },
+    "passives": [
+      {
+        "type": "frost",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69aa76b3l0i1p5w4xa7tbhq0qit.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1161000,
@@ -4694,8 +6793,21 @@
       "lightning": 0,
       "holy": 76
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 45,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6971ad09l0i1p698i6hg5fqq3ir.webp"
+    "image": "/images/weapons/17f6971ad09l0i1p698i6hg5fqq3ir.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1162000,
@@ -4723,8 +6835,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69a34499l0i1p69mtmqzfrxa7b.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 60,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 38
+    },
+    "passives": [
+      {
+        "type": "frost",
+        "buildup": 70
+      }
+    ],
+    "image": "/images/weapons/17f69a34499l0i1p69mtmqzfrxa7b.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1163000,
@@ -4752,8 +6882,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 56,
+      "magic": 39,
+      "fire": 54,
+      "lightning": 39,
+      "holy": 39,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a18c12l0i1p6irjv6m8ue2f5.webp"
+    "image": "/images/weapons/17f69a18c12l0i1p6irjv6m8ue2f5.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1164000,
@@ -4781,8 +6924,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69af1239l0i1p6tbsakd85i69of.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 49,
+      "fire": 38,
+      "lightning": 38,
+      "holy": 38,
+      "boost": 38
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69af1239l0i1p6tbsakd85i69of.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1165000,
@@ -4810,8 +6971,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6998ff30l0i1p6uu73zw546f13u.webp"
+    "image": "/images/weapons/17f6998ff30l0i1p6uu73zw546f13u.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1166000,
@@ -4839,8 +7013,21 @@
       "lightning": 0,
       "holy": 103
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 60,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c19b1al0i1p77ig6czaoxosd.webp"
+    "image": "/images/weapons/17f69c19b1al0i1p77ig6czaoxosd.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1167000,
@@ -4868,8 +7055,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d938dal0i1p7cva71qgpwuo6w.webp"
+    "image": "/images/weapons/17f69d938dal0i1p7cva71qgpwuo6w.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1168000,
@@ -4897,8 +7097,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 38,
+      "fire": 38,
+      "lightning": 38,
+      "holy": 38,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d64ed7l0i1p7jmmtge0ag3i4.webp"
+    "image": "/images/weapons/17f69d64ed7l0i1p7jmmtge0ag3i4.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1169000,
@@ -4926,8 +7139,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69d8a812l0i1p7s9xmq3zqql69.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 46,
+      "magic": 39,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
+    "passives": [
+      {
+        "type": "frost",
+        "buildup": 75
+      }
+    ],
+    "image": "/images/weapons/17f69d8a812l0i1p7s9xmq3zqql69.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1170000,
@@ -4955,8 +7186,21 @@
       "lightning": 0,
       "holy": 122
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 66,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d4d41el0i1p7vs0vjortsg7oc.webp"
+    "image": "/images/weapons/17f69d4d41el0i1p7vs0vjortsg7oc.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1171000,
@@ -4984,8 +7228,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f6998e2a7l0i1p8fxd6bbyw83nts.webp"
+    "image": "/images/weapons/17f6998e2a7l0i1p8fxd6bbyw83nts.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1172000,
@@ -5013,8 +7270,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f696b2b4al0i1p8ly2eaf2vbepd6.webp"
+    "image": "/images/weapons/17f696b2b4al0i1p8ly2eaf2vbepd6.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1173000,
@@ -5042,8 +7312,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a4b70bl0i1p8n5ha1qpziq1xg.webp"
+    "image": "/images/weapons/17f69a4b70bl0i1p8n5ha1qpziq1xg.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1174000,
@@ -5071,8 +7354,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f698a6131l0i1p8u3hufx2lc7nr.webp"
+    "image": "/images/weapons/17f698a6131l0i1p8u3hufx2lc7nr.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1175000,
@@ -5100,8 +7396,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 58,
+      "magic": 41,
+      "fire": 41,
+      "lightning": 41,
+      "holy": 41,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f6991e5c5l0i1p8vp4fgo45r89ky.webp"
+    "image": "/images/weapons/17f6991e5c5l0i1p8vp4fgo45r89ky.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1176000,
@@ -5129,8 +7438,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 51,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f694ee743l0i1p9ku7l29fh314nu.webp"
+    "image": "/images/weapons/17f694ee743l0i1p9ku7l29fh314nu.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1177000,
@@ -5158,8 +7480,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 42,
+      "fire": 42,
+      "lightning": 42,
+      "holy": 42,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f6962a77bl0i1p9nswfravtg3kil.webp"
+    "image": "/images/weapons/17f6962a77bl0i1p9nswfravtg3kil.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1178000,
@@ -5187,8 +7522,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f6959d46el0i1p9thpf3fa8syut.webp"
+    "image": "/images/weapons/17f6959d46el0i1p9thpf3fa8syut.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1179000,
@@ -5216,8 +7564,21 @@
       "lightning": 0,
       "holy": 87
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 58,
+      "magic": 41,
+      "fire": 41,
+      "lightning": 41,
+      "holy": 56,
+      "boost": 43
+    },
     "passives": [],
-    "image": "/images/weapons/17f6973b001l0i1p9v6qffivf6eh3.webp"
+    "image": "/images/weapons/17f6973b001l0i1p9v6qffivf6eh3.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1180000,
@@ -5245,8 +7606,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 38,
+      "fire": 38,
+      "lightning": 38,
+      "holy": 38,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f69afd8dcl0i1p9y9s33uzxd9fek.webp"
+    "image": "/images/weapons/17f69afd8dcl0i1p9y9s33uzxd9fek.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1181000,
@@ -5274,8 +7648,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 51,
+      "magic": 49,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 38
+    },
     "passives": [],
-    "image": "/images/weapons/17f69869f89l0i1panhih63470rmve.webp"
+    "image": "/images/weapons/17f69869f89l0i1panhih63470rmve.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1182000,
@@ -5303,8 +7690,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6984431bl0i1papfl53ticoff4p.webp"
+    "image": "/images/weapons/17f6984431bl0i1papfl53ticoff4p.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1183000,
@@ -5332,8 +7732,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 37,
+      "fire": 37,
+      "lightning": 50,
+      "holy": 37,
+      "boost": 39
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c95d75l0i1paugymrcjquua4q.webp"
+    "image": "/images/weapons/17f69c95d75l0i1paugymrcjquua4q.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1184000,
@@ -5361,8 +7774,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69884882l0i1pawmnlwtwvbmm8.webp"
+    "image": "/images/weapons/17f69884882l0i1pawmnlwtwvbmm8.webp",
+    "damageTypes": [
+      "Slash"
+    ]
   },
   {
     "id": 1185000,
@@ -5390,8 +7815,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 42,
+      "fire": 42,
+      "lightning": 42,
+      "holy": 42,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c725a8l0i1pay72k5pcw8pvc6.webp"
+    "image": "/images/weapons/17f69c725a8l0i1pay72k5pcw8pvc6.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1186000,
@@ -5419,8 +7857,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a7bbbcl0i1pbo28bmzr0t6jyp.webp"
+    "image": "/images/weapons/17f69a7bbbcl0i1pbo28bmzr0t6jyp.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1187000,
@@ -5448,8 +7898,21 @@
       "lightning": 0,
       "holy": 123
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 72,
+      "boost": 42
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a5df3cl0i1pboo1un3fj711tg.webp"
+    "image": "/images/weapons/17f69a5df3cl0i1pboo1un3fj711tg.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1188000,
@@ -5477,8 +7940,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f696774f3l0i1pbvceygv4mkw0d7.webp"
+    "image": "/images/weapons/17f696774f3l0i1pbvceygv4mkw0d7.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1189000,
@@ -5506,8 +7981,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 27,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f694ca651l0i1pbx2gimykg3587g.webp"
+    "image": "/images/weapons/17f694ca651l0i1pbx2gimykg3587g.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1190000,
@@ -5535,8 +8022,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 41,
+      "magic": 27,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f694bb057l0i1pc726b2jy8z22n.webp"
+    "image": "/images/weapons/17f694bb057l0i1pc726b2jy8z22n.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1191000,
@@ -5564,8 +8063,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f699d1084l0i1pcmssd76cdlcjqk.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f699d1084l0i1pcmssd76cdlcjqk.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1192000,
@@ -5593,8 +8109,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 51,
+      "magic": 34,
+      "fire": 34,
+      "lightning": 34,
+      "holy": 34,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a22461l0i1pcneoqys4gxbav.webp"
+    "image": "/images/weapons/17f69a22461l0i1pcneoqys4gxbav.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1193000,
@@ -5622,8 +8150,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 38,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 25
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aced5el0i1pcsbypcz3lxclfq.webp"
+    "image": "/images/weapons/17f69aced5el0i1pcsbypcz3lxclfq.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1194000,
@@ -5651,8 +8191,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69d6e6e0l0i1pctcpzxxaoxt1wc.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f69d6e6e0l0i1pctcpzxxaoxt1wc.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1195000,
@@ -5680,8 +8237,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b676c4l0i1pcy677icvt5r8m9.webp"
+    "image": "/images/weapons/17f69b676c4l0i1pcy677icvt5r8m9.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1196000,
@@ -5709,8 +8278,20 @@
       "lightning": 0,
       "holy": 62
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 38,
+      "magic": 26,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 38,
+      "boost": 28
+    },
     "passives": [],
-    "image": "/images/weapons/17f695571bbl0i1pdcktfpfya20p2.webp"
+    "image": "/images/weapons/17f695571bbl0i1pdcktfpfya20p2.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1197000,
@@ -5738,8 +8319,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 36,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f6980f9d0l0i1pdddh1p7a12vqnc.webp"
+    "image": "/images/weapons/17f6980f9d0l0i1pdddh1p7a12vqnc.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1198000,
@@ -5767,8 +8360,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 51,
+      "magic": 34,
+      "fire": 34,
+      "lightning": 34,
+      "holy": 34,
+      "boost": 34
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b63034l0i1pdhypowirop759.webp"
+    "image": "/images/weapons/17f69b63034l0i1pdhypowirop759.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1199000,
@@ -5796,8 +8401,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 38,
+      "magic": 26,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 38,
+      "boost": 28
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b7f413l0i1pdlfnyqleuyg0fm.webp"
+    "image": "/images/weapons/17f69b7f413l0i1pdlfnyqleuyg0fm.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1200000,
@@ -5825,8 +8442,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f6984dcccl0i1pdm4f6od648mce.webp"
+    "image": "/images/weapons/17f6984dcccl0i1pdm4f6od648mce.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1201000,
@@ -5854,8 +8483,20 @@
       "lightning": 0,
       "holy": 65
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 44,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f6976dccbl0i1pdxa3y1gcjkryhw.webp"
+    "image": "/images/weapons/17f6976dccbl0i1pdxa3y1gcjkryhw.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1202000,
@@ -5883,8 +8524,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69987c03l0i1pdyutp139wmu1sh.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 57,
+      "magic": 40,
+      "fire": 40,
+      "lightning": 40,
+      "holy": 40,
+      "boost": 34
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69987c03l0i1pdyutp139wmu1sh.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1203000,
@@ -5912,8 +8570,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f696cbcb2l0i1pe89fm2alskh2df.webp"
+    "image": "/images/weapons/17f696cbcb2l0i1pe89fm2alskh2df.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1204000,
@@ -5941,8 +8611,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 38,
+      "fire": 38,
+      "lightning": 38,
+      "holy": 38,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f6969f10el0i1pecne5vzed6lx56.webp"
+    "image": "/images/weapons/17f6969f10el0i1pecne5vzed6lx56.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1205000,
@@ -5970,8 +8652,20 @@
       "lightning": 59,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 46,
+      "magic": 32,
+      "fire": 32,
+      "lightning": 46,
+      "holy": 32,
+      "boost": 34
+    },
     "passives": [],
-    "image": "/images/weapons/17f699a14b1l0i1pekzisiwkpul53i.webp"
+    "image": "/images/weapons/17f699a14b1l0i1pekzisiwkpul53i.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1206000,
@@ -5999,8 +8693,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69cd8a23l0i1peugvwepjdkaqh.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 45
+      }
+    ],
+    "image": "/images/weapons/17f69cd8a23l0i1peugvwepjdkaqh.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1207000,
@@ -6028,8 +8740,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69728e6al0i1peyh4scwxfhl357.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 45
+      }
+    ],
+    "image": "/images/weapons/17f69728e6al0i1peyh4scwxfhl357.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1208000,
@@ -6057,8 +8787,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69667faal0i1pezui5k6y6r0fin.webp"
+    "image": "/images/weapons/17f69667faal0i1pezui5k6y6r0fin.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1209000,
@@ -6086,8 +8829,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 45,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69513a8al0i1pf3ozolljjevfk.webp"
+    "image": "/images/weapons/17f69513a8al0i1pf3ozolljjevfk.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1210000,
@@ -6115,8 +8871,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 52,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 32
+    },
     "passives": [],
-    "image": "/images/weapons/17f6946d08bl0i1pfb4sevs913hvu.webp"
+    "image": "/images/weapons/17f6946d08bl0i1pfb4sevs913hvu.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1211000,
@@ -6144,8 +8913,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69a10accl0i1pfj7uwvc9kzei7d.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 31,
+      "magic": 57,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 31
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f69a10accl0i1pfj7uwvc9kzei7d.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1212000,
@@ -6173,8 +8960,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 35,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 50,
+      "holy": 25,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c558e4l0i1pfn93tt9wcpo0di.webp"
+    "image": "/images/weapons/17f69c558e4l0i1pfn93tt9wcpo0di.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1213000,
@@ -6202,8 +9002,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d611efl0i1pfqtebu0oq2b2w4.webp"
+    "image": "/images/weapons/17f69d611efl0i1pfqtebu0oq2b2w4.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1214000,
@@ -6231,8 +9044,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f6994d14el0i1pfsvoe12uhfhqnc.webp"
+    "image": "/images/weapons/17f6994d14el0i1pfsvoe12uhfhqnc.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1215000,
@@ -6260,8 +9085,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b492f2l0i1pg02g5smf5kummp.webp"
+    "image": "/images/weapons/17f69b492f2l0i1pg02g5smf5kummp.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1216000,
@@ -6289,8 +9126,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f6971cafal0i1pg8ls91ef3yrf8r.webp"
+    "image": "/images/weapons/17f6971cafal0i1pg8ls91ef3yrf8r.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1217000,
@@ -6318,8 +9167,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f69491311l0i1pgceffu5ll8sovn.webp"
+    "image": "/images/weapons/17f69491311l0i1pgceffu5ll8sovn.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1218000,
@@ -6347,8 +9208,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0,
+      "boost": 0
+    },
     "passives": [],
-    "image": "/images/weapons/17f6976f477l0i1pgfgwmdenvupj5.webp"
+    "image": "/images/weapons/17f6976f477l0i1pgfgwmdenvupj5.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1219000,
@@ -6376,8 +9249,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69502a09l0i1pgjcmg5igz1j0mr.webp"
+    "image": "/images/weapons/17f69502a09l0i1pgjcmg5igz1j0mr.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1220000,
@@ -6405,8 +9291,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69920f78l0i1pgs2yaxn0jafxk.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 33
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69920f78l0i1pgs2yaxn0jafxk.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1221000,
@@ -6434,8 +9338,26 @@
       "lightning": 0,
       "holy": 76
     },
-    "passives": [],
-    "image": "/images/weapons/17f697b3423l0i1pgz84q3gg342rvu.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 29,
+      "fire": 29,
+      "lightning": 29,
+      "holy": 42,
+      "boost": 31
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f697b3423l0i1pgz84q3gg342rvu.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1222000,
@@ -6463,8 +9385,26 @@
       "lightning": 0,
       "holy": 104
     },
-    "passives": [],
-    "image": "/images/weapons/17f69abddefl0i1ph323xr196zcpc.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 30,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 55,
+      "boost": 30
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69abddefl0i1ph323xr196zcpc.webp",
+    "damageTypes": [
+      "Slash",
+      "Pierce"
+    ]
   },
   {
     "id": 1223000,
@@ -6492,8 +9432,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f699368ccl0i1ph45qf42ty540od.webp"
+    "image": "/images/weapons/17f699368ccl0i1ph45qf42ty540od.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1224000,
@@ -6521,8 +9473,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69bbd392l0i1ph9qxgols7hl7qc.webp"
+    "image": "/images/weapons/17f69bbd392l0i1ph9qxgols7hl7qc.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1225000,
@@ -6550,8 +9514,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f6995ccbfl0i1phh558cbgycwuo.webp"
+    "image": "/images/weapons/17f6995ccbfl0i1phh558cbgycwuo.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1226000,
@@ -6579,8 +9555,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f697c0b2dl0i1phqrezjlqqlunoa.webp"
+    "image": "/images/weapons/17f697c0b2dl0i1phqrezjlqqlunoa.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1227000,
@@ -6608,8 +9596,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d76aa8l0i1phsgjq5azzb5g1.webp"
+    "image": "/images/weapons/17f69d76aa8l0i1phsgjq5azzb5g1.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1228000,
@@ -6637,8 +9637,20 @@
       "lightning": 0,
       "holy": 15
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69746125l0i1phti5gxbjc1nfhx.webp"
+    "image": "/images/weapons/17f69746125l0i1phti5gxbjc1nfhx.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1230000,
@@ -6666,8 +9678,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f697307d1l0i1pi6qvgmp5wuhmk.webp"
+    "image": "/images/weapons/17f697307d1l0i1pi6qvgmp5wuhmk.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1231000,
@@ -6695,8 +9719,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69885c93l0i1pihpfc550piu1x.webp"
+    "image": "/images/weapons/17f69885c93l0i1pihpfc550piu1x.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1232000,
@@ -6724,8 +9760,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 26,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f697047a0l0i1pik0le4bp23xal.webp"
+    "image": "/images/weapons/17f697047a0l0i1pik0le4bp23xal.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1233000,
@@ -6753,8 +9801,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69bba35dl0i1pilsvl3r9ub4cf9.webp"
+    "image": "/images/weapons/17f69bba35dl0i1pilsvl3r9ub4cf9.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1234000,
@@ -6782,8 +9842,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 33,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a617edl0i1piq3kor6g6xs3ql.webp"
+    "image": "/images/weapons/17f69a617edl0i1piq3kor6g6xs3ql.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1235000,
@@ -6811,8 +9883,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 38,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b1e4cfl0i1piuurxtzf8019c.webp"
+    "image": "/images/weapons/17f69b1e4cfl0i1piuurxtzf8019c.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1236000,
@@ -6840,8 +9924,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f698971dfl0i1pja9443dg722bb3.webp"
+    "image": "/images/weapons/17f698971dfl0i1pja9443dg722bb3.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1237000,
@@ -6869,8 +9965,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f694b74eel0i1pjc1y7lp7e97wy.webp"
+    "image": "/images/weapons/17f694b74eel0i1pjc1y7lp7e97wy.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1238000,
@@ -6898,8 +10006,20 @@
       "lightning": 0,
       "holy": 66
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 25,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 38,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f698acb69l0i1pjffhe1kjzha5v.webp"
+    "image": "/images/weapons/17f698acb69l0i1pjffhe1kjzha5v.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1239000,
@@ -6927,8 +10047,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 53,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 39
+    },
     "passives": [],
-    "image": "/images/weapons/17f6975ef77l0i1pjgwds05239gwag.webp"
+    "image": "/images/weapons/17f6975ef77l0i1pjgwds05239gwag.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1240000,
@@ -6956,8 +10088,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 26,
+      "fire": 33,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 34
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d10518l0i1pjt3166nis69mk9.webp"
+    "image": "/images/weapons/17f69d10518l0i1pjt3166nis69mk9.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1241000,
@@ -6985,8 +10129,20 @@
       "lightning": 63,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 60,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 47,
+      "holy": 31,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f6993e936l0i1pjyhfk7vfpgc8ce.webp"
+    "image": "/images/weapons/17f6993e936l0i1pjyhfk7vfpgc8ce.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1242000,
@@ -7014,8 +10170,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 32,
+      "fire": 32,
+      "lightning": 32,
+      "holy": 32,
+      "boost": 39
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b7874el0i1pk0zpdda5qgjzi.webp"
+    "image": "/images/weapons/17f69b7874el0i1pk0zpdda5qgjzi.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1243000,
@@ -7043,8 +10211,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f6963cc83l0i1pk36gu3e5f8fpxm.webp"
+    "critical": 110,
+    "guardNegation": {
+      "physical": 54,
+      "magic": 42,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 36
+    },
+    "passives": [
+      {
+        "type": "death",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f6963cc83l0i1pk36gu3e5f8fpxm.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1244000,
@@ -7072,8 +10257,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 56,
+      "magic": 28,
+      "fire": 43,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 37
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ac78dcl0i1pke5of594dboffh.webp"
+    "image": "/images/weapons/17f69ac78dcl0i1pke5of594dboffh.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1245000,
@@ -7101,8 +10298,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f6975dd97l0i1pkiw33ipbj1wu2d.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 46,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 34
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f6975dd97l0i1pkiw33ipbj1wu2d.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1246000,
@@ -7130,8 +10344,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69c12977l0i1pkr6s0g1o7v5kz.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 33,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 34
+    },
+    "passives": [
+      {
+        "type": "rot",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f69c12977l0i1pkr6s0g1o7v5kz.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1247000,
@@ -7159,8 +10390,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 26,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f698a34afl0i1pku2sj7lswv0zy.webp"
+    "image": "/images/weapons/17f698a34afl0i1pku2sj7lswv0zy.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1248000,
@@ -7188,8 +10431,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 25,
+      "fire": 20,
+      "lightning": 30,
+      "holy": 25,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f697d5fe2l0i1pkvirys2xrxe0un.webp"
+    "image": "/images/weapons/17f697d5fe2l0i1pkvirys2xrxe0un.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1249000,
@@ -7217,8 +10472,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a84ec9l0i1pl7rf93vq4jlbt8.webp"
+    "image": "/images/weapons/17f69a84ec9l0i1pl7rf93vq4jlbt8.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1250000,
@@ -7246,8 +10514,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 28
+    },
     "passives": [],
-    "image": "/images/weapons/17f699b4949l0i1plb5z4sznm17g7p.webp"
+    "image": "/images/weapons/17f699b4949l0i1plb5z4sznm17g7p.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1251000,
@@ -7275,8 +10556,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f696356b4l0i1pljd3dmbyei0rzd.webp"
+    "image": "/images/weapons/17f696356b4l0i1pljd3dmbyei0rzd.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1252000,
@@ -7304,8 +10598,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b31ef4l0i1plkiau08p955pt5.webp"
+    "image": "/images/weapons/17f69b31ef4l0i1plkiau08p955pt5.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1253000,
@@ -7333,8 +10640,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 43,
+      "magic": 29,
+      "fire": 29,
+      "lightning": 29,
+      "holy": 29,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f6953c2f2l0i1pltkmb7nxuvfxgo.webp"
+    "image": "/images/weapons/17f6953c2f2l0i1pltkmb7nxuvfxgo.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1254000,
@@ -7362,8 +10682,21 @@
       "lightning": 0,
       "holy": 85
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 40,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f697020ddl0i1pm0mkycj3pyzli7.webp"
+    "image": "/images/weapons/17f697020ddl0i1pm0mkycj3pyzli7.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1255000,
@@ -7391,8 +10724,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 28
+    },
     "passives": [],
-    "image": "/images/weapons/17f69523142l0i1pm7iurzr5rt7vpb.webp"
+    "image": "/images/weapons/17f69523142l0i1pm7iurzr5rt7vpb.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1256000,
@@ -7420,8 +10766,20 @@
       "lightning": 0,
       "holy": 85
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 13,
+      "magic": 22,
+      "fire": 22,
+      "lightning": 22,
+      "holy": 58,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d1c283l0i1pm7km9k4n9hesqp.webp"
+    "image": "/images/weapons/17f69d1c283l0i1pm7km9k4n9hesqp.webp",
+    "damageTypes": [
+      "Standard"
+    ]
   },
   {
     "id": 1257000,
@@ -7449,8 +10807,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 42,
+      "fire": 42,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f69dcdeb9l0i1pmay6pw29q0kz9j.webp"
+    "image": "/images/weapons/17f69dcdeb9l0i1pmay6pw29q0kz9j.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1258000,
@@ -7478,8 +10849,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 36,
+      "magic": 52,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 26,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b44345l0i1pmq6va882h9uvf.webp"
+    "image": "/images/weapons/17f69b44345l0i1pmq6va882h9uvf.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1259000,
@@ -7507,8 +10891,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 44,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b32328l0i1pmuqj0u81mxsett.webp"
+    "image": "/images/weapons/17f69b32328l0i1pmuqj0u81mxsett.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1260000,
@@ -7536,8 +10933,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 39,
+      "magic": 33,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 28
+    },
     "passives": [],
-    "image": "/images/weapons/17f698685e3l0i1pmwzhhrnhxcf81.webp"
+    "image": "/images/weapons/17f698685e3l0i1pmwzhhrnhxcf81.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1261000,
@@ -7565,8 +10975,21 @@
       "lightning": 0,
       "holy": 68
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 40,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aa244al0i1pmyf54x5qm8xb1r.webp"
+    "image": "/images/weapons/17f69aa244al0i1pmyf54x5qm8xb1r.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1262000,
@@ -7594,8 +11017,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 41,
+      "magic": 27,
+      "fire": 27,
+      "lightning": 27,
+      "holy": 27,
+      "boost": 27
+    },
     "passives": [],
-    "image": "/images/weapons/17f6997d3a3l0i1pn2970lts73cbnn.webp"
+    "image": "/images/weapons/17f6997d3a3l0i1pn2970lts73cbnn.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1263000,
@@ -7623,8 +11059,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 40,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 33
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d2e16cl0i1pndl0cqdeg1df40a.webp"
+    "image": "/images/weapons/17f69d2e16cl0i1pndl0cqdeg1df40a.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1264000,
@@ -7652,8 +11101,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 43,
+      "magic": 29,
+      "fire": 29,
+      "lightning": 29,
+      "holy": 29,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f6976fa7el0i1pnla0wdjcpf4iqvm.webp"
+    "image": "/images/weapons/17f6976fa7el0i1pnla0wdjcpf4iqvm.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1265000,
@@ -7681,8 +11143,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b005b3l0i1pnmcmlgow749t19.webp"
+    "image": "/images/weapons/17f69b005b3l0i1pnmcmlgow749t19.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1266000,
@@ -7710,8 +11185,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69d445cel0i1pnsmtteechmemmd.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 38,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 33
+    },
+    "passives": [
+      {
+        "type": "rot",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f69d445cel0i1pnsmtteechmemmd.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1267000,
@@ -7739,8 +11232,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 30,
+      "magic": 55,
+      "fire": 25,
+      "lightning": 25,
+      "holy": 25,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f697a64ccl0i1pnuagdt1sfmx0pk.webp"
+    "image": "/images/weapons/17f697a64ccl0i1pnuagdt1sfmx0pk.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1268000,
@@ -7768,8 +11274,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 54,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 24
+    },
     "passives": [],
-    "image": "/images/weapons/17f69747395l0i1po2ze4jsp35ms3t.webp"
+    "image": "/images/weapons/17f69747395l0i1po2ze4jsp35ms3t.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1269000,
@@ -7797,8 +11315,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 130,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 20
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c6c09el0i1poegki2ecno2vw.webp"
+    "image": "/images/weapons/17f69c6c09el0i1poegki2ecno2vw.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1270000,
@@ -7826,8 +11356,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 51,
+      "magic": 34,
+      "fire": 34,
+      "lightning": 34,
+      "holy": 34,
+      "boost": 23
+    },
     "passives": [],
-    "image": "/images/weapons/17f6990b8f9l0i1poeub82lv32r18o.webp"
+    "image": "/images/weapons/17f6990b8f9l0i1poeub82lv32r18o.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1271000,
@@ -7855,8 +11397,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 110,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 22
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d58854l0i1pom1ferfthsgsd.webp"
+    "image": "/images/weapons/17f69d58854l0i1pom1ferfthsgsd.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1272000,
@@ -7884,8 +11438,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f697b4c08l0i1pomqr1pxcel70uf.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 21
+    },
+    "passives": [
+      {
+        "type": "rot",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f697b4c08l0i1pomqr1pxcel70uf.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1273000,
@@ -7913,8 +11484,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69a8a231l0i1potleffsoj8ycfb.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 40,
+      "magic": 40,
+      "fire": 28,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 20
+    },
+    "passives": [
+      {
+        "type": "frost",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f69a8a231l0i1potleffsoj8ycfb.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1274000,
@@ -7942,8 +11530,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 21,
+      "magic": 15,
+      "fire": 25,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 19
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a2e19cl0i1pp06n0kd7rxesjl.webp"
+    "image": "/images/weapons/17f69a2e19cl0i1pp06n0kd7rxesjl.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1275000,
@@ -7971,8 +11571,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 49,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 22
+    },
     "passives": [],
-    "image": "/images/weapons/17f6999d8b5l0i1pp5phyiipgx4eoi.webp"
+    "image": "/images/weapons/17f6999d8b5l0i1pp5phyiipgx4eoi.webp",
+    "damageTypes": [
+      "Pierce"
+    ]
   },
   {
     "id": 1276000,
@@ -8000,8 +11612,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 18,
+      "fire": 30,
+      "lightning": 18,
+      "holy": 17,
+      "boost": 19
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c23d73l0i1ppcoi0x9lzm1frn.webp"
+    "image": "/images/weapons/17f69c23d73l0i1ppcoi0x9lzm1frn.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1277000,
@@ -8029,8 +11653,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 40,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 20
+    },
     "passives": [],
-    "image": "/images/weapons/17f69762fd7l0i1ppfr1nudb4uz853.webp"
+    "image": "/images/weapons/17f69762fd7l0i1ppfr1nudb4uz853.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1278000,
@@ -8058,8 +11694,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 21,
+      "magic": 42,
+      "fire": 13,
+      "lightning": 13,
+      "holy": 13,
+      "boost": 19
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ca18e3l0i1pplg1qd5hx85vfgj.webp"
+    "image": "/images/weapons/17f69ca18e3l0i1pplg1qd5hx85vfgj.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1279000,
@@ -8087,8 +11735,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 23,
+      "magic": 17,
+      "fire": 28,
+      "lightning": 17,
+      "holy": 17,
+      "boost": 19
+    },
     "passives": [],
-    "image": "/images/weapons/17f694a60fal0i1pprpdod0sn0veh.webp"
+    "image": "/images/weapons/17f694a60fal0i1pprpdod0sn0veh.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1280000,
@@ -8116,8 +11776,20 @@
       "lightning": 0,
       "holy": 100
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 30,
+      "magic": 21,
+      "fire": 21,
+      "lightning": 21,
+      "holy": 36,
+      "boost": 22
+    },
     "passives": [],
-    "image": "/images/weapons/17f69cf8934l0i1ppuzogdnseu6l7f.webp"
+    "image": "/images/weapons/17f69cf8934l0i1ppuzogdnseu6l7f.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1281000,
@@ -8145,8 +11817,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69528e34l0i1pq5pn4dg3bbkmj.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69528e34l0i1pq5pn4dg3bbkmj.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1282000,
@@ -8174,8 +11864,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 31,
+      "boost": 31
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a2b9c8l0i1pqbpbbyiylafnx.webp"
+    "image": "/images/weapons/17f69a2b9c8l0i1pqbpbbyiylafnx.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1283000,
@@ -8203,8 +11906,26 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69d7ad55l0i1pqhdj20wzeg63ts.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 42,
+      "magic": 28,
+      "fire": 38,
+      "lightning": 28,
+      "holy": 28,
+      "boost": 28
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69d7ad55l0i1pqhdj20wzeg63ts.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1284000,
@@ -8232,8 +11953,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 32,
+      "fire": 32,
+      "lightning": 32,
+      "holy": 32,
+      "boost": 32
+    },
     "passives": [],
-    "image": "/images/weapons/17f695e037bl0i1pqkyetqd7zbu8l.webp"
+    "image": "/images/weapons/17f695e037bl0i1pqkyetqd7zbu8l.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1285000,
@@ -8261,8 +11995,21 @@
       "lightning": 0,
       "holy": 97
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 32,
+      "magic": 26,
+      "fire": 26,
+      "lightning": 26,
+      "holy": 59,
+      "boost": 32
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a3190el0i1pqs4x6j5c6xpye.webp"
+    "image": "/images/weapons/17f69a3190el0i1pqs4x6j5c6xpye.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1286000,
@@ -8290,8 +12037,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 46,
+      "magic": 32,
+      "fire": 32,
+      "lightning": 32,
+      "holy": 32,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f698bc778l0i1pqyr7r7agoq3o5d.webp"
+    "image": "/images/weapons/17f698bc778l0i1pqyr7r7agoq3o5d.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1287000,
@@ -8319,8 +12078,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 50,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 35,
+      "holy": 35,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f696c1ee3l0i1pr4ayhpbcwld3pn.webp"
+    "image": "/images/weapons/17f696c1ee3l0i1pr4ayhpbcwld3pn.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1288000,
@@ -8348,8 +12119,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b42027l0i1prapddaur3pdili.webp"
+    "image": "/images/weapons/17f69b42027l0i1prapddaur3pdili.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1289000,
@@ -8377,8 +12160,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 55,
+      "magic": 38,
+      "fire": 38,
+      "lightning": 38,
+      "holy": 38,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69a1045al0i1prfggf7geafalun.webp"
+    "image": "/images/weapons/17f69a1045al0i1prfggf7geafalun.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1290000,
@@ -8406,8 +12201,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aaf476l0i1prkfafl8jets7wh.webp"
+    "image": "/images/weapons/17f69aaf476l0i1prkfafl8jets7wh.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1291000,
@@ -8435,8 +12242,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 48,
+      "magic": 34,
+      "fire": 34,
+      "lightning": 34,
+      "holy": 34,
+      "boost": 34
+    },
     "passives": [],
-    "image": "/images/weapons/17f69ace310l0i1proreclwz3grgz.webp"
+    "image": "/images/weapons/17f69ace310l0i1proreclwz3grgz.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1292000,
@@ -8464,8 +12283,20 @@
       "lightning": 0,
       "holy": 75
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 33,
+      "holy": 45,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aff56dl0i1przmnvkw34pmvm.webp"
+    "image": "/images/weapons/17f69aff56dl0i1przmnvkw34pmvm.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1293000,
@@ -8493,8 +12324,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 45,
+      "magic": 30,
+      "fire": 30,
+      "lightning": 30,
+      "holy": 30,
+      "boost": 30
+    },
     "passives": [],
-    "image": "/images/weapons/17f69afb6c2l0i1ps6dducecpwa4m.webp"
+    "image": "/images/weapons/17f69afb6c2l0i1ps6dducecpwa4m.webp",
+    "damageTypes": [
+      "Standard",
+      "Pierce"
+    ]
   },
   {
     "id": 1294000,
@@ -8522,8 +12366,20 @@
       "lightning": 0,
       "holy": 78
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 44,
+      "magic": 31,
+      "fire": 31,
+      "lightning": 31,
+      "holy": 42,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c5e336l0i1ps8m2w27as1vumo.webp"
+    "image": "/images/weapons/17f69c5e336l0i1ps8m2w27as1vumo.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1295000,
@@ -8551,8 +12407,21 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
     "passives": [],
-    "image": "/images/weapons/17f69aa2722l0i1ps9o8lwz4rprn29.webp"
+    "image": "/images/weapons/17f69aa2722l0i1ps9o8lwz4rprn29.webp",
+    "damageTypes": [
+      "Pierce",
+      "Standard"
+    ]
   },
   {
     "id": 1296000,
@@ -8580,8 +12449,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 54,
+      "magic": 37,
+      "fire": 51,
+      "lightning": 37,
+      "holy": 37,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69657dc0l0i1psc1sw2ehitb9m.webp"
+    "image": "/images/weapons/17f69657dc0l0i1psc1sw2ehitb9m.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1297000,
@@ -8609,8 +12490,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69dc134al0i1psnm7v5asqrwh7g.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 36
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f69dc134al0i1psnm7v5asqrwh7g.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1298000,
@@ -8638,8 +12536,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 47,
+      "magic": 33,
+      "fire": 45,
+      "lightning": 33,
+      "holy": 33,
+      "boost": 35
+    },
     "passives": [],
-    "image": "/images/weapons/17f69b4d221l0i1psy7bxk9acqs5xv.webp"
+    "image": "/images/weapons/17f69b4d221l0i1psy7bxk9acqs5xv.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1299000,
@@ -8667,8 +12577,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 57,
+      "magic": 40,
+      "fire": 40,
+      "lightning": 40,
+      "holy": 40,
+      "boost": 40
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c5bf40l0i1pszirywq0wqy1l.webp"
+    "image": "/images/weapons/17f69c5bf40l0i1pszirywq0wqy1l.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1300000,
@@ -8696,8 +12618,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 25,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69d7e396l0i1pt3tuf213zcu8u.webp"
+    "image": "/images/weapons/17f69d7e396l0i1pt3tuf213zcu8u.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1301000,
@@ -8725,8 +12659,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f699989edl0i1pt44dx2gkj49me6.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 52,
+      "magic": 36,
+      "fire": 36,
+      "lightning": 36,
+      "holy": 36,
+      "boost": 42
+    },
+    "passives": [
+      {
+        "type": "rot",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f699989edl0i1pt44dx2gkj49me6.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1302000,
@@ -8754,8 +12705,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f69571714l0i1ptc8s1fsagr8zf.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 26,
+      "magic": 15,
+      "fire": 15,
+      "lightning": 15,
+      "holy": 15,
+      "boost": 15
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ],
+    "image": "/images/weapons/17f69571714l0i1ptc8s1fsagr8zf.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1303000,
@@ -8783,8 +12751,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 21,
+      "magic": 10,
+      "fire": 36,
+      "lightning": 10,
+      "holy": 10,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69c5c0bfl0i1ptlhsrovoc8dx07.webp"
+    "image": "/images/weapons/17f69c5c0bfl0i1ptlhsrovoc8dx07.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1304000,
@@ -8812,8 +12792,25 @@
       "lightning": 0,
       "holy": 0
     },
-    "passives": [],
-    "image": "/images/weapons/17f694eefe9l0i1pto8dn7ezy61a99.webp"
+    "critical": 100,
+    "guardNegation": {
+      "physical": 28,
+      "magic": 17,
+      "fire": 17,
+      "lightning": 17,
+      "holy": 17,
+      "boost": 17
+    },
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 55
+      }
+    ],
+    "image": "/images/weapons/17f694eefe9l0i1pto8dn7ezy61a99.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1305000,
@@ -8841,8 +12838,20 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 24,
+      "magic": 12,
+      "fire": 26,
+      "lightning": 12,
+      "holy": 12,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f696af19bl0i1ptpv0fdawl72o4yq.webp"
+    "image": "/images/weapons/17f696af19bl0i1ptpv0fdawl72o4yq.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": 1306000,
@@ -8870,7 +12879,19 @@
       "lightning": 0,
       "holy": 0
     },
+    "critical": 100,
+    "guardNegation": {
+      "physical": 27,
+      "magic": 16,
+      "fire": 16,
+      "lightning": 16,
+      "holy": 16,
+      "boost": 15
+    },
     "passives": [],
-    "image": "/images/weapons/17f69691044l0i1ptyliubsc1c29o9.webp"
+    "image": "/images/weapons/17f69691044l0i1ptyliubsc1c29o9.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   }
 ]

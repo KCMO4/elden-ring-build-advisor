@@ -35,6 +35,7 @@ interface FanApiWeapon {
   category: string;
   weight: number;
   attack: Array<{ name: string; amount: number }>;
+  defence?: Array<{ name: string; amount: number }>;
   requiredAttributes: Array<{ name: string; amount: number }>;
   scalesWith: Array<{ name: string; scaling: string }>;
   image?: string;
@@ -63,6 +64,10 @@ interface FanApiSpell {
   requiresFaith?: number;
   requiresIntelligence?: number;
   requiresArcane?: number;
+  cost?: number;
+  slots?: number;
+  description?: string;
+  effects?: string;
   image?: string;
 }
 
@@ -73,6 +78,8 @@ interface FanApiShield {
   weight?: number;
   attack?: Array<{ name: string; amount: number }>;
   defence?: Array<{ name: string; amount: number }>;
+  scalesWith?: Array<{ name: string; scaling: string }>;
+  requiredAttributes?: Array<{ name: string; amount: number }>;
   image?: string;
 }
 
@@ -242,6 +249,20 @@ function normalizeFanApiWeapon(w: FanApiWeapon, idx: number): Weapon {
     return '-';
   };
 
+  const getDef = (name: string): number =>
+    w.defence?.find(d => d.name?.toLowerCase().startsWith(name))?.amount ?? 0;
+
+  // Only include guardNegation if fanapis has defence data for this weapon
+  const hasDefence = w.defence && w.defence.length > 0;
+  const guardNegation = hasDefence ? {
+    physical:  getDef('phy'),
+    magic:     getDef('mag'),
+    fire:      getDef('fir'),
+    lightning: getDef('lig'),
+    holy:      getDef('hol'),
+    boost:     getDef('boost'),
+  } : undefined;
+
   return {
     id: 1000000 + idx * 1000,
     name: w.name,
@@ -268,6 +289,8 @@ function normalizeFanApiWeapon(w: FanApiWeapon, idx: number): Weapon {
       lightning: getAtk('lig'),
       holy:      getAtk('hol'),
     },
+    critical: getAtk('crit') || 100,
+    guardNegation,
     passives: [],
     image: w.image || fextralifeFallback(w.name),
   };
@@ -431,6 +454,9 @@ function normalizeSpell(s: FanApiSpell, type: 'sorcery' | 'incantation', id: num
       fai: s.requiresFaith ?? (type === 'incantation' ? 10 : 0),
       arc: s.requiresArcane ?? 0,
     },
+    cost: s.cost,
+    slots: s.slots,
+    description: s.description || s.effects,
     image: s.image || fextralifeFallback(s.name),
   };
 }
@@ -446,6 +472,15 @@ async function syncShields(): Promise<void> {
         s.attack?.find(a => a.name?.toLowerCase().startsWith(name))?.amount ?? 0;
       const getDef = (name: string): number =>
         s.defence?.find(d => d.name?.toLowerCase().includes(name))?.amount ?? 0;
+      const getReq = (name: string): number =>
+        s.requiredAttributes?.find(r => r.name?.toLowerCase().startsWith(name))?.amount ?? 0;
+      const getScale = (name: string): ScalingGrade => {
+        const entry = s.scalesWith?.find(e => e.name?.toLowerCase().startsWith(name));
+        if (!entry) return '-';
+        const g = entry.scaling?.toUpperCase();
+        if (g === 'S' || g === 'A' || g === 'B' || g === 'C' || g === 'D' || g === 'E') return g;
+        return '-';
+      };
 
       const cat = (s.category ?? '').toLowerCase();
       const category: Shield['category'] =
@@ -457,8 +492,37 @@ async function syncShields(): Promise<void> {
         name: s.name,
         category,
         weight: s.weight ?? 0,
+        critical: getAtk('crit') || 100,
         physicalAttack: getAtk('phy'),
+        damage: {
+          physical:  getAtk('phy'),
+          magic:     getAtk('mag'),
+          fire:      getAtk('fir'),
+          lightning: getAtk('lig'),
+          holy:      getAtk('hol'),
+        },
+        scaling: {
+          str: getScale('str'),
+          dex: getScale('dex'),
+          int: getScale('int'),
+          fai: getScale('fai'),
+          arc: getScale('arc'),
+        },
+        requirements: {
+          str: getReq('str'),
+          dex: getReq('dex'),
+          int: getReq('int'),
+          fai: getReq('fai'),
+          arc: getReq('arc'),
+        },
         stability: getDef('boost'),
+        guardNegation: {
+          physical:  getDef('phy'),
+          magic:     getDef('mag'),
+          fire:      getDef('fir'),
+          lightning: getDef('lig'),
+          holy:      getDef('hol'),
+        },
         image: s.image || fextralifeFallback(s.name),
       };
     });

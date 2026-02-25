@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
 import type { ResolvedInventoryItem } from '../../types';
 import { useTooltipPosition } from '../../hooks/useTooltipPosition';
+import { getTalismanEffectLines } from '../../utils/talismanEffects';
 // Reutiliza los estilos del ItemTooltip del equipo para consistencia visual
 import styles from '../ItemTooltip/ItemTooltip.module.css';
 import invStyles from './InventoryTooltip.module.css';
@@ -20,6 +21,16 @@ const GRADE_CLASS: Record<ScalingGrade, string> = {
   D: styles.gradeD,
   E: styles.gradeE,
   '-': styles.gradeNone,
+};
+
+/** Colores por tipo de passive */
+const PASSIVE_COLOR: Record<string, string> = {
+  blood: '#c06060', frost: '#70b0d0', poison: '#6a9a3a', rot: '#c07030',
+  sleep: '#8070b0', madness: '#c0a020', death: '#808080',
+};
+const PASSIVE_LABEL: Record<string, string> = {
+  blood: 'Bleed', frost: 'Frost', poison: 'Poison', rot: 'Scarlet Rot',
+  sleep: 'Sleep', madness: 'Madness', death: 'Death Blight',
 };
 
 function ScalingBadge({ stat, grade }: { stat: string; grade: string }) {
@@ -43,10 +54,36 @@ function DamageBar({ label, value, max }: { label: string; value: number; max: n
   );
 }
 
+/** Colores por tipo de daño */
+const DMG_COLOR: Record<string, string> = {
+  physical:  '#c8bfa0',
+  magic:     '#6a9cd4',
+  fire:      '#d4703c',
+  lightning: '#d4c03c',
+  holy:      '#c4a84c',
+};
+
+function ColorDamageBar({ label, value, max, color }: { label: string; value: number; max: number; color?: string }) {
+  if (!value || value <= 0) return null;
+  const pct = Math.min(100, (value / max) * 100);
+  return (
+    <div className={styles.damageRow}>
+      <span className={styles.damageLabel}>{label}</span>
+      <div className={styles.barTrack}>
+        <div
+          className={styles.barFill}
+          style={{ width: `${pct}%`, background: color ? `linear-gradient(to right, #3a2a10, ${color})` : undefined }}
+        />
+      </div>
+      <span className={styles.damageValue} style={{ color: color ?? undefined }}>{value}</span>
+    </div>
+  );
+}
+
 /** Sección de daño para armas */
 function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
-  const { damage, scaling, weight, stability } = item;
-  if (!damage && !scaling && !stability) return null;
+  const { damage, scaling, weight, stability, passives, requirements, guardNegation, critical } = item;
+  if (!damage && !scaling && !stability && !guardNegation) return null;
 
   const maxDmg = damage
     ? Math.max(damage.physical, damage.magic, damage.fire, damage.lightning, damage.holy, 1)
@@ -65,6 +102,14 @@ function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
           <DamageBar label="Holy"      value={damage.holy}      max={maxDmg} />
         </div>
       )}
+      {critical != null && critical !== 100 && (
+        <div className={styles.section}>
+          <div className={styles.statRow}>
+            <span className={styles.statLabel}>Critical</span>
+            <span className={styles.statValue}>{critical}</span>
+          </div>
+        </div>
+      )}
       {hasScaling && scaling && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Scaling</div>
@@ -75,6 +120,66 @@ function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
             <ScalingBadge stat="FAI" grade={scaling.fai} />
             <ScalingBadge stat="ARC" grade={scaling.arc} />
           </div>
+        </div>
+      )}
+      {passives && passives.length > 0 && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Passive Effects</div>
+          {passives.map(p => (
+            <div key={p.type} className={styles.damageRow}>
+              <span className={styles.damageLabel}>{PASSIVE_LABEL[p.type] ?? p.type}</span>
+              <div className={styles.barTrack}>
+                <div
+                  className={styles.barFill}
+                  style={{
+                    width: `${Math.min(100, (p.buildup / 100) * 100)}%`,
+                    background: `linear-gradient(to right, #3a2a10, ${PASSIVE_COLOR[p.type] ?? '#888'})`,
+                  }}
+                />
+              </div>
+              <span className={styles.damageValue} style={{ color: PASSIVE_COLOR[p.type] ?? '#888' }}>
+                {p.buildup}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+      {requirements && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Requirements</div>
+          <div className={styles.badgeRow}>
+            {requirements.str > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>STR {requirements.str}</span>}
+            {requirements.dex > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>DEX {requirements.dex}</span>}
+            {requirements.int > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>INT {requirements.int}</span>}
+            {requirements.fai > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>FAI {requirements.fai}</span>}
+            {requirements.arc > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>ARC {requirements.arc}</span>}
+          </div>
+        </div>
+      )}
+      {guardNegation && !damage && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Guarded Dmg Negation</div>
+          <ColorDamageBar label="Physical"  value={guardNegation.physical}  max={100} color={DMG_COLOR.physical}  />
+          <ColorDamageBar label="Magic"     value={guardNegation.magic}     max={100} color={DMG_COLOR.magic}     />
+          <ColorDamageBar label="Fire"      value={guardNegation.fire}      max={100} color={DMG_COLOR.fire}      />
+          <ColorDamageBar label="Lightning" value={guardNegation.lightning} max={100} color={DMG_COLOR.lightning} />
+          <ColorDamageBar label="Holy"      value={guardNegation.holy}      max={100} color={DMG_COLOR.holy}      />
+        </div>
+      )}
+      {guardNegation && damage && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Guard Negation</div>
+          <ColorDamageBar label="Physical"  value={guardNegation.physical}  max={60} color={DMG_COLOR.physical}  />
+          <ColorDamageBar label="Magic"     value={guardNegation.magic}     max={60} color={DMG_COLOR.magic}     />
+          <ColorDamageBar label="Fire"      value={guardNegation.fire}      max={60} color={DMG_COLOR.fire}      />
+          <ColorDamageBar label="Lightning" value={guardNegation.lightning} max={60} color={DMG_COLOR.lightning} />
+          <ColorDamageBar label="Holy"      value={guardNegation.holy}      max={60} color={DMG_COLOR.holy}      />
+          {guardNegation.boost != null && guardNegation.boost > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel}>Guard Boost</span>
+              <span className={styles.statValue}>{guardNegation.boost}</span>
+            </div>
+          )}
         </div>
       )}
       {stability !== undefined && stability > 0 && (
@@ -95,7 +200,7 @@ function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
 
 /** Sección de defensa para armaduras */
 function ArmorSection({ item }: { item: ResolvedInventoryItem }) {
-  const { defense, weight } = item;
+  const { defense, weight, poise, immunity, robustness, focus, vitality } = item;
   if (!defense) return null;
 
   const maxDef = Math.max(
@@ -103,23 +208,66 @@ function ArmorSection({ item }: { item: ResolvedInventoryItem }) {
     defense.magic, defense.fire, defense.lightning, defense.holy, 1,
   );
 
+  const hasResistances = (poise != null && poise > 0) ||
+    (immunity != null && immunity > 0) || (robustness != null && robustness > 0) ||
+    (focus != null && focus > 0) || (vitality != null && vitality > 0);
+
   return (
     <>
       <div className={styles.section}>
         <div className={styles.sectionLabel}>Dmg Negation</div>
         <DamageBar label="Physical"  value={defense.physical}  max={maxDef} />
-        <DamageBar label="Strike"    value={defense.strike}    max={maxDef} />
-        <DamageBar label="Slash"     value={defense.slash}     max={maxDef} />
-        <DamageBar label="Pierce"    value={defense.pierce}    max={maxDef} />
+        <DamageBar label="  Strike"  value={defense.strike}    max={maxDef} />
+        <DamageBar label="  Slash"   value={defense.slash}     max={maxDef} />
+        <DamageBar label="  Pierce"  value={defense.pierce}    max={maxDef} />
         <DamageBar label="Magic"     value={defense.magic}     max={maxDef} />
         <DamageBar label="Fire"      value={defense.fire}      max={maxDef} />
         <DamageBar label="Lightning" value={defense.lightning} max={maxDef} />
         <DamageBar label="Holy"      value={defense.holy}      max={maxDef} />
       </div>
+      {hasResistances && (
+        <div className={styles.section}>
+          {poise != null && poise > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel}>Poise</span>
+              <span className={styles.statValue}>{poise}</span>
+            </div>
+          )}
+          {immunity != null && immunity > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#8bc34a' }}>Immunity</span>
+              <span className={styles.statValue}>{immunity}</span>
+            </div>
+          )}
+          {robustness != null && robustness > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#e57373' }}>Robustness</span>
+              <span className={styles.statValue}>{robustness}</span>
+            </div>
+          )}
+          {focus != null && focus > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#ba68c8' }}>Focus</span>
+              <span className={styles.statValue}>{focus}</span>
+            </div>
+          )}
+          {vitality != null && vitality > 0 && (
+            <div className={styles.statRow}>
+              <span className={styles.statLabel} style={{ color: '#78909c' }}>Vitality</span>
+              <span className={styles.statValue}>{vitality}</span>
+            </div>
+          )}
+        </div>
+      )}
       {weight !== undefined && weight > 0 && (
         <div className={styles.weightRow}>
           <span className={styles.weightLabel}>Weight</span>
           <span className={styles.weightValue}>{weight.toFixed(1)}</span>
+        </div>
+      )}
+      {defense && weight != null && weight > 0 && (
+        <div className={styles.efficiencyRow}>
+          Efficiency {(defense.physical / weight).toFixed(1)}
         </div>
       )}
     </>
@@ -184,14 +332,46 @@ function SpiritSection({ item }: { item: ResolvedInventoryItem }) {
   );
 }
 
-/** Sección de tipo de hechizo */
+/** Sección de hechizo (tipo, cost, slots, requirements, description) */
 function SpellSection({ item }: { item: ResolvedInventoryItem }) {
-  const { itemType } = item;
-  if (!itemType) return null;
+  const { itemType, cost, slots, requirements, description } = item;
   return (
-    <div className={invStyles.spellType}>
-      {itemType === 'sorcery' ? 'Sorcery' : 'Incantation'}
-    </div>
+    <>
+      {itemType && (
+        <div className={invStyles.spellType}>
+          {itemType === 'sorcery' ? 'Sorcery' : 'Incantation'}
+        </div>
+      )}
+      {(cost !== undefined || slots !== undefined) && (
+        <div className={styles.section}>
+          {cost !== undefined && cost > 0 && (
+            <div className={invStyles.costRow}>
+              <span className={invStyles.fpLabel}>FP</span>
+              <span className={invStyles.costValue}>{cost}</span>
+            </div>
+          )}
+          {slots !== undefined && slots > 0 && (
+            <div className={invStyles.costRow}>
+              <span className={invStyles.slotsLabel}>Slots</span>
+              <span className={invStyles.costValue}>{slots}</span>
+            </div>
+          )}
+        </div>
+      )}
+      {requirements && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Requirements</div>
+          <div className={styles.badgeRow}>
+            {requirements.int > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>INT {requirements.int}</span>}
+            {requirements.fai > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>FAI {requirements.fai}</span>}
+            {requirements.arc > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>ARC {requirements.arc}</span>}
+          </div>
+        </div>
+      )}
+      {description && (
+        <div className={invStyles.effectText}>{description}</div>
+      )}
+    </>
   );
 }
 
@@ -206,7 +386,29 @@ function TooltipContent({ item }: { item: ResolvedInventoryItem }) {
     return <ArmorSection item={item} />;
   }
   if (cat === 'talisman') {
-    return item.effect ? <EffectSection effect={item.effect} /> : null;
+    const effectLines = getTalismanEffectLines(item.baseId ?? 0);
+    return (
+      <>
+        {effectLines && (
+          <div className={styles.section}>
+            <div className={styles.sectionLabel}>Effect</div>
+            {effectLines.map(({ label, value }) => (
+              <div key={label} className={styles.effectRow}>
+                <span className={styles.effectLabel}>{label}</span>
+                <span className={styles.effectValue}>{value}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {!effectLines && item.effect && <EffectSection effect={item.effect} />}
+        {item.weight !== undefined && item.weight > 0 && (
+          <div className={styles.weightRow}>
+            <span className={styles.weightLabel}>Weight</span>
+            <span className={styles.weightValue}>{item.weight.toFixed(1)}</span>
+          </div>
+        )}
+      </>
+    );
   }
   if (cat === 'ash_of_war') {
     return <AshSection item={item} />;
@@ -255,6 +457,13 @@ export default function InventoryTooltip({ item, triggerRect }: Props) {
 
       {subtitle && (
         <div className={invStyles.subtitle}>{subtitle}</div>
+      )}
+      {item.damageTypes && item.damageTypes.length > 0 && (
+        <div className={styles.badgeRow} style={{ marginBottom: '0.4rem' }}>
+          {item.damageTypes.map(t => (
+            <span key={t} className={styles.dmgTypeBadge}>{t}</span>
+          ))}
+        </div>
       )}
 
       <div className={styles.divider} />

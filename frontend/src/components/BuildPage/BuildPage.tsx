@@ -5,13 +5,13 @@ import StatsPanel from '../StatsPanel/StatsPanel';
 import DerivedStatsPanel from '../DerivedStatsPanel/DerivedStatsPanel';
 import EquipmentGrid from '../EquipmentGrid/EquipmentGrid';
 import InventoryPanel from '../InventoryPanel/InventoryPanel';
+import AdvisorPanel from '../AdvisorPanel/AdvisorPanel';
 import ItemTooltip from '../ItemTooltip/ItemTooltip';
 import { useImagePreloader } from '../../hooks/useImagePreloader';
+import { estimateEquippedAR } from '../../utils/arCalc';
 import styles from './BuildPage.module.css';
 
-// TODO: Advisor panel — planned tabs:
-//   - "Recommended Builds"  : curated build suggestions based on character stats
-//   - "Questlines"          : step-by-step guide for each NPC questline
+type ContentTab = 'inventory' | 'advisor';
 
 interface Props {
   character: CharacterData;
@@ -22,7 +22,18 @@ export default function BuildPage({ character, onBack }: Props) {
   const [hoveredItem, setHoveredItem] = useState<EquippedWeapon | null>(null);
   const [tooltipRect, setTooltipRect] = useState<DOMRect | null>(null);
   const [exporting, setExporting] = useState(false);
+  const [contentTab, setContentTab] = useState<ContentTab>('inventory');
   const captureRef = useRef<HTMLDivElement>(null);
+
+  // Main weapon + AR for AdvisorPanel comparison
+  const mainWeapon = useMemo(
+    () => character.equipped.rightHand.find(w => w.name && w.damage) ?? null,
+    [character.equipped.rightHand],
+  );
+  const mainWeaponAR = useMemo(
+    () => mainWeapon?.damage ? estimateEquippedAR(mainWeapon, character.stats).total : 0,
+    [mainWeapon, character.stats],
+  );
 
   // Collect all image URLs from equipped + inventory for preloading
   const allImageUrls = useMemo(() => {
@@ -133,7 +144,30 @@ export default function BuildPage({ character, onBack }: Props) {
         </section>
 
         <section className={styles.content}>
-          <InventoryPanel inventory={character.inventory} />
+          <div className={styles.contentTabs}>
+            <button
+              className={`${styles.contentTab} ${contentTab === 'inventory' ? styles.contentTabActive : ''}`}
+              onClick={() => setContentTab('inventory')}
+            >
+              Inventory
+            </button>
+            <button
+              className={`${styles.contentTab} ${contentTab === 'advisor' ? styles.contentTabActive : ''}`}
+              onClick={() => setContentTab('advisor')}
+            >
+              Advisor
+            </button>
+          </div>
+          {contentTab === 'inventory' && (
+            <InventoryPanel inventory={character.inventory} />
+          )}
+          {contentTab === 'advisor' && (
+            <AdvisorPanel
+              stats={character.stats}
+              mainWeaponAR={mainWeaponAR}
+              mainWeapon={mainWeapon}
+            />
+          )}
         </section>
       </div>
 

@@ -50,6 +50,8 @@ export interface ResolvedInventoryItem extends RawInventoryItem {
   image?: string;
   /** Nivel de mejora del arma (+0 a +25 / +10 para únicas). undefined si no aplica. */
   upgradeLevel?: number;
+  /** Infusión del arma (Heavy, Keen, Fire, etc.). undefined = Standard */
+  infusion?: string;
   /** Tipo de ítem (weapon type, armor type, spell type, shield category) */
   itemType?: string;
   /** Daño base — para armas */
@@ -72,6 +74,31 @@ export interface ResolvedInventoryItem extends RawInventoryItem {
   fpCost?: number;
   /** Coste de HP — espíritus invocables */
   hpCost?: number;
+  /** Stat requirements (weapons, spells) */
+  requirements?: { str: number; dex: number; int: number; fai: number; arc: number };
+  /** Passive effects (blood, frost, poison, etc.) — weapons */
+  passives?: Array<{ type: string; buildup: number }>;
+  /** Poise — armaduras (inventario) */
+  poise?: number;
+  /** Resistencias — armaduras (inventario) */
+  immunity?:   number;
+  robustness?: number;
+  focus?:      number;
+  vitality?:   number;
+  /** Critical hit multiplier — weapons (default 100, daggers higher) */
+  critical?: number;
+  /** Physical damage types (Standard, Strike, Slash, Pierce) */
+  damageTypes?: string[];
+  /** FP cost of the weapon's skill [tap] or [tap, hold] */
+  skillFpCost?: number[];
+  /** Guarded Damage Negation — weapons and shields */
+  guardNegation?: { physical: number; magic: number; fire: number; lightning: number; holy: number; boost?: number };
+  /** FP cost to cast — spells */
+  cost?: number;
+  /** Memory slots required — spells */
+  slots?: number;
+  /** In-game description — spells */
+  description?: string;
 }
 
 /** Arma equipada en un slot de mano */
@@ -105,10 +132,24 @@ export interface EquippedWeapon {
   vitality?:   number;
   /** Estabilidad (Guard Boost) — escudos */
   stability?: number;
+  /** Guarded Damage Negation — weapons and shields */
+  guardNegation?: { physical: number; magic: number; fire: number; lightning: number; holy: number; boost?: number };
+  /** Critical hit multiplier — armas (default 100, daggers higher) */
+  critical?: number;
+  /** Physical damage types (Standard, Strike, Slash, Pierce) */
+  damageTypes?: string[];
   /** Nombre de la habilidad (Ash of War skill) — armas */
   skill?: string;
+  /** FP cost of the weapon's skill [tap] or [tap, hold] */
+  skillFpCost?: number[];
   /** Efecto o descripción corta (principalmente para talismanes) */
   effect?: string;
+  /** Stat requirements — armas */
+  requirements?: { str: number; dex: number; int: number; fai: number; arc: number };
+  /** Passive effects (blood, frost, poison, etc.) — armas */
+  passives?: Array<{ type: string; buildup: number }>;
+  /** Tipo de ítem (weapon type, armor type, shield category) */
+  itemType?: string;
 }
 
 /** Ítem en un quick slot o pouch */
@@ -123,6 +164,18 @@ export interface QuickSlotItem {
   image?: string;
   /** Cantidad (cargas de flask, etc.). undefined = 1 */
   quantity?: number;
+  /** Tipo de hechizo (solo para spells en memory slots) */
+  spellType?: 'sorcery' | 'incantation';
+  /** FP cost to cast (solo para spells) */
+  cost?: number;
+  /** Memory slots required (solo para spells) */
+  slots?: number;
+  /** In-game description */
+  description?: string;
+  /** Stat requirements */
+  requirements?: { str: number; dex: number; int: number; fai: number; arc: number };
+  /** Efecto del ítem (consumibles, etc.) */
+  effect?: string;
 }
 
 /** Ítems equipados en el personaje */

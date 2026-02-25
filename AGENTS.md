@@ -38,7 +38,7 @@ cd backend
 npm run dev         # Dev server at http://localhost:3001 (hot reload)
 npm run build       # Compile to dist/
 npm start           # Run dist/index.js (production)
-npm test            # Tests (43 tests, all must pass)
+npm test            # Tests (134 tests, all must pass)
 npm run sync-data   # Regenerate src/data/*.json from fanapis.com
 npm run patch-armor # Overlay float defense + poise + resistances from EldenRingArmorOptimizer
 npm run audit       # Data quality audit (exits 1 if critical bugs found)
@@ -95,7 +95,11 @@ backend/src/
     ├── gameIds.json       # Real weapon IDs (Deskete/EldenRingResources)
     ├── armorIds.json      # EquipParamProtector IDs (623 entries)
     ├── talismanIds.json   # EquipParamAccessory IDs (real game IDs)
-    └── gemIds.json        # Ash of War IDs (EquipParamGem)
+    ├── gemIds.json        # Ash of War IDs (EquipParamGem)
+    ├── damageTypes.json   # Damage type definitions
+    ├── skillFpCosts.json  # FP costs for weapon skills
+    ├── weaponSkills.json  # Weapon skill definitions
+    └── talismanWeights.json # Talisman weight data
 ```
 
 ### .sl2 reading — critical points
@@ -176,6 +180,7 @@ The fanapis API uses non-standard names:
 | TypeScript | 5.7 | Language |
 | Vite | 6.x | Bundler / dev server |
 | CSS Modules | — | Per-component styles |
+| html2canvas | 1.x | PNG export of build page |
 
 ### Commands
 
@@ -204,7 +209,8 @@ frontend/src/
 │   ├── useMountAnimation.ts      # Double-rAF to trigger CSS transitions on mount
 │   └── useTooltipPosition.ts     # Viewport-aware tooltip flip (left/right)
 ├── utils/
-│   ├── talismanEffects.ts        # Numeric effects for ~19 known talismans
+│   ├── talismanEffects.ts        # Numeric effects for ~35 known talismans (stats, HP/FP/Stamina,
+│   │                             # load, elemental dmg%, defense%, skill/spell power, discovery)
 │   └── arCalc.ts                 # AR estimation with per-stat scaling breakdown
 └── components/
     ├── UploadPage/         # Drop zone + load .sl2 button
@@ -213,10 +219,11 @@ frontend/src/
     ├── StatsPanel/         # 8 attributes with bars (VIG/MND/END/STR/DEX/INT/FAI/ARC)
     ├── DerivedStatsPanel/  # HP, FP, Stamina, Equip Load, Attack, Dmg Negation, Poise, Resistances
     │                       # HP/FP/Stamina/Load include talisman bonuses; Resistances use exact game formulas
+    │                       # 2H STR toggle (×1.5), poise color breakpoints, talisman elemental AR bonuses
     ├── EquipmentGrid/      # Weapons LH/RH, armor (head/chest/arms/legs), talismans
     │                       # Hover triggers ItemTooltip via onItemHover callback
     ├── ItemSlot/           # Individual slot: fanapis image or SVG placeholder per category
-    │                       # Upgrade badge (+N), infusion badge
+    │                       # Upgrade badge (+N), infusion badge, spell type colors (sorcery/incantation), FP badge
     ├── ItemTooltip/        # Hover tooltip with full stats (portal to document.body)
     │                       # Shows: name+level, AoW skill, Attack Power (bars), Scaling badges,
     │                       # Estimated AR with per-stat breakdown, Defense (armors),
@@ -224,8 +231,8 @@ frontend/src/
     │                       # numeric or text effects (talismans), weight
     ├── InventoryTooltip/   # Hover tooltip for inventory items (portal to document.body)
     │                       # Shows: damage, scaling, defense, effects, ash/spirit details
-    ├── AdvisorPanel/       # (kept in codebase, NOT rendered in BuildPage)
-    │                       # TODO: replace with tabs — "Recommended Builds" + "Questlines"
+    ├── AdvisorPanel/       # Rendered in BuildPage via "Advisor" tab — weapon recommendations
+    │                       # by estimated AR + "Next Caps" optimizer (scaling-aware stat tips)
     └── InventoryPanel/     # Tabs: Weapons | Armor | Talismans | Spells | Spirits |
                             # Ashes | Consumables | Upgrades | Mats | Tears | Ammo |
                             # Key | Books | Multi
@@ -255,10 +262,12 @@ Elden Ring's aesthetic is angular/square. All borders must be `border-radius: 0`
 
 **Two layers of data:**
 
-1. **`utils/talismanEffects.ts`** — `TALISMAN_EFFECTS` map with ~19 talismans that affect stats
-   (Erdtree's Favor, Radagon's Soreseal, Arsenal Charm, etc.) with precise numeric values.
+1. **`utils/talismanEffects.ts`** — `TALISMAN_EFFECTS` map with ~35 talismans that affect stats
+   (Erdtree's Favor, Radagon's Soreseal, Arsenal Charm, Scorpion Charms, Dragoncrest,
+   Graven-School/Mass, Shard of Alexander, etc.) with precise numeric values.
    - `getTalismanEffectLines(baseId)` → `{ label, value }[]` for tooltips (e.g. `HP +3%`)
-   - These values are applied in `DerivedStatsPanel` to compute real HP/FP/Stamina/Load
+   - `computeTalismanBonuses(talismans)` → aggregate bonuses for HP/FP/Stamina/Load/elemental dmg/defense
+   - These values are applied in `DerivedStatsPanel` to compute real HP/FP/Stamina/Load and elemental AR bonuses
 
 2. **`backend: EquippedWeapon.effect`** — fanapis description text for **all** talismans.
    When `getTalismanEffectLines` returns `null`, the tooltip shows this text instead.
@@ -340,11 +349,12 @@ POST /api/parse
 N active characters → CharacterSelect → BuildPage
     ↓
 BuildPage renders:
-  - StatsPanel (8 attributes)
-  - DerivedStatsPanel (HP/FP/Stamina/Load/Attack/Defense/Poise/Resistances with talisman bonuses)
-  - EquipmentGrid (weapons + armor + talismans, hover → ItemTooltip)
-  - InventoryPanel (tabs with search + type filter)
-  [AdvisorPanel is NOT rendered — see TODO in BuildPage.tsx]
+  - StatsPanel (8 attributes, softcap visual indicator)
+  - DerivedStatsPanel (HP/FP/Stamina/Load/Attack/Defense/Poise/Resistances with talisman bonuses, 2H toggle)
+  - EquipmentGrid (weapons + armor + talismans, hover → ItemTooltip, spell type colors + FP badge)
+  - Content tabs: Inventory | Advisor
+    - InventoryPanel (tabs with search + type filter, hover → InventoryTooltip with armor efficiency)
+    - AdvisorPanel (recommended weapons by AR + next caps optimizer)
 ```
 
 ---
@@ -372,7 +382,7 @@ In the frontend, `<ItemSlot>` shows the image if available, or an SVG placeholde
 ## Tests
 
 ```bash
-cd backend && npm test   # 43 tests — all must pass before committing
+cd backend && npm test   # 134 tests — all must pass before committing
 ```
 
 Tests cover: BND4 parser, findStats, inventory scanner, item store, advisor.

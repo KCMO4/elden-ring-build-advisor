@@ -275,6 +275,37 @@ function talismanIdName(id: number): string | null {
   return getTalismanIds()[String(id)] ?? null;
 }
 
+// ── Lookup de FP costs de skills (Ash of War) ────────────────────────────────
+// skillFpCosts.json mapea skill_name → [tap, hold?]
+let _skillFpCosts: Record<string, number[]> | null = null;
+function getSkillFpCosts(): Record<string, number[]> {
+  if (!_skillFpCosts) {
+    _skillFpCosts = loadJsonFile<Record<string, number[]>>('skillFpCosts.json') as Record<string, number[]> ?? {};
+  }
+  return _skillFpCosts;
+}
+
+function getSkillFpCost(skillName: string): number[] | undefined {
+  return getSkillFpCosts()[skillName];
+}
+
+// ── Lookup de skills innatos de armas únicas ────────────────────────────────
+// weaponSkills.json mapea weapon_name → innate_skill_name
+let _weaponSkills: Record<string, string> | null = null;
+function getWeaponSkills(): Record<string, string> {
+  if (!_weaponSkills) {
+    _weaponSkills = loadJsonFile<Record<string, string>>('weaponSkills.json') ?? {};
+  }
+  return _weaponSkills;
+}
+
+function getInnateSkill(weaponName: string): { name: string; fpCost?: number[] } | null {
+  const skillName = getWeaponSkills()[weaponName];
+  if (!skillName) return null;
+  const fpCost = getSkillFpCost(skillName);
+  return { name: skillName, fpCost };
+}
+
 // ── API pública ──────────────────────────────────────────────
 
 /**
@@ -553,7 +584,27 @@ function resolveInventorySlotItem(rawId: number): QuickSlotItem {
     case 0x4: { // Goods (consumables, flasks, spells, spirits, etc.)
       const name = getGameIds()[String(baseId)] ?? null;
       const image = name ? resolveGoodsImage(baseId, name) : '';
-      return { rawId, baseId, name, image };
+      const result: QuickSlotItem = { rawId, baseId, name, image };
+
+      // Enrich spells with type/cost/slots/requirements/description
+      if (name && getSpellNameSet().has(norm(name))) {
+        const store = ItemStore.getInstance();
+        const spData = store.getSpellByName(name);
+        if (spData) {
+          result.spellType = spData.type;
+          if (spData.cost != null) result.cost = spData.cost;
+          if (spData.slots != null) result.slots = spData.slots;
+          if (spData.description) result.description = spData.description;
+          if (spData.requirements) result.requirements = spData.requirements;
+        }
+      } else if (name) {
+        // Enrich consumables with effect text
+        const store = ItemStore.getInstance();
+        const cData = store.getConsumableByName(name);
+        if (cData?.effect) result.effect = cData.effect;
+      }
+
+      return result;
     }
     default: {
       const name = getGameIds()[String(baseId)] ?? null;
@@ -659,7 +710,7 @@ function findGemSkillForWeapon(
   buf: Buffer,
   weaponHandle: number,
   searchLimit: number,
-): string | null {
+): { name: string; fpCost?: number[] } | null {
   const GA_ITEMS_START = 0x30;
   const limit = Math.min(searchLimit, buf.length) - 0x20;
 
@@ -682,10 +733,15 @@ function findGemSkillForWeapon(
     const gemName = gemIdName(gemItemId);
     if (!gemName) return null;
 
-    // Look up in ashes.json for the skill name
+    // Look up in ashes.json for the skill name and FP cost
     const store = ItemStore.getInstance();
     const ashData = store.getAshByName(gemName);
-    return ashData?.skill ?? gemName.replace(/^Ash of War:\s*/i, '');
+    const skillName = ashData?.skill ?? gemName.replace(/^Ash of War:\s*/i, '');
+
+    // Look up FP cost from skillFpCosts.json
+    const fpCost = getSkillFpCost(skillName);
+
+    return { name: skillName, fpCost };
   }
 
   return null;
@@ -734,7 +790,10 @@ function resolveWeaponHandle(
   const shieldData = !weaponData ? store.getShieldByName(baseName ?? '') : undefined;
 
   // Try to resolve the Ash of War skill from the gem gaitem_handle
-  const skillName = findGemSkillForWeapon(buf, handle, searchLimit);
+  const gemResult = findGemSkillForWeapon(buf, handle, searchLimit);
+
+  // Fallback: innate weapon skill for unique weapons (no AoW equipped)
+  const skillResult = gemResult ?? (baseName ? getInnateSkill(baseName) : null);
 
   return {
     rawId: handle,
@@ -743,11 +802,24 @@ function resolveWeaponHandle(
     upgradeLevel,
     image,
     infusion:  decodeInfusion(baseId),
-    damage:    weaponData?.damage,
-    scaling:   weaponData?.scaling,
+    damage:    weaponData?.damage ?? shieldData?.damage,
+    scaling:   weaponData?.scaling ?? shieldData?.scaling,
     weight:    weaponData?.weight ?? shieldData?.weight,
+    critical:  weaponData?.critical ?? shieldData?.critical,
+    damageTypes: weaponData?.damageTypes ?? shieldData?.damageTypes,
     stability: shieldData?.stability,
-    skill:     skillName ?? undefined,
+    guardNegation: shieldData
+      ? (shieldData.guardNegation ? { ...shieldData.guardNegation, boost: shieldData.stability } : undefined)
+      : weaponData?.guardNegation,
+    skill:     skillResult?.name ?? undefined,
+    skillFpCost: skillResult?.fpCost,
+    requirements: weaponData?.requirements ?? shieldData?.requirements,
+    passives:  weaponData?.passives && weaponData.passives.length > 0
+      ? weaponData.passives
+      : shieldData?.passives && shieldData.passives.length > 0
+        ? shieldData.passives
+        : undefined,
+    itemType:  weaponData?.type ?? shieldData?.category,
   };
 }
 
@@ -786,6 +858,7 @@ function resolveArmorHandle(
     robustness: armorData?.robustness,
     focus:      armorData?.focus,
     vitality:   armorData?.vitality,
+    itemType:   armorData?.type,
   };
 }
 
@@ -811,7 +884,7 @@ function resolveTalismanHandle(handle: number): EquippedWeapon {
   const talData = name ? store.getTalismanByName(name) : undefined;
   const image  = talData?.image ?? '';
   const effect = talData?.effect;
-  return { rawId: handle, baseId, name, image, effect };
+  return { rawId: handle, baseId, name, image, effect, weight: talData?.weight };
 }
 
 /**
@@ -1095,14 +1168,30 @@ function readInventory(buf: Buffer, _level?: number, quantityMap?: Map<number, n
           ?? store.getWeaponByBaseId(item.baseId)
           ?? store.getWeaponByBaseId(baseWeaponId);
         const shData = !wData ? store.getShieldByName(baseName) : undefined;
+        // Resolve innate weapon skill for unique weapons
+        const innateSkill = baseName ? getInnateSkill(baseName) : null;
         weapons.push({
           ...item, name, image,
           upgradeLevel,
+          infusion:  decodeInfusion(item.baseId),
           itemType:  wData?.type ?? shData?.category,
-          damage:    wData?.damage,
-          scaling:   wData?.scaling,
+          damage:    wData?.damage ?? shData?.damage,
+          scaling:   wData?.scaling ?? shData?.scaling,
           weight:    wData?.weight ?? shData?.weight,
+          critical:  wData?.critical ?? shData?.critical,
+          damageTypes: wData?.damageTypes ?? shData?.damageTypes,
           stability: shData?.stability,
+          guardNegation: shData
+            ? (shData.guardNegation ? { ...shData.guardNegation, boost: shData.stability } : undefined)
+            : wData?.guardNegation,
+          skill:     innateSkill?.name,
+          skillFpCost: innateSkill?.fpCost,
+          requirements: wData?.requirements ?? shData?.requirements,
+          passives:  wData?.passives && wData.passives.length > 0
+            ? wData.passives
+            : shData?.passives && shData.passives.length > 0
+              ? shData.passives
+              : undefined,
         });
         break;
       }
@@ -1117,6 +1206,11 @@ function readInventory(buf: Buffer, _level?: number, quantityMap?: Map<number, n
           itemType: a?.type,
           defense:  a?.defense,
           weight:   a?.weight,
+          poise:      a?.poise,
+          immunity:   a?.immunity,
+          robustness: a?.robustness,
+          focus:      a?.focus,
+          vitality:   a?.vitality,
         });
         break;
       }
@@ -1128,7 +1222,7 @@ function readInventory(buf: Buffer, _level?: number, quantityMap?: Map<number, n
         const talData = store.getTalismanByName(name);
         const image   = talData?.image || getFallbackImage(name);
         const effect  = talData?.effect;
-        talismans.push({ ...item, name, image, effect });
+        talismans.push({ ...item, name, image, effect, weight: talData?.weight });
         break;
       }
       case 'consumable': {
@@ -1144,7 +1238,13 @@ function readInventory(buf: Buffer, _level?: number, quantityMap?: Map<number, n
         if (subcat === 'spell') {
           const spData = store.getSpellByName(name);
           consumableImage = spData?.image || getFallbackImage(name);
-          extra = { itemType: spData?.type };
+          extra = {
+            itemType: spData?.type,
+            cost: spData?.cost,
+            slots: spData?.slots,
+            description: spData?.description,
+            requirements: spData?.requirements,
+          };
         } else if (subcat === 'spirit') {
           const spData = store.getSpiritByName(name)
             ?? store.getSpiritByName(name + ' Ashes');
@@ -1178,10 +1278,12 @@ function readInventory(buf: Buffer, _level?: number, quantityMap?: Map<number, n
         if (!name) { other.push(item); break; }
         const ashData = store.getAshByName(name);
         const ashImage = ashData?.image ?? '';
+        const ashSkillName = ashData?.skill ?? name.replace(/^Ash of War:\s*/i, '');
         ashesOfWar.push({
           ...item, name, image: ashImage,
           affinity: ashData?.affinity,
           skill:    ashData?.skill,
+          skillFpCost: getSkillFpCost(ashSkillName),
         });
         break;
       }

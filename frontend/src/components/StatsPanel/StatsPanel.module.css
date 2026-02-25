@@ -112,6 +112,9 @@
   letter-spacing: 0.02em;
 }
 
+/* Valor en softcap final — rendimiento decreciente */
+.valueCapped { color: var(--gold-dim); }
+
 /* ── Colores por stat ─────────────────────────── */
 .colVig .barFill { background: linear-gradient(to right, #8b1c18, #d4483c); }
 .colVig .abbr    { color: #d4483c; }

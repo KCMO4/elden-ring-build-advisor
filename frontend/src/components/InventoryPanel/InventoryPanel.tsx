@@ -75,13 +75,15 @@ function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placehol
   const hasTooltipData =
     !!item.damage || !!item.defense || !!item.scaling || !!item.effect ||
     !!item.affinity || !!item.skill || item.fpCost !== undefined || item.hpCost !== undefined ||
-    !!item.itemType;
+    !!item.itemType || !!item.requirements || !!item.passives || !!item.guardNegation ||
+    item.poise !== undefined || item.cost !== undefined || item.weight !== undefined ||
+    !!item.description || !!item.damageTypes ||
+    (item.critical != null && item.critical !== 100);
 
   return (
     <div
       ref={ref}
       className={styles.gridItem}
-      title={item.name}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setHovered(false)}
     >

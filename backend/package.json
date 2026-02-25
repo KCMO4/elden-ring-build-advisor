@@ -12,8 +12,11 @@
     "check-images": "ts-node --project tsconfig.scripts.json scripts/check-images.ts",
     "audit": "ts-node --project tsconfig.scripts.json scripts/audit-data.ts",
     "audit:save": "ts-node --project tsconfig.scripts.json scripts/audit-data.ts --save",
+    "patch-passives": "ts-node --project tsconfig.scripts.json scripts/patch-passives.ts",
+    "patch-damage-types": "ts-node --project tsconfig.scripts.json scripts/patch-damage-types.ts",
     "patch-armor": "ts-node --project tsconfig.scripts.json scripts/patch-armor-precision.ts",
-    "patch-armor:dry": "ts-node --project tsconfig.scripts.json scripts/patch-armor-precision.ts --dry-run"
+    "patch-armor:dry": "ts-node --project tsconfig.scripts.json scripts/patch-armor-precision.ts --dry-run",
+    "download-fandom": "ts-node --project tsconfig.scripts.json scripts/download-fandom-images.ts"
   },
   "jest": {
     "preset": "ts-jest",

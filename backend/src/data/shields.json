@@ -4,620 +4,2840 @@
     "name": "Buckler",
     "category": "Small Shield",
     "weight": 1.5,
+    "critical": 100,
     "physicalAttack": 68,
+    "damage": {
+      "physical": 68,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "D",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 13,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 30,
-    "image": "/images/shields/17f69c62fe8l0i124u8fi4nc7dbfbf.webp"
+    "guardNegation": {
+      "physical": 58,
+      "magic": 28,
+      "fire": 28,
+      "lightning": 14,
+      "holy": 28
+    },
+    "image": "/images/shields/17f69c62fe8l0i124u8fi4nc7dbfbf.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f694b8615l0i124uyj41jnmpvitp",
     "name": "Perfumer's Shield",
     "category": "Small Shield",
     "weight": 1.5,
+    "critical": 100,
     "physicalAttack": 67,
+    "damage": {
+      "physical": 67,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 30,
-    "image": "/images/shields/17f694b8615l0i124uyj41jnmpvitp.webp"
+    "guardNegation": {
+      "physical": 61,
+      "magic": 33,
+      "fire": 33,
+      "lightning": 14,
+      "holy": 33
+    },
+    "image": "/images/shields/17f694b8615l0i124uyj41jnmpvitp.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69b5141al0i124v8pxr1ks1ekij",
     "name": "Man-serpent's Shield",
     "category": "Small Shield",
     "weight": 2,
+    "critical": 100,
     "physicalAttack": 70,
+    "damage": {
+      "physical": 70,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 32,
-    "image": "/images/shields/17f69b5141al0i124v8pxr1ks1ekij.webp"
+    "guardNegation": {
+      "physical": 65,
+      "magic": 30,
+      "fire": 45,
+      "lightning": 15,
+      "holy": 30
+    },
+    "image": "/images/shields/17f69b5141al0i124v8pxr1ks1ekij.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69a7085fl0i124y1772hsc2fore",
     "name": "Pillory Shield",
     "category": "Small Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 71,
+    "damage": {
+      "physical": 71,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 33,
-    "image": "/images/shields/17f69a7085fl0i124y1772hsc2fore.webp"
+    "guardNegation": {
+      "physical": 60,
+      "magic": 42,
+      "fire": 21,
+      "lightning": 36,
+      "holy": 42
+    },
+    "image": "/images/shields/17f69a7085fl0i124y1772hsc2fore.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6976985el0i124znputjytfizsr",
     "name": "Rickety Shield",
     "category": "Small Shield",
     "weight": 1,
+    "critical": 100,
     "physicalAttack": 70,
+    "damage": {
+      "physical": 70,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 25,
-    "image": "/images/shields/17f6976985el0i124znputjytfizsr.webp"
+    "guardNegation": {
+      "physical": 50,
+      "magic": 25,
+      "fire": 20,
+      "lightning": 30,
+      "holy": 30
+    },
+    "image": "/images/shields/17f6976985el0i124znputjytfizsr.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f693d58ael0i125pgfsn2zo4078i",
     "name": "Beastman's Jar-shield",
     "category": "Small Shield",
     "weight": 5,
+    "critical": 100,
     "physicalAttack": 71,
+    "damage": {
+      "physical": 71,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 48,
-    "image": "/images/shields/17f693d58ael0i125pgfsn2zo4078i.webp"
+    "guardNegation": {
+      "physical": 95,
+      "magic": 30,
+      "fire": 55,
+      "lightning": 60,
+      "holy": 55
+    },
+    "image": "/images/shields/17f693d58ael0i125pgfsn2zo4078i.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69c6b08dl0i125phehezloe6mgp",
     "name": "Red Thorn Roundshield",
     "category": "Small Shield",
     "weight": 1.5,
+    "critical": 100,
     "physicalAttack": 70,
+    "damage": {
+      "physical": 70,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 32,
-    "image": "/images/shields/17f69c6b08dl0i125phehezloe6mgp.webp"
+    "guardNegation": {
+      "physical": 58,
+      "magic": 30,
+      "fire": 40,
+      "lightning": 35,
+      "holy": 35
+    },
+    "image": "/images/shields/17f69c6b08dl0i125phehezloe6mgp.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6976f39fl0i125rvey7g31uyix",
     "name": "Riveted Wooden Shield",
     "category": "Small Shield",
     "weight": 2,
+    "critical": 100,
     "physicalAttack": 72,
+    "damage": {
+      "physical": 72,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 35,
-    "image": "/images/shields/17f6976f39fl0i125rvey7g31uyix.webp"
+    "guardNegation": {
+      "physical": 64,
+      "magic": 38,
+      "fire": 29,
+      "lightning": 22,
+      "holy": 42
+    },
+    "image": "/images/shields/17f6976f39fl0i125rvey7g31uyix.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69cbb4afl0i125s3vg05tmg3h9",
     "name": "Scripture Wooden Shield",
     "category": "Small Shield",
     "weight": 1.5,
+    "critical": 100,
     "physicalAttack": 70,
+    "damage": {
+      "physical": 70,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 32,
-    "image": "/images/shields/17f69cbb4afl0i125s3vg05tmg3h9.webp"
+    "guardNegation": {
+      "physical": 58,
+      "magic": 38,
+      "fire": 20,
+      "lightning": 35,
+      "holy": 43
+    },
+    "image": "/images/shields/17f69cbb4afl0i125s3vg05tmg3h9.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69652424l0i125urgh9o09mhavm",
     "name": "Blue-white Wooden Shield",
     "category": "Small Shield",
     "weight": 2,
+    "critical": 100,
     "physicalAttack": 72,
+    "damage": {
+      "physical": 72,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 35,
-    "image": "/images/shields/17f69652424l0i125urgh9o09mhavm.webp"
+    "guardNegation": {
+      "physical": 63,
+      "magic": 42,
+      "fire": 33,
+      "lightning": 19,
+      "holy": 38
+    },
+    "image": "/images/shields/17f69652424l0i125urgh9o09mhavm.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69c01371l0i126fsrmmhmt78m7",
     "name": "Rift Shield",
     "category": "Small Shield",
     "weight": 2,
+    "critical": 100,
     "physicalAttack": 70,
+    "damage": {
+      "physical": 70,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 37,
-    "image": "/images/shields/17f69c01371l0i126fsrmmhmt78m7.webp"
+    "guardNegation": {
+      "physical": 66,
+      "magic": 30,
+      "fire": 35,
+      "lightning": 15,
+      "holy": 35
+    },
+    "image": "/images/shields/17f69c01371l0i126fsrmmhmt78m7.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69b10c2el0i126k1rlvenfih79r",
     "name": "Iron Roundshield",
     "category": "Small Shield",
     "weight": 3,
+    "critical": 100,
     "physicalAttack": 74,
+    "damage": {
+      "physical": 74,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 40,
-    "image": "/images/shields/17f69b10c2el0i126k1rlvenfih79r.webp"
+    "guardNegation": {
+      "physical": 71,
+      "magic": 38,
+      "fire": 38,
+      "lightning": 16,
+      "holy": 38
+    },
+    "image": "/images/shields/17f69b10c2el0i126k1rlvenfih79r.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69bd6428l0i126mo49q97n1both",
     "name": "Smoldering Shield",
     "category": "Small Shield",
     "weight": 3,
+    "critical": 100,
     "physicalAttack": 58,
+    "damage": {
+      "physical": 58,
+      "magic": 0,
+      "fire": 37,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 9,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 40,
-    "image": "/images/shields/17f69bd6428l0i126mo49q97n1both.webp"
+    "guardNegation": {
+      "physical": 69,
+      "magic": 36,
+      "fire": 49,
+      "lightning": 13,
+      "holy": 36
+    },
+    "image": "/images/shields/17f69bd6428l0i126mo49q97n1both.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f698a4b7bl0i126nb4s0xsp2lnfw",
     "name": "Gilded Iron Shield",
     "category": "Small Shield",
     "weight": 3,
+    "critical": 100,
     "physicalAttack": 74,
+    "damage": {
+      "physical": 74,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 40,
-    "image": "/images/shields/17f698a4b7bl0i126nb4s0xsp2lnfw.webp"
+    "guardNegation": {
+      "physical": 69,
+      "magic": 38,
+      "fire": 35,
+      "lightning": 14,
+      "holy": 49
+    },
+    "image": "/images/shields/17f698a4b7bl0i126nb4s0xsp2lnfw.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69b12e1bl0i126nysn2v09nsd3",
     "name": "Ice Crest Shield",
     "category": "Small Shield",
     "weight": 3,
+    "critical": 100,
     "physicalAttack": 74,
+    "damage": {
+      "physical": 74,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 9,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 40,
-    "image": "/images/shields/17f69b12e1bl0i126nysn2v09nsd3.webp"
+    "guardNegation": {
+      "physical": 68,
+      "magic": 49,
+      "fire": 39,
+      "lightning": 16,
+      "holy": 33
+    },
+    "image": "/images/shields/17f69b12e1bl0i126nysn2v09nsd3.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6942deffl0i1271bdbp91snfovh",
     "name": "Spiralhorn Shield",
     "category": "Small Shield",
     "weight": 2,
+    "critical": 100,
     "physicalAttack": 75,
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 29,
-    "image": "/images/shields/17f6942deffl0i1271bdbp91snfovh.webp"
+    "guardNegation": {
+      "physical": 59,
+      "magic": 33,
+      "fire": 37,
+      "lightning": 38,
+      "holy": 30
+    },
+    "image": "/images/shields/17f6942deffl0i1271bdbp91snfovh.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6985902bl0i127b1nqhoj9b4nhl",
     "name": "Marred Leather Shield",
     "category": "Medium Shield",
     "weight": 3,
+    "critical": 100,
     "physicalAttack": 75,
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 40,
-    "image": "/images/shields/17f6985902bl0i127b1nqhoj9b4nhl.webp"
+    "guardNegation": {
+      "physical": 76,
+      "magic": 49,
+      "fire": 36,
+      "lightning": 45,
+      "holy": 45
+    },
+    "image": "/images/shields/17f6985902bl0i127b1nqhoj9b4nhl.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f696cb3bal0i127cn7tiavj7t1u",
     "name": "Marred Wooden Shield",
     "category": "Medium Shield",
     "weight": 4,
+    "critical": 100,
     "physicalAttack": 76,
+    "damage": {
+      "physical": 76,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 41,
-    "image": "/images/shields/17f696cb3bal0i127cn7tiavj7t1u.webp"
+    "guardNegation": {
+      "physical": 78,
+      "magic": 52,
+      "fire": 27,
+      "lightning": 50,
+      "holy": 49
+    },
+    "image": "/images/shields/17f696cb3bal0i127cn7tiavj7t1u.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f694927d7l0i127ng35ra4v5k4gn",
     "name": "Coil Shield",
     "category": "Small Shield",
     "weight": 1.5,
+    "critical": 100,
     "physicalAttack": 92,
+    "damage": {
+      "physical": 92,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "E",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 22,
-    "image": "/images/shields/17f694927d7l0i127ng35ra4v5k4gn.webp"
+    "guardNegation": {
+      "physical": 52,
+      "magic": 38,
+      "fire": 28,
+      "lightning": 34,
+      "holy": 35
+    },
+    "image": "/images/shields/17f694927d7l0i127ng35ra4v5k4gn.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6967bb2bl0i127q8x98oklbecj",
     "name": "Kite Shield",
     "category": "Medium Shield",
     "weight": 4.5,
+    "critical": 100,
     "physicalAttack": 78,
+    "damage": {
+      "physical": 78,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 12,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 47,
-    "image": "/images/shields/17f6967bb2bl0i127q8x98oklbecj.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 47,
+      "fire": 47,
+      "lightning": 33,
+      "holy": 47
+    },
+    "image": "/images/shields/17f6967bb2bl0i127q8x98oklbecj.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f698ac740l0i127wziv2s11fd2c",
     "name": "Banished Knight's Shield",
     "category": "Medium Shield",
     "weight": 6,
+    "critical": 100,
     "physicalAttack": 81,
+    "damage": {
+      "physical": 81,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 14,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 52,
-    "image": "/images/shields/17f698ac740l0i127wziv2s11fd2c.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 49,
+      "fire": 57,
+      "lightning": 31,
+      "holy": 48
+    },
+    "image": "/images/shields/17f698ac740l0i127wziv2s11fd2c.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69ce5e4cl0i128b0nivmu8x7jg",
     "name": "Albinauric Shield",
     "category": "Medium Shield",
     "weight": 4.5,
+    "critical": 100,
     "physicalAttack": 78,
+    "damage": {
+      "physical": 78,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 11,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 42,
-    "image": "/images/shields/17f69ce5e4cl0i128b0nivmu8x7jg.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 61,
+      "fire": 42,
+      "lightning": 23,
+      "holy": 47
+    },
+    "image": "/images/shields/17f69ce5e4cl0i128b0nivmu8x7jg.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6987cd26l0i128fmzfvt6grfjsp",
     "name": "Sun Realm Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 74,
+    "damage": {
+      "physical": 74,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 40,
-    "image": "/images/shields/17f6987cd26l0i128fmzfvt6grfjsp.webp"
+    "guardNegation": {
+      "physical": 85,
+      "magic": 44,
+      "fire": 27,
+      "lightning": 40,
+      "holy": 56
+    },
+    "image": "/images/shields/17f6987cd26l0i128fmzfvt6grfjsp.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6970052fl0i128q30d2avtlnbrrf",
     "name": "Silver Mirrorshield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 70,
+    "damage": {
+      "physical": 70,
+      "magic": 45,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 12,
+      "dex": 10,
+      "int": 10,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 42,
-    "image": "/images/shields/17f6970052fl0i128q30d2avtlnbrrf.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 89,
+      "fire": 31,
+      "lightning": 19,
+      "holy": 27
+    },
+    "image": "/images/shields/17f6970052fl0i128q30d2avtlnbrrf.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6988b72dl0i128vmcj5b7a5j1e9",
     "name": "Round Shield",
     "category": "Medium Shield",
     "weight": 4,
+    "critical": 100,
     "physicalAttack": 76,
+    "damage": {
+      "physical": 76,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 42,
-    "image": "/images/shields/17f6988b72dl0i128vmcj5b7a5j1e9.webp"
+    "guardNegation": {
+      "physical": 83,
+      "magic": 50,
+      "fire": 37,
+      "lightning": 43,
+      "holy": 50
+    },
+    "image": "/images/shields/17f6988b72dl0i128vmcj5b7a5j1e9.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6948dfb1l0i1298n92tg7459mbg",
     "name": "Scorpion Kite Shield",
     "category": "Medium Shield",
     "weight": 4.5,
+    "critical": 100,
     "physicalAttack": 78,
+    "damage": {
+      "physical": 78,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 11,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 47,
-    "image": "/images/shields/17f6948dfb1l0i1298n92tg7459mbg.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 45,
+      "fire": 46,
+      "lightning": 33,
+      "holy": 50
+    },
+    "image": "/images/shields/17f6948dfb1l0i1298n92tg7459mbg.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f698aad3fl0i129kcpcnkgwlznm",
     "name": "Twinbird Kite Shield",
     "category": "Medium Shield",
     "weight": 4.5,
+    "critical": 100,
     "physicalAttack": 78,
+    "damage": {
+      "physical": 78,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 12,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 49,
-    "image": "/images/shields/17f698aad3fl0i129kcpcnkgwlznm.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 49,
+      "fire": 50,
+      "lightning": 28,
+      "holy": 35
+    },
+    "image": "/images/shields/17f698aad3fl0i129kcpcnkgwlznm.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6966bef4l0i129o1blgktqip69s",
     "name": "Blue-gold Kite Shield",
     "category": "Medium Shield",
     "weight": 5,
+    "critical": 100,
     "physicalAttack": 80,
+    "damage": {
+      "physical": 80,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 12,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 47,
-    "image": "/images/shields/17f6966bef4l0i129o1blgktqip69s.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 47,
+      "fire": 53,
+      "lightning": 35,
+      "holy": 45
+    },
+    "image": "/images/shields/17f6966bef4l0i129o1blgktqip69s.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69beaf5al0i12ae69s49g5aaaea",
     "name": "Brass Shield",
     "category": "Medium Shield",
     "weight": 7,
+    "critical": 100,
     "physicalAttack": 84,
+    "damage": {
+      "physical": 84,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 16,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 56,
-    "image": "/images/shields/17f69beaf5al0i12ae69s49g5aaaea.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 55,
+      "fire": 59,
+      "lightning": 39,
+      "holy": 54
+    },
+    "image": "/images/shields/17f69beaf5al0i12ae69s49g5aaaea.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6996caf5l0i12afnpkuzhuzo9o",
     "name": "Shield Of The Guilty",
     "category": "Small Shield",
     "weight": 2,
+    "critical": 100,
     "physicalAttack": 75,
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 29,
-    "image": "/images/shields/17f6996caf5l0i12afnpkuzhuzo9o.webp"
+    "guardNegation": {
+      "physical": 62,
+      "magic": 35,
+      "fire": 35,
+      "lightning": 30,
+      "holy": 35
+    },
+    "image": "/images/shields/17f6996caf5l0i12afnpkuzhuzo9o.webp",
+    "damageTypes": [
+      "Strike"
+    ],
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ]
   },
   {
     "id": "17f699d7257l0i12ai52ozxwx6ewwi",
     "name": "Great Turtle Shell",
     "category": "Medium Shield",
     "weight": 5.5,
+    "critical": 100,
     "physicalAttack": 81,
+    "damage": {
+      "physical": 81,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 14,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 48,
-    "image": "/images/shields/17f699d7257l0i12ai52ozxwx6ewwi.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 44,
+      "fire": 39,
+      "lightning": 43,
+      "holy": 46
+    },
+    "image": "/images/shields/17f699d7257l0i12ai52ozxwx6ewwi.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6942eeabl0i12apjrp14m98cxmg",
     "name": "Carian Knight's Shield",
     "category": "Medium Shield",
     "weight": 4.5,
+    "critical": 100,
     "physicalAttack": 63,
+    "damage": {
+      "physical": 63,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "D",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 10,
+      "int": 15,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 47,
-    "image": "/images/shields/17f6942eeabl0i12apjrp14m98cxmg.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 58,
+      "fire": 28,
+      "lightning": 19,
+      "holy": 54
+    },
+    "image": "/images/shields/17f6942eeabl0i12apjrp14m98cxmg.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f699a214fl0i12beelfraiymmf7",
     "name": "Horse Crest Wooden Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 76,
+    "damage": {
+      "physical": 76,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 38,
-    "image": "/images/shields/17f699a214fl0i12beelfraiymmf7.webp"
+    "guardNegation": {
+      "physical": 81,
+      "magic": 50,
+      "fire": 32,
+      "lightning": 43,
+      "holy": 42
+    },
+    "image": "/images/shields/17f699a214fl0i12beelfraiymmf7.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69723a6dl0i12bhd8qm1rkekq4w",
     "name": "Candletree Wooden Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 76,
+    "damage": {
+      "physical": 76,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 39,
-    "image": "/images/shields/17f69723a6dl0i12bhd8qm1rkekq4w.webp"
+    "guardNegation": {
+      "physical": 82,
+      "magic": 42,
+      "fire": 32,
+      "lightning": 50,
+      "holy": 43
+    },
+    "image": "/images/shields/17f69723a6dl0i12bhd8qm1rkekq4w.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69b8ad9fl0i12bhsus3gi193fg",
     "name": "Large Leather Shield",
     "category": "Medium Shield",
     "weight": 3,
+    "critical": 100,
     "physicalAttack": 75,
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 40,
-    "image": "/images/shields/17f69b8ad9fl0i12bhsus3gi193fg.webp"
+    "guardNegation": {
+      "physical": 76,
+      "magic": 49,
+      "fire": 36,
+      "lightning": 45,
+      "holy": 45
+    },
+    "image": "/images/shields/17f69b8ad9fl0i12bhsus3gi193fg.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f698d0e0bl0i12bjdv825l4x33d",
     "name": "Flame Crest Wooden Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 76,
+    "damage": {
+      "physical": 76,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 39,
-    "image": "/images/shields/17f698d0e0bl0i12bjdv825l4x33d.webp"
+    "guardNegation": {
+      "physical": 83,
+      "magic": 43,
+      "fire": 32,
+      "lightning": 42,
+      "holy": 50
+    },
+    "image": "/images/shields/17f698d0e0bl0i12bjdv825l4x33d.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f694f969el0i12bq44jy1iwmun1y",
     "name": "Hawk Crest Wooden Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 76,
+    "damage": {
+      "physical": 76,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 8,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 38,
-    "image": "/images/shields/17f694f969el0i12bq44jy1iwmun1y.webp"
+    "guardNegation": {
+      "physical": 85,
+      "magic": 44,
+      "fire": 32,
+      "lightning": 44,
+      "holy": 44
+    },
+    "image": "/images/shields/17f694f969el0i12bq44jy1iwmun1y.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69710d06l0i12cez6ml1ut0n7cs",
     "name": "Beast Crest Heater Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 77,
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 44,
-    "image": "/images/shields/17f69710d06l0i12cez6ml1ut0n7cs.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 50,
+      "fire": 43,
+      "lightning": 32,
+      "holy": 42
+    },
+    "image": "/images/shields/17f69710d06l0i12cez6ml1ut0n7cs.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69654c0bl0i12chkv2olyhv4kt",
     "name": "Red Crest Heater Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 77,
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 43,
-    "image": "/images/shields/17f69654c0bl0i12chkv2olyhv4kt.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 42,
+      "fire": 50,
+      "lightning": 32,
+      "holy": 43
+    },
+    "image": "/images/shields/17f69654c0bl0i12chkv2olyhv4kt.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69c34ab1l0i12cmtzhluyza2vbd",
     "name": "Eclipse Crest Heater Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 77,
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 46,
-    "image": "/images/shields/17f69c34ab1l0i12cmtzhluyza2vbd.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 44,
+      "fire": 44,
+      "lightning": 37,
+      "holy": 44
+    },
+    "image": "/images/shields/17f69c34ab1l0i12cmtzhluyza2vbd.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69722576l0i12cnfqtct2uo1lqi",
     "name": "Blue Crest Heater Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 77,
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 44,
-    "image": "/images/shields/17f69722576l0i12cnfqtct2uo1lqi.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 43,
+      "fire": 42,
+      "lightning": 32,
+      "holy": 50
+    },
+    "image": "/images/shields/17f69722576l0i12cnfqtct2uo1lqi.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f693c5d25l0i12cqwc17w5od5uh",
     "name": "Inverted Hawk Heater Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 77,
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 44,
-    "image": "/images/shields/17f693c5d25l0i12cqwc17w5od5uh.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 49,
+      "fire": 49,
+      "lightning": 34,
+      "holy": 49
+    },
+    "image": "/images/shields/17f693c5d25l0i12cqwc17w5od5uh.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f694b8cc1l0i12d7wmnsvn9wams",
     "name": "Heater Shield",
     "category": "Medium Shield",
     "weight": 3.5,
+    "critical": 100,
     "physicalAttack": 77,
+    "damage": {
+      "physical": 77,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 38,
-    "image": "/images/shields/17f694b8cc1l0i12d7wmnsvn9wams.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 43,
+      "fire": 43,
+      "lightning": 27,
+      "holy": 43
+    },
+    "image": "/images/shields/17f694b8cc1l0i12d7wmnsvn9wams.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f698cf256l0i12dbf0mgqicx93p",
     "name": "Black Leather Shield",
     "category": "Medium Shield",
     "weight": 3,
+    "critical": 100,
     "physicalAttack": 75,
+    "damage": {
+      "physical": 75,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 10,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 37,
-    "image": "/images/shields/17f698cf256l0i12dbf0mgqicx93p.webp"
+    "guardNegation": {
+      "physical": 79,
+      "magic": 45,
+      "fire": 31,
+      "lightning": 46,
+      "holy": 47
+    },
+    "image": "/images/shields/17f698cf256l0i12dbf0mgqicx93p.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f693c793el0i12deqfa24mgi3ik7",
     "name": "Dragon Towershield",
     "category": "Greatshield",
     "weight": 17.5,
+    "critical": 100,
     "physicalAttack": 115,
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 30,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 64,
-    "image": "/images/shields/17f693c793el0i12deqfa24mgi3ik7.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 61,
+      "fire": 67,
+      "lightning": 55,
+      "holy": 64
+    },
+    "image": "/images/shields/17f693c793el0i12deqfa24mgi3ik7.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f695a9c70l0i12dg13mf7v9clac",
     "name": "Crucible Hornshield",
     "category": "Greatshield",
     "weight": 11.5,
+    "critical": 100,
     "physicalAttack": 147,
+    "damage": {
+      "physical": 147,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 26,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 58,
-    "image": "/images/shields/17f695a9c70l0i12dg13mf7v9clac.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 51,
+      "fire": 50,
+      "lightning": 46,
+      "holy": 64
+    },
+    "image": "/images/shields/17f695a9c70l0i12dg13mf7v9clac.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6998f8b8l0i12dhelzp1oi1uyv",
     "name": "Distinguished Greatshield",
     "category": "Greatshield",
     "weight": 17,
+    "critical": 100,
     "physicalAttack": 112,
+    "damage": {
+      "physical": 112,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 32,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 66,
-    "image": "/images/shields/17f6998f8b8l0i12dhelzp1oi1uyv.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 65,
+      "fire": 63,
+      "lightning": 54,
+      "holy": 60
+    },
+    "image": "/images/shields/17f6998f8b8l0i12dhelzp1oi1uyv.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69872931l0i12dy19gq5ij75yoe",
     "name": "Dragonclaw Shield",
     "category": "Greatshield",
     "weight": 13.5,
+    "critical": 100,
     "physicalAttack": 118,
+    "damage": {
+      "physical": 118,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 76,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "E",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 28,
+      "dex": 12,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 59,
-    "image": "/images/shields/17f69872931l0i12dy19gq5ij75yoe.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 52,
+      "fire": 52,
+      "lightning": 76,
+      "holy": 47
+    },
+    "image": "/images/shields/17f69872931l0i12dy19gq5ij75yoe.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6989b386l0i12e4lob57bdw1rqq",
     "name": "Golden Beast Crest Shield",
     "category": "Greatshield",
     "weight": 12.5,
+    "critical": 100,
     "physicalAttack": 0,
+    "damage": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 24,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 58,
-    "image": "/images/shields/17f6989b386l0i12e4lob57bdw1rqq.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 55,
+      "fire": 55,
+      "lightning": 48,
+      "holy": 55
+    },
+    "image": "/images/shields/17f6989b386l0i12e4lob57bdw1rqq.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f694b1b61l0i12e5nf59cb5qk7vu",
     "name": "Erdtree Greatshield",
     "category": "Greatshield",
     "weight": 13.5,
+    "critical": 100,
     "physicalAttack": 120,
+    "damage": {
+      "physical": 120,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 78
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 30,
+      "dex": 0,
+      "int": 0,
+      "fai": 12,
+      "arc": 0
+    },
     "stability": 57,
-    "image": "/images/shields/17f694b1b61l0i12e5nf59cb5qk7vu.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 66,
+      "fire": 49,
+      "lightning": 45,
+      "holy": 76
+    },
+    "image": "/images/shields/17f694b1b61l0i12e5nf59cb5qk7vu.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69ac13ecl0i12e68qij6rgf53vp",
     "name": "Briar Greatshield",
     "category": "Greatshield",
     "weight": 9.5,
+    "critical": 100,
     "physicalAttack": 98,
+    "damage": {
+      "physical": 98,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 21,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 56,
-    "image": "/images/shields/17f69ac13ecl0i12e68qij6rgf53vp.webp"
+    "guardNegation": {
+      "physical": 82,
+      "magic": 50,
+      "fire": 43,
+      "lightning": 50,
+      "holy": 50
+    },
+    "image": "/images/shields/17f69ac13ecl0i12e68qij6rgf53vp.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f699569f2l0i12e91gm212p52kz4",
     "name": "Jellyfish Shield",
     "category": "Greatshield",
     "weight": 8,
+    "critical": 100,
     "physicalAttack": 123,
+    "damage": {
+      "physical": 123,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 20,
+      "dex": 14,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 50,
-    "image": "/images/shields/17f699569f2l0i12e91gm212p52kz4.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 52,
+      "fire": 52,
+      "lightning": 40,
+      "holy": 48
+    },
+    "image": "/images/shields/17f699569f2l0i12e91gm212p52kz4.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69ac7946l0i12emsgkbeuohu93n",
     "name": "Fingerprint Stone Shield",
     "category": "Greatshield",
     "weight": 29,
+    "critical": 100,
     "physicalAttack": 158,
+    "damage": {
+      "physical": 158,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 48,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 81,
-    "image": "/images/shields/17f69ac7946l0i12emsgkbeuohu93n.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 77,
+      "fire": 81,
+      "lightning": 79,
+      "holy": 75
+    },
+    "image": "/images/shields/17f69ac7946l0i12emsgkbeuohu93n.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f693ca65dl0i12eu7yz6cf3nexe",
     "name": "Icon Shield",
     "category": "Greatshield",
     "weight": 11.5,
+    "critical": 100,
     "physicalAttack": 160,
+    "damage": {
+      "physical": 160,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 22,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 57,
-    "image": "/images/shields/17f693ca65dl0i12eu7yz6cf3nexe.webp"
+    "guardNegation": {
+      "physical": 89,
+      "magic": 49,
+      "fire": 45,
+      "lightning": 51,
+      "holy": 48
+    },
+    "image": "/images/shields/17f693ca65dl0i12eu7yz6cf3nexe.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69797ac7l0i12ew4eqk33suyj17",
     "name": "Visage Shield",
     "category": "Greatshield",
     "weight": 24,
+    "critical": 100,
     "physicalAttack": 186,
+    "damage": {
+      "physical": 186,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 44,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 75,
-    "image": "/images/shields/17f69797ac7l0i12ew4eqk33suyj17.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 62,
+      "fire": 81,
+      "lightning": 65,
+      "holy": 62
+    },
+    "image": "/images/shields/17f69797ac7l0i12ew4eqk33suyj17.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69378e1dl0i12exgnluqgflkbi",
     "name": "One-eyed Shield",
     "category": "Greatshield",
     "weight": 20.5,
+    "critical": 100,
     "physicalAttack": 175,
+    "damage": {
+      "physical": 175,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 36,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 67,
-    "image": "/images/shields/17f69378e1dl0i12exgnluqgflkbi.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 57,
+      "fire": 69,
+      "lightning": 59,
+      "holy": 63
+    },
+    "image": "/images/shields/17f69378e1dl0i12exgnluqgflkbi.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69c7916el0i12ey2p0l7xj09nis",
     "name": "Spiked Palisade Shield",
     "category": "Greatshield",
     "weight": 11.5,
+    "critical": 100,
     "physicalAttack": 0,
+    "damage": {
+      "physical": 0,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 20,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 57,
-    "image": "/images/shields/17f69c7916el0i12ey2p0l7xj09nis.webp"
+    "guardNegation": {
+      "physical": 89,
+      "magic": 51,
+      "fire": 45,
+      "lightning": 54,
+      "holy": 50
+    },
+    "image": "/images/shields/17f69c7916el0i12ey2p0l7xj09nis.webp",
+    "passives": [
+      {
+        "type": "blood",
+        "buildup": 50
+      }
+    ],
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f695ce77cl0i12fbgg8t0smpvg3n",
     "name": "Manor Towershield",
     "category": "Greatshield",
     "weight": 16,
+    "critical": 100,
     "physicalAttack": 111,
+    "damage": {
+      "physical": 111,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 30,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 65,
-    "image": "/images/shields/17f695ce77cl0i12fbgg8t0smpvg3n.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 66,
+      "fire": 66,
+      "lightning": 51,
+      "holy": 56
+    },
+    "image": "/images/shields/17f695ce77cl0i12fbgg8t0smpvg3n.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f6981fc6cl0i12fkq4jfcsautbiv",
     "name": "Crossed-tree Towershield",
     "category": "Greatshield",
     "weight": 16,
+    "critical": 100,
     "physicalAttack": 111,
+    "damage": {
+      "physical": 111,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 30,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 63,
-    "image": "/images/shields/17f6981fc6cl0i12fkq4jfcsautbiv.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 66,
+      "fire": 56,
+      "lightning": 54,
+      "holy": 66
+    },
+    "image": "/images/shields/17f6981fc6cl0i12fkq4jfcsautbiv.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69a1afefl0i12fozrc1tnhg20is",
     "name": "Redmane Greatshield",
     "category": "Greatshield",
     "weight": 14,
+    "critical": 100,
     "physicalAttack": 108,
+    "damage": {
+      "physical": 108,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 30,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 61,
-    "image": "/images/shields/17f69a1afefl0i12fozrc1tnhg20is.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 54,
+      "fire": 70,
+      "lightning": 53,
+      "holy": 52
+    },
+    "image": "/images/shields/17f69a1afefl0i12fozrc1tnhg20is.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69b33aafl0i12fqkwzuaznegji",
     "name": "Ant's Skull Plate",
     "category": "Greatshield",
     "weight": 13.5,
+    "critical": 100,
     "physicalAttack": 136,
+    "damage": {
+      "physical": 136,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 28,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 59,
-    "image": "/images/shields/17f69b33aafl0i12fqkwzuaznegji.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 47,
+      "fire": 42,
+      "lightning": 57,
+      "holy": 57
+    },
+    "image": "/images/shields/17f69b33aafl0i12fqkwzuaznegji.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69bfaff2l0i12frzztam4cpn7d",
     "name": "Inverted Hawk Towershield",
     "category": "Greatshield",
     "weight": 16,
+    "critical": 100,
     "physicalAttack": 111,
+    "damage": {
+      "physical": 111,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 30,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 63,
-    "image": "/images/shields/17f69bfaff2l0i12frzztam4cpn7d.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 66,
+      "fire": 56,
+      "lightning": 54,
+      "holy": 66
+    },
+    "image": "/images/shields/17f69bfaff2l0i12frzztam4cpn7d.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69ae9ee5l0i12fyuk6a06fvdcq",
     "name": "Eclipse Crest Greatshield",
     "category": "Greatshield",
     "weight": 15,
+    "critical": 100,
     "physicalAttack": 110,
+    "damage": {
+      "physical": 110,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 0,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 63,
-    "image": "/images/shields/17f69ae9ee5l0i12fyuk6a06fvdcq.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 72,
+      "fire": 57,
+      "lightning": 51,
+      "holy": 59
+    },
+    "image": "/images/shields/17f69ae9ee5l0i12fyuk6a06fvdcq.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69aba9d3l0i12ga56obpyqthd0a",
     "name": "Cuckoo Greatshield",
     "category": "Small Shield",
     "weight": 15,
+    "critical": 100,
     "physicalAttack": 110,
+    "damage": {
+      "physical": 110,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 32,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 62,
-    "image": "/images/shields/17f69aba9d3l0i12ga56obpyqthd0a.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 70,
+      "fire": 56,
+      "lightning": 52,
+      "holy": 60
+    },
+    "image": "/images/shields/17f69aba9d3l0i12ga56obpyqthd0a.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f695ae9edl0i12glt4xotvobrl0m",
     "name": "Gilded Greatshield",
     "category": "Greatshield",
     "weight": 17.5,
+    "critical": 100,
     "physicalAttack": 115,
+    "damage": {
+      "physical": 115,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 9
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 36,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 67,
-    "image": "/images/shields/17f695ae9edl0i12glt4xotvobrl0m.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 60,
+      "fire": 66,
+      "lightning": 54,
+      "holy": 65
+    },
+    "image": "/images/shields/17f695ae9edl0i12glt4xotvobrl0m.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f698cf6d3l0i12gnjnwa5wdqlqj",
     "name": "Golden Greatshield",
     "category": "Greatshield",
     "weight": 17,
+    "critical": 100,
     "physicalAttack": 100,
+    "damage": {
+      "physical": 100,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 34,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 68,
-    "image": "/images/shields/17f698cf6d3l0i12gnjnwa5wdqlqj.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 57,
+      "fire": 60,
+      "lightning": 57,
+      "holy": 68
+    },
+    "image": "/images/shields/17f698cf6d3l0i12gnjnwa5wdqlqj.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f698f9c1fl0i12go9pgbh4sdw0zs",
     "name": "Haligtree Crest Greatshield",
     "category": "Greatshield",
     "weight": 18.5,
+    "critical": 100,
     "physicalAttack": 116,
+    "damage": {
+      "physical": 116,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "-",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 36,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 68,
-    "image": "/images/shields/17f698f9c1fl0i12go9pgbh4sdw0zs.webp"
+    "guardNegation": {
+      "physical": 100,
+      "magic": 61,
+      "fire": 67,
+      "lightning": 55,
+      "holy": 79
+    },
+    "image": "/images/shields/17f698f9c1fl0i12go9pgbh4sdw0zs.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f699949b2l0i12gqzulu6fgih91o",
     "name": "Wooden Greatshield",
     "category": "Greatshield",
     "weight": 8,
+    "critical": 100,
     "physicalAttack": 95,
+    "damage": {
+      "physical": 95,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 14,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 51,
-    "image": "/images/shields/17f699949b2l0i12gqzulu6fgih91o.webp"
+    "guardNegation": {
+      "physical": 79,
+      "magic": 49,
+      "fire": 41,
+      "lightning": 51,
+      "holy": 47
+    },
+    "image": "/images/shields/17f699949b2l0i12gqzulu6fgih91o.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   },
   {
     "id": "17f69b9df0bl0i12h4ss3ka8zvpcoc",
     "name": "Lordsworn's Shield",
     "category": "Greatshield",
     "weight": 10,
+    "critical": 100,
     "physicalAttack": 99,
+    "damage": {
+      "physical": 99,
+      "magic": 0,
+      "fire": 0,
+      "lightning": 0,
+      "holy": 0
+    },
+    "scaling": {
+      "str": "D",
+      "dex": "-",
+      "int": "-",
+      "fai": "-",
+      "arc": "-"
+    },
+    "requirements": {
+      "str": 16,
+      "dex": 0,
+      "int": 0,
+      "fai": 0,
+      "arc": 0
+    },
     "stability": 57,
-    "image": "/images/shields/17f69b9df0bl0i12h4ss3ka8zvpcoc.webp"
+    "guardNegation": {
+      "physical": 84,
+      "magic": 51,
+      "fire": 44,
+      "lightning": 52,
+      "holy": 52
+    },
+    "image": "/images/shields/17f69b9df0bl0i12h4ss3ka8zvpcoc.webp",
+    "damageTypes": [
+      "Strike"
+    ]
   }
 ]

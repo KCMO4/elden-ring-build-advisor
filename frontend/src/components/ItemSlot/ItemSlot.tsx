@@ -142,8 +142,6 @@ export default function ItemSlot({
 
   const empty = isEmptyItem(item);
   const displayName = !empty && item?.name ? baseName(item) : null;
-  const tooltip = !empty && item?.name ? item.name : undefined;
-
   const showImage = !empty && !!item?.image && !imgError;
   const showPlaceholder = !showImage;
 
@@ -161,8 +159,7 @@ export default function ItemSlot({
     <div className={`${styles.slot} ${size === 'small' ? styles.slotSmall : ''}`} style={{ animationDelay: `${animIndex * 45}ms` }}>
       <div
         ref={frameRef}
-        className={`${styles.frame} ${empty ? styles.frameEmpty : ''} ${size === 'small' ? styles.frameSmall : ''}`}
-        title={tooltip}
+        className={`${styles.frame} ${empty ? styles.frameEmpty : ''} ${size === 'small' ? styles.frameSmall : ''} ${!empty && item?.itemType === 'sorcery' ? styles.frameSorcery : ''} ${!empty && item?.itemType === 'incantation' ? styles.frameIncantation : ''}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -194,6 +191,10 @@ export default function ItemSlot({
           >
             {item.infusion}
           </span>
+        )}
+
+        {!empty && item?.skillFpCost && item.skillFpCost[0] > 0 && (item.itemType === 'sorcery' || item.itemType === 'incantation') && (
+          <span className={styles.fpBadge}>{item.skillFpCost[0]}</span>
         )}
       </div>
 

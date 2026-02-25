@@ -247,6 +247,36 @@
   flex: 1;
 }
 
+/* ── Content tab switcher ─────────────────────── */
+.contentTabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.contentTab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-dim);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.contentTab:hover {
+  color: var(--text);
+}
+
+.contentTabActive {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
 /* ── Image preload progress bar ────────────────── */
 .preloadBar {
   position: relative;

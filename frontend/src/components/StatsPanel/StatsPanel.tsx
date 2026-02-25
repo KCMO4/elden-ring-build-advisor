@@ -72,13 +72,12 @@ export default function StatsPanel({ stats, talismans = [] }: Props) {
                       key={cap}
                       className={`${styles.tick} ${reached ? styles.tickReached : ''}`}
                       style={{ left: `${capPct}%` }}
-                      title={`Softcap ${cap}`}
                     />
                   );
                 })}
               </div>
 
-              <span className={styles.value}>
+              <span className={`${styles.value} ${value >= caps[caps.length - 1] ? styles.valueCapped : ''}`}>
                 {value}
                 {bonus > 0 && <span className={styles.bonus}>+{bonus}</span>}
               </span>

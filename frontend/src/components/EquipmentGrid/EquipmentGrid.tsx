@@ -20,7 +20,7 @@ function isQuickSlotEmpty(item: QuickSlotItem): boolean {
 
 function quickSlotToEquipped(item: QuickSlotItem): EquippedWeapon {
   const levelMatch = item.name?.match(/ \+(\d+)$/);
-  return {
+  const result: EquippedWeapon = {
     rawId: item.rawId,
     baseId: item.baseId,
     name: item.name,
@@ -28,6 +28,18 @@ function quickSlotToEquipped(item: QuickSlotItem): EquippedWeapon {
     upgradeLevel: levelMatch ? parseInt(levelMatch[1], 10) : undefined,
     quantity: item.quantity,
   };
+
+  // Pass through spell data
+  if (item.spellType) {
+    result.itemType = item.spellType;
+    if (item.cost != null) result.skillFpCost = [item.cost];
+    if (item.requirements) result.requirements = item.requirements;
+    if (item.description) result.effect = item.description;
+  } else if (item.effect) {
+    result.effect = item.effect;
+  }
+
+  return result;
 }
 
 export default function EquipmentGrid({ equipped, onItemHover }: Props) {
