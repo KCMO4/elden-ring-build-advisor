@@ -104,19 +104,39 @@ const GRADE_COEFF: Record<string, number> = {
   '-': 0.00,
 };
 
+// ── Somber detection ─────────────────────────────────────────────
+// Definitive: scaling data has reinforce tables — somber = 11 entries, standard = 26.
+// Fallback heuristic: infusion present → standard; upgradeLevel > 10 → standard.
+
+export function isSomberHeuristic(weapon: { upgradeLevel?: number; infusion?: string; baseId?: number }): boolean {
+  // Try definitive detection from scaling data (reinforce table length)
+  if (weapon.baseId) {
+    const bundle = getScalingData();
+    if (bundle) {
+      const exactW = bundle.weapons[weapon.baseId] ?? bundle.weapons[weapon.baseId * 100];
+      if (exactW) {
+        const table = bundle.reinforce[exactW.reinforceId];
+        if (table) return table.length <= 11;
+      }
+    }
+  }
+  // Fallback heuristic
+  if (weapon.infusion && weapon.infusion !== 'Standard' && weapon.infusion !== 'None') return false;
+  if ((weapon.upgradeLevel ?? 0) > 10) return false;
+  return true;
+}
+
 // ── Upgrade multipliers (fallback) ──────────────────────────────
 
-function upgradeMultiplier(upgradeLevel: number): number {
+function upgradeMultiplier(upgradeLevel: number, somber: boolean): number {
   if (upgradeLevel <= 0) return 1.0;
-  const isUnique = upgradeLevel <= 10;
-  const [maxN, factor] = isUnique ? [10, 1.44] : [25, 1.45];
+  const [maxN, factor] = somber ? [10, 1.44] : [25, 1.45];
   return 1.0 + (upgradeLevel / maxN) * factor;
 }
 
-function scalingUpgradeMultiplier(upgradeLevel: number): number {
+function scalingUpgradeMultiplier(upgradeLevel: number, somber: boolean): number {
   if (upgradeLevel <= 0) return 1.0;
-  const isUnique = upgradeLevel <= 10;
-  const [maxN, factor] = isUnique ? [10, 0.50] : [25, 0.50];
+  const [maxN, factor] = somber ? [10, 0.50] : [25, 0.50];
   return 1.0 + (upgradeLevel / maxN) * factor;
 }
 
@@ -130,30 +150,56 @@ export interface FlatDefense {
   holy: number;
 }
 
+// Level-based defense component (softcaps at 71, 91, 161)
 function defenseFromLevel(runeLevel: number): number {
-  const v = runeLevel + 79;
-  if (v <= 149) return 40 + 60 * (v / 149);
-  if (v <= 190) return 100 + 20 * ((v - 149) / 41);
-  if (v <= 240) return 120 + 15 * ((v - 190) / 50);
-  return 135 + 20 * ((v - 240) / 552);
+  if (runeLevel < 72)  return 40 + (runeLevel + 78) / 2.483;
+  if (runeLevel < 92)  return 29 + runeLevel;
+  if (runeLevel < 161) return 120 + (runeLevel - 91) / 4.667;
+  return 135 + (runeLevel - 161) / 27.6;
 }
 
-function defenseFromStat(stat: number): number {
-  if (stat <= 1)  return 0;
-  if (stat <= 30) return 10 * ((stat - 1) / 29);
-  if (stat <= 40) return 10 + 5 * ((stat - 30) / 10);
-  if (stat <= 60) return 15 + 15 * ((stat - 40) / 20);
-  return 30 + 10 * ((stat - 60) / 39);
+// Each defense type has its own stat curve (softcaps differ!)
+
+// Physical ← STR (softcaps 30, 40, 60)
+function physDefFromSTR(str: number): number {
+  if (str < 30)  return str / 3;
+  if (str < 40)  return 10 + (str - 30) / 2;
+  if (str < 60)  return 15 + (str - 40) / 1.333;
+  return 30 + (str - 60) / 3.9;
+}
+
+// Magic ← INT (softcaps 20, 35, 60) — contributes much more per point
+function magDefFromINT(int: number): number {
+  if (int < 20)  return int * 2;
+  if (int < 35)  return 40 + (int - 20) / 1.5;
+  if (int < 60)  return 50 + (int - 35) / 2.5;
+  return 60 + (int - 60) / 3.9;
+}
+
+// Fire ← VIG (softcaps 30, 40, 60)
+function fireDefFromVIG(vig: number): number {
+  if (vig < 30)  return vig / 1.5;
+  if (vig < 40)  return 20 + (vig - 30) * 2;
+  if (vig < 60)  return vig;
+  return 60 + (vig - 60) / 3.9;
+}
+
+// Holy ← ARC (softcaps 20, 35, 60) — same curve as Magic/INT
+function holyDefFromARC(arc: number): number {
+  if (arc < 20)  return arc * 2;
+  if (arc < 35)  return 40 + (arc - 20) / 1.5;
+  if (arc < 60)  return 50 + (arc - 35) / 2.5;
+  return 60 + (arc - 60) / 3.9;
 }
 
 export function calcFlatDefense(level: number, stats: CharacterStats): FlatDefense {
   const lvl = defenseFromLevel(level);
   return {
-    physical:  Math.floor(lvl + defenseFromStat(stats.strength)),
-    magic:     Math.floor(lvl + defenseFromStat(stats.intelligence)),
-    fire:      Math.floor(lvl + defenseFromStat(stats.vigor)),
+    physical:  Math.floor(lvl + physDefFromSTR(stats.strength)),
+    magic:     Math.floor(lvl + magDefFromINT(stats.intelligence)),
+    fire:      Math.floor(lvl + fireDefFromVIG(stats.vigor)),
     lightning: Math.floor(lvl),
-    holy:      Math.floor(lvl + defenseFromStat(stats.arcane)),
+    holy:      Math.floor(lvl + holyDefFromARC(stats.arcane)),
   };
 }
 
@@ -269,20 +315,55 @@ function tryExactAR(
   return { physical, magic, fire, lightning, holy, total };
 }
 
+// ── Weapon requirement penalty ──────────────────────────────────
+// When you don't meet a weapon's stat requirements, the game applies a severe
+// AR penalty (~60% reduction). 2H STR bonus counts for requirement checks.
+
+export function meetsRequirements(
+  weapon: EquippedWeapon,
+  stats: CharacterStats,
+  twoHanding: boolean = false,
+): boolean {
+  const req = weapon.requirements;
+  if (!req) return true;
+  const effStr = twoHanding ? Math.min(99, Math.floor(stats.strength * 1.5)) : stats.strength;
+  return effStr >= (req.str ?? 0) &&
+    stats.dexterity >= (req.dex ?? 0) &&
+    stats.intelligence >= (req.int ?? 0) &&
+    stats.faith >= (req.fai ?? 0) &&
+    stats.arcane >= (req.arc ?? 0);
+}
+
+const UNMET_PENALTY = 0.4; // ~60% damage reduction when requirements not met
+
 // ── Cálculo de AR estimado (con fallback) ───────────────────────
 
 export function estimateEquippedAR(
   weapon: EquippedWeapon,
   stats: CharacterStats,
+  twoHanding: boolean = false,
 ): { physical: number; magic: number; fire: number; lightning: number; holy: number; total: number } {
   // Try exact calculation first
   const exact = tryExactAR(weapon, stats);
-  if (exact) return exact;
+  if (exact) {
+    if (!meetsRequirements(weapon, stats, twoHanding)) {
+      return {
+        physical: Math.round(exact.physical * UNMET_PENALTY),
+        magic: Math.round(exact.magic * UNMET_PENALTY),
+        fire: Math.round(exact.fire * UNMET_PENALTY),
+        lightning: Math.round(exact.lightning * UNMET_PENALTY),
+        holy: Math.round(exact.holy * UNMET_PENALTY),
+        total: Math.round(exact.total * UNMET_PENALTY),
+      };
+    }
+    return exact;
+  }
 
   // Fallback: approximation by scaling grade
   const lvl    = weapon.upgradeLevel ?? 0;
-  const mult   = upgradeMultiplier(lvl);
-  const sclMul = scalingUpgradeMultiplier(lvl);
+  const somber = isSomberHeuristic(weapon);
+  const mult   = upgradeMultiplier(lvl, somber);
+  const sclMul = scalingUpgradeMultiplier(lvl, somber);
   const dmg    = weapon.damage!;
   const scl    = weapon.scaling!;
 
@@ -314,11 +395,12 @@ export function estimateEquippedAR(
   const arcLigBon  = bLig  * arcCoeff * sclMul * interpGraph(ARC_GRAPH, stats.arcane);
   const arcHolyBon = bHoly * arcCoeff * sclMul * interpGraph(ARC_GRAPH, stats.arcane);
 
-  const physical  = Math.round(bPhys + strBonus + dexBonus + arcPhysBon);
-  const magic     = Math.round(bMag  + intBonus + faiMag + arcMagBon);
-  const fire      = Math.round(bFire + faiFire + arcFireBon);
-  const lightning = Math.round(bLig  + faiLig + arcLigBon);
-  const holy      = Math.round(bHoly + faiHoly + arcHolyBon);
+  const pen = meetsRequirements(weapon, stats, twoHanding) ? 1 : UNMET_PENALTY;
+  const physical  = Math.round((bPhys + strBonus + dexBonus + arcPhysBon) * pen);
+  const magic     = Math.round((bMag  + intBonus + faiMag + arcMagBon) * pen);
+  const fire      = Math.round((bFire + faiFire + arcFireBon) * pen);
+  const lightning = Math.round((bLig  + faiLig + arcLigBon) * pen);
+  const holy      = Math.round((bHoly + faiHoly + arcHolyBon) * pen);
   const total     = physical + magic + fire + lightning + holy;
 
   return { physical, magic, fire, lightning, holy, total };
@@ -348,8 +430,9 @@ export function estimateARWithBreakdown(
   stats:  CharacterStats,
 ): { ar: ReturnType<typeof estimateEquippedAR>; breakdown: ARBreakdown } {
   const lvl    = weapon.upgradeLevel ?? 0;
-  const mult   = upgradeMultiplier(lvl);
-  const sclMul = scalingUpgradeMultiplier(lvl);
+  const somber = isSomberHeuristic(weapon);
+  const mult   = upgradeMultiplier(lvl, somber);
+  const sclMul = scalingUpgradeMultiplier(lvl, somber);
   const dmg    = weapon.damage!;
   const scl    = weapon.scaling!;
 
@@ -415,7 +498,10 @@ const SPELL_GRADE_COEFF: Record<string, number> = {
 
 /**
  * Estimates Sorcery/Incant Scaling for a staff or seal.
- * Uses the weapon's primary scaling stat and grade + upgrade level.
+ *
+ * When exact scaling data is loaded: uses real CalcCorrectGraph curves +
+ * exact weapon scaling coefficients from regulation.bin.
+ * Otherwise falls back to grade-based approximation.
  */
 export function estimateSpellScaling(
   weapon: EquippedWeapon,
@@ -427,25 +513,64 @@ export function estimateSpellScaling(
   if (!isStaff && !isSeal) return null;
   if (!weapon.scaling) return null;
 
-  // Primary stat and grade
+  // Base spell buff from upgrade level
+  const lvl = weapon.upgradeLevel ?? 0;
+  const isSomber = isSomberHeuristic(weapon);
+  const table = isSomber ? SPELL_BUFF_BASE.somber : SPELL_BUFF_BASE.standard;
+  const baseBuff = table[Math.min(lvl, table.length - 1)];
+
+  // ── Try exact path (scaling data loaded) ──
+  const bundle = getScalingData();
+  if (bundle && weapon.baseId) {
+    const exactW = bundle.weapons[weapon.baseId] ?? bundle.weapons[weapon.baseId * 100];
+    if (exactW) {
+      const reinforceTable = bundle.reinforce[exactW.reinforceId];
+      const rf = reinforceTable?.[Math.min(lvl, (reinforceTable?.length ?? 1) - 1)];
+      if (rf) {
+        // Exact scaling coefficients at current upgrade level (÷100 for multiplier)
+        const intCoeff = (exactW.int / 100) * rf.intScl;
+        const faiCoeff = (exactW.fai / 100) * rf.faiScl;
+        const arcCoeff = (exactW.arc / 100) * rf.arcScl;
+
+        // Resolve exact CalcCorrectGraph per stat
+        const gInt = resolveGraph(exactW.graphMag);
+        const gFai = resolveGraph(exactW.graphHoly);
+        const gArc = resolveGraph(7);
+
+        const intContrib = intCoeff * interpGraph(gInt, stats.intelligence);
+        const faiContrib = faiCoeff * interpGraph(gFai, stats.faith);
+        const arcContrib = arcCoeff * interpGraph(gArc, stats.arcane);
+
+        return Math.round(baseBuff * (1 + intContrib + faiContrib + arcContrib));
+      }
+    }
+  }
+
+  // ── Fallback: grade-based approximation ──
   const primaryStat = isStaff ? stats.intelligence : stats.faith;
   const primaryGrade = isStaff ? weapon.scaling.int : weapon.scaling.fai;
   const coeff = SPELL_GRADE_COEFF[primaryGrade] ?? 0;
 
-  // Secondary contribution (some seals scale with ARC, some staves with FAI)
   const secGrade = isStaff ? weapon.scaling.fai : weapon.scaling.arc;
   const secStat  = isStaff ? stats.faith : stats.arcane;
   const secCoeff = SPELL_GRADE_COEFF[secGrade] ?? 0;
 
-  // Base spell buff from upgrade level
-  const lvl = weapon.upgradeLevel ?? 0;
-  const isSomber = lvl <= 10;
-  const table = isSomber ? SPELL_BUFF_BASE.somber : SPELL_BUFF_BASE.standard;
-  const baseBuff = table[Math.min(lvl, table.length - 1)];
-
-  // Scaling contribution via MAGIC_GRAPH
   const primaryContrib = coeff * interpGraph(MAGIC_GRAPH, primaryStat);
   const secContrib     = secCoeff > 0 ? secCoeff * 0.5 * interpGraph(MAGIC_GRAPH, secStat) : 0;
 
   return Math.round(baseBuff * (1 + primaryContrib + secContrib));
+}
+
+// ── ARC Passive Buildup Scaling ──────────────────────────────────
+// Blood/Poison buildup scales with Arcane via CalcCorrectGraph (same ARC curve).
+// Uses the weapon's ARC scaling grade to determine the coefficient.
+
+export function estimatePassiveBuildup(
+  baseBuildup: number,
+  arcane: number,
+  arcGrade: string,
+): number {
+  const coeff = GRADE_COEFF[arcGrade] ?? 0;
+  if (coeff <= 0) return baseBuildup;
+  return Math.round(baseBuildup * (1 + coeff * interpGraph(ARC_GRAPH, arcane)));
 }

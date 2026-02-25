@@ -86,7 +86,7 @@ backend/
 | `npm run dev` | ts-node-dev with hot-reload at :3001 |
 | `npm run build` | Compile to dist/ |
 | `npm start` | Run dist/index.js (production) |
-| `npm test` | Jest — 43 tests, all must pass |
+| `npm test` | Jest — 134 tests, all must pass |
 | `npm run sync-data` | Regenerate all `src/data/*.json` from fanapis.com |
 | `npm run patch-armor` | Overlay float defense + poise + resistances from EldenRingArmorOptimizer |
 | `npm run patch-armor:dry` | Dry run — shows match stats without writing files |
@@ -363,7 +363,7 @@ interface Defense {
 ### Tests
 - Each parser module must have tests in `__tests__/`.
 - Use synthetic buffers (not real files) for unit tests.
-- Command: `npm test` (43 tests, all must pass).
+- Command: `npm test` (134 tests, all must pass).
 
 ---
 
@@ -390,7 +390,7 @@ cd backend
 npm run sync-data    # download from fanapis.com + map with real game IDs
 npm run patch-armor  # overlay float defense + poise from EldenRingArmorOptimizer
 npm run audit        # verify data quality (exits 1 if critical bugs found)
-npm test             # all 43 tests must pass after data changes
+npm test             # all 134 tests must pass after data changes
 ```
 
 ### Verify the parser with a real .sl2

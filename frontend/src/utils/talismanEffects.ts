@@ -158,8 +158,8 @@ const TALISMAN_EFFECTS: Record<number, TalismanFlatEffects> = {
   // ── Shard of Alexander (+15% Skill damage) ──────────────────
   1231: { skillDmgBonus: 0.15 },
 
-  // ── Millicent's Prosthesis (DEX+5) ───────────────────────────
-  1250: { dexterity: 5 },
+  // ── Millicent's Prosthesis (DEX+5 + successive attacks +4/6/11%) ──
+  1250: { dexterity: 5, noteLabel: 'Successive ATK +4/6/11%' },
 
   // ── Gold Scarab (+20% Rune acquisition — no stat effect, display only) ──
   1110: { noteLabel: 'Rune gain +20%' },
@@ -178,8 +178,8 @@ const TALISMAN_EFFECTS: Record<number, TalismanFlatEffects> = {
   3040: { incantPowerBonus: 0.04 },   // Faithful's Canvas
   3050: { incantPowerBonus: 0.08 },   // Flock's Canvas
 
-  // ── Godfrey Icon (+15% charged/held attacks ≈ skill bonus) ──
-  3090: { skillDmgBonus: 0.15 },
+  // ── Godfrey Icon (+15% charged spells & skills — conditional, not flat skill dmg) ──
+  3090: { noteLabel: 'Charged ATK +15%' },
 
   // ── Dragoncrest (physical defense absorption) ────────────────
   4000: { physicalDefBonus: 0.10 },   // Dragoncrest Shield

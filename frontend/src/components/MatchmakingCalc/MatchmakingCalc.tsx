@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import type { Inventory } from '../../types';
+import { isSomberHeuristic } from '../../utils/arCalc';
 import styles from './MatchmakingCalc.module.css';
 
 interface Props {
@@ -60,7 +61,7 @@ function findMaxWeaponUpgrade(inventory: Inventory): { level: number; somber: bo
     const lvl = w.upgradeLevel ?? 0;
     if (lvl > maxLevel) {
       maxLevel = lvl;
-      somber = lvl <= 10 && lvl > 0;
+      somber = isSomberHeuristic(w);
       weaponName = w.name;
     }
   }

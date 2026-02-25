@@ -2,7 +2,8 @@
 
 Web tool for analyzing Elden Ring builds directly from a save file (`.sl2`).
 Reads the binary save, displays character stats and equipped gear with images and detailed tooltips,
-and shows accurate derived stats (HP, FP, Stamina, Equip Load, Attack Rating, Damage Negation).
+and shows accurate derived stats using exact game formulas — HP, FP, Stamina, Equip Load, Attack Rating,
+Damage Negation, Poise, Resistances, Flat Defense, Rune Level Calculator, and more.
 
 ---
 
@@ -11,16 +12,23 @@ and shows accurate derived stats (HP, FP, Stamina, Equip Load, Attack Rating, Da
 - **Save file upload** — drag & drop or file picker for `.sl2` (PC Steam only)
 - **Character selection** — card picker when the save has multiple active characters
 - **Attributes panel** — all 8 stats (VIG/MND/END/STR/DEX/INT/FAI/ARC) with proportional bars and softcap ticks
-- **Derived stats** — HP, FP, Stamina and Equip Load computed with exact piecewise interpolation formulas; Attack Rating for the main weapon; total Damage Negation % for equipped armor; Poise (sum of armor pieces); Resistances (Immunity, Robustness, Focus, Vitality) with exact game formulas (level + attribute + armor)
-- **Talisman effects** — HP, FP, Stamina and Equip Load adjusted by equipped talismans (shown as green `+N` indicators)
+- **Derived stats (sub-tabbed: Body | Attack | Defense)** —
+  - **Body**: HP, FP, Stamina, Equip Load with exact piecewise interpolation formulas; Rune Level Calculator (exact game formula: `floor((max(0, (L-11)*0.02) + 0.1) * (L+81)^2 + 1)`)
+  - **Attack**: Estimated AR per weapon with 2H STR toggle (×1.5), off-hand AR, spell scaling (staves/seals), weapon passives with ARC scaling, configurable buffs (Golden Vow, Flame Grant Me Strength, etc.)
+  - **Defense**: Damage Negation % for equipped armor (with buff indicators), Guard Boost for shields, Poise (color breakpoints), Resistances (Immunity, Robustness, Focus, Vitality — flat values, exact game formulas), Discovery
+- **Talisman effects** — ~35 talismans with numeric effects: HP/FP/Stamina/Equip Load bonuses, elemental damage %, defense %, skill/spell power, guard boost, poise, resistances, discovery
+- **Great Rune & Physick** — toggle Rune Arc and Flask of Wondrous Physick to see stat changes in real time
+- **Buff system** — configurable damage/defense buffs (Golden Vow, Flame Grant Me Strength, Howl of Shabriri, etc.) with multiplicative stacking
 - **Equipment grid** — weapons (Left Hand / Right Hand), full armor (Head / Chest / Arms / Legs) and 4 talismans with fanapis images and SVG placeholders per category
 - **Item tooltips on hover** — full stats for each equipped item:
-  - Weapons: Estimated AR per damage type (bars) with per-stat scaling breakdown (e.g. `DEX D 34 → +82`), base damage at upgrade level, Ash of War skill name
-  - Armor: Damage Negation per type (8 values, float precision from game data), Poise, Resistances (Immunity, Robustness, Focus, Vitality)
-  - Shields: Guard Boost (stability)
+  - Weapons: Estimated AR per damage type (bars) with per-stat scaling breakdown (e.g. `DEX D 34 → +82`), requirement check with penalty warning, ARC-scaled passive effects (Bleed, Frost, Poison), Ash of War skill + FP cost
+  - Armor: Damage Negation per type (8 values, float precision), Poise, Resistances, armor efficiency ratio (phys def / weight)
+  - Shields: Guard Boost (stability) + guard negation per element
   - Talismans: numeric effects (HP%, Stamina%, etc.) or text description
   - Weight for all items
-- **Full inventory** — tabs: Weapons / Armor / Talismans / Spells / Spirits / Ashes of War / Consumables / Materials / Upgrades / Tears / Ammo / Key Items / Cookbooks / Multiplayer — with name search and type filter per tab
+- **Inventory tooltips** — AR estimation for inventory weapons using character stats, requirement met/unmet styling, ARC-scaled passives
+- **Full inventory** — 14 tabs: Weapons / Armor / Talismans / Spells / Spirits / Ashes of War / Consumables / Materials / Upgrades / Tears / Ammo / Key Items / Cookbooks / Multiplayer — with name search and type filter per tab
+- **Matchmaking calculator** — co-op and invasion level/weapon upgrade ranges
 
 ---
 
@@ -60,7 +68,7 @@ and shows accurate derived stats (HP, FP, Stamina, Equip Load, Attack Rating, Da
 | Express 4 | HTTP server |
 | Multer 2 | `.sl2` file upload (memoryStorage) |
 | ts-node-dev | Dev server with hot reload |
-| Jest 30 + ts-jest | Tests (43 tests) |
+| Jest 30 + ts-jest | Tests (134 tests) |
 
 ### Frontend
 | Technology | Role |
@@ -68,7 +76,7 @@ and shows accurate derived stats (HP, FP, Stamina, Equip Load, Attack Rating, Da
 | React 19 + TypeScript 5.7 | UI |
 | Vite 6 | Bundler and dev server |
 | CSS Modules | Per-component styles |
-| Google Fonts (Cinzel) | Thematic typography |
+| Google Fonts (EB Garamond + Cormorant Garamond) | Thematic typography |
 
 ---
 
@@ -133,21 +141,25 @@ elden-ring-build-advisor/
         ├── components/
         │   ├── BuildPage/         # Main layout
         │   ├── StatsPanel/        # 8 attributes
-        │   ├── DerivedStatsPanel/ # HP/FP/Stamina/Load/Attack/Defense/Poise/Resistances
+        │   ├── DerivedStatsPanel/ # Sub-tabs: Body | Attack | Defense (exact game formulas)
         │   ├── EquipmentGrid/     # Weapons + armor + talismans
         │   ├── ItemSlot/          # Slot with image, upgrade badge, infusion badge
         │   ├── ItemTooltip/       # Hover tooltip: AR, defense, poise, resistances, guard boost, skill
         │   ├── InventoryTooltip/  # Hover tooltip for inventory items
         │   ├── InventoryPanel/    # Full inventory with search and type filter
-        │   ├── AdvisorPanel/      # (kept, not rendered — TODO: Builds + Questlines tabs)
+        │   ├── AdvisorPanel/      # Weapon recommendations by AR + Next Caps optimizer
+        │   ├── MatchmakingCalc/  # Co-op & Invasion range calculator
         │   ├── CharacterSelect/   # Character card picker
         │   └── UploadPage/        # .sl2 drop zone
         ├── hooks/
         │   ├── useMountAnimation.ts   # Bar animation on mount
         │   └── useTooltipPosition.ts  # Viewport-aware tooltip flip
         └── utils/
-            ├── arCalc.ts              # AR estimation with per-stat scaling breakdown
-            └── talismanEffects.ts     # Numeric effects for ~19 known talismans
+            ├── arCalc.ts              # AR estimation, flat defense, spell scaling, passive buildup
+            ├── talismanEffects.ts     # Numeric effects for ~35 known talismans
+            ├── buffEffects.ts         # Buff system (Golden Vow, Flame Grant Me Strength, etc.)
+            ├── greatRuneEffects.ts    # Great Rune stat bonuses
+            └── crystalTearEffects.ts  # Crystal Tear (Physick) bonuses
 ```
 
 ### How the `.sl2` is read
@@ -197,7 +209,7 @@ curl -X POST http://localhost:3001/api/advisor \
 ## Tests
 
 ```bash
-cd backend && npm test   # 43 tests — parser, inventory scanner, item store, advisor
+cd backend && npm test   # 134 tests — parser, inventory scanner, item store, advisor
 ```
 
 ---
@@ -226,6 +238,24 @@ extracted from the game's `EquipParamProtector` param (via EldenRingArmorOptimiz
 - **550 / 568 armors** have float precision (e.g. `strike: 5.4` instead of `5`)
 - **Also adds `poise`** and **resistances** (`immunity`, `robustness`, `focus`, `vitality`) — not available in fanapis
 - **18 unmatched** (6 Shadow of the Erdtree DLC pieces not yet in the optimizer, ~12 obscure items with near-zero stats) — keep integer approximations from fanapis
+
+---
+
+## Credits & Acknowledgments
+
+This project wouldn't be possible without the incredible Elden Ring community and their reverse-engineering work:
+
+| Resource | Author / Project | Used for |
+|----------|-----------------|----------|
+| [Elden Ring Fan API](https://eldenring.fanapis.com) | fanapis.com | Item data (weapons, armors, talismans, spells, shields, ashes, spirits, consumables) + images |
+| [EldenRingResources](https://github.com/Deskete/EldenRingResources) | Deskete | Real weapon IDs (`gameIds.json`) extracted from game data |
+| [ER-Save-Editor](https://github.com/ClayAmore/ER-Save-Editor) | ClayAmore | Armor IDs (EquipParamProtector), Talisman IDs (EquipParamAccessory), Ash of War IDs (EquipParamGem), .sl2 binary format reference |
+| [EldenRingArmorOptimizer](https://github.com/jerpdoesgames/EldenRingArmorOptimizer) | jerpdoesgames | Float-precision defense values, poise, and resistance data extracted from `regulation.bin → EquipParamProtector` |
+| [Elden Ring Wiki (Fextralife)](https://eldenring.wiki.fextralife.com) | Fextralife community | Fallback item images, formula verification, softcap reference |
+| Elden Ring community | Various contributors | Reverse-engineered formulas: HP/FP/Stamina/Equip Load piecewise interpolation, AR scaling curves, flat defense formulas, resistance formulas, rune cost formula, matchmaking ranges |
+| [Google Fonts](https://fonts.google.com) | Google | EB Garamond (display) + Cormorant Garamond (UI headings) |
+
+Built with [Claude Code](https://claude.ai/claude-code) by Anthropic.
 
 ---
 

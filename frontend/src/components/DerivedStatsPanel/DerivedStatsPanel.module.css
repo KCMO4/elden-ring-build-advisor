@@ -5,6 +5,32 @@
   overflow: hidden;
 }
 
+/* ── Sub-tabs ── */
+.subTabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background: rgba(201, 167, 79, 0.03);
+}
+.subTab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-dim);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.3rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.subTab:hover { color: var(--text); }
+.subTabActive {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
 /* ── Sección ── */
 .section {
   padding: 0.45rem 0.75rem 0.5rem;
@@ -249,9 +275,6 @@
   color: var(--gold);
 }
 
-/* ── Flat defense / negation hybrid display ── */
-.defFlat { color: var(--text); font-weight: 600; }
-.defSep { color: var(--text-dim); opacity: 0.5; font-size: 0.55rem; }
 .fpNote { font-size: 0.52rem; color: #6a9cd4; padding: 0.1rem 0; letter-spacing: 0.03em; }
 
 /* ── Weapon Skill row ── */
@@ -392,6 +415,18 @@
 .buffDur {
   font-size: 0.48rem;
   color: var(--text-dim);
+}
+
+/* ── Active buff note (Defense tab) ── */
+.activeBuffNote {
+  font-size: 0.48rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0 0;
+  cursor: pointer;
+}
+.activeBuffNote:hover {
+  color: var(--gold);
 }
 
 /* ── Rune Level Calculator ── */

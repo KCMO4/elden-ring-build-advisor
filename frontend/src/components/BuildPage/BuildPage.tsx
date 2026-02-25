@@ -170,7 +170,7 @@ export default function BuildPage({ character, onBack }: Props) {
             </button>
           </div>
           {contentTab === 'inventory' && (
-            <InventoryPanel inventory={character.inventory} />
+            <InventoryPanel inventory={character.inventory} stats={character.stats} />
           )}
           {contentTab === 'advisor' && (
             <AdvisorPanel

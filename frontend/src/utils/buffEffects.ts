@@ -298,9 +298,9 @@ export function computeBuffTotals(activeBuffIds: string[]): BuffTotals {
     lightningMult *= (1 + allDmg + (best.lightningDmgBonus ?? 0));
     holyMult      *= (1 + allDmg + (best.holyDmgBonus ?? 0));
 
-    // Defense: element-specific or all
+    // Defense: element-specific or all (physNegPenalty reduces physical negation)
     const allNeg = best.allNegBonus ?? 0;
-    physNegMult      *= (1 + allNeg + (best.physNegBonus ?? 0));
+    physNegMult      *= (1 + allNeg + (best.physNegBonus ?? 0) + (best.physNegPenalty ?? 0));
     magicNegMult     *= (1 + allNeg + (best.magicNegBonus ?? 0));
     fireNegMult      *= (1 + allNeg + (best.fireNegBonus ?? 0));
     lightningNegMult *= (1 + allNeg + (best.lightningNegBonus ?? 0));

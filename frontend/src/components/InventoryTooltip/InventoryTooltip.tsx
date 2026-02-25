@@ -1,7 +1,9 @@
+import { useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import type { ResolvedInventoryItem } from '../../types';
+import type { ResolvedInventoryItem, CharacterStats } from '../../types';
 import { useTooltipPosition } from '../../hooks/useTooltipPosition';
 import { getTalismanEffectLines } from '../../utils/talismanEffects';
+import { estimateARWithBreakdown, estimatePassiveBuildup } from '../../utils/arCalc';
 // Reutiliza los estilos del ItemTooltip del equipo para consistencia visual
 import styles from '../ItemTooltip/ItemTooltip.module.css';
 import invStyles from './InventoryTooltip.module.css';
@@ -9,6 +11,7 @@ import invStyles from './InventoryTooltip.module.css';
 interface Props {
   item: ResolvedInventoryItem;
   triggerRect: DOMRect;
+  stats?: CharacterStats;
 }
 
 type ScalingGrade = 'S' | 'A' | 'B' | 'C' | 'D' | 'E' | '-';
@@ -81,25 +84,50 @@ function ColorDamageBar({ label, value, max, color }: { label: string; value: nu
 }
 
 /** Sección de daño para armas */
-function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
+function WeaponSection({ item, stats }: { item: ResolvedInventoryItem; stats?: CharacterStats }) {
   const { damage, scaling, weight, stability, passives, requirements, guardNegation, critical } = item;
   if (!damage && !scaling && !stability && !guardNegation) return null;
 
+  // AR estimado si hay stats del personaje y el arma tiene damage+scaling
+  const arData = useMemo(() => {
+    if (!stats || !damage || !scaling) return null;
+    // ResolvedInventoryItem es estructuralmente compatible con EquippedWeapon
+    return estimateARWithBreakdown(item as any, stats);
+  }, [item, stats, damage, scaling]);
+
+  const arMax = 650;
   const maxDmg = damage
     ? Math.max(damage.physical, damage.magic, damage.fire, damage.lightning, damage.holy, 1)
     : 1;
   const hasScaling = scaling && Object.values(scaling).some(v => v !== '-');
 
+  // ARC passive scaling
+  const arcGrade = scaling?.arc ?? '-';
+
   return (
     <>
       {damage && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Attack Power</div>
-          <DamageBar label="Physical"  value={damage.physical}  max={maxDmg} />
-          <DamageBar label="Magic"     value={damage.magic}     max={maxDmg} />
-          <DamageBar label="Fire"      value={damage.fire}      max={maxDmg} />
-          <DamageBar label="Lightning" value={damage.lightning} max={maxDmg} />
-          <DamageBar label="Holy"      value={damage.holy}      max={maxDmg} />
+          <div className={styles.sectionLabel}>
+            {arData ? 'Estimated AR' : 'Attack Power'}
+          </div>
+          {arData ? (
+            <>
+              <ColorDamageBar label="Physical"  value={arData.ar.physical}  max={arMax} color={DMG_COLOR.physical}  />
+              <ColorDamageBar label="Magic"     value={arData.ar.magic}     max={arMax} color={DMG_COLOR.magic}     />
+              <ColorDamageBar label="Fire"      value={arData.ar.fire}      max={arMax} color={DMG_COLOR.fire}      />
+              <ColorDamageBar label="Lightning" value={arData.ar.lightning} max={arMax} color={DMG_COLOR.lightning} />
+              <ColorDamageBar label="Holy"      value={arData.ar.holy}      max={arMax} color={DMG_COLOR.holy}      />
+            </>
+          ) : (
+            <>
+              <DamageBar label="Physical"  value={damage.physical}  max={maxDmg} />
+              <DamageBar label="Magic"     value={damage.magic}     max={maxDmg} />
+              <DamageBar label="Fire"      value={damage.fire}      max={maxDmg} />
+              <DamageBar label="Lightning" value={damage.lightning} max={maxDmg} />
+              <DamageBar label="Holy"      value={damage.holy}      max={maxDmg} />
+            </>
+          )}
         </div>
       )}
       {critical != null && critical !== 100 && (
@@ -125,34 +153,59 @@ function WeaponSection({ item }: { item: ResolvedInventoryItem }) {
       {passives && passives.length > 0 && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Passive Effects</div>
-          {passives.map(p => (
-            <div key={p.type} className={styles.damageRow}>
-              <span className={styles.damageLabel}>{PASSIVE_LABEL[p.type] ?? p.type}</span>
-              <div className={styles.barTrack}>
-                <div
-                  className={styles.barFill}
-                  style={{
-                    width: `${Math.min(100, (p.buildup / 100) * 100)}%`,
-                    background: `linear-gradient(to right, #3a2a10, ${PASSIVE_COLOR[p.type] ?? '#888'})`,
-                  }}
-                />
+          {passives.map(p => {
+            const scaled = stats && arcGrade !== '-'
+              ? estimatePassiveBuildup(p.buildup, stats.arcane, arcGrade)
+              : p.buildup;
+            return (
+              <div key={p.type} className={styles.damageRow}>
+                <span className={styles.damageLabel}>{PASSIVE_LABEL[p.type] ?? p.type}</span>
+                <div className={styles.barTrack}>
+                  <div
+                    className={styles.barFill}
+                    style={{
+                      width: `${Math.min(100, (scaled / 100) * 100)}%`,
+                      background: `linear-gradient(to right, #3a2a10, ${PASSIVE_COLOR[p.type] ?? '#888'})`,
+                    }}
+                  />
+                </div>
+                <span className={styles.damageValue} style={{ color: PASSIVE_COLOR[p.type] ?? '#888' }}>
+                  {scaled !== p.buildup ? `~${scaled}` : p.buildup}
+                </span>
               </div>
-              <span className={styles.damageValue} style={{ color: PASSIVE_COLOR[p.type] ?? '#888' }}>
-                {p.buildup}
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
       {requirements && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Requirements</div>
           <div className={styles.badgeRow}>
-            {requirements.str > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>STR {requirements.str}</span>}
-            {requirements.dex > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>DEX {requirements.dex}</span>}
-            {requirements.int > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>INT {requirements.int}</span>}
-            {requirements.fai > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>FAI {requirements.fai}</span>}
-            {requirements.arc > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>ARC {requirements.arc}</span>}
+            {requirements.str > 0 && (
+              <span className={`${styles.badge} ${stats && stats.strength < requirements.str ? styles.reqUnmet : styles.reqMet}`}>
+                STR {requirements.str}
+              </span>
+            )}
+            {requirements.dex > 0 && (
+              <span className={`${styles.badge} ${stats && stats.dexterity < requirements.dex ? styles.reqUnmet : styles.reqMet}`}>
+                DEX {requirements.dex}
+              </span>
+            )}
+            {requirements.int > 0 && (
+              <span className={`${styles.badge} ${stats && stats.intelligence < requirements.int ? styles.reqUnmet : styles.reqMet}`}>
+                INT {requirements.int}
+              </span>
+            )}
+            {requirements.fai > 0 && (
+              <span className={`${styles.badge} ${stats && stats.faith < requirements.fai ? styles.reqUnmet : styles.reqMet}`}>
+                FAI {requirements.fai}
+              </span>
+            )}
+            {requirements.arc > 0 && (
+              <span className={`${styles.badge} ${stats && stats.arcane < requirements.arc ? styles.reqUnmet : styles.reqMet}`}>
+                ARC {requirements.arc}
+              </span>
+            )}
           </div>
         </div>
       )}
@@ -333,7 +386,7 @@ function SpiritSection({ item }: { item: ResolvedInventoryItem }) {
 }
 
 /** Sección de hechizo (tipo, cost, slots, requirements, description) */
-function SpellSection({ item }: { item: ResolvedInventoryItem }) {
+function SpellSection({ item, stats }: { item: ResolvedInventoryItem; stats?: CharacterStats }) {
   const { itemType, cost, slots, requirements, description } = item;
   return (
     <>
@@ -362,9 +415,21 @@ function SpellSection({ item }: { item: ResolvedInventoryItem }) {
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Requirements</div>
           <div className={styles.badgeRow}>
-            {requirements.int > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>INT {requirements.int}</span>}
-            {requirements.fai > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>FAI {requirements.fai}</span>}
-            {requirements.arc > 0 && <span className={`${styles.badge} ${styles.reqMet}`}>ARC {requirements.arc}</span>}
+            {requirements.int > 0 && (
+              <span className={`${styles.badge} ${stats && stats.intelligence < requirements.int ? styles.reqUnmet : styles.reqMet}`}>
+                INT {requirements.int}
+              </span>
+            )}
+            {requirements.fai > 0 && (
+              <span className={`${styles.badge} ${stats && stats.faith < requirements.fai ? styles.reqUnmet : styles.reqMet}`}>
+                FAI {requirements.fai}
+              </span>
+            )}
+            {requirements.arc > 0 && (
+              <span className={`${styles.badge} ${stats && stats.arcane < requirements.arc ? styles.reqUnmet : styles.reqMet}`}>
+                ARC {requirements.arc}
+              </span>
+            )}
           </div>
         </div>
       )}
@@ -376,11 +441,11 @@ function SpellSection({ item }: { item: ResolvedInventoryItem }) {
 }
 
 /** Contenido del tooltip según categoría */
-function TooltipContent({ item }: { item: ResolvedInventoryItem }) {
+function TooltipContent({ item, stats }: { item: ResolvedInventoryItem; stats?: CharacterStats }) {
   const cat = item.category;
 
   if (cat === 'weapon' || cat === 'ammo') {
-    return <WeaponSection item={item} />;
+    return <WeaponSection item={item} stats={stats} />;
   }
   if (cat === 'armor') {
     return <ArmorSection item={item} />;
@@ -419,7 +484,7 @@ function TooltipContent({ item }: { item: ResolvedInventoryItem }) {
   if (cat === 'spell') {
     return (
       <>
-        <SpellSection item={item} />
+        <SpellSection item={item} stats={stats} />
       </>
     );
   }
@@ -429,7 +494,7 @@ function TooltipContent({ item }: { item: ResolvedInventoryItem }) {
   return null;
 }
 
-export default function InventoryTooltip({ item, triggerRect }: Props) {
+export default function InventoryTooltip({ item, triggerRect, stats }: Props) {
   const pos = useTooltipPosition(triggerRect);
 
   // Nombre limpio de prefijo "Ash of War: "
@@ -468,7 +533,7 @@ export default function InventoryTooltip({ item, triggerRect }: Props) {
 
       <div className={styles.divider} />
 
-      <TooltipContent item={item} />
+      <TooltipContent item={item} stats={stats} />
     </div>
   );
 

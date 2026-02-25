@@ -4,7 +4,7 @@ import type { EquippedWeapon, CharacterStats } from '../../types';
 import { useTooltipPosition } from '../../hooks/useTooltipPosition';
 import { getTalismanEffectLines } from '../../utils/talismanEffects';
 import { getGreatRuneEffectLines } from '../../utils/greatRuneEffects';
-import { estimateARWithBreakdown } from '../../utils/arCalc';
+import { estimateARWithBreakdown, meetsRequirements, estimatePassiveBuildup } from '../../utils/arCalc';
 import styles from './ItemTooltip.module.css';
 
 interface Props {
@@ -121,6 +121,11 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
     return estimateARWithBreakdown(item, stats);
   }, [item, stats]);
 
+  // Check si cumple requisitos (para warning de penalización)
+  const reqsMet = !stats || !item.requirements || !item.damage
+    ? true
+    : meetsRequirements(item, stats);
+
   // Si no hay stats del personaje, mostrar daño base sin escalar
   const rawDamage = item.damage;
   const maxRawDmg = rawDamage
@@ -195,6 +200,11 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
               <DamageBar label="Fire"      value={arData.ar.fire}      max={arMax} color={DMG_COLOR.fire}      prefix="~" />
               <DamageBar label="Lightning" value={arData.ar.lightning} max={arMax} color={DMG_COLOR.lightning} prefix="~" />
               <DamageBar label="Holy"      value={arData.ar.holy}      max={arMax} color={DMG_COLOR.holy}      prefix="~" />
+              {!reqsMet && (
+                <div style={{ color: '#d4483c', fontSize: '0.75rem', marginTop: '0.3rem' }}>
+                  Requirements not met — damage reduced
+                </div>
+              )}
             </>
           ) : (
             // Base +0 sin escalar
@@ -330,27 +340,33 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         </div>
       )}
 
-      {/* ── Passive effects (blood, frost, etc.) ── */}
+      {/* ── Passive effects (blood, frost, etc.) — with ARC scaling ── */}
       {item.passives && item.passives.length > 0 && (
         <div className={styles.section}>
           <div className={styles.sectionLabel}>Passive Effects</div>
-          {item.passives.map(p => (
-            <div key={p.type} className={styles.damageRow}>
-              <span className={styles.damageLabel}>{PASSIVE_LABEL[p.type] ?? p.type}</span>
-              <div className={styles.barTrack}>
-                <div
-                  className={styles.barFill}
-                  style={{
-                    width: `${Math.min(100, (p.buildup / 100) * 100)}%`,
-                    background: `linear-gradient(to right, #3a2a10, ${PASSIVE_COLOR[p.type] ?? '#888'})`,
-                  }}
-                />
+          {item.passives.map(p => {
+            const arcGrade = item.scaling?.arc ?? '-';
+            const scaled = stats && arcGrade !== '-'
+              ? estimatePassiveBuildup(p.buildup, stats.arcane, arcGrade)
+              : p.buildup;
+            return (
+              <div key={p.type} className={styles.damageRow}>
+                <span className={styles.damageLabel}>{PASSIVE_LABEL[p.type] ?? p.type}</span>
+                <div className={styles.barTrack}>
+                  <div
+                    className={styles.barFill}
+                    style={{
+                      width: `${Math.min(100, (scaled / 100) * 100)}%`,
+                      background: `linear-gradient(to right, #3a2a10, ${PASSIVE_COLOR[p.type] ?? '#888'})`,
+                    }}
+                  />
+                </div>
+                <span className={styles.damageValue} style={{ color: PASSIVE_COLOR[p.type] ?? '#888' }}>
+                  {scaled !== p.buildup ? `~${scaled}` : p.buildup}
+                </span>
               </div>
-              <span className={styles.damageValue} style={{ color: PASSIVE_COLOR[p.type] ?? '#888' }}>
-                {p.buildup}
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 

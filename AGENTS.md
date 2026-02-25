@@ -38,7 +38,7 @@ cd backend
 npm run dev         # Dev server at http://localhost:3001 (hot reload)
 npm run build       # Compile to dist/
 npm start           # Run dist/index.js (production)
-npm test            # Tests (134 tests, all must pass)
+npm test            # 134 tests, all must pass
 npm run sync-data   # Regenerate src/data/*.json from fanapis.com
 npm run patch-armor # Overlay float defense + poise + resistances from EldenRingArmorOptimizer
 npm run audit       # Data quality audit (exits 1 if critical bugs found)
@@ -211,32 +211,43 @@ frontend/src/
 ├── utils/
 │   ├── talismanEffects.ts        # Numeric effects for ~35 known talismans (stats, HP/FP/Stamina,
 │   │                             # load, elemental dmg%, defense%, skill/spell power, discovery)
-│   └── arCalc.ts                 # AR estimation with per-stat scaling breakdown
+│   ├── arCalc.ts                 # AR estimation with per-stat scaling breakdown, flat defense,
+│   │                             # spell scaling, passive buildup estimation, requirement checks
+│   ├── buffEffects.ts            # Buff system: Golden Vow, Flame Grant Me Strength, etc.
+│   │                             # Damage multipliers + defense negation multipliers
+│   ├── greatRuneEffects.ts       # Great Rune effects (Godrick's, Morgott's, Radahn's, etc.)
+│   └── crystalTearEffects.ts     # Crystal Tear (Physick) bonuses: stat boosts, damage%, poise, etc.
 └── components/
     ├── UploadPage/         # Drop zone + load .sl2 button
     ├── CharacterSelect/    # Selection cards if multiple active characters
     ├── BuildPage/          # Main layout: stats + equipment + inventory
     ├── StatsPanel/         # 8 attributes with bars (VIG/MND/END/STR/DEX/INT/FAI/ARC)
-    ├── DerivedStatsPanel/  # HP, FP, Stamina, Equip Load, Attack, Dmg Negation, Poise, Resistances
-    │                       # HP/FP/Stamina/Load include talisman bonuses; Resistances use exact game formulas
-    │                       # 2H STR toggle (×1.5), poise color breakpoints, talisman elemental AR bonuses
+    ├── DerivedStatsPanel/  # Sub-tabbed panel: Body | Attack | Defense
+    │                       # Body: HP/FP/Stamina/Load (with talisman/Great Rune/Physick bonuses),
+    │                       #   Rune Level calculator (exact game formula)
+    │                       # Attack: AR estimation with 2H toggle, off-hand AR, spell scaling,
+    │                       #   weapon passives (ARC scaling), buff system (Golden Vow, etc.)
+    │                       # Defense: Negation % (with buff indicators), Guard Boost,
+    │                       #   Poise & Discovery, Resistances (flat, exact game formulas)
     ├── EquipmentGrid/      # Weapons LH/RH, armor (head/chest/arms/legs), talismans
     │                       # Hover triggers ItemTooltip via onItemHover callback
     ├── ItemSlot/           # Individual slot: fanapis image or SVG placeholder per category
     │                       # Upgrade badge (+N), infusion badge, spell type colors (sorcery/incantation), FP badge
     ├── ItemTooltip/        # Hover tooltip with full stats (portal to document.body)
     │                       # Shows: name+level, AoW skill, Attack Power (bars), Scaling badges,
-    │                       # Estimated AR with per-stat breakdown, Defense (armors),
-    │                       # Poise + Resistances (armors), Guard Boost (shields),
-    │                       # numeric or text effects (talismans), weight
+    │                       # Estimated AR with per-stat breakdown, requirement penalty warning,
+    │                       # ARC-scaled passive effects, Defense (armors), Poise + Resistances,
+    │                       # Guard Boost (shields), numeric or text effects (talismans), weight
     ├── InventoryTooltip/   # Hover tooltip for inventory items (portal to document.body)
-    │                       # Shows: damage, scaling, defense, effects, ash/spirit details
+    │                       # Shows: AR estimation with stat breakdown, requirement met/unmet styling,
+    │                       # ARC-scaled passive effects, defense, effects, ash/spirit details
     ├── AdvisorPanel/       # Rendered in BuildPage via "Advisor" tab — weapon recommendations
     │                       # by estimated AR + "Next Caps" optimizer (scaling-aware stat tips)
+    ├── MatchmakingCalc/    # Co-op & Invasion range calculator (level + max upgrade)
     └── InventoryPanel/     # Tabs: Weapons | Armor | Talismans | Spells | Spirits |
                             # Ashes | Consumables | Upgrades | Mats | Tears | Ammo |
                             # Key | Books | Multi
-                            # Name search + type filter per tab
+                            # Name search + type filter per tab; passes stats to tooltips for AR
 ```
 
 ### Visual theme (CSS variables in App.css)
@@ -326,6 +337,34 @@ Resistances (Immunity, Robustness, Focus, Vitality):
     arc ≤ 99 → 40 + 10 * ((arc-60)/39)
 ```
 
+### Rune cost formula (exact)
+
+```
+runeCostForLevel(target) where L = target - 1:
+  cost = floor( (max(0, (L-11)*0.02) + 0.1) * (L+81)^2 + 1 + 1e-6 )
+  (1e-6 epsilon handles IEEE 754 edge cases on 17 problematic levels)
+  Verified: total runes to level 713 = 1,692,566,842 (exact match)
+```
+
+### Flat defense formulas (exact)
+
+```
+Defense = floor(levelComponent + statComponent)
+
+Level component (runeLevel):
+  lvl <  72 → 40 + (lvl + 78) / 2.483
+  lvl <  92 → 29 + lvl
+  lvl < 161 → 120 + (lvl - 91) / 4.667
+  lvl ≥ 161 → 135 + (lvl - 161) / 27.6
+
+Stat components (each defense type has its own curve):
+  Physical ← STR:  30/40/60 softcaps, max +40
+  Magic ← INT:     20/35/60 softcaps, max +70
+  Fire ← VIG:      30/40/60 softcaps, max +70
+  Lightning:       level only (no stat component)
+  Holy ← ARC:      20/35/60 softcaps, max +70
+```
+
 ### Animations
 
 - **Bars**: `useMountAnimation()` hook — triggers CSS transition after 1 rAF.
@@ -350,7 +389,7 @@ N active characters → CharacterSelect → BuildPage
     ↓
 BuildPage renders:
   - StatsPanel (8 attributes, softcap visual indicator)
-  - DerivedStatsPanel (HP/FP/Stamina/Load/Attack/Defense/Poise/Resistances with talisman bonuses, 2H toggle)
+  - DerivedStatsPanel (sub-tabs: Body | Attack | Defense — talisman/Great Rune/Physick/buff bonuses, 2H toggle, rune calculator)
   - EquipmentGrid (weapons + armor + talismans, hover → ItemTooltip, spell type colors + FP badge)
   - Content tabs: Inventory | Advisor
     - InventoryPanel (tabs with search + type filter, hover → InventoryTooltip with armor efficiency)

@@ -5,7 +5,7 @@ import { computeTalismanBonuses } from '../../utils/talismanEffects';
 import { getGreatRuneEffect } from '../../utils/greatRuneEffects';
 import { computePhysickBonuses } from '../../utils/crystalTearEffects';
 import { BUFF_LIST, computeBuffTotals } from '../../utils/buffEffects';
-import { estimateEquippedAR, stackNegation, calcFlatDefense, estimateSpellScaling } from '../../utils/arCalc';
+import { estimateEquippedAR, stackNegation, estimateSpellScaling, meetsRequirements, estimatePassiveBuildup } from '../../utils/arCalc';
 import styles from './DerivedStatsPanel.module.css';
 
 interface Props {
@@ -57,16 +57,16 @@ function calcMaxEquipLoad(end: number): number {
   return Math.round(load * 10) / 10;
 }
 
-// ── Rune Level Cost (piecewise approximation, community-sourced) ─────
+// ── Rune Level Cost (exact formula from regulation.bin) ──────────────
+// cost = floor( (max(0, (L-11)*0.02) + 0.1) * (L+81)^2 + 1 )
+// where L = current level (targetLevel - 1).
+// +1e-6 epsilon avoids IEEE 754 floor errors at ~17 specific levels
+// where the true value is exactly an integer.
 function runeCostForLevel(targetLevel: number): number {
   if (targetLevel <= 1) return 0;
-  const x = targetLevel;
-  // Segment 1 (L1-30): quadratic growth (fits actual game data within ~5%)
-  if (x <= 30) return Math.floor(0.5 * x * x + 15 * x + 641);
-  // Segment 2 (L30-150): exponential growth
-  if (x <= 150) return Math.floor(372 * Math.pow(1.0464, x));
-  // Segment 3 (L150+): slower exponential, capped at game max
-  return Math.min(8879348, Math.floor(765 * Math.pow(1.0414, x)));
+  const L = targetLevel - 1;
+  const x = Math.max(0, (L - 11) * 0.02);
+  return Math.floor((x + 0.1) * (L + 81) ** 2 + 1 + 1e-6);
 }
 
 // ── Helpers ──────────────────────────────────────────────────
@@ -86,7 +86,7 @@ function totalPoise(eq: EquippedItems): number {
 
 function resistLevelComponent(runeLevel: number): number {
   const lvl = runeLevel + 79;
-  if (lvl <= 149) return 75 + 30 * ((lvl - 1) / 149);
+  if (lvl <= 149) return 75 + 30 * ((lvl - 1) / 148);
   if (lvl <= 190) return 105 + 40 * ((lvl - 150) / 40);
   if (lvl <= 240) return 145 + 15 * ((lvl - 190) / 50);
   return 160 + 20 * ((lvl - 240) / 552);
@@ -182,11 +182,16 @@ interface NegRowProps {
   ready: boolean;
   delay: number;
   indent?: boolean;
-  defense?: number;
+  isFlat?: boolean;
 }
 
-function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, defense }: NegRowProps) {
+function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, isFlat }: NegRowProps) {
   const pct = Math.min((negation / maxNeg) * 100, 100);
+  const displayVal = negation > 0
+    ? isFlat
+      ? String(Math.round(negation))
+      : (Number.isInteger(negation) ? negation : negation.toFixed(1)) + '%'
+    : '—';
   return (
     <div className={`${styles.negRow} ${indent ? styles.negRowIndent : ''}`}>
       <span className={styles.negLabel} style={indent ? { color: '#7a7060' } : undefined}>{label}</span>
@@ -202,8 +207,7 @@ function NegRow({ label, negation, color, maxNeg = 60, ready, delay, indent, def
         />
       </div>
       <span className={styles.negValue} style={{ color: indent ? '#9a9080' : color }}>
-        {defense != null && <><span className={styles.defFlat}>{defense}</span><span className={styles.defSep}> / </span></>}
-        <span>{negation > 0 ? (Number.isInteger(negation) ? negation : negation.toFixed(1)) + '%' : '—'}</span>
+        {displayVal}
       </span>
     </div>
   );
@@ -257,8 +261,11 @@ function getWeaponFromSlot(eq: EquippedItems, slot: WeaponSlot): EquippedWeapon 
 
 // ── Componente principal ──────────────────────────────────────
 
+type DerivedTab = 'body' | 'attack' | 'defense';
+
 export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }: Props) {
   const ready = useMountAnimation();
+  const [derivedTab, setDerivedTab] = useState<DerivedTab>('body');
   const [twoHandedSlot, setTwoHandedSlot] = useState<WeaponSlot | null>(null);
   const [greatRuneActive, setGreatRuneActive] = useState(false);
   const [physickActive, setPhysickActive] = useState(false);
@@ -339,8 +346,6 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
   const neg      = totalNegation(equipped);
   const hasArmor = Object.values(neg).some(v => v > 0);
 
-  const flatDef = useMemo(() => calcFlatDefense(level, stats), [level, stats]);
-
   // Talisman + Physick + Buff defense bonuses stack MULTIPLICATIVELY with armor negation
   // Formula: 1 - (1 - armorNeg/100) * (1 - talismanBonus) * (1 - physickBonus) * (1 / buffNegMult)
   const physNegPhysick = physickActive ? physickBonus.physicalNegBonus : 0;
@@ -412,10 +417,16 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
     return slots;
   }, [equipped]);
 
-  // AR estimation
+  // AR estimation (pass 2H flag for requirement checks)
   const rawAr = useMemo(
-    () => activeWeapon?.damage ? estimateEquippedAR(activeWeapon, effectiveStats) : null,
-    [activeWeapon, effectiveStats],
+    () => activeWeapon?.damage ? estimateEquippedAR(activeWeapon, effectiveStats, twoHanded) : null,
+    [activeWeapon, effectiveStats, twoHanded],
+  );
+
+  // Check if weapon requirements are met (for UI warning)
+  const reqsMet = useMemo(
+    () => activeWeapon ? meetsRequirements(activeWeapon, effectiveStats, twoHanded) : true,
+    [activeWeapon, effectiveStats, twoHanded],
   );
 
   // Spell scaling — detect equipped staves/seals
@@ -509,415 +520,457 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
   return (
     <div className={styles.panel}>
 
-      {/* ── Body ── */}
-      <div className={styles.section}>
-        <span className={styles.sectionTitle}>
-          Body
-          {/* Great Rune toggle */}
-          {grEffect && (
-            <button
-              className={`${styles.twoHandBtn} ${greatRuneActive ? styles.twoHandActive : ''}`}
-              onClick={() => setGreatRuneActive(v => !v)}
-              title={grEffect.description}
-            >
-              Rune Arc
-            </button>
-          )}
-          {/* Physick toggle */}
-          {physickBonus.hasAny && (
-            <button
-              className={`${styles.twoHandBtn} ${physickActive ? styles.physickActive : ''}`}
-              onClick={() => setPhysickActive(v => !v)}
-              title="Flask of Wondrous Physick"
-            >
-              Physick
-            </button>
-          )}
-        </span>
-        <BodyRow label="HP"      value={hp}     max={2100} colorClass={styles.barVig} ready={ready} delay={0} />
-        <BodyRow label="FP"      value={fp}     max={450}  colorClass={styles.barMnd} ready={ready} delay={80} />
-        <BodyRow label="Stamina" value={stamina} max={170}  colorClass={styles.barEnd} ready={ready} delay={160} />
-
-        {/* Equip Load */}
-        <div className={styles.loadRow}>
-          <span className={styles.rowLabel}>Equip Load</span>
-          <div className={styles.loadBarWrap}>
-            <div className={`${styles.barTrack} ${loadPct >= 100 ? styles.barOver : styles.barLoad}`}>
-              <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
-            </div>
-            <div className={`${styles.loadTick} ${loadPct >= 30 ? styles.loadTickReached : ''}`} style={{ left: '30%' }} />
-            <div className={`${styles.loadTick} ${loadPct >= 70 ? styles.loadTickReached : ''}`} style={{ left: '70%' }} />
-          </div>
-          <span className={styles.rowValue}>
-            {currLoad > 0 ? `${currLoad} / ${maxLoad.toFixed(1)}` : `— / ${maxLoad.toFixed(1)}`}
-          </span>
-          <span className={`${styles.loadTag} ${loadPct >= 70 ? styles.loadTagWarn : ''}`}>{loadTag}</span>
-        </div>
-      </div>
-
-      {/* ── Attack ── */}
-      {activeWeapon && arEstimate && (
-        <div className={styles.section}>
-          <span className={styles.sectionTitle}>
-            Attack
-            <span className={styles.sectionNote}>
-              {activeWeapon.infusion && activeWeapon.infusion !== 'Standard'
-                ? `${activeWeapon.infusion} ${activeWeapon.name}`
-                : activeWeapon.name}
-            </span>
-          </span>
-
-          {/* Total AR */}
-          <div className={styles.totalArRow}>
-            <span className={styles.totalArLabel}>Total AR</span>
-            <span className={styles.totalArValue}>~{arEstimate.total}</span>
-          </div>
-
-          {/* 2H slot selection buttons */}
-          {weaponSlots.length > 0 && (
-            <div className={styles.twoHandRow}>
-              <span className={styles.twoHandLabel}>2H:</span>
-              {weaponSlots.map(({ slot }) => (
-                <button
-                  key={slot}
-                  className={`${styles.twoHandBtn} ${twoHandedSlot === slot ? styles.twoHandActive : ''}`}
-                  onClick={() => setTwoHandedSlot(prev => prev === slot ? null : slot)}
-                >
-                  {slot}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {twoHanded && (
-            <div className={styles.twoHandNote}>
-              STR {effStr} → {effectiveSTR2H} (×1.5)
-            </div>
-          )}
-          {DMG_TYPES.map(({ key, label, color }, i) => {
-            const v = arEstimate[key as keyof typeof arEstimate] as number;
-            if (!v || v <= 0) return null;
-            return (
-              <div key={key} className={styles.row}>
-                <span className={styles.rowLabel}>{label}</span>
-                <div className={styles.barTrack}>
-                  <div
-                    className={styles.barFill}
-                    style={{
-                      width: ready ? `${Math.min((v / 650) * 100, 100)}%` : '0%',
-                      background: color,
-                      transitionDelay: `${320 + i * 60}ms`,
-                    }}
-                  />
-                </div>
-                <span className={styles.rowValue}>~{v}</span>
-              </div>
-            );
-          })}
-          {activeWeapon.scaling && (
-            <div className={styles.scalingRow}>
-              {(['str','dex','int','fai','arc'] as const).map(s => {
-                const grade = activeWeapon.scaling![s];
-                if (!grade || grade === '-') return null;
-                return (
-                  <span key={s} className={styles.scalingBadge}>
-                    <span className={styles.scalingStat}>{s.toUpperCase()}</span>
-                    <span className={styles.scalingGrade}>{grade}</span>
-                  </span>
-                );
-              })}
-            </div>
-          )}
-          {activeWeapon.skill && (
-            <div className={styles.skillRow}>
-              <span className={styles.skillName}>{activeWeapon.skill}</span>
-              {activeWeapon.skillFpCost && (
-                <span className={styles.skillFp}>
-                  FP {activeWeapon.skillFpCost[0]}{activeWeapon.skillFpCost[1] != null ? ` (${activeWeapon.skillFpCost[1]})` : ''}
-                </span>
-              )}
-            </div>
-          )}
-          {activeWeapon.passives && activeWeapon.passives.length > 0 && (
-            <div className={styles.passiveRow}>
-              {activeWeapon.passives.map((p, i) => (
-                <span key={i} className={styles.passiveBadge} style={{ borderColor: PASSIVE_COLORS[p.type] ?? '#888' }}>
-                  <span className={styles.passiveType} style={{ color: PASSIVE_COLORS[p.type] ?? '#888' }}>
-                    {p.type.charAt(0).toUpperCase() + p.type.slice(1)}
-                  </span>
-                  <span className={styles.passiveVal}>{p.buildup}</span>
-                </span>
-              ))}
-            </div>
-          )}
-          {talBonus.skillFpCostReduction > 0 && (
-            <div className={styles.fpNote}>Skill FP Cost −{Math.round(talBonus.skillFpCostReduction * 100)}%</div>
-          )}
-          {talBonus.spellFpCostReduction > 0 && (
-            <div className={styles.fpNote}>Spell FP Cost −{Math.round(talBonus.spellFpCostReduction * 100)}%</div>
-          )}
-        </div>
-      )}
-
-      {/* ── Off-hand Weapon AR ── */}
-      {offHandWeapon && offHandAr && (
-        <div className={styles.section}>
-          <span className={styles.sectionTitle}>
-            Left Hand
-            <span className={styles.sectionNote}>
-              {offHandWeapon.infusion && offHandWeapon.infusion !== 'Standard'
-                ? `${offHandWeapon.infusion} ${offHandWeapon.name}`
-                : offHandWeapon.name}
-            </span>
-          </span>
-          <div className={styles.totalArRow}>
-            <span className={styles.totalArLabel}>Total AR</span>
-            <span className={styles.totalArValue}>~{offHandAr.total}</span>
-          </div>
-          {DMG_TYPES.map(({ key, label, color }, i) => {
-            const v = offHandAr[key as keyof typeof offHandAr] as number;
-            if (!v || v <= 0) return null;
-            return (
-              <div key={key} className={styles.row}>
-                <span className={styles.rowLabel}>{label}</span>
-                <div className={styles.barTrack}>
-                  <div
-                    className={styles.barFill}
-                    style={{
-                      width: ready ? `${Math.min((v / 650) * 100, 100)}%` : '0%',
-                      background: color,
-                      transitionDelay: `${320 + i * 60}ms`,
-                    }}
-                  />
-                </div>
-                <span className={styles.rowValue}>~{v}</span>
-              </div>
-            );
-          })}
-          {offHandWeapon.passives && offHandWeapon.passives.length > 0 && (
-            <div className={styles.passiveRow}>
-              {offHandWeapon.passives.map((p, i) => (
-                <span key={i} className={styles.passiveBadge} style={{ borderColor: PASSIVE_COLORS[p.type] ?? '#888' }}>
-                  <span className={styles.passiveType} style={{ color: PASSIVE_COLORS[p.type] ?? '#888' }}>
-                    {p.type.charAt(0).toUpperCase() + p.type.slice(1)}
-                  </span>
-                  <span className={styles.passiveVal}>{p.buildup}</span>
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* ── Spell Scaling ── */}
-      {spellCatalysts.length > 0 && (
-        <div className={styles.section}>
-          <span className={styles.sectionTitle}>Spell Scaling</span>
-          {spellCatalysts.map((cat, i) => (
-            <div key={i} className={styles.row}>
-              <span className={styles.rowLabel} style={{ color: cat.type === 'Sorcery' ? '#6a9cd4' : '#c4a84c' }}>
-                {cat.type}
-              </span>
-              <div className={styles.barTrack}>
-                <div
-                  className={styles.barFill}
-                  style={{
-                    width: ready ? `${Math.min((cat.scaling / 400) * 100, 100)}%` : '0%',
-                    background: cat.type === 'Sorcery' ? '#6a9cd4' : '#c4a84c',
-                    transitionDelay: `${300 + i * 60}ms`,
-                  }}
-                />
-              </div>
-              <span className={styles.rowValue}>~{cat.scaling}</span>
-            </div>
-          ))}
-          <div className={styles.fpNote}>
-            {spellCatalysts.map(c => c.weapon.name).join(', ')}
-          </div>
-        </div>
-      )}
-
-      {/* ── Active Buffs ── */}
-      <div className={styles.section}>
-        <span className={styles.sectionTitle}>
+      {/* ── Sub-tabs ── */}
+      <div className={styles.subTabs}>
+        {([
+          { key: 'body' as DerivedTab, label: 'Body' },
+          { key: 'attack' as DerivedTab, label: 'Attack' },
+          { key: 'defense' as DerivedTab, label: 'Defense' },
+        ]).map(t => (
           <button
-            className={styles.collapseBtn}
-            onClick={() => setBuffsOpen(v => !v)}
+            key={t.key}
+            className={`${styles.subTab} ${derivedTab === t.key ? styles.subTabActive : ''}`}
+            onClick={() => setDerivedTab(t.key)}
           >
-            {buffsOpen ? '▾' : '▸'} Buffs
+            {t.label}
           </button>
-          {activeBuffIds.length > 0 && (
-            <span className={styles.buffCount}>{activeBuffIds.length} active</span>
-          )}
-        </span>
-        {buffsOpen && (
-          <div className={styles.buffGrid}>
-            {BUFF_LIST.map(buff => (
-              <label key={buff.id} className={styles.buffItem} title={buffTooltip(buff)}>
-                <input
-                  type="checkbox"
-                  checked={activeBuffIds.includes(buff.id)}
-                  onChange={() => toggleBuff(buff.id)}
-                  className={styles.buffCheck}
-                />
-                <span className={styles.buffName}>{buff.name}</span>
-                <span className={styles.buffEffect}>{buffTooltip(buff)}</span>
-                <span className={styles.buffDur}>{buff.duration}</span>
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* ── Guard Boost + Guard Negation ── */}
-      {guardBoost != null && equippedShield && (
-        <div className={styles.section}>
-          <span className={styles.sectionTitle}>Guard</span>
-          <div className={styles.row}>
-            <span className={styles.rowLabel}>Guard Boost</span>
-            <div className={`${styles.barTrack} ${styles.barPoise}`}>
-              <div
-                className={styles.barFill}
-                style={{
-                  width: ready ? `${Math.min((guardBoost / 100) * 100, 100)}%` : '0%',
-                  transitionDelay: '480ms',
-                }}
-              />
-            </div>
-            <span className={styles.rowValue}>{guardBoost}</span>
-          </div>
-          {equippedShield.guardNegation && (
-            <>
-              {([
-                { key: 'physical',  label: 'Physical',  color: '#c8bfa0' },
-                { key: 'magic',     label: 'Magic',     color: '#6a9cd4' },
-                { key: 'fire',      label: 'Fire',      color: '#d4703c' },
-                { key: 'lightning', label: 'Lightning', color: '#d4c03c' },
-                { key: 'holy',      label: 'Holy',      color: '#c4a84c' },
-              ] as const).map(({ key, label, color }, i) => {
-                const v = equippedShield.guardNegation![key as keyof typeof equippedShield.guardNegation] as number;
-                if (v == null || v <= 0) return null;
-                return (
-                  <NegRow
-                    key={key}
-                    label={label}
-                    negation={v}
-                    color={color}
-                    maxNeg={100}
-                    ready={ready}
-                    delay={520 + i * 40}
-                  />
-                );
-              })}
-            </>
-          )}
-          <div className={styles.fpNote}>{equippedShield.name}</div>
-        </div>
-      )}
-
-      {/* ── Defense / Dmg Negation ── */}
-      {hasArmor && (
-        <div className={styles.section}>
-          <span className={styles.sectionTitle}>Defense / Negation</span>
-          {DEF_TYPES.map(({ key, label, color, indent }, i) => {
-            const FLAT_DEF_MAP: Partial<Record<keyof DefenseStats, keyof typeof flatDef>> = {
-              physical: 'physical', magic: 'magic', fire: 'fire', lightning: 'lightning', holy: 'holy',
-            };
-            const flatKey = FLAT_DEF_MAP[key];
-            return (
-              <NegRow
-                key={key}
-                label={label}
-                negation={adjNeg[key]}
-                color={color}
-                ready={ready}
-                delay={500 + i * 50}
-                indent={indent}
-                defense={!indent && flatKey ? flatDef[flatKey] : undefined}
-              />
-            );
-          })}
-        </div>
-      )}
-
-      {/* ── Poise ── */}
-      {poise > 0 && (
-        <div className={styles.section}>
-          <span className={styles.sectionTitle}>Poise</span>
-          <div className={styles.row}>
-            <span className={styles.rowLabel}>Poise</span>
-            <div className={`${styles.barTrack} ${styles.barPoise}`}>
-              <div
-                className={styles.barFill}
-                style={{
-                  width: ready ? `${Math.min((poise / 100) * 100, 100)}%` : '0%',
-                  transitionDelay: '900ms',
-                }}
-              />
-            </div>
-            <span
-              className={styles.rowValue}
-              style={{ color: poise >= 125 ? '#6a9cd4' : poise >= 100 ? '#4ab0e0' : poise >= 76 ? '#6dbf7e' : poise >= 51 ? '#e0a040' : poise >= 26 ? '#d08040' : '#e06060' }}
-            >
-              {Math.round(poise * 10) / 10}
-            </span>
-          </div>
-        </div>
-      )}
-
-      {/* ── Resistances ── */}
-      <div className={styles.section}>
-        <span className={styles.sectionTitle}>Resistances</span>
-        {RESIST_TYPES.map(({ key, label, color }, i) => (
-          <NegRow
-            key={key}
-            label={label}
-            negation={resist[key]}
-            color={color}
-            maxNeg={300}
-            ready={ready}
-            delay={960 + i * 50}
-          />
         ))}
       </div>
 
-      {/* ── Discovery ── */}
-      <div className={styles.section}>
-        <span className={styles.sectionTitle}>Discovery</span>
-        <BodyRow label="Discovery" value={discovery} max={250} colorClass={styles.barDisc} ready={ready} delay={1160} />
-      </div>
+      {/* ══════ TAB: Body ══════ */}
+      {derivedTab === 'body' && (
+        <>
+          <div className={styles.section}>
+            <span className={styles.sectionTitle}>
+              Body
+              {grEffect && (
+                <button
+                  className={`${styles.twoHandBtn} ${greatRuneActive ? styles.twoHandActive : ''}`}
+                  onClick={() => setGreatRuneActive(v => !v)}
+                  title={grEffect.description}
+                >
+                  Rune Arc
+                </button>
+              )}
+              {physickBonus.hasAny && (
+                <button
+                  className={`${styles.twoHandBtn} ${physickActive ? styles.physickActive : ''}`}
+                  onClick={() => setPhysickActive(v => !v)}
+                  title="Flask of Wondrous Physick"
+                >
+                  Physick
+                </button>
+              )}
+            </span>
+            <BodyRow label="HP"      value={hp}     max={2100} colorClass={styles.barVig} ready={ready} delay={0} />
+            <BodyRow label="FP"      value={fp}     max={450}  colorClass={styles.barMnd} ready={ready} delay={80} />
+            <BodyRow label="Stamina" value={stamina} max={170}  colorClass={styles.barEnd} ready={ready} delay={160} />
 
-      {/* ── Rune Level Calculator ── */}
-      {heldRunes != null && (
-        <div className={styles.section}>
-          <span className={styles.sectionTitle}>Next Level</span>
-          {(() => {
-            const nextCost = runeCostForLevel(level + 1);
-            const remaining = Math.max(0, nextCost - heldRunes);
-            const pct = nextCost > 0 ? Math.min((heldRunes / nextCost) * 100, 100) : 0;
-            return (
-              <>
-                <div className={styles.row}>
-                  <span className={styles.rowLabel}>Cost</span>
-                  <div className={`${styles.barTrack} ${styles.barRune}`}>
+            <div className={styles.loadRow}>
+              <span className={styles.rowLabel}>Equip Load</span>
+              <div className={styles.loadBarWrap}>
+                <div className={`${styles.barTrack} ${loadPct >= 100 ? styles.barOver : styles.barLoad}`}>
+                  <div className={styles.barFill} style={{ width: ready ? `${Math.min(loadPct, 100)}%` : '0%', transitionDelay: '240ms' }} />
+                </div>
+                <div className={`${styles.loadTick} ${loadPct >= 30 ? styles.loadTickReached : ''}`} style={{ left: '30%' }} />
+                <div className={`${styles.loadTick} ${loadPct >= 70 ? styles.loadTickReached : ''}`} style={{ left: '70%' }} />
+              </div>
+              <span className={styles.rowValue}>
+                {currLoad > 0 ? `${currLoad} / ${maxLoad.toFixed(1)}` : `— / ${maxLoad.toFixed(1)}`}
+              </span>
+              <span className={`${styles.loadTag} ${loadPct >= 70 ? styles.loadTagWarn : ''}`}>{loadTag}</span>
+            </div>
+          </div>
+
+          {heldRunes != null && (
+            <div className={styles.section}>
+              <span className={styles.sectionTitle}>Next Level</span>
+              {(() => {
+                const nextCost = runeCostForLevel(level + 1);
+                const remaining = Math.max(0, nextCost - heldRunes);
+                const pct = nextCost > 0 ? Math.min((heldRunes / nextCost) * 100, 100) : 0;
+                return (
+                  <>
+                    <div className={styles.row}>
+                      <span className={styles.rowLabel}>Cost</span>
+                      <div className={`${styles.barTrack} ${styles.barRune}`}>
+                        <div
+                          className={styles.barFill}
+                          style={{ width: ready ? `${pct}%` : '0%', transitionDelay: '1200ms' }}
+                        />
+                      </div>
+                      <span className={styles.rowValue}>{nextCost.toLocaleString()}</span>
+                    </div>
+                    <div className={styles.runeDetail}>
+                      <span>Held: {heldRunes.toLocaleString()}</span>
+                      {remaining > 0
+                        ? <span className={styles.runeNeed}>Need: {remaining.toLocaleString()}</span>
+                        : <span className={styles.runeReady}>Ready to level up!</span>
+                      }
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          )}
+        </>
+      )}
+
+      {/* ══════ TAB: Attack ══════ */}
+      {derivedTab === 'attack' && (
+        <>
+          {activeWeapon && arEstimate && (
+            <div className={styles.section}>
+              <span className={styles.sectionTitle}>
+                Attack
+                <span className={styles.sectionNote}>
+                  {activeWeapon.infusion && activeWeapon.infusion !== 'Standard'
+                    ? `${activeWeapon.infusion} ${activeWeapon.name}`
+                    : activeWeapon.name}
+                </span>
+              </span>
+
+              <div className={styles.totalArRow}>
+                <span className={styles.totalArLabel}>Total AR</span>
+                <span className={styles.totalArValue} style={!reqsMet ? { color: '#e04040' } : undefined}>
+                  ~{arEstimate.total}{!reqsMet ? ' !' : ''}
+                </span>
+              </div>
+              {!reqsMet && (
+                <div className={styles.fpNote} style={{ color: '#e04040' }}>
+                  Requirements not met — damage reduced
+                </div>
+              )}
+
+              {weaponSlots.length > 0 && (
+                <div className={styles.twoHandRow}>
+                  <span className={styles.twoHandLabel}>2H:</span>
+                  {weaponSlots.map(({ slot }) => (
+                    <button
+                      key={slot}
+                      className={`${styles.twoHandBtn} ${twoHandedSlot === slot ? styles.twoHandActive : ''}`}
+                      onClick={() => setTwoHandedSlot(prev => prev === slot ? null : slot)}
+                    >
+                      {slot}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {twoHanded && (
+                <div className={styles.twoHandNote}>
+                  STR {effStr} → {effectiveSTR2H} (×1.5)
+                </div>
+              )}
+              {DMG_TYPES.map(({ key, label, color }, i) => {
+                const v = arEstimate[key as keyof typeof arEstimate] as number;
+                if (!v || v <= 0) return null;
+                return (
+                  <div key={key} className={styles.row}>
+                    <span className={styles.rowLabel}>{label}</span>
+                    <div className={styles.barTrack}>
+                      <div
+                        className={styles.barFill}
+                        style={{
+                          width: ready ? `${Math.min((v / 650) * 100, 100)}%` : '0%',
+                          background: color,
+                          transitionDelay: `${320 + i * 60}ms`,
+                        }}
+                      />
+                    </div>
+                    <span className={styles.rowValue}>~{v}</span>
+                  </div>
+                );
+              })}
+              {activeWeapon.scaling && (
+                <div className={styles.scalingRow}>
+                  {(['str','dex','int','fai','arc'] as const).map(s => {
+                    const grade = activeWeapon.scaling![s];
+                    if (!grade || grade === '-') return null;
+                    return (
+                      <span key={s} className={styles.scalingBadge}>
+                        <span className={styles.scalingStat}>{s.toUpperCase()}</span>
+                        <span className={styles.scalingGrade}>{grade}</span>
+                      </span>
+                    );
+                  })}
+                </div>
+              )}
+              {activeWeapon.skill && (
+                <div className={styles.skillRow}>
+                  <span className={styles.skillName}>{activeWeapon.skill}</span>
+                  {activeWeapon.skillFpCost && (
+                    <span className={styles.skillFp}>
+                      FP {activeWeapon.skillFpCost[0]}{activeWeapon.skillFpCost[1] != null ? ` (${activeWeapon.skillFpCost[1]})` : ''}
+                    </span>
+                  )}
+                </div>
+              )}
+              {activeWeapon.passives && activeWeapon.passives.length > 0 && (
+                <div className={styles.passiveRow}>
+                  {activeWeapon.passives.map((p, i) => {
+                    const arcGrade = activeWeapon.scaling?.arc ?? '-';
+                    const arcScales = (p.type === 'blood' || p.type === 'poison') && arcGrade !== '-';
+                    const scaledBuildup = arcScales
+                      ? estimatePassiveBuildup(p.buildup, effectiveStats.arcane, arcGrade)
+                      : p.buildup;
+                    return (
+                      <span key={i} className={styles.passiveBadge} style={{ borderColor: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                        <span className={styles.passiveType} style={{ color: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                          {p.type.charAt(0).toUpperCase() + p.type.slice(1)}
+                        </span>
+                        <span className={styles.passiveVal}>{arcScales ? `~${scaledBuildup}` : scaledBuildup}</span>
+                      </span>
+                    );
+                  })}
+                </div>
+              )}
+              {talBonus.skillFpCostReduction > 0 && (
+                <div className={styles.fpNote}>Skill FP Cost −{Math.round(talBonus.skillFpCostReduction * 100)}%</div>
+              )}
+              {talBonus.spellFpCostReduction > 0 && (
+                <div className={styles.fpNote}>Spell FP Cost −{Math.round(talBonus.spellFpCostReduction * 100)}%</div>
+              )}
+            </div>
+          )}
+
+          {offHandWeapon && offHandAr && (
+            <div className={styles.section}>
+              <span className={styles.sectionTitle}>
+                Left Hand
+                <span className={styles.sectionNote}>
+                  {offHandWeapon.infusion && offHandWeapon.infusion !== 'Standard'
+                    ? `${offHandWeapon.infusion} ${offHandWeapon.name}`
+                    : offHandWeapon.name}
+                </span>
+              </span>
+              <div className={styles.totalArRow}>
+                <span className={styles.totalArLabel}>Total AR</span>
+                <span className={styles.totalArValue}>~{offHandAr.total}</span>
+              </div>
+              {DMG_TYPES.map(({ key, label, color }, i) => {
+                const v = offHandAr[key as keyof typeof offHandAr] as number;
+                if (!v || v <= 0) return null;
+                return (
+                  <div key={key} className={styles.row}>
+                    <span className={styles.rowLabel}>{label}</span>
+                    <div className={styles.barTrack}>
+                      <div
+                        className={styles.barFill}
+                        style={{
+                          width: ready ? `${Math.min((v / 650) * 100, 100)}%` : '0%',
+                          background: color,
+                          transitionDelay: `${320 + i * 60}ms`,
+                        }}
+                      />
+                    </div>
+                    <span className={styles.rowValue}>~{v}</span>
+                  </div>
+                );
+              })}
+              {offHandWeapon.passives && offHandWeapon.passives.length > 0 && (
+                <div className={styles.passiveRow}>
+                  {offHandWeapon.passives.map((p, i) => {
+                    const arcGrade = offHandWeapon.scaling?.arc ?? '-';
+                    const arcScales = (p.type === 'blood' || p.type === 'poison') && arcGrade !== '-';
+                    const scaledBuildup = arcScales
+                      ? estimatePassiveBuildup(p.buildup, effectiveStats.arcane, arcGrade)
+                      : p.buildup;
+                    return (
+                      <span key={i} className={styles.passiveBadge} style={{ borderColor: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                        <span className={styles.passiveType} style={{ color: PASSIVE_COLORS[p.type] ?? '#888' }}>
+                          {p.type.charAt(0).toUpperCase() + p.type.slice(1)}
+                        </span>
+                        <span className={styles.passiveVal}>{arcScales ? `~${scaledBuildup}` : scaledBuildup}</span>
+                      </span>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {spellCatalysts.length > 0 && (
+            <div className={styles.section}>
+              <span className={styles.sectionTitle}>Spell Scaling</span>
+              {spellCatalysts.map((cat, i) => (
+                <div key={i} className={styles.row}>
+                  <span className={styles.rowLabel} style={{ color: cat.type === 'Sorcery' ? '#6a9cd4' : '#c4a84c' }}>
+                    {cat.type}
+                  </span>
+                  <div className={styles.barTrack}>
                     <div
                       className={styles.barFill}
-                      style={{ width: ready ? `${pct}%` : '0%', transitionDelay: '1200ms' }}
+                      style={{
+                        width: ready ? `${Math.min((cat.scaling / 400) * 100, 100)}%` : '0%',
+                        background: cat.type === 'Sorcery' ? '#6a9cd4' : '#c4a84c',
+                        transitionDelay: `${300 + i * 60}ms`,
+                      }}
                     />
                   </div>
-                  <span className={styles.rowValue}>{nextCost.toLocaleString()}</span>
+                  <span className={styles.rowValue}>~{cat.scaling}</span>
                 </div>
-                <div className={styles.runeDetail}>
-                  <span>Held: {heldRunes.toLocaleString()}</span>
-                  {remaining > 0
-                    ? <span className={styles.runeNeed}>Need: {remaining.toLocaleString()}</span>
-                    : <span className={styles.runeReady}>Ready to level up!</span>
-                  }
+              ))}
+              <div className={styles.fpNote}>
+                {spellCatalysts.map(c => c.weapon.name).join(', ')}
+              </div>
+            </div>
+          )}
+
+          <div className={styles.section}>
+            <span className={styles.sectionTitle}>
+              <button
+                className={styles.collapseBtn}
+                onClick={() => setBuffsOpen(v => !v)}
+              >
+                {buffsOpen ? '▾' : '▸'} Buffs
+              </button>
+              {activeBuffIds.length > 0 && (
+                <span className={styles.buffCount}>{activeBuffIds.length} active</span>
+              )}
+            </span>
+            {buffsOpen && (
+              <div className={styles.buffGrid}>
+                {BUFF_LIST.map(buff => (
+                  <label key={buff.id} className={styles.buffItem} title={buffTooltip(buff)}>
+                    <input
+                      type="checkbox"
+                      checked={activeBuffIds.includes(buff.id)}
+                      onChange={() => toggleBuff(buff.id)}
+                      className={styles.buffCheck}
+                    />
+                    <span className={styles.buffName}>{buff.name}</span>
+                    <span className={styles.buffEffect}>{buffTooltip(buff)}</span>
+                    <span className={styles.buffDur}>{buff.duration}</span>
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {!activeWeapon && !offHandWeapon && spellCatalysts.length === 0 && (
+            <div className={styles.section}>
+              <span className={styles.fpNote}>No weapons equipped</span>
+            </div>
+          )}
+        </>
+      )}
+
+      {/* ══════ TAB: Defense ══════ */}
+      {derivedTab === 'defense' && (
+        <>
+          {hasArmor && (
+            <div className={styles.section}>
+              <span className={styles.sectionTitle}>Defense / Negation</span>
+              {activeBuffIds.length > 0 && (
+                <div
+                  className={styles.activeBuffNote}
+                  onClick={() => { setDerivedTab('attack'); setBuffsOpen(true); }}
+                  title="Click to manage buffs"
+                >
+                  {activeBuffIds.length} buff{activeBuffIds.length > 1 ? 's' : ''} affecting values
                 </div>
-              </>
-            );
-          })()}
-        </div>
+              )}
+              {DEF_TYPES.map(({ key, label, color, indent }, i) => (
+                <NegRow
+                  key={key}
+                  label={label}
+                  negation={adjNeg[key]}
+                  color={color}
+                  ready={ready}
+                  delay={500 + i * 50}
+                  indent={indent}
+                />
+              ))}
+            </div>
+          )}
+
+          {guardBoost != null && equippedShield && (
+            <div className={styles.section}>
+              <span className={styles.sectionTitle}>Guard</span>
+              <div className={styles.row}>
+                <span className={styles.rowLabel}>Guard Boost</span>
+                <div className={`${styles.barTrack} ${styles.barPoise}`}>
+                  <div
+                    className={styles.barFill}
+                    style={{
+                      width: ready ? `${Math.min((guardBoost / 100) * 100, 100)}%` : '0%',
+                      transitionDelay: '480ms',
+                    }}
+                  />
+                </div>
+                <span className={styles.rowValue}>{guardBoost}</span>
+              </div>
+              {equippedShield.guardNegation && (
+                <>
+                  {([
+                    { key: 'physical',  label: 'Physical',  color: '#c8bfa0' },
+                    { key: 'magic',     label: 'Magic',     color: '#6a9cd4' },
+                    { key: 'fire',      label: 'Fire',      color: '#d4703c' },
+                    { key: 'lightning', label: 'Lightning', color: '#d4c03c' },
+                    { key: 'holy',      label: 'Holy',      color: '#c4a84c' },
+                  ] as const).map(({ key, label, color }, i) => {
+                    const v = equippedShield.guardNegation![key as keyof typeof equippedShield.guardNegation] as number;
+                    if (v == null || v <= 0) return null;
+                    return (
+                      <NegRow
+                        key={key}
+                        label={label}
+                        negation={v}
+                        color={color}
+                        maxNeg={100}
+                        ready={ready}
+                        delay={520 + i * 40}
+                      />
+                    );
+                  })}
+                </>
+              )}
+              <div className={styles.fpNote}>{equippedShield.name}</div>
+            </div>
+          )}
+
+          <div className={styles.section}>
+            <span className={styles.sectionTitle}>Poise & Discovery</span>
+            {poise > 0 && (
+              <div className={styles.row}>
+                <span className={styles.rowLabel}>Poise</span>
+                <div className={`${styles.barTrack} ${styles.barPoise}`}>
+                  <div
+                    className={styles.barFill}
+                    style={{
+                      width: ready ? `${Math.min((poise / 100) * 100, 100)}%` : '0%',
+                      transitionDelay: '900ms',
+                    }}
+                  />
+                </div>
+                <span
+                  className={styles.rowValue}
+                  style={{ color: poise >= 125 ? '#6a9cd4' : poise >= 100 ? '#4ab0e0' : poise >= 76 ? '#6dbf7e' : poise >= 51 ? '#e0a040' : poise >= 26 ? '#d08040' : '#e06060' }}
+                >
+                  {Math.round(poise * 10) / 10}
+                </span>
+              </div>
+            )}
+            <BodyRow label="Discovery" value={discovery} max={250} colorClass={styles.barDisc} ready={ready} delay={1160} />
+          </div>
+
+          <div className={styles.section}>
+            <span className={styles.sectionTitle}>Resistances</span>
+            {RESIST_TYPES.map(({ key, label, color }, i) => (
+              <NegRow
+                key={key}
+                label={label}
+                negation={resist[key]}
+                color={color}
+                maxNeg={300}
+                ready={ready}
+                delay={960 + i * 50}
+                isFlat
+              />
+            ))}
+          </div>
+        </>
       )}
 
     </div>

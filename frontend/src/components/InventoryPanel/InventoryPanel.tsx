@@ -1,11 +1,12 @@
 // v5 — con tooltips de stats por categoría
 import { useState, useMemo, useEffect, useRef } from 'react';
-import type { Inventory, ResolvedInventoryItem } from '../../types';
+import type { Inventory, ResolvedInventoryItem, CharacterStats } from '../../types';
 import InventoryTooltip from '../InventoryTooltip/InventoryTooltip';
 import styles from './InventoryPanel.module.css';
 
 interface Props {
   inventory: Inventory;
+  stats?: CharacterStats;
 }
 
 type Tab =
@@ -50,9 +51,10 @@ const TABS: TabDef[] = [
 interface ItemGridProps {
   items: ResolvedInventoryItem[];
   placeholder: string;
+  stats?: CharacterStats;
 }
 
-function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placeholder: string }) {
+function GridItem({ item, placeholder, stats }: { item: ResolvedInventoryItem; placeholder: string; stats?: CharacterStats }) {
   const [imgError, setImgError] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [rect, setRect] = useState<DOMRect | null>(null);
@@ -105,13 +107,13 @@ function GridItem({ item, placeholder }: { item: ResolvedInventoryItem; placehol
       )}
       <span className={styles.itemName}>{item.name}</span>
       {hovered && hasTooltipData && rect && (
-        <InventoryTooltip item={item} triggerRect={rect} />
+        <InventoryTooltip item={item} triggerRect={rect} stats={stats} />
       )}
     </div>
   );
 }
 
-function ItemGrid({ items, placeholder }: ItemGridProps) {
+function ItemGrid({ items, placeholder, stats }: ItemGridProps) {
   if (items.length === 0) {
     return <div className={styles.empty}>No items</div>;
   }
@@ -119,7 +121,7 @@ function ItemGrid({ items, placeholder }: ItemGridProps) {
   return (
     <div className={styles.grid}>
       {items.map((item) => (
-        <GridItem key={item.uid} item={item} placeholder={placeholder} />
+        <GridItem key={item.uid} item={item} placeholder={placeholder} stats={stats} />
       ))}
     </div>
   );
@@ -131,7 +133,7 @@ const EMPTY_INVENTORY: Inventory = {
   upgrades: [], crystalTears: [], keyItems: [], cookbooks: [], multiplayer: [],
 };
 
-export default function InventoryPanel({ inventory }: Props) {
+export default function InventoryPanel({ inventory, stats }: Props) {
   const [active, setActive] = useState<Tab>('weapons');
   const [search, setSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
@@ -233,7 +235,7 @@ export default function InventoryPanel({ inventory }: Props) {
       )}
 
       {/* ── Grid de ítems ── */}
-      <ItemGrid items={filteredItems} placeholder={activeDef.placeholder} />
+      <ItemGrid items={filteredItems} placeholder={activeDef.placeholder} stats={stats} />
 
       {/* ── Resultado de búsqueda ── */}
       {(search || typeFilter) && filteredItems.length === 0 && tabItems.length > 0 && (
