@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import type { ResolvedInventoryItem, CharacterStats } from '../../types';
+import type { ResolvedInventoryItem, CharacterStats, ScalingGrade } from '../../types';
 import { useTooltipPosition } from '../../hooks/useTooltipPosition';
 import { getTalismanEffectLines } from '../../utils/talismanEffects';
 import { estimateARWithBreakdown, estimatePassiveBuildup } from '../../utils/arCalc';
@@ -13,8 +13,6 @@ interface Props {
   triggerRect: DOMRect;
   stats?: CharacterStats;
 }
-
-type ScalingGrade = 'S' | 'A' | 'B' | 'C' | 'D' | 'E' | '-';
 
 const GRADE_CLASS: Record<ScalingGrade, string> = {
   S: styles.gradeS,

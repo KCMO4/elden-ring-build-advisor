@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
-import type { Inventory } from '../../types';
+import type { EquippedWeapon, Inventory } from '../../types';
 import { isSomberHeuristic } from '../../utils/arCalc';
 import styles from './MatchmakingCalc.module.css';
 
 interface Props {
   level: number;
   inventory: Inventory;
+  equippedWeapons?: EquippedWeapon[];
 }
 
 // ── Matchmaking formulas (community reverse-engineered) ──────
@@ -52,12 +53,17 @@ function weaponUpgradeRange(maxLevel: number, isSomber: boolean): { min: number;
   };
 }
 
-function findMaxWeaponUpgrade(inventory: Inventory): { level: number; somber: boolean; weaponName: string } {
+function findMaxWeaponUpgrade(inventory: Inventory, equippedWeapons?: EquippedWeapon[]): { level: number; somber: boolean; weaponName: string } {
   let maxLevel = 0;
   let somber = false;
   let weaponName = '';
 
-  for (const w of inventory.weapons) {
+  const allWeapons: Array<{ upgradeLevel?: number; infusion?: string; baseId?: number; name: string }> = [
+    ...inventory.weapons,
+    ...(equippedWeapons?.filter((w): w is EquippedWeapon & { name: string } => !!w.name && w.upgradeLevel !== undefined) ?? []),
+  ];
+
+  for (const w of allWeapons) {
     const lvl = w.upgradeLevel ?? 0;
     if (lvl > maxLevel) {
       maxLevel = lvl;
@@ -95,12 +101,12 @@ function RangeRow({ label, range, color, description }: RangeRowProps) {
   );
 }
 
-export default function MatchmakingCalc({ level, inventory }: Props) {
+export default function MatchmakingCalc({ level, inventory, equippedWeapons }: Props) {
   const coop = useMemo(() => coopRange(level), [level]);
   const hostInvasion = useMemo(() => invasionRangeAsHost(level), [level]);
   const invaderInvasion = useMemo(() => invasionRangeAsInvader(level), [level]);
   const duelist = useMemo(() => duelistRange(level), [level]);
-  const maxUpgrade = useMemo(() => findMaxWeaponUpgrade(inventory), [inventory]);
+  const maxUpgrade = useMemo(() => findMaxWeaponUpgrade(inventory, equippedWeapons), [inventory, equippedWeapons]);
   const upgradeRange = useMemo(
     () => weaponUpgradeRange(maxUpgrade.level, maxUpgrade.somber),
     [maxUpgrade],

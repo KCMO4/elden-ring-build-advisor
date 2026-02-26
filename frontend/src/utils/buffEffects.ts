@@ -9,9 +9,10 @@
  *
  * Stack groups mirror the actual game:
  *   body-buff: Golden Vow, Howl of Shabriri, Exalted Flesh (aura/body buffs)
- *   protection: Black Flame's Protection (phys), Barrier of Gold (magic),
- *               Lord's Divine Fortification (holy) — these DON'T conflict with body-buff
- *   fortification: Magic/Lightning/Divine Fortification (element-specific, lower tier)
+ *   protection-*: element-specific (phys/magic/holy) — each element is its own group,
+ *                 so Black Flame's Protection + Barrier of Gold CAN coexist
+ *   fortification-*: element-specific lower tier (magic/lightning/holy/fire),
+ *                    each element is its own group
  */
 
 export interface BuffEffect {
@@ -136,7 +137,7 @@ export const BUFF_LIST: BuffEffect[] = [
     category: 'incantation',
     physNegBonus: 0.35,
     duration: '70s',
-    stackGroup: 'protection',
+    stackGroup: 'protection-phys',
   },
   {
     id: 'barrier-of-gold',
@@ -144,7 +145,7 @@ export const BUFF_LIST: BuffEffect[] = [
     category: 'incantation',
     magicNegBonus: 0.60,
     duration: '70s',
-    stackGroup: 'protection',
+    stackGroup: 'protection-magic',
   },
   {
     id: 'lords-divine-fortification',
@@ -152,7 +153,7 @@ export const BUFF_LIST: BuffEffect[] = [
     category: 'incantation',
     holyNegBonus: 0.60,
     duration: '70s',
-    stackGroup: 'protection',
+    stackGroup: 'protection-holy',
   },
 
   // ── Physical Defense Consumables ──
@@ -206,7 +207,7 @@ export const BUFF_LIST: BuffEffect[] = [
     category: 'incantation',
     magicNegBonus: 0.35,
     duration: '60s',
-    stackGroup: 'fortification',
+    stackGroup: 'fortification-magic',
   },
   {
     id: 'lightning-fortification',
@@ -214,7 +215,7 @@ export const BUFF_LIST: BuffEffect[] = [
     category: 'incantation',
     lightningNegBonus: 0.35,
     duration: '60s',
-    stackGroup: 'fortification',
+    stackGroup: 'fortification-lightning',
   },
   {
     id: 'divine-fortification',
@@ -222,7 +223,7 @@ export const BUFF_LIST: BuffEffect[] = [
     category: 'incantation',
     holyNegBonus: 0.35,
     duration: '60s',
-    stackGroup: 'fortification',
+    stackGroup: 'fortification-holy',
   },
   {
     id: 'flame-fortification',
@@ -230,7 +231,7 @@ export const BUFF_LIST: BuffEffect[] = [
     category: 'incantation',
     fireNegBonus: 0.35,
     duration: '60s',
-    stackGroup: 'fortification',
+    stackGroup: 'fortification-fire',
   },
 ];
 

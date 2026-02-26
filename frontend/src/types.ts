@@ -208,17 +208,9 @@ export interface ParseResponse {
   characters: CharacterData[];
 }
 
-// ── Advisor ─────────────────────────────────────────────────
+// ── Shared types ────────────────────────────────────────────
 
 export type ScalingGrade = 'S' | 'A' | 'B' | 'C' | 'D' | 'E' | '-';
-
-export interface WeaponScaling {
-  str: ScalingGrade;
-  dex: ScalingGrade;
-  int: ScalingGrade;
-  fai: ScalingGrade;
-  arc: ScalingGrade;
-}
 
 export interface StatRequirements {
   str: number;
@@ -226,26 +218,4 @@ export interface StatRequirements {
   int: number;
   fai: number;
   arc: number;
-}
-
-export interface AdvisorWeapon {
-  id: number;
-  name: string;
-  type: string;
-  estimatedAR: number;
-  scaling: WeaponScaling;
-  requirements: StatRequirements;
-  image?: string;
-}
-
-export interface WeaponRecommendation {
-  weapon: AdvisorWeapon;
-  estimatedAR: number;
-  canEquip: boolean;
-}
-
-export interface AdvisorResponse {
-  usable: WeaponRecommendation[];
-  nearlyUsable: WeaponRecommendation[];
-  wastedStats: string[];
 }

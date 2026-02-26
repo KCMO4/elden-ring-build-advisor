@@ -65,9 +65,9 @@ export async function loadScalingData(): Promise<ScalingBundle | null> {
   fetchPromise = (async () => {
     try {
       const res = await fetch(`${API_URL}/api/scaling`);
-      if (!res.ok) return null;
+      if (!res.ok) { fetchPromise = null; return null; }
       const data = await res.json();
-      if (!data.available) return null;
+      if (!data.available) { fetchPromise = null; return null; }
       cachedBundle = {
         graphs: data.graphs,
         weapons: data.weapons,
@@ -75,6 +75,7 @@ export async function loadScalingData(): Promise<ScalingBundle | null> {
       };
       return cachedBundle;
     } catch {
+      fetchPromise = null;
       return null;
     }
   })();

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import type { EquippedWeapon } from '../../types';
 import styles from './ItemSlot.module.css';
 
@@ -139,6 +139,8 @@ export default function ItemSlot({
 }: Props) {
   const [imgError, setImgError] = useState(false);
   const frameRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { setImgError(false); }, [item?.image]);
 
   const empty = isEmptyItem(item);
   const displayName = !empty && item?.name ? baseName(item) : null;

@@ -120,10 +120,11 @@ export function isSomberHeuristic(weapon: { upgradeLevel?: number; infusion?: st
       }
     }
   }
-  // Fallback heuristic
+  // Fallback heuristic: somber weapons max at +10 and can't be infused
   if (weapon.infusion && weapon.infusion !== 'Standard' && weapon.infusion !== 'None') return false;
   if ((weapon.upgradeLevel ?? 0) > 10) return false;
-  return true;
+  // Default to standard (more common) when we can't determine
+  return false;
 }
 
 // ── Upgrade multipliers (fallback) ──────────────────────────────
@@ -464,22 +465,23 @@ export function estimateARWithBreakdown(
   const arcLigBon  = bLig  * arcCoeff * sclMul * interpGraph(ARC_GRAPH, stats.arcane);
   const arcHolyBon = bHoly * arcCoeff * sclMul * interpGraph(ARC_GRAPH, stats.arcane);
 
-  const physical  = Math.round(bPhys + strBon + dexBon + arcPhysBon);
-  const magic     = Math.round(bMag  + intBon + faiMag + arcMagBon);
-  const fire      = Math.round(bFire + faiFire + arcFireBon);
-  const lightning = Math.round(bLig  + faiLig + arcLigBon);
-  const holy      = Math.round(bHoly + faiHoly + arcHolyBon);
+  const pen = meetsRequirements(weapon, stats) ? 1 : UNMET_PENALTY;
+  const physical  = Math.round((bPhys + strBon + dexBon + arcPhysBon) * pen);
+  const magic     = Math.round((bMag  + intBon + faiMag + arcMagBon) * pen);
+  const fire      = Math.round((bFire + faiFire + arcFireBon) * pen);
+  const lightning = Math.round((bLig  + faiLig + arcLigBon) * pen);
+  const holy      = Math.round((bHoly + faiHoly + arcHolyBon) * pen);
   const total     = physical + magic + fire + lightning + holy;
 
   return {
     ar: { physical, magic, fire, lightning, holy, total },
     breakdown: {
       base: { physical: bPhys, magic: bMag, fire: bFire, lightning: bLig, holy: bHoly },
-      strBonus: Math.round(strBon),
-      dexBonus: Math.round(dexBon),
-      intBonus: Math.round(intBon),
-      faiBonus: Math.round(faiMag + faiFire + faiLig + faiHoly),
-      arcBonus: Math.round(arcPhysBon + arcMagBon + arcFireBon + arcLigBon + arcHolyBon),
+      strBonus: Math.round(strBon * pen),
+      dexBonus: Math.round(dexBon * pen),
+      intBonus: Math.round(intBon * pen),
+      faiBonus: Math.round((faiMag + faiFire + faiLig + faiHoly) * pen),
+      arcBonus: Math.round((arcPhysBon + arcMagBon + arcFireBon + arcLigBon + arcHolyBon) * pen),
     },
   };
 }

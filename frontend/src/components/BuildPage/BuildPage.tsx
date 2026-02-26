@@ -179,6 +179,7 @@ export default function BuildPage({ character, onBack }: Props) {
             <MatchmakingCalc
               level={character.level}
               inventory={character.inventory}
+              equippedWeapons={[...character.equipped.rightHand, ...character.equipped.leftHand]}
             />
           )}
         </section>

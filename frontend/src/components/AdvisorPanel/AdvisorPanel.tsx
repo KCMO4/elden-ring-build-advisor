@@ -16,7 +16,7 @@ interface Props {
 
 const CAPS: Record<string, number[]> = {
   vigor:        [40, 60],
-  mind:         [55, 60],
+  mind:         [35, 55, 60],
   endurance:    [25, 60],
   strength:     [20, 40, 60, 80],
   dexterity:    [20, 40, 60, 80],

@@ -441,7 +441,9 @@ export function getTalismanEffectLabel(baseId: number): string | null {
   if (eff.poiseBonus)     pctItems.push(['POISE', eff.poiseBonus]);
 
   if (pctItems.length === 1) {
-    parts.push(`+${pctItems[0][0]} ${Math.round(pctItems[0][1] * 100)}%`);
+    const [lbl, val] = pctItems[0];
+    const pctVal = Math.round(val * 100);
+    parts.push(pctVal >= 0 ? `+${lbl} ${pctVal}%` : `${lbl} ${pctVal}%`);
   } else if (pctItems.length > 1) {
     parts.push(`+${pctItems.map(p => p[0]).join('·')}`);
   }
@@ -454,26 +456,40 @@ export function getTalismanEffectLabel(baseId: number): string | null {
   if (eff.holyDmgBonus)      dmgParts.push('HOLY');
   if (dmgParts.length > 0) parts.push(`+${dmgParts.join('·')} DMG`);
 
-  if (eff.physicalDefBonus && eff.physicalDefBonus > 0) parts.push(`+PHYS DEF ${Math.round(eff.physicalDefBonus * 100)}%`);
-  if (eff.physicalDefBonus && eff.physicalDefBonus < 0) parts.push(`${Math.round(eff.physicalDefBonus * 100)}% PHYS`);
+  // Defense bonuses: check if all 5 are equal (Soreseal/Scarseal case)
+  const allDefVals = [eff.physicalDefBonus, eff.magicDefBonus, eff.fireDefBonus, eff.lightningDefBonus, eff.holyDefBonus].filter(v => v != null) as number[];
+  const allDefEqual = allDefVals.length === 5 && allDefVals.every(v => v === allDefVals[0]);
+  if (allDefEqual && allDefVals[0] !== 0) {
+    const pctVal = Math.round(allDefVals[0] * 100);
+    parts.push(pctVal > 0 ? `+ALL NEG ${pctVal}%` : `${pctVal}% ALL NEG`);
+  } else {
+    if (eff.physicalDefBonus && eff.physicalDefBonus > 0) parts.push(`+PHYS DEF ${Math.round(eff.physicalDefBonus * 100)}%`);
+    if (eff.physicalDefBonus && eff.physicalDefBonus < 0) parts.push(`${Math.round(eff.physicalDefBonus * 100)}% PHYS`);
 
-  // Elemental defense bonuses (drake talismans)
-  const elemDefParts: string[] = [];
-  if (eff.magicDefBonus && eff.magicDefBonus > 0) elemDefParts.push('MAG');
-  if (eff.fireDefBonus && eff.fireDefBonus > 0) elemDefParts.push('FIRE');
-  if (eff.lightningDefBonus && eff.lightningDefBonus > 0) elemDefParts.push('LTN');
-  if (eff.holyDefBonus && eff.holyDefBonus > 0) elemDefParts.push('HOLY');
-  if (elemDefParts.length > 0) {
-    const val = eff.magicDefBonus ?? eff.fireDefBonus ?? eff.lightningDefBonus ?? eff.holyDefBonus ?? 0;
-    if (elemDefParts.length === 1) {
-      parts.push(`+${elemDefParts[0]} NEG ${Math.round(val * 100)}%`);
-    } else {
-      parts.push(`+${elemDefParts.join('·')} NEG`);
+    // Elemental defense bonuses (drake talismans)
+    const elemDefParts: string[] = [];
+    if (eff.magicDefBonus && eff.magicDefBonus > 0) elemDefParts.push('MAG');
+    if (eff.fireDefBonus && eff.fireDefBonus > 0) elemDefParts.push('FIRE');
+    if (eff.lightningDefBonus && eff.lightningDefBonus > 0) elemDefParts.push('LTN');
+    if (eff.holyDefBonus && eff.holyDefBonus > 0) elemDefParts.push('HOLY');
+    if (elemDefParts.length > 0) {
+      const val = eff.magicDefBonus ?? eff.fireDefBonus ?? eff.lightningDefBonus ?? eff.holyDefBonus ?? 0;
+      if (elemDefParts.length === 1) {
+        parts.push(`+${elemDefParts[0]} NEG ${Math.round(val * 100)}%`);
+      } else {
+        parts.push(`+${elemDefParts.join('·')} NEG`);
+      }
     }
-  }
-  // Negative elemental defense (from Soreseal)
-  if (eff.magicDefBonus && eff.magicDefBonus < 0 && !eff.physicalDefBonus) {
-    parts.push(`${Math.round(eff.magicDefBonus * 100)}% NEG`);
+    // Negative elemental defense (standalone, e.g. Scorpion charms don't have physicalDefBonus as sole neg)
+    const elemNegParts: string[] = [];
+    if (eff.magicDefBonus && eff.magicDefBonus < 0) elemNegParts.push('MAG');
+    if (eff.fireDefBonus && eff.fireDefBonus < 0) elemNegParts.push('FIRE');
+    if (eff.lightningDefBonus && eff.lightningDefBonus < 0) elemNegParts.push('LTN');
+    if (eff.holyDefBonus && eff.holyDefBonus < 0) elemNegParts.push('HOLY');
+    if (elemNegParts.length > 0 && !allDefEqual) {
+      const val = eff.magicDefBonus ?? eff.fireDefBonus ?? eff.lightningDefBonus ?? eff.holyDefBonus ?? 0;
+      parts.push(`${Math.round(val * 100)}% ${elemNegParts.join('·')} NEG`);
+    }
   }
 
   if (eff.skillDmgBonus)     parts.push(`+SKILL ${Math.round(eff.skillDmgBonus * 100)}%`);

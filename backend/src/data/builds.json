@@ -1,7 +1,7 @@
 [
   {
     "id": "rob-bleed",
-    "name": "Rivers of Blood",
+    "name": "Rivers Of Blood",
     "description": "Fast-hitting bleed build with Arcane scaling. Melts bosses with Corpse Piler spam.",
     "tags": ["bleed", "dex", "arcane", "aggressive"],
     "difficulty": "beginner",
@@ -18,10 +18,10 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 30, "ideal": 45 }
     },
-    "weapons": ["Rivers of Blood", "Mohgwyn's Sacred Spear", "Eleonora's Poleblade"],
+    "weapons": ["Rivers Of Blood", "Mohgwyn's Sacred Spear", "Eleonora's Poleblade"],
     "shields": [],
     "armorSuggestion": "White Mask (head) for bleed bonus + any medium armor. Target 51+ poise.",
-    "talismans": ["Lord of Blood's Exultation", "Rotten Winged Sword Insignia", "Shard of Alexander", "Erdtree's Favor"],
+    "talismans": ["Lord Of Blood's Exultation", "Winged Sword Insignia", "Shard Of Alexander", "Erdtree's Favor"],
     "ashesOfWar": [],
     "spells": [],
     "tips": "White Mask boosts ATK by 10% when bleed procs nearby. Pair with Mohgwyn's spear for AoE bleed."
@@ -45,10 +45,10 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 30, "ideal": 45 }
     },
-    "weapons": ["Nagakiba", "Uchigatana", "Hand of Malenia", "Cross-Naginata"],
+    "weapons": ["Nagakiba", "Uchigatana", "Hand Of Malenia", "Cross-naginata"],
     "shields": [],
     "armorSuggestion": "White Mask + medium armor. Stay under 70% equip load for fast rolls.",
-    "talismans": ["Lord of Blood's Exultation", "Rotten Winged Sword Insignia", "Millicent's Prosthesis", "Erdtree's Favor"],
+    "talismans": ["Lord Of Blood's Exultation", "Winged Sword Insignia", "Millicent's Prosthesis", "Erdtree's Favor"],
     "ashesOfWar": ["Seppuku"],
     "spells": [],
     "tips": "Apply Seppuku to both weapons before boss fights. L1 powerstance attacks proc bleed extremely fast."
@@ -72,13 +72,13 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Moonveil", "Dark Moon Greatsword", "Wing of Astel"],
+    "weapons": ["Moonveil", "Dark Moon Greatsword", "Wing Of Astel"],
     "shields": [],
     "armorSuggestion": "Alberich's Set or Snow Witch Set for fashion. Light-medium load.",
-    "talismans": ["Graven-Mass Talisman", "Magic Scorpion Charm", "Shard of Alexander", "Erdtree's Favor"],
+    "talismans": ["Graven-mass Talisman", "Magic Scorpion Charm", "Shard Of Alexander", "Erdtree's Favor"],
     "ashesOfWar": [],
-    "spells": ["Comet Azur", "Stars of Ruin", "Carian Slicer", "Rock Sling", "Glintstone Pebble"],
-    "tips": "Moonveil's weapon skill scales with INT. Use Carian Slicer for FP-efficient melee and Stars of Ruin for PvP."
+    "spells": ["Comet Azur", "Stars Of Ruin", "Carian Slicer", "Rock Sling", "Glintstone Pebble"],
+    "tips": "Moonveil's weapon skill scales with INT. Use Carian Slicer for FP-efficient melee and Stars Of Ruin for PvP."
   },
   {
     "id": "pure-sorcery",
@@ -102,10 +102,10 @@
     "weapons": ["Lusat's Glintstone Staff", "Carian Regal Scepter", "Meteorite Staff"],
     "shields": [],
     "armorSuggestion": "Azur's Glintstone Set for fashion. Keep light load for mobility.",
-    "talismans": ["Graven-Mass Talisman", "Graven-School Talisman", "Radagon Icon", "Cerulean Amber Medallion"],
+    "talismans": ["Graven-mass Talisman", "Graven-school Talisman", "Radagon Icon", "Cerulean Amber Medallion"],
     "ashesOfWar": [],
-    "spells": ["Comet Azur", "Stars of Ruin", "Rock Sling", "Carian Slicer", "Ranni's Dark Moon", "Terra Magica"],
-    "tips": "Use Terra Magica + Cerulean Hidden Tear + Comet Azur for the famous one-shot combo. Lusat's costs 50% more FP but has highest scaling."
+    "spells": ["Comet Azur", "Stars Of Ruin", "Rock Sling", "Carian Slicer", "Ranni's Dark Moon", "Terra Magicus"],
+    "tips": "Use Terra Magicus + Cerulean Hidden Tear + Comet Azur for the famous one-shot combo. Lusat's costs 50% more FP but has highest scaling."
   },
   {
     "id": "str-colossal",
@@ -126,10 +126,10 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Giant-Crusher", "Greatsword", "Ruins Greatsword", "Grafted Blade Greatsword"],
+    "weapons": ["Giant-crusher", "Greatsword", "Ruins Greatsword", "Grafted Blade Greatsword"],
     "shields": ["Fingerprint Stone Shield"],
     "armorSuggestion": "Bull-Goat Set or Veteran's Set for maximum poise (80+).",
-    "talismans": ["Erdtree's Favor", "Bull-Goat's Talisman", "Great-Jar's Arsenal", "Shard of Alexander"],
+    "talismans": ["Erdtree's Favor", "Bull-goat's Talisman", "Great-jar's Arsenal", "Shard Of Alexander"],
     "ashesOfWar": ["Lion's Claw", "Royal Knight's Resolve"],
     "spells": [],
     "tips": "Two-hand for 1.5x STR (66 → 99 effective). Lion's Claw has hyper-armor and does massive stagger. Royal Knight's Resolve buffs next hit by 80%."
@@ -153,10 +153,10 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Giant-Crusher", "Prelate's Inferno Crozier", "Great Stars"],
+    "weapons": ["Giant-crusher", "Prelate's Inferno Crozier", "Great Stars"],
     "shields": [],
     "armorSuggestion": "Bull-Goat Set mandatory for hyper-armor trading. Need 100+ poise.",
-    "talismans": ["Erdtree's Favor", "Great-Jar's Arsenal", "Bull-Goat's Talisman", "Shard of Alexander"],
+    "talismans": ["Erdtree's Favor", "Great-jar's Arsenal", "Bull-goat's Talisman", "Shard Of Alexander"],
     "ashesOfWar": ["Royal Knight's Resolve", "Lion's Claw"],
     "spells": [],
     "tips": "Requires massive END for equip load. L1 powerstance jump attacks are the most damaging move in the game. Great Stars heals on hit."
@@ -183,9 +183,9 @@
     "weapons": ["Blasphemous Blade", "Coded Sword", "Winged Scythe"],
     "shields": [],
     "armorSuggestion": "Tree Sentinel Set or Crucible Knight Set. Medium-heavy load OK.",
-    "talismans": ["Shard of Alexander", "Fire Scorpion Charm", "Erdtree's Favor", "Radagon's Icon"],
+    "talismans": ["Shard Of Alexander", "Fire Scorpion Charm", "Erdtree's Favor", "Radagon Icon"],
     "ashesOfWar": [],
-    "spells": ["Golden Vow", "Flame, Grant Me Strength", "Erdtree Heal", "Lord's Divine Fortification"],
+    "spells": ["Golden Vow (spell)", "Flame, Grant Me Strength", "Erdtree Heal", "Lord's Divine Fortification"],
     "tips": "Taker's Flames heals on hit AND on kill. Stack with Golden Vow + Flame Grant Me Strength for massive fire damage. Trivializes most PvE content."
   },
   {
@@ -210,7 +210,7 @@
     "weapons": ["Bloodhound's Fang", "Claymore", "Banished Knight's Halberd", "Guardian's Swordspear"],
     "shields": ["Brass Shield"],
     "armorSuggestion": "Banished Knight Set or Scaled Set. Medium equip load.",
-    "talismans": ["Erdtree's Favor", "Claw Talisman", "Shard of Alexander", "Great-Jar's Arsenal"],
+    "talismans": ["Erdtree's Favor", "Claw Talisman", "Shard Of Alexander", "Great-jar's Arsenal"],
     "ashesOfWar": ["Bloodhound's Finesse", "Lion's Claw", "Square Off"],
     "spells": [],
     "tips": "Quality builds let you try every weapon. Bloodhound's Fang is one of the best weapons in the entire game for its skill alone."
@@ -237,9 +237,9 @@
     "weapons": ["Godslayer's Greatsword", "Godskin Peeler"],
     "shields": [],
     "armorSuggestion": "Godskin Apostle Set for fashion, or any medium armor.",
-    "talismans": ["Flock's Canvas Talisman", "Fire Scorpion Charm", "Radagon's Icon", "Erdtree's Favor"],
+    "talismans": ["Flock's Canvas Talisman", "Fire Scorpion Charm", "Radagon Icon", "Erdtree's Favor"],
     "ashesOfWar": ["Black Flame Tornado"],
-    "spells": ["Black Flame", "Scouring Black Flame", "Black Flame Ritual", "Noble Presence", "Golden Vow"],
+    "spells": ["Black Flame", "Scouring Black Flame", "Black Flame Ritual", "Noble Presence", "Golden Vow (spell)"],
     "tips": "Black Flame does % max HP damage over time — excellent vs bosses with huge HP pools. Godslayer's weapon skill is one of the highest DPS moves."
   },
   {
@@ -264,7 +264,7 @@
     "weapons": ["Death's Poker", "Dark Moon Greatsword", "Helphen's Steeple"],
     "shields": [],
     "armorSuggestion": "Snow Witch Set or Raya Lucarian set. Light-medium load.",
-    "talismans": ["Graven-Mass Talisman", "Magic Scorpion Charm", "Erdtree's Favor", "Shard of Alexander"],
+    "talismans": ["Graven-mass Talisman", "Magic Scorpion Charm", "Erdtree's Favor", "Shard Of Alexander"],
     "ashesOfWar": ["Chilling Mist", "Ice Spear"],
     "spells": ["Adula's Moonblade", "Ranni's Dark Moon", "Glintstone Icecrag", "Zamor Ice Storm"],
     "tips": "Frostbite reduces enemy damage negation by 20% for 30s. Apply frost, then reset with fire damage to proc again. Death's Poker weapon skill is incredible."
@@ -288,13 +288,13 @@
       "faith":        { "min": 30, "ideal": 40 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Bolt of Gransax", "Dragon King's Cragblade", "Treespear"],
+    "weapons": ["Bolt Of Gransax", "Dragon King's Cragblade", "Treespear"],
     "shields": [],
     "armorSuggestion": "Crucible Knight Set or Banished Knight Set. Medium load.",
-    "talismans": ["Lightning Scorpion Charm", "Shard of Alexander", "Erdtree's Favor", "Godfrey Icon"],
+    "talismans": ["Lightning Scorpion Charm", "Shard Of Alexander", "Erdtree's Favor", "Godfrey Icon"],
     "ashesOfWar": ["Thunderbolt", "Lightning Slash"],
-    "spells": ["Lightning Spear", "Ancient Dragons' Lightning Strike", "Electrify Armament", "Golden Vow"],
-    "tips": "Bolt of Gransax has the longest-range weapon skill in the game. DEX increases casting speed of incantations. Most enemies are weak to lightning."
+    "spells": ["Lightning Spear", "Ancient Dragons' Lightning Strike", "Electrify Armament", "Golden Vow (spell)"],
+    "tips": "Bolt Of Gransax has the longest-range weapon skill in the game. DEX increases casting speed of incantations. Most enemies are weak to lightning."
   },
   {
     "id": "dragon-communion",
@@ -318,9 +318,9 @@
     "weapons": ["Dragon Communion Seal", "Mohgwyn's Sacred Spear"],
     "shields": [],
     "armorSuggestion": "Mushroom Crown (boost rot damage) + any medium armor.",
-    "talismans": ["Flock's Canvas Talisman", "Faithful's Canvas Talisman", "Erdtree's Favor", "Radagon's Icon"],
+    "talismans": ["Flock's Canvas Talisman", "Faithful's Canvas Talisman", "Erdtree's Favor", "Radagon Icon"],
     "ashesOfWar": [],
-    "spells": ["Rotten Breath", "Ekzykes's Decay", "Dragonice", "Agheel's Flame", "Placidusax's Ruin", "Golden Vow"],
+    "spells": ["Rotten Breath", "Ekzykes's Decay", "Dragonice", "Agheel's Flame", "Placidusax's Ruin", "Golden Vow (spell)"],
     "tips": "Dragon Communion Seal scales with ARC, making dragon incantations extremely powerful. Rotten Breath applies Scarlet Rot for massive DoT."
   },
   {
@@ -342,10 +342,10 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Lance", "Cross-Naginata", "Partisan"],
+    "weapons": ["Lance", "Cross-naginata", "Partisan"],
     "shields": ["Fingerprint Stone Shield"],
     "armorSuggestion": "Bull-Goat Set or highest poise armor that stays under 70% load.",
-    "talismans": ["Greatshield Talisman", "Erdtree's Favor", "Great-Jar's Arsenal", "Bull-Goat's Talisman"],
+    "talismans": ["Greatshield Talisman", "Erdtree's Favor", "Great-jar's Arsenal", "Bull-goat's Talisman"],
     "ashesOfWar": ["Barricade Shield"],
     "spells": [],
     "tips": "Fingerprint Shield + Greatshield Talisman = 90+ Guard Boost, meaning you lose almost no stamina blocking. Poke through the shield with spear R1."
@@ -372,10 +372,10 @@
     "weapons": ["Vyke's War Spear"],
     "shields": [],
     "armorSuggestion": "Fingerprint Set or medium poise armor.",
-    "talismans": ["Flock's Canvas Talisman", "Radagon's Icon", "Erdtree's Favor", "Fire Scorpion Charm"],
+    "talismans": ["Flock's Canvas Talisman", "Radagon Icon", "Erdtree's Favor", "Fire Scorpion Charm"],
     "ashesOfWar": [],
-    "spells": ["Frenzied Burst", "The Flame of Frenzy", "Unendurable Frenzy", "Howl of Shabriri", "Golden Vow"],
-    "tips": "Frenzied Burst has extreme range and tracks well in PvP. Howl of Shabriri boosts all frenzy damage. Madness only affects Tarnished (players/NPCs), not most PvE enemies."
+    "spells": ["Frenzied Burst", "The Flame Of Frenzy", "Unendurable Frenzy", "Howl Of Shabriri", "Golden Vow (spell)"],
+    "tips": "Frenzied Burst has extreme range and tracks well in PvP. Howl Of Shabriri boosts all frenzy damage. Madness only affects Tarnished (players/NPCs), not most PvE enemies."
   },
   {
     "id": "rot-poison",
@@ -399,7 +399,7 @@
     "weapons": ["Antspur Rapier", "Scorpion's Stinger", "Serpent Bow"],
     "shields": [],
     "armorSuggestion": "Mushroom Crown (boost rot/poison damage) + any medium armor.",
-    "talismans": ["Kindred of Rot's Exultation", "Lord of Blood's Exultation", "Erdtree's Favor", "Radagon's Soreseal"],
+    "talismans": ["Kindred Of Rot's Exultation", "Lord Of Blood's Exultation", "Erdtree's Favor", "Radagon's Soreseal"],
     "ashesOfWar": ["Poisonous Mist", "Poison Moth Flight"],
     "spells": ["Pest Threads", "Rotten Breath", "Ekzykes's Decay"],
     "tips": "Antspur Rapier applies Scarlet Rot on hit. Infuse with Poison (via AoW) for double status. Pest Threads is secretly one of the highest DPS spells vs large bosses."
@@ -423,13 +423,13 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Hand of Malenia", "Nagakiba", "Uchigatana", "Keen Scimitar"],
+    "weapons": ["Hand Of Malenia", "Nagakiba", "Uchigatana", "Scimitar"],
     "shields": [],
     "armorSuggestion": "Land of Reeds or White Reed Set for samurai fashion. Medium load.",
-    "talismans": ["Rotten Winged Sword Insignia", "Millicent's Prosthesis", "Shard of Alexander", "Erdtree's Favor"],
+    "talismans": ["Winged Sword Insignia", "Millicent's Prosthesis", "Shard Of Alexander", "Erdtree's Favor"],
     "ashesOfWar": ["Unsheathe", "Keen Blade", "Bloodhound's Step"],
     "spells": [],
-    "tips": "DEX increases casting speed too. Hand of Malenia has the highest DEX scaling in the game. Waterfowl Dance weapon skill is devastating."
+    "tips": "DEX increases casting speed too. Hand Of Malenia has the highest DEX scaling in the game. Waterfowl Dance weapon skill is devastating."
   },
   {
     "id": "holy-knight",
@@ -453,9 +453,9 @@
     "weapons": ["Sacred Relic Sword", "Coded Sword", "Ordovis's Greatsword", "Envoy's Long Horn"],
     "shields": ["Brass Shield", "Erdtree Greatshield"],
     "armorSuggestion": "Tree Sentinel Set or Crucible Knight Set. Medium-heavy load.",
-    "talismans": ["Sacred Scorpion Charm", "Shard of Alexander", "Erdtree's Favor", "Radagon's Icon"],
+    "talismans": ["Sacred Scorpion Charm", "Shard Of Alexander", "Erdtree's Favor", "Radagon Icon"],
     "ashesOfWar": ["Sacred Blade"],
-    "spells": ["Golden Vow", "Blessing of the Erdtree", "Lord's Heal", "Erdtree Heal"],
+    "spells": ["Golden Vow (spell)", "Blessing Of The Erdtree", "Lord's Heal", "Erdtree Heal"],
     "tips": "Sacred Relic Sword's weapon skill hits a huge AoE — best rune farming weapon in the game. Erdtree Heal is a massive group heal for co-op."
   },
   {
@@ -477,13 +477,13 @@
       "faith":        { "min": 35, "ideal": 40 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Death's Poker", "Helphen's Steeple", "Prince of Death's Staff"],
+    "weapons": ["Death's Poker", "Helphen's Steeple", "Prince Of Death's Star"],
     "shields": [],
     "armorSuggestion": "Fia's Set or Deathbed Set. Light-medium load.",
-    "talismans": ["Graven-Mass Talisman", "Radagon's Icon", "Erdtree's Favor", "Cerulean Amber Medallion"],
+    "talismans": ["Graven-mass Talisman", "Radagon Icon", "Erdtree's Favor", "Cerulean Amber Medallion"],
     "ashesOfWar": [],
     "spells": ["Rancorcall", "Ancient Death Rancor", "Explosive Ghostflame", "Fia's Mist", "Tibia's Summons"],
-    "tips": "Prince of Death's Staff scales with both INT and FAI, making it the highest scaling catalyst for death sorceries. Ancient Death Rancor has excellent tracking."
+    "tips": "Prince Of Death's Star scales with both INT and FAI, making it the highest scaling catalyst for death sorceries. Ancient Death Rancor has excellent tracking."
   },
   {
     "id": "marais-executioner",
@@ -504,13 +504,13 @@
       "faith":        { "min": 0,  "ideal": 8 },
       "arcane":       { "min": 30, "ideal": 45 }
     },
-    "weapons": ["Marais Executioner's Sword", "Mohgwyn's Sacred Spear", "Regalia of Eochaid"],
+    "weapons": ["Marais Executioner's Sword", "Mohgwyn's Sacred Spear", "Regalia Of Eochaid"],
     "shields": [],
     "armorSuggestion": "Medium-heavy armor for poise trading during weapon skill. Bull-Goat's recommended.",
-    "talismans": ["Shard of Alexander", "Lord of Blood's Exultation", "Erdtree's Favor", "Rotten Winged Sword Insignia"],
+    "talismans": ["Shard Of Alexander", "Lord Of Blood's Exultation", "Erdtree's Favor", "Winged Sword Insignia"],
     "ashesOfWar": [],
     "spells": [],
-    "tips": "Eochaid's Dancing Blade hits multiple times and scales with both STR and ARC. Use Shard of Alexander to boost weapon skill damage by 15%."
+    "tips": "Eochaid's Dancing Blade hits multiple times and scales with both STR and ARC. Use Shard Of Alexander to boost weapon skill damage by 15%."
   },
   {
     "id": "destined-death",
@@ -534,9 +534,9 @@
     "weapons": ["Maliketh's Black Blade", "Gargoyle's Blackblade", "Godslayer's Greatsword"],
     "shields": ["Erdtree Greatshield"],
     "armorSuggestion": "Maliketh's Set for fashion or Crucible Knight Set for poise.",
-    "talismans": ["Shard of Alexander", "Flock's Canvas Talisman", "Erdtree's Favor", "Radagon's Icon"],
+    "talismans": ["Shard Of Alexander", "Flock's Canvas Talisman", "Erdtree's Favor", "Radagon Icon"],
     "ashesOfWar": [],
-    "spells": ["Black Blade", "Golden Vow", "Flame, Grant Me Strength"],
+    "spells": ["Black Blade", "Golden Vow (spell)", "Flame, Grant Me Strength"],
     "tips": "Destined Death effects reduce enemy max HP by ~10% for 30 seconds. Stack Maliketh's weapon skill + Black Blade incantation for devastating HP shred."
   },
   {
@@ -561,7 +561,7 @@
     "weapons": ["Bloodfiend's Arm", "Bloodfiend's Sacred Spear"],
     "shields": [],
     "armorSuggestion": "Bloodfiend's Set or heavy armor for poise. Over 80 poise recommended.",
-    "talismans": ["Lord of Blood's Exultation", "Shard of Alexander", "Erdtree's Favor", "Bull-Goat's Talisman"],
+    "talismans": ["Lord Of Blood's Exultation", "Shard Of Alexander", "Erdtree's Favor", "Bull-goat's Talisman"],
     "ashesOfWar": [],
     "spells": [],
     "tips": "Bloodfiend weapons have innate bleed and scale with STR/ARC. Two-hand for 1.5x STR scaling. DLC weapons hit extremely hard."
@@ -588,7 +588,7 @@
     "weapons": ["Backhand Blade"],
     "shields": [],
     "armorSuggestion": "Light armor for fast roll. Leather Set or Black Knife Set.",
-    "talismans": ["Rotten Winged Sword Insignia", "Millicent's Prosthesis", "Shard of Alexander", "Erdtree's Favor"],
+    "talismans": ["Winged Sword Insignia", "Millicent's Prosthesis", "Shard Of Alexander", "Erdtree's Favor"],
     "ashesOfWar": ["Blind Spot", "Keen Blade"],
     "spells": [],
     "tips": "Backhand Blades have unique dodge attacks that close distance instantly. Powerstance two for devastating L1 combos. Light roll recommended for maximum mobility."
@@ -615,9 +615,9 @@
     "weapons": ["Rellana's Twin Blades"],
     "shields": [],
     "armorSuggestion": "Rellana's Set for fashion or medium armor for balance.",
-    "talismans": ["Shard of Alexander", "Fire Scorpion Charm", "Magic Scorpion Charm", "Erdtree's Favor"],
+    "talismans": ["Shard Of Alexander", "Fire Scorpion Charm", "Magic Scorpion Charm", "Erdtree's Favor"],
     "ashesOfWar": [],
-    "spells": ["Golden Vow"],
+    "spells": ["Golden Vow (spell)"],
     "tips": "Rellana's scales with STR/DEX/INT/FAI making it ideal for spread-stat builds. The weapon skill does massive fire+magic AoE damage. Higher level build but very rewarding."
   },
   {
@@ -642,7 +642,7 @@
     "weapons": ["Dueling Shield"],
     "shields": ["Fingerprint Stone Shield"],
     "armorSuggestion": "Heavy armor like Bull-Goat or Veteran's Set. High poise and equip load.",
-    "talismans": ["Greatshield Talisman", "Erdtree's Favor", "Great-Jar's Arsenal", "Bull-Goat's Talisman"],
+    "talismans": ["Greatshield Talisman", "Erdtree's Favor", "Great-jar's Arsenal", "Bull-goat's Talisman"],
     "ashesOfWar": ["Shield Bash"],
     "spells": [],
     "tips": "Thrusting Shields attack while maintaining guard — you're nearly invincible while attacking. Pair with a greatshield in left hand for maximum protection."
@@ -669,7 +669,7 @@
     "weapons": ["Black Bow", "Erdtree Greatbow", "Lion Greatbow"],
     "shields": [],
     "armorSuggestion": "Light armor for fast rolls. Land of Reeds Set or leather armor.",
-    "talismans": ["Arrow's Sting Talisman", "Shard of Alexander", "Erdtree's Favor", "Rotten Winged Sword Insignia"],
+    "talismans": ["Arrow's Sting Talisman", "Shard Of Alexander", "Erdtree's Favor", "Winged Sword Insignia"],
     "ashesOfWar": [],
     "spells": [],
     "tips": "Black Bow has shortbow speed with longbow damage and range. Use Mighty Shot AoW for huge single-hit damage. Rain of Arrows for AoE. Stock up on different arrow types."
@@ -696,7 +696,7 @@
     "weapons": ["Fallingstar Beast Jaw", "Ruins Greatsword", "Meteorite Staff"],
     "shields": [],
     "armorSuggestion": "Radahn's Set for fashion or any medium-heavy armor.",
-    "talismans": ["Shard of Alexander", "Graven-Mass Talisman", "Erdtree's Favor", "Radagon's Soreseal"],
+    "talismans": ["Shard Of Alexander", "Graven-mass Talisman", "Erdtree's Favor", "Radagon's Soreseal"],
     "ashesOfWar": ["Gravitas"],
     "spells": ["Rock Sling", "Meteorite", "Gravity Well", "Collapsing Stars"],
     "tips": "Gravity sorceries deal physical damage, bypassing magic resistance. Rock Sling staggers most enemies. Fallingstar Beast Jaw weapon skill is one of the best in the game."
@@ -723,9 +723,9 @@
     "weapons": ["Envoy's Long Horn", "Envoy's Greathorn", "Envoy's Horn"],
     "shields": [],
     "armorSuggestion": "Any medium armor. Fashion over function for this fun build.",
-    "talismans": ["Shard of Alexander", "Sacred Scorpion Charm", "Flock's Canvas Talisman", "Erdtree's Favor"],
+    "talismans": ["Shard Of Alexander", "Sacred Scorpion Charm", "Flock's Canvas Talisman", "Erdtree's Favor"],
     "ashesOfWar": [],
-    "spells": ["Golden Vow", "Blessing of the Erdtree"],
+    "spells": ["Golden Vow (spell)", "Blessing Of The Erdtree"],
     "tips": "Envoy's Long Horn Bubble Shower does devastating DPS against large bosses — the bubbles track and hit multiple times. One of the strongest PvE weapons per hit."
   },
   {
@@ -750,14 +750,14 @@
     "weapons": ["Hoslow's Petal Whip", "Thorned Whip", "Urumi"],
     "shields": [],
     "armorSuggestion": "White Mask + medium armor. Stay under 70% equip load.",
-    "talismans": ["Lord of Blood's Exultation", "Rotten Winged Sword Insignia", "Millicent's Prosthesis", "Erdtree's Favor"],
+    "talismans": ["Lord Of Blood's Exultation", "Winged Sword Insignia", "Millicent's Prosthesis", "Erdtree's Favor"],
     "ashesOfWar": ["Seppuku", "Blood Tax"],
     "spells": [],
     "tips": "Whips can't be parried and have excellent range. Powerstance L1 hits rapidly for fast bleed procs. Apply Seppuku for even more bleed buildup."
   },
   {
     "id": "sword-night-flame",
-    "name": "Sword of Night and Flame",
+    "name": "Sword Of Night And Flame",
     "description": "INT/FAI hybrid — dual beam weapon skill with both sorcery and flame damage.",
     "tags": ["intelligence", "faith", "magic", "fire", "hybrid"],
     "difficulty": "beginner",
@@ -774,12 +774,12 @@
       "faith":        { "min": 24, "ideal": 40 },
       "arcane":       { "min": 0,  "ideal": 7 }
     },
-    "weapons": ["Sword of Night and Flame", "Golden Order Seal", "Prince of Death's Staff"],
+    "weapons": ["Sword Of Night And Flame", "Golden Order Seal", "Prince Of Death's Star"],
     "shields": [],
     "armorSuggestion": "Carian Knight Set or any medium armor for balanced defense.",
-    "talismans": ["Shard of Alexander", "Magic Scorpion Charm", "Fire Scorpion Charm", "Erdtree's Favor"],
+    "talismans": ["Shard Of Alexander", "Magic Scorpion Charm", "Fire Scorpion Charm", "Erdtree's Favor"],
     "ashesOfWar": [],
-    "spells": ["Comet Azur", "Black Flame", "Golden Vow", "Flame, Grant Me Strength"],
+    "spells": ["Comet Azur", "Black Flame", "Golden Vow (spell)", "Flame, Grant Me Strength"],
     "tips": "Night-and-Flame Stance R1 fires a comet beam (INT), R2 does a flame sweep (FAI). Scales with both stats. Can use both sorceries and incantations with one build."
   },
   {
@@ -804,7 +804,7 @@
     "weapons": ["Milady", "Leda's Sword"],
     "shields": ["Brass Shield"],
     "armorSuggestion": "Medium armor for balanced poise and speed. Horned Warrior Set or Banished Knight Set.",
-    "talismans": ["Shard of Alexander", "Erdtree's Favor", "Claw Talisman", "Rotten Winged Sword Insignia"],
+    "talismans": ["Shard Of Alexander", "Erdtree's Favor", "Claw Talisman", "Winged Sword Insignia"],
     "ashesOfWar": ["Wing Stance", "Impaling Thrust"],
     "spells": [],
     "tips": "Light Greatswords are the DLC's new weapon class — fast like a straight sword but with greatsword damage. Wing Stance has excellent mix-ups for PvP."

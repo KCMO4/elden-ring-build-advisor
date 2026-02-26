@@ -350,7 +350,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
   const loadPct  = maxLoad > 0 ? (currLoad / maxLoad) * 100 : 0;
   const loadTag  = loadPct < 30 ? 'Light' : loadPct < 70 ? 'Medium' : loadPct < 100 ? 'Heavy' : 'Overloaded!';
 
-  const neg      = totalNegation(equipped);
+  const neg      = useMemo(() => totalNegation(equipped), [equipped]);
   const hasArmor = Object.values(neg).some(v => v > 0);
 
   // Talisman + Physick + Buff defense bonuses stack MULTIPLICATIVELY with armor negation
@@ -424,16 +424,17 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
     return slots;
   }, [equipped]);
 
-  // AR estimation (pass 2H flag for requirement checks)
+  // AR estimation — effectiveStats already has 2H STR boost, no need to pass twoHanded
   const rawAr = useMemo(
-    () => activeWeapon?.damage ? estimateEquippedAR(activeWeapon, effectiveStats, twoHanded) : null,
-    [activeWeapon, effectiveStats, twoHanded],
+    () => activeWeapon?.damage ? estimateEquippedAR(activeWeapon, effectiveStats) : null,
+    [activeWeapon, effectiveStats],
   );
 
   // Check if weapon requirements are met (for UI warning)
+  // effectiveStats.strength already includes 2H ×1.5 when applicable
   const reqsMet = useMemo(
-    () => activeWeapon ? meetsRequirements(activeWeapon, effectiveStats, twoHanded) : true,
-    [activeWeapon, effectiveStats, twoHanded],
+    () => activeWeapon ? meetsRequirements(activeWeapon, effectiveStats) : true,
+    [activeWeapon, effectiveStats],
   );
 
   // Spell scaling — detect equipped staves/seals

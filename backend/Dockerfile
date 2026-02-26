@@ -23,5 +23,6 @@ FROM base AS production
 ENV NODE_ENV=production
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/src/data ./dist/data
 EXPOSE 3001
 CMD ["node", "dist/index.js"]

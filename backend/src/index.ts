@@ -67,8 +67,16 @@ app.post('/api/parse', upload.single('savefile'), (req: Request, res: Response) 
     return;
   }
 
+  let result;
+  try {
+    result = parseSl2(req.file.buffer);
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Error desconocido al parsear el archivo';
+    res.status(422).json({ error: message });
+    return;
+  }
+
   const includeInventory = req.query['inventory'] === 'true';
-  const result = parseSl2(req.file.buffer);
   const buf    = req.file.buffer;
 
   const activeSlots = result.slots.filter(s => s.active);

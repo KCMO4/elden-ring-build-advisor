@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import type { EquippedWeapon, CharacterStats } from '../../types';
+import type { EquippedWeapon, CharacterStats, ScalingGrade } from '../../types';
 import { useTooltipPosition } from '../../hooks/useTooltipPosition';
 import { getTalismanEffectLines } from '../../utils/talismanEffects';
 import { getGreatRuneEffectLines } from '../../utils/greatRuneEffects';
@@ -13,8 +13,6 @@ interface Props {
   /** Stats del personaje — necesarios para calcular el AR estimado con escalado */
   stats?: CharacterStats;
 }
-
-type ScalingGrade = 'S' | 'A' | 'B' | 'C' | 'D' | 'E' | '-';
 
 const GRADE_CLASS: Record<ScalingGrade, string> = {
   S: styles.gradeS,
