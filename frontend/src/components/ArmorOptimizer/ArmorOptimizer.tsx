@@ -11,8 +11,6 @@ interface Props {
   stats: CharacterStats;
 }
 
-type RollClass = 'light' | 'medium' | 'heavy';
-
 type GoalKey =
   | 'poise'
   | 'physical' | 'magic' | 'fire' | 'lightning' | 'holy'
@@ -56,12 +54,6 @@ const GOALS: { key: GoalKey; label: string }[] = [
   { key: 'robustness', label: 'Robustness' },
   { key: 'focus',      label: 'Focus' },
   { key: 'vitality',   label: 'Vitality' },
-];
-
-const ROLL_CLASSES: { key: RollClass; label: string; threshold: number }[] = [
-  { key: 'light',  label: 'Light',  threshold: 0.3 },
-  { key: 'medium', label: 'Medium', threshold: 0.7 },
-  { key: 'heavy',  label: 'Heavy',  threshold: 1.0 },
 ];
 
 const SLOT_ORDER = ['head', 'chest', 'arms', 'legs'] as const;
@@ -300,7 +292,6 @@ function diffClass(val: number): string {
 
 export default function ArmorOptimizer({ equipped, inventory, stats }: Props) {
   const [goal, setGoal] = useState<GoalKey>('poise');
-  const [rollClass, setRollClass] = useState<RollClass>('medium');
   const [showBreakdown, setShowBreakdown] = useState(false);
 
   // Compute talisman bonuses (for equip load)
@@ -319,8 +310,8 @@ export default function ArmorOptimizer({ equipped, inventory, stats }: Props) {
   // Weight from weapons
   const wepWeight = weaponWeight(equipped);
 
-  // Roll threshold
-  const rollThreshold = ROLL_CLASSES.find(r => r.key === rollClass)!.threshold;
+  // Roll threshold (fixed to medium roll)
+  const rollThreshold = 0.7;
 
   // Armor budget
   const armorBudget = Math.round((maxLoad * rollThreshold - wepWeight) * 10) / 10;
@@ -371,20 +362,6 @@ export default function ArmorOptimizer({ equipped, inventory, stats }: Props) {
           ))}
         </div>
 
-        {/* Roll class */}
-        <div className={styles.rollRow}>
-          <span className={styles.filterLabel}>Roll</span>
-          {ROLL_CLASSES.map(r => (
-            <button
-              key={r.key}
-              className={`${styles.rollPill} ${rollClass === r.key ? styles.rollPillActive : ''}`}
-              onClick={() => setRollClass(r.key)}
-            >
-              {r.label} ({Math.round(r.threshold * 100)}%)
-            </button>
-          ))}
-        </div>
-
         {/* Budget display */}
         <div className={styles.budgetRow}>
           <span className={styles.budgetLabel}>Budget</span>
@@ -416,7 +393,7 @@ export default function ArmorOptimizer({ equipped, inventory, stats }: Props) {
 
         {hasArmors && armorBudget <= 0 && (
           <div className={styles.emptyState}>
-            No weight budget available. Weapons exceed the equip load limit for {rollClass} roll.
+            No weight budget available. Weapons exceed the equip load limit for medium roll.
           </div>
         )}
 

@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import type { ResolvedInventoryItem, CharacterStats, ScalingGrade } from '../../types';
 import { useTooltipPosition } from '../../hooks/useTooltipPosition';
 import { getTalismanEffectLines } from '../../utils/talismanEffects';
-import { estimateARWithBreakdown, estimatePassiveBuildup } from '../../utils/arCalc';
+import { estimateARWithBreakdown, meetsRequirements, estimatePassiveBuildup } from '../../utils/arCalc';
 // Reutiliza los estilos del ItemTooltip del equipo para consistencia visual
 import styles from '../ItemTooltip/ItemTooltip.module.css';
 import invStyles from './InventoryTooltip.module.css';
@@ -86,12 +86,20 @@ function WeaponSection({ item, stats }: { item: ResolvedInventoryItem; stats?: C
   const { damage, scaling, weight, stability, passives, requirements, guardNegation, critical } = item;
   if (!damage && !scaling && !stability && !guardNegation) return null;
 
-  // AR estimado si hay stats del personaje y el arma tiene damage+scaling
+  // AR estimado sin penalización (AR real del arma)
   const arData = useMemo(() => {
     if (!stats || !damage || !scaling) return null;
-    // ResolvedInventoryItem es estructuralmente compatible con EquippedWeapon
-    return estimateARWithBreakdown(item as any, stats);
+    return estimateARWithBreakdown(item as any, stats, false);
   }, [item, stats, damage, scaling]);
+
+  // Requisitos cumplidos?
+  const reqsMet = !stats || !requirements ? true : meetsRequirements(item as any, stats);
+
+  // AR penalizado si se equipara sin cumplir requisitos
+  const equippedAr = useMemo(() => {
+    if (reqsMet || !arData) return null;
+    return estimateARWithBreakdown(item as any, stats!, true);
+  }, [item, stats, reqsMet, arData]);
 
   const arMax = 650;
   const maxDmg = damage
@@ -116,6 +124,17 @@ function WeaponSection({ item, stats }: { item: ResolvedInventoryItem; stats?: C
               <ColorDamageBar label="Fire"      value={arData.ar.fire}      max={arMax} color={DMG_COLOR.fire}      />
               <ColorDamageBar label="Lightning" value={arData.ar.lightning} max={arMax} color={DMG_COLOR.lightning} />
               <ColorDamageBar label="Holy"      value={arData.ar.holy}      max={arMax} color={DMG_COLOR.holy}      />
+              <div className={invStyles.totalArRow}>
+                <span className={invStyles.totalArLabel}>Total AR</span>
+                <span className={invStyles.totalArValue}>{arData.ar.total}</span>
+              </div>
+              {equippedAr && (
+                <div className={invStyles.equippedArRow}>
+                  <span className={invStyles.equippedArLabel}>If Equipped</span>
+                  <span className={invStyles.equippedArValue}>{equippedAr.ar.total}</span>
+                  <span className={invStyles.equippedArNote}>reqs not met</span>
+                </div>
+              )}
             </>
           ) : (
             <>

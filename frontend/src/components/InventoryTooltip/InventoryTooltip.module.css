@@ -95,6 +95,58 @@
   margin-bottom: 0.4rem;
 }
 
+/* ── Total AR row ────────────────────────────── */
+.totalArRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.totalArLabel {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.totalArValue {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── If Equipped (penalized AR) ──────────────── */
+.equippedArRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+}
+
+.equippedArLabel {
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e06060;
+}
+
+.equippedArValue {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #e06060;
+  font-variant-numeric: tabular-nums;
+}
+
+.equippedArNote {
+  font-size: 0.48rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
 /* Evitar borde doble cuando Guard Boost + Peso aparecen juntos */
 .noTopBorder {
   border-top: none;

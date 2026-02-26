@@ -426,10 +426,98 @@ export interface ARBreakdown {
   arcBonus: number;
 }
 
+function tryExactARWithBreakdown(
+  weapon: EquippedWeapon,
+  stats: CharacterStats,
+  applyPenalty = true,
+): { ar: { physical: number; magic: number; fire: number; lightning: number; holy: number; total: number }; breakdown: ARBreakdown } | null {
+  const bundle = getScalingData();
+  if (!bundle) return null;
+
+  const baseId = weapon.baseId;
+  if (!baseId) return null;
+
+  const exactW: WeaponScalingEntry | undefined =
+    bundle.weapons[baseId] ?? bundle.weapons[baseId * 100];
+  if (!exactW) return null;
+
+  const lvl = weapon.upgradeLevel ?? 0;
+  const reinforceTable: ReinforceLevelData[] | undefined = bundle.reinforce[exactW.reinforceId];
+  if (!reinforceTable) return null;
+
+  const reinforceIdx = Math.min(lvl, reinforceTable.length - 1);
+  const rf = reinforceTable[reinforceIdx];
+
+  // Base damage at +upgrade
+  const bPhys = Math.round(exactW.basePhys * rf.physAtk);
+  const bMag  = Math.round(exactW.baseMag  * rf.magAtk);
+  const bFire = Math.round(exactW.baseFire * rf.fireAtk);
+  const bLtn  = Math.round(exactW.baseLtn  * rf.ltnAtk);
+  const bHoly = Math.round(exactW.baseHoly * rf.holyAtk);
+
+  // Scaling coefficients at +upgrade
+  const strCoeff = (exactW.str / 100) * rf.strScl;
+  const dexCoeff = (exactW.dex / 100) * rf.dexScl;
+  const intCoeff = (exactW.int / 100) * rf.intScl;
+  const faiCoeff = (exactW.fai / 100) * rf.faiScl;
+  const arcCoeff = (exactW.arc / 100) * rf.arcScl;
+
+  // Resolve CalcCorrectGraph per damage type
+  const gPhys = resolveGraph(exactW.graphPhys);
+  const gMag  = resolveGraph(exactW.graphMag);
+  const gFire = resolveGraph(exactW.graphFire);
+  const gLtn  = resolveGraph(exactW.graphLtn);
+  const gHoly = resolveGraph(exactW.graphHoly);
+  const gArc  = resolveGraph(7);
+
+  // Per-stat bonuses
+  const strPhys = bPhys * strCoeff * interpGraph(gPhys, stats.strength);
+  const dexPhys = bPhys * dexCoeff * interpGraph(gPhys, stats.dexterity);
+
+  const intMag  = bMag  * intCoeff * interpGraph(gMag, stats.intelligence);
+  const faiMag  = bMag  * faiCoeff * interpGraph(gMag, stats.faith);
+  const faiFire = bFire * faiCoeff * interpGraph(gFire, stats.faith);
+  const faiLtn  = bLtn  * faiCoeff * interpGraph(gLtn, stats.faith);
+  const faiHoly = bHoly * faiCoeff * interpGraph(gHoly, stats.faith);
+
+  const arcPhys = bPhys * arcCoeff * interpGraph(gArc, stats.arcane);
+  const arcMag  = bMag  * arcCoeff * interpGraph(gArc, stats.arcane);
+  const arcFire = bFire * arcCoeff * interpGraph(gArc, stats.arcane);
+  const arcLtn  = bLtn  * arcCoeff * interpGraph(gArc, stats.arcane);
+  const arcHoly = bHoly * arcCoeff * interpGraph(gArc, stats.arcane);
+
+  const pen = applyPenalty && !meetsRequirements(weapon, stats) ? UNMET_PENALTY : 1;
+
+  const physical  = Math.round((bPhys + strPhys + dexPhys + arcPhys) * pen);
+  const magic     = Math.round((bMag  + intMag + faiMag + arcMag) * pen);
+  const fire      = Math.round((bFire + faiFire + arcFire) * pen);
+  const lightning = Math.round((bLtn  + faiLtn + arcLtn) * pen);
+  const holy      = Math.round((bHoly + faiHoly + arcHoly) * pen);
+  const total     = physical + magic + fire + lightning + holy;
+
+  return {
+    ar: { physical, magic, fire, lightning, holy, total },
+    breakdown: {
+      base: { physical: bPhys, magic: bMag, fire: bFire, lightning: bLtn, holy: bHoly },
+      strBonus: Math.round((strPhys) * pen),
+      dexBonus: Math.round((dexPhys) * pen),
+      intBonus: Math.round((intMag) * pen),
+      faiBonus: Math.round((faiMag + faiFire + faiLtn + faiHoly) * pen),
+      arcBonus: Math.round((arcPhys + arcMag + arcFire + arcLtn + arcHoly) * pen),
+    },
+  };
+}
+
 export function estimateARWithBreakdown(
   weapon: EquippedWeapon,
   stats:  CharacterStats,
+  applyPenalty = true,
 ): { ar: ReturnType<typeof estimateEquippedAR>; breakdown: ARBreakdown } {
+  // Try exact calculation first (regulation.bin data)
+  const exactResult = tryExactARWithBreakdown(weapon, stats, applyPenalty);
+  if (exactResult) return exactResult;
+
+  // Fallback: approximation by scaling grade
   const lvl    = weapon.upgradeLevel ?? 0;
   const somber = isSomberHeuristic(weapon);
   const mult   = upgradeMultiplier(lvl, somber);
@@ -465,7 +553,7 @@ export function estimateARWithBreakdown(
   const arcLigBon  = bLig  * arcCoeff * sclMul * interpGraph(ARC_GRAPH, stats.arcane);
   const arcHolyBon = bHoly * arcCoeff * sclMul * interpGraph(ARC_GRAPH, stats.arcane);
 
-  const pen = meetsRequirements(weapon, stats) ? 1 : UNMET_PENALTY;
+  const pen = applyPenalty && !meetsRequirements(weapon, stats) ? UNMET_PENALTY : 1;
   const physical  = Math.round((bPhys + strBon + dexBon + arcPhysBon) * pen);
   const magic     = Math.round((bMag  + intBon + faiMag + arcMagBon) * pen);
   const fire      = Math.round((bFire + faiFire + arcFireBon) * pen);

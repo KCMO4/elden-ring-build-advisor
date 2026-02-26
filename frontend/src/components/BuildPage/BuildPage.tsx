@@ -9,14 +9,14 @@ import AdvisorPanel from '../AdvisorPanel/AdvisorPanel';
 import MatchmakingCalc from '../MatchmakingCalc/MatchmakingCalc';
 import BuildPlanner from '../BuildPlanner/BuildPlanner';
 import ArmorOptimizer from '../ArmorOptimizer/ArmorOptimizer';
-import WeaponCompare from '../WeaponCompare/WeaponCompare';
+
 import RuneCalculator from '../RuneCalculator/RuneCalculator';
 import ItemTooltip from '../ItemTooltip/ItemTooltip';
 import { useImagePreloader } from '../../hooks/useImagePreloader';
 import { loadScalingData } from '../../utils/scalingData';
 import styles from './BuildPage.module.css';
 
-type ContentTab = 'inventory' | 'builds' | 'matchmaking' | 'planner' | 'armor' | 'weapons' | 'runes';
+type ContentTab = 'inventory' | 'builds' | 'matchmaking' | 'planner' | 'armor' | 'runes';
 
 interface Props {
   character: CharacterData;
@@ -154,7 +154,6 @@ export default function BuildPage({ character, onBack }: Props) {
               ['builds',     'Builds'],
               ['planner',    'Planner'],
               ['armor',      'Armor Opt.'],
-              ['weapons',    'Compare'],
               ['runes',      'Runes'],
               ['matchmaking', 'Matchmaking'],
             ] as [ContentTab, string][]).map(([key, label]) => (
@@ -190,13 +189,6 @@ export default function BuildPage({ character, onBack }: Props) {
               equipped={character.equipped}
               inventory={character.inventory}
               stats={character.stats}
-            />
-          )}
-          {contentTab === 'weapons' && (
-            <WeaponCompare
-              stats={character.stats}
-              equipped={character.equipped}
-              inventory={character.inventory}
             />
           )}
           {contentTab === 'runes' && (

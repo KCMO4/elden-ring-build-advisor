@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import type { CharacterStats, EquippedItems, EquippedWeapon, DamageStats, DefenseStats } from '../../types';
 import { useMountAnimation } from '../../hooks/useMountAnimation';
 import { computeTalismanBonuses } from '../../utils/talismanEffects';
@@ -6,6 +6,7 @@ import { getGreatRuneEffect } from '../../utils/greatRuneEffects';
 import { computePhysickBonuses } from '../../utils/crystalTearEffects';
 import { BUFF_LIST, computeBuffTotals } from '../../utils/buffEffects';
 import { estimateEquippedAR, stackNegation, estimateSpellScaling, meetsRequirements, estimatePassiveBuildup } from '../../utils/arCalc';
+import { loadScalingData, getScalingData } from '../../utils/scalingData';
 import styles from './DerivedStatsPanel.module.css';
 
 interface Props {
@@ -277,6 +278,13 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
   const [greatRuneActive, setGreatRuneActive] = useState(false);
   const [physickActive, setPhysickActive] = useState(false);
   const [activeBuffIds, setActiveBuffIds] = useState<string[]>([]);
+
+  // Track scaling data availability to re-render AR when exact data loads
+  const [scalingReady, setScalingReady] = useState(() => getScalingData() !== null);
+  useEffect(() => {
+    if (scalingReady) return;
+    loadScalingData().then(bundle => { if (bundle) setScalingReady(true); });
+  }, [scalingReady]);
   const [buffsOpen, setBuffsOpen] = useState(false);
 
   // ── Talisman bonuses ──
@@ -425,9 +433,10 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
   }, [equipped]);
 
   // AR estimation — effectiveStats already has 2H STR boost, no need to pass twoHanded
+  // scalingReady triggers recalc when exact data loads (replaces fallback approximation)
   const rawAr = useMemo(
     () => activeWeapon?.damage ? estimateEquippedAR(activeWeapon, effectiveStats) : null,
-    [activeWeapon, effectiveStats],
+    [activeWeapon, effectiveStats, scalingReady],
   );
 
   // Check if weapon requirements are met (for UI warning)
@@ -486,7 +495,7 @@ export default function DerivedStatsPanel({ stats, equipped, level, heldRunes }:
     if (!raw) return null;
     const total = raw.physical + raw.magic + raw.fire + raw.lightning + raw.holy;
     return { ...raw, total };
-  }, [offHandWeapon, effectiveStats]);
+  }, [offHandWeapon, effectiveStats, scalingReady]);
 
   // ── Guard Boost (shield in LH) ──
   const equippedShield = useMemo(() => {
