@@ -1,0 +1,396 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  min-height: 0;
+  max-height: calc(100vh - 140px);
+}
+
+/* ── Header ──────────────────────────────────── */
+.header {
+  padding: 0.8rem 1rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+/* ── Goal filter pills ───────────────────────── */
+.filterRow {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.filterLabel {
+  font-size: 0.45rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-right: 0.2rem;
+  flex-shrink: 0;
+}
+
+.filterPill {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+
+.filterPill:hover {
+  border-color: var(--border-gold);
+  color: var(--text);
+}
+
+.filterPillActive {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+  background: rgba(201, 167, 79, 0.08);
+}
+
+/* ── Roll class pills ────────────────────────── */
+.rollRow {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.rollPill {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+
+.rollPill:hover {
+  border-color: var(--border-gold);
+  color: var(--text);
+}
+
+.rollPillActive {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+  background: rgba(201, 167, 79, 0.08);
+}
+
+/* ── Weight budget display ───────────────────── */
+.budgetRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.3rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.budgetLabel {
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.budgetValue {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.budgetDetail {
+  font-size: 0.52rem;
+  color: var(--text-dim);
+}
+
+.budgetBar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+  min-width: 40px;
+}
+
+.budgetFill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* ── Scrollable content ──────────────────────── */
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 0.6rem 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.scrollArea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+/* ── Empty / no-results ──────────────────────── */
+.emptyState {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* ── Set section (Optimal / Current) ─────────── */
+.setSection {
+  margin-bottom: 0.75rem;
+}
+
+.setSectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.setSectionTitle {
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.setSectionScore {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Armor piece row ─────────────────────────── */
+.pieceRow {
+  display: grid;
+  grid-template-columns: 36px 1fr auto auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid var(--border);
+  background: var(--bg-slot);
+  margin-bottom: 0.2rem;
+  transition: border-color 0.15s;
+}
+
+.pieceRow:hover {
+  border-color: var(--border-gold);
+}
+
+.pieceSlotLabel {
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.pieceName {
+  font-size: 0.72rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.pieceNameEmpty {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.pieceGoalVal {
+  font-size: 0.62rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+  text-align: right;
+  min-width: 2.5rem;
+}
+
+.pieceWeight {
+  font-size: 0.52rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+  text-align: right;
+  min-width: 2.5rem;
+}
+
+/* ── Totals row ──────────────────────────────── */
+.totalsRow {
+  display: grid;
+  grid-template-columns: 36px 1fr auto auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.4rem;
+  border-top: 1px solid var(--gold-dim);
+  margin-top: 0.1rem;
+}
+
+.totalsLabel {
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  grid-column: 1 / 3;
+}
+
+.totalsValue {
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-bright);
+  text-align: right;
+  min-width: 2.5rem;
+}
+
+.totalsWeight {
+  font-size: 0.6rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  text-align: right;
+  min-width: 2.5rem;
+}
+
+/* ── Difference summary ──────────────────────── */
+.diffRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  background: rgba(201, 167, 79, 0.04);
+  border: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
+
+.diffItem {
+  font-size: 0.62rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.diffPositive {
+  color: #6dbf7e;
+}
+
+.diffNegative {
+  color: #e05a5a;
+}
+
+.diffNeutral {
+  color: var(--text-dim);
+}
+
+/* ── Stats breakdown table ───────────────────── */
+.breakdownSection {
+  margin-top: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.breakdownTitle {
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.35rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.breakdownToggle {
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  transition: transform 0.2s;
+}
+
+.breakdownToggleOpen {
+  transform: rotate(90deg);
+}
+
+.breakdownGrid {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 0.15rem 0.5rem;
+  font-size: 0.55rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.breakdownHeader {
+  font-size: 0.42rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.breakdownStatLabel {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.breakdownOptimal {
+  color: var(--gold);
+  text-align: right;
+  font-weight: 600;
+}
+
+.breakdownCurrent {
+  color: var(--text);
+  text-align: right;
+}
+
+.breakdownDiff {
+  text-align: right;
+  font-weight: 600;
+}

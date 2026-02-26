@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { getBuilds } from '../../api/client';
 import { rankBuilds } from '../../utils/buildMatcher';
 import type { BuildMatch, BuildTemplate } from '../../utils/buildMatcher';
@@ -92,10 +92,28 @@ const TAG_COLORS: Record<string, string> = {
   dex: '#b8d060', ranged: '#8ecfef', gravity: '#9070c0', bubble: '#f0c080',
 };
 
+// ── Filter types ─────────────────────────────────────────────
+
+type DiffFilter = 'all' | 'beginner' | 'intermediate' | 'advanced';
+type ModeFilter = 'all' | 'pve' | 'pvp';
+
+const POPULAR_TAGS = ['bleed', 'magic', 'strength', 'faith', 'dex', 'fire', 'frost', 'holy', 'lightning', 'arcane', 'tank', 'ranged'];
+
+const PAGE_SIZE = 5;
+
 export default function AdvisorPanel({ stats, level = 1, mainWeapon, inventory }: Props) {
   const [builds, setBuilds] = useState<BuildTemplate[]>([]);
   const [expandedBuild, setExpandedBuild] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+
+  // Filters
+  const [searchText, setSearchText] = useState('');
+  const [diffFilter, setDiffFilter] = useState<DiffFilter>('all');
+  const [modeFilter, setModeFilter] = useState<ModeFilter>('all');
+  const [tagFilter, setTagFilter] = useState<string | null>(null);
+
+  // Pagination
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     setLoading(true);
@@ -112,178 +130,328 @@ export default function AdvisorPanel({ stats, level = 1, mainWeapon, inventory }
     [builds, stats, level, inventory],
   );
 
+  // Apply filters
+  const filteredMatches = useMemo(() => {
+    let result = buildMatches;
+
+    if (searchText.trim()) {
+      const q = searchText.toLowerCase();
+      result = result.filter(m =>
+        m.build.name.toLowerCase().includes(q) ||
+        m.build.description.toLowerCase().includes(q) ||
+        m.build.weapons.some(w => w.toLowerCase().includes(q)),
+      );
+    }
+
+    if (diffFilter !== 'all') {
+      result = result.filter(m => m.build.difficulty === diffFilter);
+    }
+
+    if (modeFilter === 'pve') {
+      result = result.filter(m => m.build.pve);
+    } else if (modeFilter === 'pvp') {
+      result = result.filter(m => m.build.pvp);
+    }
+
+    if (tagFilter) {
+      result = result.filter(m => m.build.tags.includes(tagFilter));
+    }
+
+    return result;
+  }, [buildMatches, searchText, diffFilter, modeFilter, tagFilter]);
+
+  // Reset page when filters change
+  const resetFiltersPage = useCallback(() => setPage(0), []);
+  useEffect(() => { resetFiltersPage(); }, [searchText, diffFilter, modeFilter, tagFilter, resetFiltersPage]);
+
+  // Pagination
+  const totalPages = Math.max(1, Math.ceil(filteredMatches.length / PAGE_SIZE));
+  const safePageVal = Math.min(page, totalPages - 1);
+  const pagedMatches = filteredMatches.slice(safePageVal * PAGE_SIZE, (safePageVal + 1) * PAGE_SIZE);
+
+  const hasActiveFilters = searchText.trim() !== '' || diffFilter !== 'all' || modeFilter !== 'all' || tagFilter !== null;
+
   return (
     <div className={styles.panel}>
-      <div className={styles.title}>Recommended Builds</div>
-
-      {loading && (
-        <div className={styles.loading}>
-          <div className={styles.spinner} />
-          <span>Matching builds to your stats...</span>
+      {/* ── Header ── */}
+      <div className={styles.header}>
+        <div className={styles.titleRow}>
+          <span className={styles.title}>Recommended Builds</span>
+          <span className={styles.countBadge}>
+            {filteredMatches.length}{filteredMatches.length !== buildMatches.length ? ` / ${buildMatches.length}` : ''}
+          </span>
         </div>
-      )}
 
-      {!loading && buildMatches.length > 0 && (
-        <div className={styles.buildList}>
-          {buildMatches.map((match, idx) => {
-            const isExpanded = expandedBuild === match.build.id;
-            return (
-              <div key={match.build.id} className={styles.buildCard}>
-                <div
-                  className={styles.buildHeader}
-                  onClick={() => setExpandedBuild(isExpanded ? null : match.build.id)}
-                >
-                  <span className={styles.buildRank}>
-                    {idx < 3 ? '\u2605' : `#${idx + 1}`}
-                  </span>
-                  <div className={styles.buildMain}>
-                    <div className={styles.buildNameRow}>
-                      <span className={styles.buildName}>{match.build.name}</span>
-                      <span
-                        className={styles.diffBadge}
-                        style={{ color: DIFF_COLORS[match.build.difficulty] ?? '#aaa' }}
-                      >
-                        {match.build.difficulty}
-                      </span>
-                    </div>
-                    <div className={styles.buildDesc}>{match.build.description}</div>
-                    <div className={styles.buildTags}>
-                      {match.build.tags.slice(0, 4).map(tag => (
+        {/* ── Search ── */}
+        <input
+          className={styles.searchInput}
+          type="text"
+          placeholder="Search builds or weapons..."
+          value={searchText}
+          onChange={e => setSearchText(e.target.value)}
+        />
+
+        {/* ── Difficulty filter ── */}
+        <div className={styles.filterRow}>
+          {(['all', 'beginner', 'intermediate', 'advanced'] as DiffFilter[]).map(d => (
+            <button
+              key={d}
+              className={`${styles.filterPill} ${diffFilter === d ? styles.filterPillActive : ''}`}
+              style={diffFilter === d && d !== 'all' ? { borderColor: DIFF_COLORS[d], color: DIFF_COLORS[d] } : undefined}
+              onClick={() => setDiffFilter(d)}
+            >
+              {d === 'all' ? 'All' : d.charAt(0).toUpperCase() + d.slice(1)}
+            </button>
+          ))}
+
+          <span className={styles.filterSep} />
+
+          {(['all', 'pve', 'pvp'] as ModeFilter[]).map(m => (
+            <button
+              key={m}
+              className={`${styles.filterPill} ${modeFilter === m ? styles.filterPillActive : ''}`}
+              style={modeFilter === m && m === 'pve' ? { borderColor: '#6dbf7e', color: '#6dbf7e' } : modeFilter === m && m === 'pvp' ? { borderColor: '#e05a5a', color: '#e05a5a' } : undefined}
+              onClick={() => setModeFilter(m)}
+            >
+              {m === 'all' ? 'All' : m.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
+        {/* ── Tag filter ── */}
+        <div className={styles.tagRow}>
+          {POPULAR_TAGS.map(tag => (
+            <button
+              key={tag}
+              className={`${styles.tagPill} ${tagFilter === tag ? styles.tagPillActive : ''}`}
+              style={tagFilter === tag ? { borderColor: TAG_COLORS[tag] ?? 'var(--border)', color: TAG_COLORS[tag] ?? 'var(--text)' } : undefined}
+              onClick={() => setTagFilter(tagFilter === tag ? null : tag)}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
+        {hasActiveFilters && (
+          <button
+            className={styles.clearBtn}
+            onClick={() => { setSearchText(''); setDiffFilter('all'); setModeFilter('all'); setTagFilter(null); }}
+          >
+            Clear filters
+          </button>
+        )}
+      </div>
+
+      {/* ── Build list ── */}
+      <div className={styles.buildScroll}>
+        {loading && (
+          <div className={styles.loading}>
+            <div className={styles.spinner} />
+            <span>Matching builds to your stats...</span>
+          </div>
+        )}
+
+        {!loading && filteredMatches.length === 0 && (
+          <div className={styles.emptyState}>
+            {hasActiveFilters ? 'No builds match your filters.' : 'No builds available.'}
+          </div>
+        )}
+
+        {!loading && pagedMatches.length > 0 && (
+          <div className={styles.buildList}>
+            {pagedMatches.map((match) => {
+              // Global rank in the full (unfiltered) list
+              const globalIdx = buildMatches.indexOf(match);
+              const isExpanded = expandedBuild === match.build.id;
+              return (
+                <div key={match.build.id} className={styles.buildCard}>
+                  <div
+                    className={styles.buildHeader}
+                    onClick={() => setExpandedBuild(isExpanded ? null : match.build.id)}
+                  >
+                    <span className={styles.buildRank}>
+                      {globalIdx < 3 ? '\u2605' : `#${globalIdx + 1}`}
+                    </span>
+                    <div className={styles.buildMain}>
+                      <div className={styles.buildNameRow}>
+                        <span className={styles.buildName}>{match.build.name}</span>
                         <span
-                          key={tag}
-                          className={styles.buildTag}
-                          style={{ borderColor: TAG_COLORS[tag] ?? 'var(--border)', color: TAG_COLORS[tag] ?? 'var(--text-dim)' }}
+                          className={styles.diffBadge}
+                          style={{ color: DIFF_COLORS[match.build.difficulty] ?? '#aaa' }}
                         >
-                          {tag}
+                          {match.build.difficulty}
                         </span>
-                      ))}
-                      {match.build.pve && <span className={styles.buildTag} style={{ borderColor: '#6dbf7e', color: '#6dbf7e' }}>PvE</span>}
-                      {match.build.pvp && <span className={styles.buildTag} style={{ borderColor: '#e05a5a', color: '#e05a5a' }}>PvP</span>}
+                      </div>
+                      <div className={styles.buildDesc}>{match.build.description}</div>
+                      <div className={styles.buildTags}>
+                        {match.build.tags.slice(0, 4).map(tag => (
+                          <span
+                            key={tag}
+                            className={styles.buildTag}
+                            style={{ borderColor: TAG_COLORS[tag] ?? 'var(--border)', color: TAG_COLORS[tag] ?? 'var(--text-dim)' }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                        {match.build.pve && <span className={styles.buildTag} style={{ borderColor: '#6dbf7e', color: '#6dbf7e' }}>PvE</span>}
+                        {match.build.pvp && <span className={styles.buildTag} style={{ borderColor: '#e05a5a', color: '#e05a5a' }}>PvP</span>}
+                      </div>
+                    </div>
+                    <div className={styles.buildScore}>
+                      <div className={styles.scoreValue}>{match.fitScore}</div>
+                      <div className={styles.scoreLabel}>match</div>
                     </div>
                   </div>
-                  <div className={styles.buildScore}>
-                    <div className={styles.scoreValue}>{match.fitScore}</div>
-                    <div className={styles.scoreLabel}>match</div>
-                  </div>
-                </div>
 
-                {isExpanded && (
-                  <div className={styles.buildDetails}>
-                    {match.build.weapons.length > 0 && (
-                      <div className={styles.detailSection}>
-                        <span className={styles.detailTitle}>Weapons</span>
-                        <div className={styles.detailItems}>
-                          {match.build.weapons.map(w => (
-                            <span
-                              key={w}
-                              className={`${styles.detailItem} ${match.ownedItems.includes(w) ? styles.detailOwned : styles.detailMissing}`}
-                            >
-                              {match.ownedItems.includes(w) ? '\u2713 ' : ''}{w}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {match.build.shields.length > 0 && (
-                      <div className={styles.detailSection}>
-                        <span className={styles.detailTitle}>Shields</span>
-                        <div className={styles.detailItems}>
-                          {match.build.shields.map(s => (
-                            <span key={s} className={styles.detailItem}>{s}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {match.build.talismans.length > 0 && (
-                      <div className={styles.detailSection}>
-                        <span className={styles.detailTitle}>Talismans</span>
-                        <div className={styles.detailItems}>
-                          {match.build.talismans.map(t => (
-                            <span
-                              key={t}
-                              className={`${styles.detailItem} ${match.ownedItems.includes(t) ? styles.detailOwned : styles.detailMissing}`}
-                            >
-                              {match.ownedItems.includes(t) ? '\u2713 ' : ''}{t}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {match.build.ashesOfWar.length > 0 && (
-                      <div className={styles.detailSection}>
-                        <span className={styles.detailTitle}>Ashes of War</span>
-                        <div className={styles.detailItems}>
-                          {match.build.ashesOfWar.map(a => (
-                            <span key={a} className={styles.detailItem}>{a}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {match.build.spells.length > 0 && (
-                      <div className={styles.detailSection}>
-                        <span className={styles.detailTitle}>Spells</span>
-                        <div className={styles.detailItems}>
-                          {match.build.spells.map(s => (
-                            <span
-                              key={s}
-                              className={`${styles.detailItem} ${match.ownedItems.includes(s) ? styles.detailOwned : styles.detailMissing}`}
-                            >
-                              {match.ownedItems.includes(s) ? '\u2713 ' : ''}{s}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className={styles.detailSection}>
-                      <span className={styles.detailTitle}>Armor</span>
-                      <span className={styles.armorNote}>{match.build.armorSuggestion}</span>
-                    </div>
-
-                    <div className={styles.detailSection}>
-                      <span className={styles.detailTitle}>Stats (yours / ideal)</span>
-                      <div className={styles.statGrid}>
-                        {(Object.keys(match.build.statProfile) as (keyof CharacterStats)[]).map(key => {
-                          const profile = match.build.statProfile[key];
-                          const playerVal = stats[key] as number;
-                          const isAboveIdeal = playerVal >= profile.ideal;
-                          const isBelowMin = playerVal < profile.min;
-                          return (
-                            <div key={key} className={styles.statRow}>
-                              <span className={styles.statKey}>{STAT_LABEL[key] ?? key}</span>
+                  {isExpanded && (
+                    <div className={styles.buildDetails}>
+                      {match.build.weapons.length > 0 && (
+                        <div className={styles.detailSection}>
+                          <span className={styles.detailTitle}>Weapons</span>
+                          <div className={styles.detailItems}>
+                            {match.build.weapons.map(w => (
                               <span
-                                className={styles.statVal}
-                                style={{
-                                  color: isAboveIdeal ? '#6dbf7e' : isBelowMin ? '#e05a5a' : 'var(--text)',
-                                }}
+                                key={w}
+                                className={`${styles.detailItem} ${match.ownedItems.includes(w) ? styles.detailOwned : styles.detailMissing}`}
                               >
-                                {playerVal}
+                                {match.ownedItems.includes(w) ? '\u2713 ' : ''}{w}
                               </span>
-                              <span className={styles.statIdeal}>{profile.ideal}</span>
-                            </div>
-                          );
-                        })}
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {match.build.shields.length > 0 && (
+                        <div className={styles.detailSection}>
+                          <span className={styles.detailTitle}>Shields</span>
+                          <div className={styles.detailItems}>
+                            {match.build.shields.map(s => (
+                              <span key={s} className={styles.detailItem}>{s}</span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {match.build.talismans.length > 0 && (
+                        <div className={styles.detailSection}>
+                          <span className={styles.detailTitle}>Talismans</span>
+                          <div className={styles.detailItems}>
+                            {match.build.talismans.map(t => (
+                              <span
+                                key={t}
+                                className={`${styles.detailItem} ${match.ownedItems.includes(t) ? styles.detailOwned : styles.detailMissing}`}
+                              >
+                                {match.ownedItems.includes(t) ? '\u2713 ' : ''}{t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {match.build.ashesOfWar.length > 0 && (
+                        <div className={styles.detailSection}>
+                          <span className={styles.detailTitle}>Ashes of War</span>
+                          <div className={styles.detailItems}>
+                            {match.build.ashesOfWar.map(a => (
+                              <span key={a} className={styles.detailItem}>{a}</span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {match.build.spells.length > 0 && (
+                        <div className={styles.detailSection}>
+                          <span className={styles.detailTitle}>Spells</span>
+                          <div className={styles.detailItems}>
+                            {match.build.spells.map(s => (
+                              <span
+                                key={s}
+                                className={`${styles.detailItem} ${match.ownedItems.includes(s) ? styles.detailOwned : styles.detailMissing}`}
+                              >
+                                {match.ownedItems.includes(s) ? '\u2713 ' : ''}{s}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      <div className={styles.detailSection}>
+                        <span className={styles.detailTitle}>Armor</span>
+                        <span className={styles.armorNote}>{match.build.armorSuggestion}</span>
+                      </div>
+
+                      <div className={styles.detailSection}>
+                        <span className={styles.detailTitle}>Stats (yours / ideal)</span>
+                        <div className={styles.statGrid}>
+                          {(Object.keys(match.build.statProfile) as (keyof CharacterStats)[]).map(key => {
+                            const profile = match.build.statProfile[key];
+                            const playerVal = stats[key] as number;
+                            const isAboveIdeal = playerVal >= profile.ideal;
+                            const isBelowMin = playerVal < profile.min;
+                            return (
+                              <div key={key} className={styles.statRow}>
+                                <span className={styles.statKey}>{STAT_LABEL[key] ?? key}</span>
+                                <span
+                                  className={styles.statVal}
+                                  style={{
+                                    color: isAboveIdeal ? '#6dbf7e' : isBelowMin ? '#e05a5a' : 'var(--text)',
+                                  }}
+                                >
+                                  {playerVal}
+                                </span>
+                                <span className={styles.statIdeal}>{profile.ideal}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {match.ownedItems.length > 0 && (
+                        <div className={styles.inventoryNote}>
+                          You own {match.ownedItems.length} of {match.ownedItems.length + match.missingItems.length} recommended items
+                        </div>
+                      )}
+
+                      <div className={styles.tipBox}>
+                        {match.build.tips}
                       </div>
                     </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
 
-                    {match.ownedItems.length > 0 && (
-                      <div className={styles.inventoryNote}>
-                        You own {match.ownedItems.length} of {match.ownedItems.length + match.missingItems.length} recommended items
-                      </div>
-                    )}
-
-                    <div className={styles.tipBox}>
-                      {match.build.tips}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+      {/* ── Pagination ── */}
+      {!loading && filteredMatches.length > PAGE_SIZE && (
+        <div className={styles.pagination}>
+          <button
+            className={styles.pageBtn}
+            disabled={safePageVal === 0}
+            onClick={() => setPage(p => Math.max(0, p - 1))}
+          >
+            ‹ Prev
+          </button>
+          <div className={styles.pageInfo}>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                className={`${styles.pageDot} ${i === safePageVal ? styles.pageDotActive : ''}`}
+                onClick={() => setPage(i)}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+          <button
+            className={styles.pageBtn}
+            disabled={safePageVal >= totalPages - 1}
+            onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
+          >
+            Next ›
+          </button>
         </div>
       )}
 

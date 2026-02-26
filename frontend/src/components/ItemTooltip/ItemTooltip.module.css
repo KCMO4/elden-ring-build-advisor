@@ -48,6 +48,18 @@
   flex-shrink: 0;
 }
 
+/* ── Quantity badge ──────────────────────────────────────── */
+.quantityBadge {
+  font-size: 0.68rem;
+  color: var(--text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 5px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
 /* ── Subtítulo (tipo de arma, armadura, etc.) ──────────── */
 .subtitle {
   font-size: 0.62rem;

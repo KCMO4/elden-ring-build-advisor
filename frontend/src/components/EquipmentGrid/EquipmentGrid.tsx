@@ -42,6 +42,21 @@ function quickSlotToEquipped(item: QuickSlotItem): EquippedWeapon {
     result.effect = item.effect;
   }
 
+  // Set a category subtitle for non-spell goods
+  if (!result.itemType && item.name) {
+    const n = item.name.toLowerCase();
+    if (n.includes('flask')) result.itemType = 'Flask';
+    else if (n.includes('grease') || n.includes('pot') || n.includes('bolus')
+          || n.includes('arrow') || n.includes('bolt') || n.includes('bone')
+          || n.includes('kukri') || n.includes('dart') || n.includes('bomb'))
+      result.itemType = 'Consumable';
+    else if (n.includes('rune arc') || n.includes('remedy') || n.includes('meat')
+          || n.includes('liver') || n.includes('crab') || n.includes('prawn')
+          || n.includes('exalted') || n.includes('dried') || n.includes('pickled'))
+      result.itemType = 'Consumable';
+    else if (item.effect) result.itemType = 'Item';
+  }
+
   return result;
 }
 

@@ -7,12 +7,16 @@ import EquipmentGrid from '../EquipmentGrid/EquipmentGrid';
 import InventoryPanel from '../InventoryPanel/InventoryPanel';
 import AdvisorPanel from '../AdvisorPanel/AdvisorPanel';
 import MatchmakingCalc from '../MatchmakingCalc/MatchmakingCalc';
+import BuildPlanner from '../BuildPlanner/BuildPlanner';
+import ArmorOptimizer from '../ArmorOptimizer/ArmorOptimizer';
+import WeaponCompare from '../WeaponCompare/WeaponCompare';
+import RuneCalculator from '../RuneCalculator/RuneCalculator';
 import ItemTooltip from '../ItemTooltip/ItemTooltip';
 import { useImagePreloader } from '../../hooks/useImagePreloader';
 import { loadScalingData } from '../../utils/scalingData';
 import styles from './BuildPage.module.css';
 
-type ContentTab = 'inventory' | 'builds' | 'matchmaking';
+type ContentTab = 'inventory' | 'builds' | 'matchmaking' | 'planner' | 'armor' | 'weapons' | 'runes';
 
 interface Props {
   character: CharacterData;
@@ -145,24 +149,23 @@ export default function BuildPage({ character, onBack }: Props) {
 
         <section className={styles.content}>
           <div className={styles.contentTabs}>
-            <button
-              className={`${styles.contentTab} ${contentTab === 'inventory' ? styles.contentTabActive : ''}`}
-              onClick={() => setContentTab('inventory')}
-            >
-              Inventory
-            </button>
-            <button
-              className={`${styles.contentTab} ${contentTab === 'builds' ? styles.contentTabActive : ''}`}
-              onClick={() => setContentTab('builds')}
-            >
-              Builds
-            </button>
-            <button
-              className={`${styles.contentTab} ${contentTab === 'matchmaking' ? styles.contentTabActive : ''}`}
-              onClick={() => setContentTab('matchmaking')}
-            >
-              Matchmaking
-            </button>
+            {([
+              ['inventory',  'Inventory'],
+              ['builds',     'Builds'],
+              ['planner',    'Planner'],
+              ['armor',      'Armor Opt.'],
+              ['weapons',    'Compare'],
+              ['runes',      'Runes'],
+              ['matchmaking', 'Matchmaking'],
+            ] as [ContentTab, string][]).map(([key, label]) => (
+              <button
+                key={key}
+                className={`${styles.contentTab} ${contentTab === key ? styles.contentTabActive : ''}`}
+                onClick={() => setContentTab(key)}
+              >
+                {label}
+              </button>
+            ))}
           </div>
           {contentTab === 'inventory' && (
             <InventoryPanel inventory={character.inventory} stats={character.stats} />
@@ -173,6 +176,33 @@ export default function BuildPage({ character, onBack }: Props) {
               level={character.level}
               mainWeapon={mainWeapon}
               inventory={character.inventory}
+            />
+          )}
+          {contentTab === 'planner' && (
+            <BuildPlanner
+              stats={character.stats}
+              level={character.level}
+              equipped={character.equipped}
+            />
+          )}
+          {contentTab === 'armor' && (
+            <ArmorOptimizer
+              equipped={character.equipped}
+              inventory={character.inventory}
+              stats={character.stats}
+            />
+          )}
+          {contentTab === 'weapons' && (
+            <WeaponCompare
+              stats={character.stats}
+              equipped={character.equipped}
+              inventory={character.inventory}
+            />
+          )}
+          {contentTab === 'runes' && (
+            <RuneCalculator
+              level={character.level}
+              heldRunes={character.heldRunes}
             />
           )}
           {contentTab === 'matchmaking' && (

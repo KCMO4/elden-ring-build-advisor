@@ -319,9 +319,9 @@ export function scanInventory(slotData: Buffer, level?: number): InventoryScanRe
   const equipped = readEquippedItems(slotData, level);
   const inventory = readInventory(slotData, level, quantityMap);
 
-  // Apply quantities to quick items (flasks show charges)
+  // Apply quantities to quick items and pouch (flasks show charges, consumables show stacks)
   if (quantityMap) {
-    for (const item of equipped.quickItems) {
+    for (const item of [...equipped.quickItems, ...equipped.pouch]) {
       const qty = quantityMap.get(item.rawId);
       if (qty !== undefined && qty > 1) item.quantity = qty;
     }

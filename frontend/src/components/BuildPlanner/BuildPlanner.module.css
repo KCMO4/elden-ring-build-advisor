@@ -1,0 +1,339 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  max-height: calc(100vh - 140px);
+}
+
+/* ── Header ─────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(201, 167, 79, 0.04);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s;
+  font-family: inherit;
+}
+
+.resetBtn:hover {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+/* ── Level / Points summary ────────────── */
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-slot);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.levelBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.levelLabel {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.levelValue {
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.levelArrow {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin: 0 0.1rem;
+}
+
+.levelSim {
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-bright);
+}
+
+.pointsDelta {
+  font-size: 0.55rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.positive { color: #6dbf7e; }
+.negative { color: #d4483c; }
+
+.runeBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.runeLabel {
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.runeValue {
+  font-size: 0.65rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-dim);
+}
+
+/* ── Scrollable body ───────────────────── */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 0.3rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.body::-webkit-scrollbar {
+  width: 4px;
+}
+.body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.body::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+/* ── Stat slider rows ──────────────────── */
+.statRow {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr 2rem 8.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1rem;
+  transition: background 0.12s;
+}
+
+.statRow:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.statLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Stat colors ──────────────────────── */
+.colVig .statLabel { color: #d4483c; }
+.colMnd .statLabel { color: #4a8fc4; }
+.colEnd .statLabel { color: #6ab54a; }
+.colStr .statLabel { color: #c9a74f; }
+.colDex .statLabel { color: #e8c97a; }
+.colInt .statLabel { color: #6a7dc4; }
+.colFai .statLabel { color: #e8c06a; }
+.colArc .statLabel { color: #b06ac4; }
+
+/* ── Custom range input ─────────────────── */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 14px;
+  background: var(--gold);
+  border: 1px solid var(--gold-bright);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 14px;
+  background: var(--gold);
+  border: 1px solid var(--gold-bright);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.slider:hover::-webkit-slider-thumb {
+  background: var(--gold-bright);
+}
+
+.slider:hover::-moz-range-thumb {
+  background: var(--gold-bright);
+}
+
+/* ── Slider track fill (via CSS gradient trick) ── */
+.colVig .slider { accent-color: #d4483c; }
+.colMnd .slider { accent-color: #4a8fc4; }
+.colEnd .slider { accent-color: #6ab54a; }
+.colStr .slider { accent-color: #c9a74f; }
+.colDex .slider { accent-color: #e8c97a; }
+.colInt .slider { accent-color: #6a7dc4; }
+.colFai .slider { accent-color: #e8c06a; }
+.colArc .slider { accent-color: #b06ac4; }
+
+.statValue {
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  text-align: right;
+}
+
+/* ── Derived stat next to slider ────────── */
+.derivedInline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  font-size: 0.62rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.derivedLabel {
+  color: var(--text-dim);
+  font-size: 0.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.derivedVal {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.derivedDelta {
+  font-size: 0.5rem;
+  font-weight: 700;
+}
+
+/* ── Weapon AR section ──────────────────── */
+.arSection {
+  border-top: 1px solid var(--border);
+  padding: 0.4rem 1rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.arTitle {
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.3rem;
+}
+
+.arList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.arRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--bg-slot);
+}
+
+.arName {
+  font-size: 0.7rem;
+  color: var(--gold-bright);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arValues {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.arCurrent {
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+}
+
+.arArrow {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+}
+
+.arSim {
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.arDelta {
+  font-size: 0.52rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.arEmpty {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  font-style: italic;
+  padding: 0.4rem 0;
+}

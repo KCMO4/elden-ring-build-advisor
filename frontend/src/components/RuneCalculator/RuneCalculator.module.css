@@ -1,0 +1,316 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  min-height: 0;
+  max-height: calc(100vh - 140px);
+}
+
+/* ── Header ────────────────────────────────────── */
+.header {
+  padding: 0.8rem 1rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin: 0 0 0.4rem;
+}
+
+.currentInfo {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.55rem;
+  color: var(--text);
+  background: var(--bg-slot);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.rune {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* ── Sections ──────────────────────────────────── */
+.section {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.label {
+  display: block;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.3rem;
+}
+
+/* ── Number input ──────────────────────────────── */
+.input {
+  width: 100%;
+  background: var(--bg-slot);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  padding: 0.4rem 0.6rem;
+  outline: none;
+  transition: border-color 0.15s;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input:focus {
+  border-color: var(--gold);
+}
+
+/* ── Quick target pills ────────────────────────── */
+.quickTargets {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+.pill {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.pill:hover {
+  border-color: var(--border-gold);
+  color: var(--text);
+}
+
+.pillActive {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201, 167, 79, 0.1);
+}
+
+/* ── Summary rows ──────────────────────────────── */
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.15rem 0;
+}
+
+.summaryLabel {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.summaryValue {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.summaryValueHeld {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+}
+
+.affordable {
+  color: #6dbf7e;
+}
+
+/* ── Progress bar ──────────────────────────────── */
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-bright));
+  transition: width 0.3s ease;
+}
+
+.progressLabel {
+  font-size: 0.52rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+  white-space: nowrap;
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+/* ── Reverse calculator ────────────────────────── */
+.reverseBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.reverseLabel {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.reverseValue {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+}
+
+.reverseGain {
+  color: #6dbf7e;
+  font-size: 0.65rem;
+}
+
+.reverseNone {
+  color: var(--text-dim);
+  font-size: 0.55rem;
+  font-weight: 400;
+}
+
+/* ── Level breakdown table ─────────────────────── */
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.tableTitle {
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  padding: 0.5rem 1rem 0.3rem;
+  flex-shrink: 0;
+}
+
+.tableWrap {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  padding: 0 0.5rem 0.5rem;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.tableWrap::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tableWrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tableWrap::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.th {
+  font-size: 0.48rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg-panel);
+}
+
+.thRight {
+  text-align: right;
+}
+
+.tr {
+  transition: background 0.1s;
+}
+
+.trEven {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.tr:hover {
+  background: rgba(201, 167, 79, 0.05);
+}
+
+.trAffordable .td {
+  color: var(--gold);
+}
+
+.td {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  padding: 0.2rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.tdRight {
+  text-align: right;
+}
+
+.affordTag {
+  font-size: 0.42rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6dbf7e;
+  margin-left: 4px;
+}

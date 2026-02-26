@@ -159,6 +159,9 @@ export default function ItemTooltip({ item, triggerRect, stats }: Props) {
         {item.upgradeLevel !== undefined && item.upgradeLevel > 0 && (
           <span className={styles.upgradeLevel}>+{item.upgradeLevel}</span>
         )}
+        {item.quantity != null && item.quantity > 1 && (
+          <span className={styles.quantityBadge}>×{item.quantity}</span>
+        )}
       </div>
       {subtitle && (
         <div className={styles.subtitle}>{subtitle}</div>
